@@ -1,0 +1,10 @@
+DeWeb开发简要流程
+-
+1 安装icsV858 
+2 复制10.1/10.2/10.3内文件到当前 
+3 打开DelphiWeb.dproj, 编译运行 
+4 在浏览器中打开 http://127.0.0.1/demos.dw http://127.0.0.1/mobile.dw 
+5 
+(1) 新建Form, 存为unit9.pas, Name = TForm9 (2) 放个Label (3) 在Main.pas中uses中添加unit9, 
+(4) 在initialization中添加RegisterClass(TForm9); 在finalization中添加 UnRegisterClass(TForm9); 
+6 编译运行 7 浏览器中打开http://127.0.0.1/form9.dw

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="dist/axios.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <label style="position:absolute;top:40px;left:50%;color:#404040">loading ...</label>
+    <script>
+        var os = function (){
+        	var ua = navigator.userAgent,
+        	isWindowsPhone = /(?:Windows Phone)/.test(ua),
+        	isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+        	isAndroid = /(?:Android)/.test(ua),
+        	isFireFox = /(?:Firefox)/.test(ua),
+        	isChrome = /(?:Chrome|CriOS)/.test(ua), 
+        	isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
+        	isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+        	isPc = !isPhone && !isAndroid && !isSymbian;
+             if (isPc) {
+                  return 1;
+             } else if (isAndroid){
+                  return 2;
+             } else if (isPhone){
+                  return 3;
+             } else if (isTablet){
+                  return 4;
+             } else {
+                  return 0;
+             }
+        }
+		alert(os());
+    </script>
+</body>
+</html>';

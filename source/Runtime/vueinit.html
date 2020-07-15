@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>                                                                    <html lang="en">                                                                                                                                                    <head>                                                                                <meta charset="utf-8">                                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">            <meta http-equiv="X-UA-Compatible" content="ie=edge">                             <title>DeWeb</title>                                                              <!-- 引入样式 -->                                                                 <link rel="stylesheet" type="text/css" href="dist/theme-chalk/index.css"/>        <!-- 引入组件库 -->                                                               <script src="dist/vue.js" type="text/javascript"></script>                        <script src="dist/index.js" type="text/javascript"></script>                      <script src="dist/axios.min.js" type="text/javascript"></script>              </head>                                                                           
+<body style="background-color:#F0F0F0">
+<style type="text/css">	#Loading {		top:50%;		left:50%;		position: absolute;		-webkit-transform: translateY(-50%) translateX(-50%);		transform: translateY(-50%) translateX(-50%);		z-index:100;	}	@-webkit-keyframes ball-beat {		50% {			opacity: 0.2;			-webkit-transform: scale(0.75);			transform: scale(0.75); 		}		100% {			opacity: 1;			-webkit-transform: scale(1);			transform: scale(1); 		} 	}	@keyframes ball-beat {		50% {			opacity: 0.2;			-webkit-transform: scale(0.75);			transform: scale(0.75); 		}		100% {			opacity: 1;			-webkit-transform: scale(1);			transform: scale(1); 		} 	}	.ball-beat > div {		background-color: #279fcf;		width: 15px;		height: 15px;		border-radius: 100% !important;		margin: 2px;		-webkit-animation-fill-mode: both;		animation-fill-mode: both;		display: inline-block;		-webkit-animation: ball-beat 0.7s 0s infinite linear;		animation: ball-beat 0.7s 0s infinite linear; 	}	.ball-beat > div:nth-child(2n-1) {		-webkit-animation-delay: 0.35s !important;		animation-delay: 0.35s !important; 	}	</style>	<div id="Loading">		<div class="loader-inner ball-beat">			<div></div>			<div></div>			<div></div>		</div>	</div>    <div id="app" style="position:absolute;overflow:hidden;left:0;right:0;bottom:0;margin: 0 auto;background-color:#FFFFFF" :style="{top:Default_1__t,width:Default_1__w,height:Default_1__h}" >
+        <el-button v-if="version__istrial" type="success" @click="this.window.open('http://www.web0000.com/buy')" size="mini" icon="el-icon-shopping-cart-2" style="position:relative;z-index:999;float:right;margin:10px;">Buy Now!</el-button>
+        <el-dialog :title="input_query_caption" :visible.sync="input_query_visible" >
+        	<el-form style="width:90%;padding-left:5%;">
+        		<el-form-item :label="input_query_inputname" >
+        			<el-input v-model="input_query_inputdefault" autocomplete="off"></el-input>
+        		</el-form-item>
+        	</el-form>
+        	<div slot="footer" class="dialog-footer">
+        		<el-button @click="input_query_visible=false">{{input_query_cancelcaption}}</el-button>
+        		<el-button type="primary" @click="processinputquery">{{input_query_okcaption}}</el-button>
+        	</div>
+        </el-dialog>
+        <label v-if="Label1__visible" :disabled="Label1__disabled" :style="{left:Label1__l,top:Label1__t,width:Label1__w,height:Label1__h}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:16pt;font-weight:bold;font-style:normal;text-decoration:none;">{{Label1}}</label>
+        <label v-if="Label2__visible" :disabled="Label2__disabled" :style="{left:Label2__l,top:Label2__t,width:Label2__w,height:Label2__h}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label2}}</label>
+        <el-button v-if="Btn_Next__visible" size="medium" :disabled="Btn_Next__disabled" type="success" :style="{left:Btn_Next__l,top:Btn_Next__t,width:Btn_Next__w,height:Btn_Next__h}" style="position:absolute;" @click="Btn_Next__onclick">{{Btn_Next}}</el-button>
+	</div>
+    <script>
+	     Vue.prototype.procResp = function (resp){
+		    if (resp.mode === "update"){
+		        eval(String(resp.code));
+		    } else if (resp.mode === "showform"){
+		        document.open();document.write(String(resp.code));
+		    }
+	     } 
+        new Vue(
+			{
+				el: '#app',
+				data: function () {
+					return {
+					    Default_1__l:"0px",
+					    Default_1__t:"0px",
+					    Default_1__w:"360px",
+					    Default_1__h:"720px",
+                        Label1:'DeWeb : Delphi -Web',
+                        Label1__visible:true,
+                        Label1__disabled:false,
+                        Label1__l:"32px",
+                        Label1__t:"24px",
+                        Label1__w:"291px",
+                        Label1__h:"28px",
+                        Label2:'DeWeb是一个可以直接将Delphi程序快速转换为网页应用的工具！使用DeWeb, 开发者不需要学习HTML、JavaScript、Java、PHP、ASP、C#等新知识，用Delphi搞定一切。 DeWeb开发的网页支持所有客户端，包括手机、平板等。 ',
+                        Label2__visible:true,
+                        Label2__disabled:false,
+                        Label2__l:"21px",
+                        Label2__t:"80px",
+                        Label2__w:"302px",
+                        Label2__h:"120px",
+                        Btn_Next:'Next',
+                        Btn_Next__visible:true,
+                        Btn_Next__disabled:false,
+                        Btn_Next__l:"53px",
+                        Btn_Next__t:"632px",
+                        Btn_Next__w:"252px",
+                        Btn_Next__h:"41px",
+					    input_query_visible:false,
+					    input_query_caption:"Input Query",
+					    input_query_inputname:"new",
+					    input_query_cancelcaption:"Cancel",
+					    input_query_okcaption:"OK",
+					    input_query_inputdefault:"",
+					    input_query_method:"processinputquery",
+					    input_query_visible:false,
+					    version__istrial:false,
+					    clientid:0
+                    }
+                },
+                mounted() {
+                    let me=this;
+                    window.addEventListener(
+                        "onorientationchange" in window ? "orientationchange" : "resize",
+                        function() {
+                            axios.get('{"mode":"event","cid":0,"component":"screen","orientation":"'+window.orientation+'","width":'+screen.width+',"height":'+screen.height+'}')
+                            .then(resp =>{me.procResp(resp.data)});
+                        },
+                        false
+                    );
+                    let Default_1hearttimer = window.setInterval(function() {   
+                        axios.get('{"mode":"heart","cid":0}')       
+                        .then(resp =>{me.procResp(resp.data)});
+                    }, 30000);                                                   
+                },                                                               
+				methods: {
+                    Btn_Next__onclick() {                         axios.get('{"mode":"event","cid":0,"component":"Btn_Next","event":"onclick"}')                         .then(resp =>{this.procResp(resp.data)});                    },                                                                                    
+                    processinputquery(val) {
+                        this.input_query_visible = false;
+                        axios.get('{"mode":"interaction","cid":0,"class":"inputquery","method":"'+this.input_query_method+'","value":"'+this.input_query_inputdefault+'"}')
+                        .then(resp =>{this.procResp(resp.data)});
+                    },
+                },  				created() { 					document.body.removeChild(document.getElementById('Loading'))  				},                				beforeDestroy() {                                                  
+                    clearInterval(hearttimer);                                     
+                }                                                                  
+            }                                                                      
+        );                                                                         
+    </script>                                                                      
+</body>                                                                            
+</html>                                                                            

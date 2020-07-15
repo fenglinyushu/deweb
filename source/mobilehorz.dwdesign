@@ -1,0 +1,132 @@
+{
+	"items": [
+		{
+			"name": "DWFORM",
+			"left": 0,
+			"top": 0,
+			"width": 720,
+			"height": 360
+		},
+		{
+			"name": "Panel_Content",
+			"class": "TPanel",
+			"left": 120,
+			"top": 0,
+			"width": 480,
+			"height": 352,
+			"anchorsleft": false,
+			"anchorstop": true,
+			"anchorsright": false,
+			"anchorsbottom": false,
+			"border": false
+		},
+		{
+			"name": "Label_Title",
+			"class": "TLabel",
+			"left": 135,
+			"top": 10,
+			"width": 242,
+			"height": 48,
+			"anchorsleft": true,
+			"anchorstop": true,
+			"anchorsright": false,
+			"anchorsbottom": false
+		},
+		{
+			"name": "Label_Psd",
+			"class": "TLabel",
+			"left": 25,
+			"top": 105,
+			"width": 80,
+			"height": 50,
+			"anchorsleft": true,
+			"anchorstop": true,
+			"anchorsright": false,
+			"anchorsbottom": false
+		},
+		{
+			"name": "Label_MailBox",
+			"class": "TLabel",
+			"left": 25,
+			"top": 54,
+			"width": 80,
+			"height": 50,
+			"anchorsleft": true,
+			"anchorstop": true,
+			"anchorsright": false,
+			"anchorsbottom": false
+		},
+		{
+			"name": "Img",
+			"class": "TImage",
+			"left": 85,
+			"top": 10,
+			"width": 48,
+			"height": 48,
+			"anchorsleft": true,
+			"anchorstop": true,
+			"anchorsright": false,
+			"anchorsbottom": false
+		},
+		{
+			"name": "Label_OS",
+			"class": "TLabel",
+			"left": 5,
+			"top": 0,
+			"width": 315,
+			"height": 20,
+			"anchorsleft": true,
+			"anchorstop": true,
+			"anchorsright": false,
+			"anchorsbottom": false
+		},
+		{
+			"name": "Button_Login",
+			"class": "TButton",
+			"left": 25,
+			"top": 206,
+			"width": 134,
+			"height": 40,
+			"anchorsleft": true,
+			"anchorstop": true,
+			"anchorsright": false,
+			"anchorsbottom": false
+		},
+		{
+			"name": "CheckBox_me",
+			"class": "TCheckBox",
+			"left": 25,
+			"top": 150,
+			"width": 100,
+			"height": 50,
+			"anchorsleft": true,
+			"anchorstop": true,
+			"anchorsright": false,
+			"anchorsbottom": false
+		},
+		{
+			"name": "Edit_Psd",
+			"class": "TEdit",
+			"left": 140,
+			"top": 117,
+			"width": 316,
+			"height": 35,
+			"anchorsleft": true,
+			"anchorstop": true,
+			"anchorsright": true,
+			"anchorsbottom": false
+		},
+		{
+			"name": "Edit_MailBox",
+			"class": "TEdit",
+			"left": 140,
+			"top": 64,
+			"width": 316,
+			"height": 35,
+			"anchorsleft": true,
+			"anchorstop": true,
+			"anchorsright": true,
+			"anchorsbottom": false
+		}
+	]
+}
