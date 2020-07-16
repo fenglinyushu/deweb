@@ -57,6 +57,7 @@ type
     procedure ProcessMessageDlg(AResult:String);
     //InputQuery框的结果处理函数
     procedure ProcessInputQuery(AResult:String);
+    //
     procedure MenuItem_AddClick(Sender: TObject);
     procedure MenuItem_PrevClick(Sender: TObject);
     procedure MenuItem_NextClick(Sender: TObject);

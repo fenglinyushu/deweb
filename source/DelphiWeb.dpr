@@ -16,7 +16,9 @@ uses
   DemosUnit in 'DemosUnit.pas' {Demos},
   TestUnit in 'TestUnit.pas' {Test},
   DriverUnit in 'DriverUnit.pas' {Driver},
-  dwDatas in 'dwDatas.pas' {DM: TDataModule};
+  dwDatas in 'dwDatas.pas' {DM: TDataModule},
+  dwDBCtrls in 'dwDBCtrls.pas',
+  dwButtons in 'dwButtons.pas';
 
 {$R *.RES}
 
@@ -24,7 +26,7 @@ begin
      CoInitialize(nil); 
      Application.Title := 'Deweb Server';
      Application.CreateForm(TDM, DM);
-     Application.CreateForm(TMainForm, MainForm);
-     Application.Run;
+  Application.CreateForm(TMainForm, MainForm);
+  Application.Run;
      CoUninitialize;
 end.

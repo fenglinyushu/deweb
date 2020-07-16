@@ -233,7 +233,6 @@ object Form4: TForm4
     end
   end
   object ADOQuery: TADOQuery
-    Connection = DM.ADOConnection
     Parameters = <>
     Left = 48
     Top = 112
