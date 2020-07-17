@@ -17,7 +17,6 @@ uses
   TestUnit in 'TestUnit.pas' {Test},
   DriverUnit in 'DriverUnit.pas' {Driver},
   dwDatas in 'dwDatas.pas' {DM: TDataModule},
-  dwDBCtrls in 'dwDBCtrls.pas',
   dwButtons in 'dwButtons.pas';
 
 {$R *.RES}

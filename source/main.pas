@@ -66,9 +66,7 @@ type
   end;
 
 var
-     MainForm       : TMainForm;
-     DisplayLock       : TRTLCriticalSection;
-     LockFileAccess    : TRtlCriticalSection;
+     MainForm            : TMainForm;
 
 implementation
 

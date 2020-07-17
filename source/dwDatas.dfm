@@ -1,7 +1,7 @@
 object DM: TDM
   OldCreateOrder = False
-  Left = 192
-  Top = 131
+  Left = 174
+  Top = 99
   Height = 342
   Width = 405
   object ADOConnection_Driver: TADOConnection

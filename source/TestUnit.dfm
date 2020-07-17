@@ -19,7 +19,7 @@ object Test: TTest
     Width = 221
     Height = 41
     AutoSize = False
-    Caption = 'Hello,DeWeb!'
+    Caption = 'Hello,De'#20013#25991'Web!'
     Color = clMoneyGreen
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -34,7 +34,7 @@ object Test: TTest
     Top = 88
     Width = 113
     Height = 17
-    Caption = 'RadioButton1'
+    Caption = 'Radio'#20013#25991'Button1'
     TabOrder = 0
   end
   object Edit1: TEdit
