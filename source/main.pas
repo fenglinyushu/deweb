@@ -155,7 +155,6 @@ procedure TMainForm.Button_StartClick(Sender: TObject);
 begin
      giPort    := SpinEdit_Port.Value;
      if dwStart(giPort) = 0 then begin
-
           Button_Start.Enabled     := False;
           Button_Stop.Enabled      := not Button_Start.Enabled;
           SpinEdit_Port.Enabled    := Button_Start.Enabled;

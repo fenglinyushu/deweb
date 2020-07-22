@@ -1,8 +1,8 @@
 object Test: TTest
-  Left = 500
-  Top = 177
+  Left = 498
+  Top = 150
   Width = 336
-  Height = 920
+  Height = 597
   Caption = 'Test'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -13,55 +13,31 @@ object Test: TTest
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel
-    Left = 45
-    Top = 30
-    Width = 221
-    Height = 41
-    AutoSize = False
-    Caption = 'Hello,De'#20013#25991'Web!'
-    Color = clMoneyGreen
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -24
-    Font.Name = 'Verdana'
-    Font.Style = [fsBold, fsItalic]
-    ParentColor = False
-    ParentFont = False
-  end
-  object RadioButton1: TRadioButton
-    Left = 56
-    Top = 88
-    Width = 113
-    Height = 17
-    Caption = 'Radio'#20013#25991'Button1'
-    TabOrder = 0
-  end
   object Button1: TButton
-    Left = 40
-    Top = 200
+    Left = 32
+    Top = 88
     Width = 121
     Height = 41
     Caption = 'Get Params'
-    TabOrder = 1
+    TabOrder = 0
     OnClick = Button1Click
   end
   object Edit1: TEdit
-    Left = 40
-    Top = 152
+    Left = 32
+    Top = 32
     Width = 121
-    Height = 29
+    Height = 21
     ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
-    TabOrder = 2
+    TabOrder = 1
     Text = 'Edit1'
   end
   object Button2: TButton
-    Left = 40
-    Top = 280
+    Left = 32
+    Top = 160
     Width = 121
     Height = 41
     Caption = 'New URL'
-    TabOrder = 3
+    TabOrder = 2
     OnClick = Button2Click
   end
 end
