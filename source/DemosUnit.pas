@@ -373,7 +373,7 @@ end;
 
 procedure TDemos.Button15Click(Sender: TObject);
 begin
-     Button14.Caption    := 'Btn-'+IntToStr(GetTickCount Mod 10000);
+     Button14.Caption    := 'Btn按钮-'+IntToStr(GetTickCount Mod 10000);
 end;
 
 procedure TDemos.Button16Click(Sender: TObject);
@@ -429,7 +429,7 @@ end;
 
 procedure TDemos.Button24Click(Sender: TObject);
 begin
-     CheckBox7.Caption   := 'Chk-'+IntToStr(GetTickCount Mod 1000);
+     CheckBox7.Caption   := 'Chk选项-'+IntToStr(GetTickCount Mod 1000);
 end;
 
 procedure TDemos.Button25Click(Sender: TObject);
@@ -537,7 +537,7 @@ end;
 
 procedure TDemos.Button39Click(Sender: TObject);
 begin
-     Label37.Caption   := 'Lbl-'+IntToStr(GetTickCount Mod 1000);
+     Label37.Caption   := 'Lbl中-'+IntToStr(GetTickCount Mod 1000);
 
 end;
 

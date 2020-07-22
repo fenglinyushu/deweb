@@ -1,6 +1,6 @@
 object Demos: TDemos
-  Left = 0
-  Top = 0
+  Left = 285
+  Top = 18
   BorderStyle = bsNone
   Caption = 'DeWeb : Delphi-Web  development platform'
   ClientHeight = 881
@@ -356,7 +356,7 @@ object Demos: TDemos
     Top = 100
     Width = 1100
     Height = 1025
-    ActivePage = TabSheet5
+    ActivePage = TabSheet3
     BiDiMode = bdLeftToRight
     MultiLine = True
     ParentBiDiMode = False
@@ -474,7 +474,7 @@ object Demos: TDemos
       object Button7: TButton
         Left = 180
         Top = 100
-        Width = 90
+        Width = 150
         Height = 35
         Caption = 'Click me'
         TabOrder = 6
@@ -483,7 +483,7 @@ object Demos: TDemos
       object Button8: TButton
         Left = 180
         Top = 170
-        Width = 90
+        Width = 150
         Height = 35
         Caption = 'Diabled'
         Enabled = False
@@ -501,7 +501,7 @@ object Demos: TDemos
       object Button10: TButton
         Left = 180
         Top = 246
-        Width = 90
+        Width = 150
         Height = 35
         Caption = 'Button'
         TabOrder = 9
@@ -518,7 +518,7 @@ object Demos: TDemos
       object Button12: TButton
         Left = 180
         Top = 328
-        Width = 90
+        Width = 150
         Height = 35
         Caption = 'Button'
         TabOrder = 11
@@ -535,7 +535,7 @@ object Demos: TDemos
       object Button14: TButton
         Left = 180
         Top = 411
-        Width = 90
+        Width = 150
         Height = 35
         Caption = 'Button'
         TabOrder = 13
@@ -704,7 +704,7 @@ object Demos: TDemos
       object CheckBox7: TCheckBox
         Left = 141
         Top = 429
-        Width = 120
+        Width = 180
         Height = 17
         Caption = 'CheckBox7'
         TabOrder = 10
@@ -8873,7 +8873,7 @@ object Demos: TDemos
         Top = 18
         Width = 300
         Height = 263
-        Date = 43975.971954398150000000
+        Date = 43975.979708703700000000
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         TabOrder = 0
         OnClick = MonthCalendar1Click
