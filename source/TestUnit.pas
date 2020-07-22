@@ -31,7 +31,7 @@ implementation
 
 procedure TTest.Button1Click(Sender: TObject);
 begin
-     Edit1.Text     := 'deweb÷–web123';//dwGetProp(Self,'params');
+     Edit1.Text     := dwGetProp(Self,'params');
 end;
 
 procedure TTest.Button2Click(Sender: TObject);

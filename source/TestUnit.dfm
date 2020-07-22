@@ -16,7 +16,7 @@ object Test: TTest
   object Button1: TButton
     Left = 32
     Top = 88
-    Width = 121
+    Width = 169
     Height = 41
     Caption = 'Get Params'
     TabOrder = 0
@@ -25,16 +25,16 @@ object Test: TTest
   object Edit1: TEdit
     Left = 32
     Top = 32
-    Width = 121
-    Height = 21
+    Width = 169
+    Height = 33
     ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
     TabOrder = 1
     Text = 'Edit1'
   end
   object Button2: TButton
     Left = 32
-    Top = 160
-    Width = 121
+    Top = 152
+    Width = 169
     Height = 41
     Caption = 'New URL'
     TabOrder = 2
