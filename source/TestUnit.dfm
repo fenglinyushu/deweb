@@ -1,7 +1,7 @@
 object Test: TTest
   Left = 498
   Top = 150
-  Width = 336
+  Width = 377
   Height = 597
   Caption = 'Test'
   Color = clBtnFace
@@ -15,8 +15,8 @@ object Test: TTest
   TextHeight = 13
   object Button1: TButton
     Left = 32
-    Top = 88
-    Width = 169
+    Top = 96
+    Width = 297
     Height = 41
     Caption = 'Get Params'
     TabOrder = 0
@@ -25,19 +25,28 @@ object Test: TTest
   object Edit1: TEdit
     Left = 32
     Top = 32
-    Width = 169
-    Height = 33
+    Width = 297
+    Height = 41
+    Hint = '{"placeholder":"'#29992#25143#21517'","prefix-icon":"el-icon-search"}'
     ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
     TabOrder = 1
     Text = 'Edit1'
   end
   object Button2: TButton
     Left = 32
-    Top = 152
-    Width = 169
+    Top = 160
+    Width = 297
     Height = 41
     Caption = 'New URL'
     TabOrder = 2
     OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 32
+    Top = 232
+    Width = 297
+    Height = 49
+    Caption = 'Button3'
+    TabOrder = 3
   end
 end
