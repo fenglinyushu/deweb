@@ -232,11 +232,11 @@
                 </div>
                 <div v-if="PageControl=='TabSheet11'" style="position:absolute;left:0px;top:0px;width:100%;height:100%">
                     <el-tabs :tab-position="PageControl1__tabposition" type="border-card" v-if="PageControl1__visible" v-model="PageControl1" id="PageControl1" :disabled="PageControl1__disabled" :style="{left:PageControl1__l,top:PageControl1__t,width:PageControl1__w,height:PageControl1__h}" style="position:absolute;" @tab-click="PageControl1__ontabclick">
-                        <el-tab-pane label="TabSheet17" name="TabSheet17">
+                        <el-tab-pane label="Tab一" name="TabSheet17">
                         </el-tab-pane>
-                        <el-tab-pane label="TabSheet18" name="TabSheet18">
+                        <el-tab-pane label="Tab二" name="TabSheet18">
                         </el-tab-pane>
-                        <el-tab-pane label="TabSheet19" name="TabSheet19">
+                        <el-tab-pane label="Tab三" name="TabSheet19">
                         </el-tab-pane>
                         <div :style="{width:PageControl1__w,height:PageControl1__htab}" style="position:absolute;left:0px;top:0px;">
                             <div v-if="PageControl1=='TabSheet17'" style="position:absolute;left:0px;top:0px;width:100%;height:100%">
@@ -248,9 +248,9 @@
                         </div>
                     </el-tabs>
                     <el-tabs :tab-position="PageControl3__tabposition" v-if="PageControl3__visible" v-model="PageControl3" id="PageControl3" :disabled="PageControl3__disabled" :style="{left:PageControl3__l,top:PageControl3__t,width:PageControl3__w,height:PageControl3__h}" style="position:absolute;" @tab-click="PageControl3__ontabclick">
-                        <el-tab-pane label="TabSheet17" name="TabSheet22">
+                        <el-tab-pane label="Tab一" name="TabSheet22">
                         </el-tab-pane>
-                        <el-tab-pane label="TabSheet18" name="TabSheet23">
+                        <el-tab-pane label="Tab二" name="TabSheet23">
                         </el-tab-pane>
                         <div :style="{width:PageControl3__w,height:PageControl3__htab}" style="position:absolute;left:0px;top:0px;">
                             <div v-if="PageControl3=='TabSheet22'" style="position:absolute;left:0px;top:0px;width:100%;height:100%">
@@ -337,11 +337,11 @@
                     <div  v-if="StringGrid1__visible" :disabled="StringGrid1__disabled" :style="{left:StringGrid1__l,top:StringGrid1__t,width:StringGrid1__w,height:StringGrid1__h}" style="position:absolute;">
                         <el-table :data="StringGrid1" highlight-current-row stripe  border style="width:100%;height:100%;" id="StringGrid1" @current-change="StringGrid1__CurrentChange">
                             <el-table-column show-overflow-tooltip fixed v-if=false prop="d0" label="rowno" width="80"></el-table-column>
-                            <el-table-column show-overflow-tooltip fixed prop="d1" label="0,0" width="100"></el-table-column>
-                            <el-table-column show-overflow-tooltip  prop="d2" label="0,1" width="100"></el-table-column>
-                            <el-table-column show-overflow-tooltip  prop="d3" label="0,2" width="100"></el-table-column>
-                            <el-table-column show-overflow-tooltip  prop="d4" label="0,3" width="100"></el-table-column>
-                            <el-table-column show-overflow-tooltip  prop="d5" label="0,4" width="100"></el-table-column>
+                            <el-table-column show-overflow-tooltip fixed prop="d1" label="位0,0" width="100"></el-table-column>
+                            <el-table-column show-overflow-tooltip  prop="d2" label="位0,1" width="100"></el-table-column>
+                            <el-table-column show-overflow-tooltip  prop="d3" label="位0,2" width="100"></el-table-column>
+                            <el-table-column show-overflow-tooltip  prop="d4" label="位0,3" width="100"></el-table-column>
+                            <el-table-column show-overflow-tooltip  prop="d5" label="位0,4" width="100"></el-table-column>
                         </el-table>
                     </div>
                 </div>
@@ -373,7 +373,7 @@
 				data: function () {
 					return {
 					    Demos__l:"32767px",
-					    Demos__t:"18px",
+					    Demos__t:"21px",
 					    Demos__w:"1096px",
 					    Demos__h:"4000px",
                         Label_Title__caption:'DeWeb : Delphi-Web ',
@@ -530,7 +530,7 @@
                         Button13__t:"328px",
                         Button13__w:"90px",
                         Button13__h:"35px",
-                        Button14__caption:'Button',
+                        Button14__caption:'Button中123',
                         Button14__visible:true,
                         Button14__disabled:false,
                         Button14__l:"180px",
@@ -676,7 +676,7 @@
                         CheckBox6__h:"17px",
                         CheckBox6__c:"#FFFFFF",
                         CheckBox7:false,
-                        CheckBox7__caption:"CheckBox7",
+                        CheckBox7__caption:"Check选中框",
                         CheckBox7__visible:true,
                         CheckBox7__disabled:false,
                         CheckBox7__l:"141px",
@@ -770,7 +770,7 @@
                         Button44__t:"326px",
                         Button44__w:"90px",
                         Button44__h:"35px",
-                        ComboBox1__options:[{value:'New York'},{value:'BeiJing'},{value:'涓滀含'},{value:'Nibilu'},],
+                        ComboBox1__options:[{value:'New York'},{value:'BeiJing'},{value:'东京'},{value:'Nibilu'},],
                         ComboBox1:"ComboBox1",
                         ComboBox1__visible:true,
                         ComboBox1__disabled:false,
@@ -778,7 +778,7 @@
                         ComboBox1__t:"50px",
                         ComboBox1__w:"145px",
                         ComboBox1__h:"35px",
-                        ComboBox3__options:[{value:'New York'},{value:'BeiJing'},{value:'涓滀含'},{value:'Nibilu'},],
+                        ComboBox3__options:[{value:'New York'},{value:'BeiJing'},{value:'东京'},{value:'Nibilu'},],
                         ComboBox3:"ComboBox3",
                         ComboBox3__visible:true,
                         ComboBox3__disabled:false,
@@ -786,7 +786,7 @@
                         ComboBox3__t:"190px",
                         ComboBox3__w:"145px",
                         ComboBox3__h:"35px",
-                        ComboBox2__options:[{value:'New York'},{value:'BeiJing'},{value:'涓滀含'},{value:'Nibilu'},],
+                        ComboBox2__options:[{value:'New York'},{value:'BeiJing'},{value:'东京'},{value:'Nibilu'},],
                         ComboBox2:"ComboBox2",
                         ComboBox2__visible:true,
                         ComboBox2__disabled:false,
@@ -794,15 +794,15 @@
                         ComboBox2__t:"120px",
                         ComboBox2__w:"145px",
                         ComboBox2__h:"35px",
-                        ComboBox5__options:[{value:'New York'},{value:'BeiJing'},{value:'涓滀含'},{value:'Nibilu'},],
-                        ComboBox5:"ComboBox5",
+                        ComboBox5__options:[{value:'New York'},{value:'BeiJing'},{value:'东京'},{value:'Nibilu'},],
+                        ComboBox5:"Combo西风",
                         ComboBox5__visible:true,
                         ComboBox5__disabled:false,
                         ComboBox5__l:"180px",
                         ComboBox5__t:"329px",
                         ComboBox5__w:"145px",
                         ComboBox5__h:"35px",
-                        ComboBox4__options:[{value:'New York'},{value:'BeiJing'},{value:'涓滀含'},{value:'Nibilu'},],
+                        ComboBox4__options:[{value:'New York'},{value:'BeiJing'},{value:'东京'},{value:'Nibilu'},],
                         ComboBox4:"ComboBox4",
                         ComboBox4__visible:true,
                         ComboBox4__disabled:false,
@@ -810,7 +810,7 @@
                         ComboBox4__t:"260px",
                         ComboBox4__w:"145px",
                         ComboBox4__h:"35px",
-                        ComboBox6__options:[{value:'New York'},{value:'BeiJing'},{value:'涓滀含'},{value:'Nibilu'},],
+                        ComboBox6__options:[{value:'New York'},{value:'BeiJing'},{value:'东京'},{value:'Nibilu'},],
                         ComboBox6:"ComboBox6",
                         ComboBox6__visible:true,
                         ComboBox6__disabled:false,
@@ -1040,7 +1040,7 @@
                         Edit5__w:"121px",
                         Edit5__h:"28px",
                         Edit5__c:"#FFFFFF",
-                        Edit6:'Edit6',
+                        Edit6:'编辑框',
                         Edit6__visible:true,
                         Edit6__disabled:false,
                         Edit6__l:"179px",
@@ -1246,7 +1246,7 @@
                         Label35__t:"112px",
                         Label35__w:"134px",
                         Label35__h:"24px",
-                        Label37__caption:'Label4',
+                        Label37__caption:'Label标签',
                         Label37__visible:true,
                         Label37__disabled:false,
                         Label37__l:"148px",
@@ -1296,7 +1296,7 @@
                         Button55__w:"90px",
                         Button55__h:"35px",
                         ListBox1:[],
-                        ListBox1__items:[{text:'Jicky',value:'0'},{text:'Sunny',value:'1'},{text:'灏忓北',value:'2'},{text:'Monkey',value:'3'},{text:'Hill',value:'4'},{text:'Command',value:'5'},{text:'Well',value:'6'},{text:'QipaRenJian',value:'7'},],
+                        ListBox1__items:[{text:'Jicky',value:'0'},{text:'Sunny',value:'1'},{text:'小山',value:'2'},{text:'Monkey',value:'3'},{text:'Hill',value:'4'},{text:'Command',value:'5'},{text:'Well',value:'6'},{text:'QipaRenJian',value:'7'},],
                         ListBox1__visible:true,
                         ListBox1__disabled:false,
                         ListBox1__l:"50px",
@@ -1368,7 +1368,7 @@
                         Button63__t:"340px",
                         Button63__w:"90px",
                         Button63__h:"35px",
-                        Memo1:'Memo1\n涓枃\nABCD\n123',
+                        Memo1:'Memo1\n中文\nABCD\n123',
                         Memo1__visible:true,
                         Memo1__disabled:false,
                         Memo1__l:"56px",
@@ -1389,7 +1389,7 @@
                         MonthCalendar1__disabled:false,
                         MonthCalendar1__l:"32px",
                         MonthCalendar1__t:"18px",
-                        MonthCalendar1__w:"300px",
+                        MonthCalendar1__w:"409px",
                         MonthCalendar1__h:"263px",
                         CheckBox10:false,
                         CheckBox10__caption:"ShowMessage OnChange",
@@ -1443,7 +1443,7 @@
                         Button69__w:"90px",
                         Button69__h:"35px",
                         PageControl1__visible:true,
-                        PageControl1:"TabSheet17",
+                        PageControl1:"TabSheet19",
                         PageControl1__tabposition:'top',
                         PageControl1__disabled:false,
                         PageControl1__l:"45px",
@@ -1452,7 +1452,7 @@
                         PageControl1__h:"219px",
                         PageControl1__htab:"179px",
                         PageControl3__visible:true,
-                        PageControl3:"TabSheet22",
+                        PageControl3:"TabSheet23",
                         PageControl3__tabposition:'left',
                         PageControl3__disabled:false,
                         PageControl3__l:"473px",
@@ -1709,7 +1709,7 @@
                         RadioButton4__h:"17px",
                         RadioButton4__c:"#FFFFFF",
                         RadioButton7:'false',
-                        RadioButton7__caption:"RadioButton7",
+                        RadioButton7__caption:"单选框",
                         RadioButton7__visible:true,
                         RadioButton7__disabled:false,
                         RadioButton7__l:"180px",
@@ -1942,7 +1942,7 @@
                         Button81__t:"449px",
                         Button81__w:"90px",
                         Button81__h:"35px",
-                        StringGrid1: [{"d0":'1',"d1":'1,0',"d2":'1,1',"d3":'1,2',"d4":'1,3',"d5":'1,4',},{"d0":'2',"d1":'2,0',"d2":'2,1',"d3":'2,2',"d4":'2,3',"d5":'2,4',},{"d0":'3',"d1":'3,0',"d2":'3,1',"d3":'3,2',"d4":'3,3',"d5":'3,4',},{"d0":'4',"d1":'4,0',"d2":'4,1',"d3":'4,2',"d4":'4,3',"d5":'4,4',},],
+                        StringGrid1: [{"d0":'1',"d1":'位1,0',"d2":'位1,1',"d3":'位1,2',"d4":'位1,3',"d5":'位1,4',},{"d0":'2',"d1":'位2,0',"d2":'位2,1',"d3":'位2,2',"d4":'位2,3',"d5":'位2,4',},{"d0":'3',"d1":'位3,0',"d2":'位3,1',"d3":'位3,2',"d4":'位3,3',"d5":'位3,4',},{"d0":'4',"d1":'位4,0',"d2":'位4,1',"d3":'位4,2',"d4":'位4,3',"d5":'位4,4',},],
                         currentRow: 1,
                         StringGrid1__visible:true,
                         StringGrid1__disabled:false,
@@ -2003,11 +2003,11 @@
                         Button87__h:"35px",
                         TreeView1__visible:true,
                         TreeView1__disabled:false,
-                        TreeView1__l:"40px",
+                        TreeView1__l:"24px",
                         TreeView1__t:"20px",
                         TreeView1__w:"271px",
                         TreeView1__h:"456px",
-                        TreeView1__data: [                        ],                        TreeView1__defaultProps: {                            children: 'children',                            label: 'label'                        },
+                        TreeView1__data: [                            {                                id:0,                                label:'系统',                                children: [                                    {                                        id:1,                                        label:'监控席',                                    },                                    {                                        id:2,                                        label:'设备席',                                        children: [                                            {                                                id:3,                                                label:'主设备',                                                children: [                                                    {                                                        id:4,                                                        label:'主机',                                                    },                                                    {                                                        id:5,                                                        label:'显示器',                                                    },                                                    {                                                        id:6,                                                        label:'键盘',                                                    },                                                ],                                            },                                            {                                                id:7,                                                label:'辅助设备',                                            },                                        ],                                    },                                    {                                        id:8,                                        label:'评估席',                                    },                                    {                                        id:9,                                        label:'辅助席',                                    },                                    {                                        id:10,                                        label:'数据席',                                    },                                ],                            },                        ],                        TreeView1__defaultProps: {                            children: 'children',                            label: 'label'                        },
                         PageControl__visible:true,
                         PageControl:"TabSheet1",
                         PageControl__tabposition:'left',

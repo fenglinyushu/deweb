@@ -397,7 +397,7 @@ end;
 
 procedure TDemos.Button19Click(Sender: TObject);
 begin
-     Edit6.Text     := 'Edit-'+IntToStr(GetTickCount Mod 1000);
+     Edit6.Text     := 'Edit编-'+IntToStr(GetTickCount Mod 1000);
 end;
 
 procedure TDemos.Button20Click(Sender: TObject);
@@ -494,7 +494,7 @@ end;
 
 procedure TDemos.Button33Click(Sender: TObject);
 begin
-     RadioButton7.Caption   := 'Rio-'+IntToStr(GetTickCount Mod 1000);
+     RadioButton7.Caption   := 'Rio单-'+IntToStr(GetTickCount Mod 1000);
 
 end;
 
@@ -572,7 +572,7 @@ end;
 
 procedure TDemos.Button44Click(Sender: TObject);
 begin
-     ComboBox5.Text := 'AAA';
+     ComboBox5.Text := 'AAA中英123@';
 end;
 
 procedure TDemos.Button45Click(Sender: TObject);
@@ -712,7 +712,7 @@ end;
 
 procedure TDemos.Button63Click(Sender: TObject);
 begin
-     Memo1.Text     := Memo1.Text + ' --- New';
+     Memo1.Text     := Memo1.Text + #13#10' --- New';
 end;
 
 procedure TDemos.Button64Click(Sender: TObject);
@@ -834,7 +834,7 @@ end;
 
 procedure TDemos.Button81Click(Sender: TObject);
 begin
-     StringGrid1.Cells[1,1]   := IntToStr(GetTickCount);
+     StringGrid1.Cells[2,2]   := '中文'+IntToStr(GetTickCount mod 1000);
 end;
 
 procedure TDemos.Button82Click(Sender: TObject);
@@ -914,7 +914,7 @@ begin
      //
      for iR := 0 to StringGrid1.RowCount-1 do begin
           for iC := 0 to StringGrid1.ColCount-1 do begin
-               StringGrid1.Cells[iC,iR] := Format('%d,%d',[iR,iC]);
+               StringGrid1.Cells[iC,iR] := Format('位%d,%d',[iR,iC]);
           end;
      end;
 end;

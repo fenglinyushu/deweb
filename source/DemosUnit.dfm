@@ -1,9 +1,9 @@
 object Demos: TDemos
-  Left = 285
-  Top = 18
+  Left = 339
+  Top = 21
   BorderStyle = bsNone
   Caption = 'DeWeb : Delphi-Web  development platform'
-  ClientHeight = 881
+  ClientHeight = 794
   ClientWidth = 1096
   Color = clWhite
   TransparentColor = True
@@ -356,7 +356,7 @@ object Demos: TDemos
     Top = 100
     Width = 1100
     Height = 1025
-    ActivePage = TabSheet3
+    ActivePage = TabSheet14
     BiDiMode = bdLeftToRight
     MultiLine = True
     ParentBiDiMode = False
@@ -537,7 +537,7 @@ object Demos: TDemos
         Top = 411
         Width = 150
         Height = 35
-        Caption = 'Button'
+        Caption = 'Button'#20013'123'
         TabOrder = 13
       end
       object Button15: TButton
@@ -706,7 +706,7 @@ object Demos: TDemos
         Top = 429
         Width = 180
         Height = 17
-        Caption = 'CheckBox7'
+        Caption = 'Check'#36873#20013#26694
         TabOrder = 10
       end
       object Button24: TButton
@@ -874,7 +874,7 @@ object Demos: TDemos
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         ItemHeight = 20
         TabOrder = 7
-        Text = 'ComboBox5'
+        Text = 'Combo'#35199#39118
         Items.Strings = (
           'New York'
           'BeiJing'
@@ -1217,7 +1217,7 @@ object Demos: TDemos
         Height = 28
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         TabOrder = 5
-        Text = 'Edit6'
+        Text = #32534#36753#26694
       end
       object Edit7: TEdit
         Left = 179
@@ -8668,7 +8668,7 @@ object Demos: TDemos
         Width = 134
         Height = 24
         AutoSize = False
-        Caption = 'Label4'
+        Caption = 'Label'#26631#31614
       end
       object Button35: TButton
         Left = 381
@@ -8871,9 +8871,9 @@ object Demos: TDemos
       object MonthCalendar1: TMonthCalendar
         Left = 32
         Top = 18
-        Width = 300
+        Width = 409
         Height = 263
-        Date = 43975.979708703700000000
+        Date = 43975.357732650460000000
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         TabOrder = 0
         OnClick = MonthCalendar1Click
@@ -8954,18 +8954,18 @@ object Demos: TDemos
         Top = 20
         Width = 381
         Height = 219
-        ActivePage = TabSheet17
+        ActivePage = TabSheet19
         TabOrder = 0
         OnChange = PageControl1Change
         object TabSheet17: TTabSheet
-          Caption = 'TabSheet17'
+          Caption = 'Tab'#19968
         end
         object TabSheet18: TTabSheet
-          Caption = 'TabSheet18'
+          Caption = 'Tab'#20108
           ImageIndex = 1
         end
         object TabSheet19: TTabSheet
-          Caption = 'TabSheet19'
+          Caption = 'Tab'#19977
           ImageIndex = 2
         end
       end
@@ -8974,17 +8974,17 @@ object Demos: TDemos
         Top = 20
         Width = 381
         Height = 219
-        ActivePage = TabSheet22
+        ActivePage = TabSheet23
         BiDiMode = bdLeftToRight
         MultiLine = True
         ParentBiDiMode = False
         TabOrder = 1
         TabPosition = tpLeft
         object TabSheet22: TTabSheet
-          Caption = 'TabSheet17'
+          Caption = 'Tab'#19968
         end
         object TabSheet23: TTabSheet
-          Caption = 'TabSheet18'
+          Caption = 'Tab'#20108
           ImageIndex = 1
         end
       end
@@ -9312,7 +9312,7 @@ object Demos: TDemos
         Top = 442
         Width = 140
         Height = 17
-        Caption = 'RadioButton7'
+        Caption = #21333#36873#26694
         TabOrder = 9
       end
       object RadioButton6: TRadioButton
@@ -9671,13 +9671,34 @@ object Demos: TDemos
         TabOrder = 6
       end
       object TreeView1: TTreeView
-        Left = 40
+        Left = 24
         Top = 20
         Width = 271
         Height = 456
+        AutoExpand = True
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = #24494#36719#38597#40657
+        Font.Style = []
         Indent = 19
+        ParentFont = False
         TabOrder = 7
         OnClick = TreeView1Click
+        Items.Data = {
+          010000001D0000000000000000000000FFFFFFFFFFFFFFFF0000000005000000
+          04CFB5CDB31F0000000000000000000000FFFFFFFFFFFFFFFF00000000000000
+          0006BCE0BFD8CFAF1F0000000000000000000000FFFFFFFFFFFFFFFF00000000
+          0200000006C9E8B1B8CFAF1F0000000000000000000000FFFFFFFFFFFFFFFF00
+          0000000300000006D6F7C9E8B1B81D0000000000000000000000FFFFFFFFFFFF
+          FFFF000000000000000004D6F7BBFA1F0000000000000000000000FFFFFFFFFF
+          FFFFFF000000000000000006CFD4CABEC6F71D0000000000000000000000FFFF
+          FFFFFFFFFFFF000000000000000004BCFCC5CC210000000000000000000000FF
+          FFFFFFFFFFFFFF000000000000000008B8A8D6FAC9E8B1B81F00000000000000
+          00000000FFFFFFFFFFFFFFFF000000000000000006C6C0B9C0CFAF1F00000000
+          00000000000000FFFFFFFFFFFFFFFF000000000000000006B8A8D6FACFAF1F00
+          00000000000000000000FFFFFFFFFFFFFFFF000000000000000006CAFDBEDDCF
+          AF}
       end
     end
   end
