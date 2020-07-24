@@ -17,9 +17,13 @@ uses
   TestUnit in 'TestUnit.pas' {Test},
   DriverUnit in 'DriverUnit.pas' {Driver},
   dwDatas in 'dwDatas.pas' {DM: TDataModule},
-  dwEdits in 'dwEdits.pas',
   dwCtrlBase in 'dwCtrlBase.pas',
-  dwButtons in 'dwButtons.pas';
+  dwButtons in 'dwVcls\dwButtons.pas',
+  dwCheckBoxs in 'dwVcls\dwCheckBoxs.pas',
+  dwEdits in 'dwVcls\dwEdits.pas',
+  dwLabels in 'dwVcls\dwLabels.pas',
+  dwPageControls in 'dwVcls\dwPageControls.pas',
+  dwPanels in 'dwVcls\dwPanels.pas';
 
 {$R *.RES}
 

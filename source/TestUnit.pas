@@ -15,6 +15,10 @@ type
     Edit1: TEdit;
     Button2: TButton;
     Button3: TButton;
+    Label1: TLabel;
+    Panel1: TPanel;
+    Label2: TLabel;
+    CheckBox1: TCheckBox;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
   private
@@ -32,7 +36,7 @@ implementation
 
 procedure TTest.Button1Click(Sender: TObject);
 begin
-     Edit1.Text     := dwGetProp(Self,'params');
+     Edit1.Text     := Edit1.Text+'1';//dwGetProp(Self,'params');
 end;
 
 procedure TTest.Button2Click(Sender: TObject);

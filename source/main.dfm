@@ -1,6 +1,6 @@
 object MainForm: TMainForm
-  Left = 215
-  Top = 173
+  Left = 217
+  Top = 259
   Width = 728
   Height = 414
   Caption = 'Delphi Web'

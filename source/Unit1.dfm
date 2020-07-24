@@ -1,10 +1,10 @@
 object Default: TDefault
-  Left = 0
-  Top = 0
+  Left = 551
+  Top = 90
   BorderStyle = bsNone
   Caption = 'DeWeb : Delphi -Web'
   ClientHeight = 720
-  ClientWidth = 360
+  ClientWidth = 606
   Color = clWhite
   TransparentColor = True
   TransparentColorValue = clWhite
@@ -319,25 +319,24 @@ object Default: TDefault
   OldCreateOrder = False
   OnMouseUp = FormMouseUp
   DesignSize = (
-    360
+    606
     720)
   PixelsPerInch = 96
   TextHeight = 20
   object Panel_Content: TPanel
-    Left = 30
-    Top = 30
-    Width = 300
+    Left = 14
+    Top = 0
+    Width = 579
     Height = 660
-    Anchors = [akLeft, akTop, akRight]
+    Anchors = [akLeft]
     BevelOuter = bvNone
     BorderWidth = 10
     ParentBackground = False
-    ParentColor = True
     TabOrder = 0
     object Label1: TLabel
       Left = 10
       Top = 96
-      Width = 280
+      Width = 559
       Height = 40
       Align = alTop
       Caption = 'DeWeb'#26159#19968#20010#21487#20197#30452#25509#23558'Delphi'#31243#24207#24555#36895#36716#25442#20026#32593#39029#24212#29992#30340#24037#20855#65281'  '
@@ -346,7 +345,7 @@ object Default: TDefault
     object Label2: TLabel
       Left = 10
       Top = 136
-      Width = 280
+      Width = 559
       Height = 60
       Align = alTop
       Caption = 
@@ -357,7 +356,7 @@ object Default: TDefault
     object Label3: TLabel
       Left = 10
       Top = 196
-      Width = 280
+      Width = 559
       Height = 40
       Align = alTop
       Caption = 'DeWeb'#24320#21457#30340#32593#39029#25903#25345#25152#26377#23458#25143#31471#65292#21253#25324#25163#26426#12289#24179#26495#31561#12290' '
@@ -366,7 +365,7 @@ object Default: TDefault
     object Panel_Banner: TPanel
       Left = 10
       Top = 10
-      Width = 280
+      Width = 559
       Height = 56
       Align = alTop
       BevelOuter = bvNone
@@ -714,7 +713,7 @@ object Default: TDefault
       object Panel1: TPanel
         Left = 0
         Top = 55
-        Width = 280
+        Width = 559
         Height = 1
         Align = alBottom
         TabOrder = 0
@@ -723,7 +722,7 @@ object Default: TDefault
     object Panel_Space1: TPanel
       Left = 10
       Top = 66
-      Width = 280
+      Width = 559
       Height = 30
       Align = alTop
       BevelOuter = bvNone
@@ -733,7 +732,7 @@ object Default: TDefault
     object Panel3: TPanel
       Left = 10
       Top = 236
-      Width = 280
+      Width = 559
       Height = 68
       Align = alTop
       BevelOuter = bvNone
