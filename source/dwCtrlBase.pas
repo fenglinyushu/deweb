@@ -73,7 +73,408 @@ function  dwMemoTextToValue(AText:string):string;
 
 procedure showMsg(AMsg:string);
 
+//设置Height
+function  dwSetHeight(AControl:TControl;AHeight:Integer):Integer;
+
+//设置PlaceHolder
+function  dwSetPlaceHodler(AControl:TControl;APH:String):Integer;
+
+//设置LTWH
+function  dwSetCompLTWH(AComponent:TComponent;ALeft,ATop,AWidth,AHeight:Integer):Integer;
+
+//反编码函数
+function  dwDecode(AText:string):string;
+
+const
+     _Head : string =
+          '<!DOCTYPE html>                                                                    '#13
+          +'<html lang="en">                                                                  '#13
+          +'                                                                                  '#13
+          +'<head>                                                                            '#13
+          +'    <meta charset="utf-8">                                                        '#13
+          +'    <meta name="viewport" content="width=device-width, initial-scale=1.0">        '#13
+          +'    <meta http-equiv="X-UA-Compatible" content="ie=edge">                         '#13
+          +'    <title>[!!!]</title>                                                          '#13
+          +'</head>                                                                           '#13;
+
+     _LOADING  : string =
+           '    <style type="text/css">                                             '#13
+          +'         #Loading {                                                     '#13
+          +'              top: 50%;                                                 '#13
+          +'              left: 50%;                                                '#13
+          +'              position: absolute;                                       '#13
+          +'              -webkit-transform: translateY(-50%) translateX(-50%);     '#13
+          +'              transform: translateY(-50%) translateX(-50%);             '#13
+          +'              z-index: 100;                                             '#13
+          +'         }                                                              '#13
+          +'         @-webkit-keyframes ball-beat {                                 '#13
+          +'              50% {                                                     '#13
+          +'                   opacity: 0.2;                                        '#13
+          +'                   -webkit-transform: scale(0.75);                      '#13
+          +'                   transform: scale(0.75);                              '#13
+          +'              }                                                         '#13
+          +'              100% {                                                    '#13
+          +'                   opacity: 1;                                          '#13
+          +'                   -webkit-transform: scale(1);                         '#13
+          +'                   transform: scale(1);                                 '#13
+          +'              }                                                         '#13
+          +'         }                                                              '#13
+          +'         @keyframes ball-beat {                                         '#13
+          +'              50% {                                                     '#13
+          +'                   opacity: 0.2;                                        '#13
+          +'                   -webkit-transform: scale(0.75);                      '#13
+          +'                   transform: scale(0.75);                              '#13
+          +'              }                                                         '#13
+          +'              100% {                                                    '#13
+          +'                   opacity: 1;                                          '#13
+          +'                   -webkit-transform: scale(1);                         '#13
+          +'                   transform: scale(1);                                 '#13
+          +'              }                                                         '#13
+          +'         }                                                              '#13
+          +'         .ball-beat>div {                                               '#13
+          +'              background-color: #279fcf;                                '#13
+          +'              width: 15px;                                              '#13
+          +'              height: 15px;                                             '#13
+          +'              border-radius: 100% !important;                           '#13
+          +'              margin: 2px;                                              '#13
+          +'              -webkit-animation-fill-mode: both;                        '#13
+          +'              animation-fill-mode: both;                                '#13
+          +'              display: inline-block;                                    '#13
+          +'              -webkit-animation: ball-beat 0.7s 0s infinite linear;     '#13
+          +'              animation: ball-beat 0.7s 0s infinite linear;             '#13
+          +'         }                                                              '#13
+          +'         .ball-beat>div:nth-child(2n-1) {                               '#13
+          +'              -webkit-animation-delay: 0.35s !important;                '#13
+          +'              animation-delay: 0.35s !important;                        '#13
+          +'         }                                                              '#13
+          +'         #loader-wrapper {                                              '#13
+          +'              position: fixed;                                          '#13
+          +'              top: 0;                                                   '#13
+          +'              left: 0;                                                  '#13
+          +'              width: 100%;                                              '#13
+          +'              height: 100%;                                             '#13
+          +'              z-index: 999999;                                          '#13
+          +'              background: #fff;                                         '#13
+          +'         }                                                              '#13
+          +'         #loader {                                                      '#13
+          +'              display: block;                                           '#13
+          +'              position: relative;                                       '#13
+          +'              left: 50%;                                                '#13
+          +'              top: 50%;                                                 '#13
+          +'              width: 150px;                                             '#13
+          +'              height: 150px;                                            '#13
+          +'              margin: -75px 0 0 -75px;                                  '#13
+          +'              border-radius: 50%;                                       '#13
+          +'              border: 3px solid transparent;                            '#13
+          +'              /* COLOR 1 */                                             '#13
+          +'              border-top-color: #000;                                   '#13
+          +'              -webkit-animation: spin 2s linear infinite;               '#13
+          +'              /* Chrome, Opera 15+, Safari 5+ */                        '#13
+          +'              -ms-animation: spin 2s linear infinite;                   '#13
+          +'              /* Chrome, Opera 15+, Safari 5+ */                        '#13
+          +'              -moz-animation: spin 2s linear infinite;                  '#13
+          +'              /* Chrome, Opera 15+, Safari 5+ */                        '#13
+          +'              -o-animation: spin 2s linear infinite;                    '#13
+          +'              /* Chrome, Opera 15+, Safari 5+ */                        '#13
+          +'              animation: spin 2s linear infinite;                       '#13
+          +'              /* Chrome, Firefox 16+, IE 10+, Opera */                  '#13
+          +'              z-index: 1001;                                            '#13
+          +'         }                                                              '#13
+          +'         #loader:before {                                               '#13
+          +'              content: "";                                              '#13
+          +'              position: absolute;                                       '#13
+          +'              top: 5px;                                                 '#13
+          +'              left: 5px;                                                '#13
+          +'              right: 5px;                                               '#13
+          +'              bottom: 5px;                                              '#13
+          +'              border-radius: 50%;                                       '#13
+          +'              border: 3px solid transparent;                            '#13
+          +'              /* COLOR 2 */                                             '#13
+          +'              border-top-color: #000;                                   '#13
+          +'              -webkit-animation: spin 3s linear infinite;               '#13
+          +'              /* Chrome, Opera 15+, Safari 5+ */                        '#13
+          +'              -moz-animation: spin 3s linear infinite;                  '#13
+          +'              /* Chrome, Opera 15+, Safari 5+ */                        '#13
+          +'              -o-animation: spin 3s linear infinite;                    '#13
+          +'              /* Chrome, Opera 15+, Safari 5+ */                        '#13
+          +'              -ms-animation: spin 3s linear infinite;                   '#13
+          +'              /* Chrome, Opera 15+, Safari 5+ */                        '#13
+          +'              animation: spin 3s linear infinite;                       '#13
+          +'              /* Chrome, Firefox 16+, IE 10+, Opera */                  '#13
+          +'         }                                                              '#13
+          +'         #loader:after {                                                '#13
+          +'              content: "";                                              '#13
+          +'              position: absolute;                                       '#13
+          +'              top: 15px;                                                '#13
+          +'              left: 15px;                                               '#13
+          +'              right: 15px;                                              '#13
+          +'              bottom: 15px;                                             '#13
+          +'              border-radius: 50%;                                       '#13
+          +'              border: 3px solid transparent;                            '#13
+          +'              border-top-color: #000;                                   '#13
+          +'              /* COLOR 3 */                                             '#13
+          +'              -moz-animation: spin 1.5s linear infinite;                '#13
+          +'              /* Chrome, Opera 15+, Safari 5+ */                        '#13
+          +'              -o-animation: spin 1.5s linear infinite;                  '#13
+          +'              /* Chrome, Opera 15+, Safari 5+ */                        '#13
+          +'              -ms-animation: spin 1.5s linear infinite;                 '#13
+          +'              /* Chrome, Opera 15+, Safari 5+ */                        '#13
+          +'              -webkit-animation: spin 1.5s linear infinite;             '#13
+          +'              /* Chrome, Opera 15+, Safari 5+ */                        '#13
+          +'              animation: spin 1.5s linear infinite;                     '#13
+          +'              /* Chrome, Firefox 16+, IE 10+, Opera */                  '#13
+          +'         }                                                              '#13
+          +'         @-webkit-keyframes spin {                                      '#13
+          +'              0% {                                                      '#13
+          +'                   -webkit-transform: rotate(0deg);                     '#13
+          +'                   /* Chrome, Opera 15+, Safari 3.1+ */                 '#13
+          +'                   -ms-transform: rotate(0deg);                         '#13
+          +'                   /* IE 9 */                                           '#13
+          +'                   transform: rotate(0deg);                             '#13
+          +'                   /* Firefox 16+, IE 10+, Opera */                     '#13
+          +'              }                                                         '#13
+          +'                                                                        '#13
+          +'              100% {                                                    '#13
+          +'                   -webkit-transform: rotate(360deg);                   '#13
+          +'                   /* Chrome, Opera 15+, Safari 3.1+ */                 '#13
+          +'                   -ms-transform: rotate(360deg);                       '#13
+          +'                   /* IE 9 */                                           '#13
+          +'                   transform: rotate(360deg);                           '#13
+          +'                   /* Firefox 16+, IE 10+, Opera */                     '#13
+          +'              }                                                         '#13
+          +'         }                                                              '#13
+          +'         @keyframes spin {                                              '#13
+          +'              0% {                                                      '#13
+          +'                   -webkit-transform: rotate(0deg);                     '#13
+          +'                   /* Chrome, Opera 15+, Safari 3.1+ */                 '#13
+          +'                   -ms-transform: rotate(0deg);                         '#13
+          +'                   /* IE 9 */                                           '#13
+          +'                   transform: rotate(0deg);                             '#13
+          +'                   /* Firefox 16+, IE 10+, Opera */                     '#13
+          +'              }                                                         '#13
+          +'              100% {                                                    '#13
+          +'                   -webkit-transform: rotate(360deg);                   '#13
+          +'                   /* Chrome, Opera 15+, Safari 3.1+ */                 '#13
+          +'                   -ms-transform: rotate(360deg);                       '#13
+          +'                   /* IE 9 */                                           '#13
+          +'                   transform: rotate(360deg);                           '#13
+          +'                   /* Firefox 16+, IE 10+, Opera */                     '#13
+          +'              }                                                         '#13
+          +'         }                                                              '#13
+          +'         #loader-wrapper .loader-section {                              '#13
+          +'              position: fixed;                                          '#13
+          +'              top: 0;                                                   '#13
+          +'              width: 51%;                                               '#13
+          +'              height: 100%;                                             '#13
+          +'              background: #fff;                                         '#13
+          +'              /* opacity: 0.7; */                                       '#13
+          +'              /* Old browsers */                                        '#13
+          +'              z-index: 1000;                                            '#13
+          +'              -webkit-transform: translateX(0);                         '#13
+          +'              /* Chrome, Opera 15+, Safari 3.1+ */                      '#13
+          +'              -ms-transform: translateX(0);                             '#13
+          +'              /* IE 9 */                                                '#13
+          +'              transform: translateX(0);                                 '#13
+          +'              /* Firefox 16+, IE 10+, Opera */                          '#13
+          +'         }                                                              '#13
+          +'         #loader-wrapper .loader-section.section-left {                 '#13
+          +'              left: 0;                                                  '#13
+          +'         }                                                              '#13
+          +'         #loader-wrapper .loader-section.section-right {                '#13
+          +'              right: 0;                                                 '#13
+          +'         }                                                              '#13
+          +'         /* Loaded */                                                   '#13
+          +'         .loaded #loader-wrapper .loader-section.section-left {         '#13
+          +'              -webkit-transform: translateX(-100%);                     '#13
+          +'              /* Chrome, Opera 15+, Safari 3.1+ */                      '#13
+          +'              -ms-transform: translateX(-100%);                         '#13
+          +'              /* IE 9 */                                                '#13
+          +'              transform: translateX(-100%);                             '#13
+          +'              /* Firefox 16+, IE 10+, Opera */                          '#13
+          +'              -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000); '#13
+          +'              transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);         '#13
+          +'         }                                                              '#13
+          +'         .loaded #loader-wrapper .loader-section.section-right {        '#13
+          +'              -webkit-transform: translateX(100%);                      '#13
+          +'              /* Chrome, Opera 15+, Safari 3.1+ */                      '#13
+          +'              -ms-transform: translateX(100%);                          '#13
+          +'              /* IE 9 */                                                '#13
+          +'              transform: translateX(100%);                              '#13
+          +'              /* Firefox 16+, IE 10+, Opera */                          '#13
+          +'              -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000); '#13
+          +'              transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);         '#13
+          +'         }                                                              '#13
+          +'         .loaded #loader {                                              '#13
+          +'              opacity: 0;                                               '#13
+          +'              -webkit-transition: all 0.3s ease-out;                    '#13
+          +'              transition: all 0.3s ease-out;                            '#13
+          +'         }                                                              '#13
+          +'         .loaded #loader-wrapper {                                      '#13
+          +'              visibility: hidden;                                       '#13
+          +'              -webkit-transform: translateY(-100%);                     '#13
+          +'              /* Chrome, Opera 15+, Safari 3.1+ */                      '#13
+          +'              -ms-transform: translateY(-100%);                         '#13
+          +'              /* IE 9 */                                                '#13
+          +'              transform: translateY(-100%);                             '#13
+          +'              /* Firefox 16+, IE 10+, Opera */                          '#13
+          +'              -webkit-transition: all 0.3s 1s ease-out;                 '#13
+          +'              transition: all 0.3s 1s ease-out;                         '#13
+          +'         }                                                              '#13
+          +'         /* JavaScript Turned Off */                                    '#13
+          +'                                                                        '#13
+          +'         .no-js #loader-wrapper {                                       '#13
+          +'              display: none;                                            '#13
+          +'         }                                                              '#13
+          +'                                                                        '#13
+          +'         .no-js h1 {                                                    '#13
+          +'              color: #222222;                                           '#13
+          +'         }                                                              '#13
+          +'         #loader-wrapper .load_title {                                  '#13
+          +'              font-family: ''Open Sans'';                               '#13
+          +'              color: rgb(245, 245, 245);                                '#13
+          +'              font-size: 19px;                                          '#13
+          +'              width: 100%;                                              '#13
+          +'              text-align: center;                                       '#13
+          +'              z-index: 9999999999999;                                   '#13
+          +'              position: absolute;                                       '#13
+          +'              top: 36px;                                                '#13
+          +'              opacity: 1;                                               '#13
+          +'              line-height: 30px;                                        '#13
+          +'         }                                                              '#13
+          +'         #loader-wrapper .load_title span {                             '#13
+          +'              font-weight: normal;                                      '#13
+          +'              font-style: italic;                                       '#13
+          +'              font-size: 13px;                                          '#13
+          +'              color: rgb(220, 220, 220);                                '#13
+          +'              opacity: 0.5;                                             '#13
+          +'         }                                                              '#13
+          +'         @keyframes moveover {                                          '#13
+          +'              0% {                                                      '#13
+          +'                   transform: rotate(0deg);                             '#13
+          +'              }                                                         '#13
+          +'                                                                        '#13
+          +'              100% {                                                    '#13
+          +'                   transform: rotate(360deg);                           '#13
+          +'              }                                                         '#13
+          +'         }                                                              '#13
+          +'         .box {                                                         '#13
+          +'              position: relative;                                       '#13
+          +'              width: 100px;                                             '#13
+          +'              height: 100px;                                            '#13
+          +'              margin: 18% auto;                                         '#13
+          +'              /*整体旋转*/                                              '#13
+          +'              animation: moveover 3s linear infinite;                   '#13
+          +'         }                                                              '#13
+          +'         .box_text {                                                    '#13
+          +'              position: absolute;                                       '#13
+          +'              top: 0;                                                   '#13
+          +'              left: 0;                                                  '#13
+          +'         }                                                              '#13
+          +'         .box::before {                                                 '#13
+          +'              content: "";                                              '#13
+          +'              position: absolute;                                       '#13
+          +'              width: 50px;                                              '#13
+          +'              height: 100px;                                            '#13
+          +'              border-radius: 50px 0 0 50px;                             '#13
+          +'              background: linear-gradient(#999, rgb(220, 220, 220));    '#13
+          +'              background-color: #999;                                   '#13
+          +'              z-index: 2;                                               '#13
+          +'         }                                                              '#13
+          +'         .box2 {                                                        '#13
+          +'              position: absolute;                                       '#13
+          +'              width: 50px;                                              '#13
+          +'              height: 100px;                                            '#13
+          +'              border-radius: 0 50px 50px 0;                             '#13
+          +'              left: 50%;                                                '#13
+          +'              background: linear-gradient(rgb(255,255,255),rgb(220,220, 220));      '#13
+          +'              z-index: 1;                                               '#13
+          +'         }                                                              '#13
+          +'         .box::after {                                                  '#13
+          +'              content: "";                                              '#13
+          +'              position: absolute;                                       '#13
+          +'              width: 92px;                                              '#13
+          +'              height: 92px;                                             '#13
+          +'              top: 4px;                                                 '#13
+          +'              left: 4px;                                                '#13
+          +'              border-radius: 50%;                                       '#13
+          +'              background-color: #fff;                                   '#13
+          +'              z-index: 2;                                               '#13
+          +'         }                                                              '#13
+          +'         .wrapper {                                                     '#13
+          +'              position: relative;                                       '#13
+          +'         }                                                              '#13
+          +'    </style>                                                            '#13
+          +'    <div id="loader-wrapper">                                           '#13
+          +'         <div class="wrapper">                                          '#13
+          +'              <div class=''box''>                                       '#13
+          +'                   <div class="box2"></div>                             '#13
+          +'              </div>                                                    '#13
+          +'              <div class="load_title">DeWeb                             '#13
+          +'              </div>                                                    '#13
+          +'                                                                        '#13
+          +'         </div>                                                         '#13
+          +'    </div>                                                              '#13
+          +'    <script src="dist/vue.js" type="text/javascript"></script>          '#13
+          +'    <script src="dist/index.js" type="text/javascript"></script>        '#13
+          +'    <script src="dist/axios.min.js" type="text/javascript"></script>    '#13
+          +'    <link rel="icon" href="dist/webimages/[###].ico" type="image/x-icon">       '#13
+          +'    <link rel="stylesheet" type="text/css" href="dist/theme-chalk/index.css" /> '#13;
+
+
 implementation
+
+//反编码函数
+function dwDecode(AText:string):string;
+begin
+     Result    := StringReplace(AText,'%7B','{',[rfReplaceAll]);
+     Result    := StringReplace(Result,'%7D','}',[rfReplaceAll]);
+     Result    := StringReplace(Result,'%22','"',[rfReplaceAll]);
+end;
+
+
+//设置LTWH
+function dwSetCompLTWH(AComponent:TComponent;ALeft,ATop,AWidth,AHeight:Integer):Integer;
+begin
+     AComponent.DesignInfo    := ALeft  * 10000 + ATop;
+     AComponent.Tag           := AWidth * 10000 + AHeight;
+end;
+
+//设置PlaceHolder
+function dwSetPlaceHodler(AControl:TControl;APH:String):Integer;
+var
+     sHint     : String;
+     joHint    : Variant;
+begin
+     sHint     := AControl.Hint;
+     //joHint    := Variant.Create;
+     TDocVariant.New(joHint);
+     if (sHint<>'') then begin
+          if (Copy(sHint,1,1) = '{') and (Copy(sHint,Length(sHint),1) = '}') then begin
+               joHint    := _json(sHint);
+          end;
+     end;
+     joHint.planeholder  := APH;
+     AControl.Hint  := VariantSaveJSON(joHint);
+end;
+
+//设置Height
+function dwSetHeight(AControl:TControl;AHeight:Integer):Integer;
+var
+     sHint     : String;
+     joHint    : Variant;
+begin
+     sHint     := AControl.Hint;
+     TDocVariant.New(joHint);
+     if (sHint<>'') then begin
+          if (Copy(sHint,1,1) = '{') and (Copy(sHint,Length(sHint),1) = '}') then begin
+               joHint    := _json(sHint);
+          end;
+     end;
+     joHint.height  := AHeight;
+     AControl.Hint  := VariantSaveJSON(joHint);
+end;
+
+
 
 
 function dwMemoValueToText(AText:string):string;

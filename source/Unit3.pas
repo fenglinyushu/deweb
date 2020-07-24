@@ -4,6 +4,7 @@ interface
 
 uses
      dwCore,
+     dwCtrlBase,
      Forms,SysUtils,
      Math, StdCtrls, Graphics, Controls, ExtCtrls, Classes;
 

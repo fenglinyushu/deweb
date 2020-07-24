@@ -19,8 +19,10 @@ type
     Panel1: TPanel;
     Label2: TLabel;
     CheckBox1: TCheckBox;
+    RadioButton1: TRadioButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -42,6 +44,11 @@ end;
 procedure TTest.Button2Click(Sender: TObject);
 begin
      dwNavigate('http://127.0.0.1/test.dw?dewebÖÐÎÄweb123',True,Self);
+end;
+
+procedure TTest.Button3Click(Sender: TObject);
+begin
+     RadioButton1.Checked     := not RadioButton1.Checked;
 end;
 
 end.

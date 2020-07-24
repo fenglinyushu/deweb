@@ -19,11 +19,12 @@ uses
   dwDatas in 'dwDatas.pas' {DM: TDataModule},
   dwCtrlBase in 'dwCtrlBase.pas',
   dwButtons in 'dwVcls\dwButtons.pas',
-  dwCheckBoxs in 'dwVcls\dwCheckBoxs.pas',
+  dwRadioButtons in 'dwVcls\dwRadioButtons.pas',
   dwEdits in 'dwVcls\dwEdits.pas',
   dwLabels in 'dwVcls\dwLabels.pas',
   dwPageControls in 'dwVcls\dwPageControls.pas',
-  dwPanels in 'dwVcls\dwPanels.pas';
+  dwPanels in 'dwVcls\dwPanels.pas',
+  dwCheckBoxs in 'dwVcls\dwCheckBoxs.pas';
 
 {$R *.RES}
 

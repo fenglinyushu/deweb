@@ -8873,7 +8873,7 @@ object Demos: TDemos
         Top = 18
         Width = 409
         Height = 263
-        Date = 43975.357732650460000000
+        Date = 43975.957901689810000000
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         TabOrder = 0
         OnClick = MonthCalendar1Click

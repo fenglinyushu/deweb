@@ -58,13 +58,13 @@ object Test: TTest
     Hint = '{"type":"danger","icon":"el-icon-help"}'
     Caption = 'Button3'
     TabOrder = 3
+    OnClick = Button3Click
   end
   object Panel1: TPanel
     Left = 40
     Top = 328
     Width = 289
     Height = 129
-    Caption = 'Panel1'
     Color = clInfoBk
     TabOrder = 4
     object Label2: TLabel
@@ -80,7 +80,19 @@ object Test: TTest
       Width = 97
       Height = 17
       Caption = 'CheckBox1'
+      Checked = True
+      State = cbChecked
       TabOrder = 0
+    end
+    object RadioButton1: TRadioButton
+      Left = 120
+      Top = 24
+      Width = 113
+      Height = 17
+      Caption = 'RadioButton1'
+      Checked = True
+      TabOrder = 1
+      TabStop = True
     end
   end
 end

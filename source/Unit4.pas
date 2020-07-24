@@ -6,6 +6,8 @@ uses
      //
      dwVars,
      dwCore,
+     dwCtrlBase,
+     
      dwDatas,
 
      //
