@@ -14,11 +14,11 @@
         		<el-button type="primary" @click="processinputquery">{{input_query_okcaption}}</el-button>
         	</div>
         </el-dialog>
-<el-button v-if="Button1__vis" :disabled="Button1__dis" type="default" :style="{left:Button1__lef,top:Button1__top,width:Button1__wid,height:Button1__hei}" style="position:absolute;" @click="dwevent('{&quot;mode&quot;:&quot;event&quot;,&quot;cid&quot;:[!clientid!],&quot;component&quot;:&quot;Button1&quot;,&quot;value&quot;:0,&quot;event&quot;:&quot;onclick&quot;}')">{{Button1__cap}}
+<el-button v-if="Button1__vis" :disabled="Button1__dis" type="default" :style="{left:Button1__lef,top:Button1__top,width:Button1__wid,height:Button1__hei}" style="position:absolute;">{{Button1__cap}}
 </el-button>
-<el-input v-if="Edit1__vis" :disabled="Edit1__dis" placeholder="用户名" prefix-icon="el-icon-search" :style="{left:Edit1__lef,top:Edit1__top,width:Edit1__wid,height:Edit1__hei}" style="position:absolute;" @input="dwevent('{&quot;mode&quot;:&quot;event&quot;,&quot;cid&quot;:[!clientid!],&quot;component&quot;:&quot;Edit1&quot;,&quot;value&quot;:{{this.Edit1__tex}},&quot;event&quot;:&quot;onchange&quot;}')">
+<el-input v-if="Edit1__vis" :disabled="Edit1__dis" v-model="Edit1__tex" placeholder="用户名" prefix-icon="el-icon-search" :style="{left:Edit1__lef,top:Edit1__top,width:Edit1__wid,height:Edit1__hei}" style="position:absolute;" @input="dwevent('Edit1','this.Edit1__tex','onchange','')">
 </el-input>
-<el-button v-if="Button2__vis" :disabled="Button2__dis" type="default" :style="{left:Button2__lef,top:Button2__top,width:Button2__wid,height:Button2__hei}" style="position:absolute;" @click="dwevent('{&quot;mode&quot;:&quot;event&quot;,&quot;cid&quot;:[!clientid!],&quot;component&quot;:&quot;Button2&quot;,&quot;value&quot;:0,&quot;event&quot;:&quot;onclick&quot;}')">{{Button2__cap}}
+<el-button v-if="Button2__vis" :disabled="Button2__dis" type="default" :style="{left:Button2__lef,top:Button2__top,width:Button2__wid,height:Button2__hei}" style="position:absolute;">{{Button2__cap}}
 </el-button>
 <el-button v-if="Button3__vis" :disabled="Button3__dis" type="default" :style="{left:Button3__lef,top:Button3__top,width:Button3__wid,height:Button3__hei}" style="position:absolute;">{{Button3__cap}}
 </el-button>
@@ -103,8 +103,14 @@ Button3__cap:"Button3",
                 },
 				methods: {
                     dwnotify(caption,text) {this.$notify.error({ title: caption, message: text, duration: 0,showClose: false });},
-                    dwevent(val) {
-                        axios.get(val)
+                    dwevent(compname,compvalue,compevent,reserved) {
+                        var val={};
+                        val.mode="event";
+                        val.cid=this.clientid;
+                        val.component=compname;
+                        val.value=escape(eval(compvalue))
+                        val.event=compevent;
+                        axios.get(JSON.stringify(val))
                         .then(resp =>{this.procResp(resp.data)});
                     },
                     processinputquery(val) {

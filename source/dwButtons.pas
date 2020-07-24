@@ -57,7 +57,7 @@ begin
                     +dwGetHintValue(joHint,'icon','icon','')         //ButtonIcon
                     +dwLTWH(ACtrl)
                     +'"' //style 封闭
-                    +dwIIF(Assigned(OnClick),Format(_DWEVENT,['click',Name,'0','onclick','']),'')
+                    //+dwIIF(Assigned(OnClick),Format(_DWEVENT,['click',Name,'0','onclick','']),'')
                     +'>{{'+Name+'__cap}}';
           //添加到返回值数据
           Result.Add(sCode);

@@ -33,6 +33,7 @@ function dwGetHintValue(AHint:Variant;AJsonName,AHtmlName,ADefault:String):Strin
 function dwIIF(ABool:Boolean;AYes,ANo:string):string;
 
 const
+(*
      _DWEVENT = ' @%s="dwevent(''{'                         //%s = onclick / onchange
                +'&quot;mode&quot;:&quot;event&quot;'        //"mode" : event
                +',&quot;cid&quot;:[!clientid!]'             //"cid" : 234203
@@ -41,6 +42,8 @@ const
                +',&quot;event&quot;:&quot;%s&quot;'         //%s = "event" : "onclick"
                +'%s'                                        //%s = 备用, 一般为空
                +'}'')"';
+*)
+     _DWEVENT = ' @%s="dwevent(''%s'',''%s'',''%s'',''%s'')"';            //参数依次为:JS事件名称 ---  控件名称,控件值,D事件名称,备用
 
 implementation
 
