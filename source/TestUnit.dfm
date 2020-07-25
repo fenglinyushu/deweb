@@ -40,33 +40,13 @@ object Test: TTest
     TabOrder = 1
     Text = 'Edit1'
   end
-  object Button2: TButton
-    Left = 32
-    Top = 160
-    Width = 297
-    Height = 41
-    Hint = '{"type":"primary","icon":"el-icon-upload"}'
-    Caption = 'New URL'
-    TabOrder = 2
-    OnClick = Button2Click
-  end
-  object Button3: TButton
-    Left = 32
-    Top = 232
-    Width = 297
-    Height = 49
-    Hint = '{"type":"danger","icon":"el-icon-help"}'
-    Caption = 'Button3'
-    TabOrder = 3
-    OnClick = Button3Click
-  end
   object Panel1: TPanel
-    Left = 40
-    Top = 328
+    Left = 32
+    Top = 408
     Width = 289
     Height = 129
     Color = clInfoBk
-    TabOrder = 4
+    TabOrder = 2
     object Label2: TLabel
       Left = 32
       Top = 16
@@ -83,6 +63,7 @@ object Test: TTest
       Checked = True
       State = cbChecked
       TabOrder = 0
+      OnClick = CheckBox1Click
     end
     object RadioButton1: TRadioButton
       Left = 120
@@ -90,9 +71,54 @@ object Test: TTest
       Width = 113
       Height = 17
       Caption = 'RadioButton1'
-      Checked = True
       TabOrder = 1
+      OnClick = RadioButton1Click
+    end
+    object RadioButton2: TRadioButton
+      Left = 120
+      Top = 56
+      Width = 113
+      Height = 17
+      Caption = 'RadioButton1'
+      Checked = True
+      TabOrder = 2
       TabStop = True
+      OnClick = RadioButton1Click
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 32
+    Top = 176
+    Width = 289
+    Height = 193
+    ActivePage = TabSheet1
+    TabOrder = 3
+    object TabSheet1: TTabSheet
+      Caption = 'TabSheet1'
+      object Button2: TButton
+        Left = 16
+        Top = 28
+        Width = 169
+        Height = 41
+        Hint = '{"type":"primary","icon":"el-icon-upload"}'
+        Caption = 'New URL'
+        TabOrder = 0
+        OnClick = Button2Click
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'TabSheet2'
+      ImageIndex = 1
+      object Button3: TButton
+        Left = 24
+        Top = 20
+        Width = 105
+        Height = 49
+        Hint = '{"type":"danger","icon":"el-icon-help"}'
+        Caption = 'Button3'
+        TabOrder = 0
+        OnClick = Button3Click
+      end
     end
   end
 end

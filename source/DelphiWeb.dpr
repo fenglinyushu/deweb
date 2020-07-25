@@ -23,8 +23,9 @@ uses
   dwEdits in 'dwVcls\dwEdits.pas',
   dwLabels in 'dwVcls\dwLabels.pas',
   dwPageControls in 'dwVcls\dwPageControls.pas',
-  dwPanels in 'dwVcls\dwPanels.pas',
-  dwCheckBoxs in 'dwVcls\dwCheckBoxs.pas';
+  dwTabSheets in 'dwVcls\dwTabSheets.pas',
+  dwCheckBoxs in 'dwVcls\dwCheckBoxs.pas',
+  dwPanels in 'dwVcls\dwPanels.pas';
 
 {$R *.RES}
 

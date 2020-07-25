@@ -7,22 +7,28 @@ uses
      SynCommons,
      httpApp,
   Windows, Messages, SysUtils, Variants, Classes, Graphics,
-  Controls, Forms, Dialogs, StdCtrls, ExtCtrls,Jpeg, DB, ADODB;
+  Controls, Forms, Dialogs, StdCtrls, ExtCtrls,Jpeg, DB, ADODB, ComCtrls;
 
 type
   TTest = class(TForm)
     Button1: TButton;
     Edit1: TEdit;
-    Button2: TButton;
-    Button3: TButton;
     Label1: TLabel;
     Panel1: TPanel;
     Label2: TLabel;
     CheckBox1: TCheckBox;
     RadioButton1: TRadioButton;
+    RadioButton2: TRadioButton;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    Button2: TButton;
+    Button3: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure RadioButton1Click(Sender: TObject);
+    procedure CheckBox1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -49,6 +55,21 @@ end;
 procedure TTest.Button3Click(Sender: TObject);
 begin
      RadioButton1.Checked     := not RadioButton1.Checked;
+end;
+
+procedure TTest.RadioButton1Click(Sender: TObject);
+begin
+     //
+end;
+
+procedure TTest.CheckBox1Click(Sender: TObject);
+begin
+     if CheckBox1.Checked then begin
+          dwShowMessage('Checked!','DeWeb','OK',Self);
+     end else begin
+          dwShowMessage('unChecked!','DeWeb','OK',Self);
+     end;
+
 end;
 
 end.
