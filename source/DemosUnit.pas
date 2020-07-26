@@ -346,6 +346,8 @@ type
     procedure Button85Click(Sender: TObject);
     procedure Button84Click(Sender: TObject);
     procedure TreeView1Click(Sender: TObject);
+    procedure PageControlChange(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -889,7 +891,7 @@ end;
 
 procedure TDemos.ComboBox6Change(Sender: TObject);
 begin
-     dwShowMessage('ComboBox Change','DeWeb','OK',Self);
+     dwShowMessage('ComboBox Change:'+TComboBox(Sender).Text,'DeWeb','OK',Self);
 
 end;
 
@@ -901,7 +903,7 @@ end;
 
 procedure TDemos.Edit8Change(Sender: TObject);
 begin
-     dwShowMessage('Edit OnChange','DeWeb','OK',Self);
+     dwShowMessage('Edit OnChange:'+TEdit(Sender).Text,'DeWeb','OK',Self);
 
 end;
 
@@ -909,6 +911,7 @@ procedure TDemos.FormCreate(Sender: TObject);
 var
      iC,iR     : Integer;
 begin
+     Top  := 20;
      PageControl.ActivePageIndex   := 0;
      //
      dwSetHeight(self,4000);
@@ -989,6 +992,28 @@ procedure TDemos.TreeView1Click(Sender: TObject);
 begin
      if CheckBox13.Checked then begin
           dwShowMessage('TreeVIew OnClick','DeWeb','OK',Self);
+     end;
+
+end;
+
+procedure TDemos.PageControlChange(Sender: TObject);
+begin
+     Label_Title.Caption := 'DeWeb : Delphi-Web --- '+PageControl.ActivePage.Caption;
+end;
+
+procedure TDemos.FormShow(Sender: TObject);
+var
+     sParams   : string;
+     iTab      : Integer;
+begin
+     sParams   := LowerCase(trim(dwGetProp(Self,'params')));
+     if sParams <> '' then begin
+          for iTab := 0 to PageControl.PageCount-1 do begin
+               if LowerCase(PageControl.Pages[iTab].Caption) = sParams then begin
+                    PageControl.ActivePageIndex   := iTab;
+                    break;
+               end;
+          end;
      end;
 
 end;

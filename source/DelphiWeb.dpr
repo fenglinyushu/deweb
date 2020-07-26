@@ -18,14 +18,15 @@ uses
   DriverUnit in 'DriverUnit.pas' {Driver},
   dwDatas in 'dwDatas.pas' {DM: TDataModule},
   dwCtrlBase in 'dwCtrlBase.pas',
-  dwButtons in 'dwVcls\dwButtons.pas',
+  dwComboBoxs in 'dwVcls\dwComboBoxs.pas',
   dwRadioButtons in 'dwVcls\dwRadioButtons.pas',
   dwEdits in 'dwVcls\dwEdits.pas',
   dwLabels in 'dwVcls\dwLabels.pas',
   dwPageControls in 'dwVcls\dwPageControls.pas',
   dwTabSheets in 'dwVcls\dwTabSheets.pas',
   dwCheckBoxs in 'dwVcls\dwCheckBoxs.pas',
-  dwPanels in 'dwVcls\dwPanels.pas';
+  dwPanels in 'dwVcls\dwPanels.pas',
+  dwButtons in 'dwVcls\dwButtons.pas';
 
 {$R *.RES}
 

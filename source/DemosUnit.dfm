@@ -1,6 +1,6 @@
 object Demos: TDemos
-  Left = 339
-  Top = 21
+  Left = 354
+  Top = 20
   BorderStyle = bsNone
   Caption = 'DeWeb : Delphi-Web  development platform'
   ClientHeight = 794
@@ -16,6 +16,7 @@ object Demos: TDemos
   OldCreateOrder = False
   OnCreate = FormCreate
   OnMouseUp = FormMouseUp
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 20
   object Label_Title: TLabel
@@ -356,12 +357,13 @@ object Demos: TDemos
     Top = 100
     Width = 1100
     Height = 1025
-    ActivePage = TabSheet4
+    ActivePage = TabSheet8
     BiDiMode = bdLeftToRight
     MultiLine = True
     ParentBiDiMode = False
     TabOrder = 1
     TabPosition = tpLeft
+    OnChange = PageControlChange
     object TabSheet1: TTabSheet
       Caption = 'Button'
       object Label1: TLabel
@@ -1147,7 +1149,7 @@ object Demos: TDemos
         Width = 134
         Height = 24
         AutoSize = False
-        Caption = 'Placeholder'
+        Caption = 'Placeholder/icon'
       end
       object Label49: TLabel
         Left = 39
@@ -1166,7 +1168,7 @@ object Demos: TDemos
       object Edit1: TEdit
         Left = 179
         Top = 30
-        Width = 121
+        Width = 160
         Height = 28
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         TabOrder = 0
@@ -1175,7 +1177,7 @@ object Demos: TDemos
       object Edit2: TEdit
         Left = 179
         Top = 99
-        Width = 121
+        Width = 160
         Height = 28
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         PasswordChar = '*'
@@ -1185,7 +1187,7 @@ object Demos: TDemos
       object Edit3: TEdit
         Left = 179
         Top = 172
-        Width = 121
+        Width = 160
         Height = 28
         Enabled = False
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
@@ -1195,7 +1197,7 @@ object Demos: TDemos
       object Edit4: TEdit
         Left = 179
         Top = 248
-        Width = 121
+        Width = 160
         Height = 28
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         TabOrder = 3
@@ -1204,7 +1206,7 @@ object Demos: TDemos
       object Edit5: TEdit
         Left = 179
         Top = 328
-        Width = 121
+        Width = 160
         Height = 28
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         TabOrder = 4
@@ -1213,7 +1215,7 @@ object Demos: TDemos
       object Edit6: TEdit
         Left = 179
         Top = 406
-        Width = 121
+        Width = 160
         Height = 28
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         TabOrder = 5
@@ -1222,9 +1224,11 @@ object Demos: TDemos
       object Edit7: TEdit
         Left = 179
         Top = 479
-        Width = 121
+        Width = 160
         Height = 28
-        Hint = '{"placeholder":"please input"}'
+        Hint = 
+          '{"placeholder":"'#29992#25143#21517'","prefix-icon":"el-icon-refresh","suffix-ico' +
+          'n":"el-icon-search"}'
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         TabOrder = 6
       end
@@ -1267,7 +1271,7 @@ object Demos: TDemos
       object Edit8: TEdit
         Left = 179
         Top = 550
-        Width = 121
+        Width = 160
         Height = 28
         Hint = '{"placeholder":"OnChange"}'
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
@@ -8873,7 +8877,7 @@ object Demos: TDemos
         Top = 18
         Width = 409
         Height = 263
-        Date = 43975.925984212960000000
+        Date = 43975.393749930550000000
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         TabOrder = 0
         OnClick = MonthCalendar1Click

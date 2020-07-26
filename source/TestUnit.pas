@@ -11,24 +11,7 @@ uses
 
 type
   TTest = class(TForm)
-    Button1: TButton;
-    Edit1: TEdit;
-    Label1: TLabel;
-    Panel1: TPanel;
-    Label2: TLabel;
-    CheckBox1: TCheckBox;
-    RadioButton1: TRadioButton;
-    RadioButton2: TRadioButton;
-    PageControl1: TPageControl;
-    TabSheet1: TTabSheet;
-    TabSheet2: TTabSheet;
-    Button2: TButton;
-    Button3: TButton;
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
-    procedure Button3Click(Sender: TObject);
-    procedure RadioButton1Click(Sender: TObject);
-    procedure CheckBox1Click(Sender: TObject);
+    E1: TEdit;
   private
     { Private declarations }
   public
@@ -41,35 +24,5 @@ var
 implementation
 
 {$R *.dfm}
-
-procedure TTest.Button1Click(Sender: TObject);
-begin
-     Edit1.Text     := Edit1.Text+'1';//dwGetProp(Self,'params');
-end;
-
-procedure TTest.Button2Click(Sender: TObject);
-begin
-     dwNavigate('http://127.0.0.1/test.dw?dewebÖÐÎÄweb123',True,Self);
-end;
-
-procedure TTest.Button3Click(Sender: TObject);
-begin
-     RadioButton1.Checked     := not RadioButton1.Checked;
-end;
-
-procedure TTest.RadioButton1Click(Sender: TObject);
-begin
-     //
-end;
-
-procedure TTest.CheckBox1Click(Sender: TObject);
-begin
-     if CheckBox1.Checked then begin
-          dwShowMessage('Checked!','DeWeb','OK',Self);
-     end else begin
-          dwShowMessage('unChecked!','DeWeb','OK',Self);
-     end;
-
-end;
 
 end.
