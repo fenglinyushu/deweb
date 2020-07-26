@@ -11,7 +11,11 @@ uses
 
 type
   TTest = class(TForm)
-    E1: TEdit;
+    Image1: TImage;
+    Image2: TImage;
+    Image4: TImage;
+    Image3: TImage;
+    procedure Image1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -24,5 +28,11 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TTest.Image1Click(Sender: TObject);
+begin
+     dwShowMessage(TImage(Sender).Name,'DeWeb','OK',Self);
+
+end;
 
 end.

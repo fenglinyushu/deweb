@@ -99,7 +99,6 @@ begin
 
           //×Ô¶¯Æô¶¯
           Button_Start.OnClick(Self);
-
      end;
 end;
 

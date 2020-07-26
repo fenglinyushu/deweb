@@ -1,7 +1,7 @@
-<!DOCTYPE html>                                                                    <html lang="en">                                                                                                                                                    <head>                                                                                <meta charset="utf-8">                                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">            <meta http-equiv="X-UA-Compatible" content="ie=edge">                             <title>DeWeb : Delphi-Web  development platform</title>                                                          </head>                                                                           
+<!DOCTYPE html>                                                                    <html lang="en">                                                                                                                                                    <head>                                                                                <meta charset="utf-8">                                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">            <meta http-equiv="X-UA-Compatible" content="ie=edge">                             <title>Test</title>                                                          </head>                                                                           
 <body style="background-color:#F0F0F0">
     <style type="text/css">                                                      #Loading {                                                                   top: 50%;                                                               left: 50%;                                                              position: absolute;                                                     -webkit-transform: translateY(-50%) translateX(-50%);                   transform: translateY(-50%) translateX(-50%);                           z-index: 100;                                                      }                                                                       @-webkit-keyframes ball-beat {                                               50% {                                                                        opacity: 0.2;                                                           -webkit-transform: scale(0.75);                                         transform: scale(0.75);                                            }                                                                       100% {                                                                       opacity: 1;                                                             -webkit-transform: scale(1);                                            transform: scale(1);                                               }                                                                  }                                                                       @keyframes ball-beat {                                                       50% {                                                                        opacity: 0.2;                                                           -webkit-transform: scale(0.75);                                         transform: scale(0.75);                                            }                                                                       100% {                                                                       opacity: 1;                                                             -webkit-transform: scale(1);                                            transform: scale(1);                                               }                                                                  }                                                                       .ball-beat>div {                                                             background-color: #279fcf;                                              width: 15px;                                                            height: 15px;                                                           border-radius: 100% !important;                                         margin: 2px;                                                            -webkit-animation-fill-mode: both;                                      animation-fill-mode: both;                                              display: inline-block;                                                  -webkit-animation: ball-beat 0.7s 0s infinite linear;                   animation: ball-beat 0.7s 0s infinite linear;                      }                                                                       .ball-beat>div:nth-child(2n-1) {                                             -webkit-animation-delay: 0.35s !important;                              animation-delay: 0.35s !important;                                 }                                                                       #loader-wrapper {                                                            position: fixed;                                                        top: 0;                                                                 left: 0;                                                                width: 100%;                                                            height: 100%;                                                           z-index: 999999;                                                        background: #fff;                                                  }                                                                       #loader {                                                                    display: block;                                                         position: relative;                                                     left: 50%;                                                              top: 50%;                                                               width: 150px;                                                           height: 150px;                                                          margin: -75px 0 0 -75px;                                                border-radius: 50%;                                                     border: 3px solid transparent;                                          /* COLOR 1 */                                                           border-top-color: #000;                                                 -webkit-animation: spin 2s linear infinite;                             /* Chrome, Opera 15+, Safari 5+ */                                      -ms-animation: spin 2s linear infinite;                                 /* Chrome, Opera 15+, Safari 5+ */                                      -moz-animation: spin 2s linear infinite;                                /* Chrome, Opera 15+, Safari 5+ */                                      -o-animation: spin 2s linear infinite;                                  /* Chrome, Opera 15+, Safari 5+ */                                      animation: spin 2s linear infinite;                                     /* Chrome, Firefox 16+, IE 10+, Opera */                                z-index: 1001;                                                     }                                                                       #loader:before {                                                             content: "";                                                            position: absolute;                                                     top: 5px;                                                               left: 5px;                                                              right: 5px;                                                             bottom: 5px;                                                            border-radius: 50%;                                                     border: 3px solid transparent;                                          /* COLOR 2 */                                                           border-top-color: #000;                                                 -webkit-animation: spin 3s linear infinite;                             /* Chrome, Opera 15+, Safari 5+ */                                      -moz-animation: spin 3s linear infinite;                                /* Chrome, Opera 15+, Safari 5+ */                                      -o-animation: spin 3s linear infinite;                                  /* Chrome, Opera 15+, Safari 5+ */                                      -ms-animation: spin 3s linear infinite;                                 /* Chrome, Opera 15+, Safari 5+ */                                      animation: spin 3s linear infinite;                                     /* Chrome, Firefox 16+, IE 10+, Opera */                           }                                                                       #loader:after {                                                              content: "";                                                            position: absolute;                                                     top: 15px;                                                              left: 15px;                                                             right: 15px;                                                            bottom: 15px;                                                           border-radius: 50%;                                                     border: 3px solid transparent;                                          border-top-color: #000;                                                 /* COLOR 3 */                                                           -moz-animation: spin 1.5s linear infinite;                              /* Chrome, Opera 15+, Safari 5+ */                                      -o-animation: spin 1.5s linear infinite;                                /* Chrome, Opera 15+, Safari 5+ */                                      -ms-animation: spin 1.5s linear infinite;                               /* Chrome, Opera 15+, Safari 5+ */                                      -webkit-animation: spin 1.5s linear infinite;                           /* Chrome, Opera 15+, Safari 5+ */                                      animation: spin 1.5s linear infinite;                                   /* Chrome, Firefox 16+, IE 10+, Opera */                           }                                                                       @-webkit-keyframes spin {                                                    0% {                                                                         -webkit-transform: rotate(0deg);                                        /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(0deg);                                            /* IE 9 */                                                              transform: rotate(0deg);                                                /* Firefox 16+, IE 10+, Opera */                                   }                                                                                                                                               100% {                                                                       -webkit-transform: rotate(360deg);                                      /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(360deg);                                          /* IE 9 */                                                              transform: rotate(360deg);                                              /* Firefox 16+, IE 10+, Opera */                                   }                                                                  }                                                                       @keyframes spin {                                                            0% {                                                                         -webkit-transform: rotate(0deg);                                        /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(0deg);                                            /* IE 9 */                                                              transform: rotate(0deg);                                                /* Firefox 16+, IE 10+, Opera */                                   }                                                                       100% {                                                                       -webkit-transform: rotate(360deg);                                      /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(360deg);                                          /* IE 9 */                                                              transform: rotate(360deg);                                              /* Firefox 16+, IE 10+, Opera */                                   }                                                                  }                                                                       #loader-wrapper .loader-section {                                            position: fixed;                                                        top: 0;                                                                 width: 51%;                                                             height: 100%;                                                           background: #fff;                                                       /* opacity: 0.7; */                                                     /* Old browsers */                                                      z-index: 1000;                                                          -webkit-transform: translateX(0);                                       /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateX(0);                                           /* IE 9 */                                                              transform: translateX(0);                                               /* Firefox 16+, IE 10+, Opera */                                   }                                                                       #loader-wrapper .loader-section.section-left {                               left: 0;                                                           }                                                                       #loader-wrapper .loader-section.section-right {                              right: 0;                                                          }                                                                       /* Loaded */                                                            .loaded #loader-wrapper .loader-section.section-left {                       -webkit-transform: translateX(-100%);                                   /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateX(-100%);                                       /* IE 9 */                                                              transform: translateX(-100%);                                           /* Firefox 16+, IE 10+, Opera */                                        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);               transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);                  }                                                                       .loaded #loader-wrapper .loader-section.section-right {                      -webkit-transform: translateX(100%);                                    /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateX(100%);                                        /* IE 9 */                                                              transform: translateX(100%);                                            /* Firefox 16+, IE 10+, Opera */                                        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);               transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);                  }                                                                       .loaded #loader {                                                            opacity: 0;                                                             -webkit-transition: all 0.3s ease-out;                                  transition: all 0.3s ease-out;                                     }                                                                       .loaded #loader-wrapper {                                                    visibility: hidden;                                                     -webkit-transform: translateY(-100%);                                   /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateY(-100%);                                       /* IE 9 */                                                              transform: translateY(-100%);                                           /* Firefox 16+, IE 10+, Opera */                                        -webkit-transition: all 0.3s 1s ease-out;                               transition: all 0.3s 1s ease-out;                                  }                                                                       /* JavaScript Turned Off */                                                                                                                     .no-js #loader-wrapper {                                                     display: none;                                                     }                                                                                                                                               .no-js h1 {                                                                  color: #222222;                                                    }                                                                       #loader-wrapper .load_title {                                                font-family: 'Open Sans';                                             color: rgb(245, 245, 245);                                              font-size: 19px;                                                        width: 100%;                                                            text-align: center;                                                     z-index: 9999999999999;                                                 position: absolute;                                                     top: 36px;                                                              opacity: 1;                                                             line-height: 30px;                                                 }                                                                       #loader-wrapper .load_title span {                                           font-weight: normal;                                                    font-style: italic;                                                     font-size: 13px;                                                        color: rgb(220, 220, 220);                                              opacity: 0.5;                                                      }                                                                       @keyframes moveover {                                                        0% {                                                                         transform: rotate(0deg);                                           }                                                                                                                                               100% {                                                                       transform: rotate(360deg);                                         }                                                                  }                                                                       .box {                                                                       position: relative;                                                     width: 100px;                                                           height: 100px;                                                          margin: 18% auto;                                                       /*ÕûÌåÐý×ª*/                                                            animation: moveover 3s linear infinite;                            }                                                                       .box_text {                                                                  position: absolute;                                                     top: 0;                                                                 left: 0;                                                           }                                                                       .box::before {                                                               content: "";                                                            position: absolute;                                                     width: 50px;                                                            height: 100px;                                                          border-radius: 50px 0 0 50px;                                           background: linear-gradient(#999, rgb(220, 220, 220));                  background-color: #999;                                                 z-index: 2;                                                        }                                                                       .box2 {                                                                      position: absolute;                                                     width: 50px;                                                            height: 100px;                                                          border-radius: 0 50px 50px 0;                                           left: 50%;                                                              background: linear-gradient(rgb(255,255,255),rgb(220,220, 220));                    z-index: 1;                                                        }                                                                       .box::after {                                                                content: "";                                                            position: absolute;                                                     width: 92px;                                                            height: 92px;                                                           top: 4px;                                                               left: 4px;                                                              border-radius: 50%;                                                     background-color: #fff;                                                 z-index: 2;                                                        }                                                                       .wrapper {                                                                   position: relative;                                                }                                                                  </style>                                                                <div id="loader-wrapper">                                                    <div class="wrapper">                                                        <div class='box'>                                                          <div class="box2"></div>                                           </div>                                                                  <div class="load_title">DeWeb                                           </div>                                                                                                                                     </div>                                                             </div>                                                                  <script src="dist/vue.js" type="text/javascript"></script>              <script src="dist/index.js" type="text/javascript"></script>            <script src="dist/axios.min.js" type="text/javascript"></script>        <link rel="icon" href="dist/webimages/[###].ico" type="image/x-icon">           <link rel="stylesheet" type="text/css" href="dist/theme-chalk/index.css" /> 
-    <div id="app" style="position:absolute;overflow:hidden;left:0;right:0;bottom:0;margin: 0 auto;background-color:#FFFFFF" :style="{top:Demos__top,width:Demos__wid,height:Demos__hei}" >
+    <div id="app" style="position:absolute;overflow:hidden;left:0;top:0;right:0;bottom:0;margin: 0 auto;background-color:#F0F0F0" :style="{width:Test__wid,height:Test__hei}" >
         <el-button v-if="version__istrial" type="success" @click="this.window.open('http://www.web0000.com/buy')" size="mini" icon="el-icon-shopping-cart-2" style="position:relative;z-index:999;float:right;margin:10px;">Buy Now!</el-button>
         <el-dialog :title="input_query_caption" :visible.sync="input_query_visible" >
         	<el-form style="width:90%;padding-left:5%;">
@@ -14,496 +14,14 @@
         		<el-button type="primary" @click="processinputquery">{{input_query_okcaption}}</el-button>
         	</div>
         </el-dialog>
-<label v-if="Label_Title__vis" :disabled="Label_Title__dis" :style="{left:Label_Title__lef,top:Label_Title__top,width:Label_Title__wid,height:Label_Title__hei}" style="position:absolute;color:#800000;font-family:'Dubai Light';font-size:24pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Title__cap}}
-</label>
-<el-main v-if="Panel_Line__vis" :disabled="Panel_Line__dis" type="default" :style="{backgroundColor:Panel_Line__col,left:Panel_Line__lef,top:Panel_Line__top,width:Panel_Line__wid,height:Panel_Line__hei}" style="position:absolute;overflow:hidden;">
-</el-main>
-<el-tabs v-if="PageControl__vis" :disabled="PageControl__dis" v-model="PageControl__apg" :tab-position="PageControl__tps" :style="{left:PageControl__lef,top:PageControl__top,width:PageControl__wid,height:PageControl__hei}" style="position:absolute;" @tab-click="dwevent('PageControl','this.PageControl__apg','onchange','')">
-    <el-tab-pane label="Button" name="TabSheet1">
-    </el-tab-pane>
-    <el-tab-pane label="CheckBox" name="TabSheet4">
-    </el-tab-pane>
-    <el-tab-pane label="ComboBox" name="TabSheet8">
-    </el-tab-pane>
-    <el-tab-pane label="DateTimePicker" name="TabSheet10">
-    </el-tab-pane>
-    <el-tab-pane label="Edit" name="TabSheet2">
-    </el-tab-pane>
-    <el-tab-pane label="Image" name="TabSheet13">
-    </el-tab-pane>
-    <el-tab-pane label="Label" name="TabSheet3">
-    </el-tab-pane>
-    <el-tab-pane label="ListBox" name="TabSheet15">
-    </el-tab-pane>
-    <el-tab-pane label="Memo" name="TabSheet9">
-    </el-tab-pane>
-    <el-tab-pane label="MonthCalendar" name="TabSheet16">
-    </el-tab-pane>
-    <el-tab-pane label="PageControl" name="TabSheet11">
-    </el-tab-pane>
-    <el-tab-pane label="Panel" name="TabSheet5">
-    </el-tab-pane>
-    <el-tab-pane label="RadioButton" name="TabSheet6">
-    </el-tab-pane>
-    <el-tab-pane label="SpinEdit" name="TabSheet7">
-    </el-tab-pane>
-    <el-tab-pane label="StringGrid" name="TabSheet12">
-    </el-tab-pane>
-    <el-tab-pane label="TreeView" name="TabSheet14">
-    </el-tab-pane>
-<div :style="{width:PageControl__wid,height:PageControl__hei}" style="position:absolute;left:0px;top:0px;">
-<el-main v-if="PageControl__apg=='TabSheet1'" :disabled="TabSheet1__dis" :style="{backgroundColor:TabSheet1__col,left:TabSheet1__lef,top:TabSheet1__top,width:TabSheet1__wid,height:TabSheet1__hei}" style="position:absolute;overflow:hidden;">
-<label v-if="Label1__vis" :disabled="Label1__dis" :style="{left:Label1__lef,top:Label1__top,width:Label1__wid,height:Label1__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label1__cap}}
-</label>
-<label v-if="Label2__vis" :disabled="Label2__dis" :style="{left:Label2__lef,top:Label2__top,width:Label2__wid,height:Label2__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;">{{Label2__cap}}
-</label>
-<label v-if="Label3__vis" :disabled="Label3__dis" :style="{left:Label3__lef,top:Label3__top,width:Label3__wid,height:Label3__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label3__cap}}
-</label>
-<label v-if="Label4__vis" :disabled="Label4__dis" :style="{left:Label4__lef,top:Label4__top,width:Label4__wid,height:Label4__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label4__cap}}
-</label>
-<label v-if="Label5__vis" :disabled="Label5__dis" :style="{left:Label5__lef,top:Label5__top,width:Label5__wid,height:Label5__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label5__cap}}
-</label>
-<label v-if="Label6__vis" :disabled="Label6__dis" :style="{left:Label6__lef,top:Label6__top,width:Label6__wid,height:Label6__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label6__cap}}
-</label>
-<el-button size="medium" v-if="Button1__vis" :disabled="Button1__dis" type="default" :style="{left:Button1__lef,top:Button1__top,width:Button1__wid,height:Button1__hei}" style="position:absolute;">{{Button1__cap}}
-</el-button>
-<el-button size="medium" v-if="Button2__vis" :disabled="Button2__dis" type="primary" :style="{left:Button2__lef,top:Button2__top,width:Button2__wid,height:Button2__hei}" style="position:absolute;">{{Button2__cap}}
-</el-button>
-<el-button size="medium" v-if="Button3__vis" :disabled="Button3__dis" type="success" :style="{left:Button3__lef,top:Button3__top,width:Button3__wid,height:Button3__hei}" style="position:absolute;">{{Button3__cap}}
-</el-button>
-<el-button size="medium" v-if="Button4__vis" :disabled="Button4__dis" type="info" :style="{left:Button4__lef,top:Button4__top,width:Button4__wid,height:Button4__hei}" style="position:absolute;">{{Button4__cap}}
-</el-button>
-<el-button size="medium" v-if="Button5__vis" :disabled="Button5__dis" type="warning" :style="{left:Button5__lef,top:Button5__top,width:Button5__wid,height:Button5__hei}" style="position:absolute;">{{Button5__cap}}
-</el-button>
-<el-button size="medium" v-if="Button6__vis" :disabled="Button6__dis" type="danger" :style="{left:Button6__lef,top:Button6__top,width:Button6__wid,height:Button6__hei}" style="position:absolute;">{{Button6__cap}}
-</el-button>
-<el-button size="medium" v-if="Button7__vis" :disabled="Button7__dis" type="default" :style="{left:Button7__lef,top:Button7__top,width:Button7__wid,height:Button7__hei}" style="position:absolute;" @click="dwevent('Button7','0','onclick','')">{{Button7__cap}}
-</el-button>
-<el-button size="medium" v-if="Button8__vis" :disabled="Button8__dis" type="default" :style="{left:Button8__lef,top:Button8__top,width:Button8__wid,height:Button8__hei}" style="position:absolute;">{{Button8__cap}}
-</el-button>
-<el-button size="medium" v-if="Button9__vis" :disabled="Button9__dis" type="default" :style="{left:Button9__lef,top:Button9__top,width:Button9__wid,height:Button9__hei}" style="position:absolute;" @click="dwevent('Button9','0','onclick','')">{{Button9__cap}}
-</el-button>
-<el-button size="medium" v-if="Button10__vis" :disabled="Button10__dis" type="default" :style="{left:Button10__lef,top:Button10__top,width:Button10__wid,height:Button10__hei}" style="position:absolute;">{{Button10__cap}}
-</el-button>
-<el-button size="medium" v-if="Button11__vis" :disabled="Button11__dis" type="default" :style="{left:Button11__lef,top:Button11__top,width:Button11__wid,height:Button11__hei}" style="position:absolute;" @click="dwevent('Button11','0','onclick','')">{{Button11__cap}}
-</el-button>
-<el-button size="medium" v-if="Button12__vis" :disabled="Button12__dis" type="default" :style="{left:Button12__lef,top:Button12__top,width:Button12__wid,height:Button12__hei}" style="position:absolute;">{{Button12__cap}}
-</el-button>
-<el-button size="medium" v-if="Button13__vis" :disabled="Button13__dis" type="default" :style="{left:Button13__lef,top:Button13__top,width:Button13__wid,height:Button13__hei}" style="position:absolute;" @click="dwevent('Button13','0','onclick','')">{{Button13__cap}}
-</el-button>
-<el-button size="medium" v-if="Button14__vis" :disabled="Button14__dis" type="default" :style="{left:Button14__lef,top:Button14__top,width:Button14__wid,height:Button14__hei}" style="position:absolute;">{{Button14__cap}}
-</el-button>
-<el-button size="medium" v-if="Button15__vis" :disabled="Button15__dis" type="default" :style="{left:Button15__lef,top:Button15__top,width:Button15__wid,height:Button15__hei}" style="position:absolute;" @click="dwevent('Button15','0','onclick','')">{{Button15__cap}}
-</el-button>
-</el-main>
-<el-main v-if="PageControl__apg=='TabSheet4'" :disabled="TabSheet4__dis" :style="{backgroundColor:TabSheet4__col,left:TabSheet4__lef,top:TabSheet4__top,width:TabSheet4__wid,height:TabSheet4__hei}" style="position:absolute;overflow:hidden;">
-<label v-if="Label14__vis" :disabled="Label14__dis" :style="{left:Label14__lef,top:Label14__top,width:Label14__wid,height:Label14__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label14__cap}}
-</label>
-<label v-if="Label15__vis" :disabled="Label15__dis" :style="{left:Label15__lef,top:Label15__top,width:Label15__wid,height:Label15__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label15__cap}}
-</label>
-<label v-if="Label16__vis" :disabled="Label16__dis" :style="{left:Label16__lef,top:Label16__top,width:Label16__wid,height:Label16__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label16__cap}}
-</label>
-<label v-if="Label17__vis" :disabled="Label17__dis" :style="{left:Label17__lef,top:Label17__top,width:Label17__wid,height:Label17__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label17__cap}}
-</label>
-<label v-if="Label18__vis" :disabled="Label18__dis" :style="{left:Label18__lef,top:Label18__top,width:Label18__wid,height:Label18__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label18__cap}}
-</label>
-<label v-if="Label19__vis" :disabled="Label19__dis" :style="{left:Label19__lef,top:Label19__top,width:Label19__wid,height:Label19__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label19__cap}}
-</label>
-<label v-if="Label20__vis" :disabled="Label20__dis" :style="{left:Label20__lef,top:Label20__top,width:Label20__wid,height:Label20__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;">{{Label20__cap}}
-</label>
-<el-button size="medium" v-if="Button20__vis" :disabled="Button20__dis" type="default" :style="{left:Button20__lef,top:Button20__top,width:Button20__wid,height:Button20__hei}" style="position:absolute;" @click="dwevent('Button20','0','onclick','')">{{Button20__cap}}
-</el-button>
-<el-button size="medium" v-if="Button21__vis" :disabled="Button21__dis" type="default" :style="{left:Button21__lef,top:Button21__top,width:Button21__wid,height:Button21__hei}" style="position:absolute;" @click="dwevent('Button21','0','onclick','')">{{Button21__cap}}
-</el-button>
-<el-button size="medium" v-if="Button22__vis" :disabled="Button22__dis" type="default" :style="{left:Button22__lef,top:Button22__top,width:Button22__wid,height:Button22__hei}" style="position:absolute;" @click="dwevent('Button22','0','onclick','')">{{Button22__cap}}
-</el-button>
-<el-button size="medium" v-if="Button23__vis" :disabled="Button23__dis" type="default" :style="{left:Button23__lef,top:Button23__top,width:Button23__wid,height:Button23__hei}" style="position:absolute;" @click="dwevent('Button23','0','onclick','')">{{Button23__cap}}
-</el-button>
-<el-checkbox v-if="CheckBox1__vis" :disabled="CheckBox1__dis" v-model="CheckBox1__chk" type="default" :style="{left:CheckBox1__lef,top:CheckBox1__top,width:CheckBox1__wid,height:CheckBox1__hei}" style="position:absolute;">{{CheckBox1__cap}}
-</el-checkbox>
-<el-checkbox v-if="CheckBox2__vis" :disabled="CheckBox2__dis" v-model="CheckBox2__chk" type="default" :style="{left:CheckBox2__lef,top:CheckBox2__top,width:CheckBox2__wid,height:CheckBox2__hei}" style="position:absolute;">{{CheckBox2__cap}}
-</el-checkbox>
-<el-checkbox v-if="CheckBox3__vis" :disabled="CheckBox3__dis" v-model="CheckBox3__chk" type="default" :style="{left:CheckBox3__lef,top:CheckBox3__top,width:CheckBox3__wid,height:CheckBox3__hei}" style="position:absolute;">{{CheckBox3__cap}}
-</el-checkbox>
-<el-checkbox v-if="CheckBox4__vis" :disabled="CheckBox4__dis" v-model="CheckBox4__chk" type="default" :style="{left:CheckBox4__lef,top:CheckBox4__top,width:CheckBox4__wid,height:CheckBox4__hei}" style="position:absolute;">{{CheckBox4__cap}}
-</el-checkbox>
-<el-checkbox v-if="CheckBox5__vis" :disabled="CheckBox5__dis" v-model="CheckBox5__chk" type="default" :style="{left:CheckBox5__lef,top:CheckBox5__top,width:CheckBox5__wid,height:CheckBox5__hei}" style="position:absolute;">{{CheckBox5__cap}}
-</el-checkbox>
-<el-checkbox v-if="CheckBox6__vis" :disabled="CheckBox6__dis" v-model="CheckBox6__chk" type="default" :style="{left:CheckBox6__lef,top:CheckBox6__top,width:CheckBox6__wid,height:CheckBox6__hei}" style="position:absolute;">{{CheckBox6__cap}}
-</el-checkbox>
-<el-checkbox v-if="CheckBox7__vis" :disabled="CheckBox7__dis" v-model="CheckBox7__chk" type="default" :style="{left:CheckBox7__lef,top:CheckBox7__top,width:CheckBox7__wid,height:CheckBox7__hei}" style="position:absolute;">{{CheckBox7__cap}}
-</el-checkbox>
-<el-button size="medium" v-if="Button24__vis" :disabled="Button24__dis" type="default" :style="{left:Button24__lef,top:Button24__top,width:Button24__wid,height:Button24__hei}" style="position:absolute;" @click="dwevent('Button24','0','onclick','')">{{Button24__cap}}
-</el-button>
-<el-checkbox v-if="CheckBox8__vis" :disabled="CheckBox8__dis" v-model="CheckBox8__chk" type="default" :style="{left:CheckBox8__lef,top:CheckBox8__top,width:CheckBox8__wid,height:CheckBox8__hei}" style="position:absolute;" @change="dwevent('CheckBox8','this.CheckBox8__chk','onclick','')">{{CheckBox8__cap}}
-</el-checkbox>
-</el-main>
-<el-main v-if="PageControl__apg=='TabSheet8'" :disabled="TabSheet8__dis" :style="{backgroundColor:TabSheet8__col,left:TabSheet8__lef,top:TabSheet8__top,width:TabSheet8__wid,height:TabSheet8__hei}" style="position:absolute;overflow:hidden;">
-<label v-if="Label50__vis" :disabled="Label50__dis" :style="{left:Label50__lef,top:Label50__top,width:Label50__wid,height:Label50__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label50__cap}}
-</label>
-<label v-if="Label52__vis" :disabled="Label52__dis" :style="{left:Label52__lef,top:Label52__top,width:Label52__wid,height:Label52__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label52__cap}}
-</label>
-<label v-if="Label53__vis" :disabled="Label53__dis" :style="{left:Label53__lef,top:Label53__top,width:Label53__wid,height:Label53__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label53__cap}}
-</label>
-<label v-if="Label54__vis" :disabled="Label54__dis" :style="{left:Label54__lef,top:Label54__top,width:Label54__wid,height:Label54__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label54__cap}}
-</label>
-<label v-if="Label55__vis" :disabled="Label55__dis" :style="{left:Label55__lef,top:Label55__top,width:Label55__wid,height:Label55__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label55__cap}}
-</label>
-<label v-if="Label57__vis" :disabled="Label57__dis" :style="{left:Label57__lef,top:Label57__top,width:Label57__wid,height:Label57__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;">{{Label57__cap}}
-</label>
-<el-button size="medium" v-if="Button41__vis" :disabled="Button41__dis" type="default" :style="{left:Button41__lef,top:Button41__top,width:Button41__wid,height:Button41__hei}" style="position:absolute;" @click="dwevent('Button41','0','onclick','')">{{Button41__cap}}
-</el-button>
-<el-button size="medium" v-if="Button42__vis" :disabled="Button42__dis" type="default" :style="{left:Button42__lef,top:Button42__top,width:Button42__wid,height:Button42__hei}" style="position:absolute;" @click="dwevent('Button42','0','onclick','')">{{Button42__cap}}
-</el-button>
-<el-button size="medium" v-if="Button43__vis" :disabled="Button43__dis" type="default" :style="{left:Button43__lef,top:Button43__top,width:Button43__wid,height:Button43__hei}" style="position:absolute;" @click="dwevent('Button43','0','onclick','')">{{Button43__cap}}
-</el-button>
-<el-button size="medium" v-if="Button44__vis" :disabled="Button44__dis" type="default" :style="{left:Button44__lef,top:Button44__top,width:Button44__wid,height:Button44__hei}" style="position:absolute;" @click="dwevent('Button44','0','onclick','')">{{Button44__cap}}
-</el-button>
-<el-select v-model="ComboBox1__txt" v-if="ComboBox1__vis" :disabled="ComboBox1__dis" :style="{left:ComboBox1__lef,top:ComboBox1__top,width:ComboBox1__wid,height:ComboBox1__hei}" style="position:absolute;" @change="dwevent('ComboBox1','this.ComboBox1__txt','onchange','')">
-    <el-option v-for="item in ComboBox1__options" :key="item.value" :label="item.value" :value="item.value"/>
-</el-select>
-<el-select v-model="ComboBox3__txt" v-if="ComboBox3__vis" :disabled="ComboBox3__dis" :style="{left:ComboBox3__lef,top:ComboBox3__top,width:ComboBox3__wid,height:ComboBox3__hei}" style="position:absolute;" @change="dwevent('ComboBox3','this.ComboBox3__txt','onchange','')">
-    <el-option v-for="item in ComboBox3__options" :key="item.value" :label="item.value" :value="item.value"/>
-</el-select>
-<el-select v-model="ComboBox2__txt" v-if="ComboBox2__vis" :disabled="ComboBox2__dis" :style="{left:ComboBox2__lef,top:ComboBox2__top,width:ComboBox2__wid,height:ComboBox2__hei}" style="position:absolute;" @change="dwevent('ComboBox2','this.ComboBox2__txt','onchange','')">
-    <el-option v-for="item in ComboBox2__options" :key="item.value" :label="item.value" :value="item.value"/>
-</el-select>
-<el-select v-model="ComboBox5__txt" v-if="ComboBox5__vis" :disabled="ComboBox5__dis" :style="{left:ComboBox5__lef,top:ComboBox5__top,width:ComboBox5__wid,height:ComboBox5__hei}" style="position:absolute;" @change="dwevent('ComboBox5','this.ComboBox5__txt','onchange','')">
-    <el-option v-for="item in ComboBox5__options" :key="item.value" :label="item.value" :value="item.value"/>
-</el-select>
-<el-select v-model="ComboBox4__txt" v-if="ComboBox4__vis" :disabled="ComboBox4__dis" :style="{left:ComboBox4__lef,top:ComboBox4__top,width:ComboBox4__wid,height:ComboBox4__hei}" style="position:absolute;" @change="dwevent('ComboBox4','this.ComboBox4__txt','onchange','')">
-    <el-option v-for="item in ComboBox4__options" :key="item.value" :label="item.value" :value="item.value"/>
-</el-select>
-<el-select v-model="ComboBox6__txt" v-if="ComboBox6__vis" :disabled="ComboBox6__dis" :style="{left:ComboBox6__lef,top:ComboBox6__top,width:ComboBox6__wid,height:ComboBox6__hei}" style="position:absolute;" @change="dwevent('ComboBox6','this.ComboBox6__txt','onchange','')">
-    <el-option v-for="item in ComboBox6__options" :key="item.value" :label="item.value" :value="item.value"/>
-</el-select>
-</el-main>
-<el-main v-if="PageControl__apg=='TabSheet10'" :disabled="TabSheet10__dis" :style="{backgroundColor:TabSheet10__col,left:TabSheet10__lef,top:TabSheet10__top,width:TabSheet10__wid,height:TabSheet10__hei}" style="position:absolute;overflow:hidden;">
-<label v-if="Label51__vis" :disabled="Label51__dis" :style="{left:Label51__lef,top:Label51__top,width:Label51__wid,height:Label51__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label51__cap}}
-</label>
-<label v-if="Label56__vis" :disabled="Label56__dis" :style="{left:Label56__lef,top:Label56__top,width:Label56__wid,height:Label56__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label56__cap}}
-</label>
-<label v-if="Label58__vis" :disabled="Label58__dis" :style="{left:Label58__lef,top:Label58__top,width:Label58__wid,height:Label58__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label58__cap}}
-</label>
-<label v-if="Label59__vis" :disabled="Label59__dis" :style="{left:Label59__lef,top:Label59__top,width:Label59__wid,height:Label59__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label59__cap}}
-</label>
-<label v-if="Label60__vis" :disabled="Label60__dis" :style="{left:Label60__lef,top:Label60__top,width:Label60__wid,height:Label60__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label60__cap}}
-</label>
-<label v-if="Label62__vis" :disabled="Label62__dis" :style="{left:Label62__lef,top:Label62__top,width:Label62__wid,height:Label62__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;">{{Label62__cap}}
-</label>
-<el-button size="medium" v-if="Button45__vis" :disabled="Button45__dis" type="default" :style="{left:Button45__lef,top:Button45__top,width:Button45__wid,height:Button45__hei}" style="position:absolute;" @click="dwevent('Button45','0','onclick','')">{{Button45__cap}}
-</el-button>
-<el-button size="medium" v-if="Button46__vis" :disabled="Button46__dis" type="default" :style="{left:Button46__lef,top:Button46__top,width:Button46__wid,height:Button46__hei}" style="position:absolute;" @click="dwevent('Button46','0','onclick','')">{{Button46__cap}}
-</el-button>
-<el-button size="medium" v-if="Button47__vis" :disabled="Button47__dis" type="default" :style="{left:Button47__lef,top:Button47__top,width:Button47__wid,height:Button47__hei}" style="position:absolute;" @click="dwevent('Button47','0','onclick','')">{{Button47__cap}}
-</el-button>
-<el-button size="medium" v-if="Button48__vis" :disabled="Button48__dis" type="default" :style="{left:Button48__lef,top:Button48__top,width:Button48__wid,height:Button48__hei}" style="position:absolute;" @click="dwevent('Button48','0','onclick','')">{{Button48__cap}}
-</el-button>
-</el-main>
-<el-main v-if="PageControl__apg=='TabSheet2'" :disabled="TabSheet2__dis" :style="{backgroundColor:TabSheet2__col,left:TabSheet2__lef,top:TabSheet2__top,width:TabSheet2__wid,height:TabSheet2__hei}" style="position:absolute;overflow:hidden;">
-<label v-if="Label7__vis" :disabled="Label7__dis" :style="{left:Label7__lef,top:Label7__top,width:Label7__wid,height:Label7__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label7__cap}}
-</label>
-<label v-if="Label8__vis" :disabled="Label8__dis" :style="{left:Label8__lef,top:Label8__top,width:Label8__wid,height:Label8__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label8__cap}}
-</label>
-<label v-if="Label9__vis" :disabled="Label9__dis" :style="{left:Label9__lef,top:Label9__top,width:Label9__wid,height:Label9__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label9__cap}}
-</label>
-<label v-if="Label10__vis" :disabled="Label10__dis" :style="{left:Label10__lef,top:Label10__top,width:Label10__wid,height:Label10__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label10__cap}}
-</label>
-<label v-if="Label11__vis" :disabled="Label11__dis" :style="{left:Label11__lef,top:Label11__top,width:Label11__wid,height:Label11__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label11__cap}}
-</label>
-<label v-if="Label12__vis" :disabled="Label12__dis" :style="{left:Label12__lef,top:Label12__top,width:Label12__wid,height:Label12__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label12__cap}}
-</label>
-<label v-if="Label13__vis" :disabled="Label13__dis" :style="{left:Label13__lef,top:Label13__top,width:Label13__wid,height:Label13__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label13__cap}}
-</label>
-<label v-if="Label49__vis" :disabled="Label49__dis" :style="{left:Label49__lef,top:Label49__top,width:Label49__wid,height:Label49__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;">{{Label49__cap}}
-</label>
-<el-input v-if="Edit1__vis" :disabled="Edit1__dis" v-model="Edit1__txt" :style="{left:Edit1__lef,top:Edit1__top,width:Edit1__wid,height:Edit1__hei}" style="position:absolute;" @input="dwevent('Edit1','(this.Edit1__txt)','onchange','')">
-</el-input>
-<el-input v-if="Edit2__vis" :disabled="Edit2__dis" show-password v-model="Edit2__txt" :style="{left:Edit2__lef,top:Edit2__top,width:Edit2__wid,height:Edit2__hei}" style="position:absolute;" @input="dwevent('Edit2','(this.Edit2__txt)','onchange','')">
-</el-input>
-<el-input v-if="Edit3__vis" :disabled="Edit3__dis" v-model="Edit3__txt" :style="{left:Edit3__lef,top:Edit3__top,width:Edit3__wid,height:Edit3__hei}" style="position:absolute;" @input="dwevent('Edit3','(this.Edit3__txt)','onchange','')">
-</el-input>
-<el-input v-if="Edit4__vis" :disabled="Edit4__dis" v-model="Edit4__txt" :style="{left:Edit4__lef,top:Edit4__top,width:Edit4__wid,height:Edit4__hei}" style="position:absolute;" @input="dwevent('Edit4','(this.Edit4__txt)','onchange','')">
-</el-input>
-<el-input v-if="Edit5__vis" :disabled="Edit5__dis" v-model="Edit5__txt" :style="{left:Edit5__lef,top:Edit5__top,width:Edit5__wid,height:Edit5__hei}" style="position:absolute;" @input="dwevent('Edit5','(this.Edit5__txt)','onchange','')">
-</el-input>
-<el-input v-if="Edit6__vis" :disabled="Edit6__dis" v-model="Edit6__txt" :style="{left:Edit6__lef,top:Edit6__top,width:Edit6__wid,height:Edit6__hei}" style="position:absolute;" @input="dwevent('Edit6','(this.Edit6__txt)','onchange','')">
-</el-input>
-<el-input v-if="Edit7__vis" :disabled="Edit7__dis" v-model="Edit7__txt" placeholder="ÓÃ»§Ãû" prefix-icon="el-icon-refresh" suffix-icon="el-icon-search" :style="{left:Edit7__lef,top:Edit7__top,width:Edit7__wid,height:Edit7__hei}" style="position:absolute;" @input="dwevent('Edit7','(this.Edit7__txt)','onchange','')">
-</el-input>
-<el-button size="medium" v-if="Button16__vis" :disabled="Button16__dis" type="default" :style="{left:Button16__lef,top:Button16__top,width:Button16__wid,height:Button16__hei}" style="position:absolute;" @click="dwevent('Button16','0','onclick','')">{{Button16__cap}}
-</el-button>
-<el-button size="medium" v-if="Button17__vis" :disabled="Button17__dis" type="default" :style="{left:Button17__lef,top:Button17__top,width:Button17__wid,height:Button17__hei}" style="position:absolute;" @click="dwevent('Button17','0','onclick','')">{{Button17__cap}}
-</el-button>
-<el-button size="medium" v-if="Button18__vis" :disabled="Button18__dis" type="default" :style="{left:Button18__lef,top:Button18__top,width:Button18__wid,height:Button18__hei}" style="position:absolute;" @click="dwevent('Button18','0','onclick','')">{{Button18__cap}}
-</el-button>
-<el-button size="medium" v-if="Button19__vis" :disabled="Button19__dis" type="default" :style="{left:Button19__lef,top:Button19__top,width:Button19__wid,height:Button19__hei}" style="position:absolute;" @click="dwevent('Button19','0','onclick','')">{{Button19__cap}}
-</el-button>
-<el-input v-if="Edit8__vis" :disabled="Edit8__dis" v-model="Edit8__txt" placeholder="OnChange" :style="{left:Edit8__lef,top:Edit8__top,width:Edit8__wid,height:Edit8__hei}" style="position:absolute;" @input="dwevent('Edit8','(this.Edit8__txt)','onchange','')">
-</el-input>
-</el-main>
-<el-main v-if="PageControl__apg=='TabSheet13'" :disabled="TabSheet13__dis" :style="{backgroundColor:TabSheet13__col,left:TabSheet13__lef,top:TabSheet13__top,width:TabSheet13__wid,height:TabSheet13__hei}" style="position:absolute;overflow:hidden;">
-<label v-if="Label61__vis" :disabled="Label61__dis" :style="{left:Label61__lef,top:Label61__top,width:Label61__wid,height:Label61__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;text-align:center;">{{Label61__cap}}
-</label>
-<label v-if="Label63__vis" :disabled="Label63__dis" :style="{left:Label63__lef,top:Label63__top,width:Label63__wid,height:Label63__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;text-align:center;">{{Label63__cap}}
-</label>
-<label v-if="Label64__vis" :disabled="Label64__dis" :style="{left:Label64__lef,top:Label64__top,width:Label64__wid,height:Label64__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;text-align:center;">{{Label64__cap}}
-</label>
-<label v-if="Label65__vis" :disabled="Label65__dis" :style="{left:Label65__lef,top:Label65__top,width:Label65__wid,height:Label65__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;text-align:center;">{{Label65__cap}}
-</label>
-<label v-if="Label66__vis" :disabled="Label66__dis" :style="{left:Label66__lef,top:Label66__top,width:Label66__wid,height:Label66__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;text-align:center;">{{Label66__cap}}
-</label>
-<el-button size="medium" v-if="Button49__vis" :disabled="Button49__dis" type="primary" :style="{left:Button49__lef,top:Button49__top,width:Button49__wid,height:Button49__hei}" style="position:absolute;" @click="dwevent('Button49','0','onclick','')">{{Button49__cap}}
-</el-button>
-<el-button size="medium" v-if="Button50__vis" :disabled="Button50__dis" type="primary" :style="{left:Button50__lef,top:Button50__top,width:Button50__wid,height:Button50__hei}" style="position:absolute;" @click="dwevent('Button50','0','onclick','')">{{Button50__cap}}
-</el-button>
-<el-button size="medium" v-if="Button51__vis" :disabled="Button51__dis" type="primary" :style="{left:Button51__lef,top:Button51__top,width:Button51__wid,height:Button51__hei}" style="position:absolute;" @click="dwevent('Button51','0','onclick','')">{{Button51__cap}}
-</el-button>
-</el-main>
-<el-main v-if="PageControl__apg=='TabSheet3'" :disabled="TabSheet3__dis" :style="{backgroundColor:TabSheet3__col,left:TabSheet3__lef,top:TabSheet3__top,width:TabSheet3__wid,height:TabSheet3__hei}" style="position:absolute;overflow:hidden;">
-<label v-if="Label21__vis" :disabled="Label21__dis" :style="{left:Label21__lef,top:Label21__top,width:Label21__wid,height:Label21__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label21__cap}}
-</label>
-<label v-if="Label24__vis" :disabled="Label24__dis" :style="{left:Label24__lef,top:Label24__top,width:Label24__wid,height:Label24__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label24__cap}}
-</label>
-<label v-if="Label26__vis" :disabled="Label26__dis" :style="{left:Label26__lef,top:Label26__top,width:Label26__wid,height:Label26__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label26__cap}}
-</label>
-<label v-if="Label27__vis" :disabled="Label27__dis" :style="{left:Label27__lef,top:Label27__top,width:Label27__wid,height:Label27__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label27__cap}}
-</label>
-<label v-if="Label28__vis" :disabled="Label28__dis" :style="{left:Label28__lef,top:Label28__top,width:Label28__wid,height:Label28__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:20pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label28__cap}}
-</label>
-<label v-if="Label29__vis" :disabled="Label29__dis" :style="{left:Label29__lef,top:Label29__top,width:Label29__wid,height:Label29__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:8pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label29__cap}}
-</label>
-<label v-if="Label30__vis" :disabled="Label30__dis" :style="{left:Label30__lef,top:Label30__top,width:Label30__wid,height:Label30__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;">{{Label30__cap}}
-</label>
-<label v-if="Label31__vis" :disabled="Label31__dis" :style="{left:Label31__lef,top:Label31__top,width:Label31__wid,height:Label31__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:italic;text-decoration:none;">{{Label31__cap}}
-</label>
-<label v-if="Label32__vis" :disabled="Label32__dis" :style="{left:Label32__lef,top:Label32__top,width:Label32__wid,height:Label32__hei}" style="position:absolute;color:#FF0000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:underline;">{{Label32__cap}}
-</label>
-<label v-if="Label35__vis" :disabled="Label35__dis" :style="{left:Label35__lef,top:Label35__top,width:Label35__wid,height:Label35__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label35__cap}}
-</label>
-<label v-if="Label37__vis" :disabled="Label37__dis" :style="{left:Label37__lef,top:Label37__top,width:Label37__wid,height:Label37__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label37__cap}}
-</label>
-<el-button size="medium" v-if="Button35__vis" :disabled="Button35__dis" type="default" :style="{left:Button35__lef,top:Button35__top,width:Button35__wid,height:Button35__hei}" style="position:absolute;" @click="dwevent('Button35','0','onclick','')">{{Button35__cap}}
-</el-button>
-<el-button size="medium" v-if="Button39__vis" :disabled="Button39__dis" type="default" :style="{left:Button39__lef,top:Button39__top,width:Button39__wid,height:Button39__hei}" style="position:absolute;" @click="dwevent('Button39','0','onclick','')">{{Button39__cap}}
-</el-button>
-</el-main>
-<el-main v-if="PageControl__apg=='TabSheet15'" :disabled="TabSheet15__dis" :style="{backgroundColor:TabSheet15__col,left:TabSheet15__lef,top:TabSheet15__top,width:TabSheet15__wid,height:TabSheet15__hei}" style="position:absolute;overflow:hidden;">
-<el-button size="medium" v-if="Button52__vis" :disabled="Button52__dis" type="primary" :style="{left:Button52__lef,top:Button52__top,width:Button52__wid,height:Button52__hei}" style="position:absolute;" @click="dwevent('Button52','0','onclick','')">{{Button52__cap}}
-</el-button>
-<el-button size="medium" v-if="Button53__vis" :disabled="Button53__dis" type="primary" :style="{left:Button53__lef,top:Button53__top,width:Button53__wid,height:Button53__hei}" style="position:absolute;" @click="dwevent('Button53','0','onclick','')">{{Button53__cap}}
-</el-button>
-<el-button size="medium" v-if="Button54__vis" :disabled="Button54__dis" type="primary" :style="{left:Button54__lef,top:Button54__top,width:Button54__wid,height:Button54__hei}" style="position:absolute;" @click="dwevent('Button54','0','onclick','')">{{Button54__cap}}
-</el-button>
-<el-button size="medium" v-if="Button55__vis" :disabled="Button55__dis" type="primary" :style="{left:Button55__lef,top:Button55__top,width:Button55__wid,height:Button55__hei}" style="position:absolute;" @click="dwevent('Button55','0','onclick','')">{{Button55__cap}}
-</el-button>
-<el-button size="medium" v-if="Button56__vis" :disabled="Button56__dis" type="default" :style="{left:Button56__lef,top:Button56__top,width:Button56__wid,height:Button56__hei}" style="position:absolute;" @click="dwevent('Button56','0','onclick','')">{{Button56__cap}}
-</el-button>
-<el-button size="medium" v-if="Button57__vis" :disabled="Button57__dis" type="default" :style="{left:Button57__lef,top:Button57__top,width:Button57__wid,height:Button57__hei}" style="position:absolute;" @click="dwevent('Button57','0','onclick','')">{{Button57__cap}}
-</el-button>
-</el-main>
-<el-main v-if="PageControl__apg=='TabSheet9'" :disabled="TabSheet9__dis" :style="{backgroundColor:TabSheet9__col,left:TabSheet9__lef,top:TabSheet9__top,width:TabSheet9__wid,height:TabSheet9__hei}" style="position:absolute;overflow:hidden;">
-<el-button size="medium" v-if="Button58__vis" :disabled="Button58__dis" type="primary" :style="{left:Button58__lef,top:Button58__top,width:Button58__wid,height:Button58__hei}" style="position:absolute;" @click="dwevent('Button58','0','onclick','')">{{Button58__cap}}
-</el-button>
-<el-button size="medium" v-if="Button59__vis" :disabled="Button59__dis" type="primary" :style="{left:Button59__lef,top:Button59__top,width:Button59__wid,height:Button59__hei}" style="position:absolute;" @click="dwevent('Button59','0','onclick','')">{{Button59__cap}}
-</el-button>
-<el-button size="medium" v-if="Button60__vis" :disabled="Button60__dis" type="primary" :style="{left:Button60__lef,top:Button60__top,width:Button60__wid,height:Button60__hei}" style="position:absolute;" @click="dwevent('Button60','0','onclick','')">{{Button60__cap}}
-</el-button>
-<el-button size="medium" v-if="Button61__vis" :disabled="Button61__dis" type="primary" :style="{left:Button61__lef,top:Button61__top,width:Button61__wid,height:Button61__hei}" style="position:absolute;" @click="dwevent('Button61','0','onclick','')">{{Button61__cap}}
-</el-button>
-<el-button size="medium" v-if="Button62__vis" :disabled="Button62__dis" type="default" :style="{left:Button62__lef,top:Button62__top,width:Button62__wid,height:Button62__hei}" style="position:absolute;" @click="dwevent('Button62','0','onclick','')">{{Button62__cap}}
-</el-button>
-<el-button size="medium" v-if="Button63__vis" :disabled="Button63__dis" type="default" :style="{left:Button63__lef,top:Button63__top,width:Button63__wid,height:Button63__hei}" style="position:absolute;" @click="dwevent('Button63','0','onclick','')">{{Button63__cap}}
-</el-button>
-<el-checkbox v-if="CheckBox9__vis" :disabled="CheckBox9__dis" v-model="CheckBox9__chk" type="default" :style="{left:CheckBox9__lef,top:CheckBox9__top,width:CheckBox9__wid,height:CheckBox9__hei}" style="position:absolute;">{{CheckBox9__cap}}
-</el-checkbox>
-</el-main>
-<el-main v-if="PageControl__apg=='TabSheet16'" :disabled="TabSheet16__dis" :style="{backgroundColor:TabSheet16__col,left:TabSheet16__lef,top:TabSheet16__top,width:TabSheet16__wid,height:TabSheet16__hei}" style="position:absolute;overflow:hidden;">
-<el-checkbox v-if="CheckBox10__vis" :disabled="CheckBox10__dis" v-model="CheckBox10__chk" type="default" :style="{left:CheckBox10__lef,top:CheckBox10__top,width:CheckBox10__wid,height:CheckBox10__hei}" style="position:absolute;">{{CheckBox10__cap}}
-</el-checkbox>
-<el-button size="medium" v-if="Button64__vis" :disabled="Button64__dis" type="primary" :style="{left:Button64__lef,top:Button64__top,width:Button64__wid,height:Button64__hei}" style="position:absolute;" @click="dwevent('Button64','0','onclick','')">{{Button64__cap}}
-</el-button>
-<el-button size="medium" v-if="Button65__vis" :disabled="Button65__dis" type="primary" :style="{left:Button65__lef,top:Button65__top,width:Button65__wid,height:Button65__hei}" style="position:absolute;" @click="dwevent('Button65','0','onclick','')">{{Button65__cap}}
-</el-button>
-<el-button size="medium" v-if="Button66__vis" :disabled="Button66__dis" type="primary" :style="{left:Button66__lef,top:Button66__top,width:Button66__wid,height:Button66__hei}" style="position:absolute;" @click="dwevent('Button66','0','onclick','')">{{Button66__cap}}
-</el-button>
-<el-button size="medium" v-if="Button67__vis" :disabled="Button67__dis" type="primary" :style="{left:Button67__lef,top:Button67__top,width:Button67__wid,height:Button67__hei}" style="position:absolute;" @click="dwevent('Button67','0','onclick','')">{{Button67__cap}}
-</el-button>
-<el-button size="medium" v-if="Button68__vis" :disabled="Button68__dis" type="default" :style="{left:Button68__lef,top:Button68__top,width:Button68__wid,height:Button68__hei}" style="position:absolute;" @click="dwevent('Button68','0','onclick','')">{{Button68__cap}}
-</el-button>
-<el-button size="medium" v-if="Button69__vis" :disabled="Button69__dis" type="default" :style="{left:Button69__lef,top:Button69__top,width:Button69__wid,height:Button69__hei}" style="position:absolute;" @click="dwevent('Button69','0','onclick','')">{{Button69__cap}}
-</el-button>
-</el-main>
-<el-main v-if="PageControl__apg=='TabSheet11'" :disabled="TabSheet11__dis" :style="{backgroundColor:TabSheet11__col,left:TabSheet11__lef,top:TabSheet11__top,width:TabSheet11__wid,height:TabSheet11__hei}" style="position:absolute;overflow:hidden;">
-<el-tabs v-if="PageControl1__vis" :disabled="PageControl1__dis" v-model="PageControl1__apg" :tab-position="PageControl1__tps" type="border-card" :style="{left:PageControl1__lef,top:PageControl1__top,width:PageControl1__wid,height:PageControl1__hei}" style="position:absolute;" @tab-click="dwevent('PageControl1','this.PageControl1__apg','onchange','')">
-    <el-tab-pane label="TabÒ»" name="TabSheet17">
-    </el-tab-pane>
-    <el-tab-pane label="Tab¶þ" name="TabSheet18">
-    </el-tab-pane>
-    <el-tab-pane label="TabÈý" name="TabSheet19">
-    </el-tab-pane>
-<div :style="{width:PageControl1__wid,height:PageControl1__hei}" style="position:absolute;left:0px;top:0px;">
-<el-main v-if="PageControl1__apg=='TabSheet17'" :disabled="TabSheet17__dis" :style="{backgroundColor:TabSheet17__col,left:TabSheet17__lef,top:TabSheet17__top,width:TabSheet17__wid,height:TabSheet17__hei}" style="position:absolute;overflow:hidden;">
-</el-main>
-<el-main v-if="PageControl1__apg=='TabSheet18'" :disabled="TabSheet18__dis" :style="{backgroundColor:TabSheet18__col,left:TabSheet18__lef,top:TabSheet18__top,width:TabSheet18__wid,height:TabSheet18__hei}" style="position:absolute;overflow:hidden;">
-</el-main>
-<el-main v-if="PageControl1__apg=='TabSheet19'" :disabled="TabSheet19__dis" :style="{backgroundColor:TabSheet19__col,left:TabSheet19__lef,top:TabSheet19__top,width:TabSheet19__wid,height:TabSheet19__hei}" style="position:absolute;overflow:hidden;">
-</el-main>
-    </div>
-</el-tabs>
-<el-tabs v-if="PageControl3__vis" :disabled="PageControl3__dis" v-model="PageControl3__apg" :tab-position="PageControl3__tps" :style="{left:PageControl3__lef,top:PageControl3__top,width:PageControl3__wid,height:PageControl3__hei}" style="position:absolute;" @tab-click="dwevent('PageControl3','this.PageControl3__apg','onchange','')">
-    <el-tab-pane label="TabÒ»" name="TabSheet22">
-    </el-tab-pane>
-    <el-tab-pane label="Tab¶þ" name="TabSheet23">
-    </el-tab-pane>
-<div :style="{width:PageControl3__wid,height:PageControl3__hei}" style="position:absolute;left:0px;top:0px;">
-<el-main v-if="PageControl3__apg=='TabSheet22'" :disabled="TabSheet22__dis" :style="{backgroundColor:TabSheet22__col,left:TabSheet22__lef,top:TabSheet22__top,width:TabSheet22__wid,height:TabSheet22__hei}" style="position:absolute;overflow:hidden;">
-</el-main>
-<el-main v-if="PageControl3__apg=='TabSheet23'" :disabled="TabSheet23__dis" :style="{backgroundColor:TabSheet23__col,left:TabSheet23__lef,top:TabSheet23__top,width:TabSheet23__wid,height:TabSheet23__hei}" style="position:absolute;overflow:hidden;">
-</el-main>
-    </div>
-</el-tabs>
-<el-button size="medium" v-if="Button70__vis" :disabled="Button70__dis" type="primary" :style="{left:Button70__lef,top:Button70__top,width:Button70__wid,height:Button70__hei}" style="position:absolute;" @click="dwevent('Button70','0','onclick','')">{{Button70__cap}}
-</el-button>
-<el-button size="medium" v-if="Button71__vis" :disabled="Button71__dis" type="primary" :style="{left:Button71__lef,top:Button71__top,width:Button71__wid,height:Button71__hei}" style="position:absolute;" @click="dwevent('Button71','0','onclick','')">{{Button71__cap}}
-</el-button>
-<el-button size="medium" v-if="Button72__vis" :disabled="Button72__dis" type="primary" :style="{left:Button72__lef,top:Button72__top,width:Button72__wid,height:Button72__hei}" style="position:absolute;" @click="dwevent('Button72','0','onclick','')">{{Button72__cap}}
-</el-button>
-<el-button size="medium" v-if="Button73__vis" :disabled="Button73__dis" type="primary" :style="{left:Button73__lef,top:Button73__top,width:Button73__wid,height:Button73__hei}" style="position:absolute;" @click="dwevent('Button73','0','onclick','')">{{Button73__cap}}
-</el-button>
-<el-button size="medium" v-if="Button74__vis" :disabled="Button74__dis" type="default" :style="{left:Button74__lef,top:Button74__top,width:Button74__wid,height:Button74__hei}" style="position:absolute;" @click="dwevent('Button74','0','onclick','')">{{Button74__cap}}
-</el-button>
-<el-button size="medium" v-if="Button75__vis" :disabled="Button75__dis" type="default" :style="{left:Button75__lef,top:Button75__top,width:Button75__wid,height:Button75__hei}" style="position:absolute;" @click="dwevent('Button75','0','onclick','')">{{Button75__cap}}
-</el-button>
-<el-checkbox v-if="CheckBox11__vis" :disabled="CheckBox11__dis" v-model="CheckBox11__chk" type="default" :style="{left:CheckBox11__lef,top:CheckBox11__top,width:CheckBox11__wid,height:CheckBox11__hei}" style="position:absolute;">{{CheckBox11__cap}}
-</el-checkbox>
-</el-main>
-<el-main v-if="PageControl__apg=='TabSheet5'" :disabled="TabSheet5__dis" :style="{backgroundColor:TabSheet5__col,left:TabSheet5__lef,top:TabSheet5__top,width:TabSheet5__wid,height:TabSheet5__hei}" style="position:absolute;overflow:hidden;">
-<label v-if="Label22__vis" :disabled="Label22__dis" :style="{left:Label22__lef,top:Label22__top,width:Label22__wid,height:Label22__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label22__cap}}
-</label>
-<label v-if="Label23__vis" :disabled="Label23__dis" :style="{left:Label23__lef,top:Label23__top,width:Label23__wid,height:Label23__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label23__cap}}
-</label>
-<label v-if="Label25__vis" :disabled="Label25__dis" :style="{left:Label25__lef,top:Label25__top,width:Label25__wid,height:Label25__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label25__cap}}
-</label>
-<el-main v-if="Panel2__vis" :disabled="Panel2__dis" type="default" :style="{backgroundColor:Panel2__col,left:Panel2__lef,top:Panel2__top,width:Panel2__wid,height:Panel2__hei}" style="position:absolute;overflow:hidden;">
-</el-main>
-<el-main v-if="Panel3__vis" :disabled="Panel3__dis" type="default" :style="{backgroundColor:Panel3__col,left:Panel3__lef,top:Panel3__top,width:Panel3__wid,height:Panel3__hei}" style="position:absolute;overflow:hidden;">
-</el-main>
-<el-main v-if="Panel4__vis" :disabled="Panel4__dis" type="default" :style="{backgroundColor:Panel4__col,left:Panel4__lef,top:Panel4__top,width:Panel4__wid,height:Panel4__hei}" style="position:absolute;overflow:hidden;">
-<el-button size="medium" v-if="Button88__vis" :disabled="Button88__dis" type="primary" :style="{left:Button88__lef,top:Button88__top,width:Button88__wid,height:Button88__hei}" style="position:absolute;" @click="dwevent('Button88','0','onclick','')">{{Button88__cap}}
-</el-button>
-</el-main>
-<el-button size="medium" v-if="Button25__vis" :disabled="Button25__dis" type="primary" :style="{left:Button25__lef,top:Button25__top,width:Button25__wid,height:Button25__hei}" style="position:absolute;" @click="dwevent('Button25','0','onclick','')">{{Button25__cap}}
-</el-button>
-<el-button size="medium" v-if="Button26__vis" :disabled="Button26__dis" type="primary" :style="{left:Button26__lef,top:Button26__top,width:Button26__wid,height:Button26__hei}" style="position:absolute;" @click="dwevent('Button26','0','onclick','')">{{Button26__cap}}
-</el-button>
-<el-button size="medium" v-if="Button27__vis" :disabled="Button27__dis" type="primary" :style="{left:Button27__lef,top:Button27__top,width:Button27__wid,height:Button27__hei}" style="position:absolute;" @click="dwevent('Button27','0','onclick','')">{{Button27__cap}}
-</el-button>
-<el-button size="medium" v-if="Button28__vis" :disabled="Button28__dis" type="primary" :style="{left:Button28__lef,top:Button28__top,width:Button28__wid,height:Button28__hei}" style="position:absolute;" @click="dwevent('Button28','0','onclick','')">{{Button28__cap}}
-</el-button>
-</el-main>
-<el-main v-if="PageControl__apg=='TabSheet6'" :disabled="TabSheet6__dis" :style="{backgroundColor:TabSheet6__col,left:TabSheet6__lef,top:TabSheet6__top,width:TabSheet6__wid,height:TabSheet6__hei}" style="position:absolute;overflow:hidden;">
-<label v-if="Label33__vis" :disabled="Label33__dis" :style="{left:Label33__lef,top:Label33__top,width:Label33__wid,height:Label33__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label33__cap}}
-</label>
-<label v-if="Label34__vis" :disabled="Label34__dis" :style="{left:Label34__lef,top:Label34__top,width:Label34__wid,height:Label34__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label34__cap}}
-</label>
-<label v-if="Label36__vis" :disabled="Label36__dis" :style="{left:Label36__lef,top:Label36__top,width:Label36__wid,height:Label36__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label36__cap}}
-</label>
-<label v-if="Label38__vis" :disabled="Label38__dis" :style="{left:Label38__lef,top:Label38__top,width:Label38__wid,height:Label38__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label38__cap}}
-</label>
-<label v-if="Label39__vis" :disabled="Label39__dis" :style="{left:Label39__lef,top:Label39__top,width:Label39__wid,height:Label39__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label39__cap}}
-</label>
-<label v-if="Label40__vis" :disabled="Label40__dis" :style="{left:Label40__lef,top:Label40__top,width:Label40__wid,height:Label40__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label40__cap}}
-</label>
-<label v-if="Label41__vis" :disabled="Label41__dis" :style="{left:Label41__lef,top:Label41__top,width:Label41__wid,height:Label41__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;">{{Label41__cap}}
-</label>
-<el-button size="medium" v-if="Button29__vis" :disabled="Button29__dis" type="default" :style="{left:Button29__lef,top:Button29__top,width:Button29__wid,height:Button29__hei}" style="position:absolute;" @click="dwevent('Button29','0','onclick','')">{{Button29__cap}}
-</el-button>
-<el-button size="medium" v-if="Button30__vis" :disabled="Button30__dis" type="default" :style="{left:Button30__lef,top:Button30__top,width:Button30__wid,height:Button30__hei}" style="position:absolute;" @click="dwevent('Button30','0','onclick','')">{{Button30__cap}}
-</el-button>
-<el-button size="medium" v-if="Button31__vis" :disabled="Button31__dis" type="default" :style="{left:Button31__lef,top:Button31__top,width:Button31__wid,height:Button31__hei}" style="position:absolute;" @click="dwevent('Button31','0','onclick','')">{{Button31__cap}}
-</el-button>
-<el-button size="medium" v-if="Button32__vis" :disabled="Button32__dis" type="default" :style="{left:Button32__lef,top:Button32__top,width:Button32__wid,height:Button32__hei}" style="position:absolute;" @click="dwevent('Button32','0','onclick','')">{{Button32__cap}}
-</el-button>
-<el-button size="medium" v-if="Button33__vis" :disabled="Button33__dis" type="default" :style="{left:Button33__lef,top:Button33__top,width:Button33__wid,height:Button33__hei}" style="position:absolute;" @click="dwevent('Button33','0','onclick','')">{{Button33__cap}}
-</el-button>
-<el-radio label="true" v-if="RadioButton1__vis" :disabled="RadioButton1__dis" v-model="RadioButton1__chk" :style="{left:RadioButton1__lef,top:RadioButton1__top,width:RadioButton1__wid,height:RadioButton1__hei}" style="position:absolute;">{{RadioButton1__cap}}
-</el-radio>
-<el-radio label="true" v-if="RadioButton2__vis" :disabled="RadioButton2__dis" v-model="RadioButton2__chk" :style="{left:RadioButton2__lef,top:RadioButton2__top,width:RadioButton2__wid,height:RadioButton2__hei}" style="position:absolute;">{{RadioButton2__cap}}
-</el-radio>
-<el-radio label="true" v-if="RadioButton3__vis" :disabled="RadioButton3__dis" v-model="RadioButton3__chk" :style="{left:RadioButton3__lef,top:RadioButton3__top,width:RadioButton3__wid,height:RadioButton3__hei}" style="position:absolute;">{{RadioButton3__cap}}
-</el-radio>
-<el-radio label="true" v-if="RadioButton4__vis" :disabled="RadioButton4__dis" v-model="RadioButton4__chk" :style="{left:RadioButton4__lef,top:RadioButton4__top,width:RadioButton4__wid,height:RadioButton4__hei}" style="position:absolute;">{{RadioButton4__cap}}
-</el-radio>
-<el-radio label="true" v-if="RadioButton7__vis" :disabled="RadioButton7__dis" v-model="RadioButton7__chk" :style="{left:RadioButton7__lef,top:RadioButton7__top,width:RadioButton7__wid,height:RadioButton7__hei}" style="position:absolute;">{{RadioButton7__cap}}
-</el-radio>
-<el-radio label="true" v-if="RadioButton6__vis" :disabled="RadioButton6__dis" v-model="RadioButton6__chk" :style="{left:RadioButton6__lef,top:RadioButton6__top,width:RadioButton6__wid,height:RadioButton6__hei}" style="position:absolute;">{{RadioButton6__cap}}
-</el-radio>
-<el-radio label="true" v-if="RadioButton5__vis" :disabled="RadioButton5__dis" v-model="RadioButton5__chk" :style="{left:RadioButton5__lef,top:RadioButton5__top,width:RadioButton5__wid,height:RadioButton5__hei}" style="position:absolute;">{{RadioButton5__cap}}
-</el-radio>
-<el-radio label="true" v-if="RadioButton8__vis" :disabled="RadioButton8__dis" v-model="RadioButton8__chk" :style="{left:RadioButton8__lef,top:RadioButton8__top,width:RadioButton8__wid,height:RadioButton8__hei}" style="position:absolute;" @change="dwevent('RadioButton8','0','onclick','')">{{RadioButton8__cap}}
-</el-radio>
-</el-main>
-<el-main v-if="PageControl__apg=='TabSheet7'" :disabled="TabSheet7__dis" :style="{backgroundColor:TabSheet7__col,left:TabSheet7__lef,top:TabSheet7__top,width:TabSheet7__wid,height:TabSheet7__hei}" style="position:absolute;overflow:hidden;">
-<label v-if="Label42__vis" :disabled="Label42__dis" :style="{left:Label42__lef,top:Label42__top,width:Label42__wid,height:Label42__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label42__cap}}
-</label>
-<label v-if="Label44__vis" :disabled="Label44__dis" :style="{left:Label44__lef,top:Label44__top,width:Label44__wid,height:Label44__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label44__cap}}
-</label>
-<label v-if="Label45__vis" :disabled="Label45__dis" :style="{left:Label45__lef,top:Label45__top,width:Label45__wid,height:Label45__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label45__cap}}
-</label>
-<label v-if="Label46__vis" :disabled="Label46__dis" :style="{left:Label46__lef,top:Label46__top,width:Label46__wid,height:Label46__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label46__cap}}
-</label>
-<label v-if="Label47__vis" :disabled="Label47__dis" :style="{left:Label47__lef,top:Label47__top,width:Label47__wid,height:Label47__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label47__cap}}
-</label>
-<label v-if="Label43__vis" :disabled="Label43__dis" :style="{left:Label43__lef,top:Label43__top,width:Label43__wid,height:Label43__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label43__cap}}
-</label>
-<label v-if="Label48__vis" :disabled="Label48__dis" :style="{left:Label48__lef,top:Label48__top,width:Label48__wid,height:Label48__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;">{{Label48__cap}}
-</label>
-<el-button size="medium" v-if="Button34__vis" :disabled="Button34__dis" type="default" :style="{left:Button34__lef,top:Button34__top,width:Button34__wid,height:Button34__hei}" style="position:absolute;" @click="dwevent('Button34','0','onclick','')">{{Button34__cap}}
-</el-button>
-<el-button size="medium" v-if="Button36__vis" :disabled="Button36__dis" type="default" :style="{left:Button36__lef,top:Button36__top,width:Button36__wid,height:Button36__hei}" style="position:absolute;" @click="dwevent('Button36','0','onclick','')">{{Button36__cap}}
-</el-button>
-<el-button size="medium" v-if="Button37__vis" :disabled="Button37__dis" type="default" :style="{left:Button37__lef,top:Button37__top,width:Button37__wid,height:Button37__hei}" style="position:absolute;" @click="dwevent('Button37','0','onclick','')">{{Button37__cap}}
-</el-button>
-<el-button size="medium" v-if="Button38__vis" :disabled="Button38__dis" type="default" :style="{left:Button38__lef,top:Button38__top,width:Button38__wid,height:Button38__hei}" style="position:absolute;" @click="dwevent('Button38','0','onclick','')">{{Button38__cap}}
-</el-button>
-<el-button size="medium" v-if="Button40__vis" :disabled="Button40__dis" type="default" :style="{left:Button40__lef,top:Button40__top,width:Button40__wid,height:Button40__hei}" style="position:absolute;" @click="dwevent('Button40','0','onclick','')">{{Button40__cap}}
-</el-button>
-</el-main>
-<el-main v-if="PageControl__apg=='TabSheet12'" :disabled="TabSheet12__dis" :style="{backgroundColor:TabSheet12__col,left:TabSheet12__lef,top:TabSheet12__top,width:TabSheet12__wid,height:TabSheet12__hei}" style="position:absolute;overflow:hidden;">
-<el-checkbox v-if="CheckBox12__vis" :disabled="CheckBox12__dis" v-model="CheckBox12__chk" type="default" :style="{left:CheckBox12__lef,top:CheckBox12__top,width:CheckBox12__wid,height:CheckBox12__hei}" style="position:absolute;">{{CheckBox12__cap}}
-</el-checkbox>
-<el-button size="medium" v-if="Button76__vis" :disabled="Button76__dis" type="primary" :style="{left:Button76__lef,top:Button76__top,width:Button76__wid,height:Button76__hei}" style="position:absolute;" @click="dwevent('Button76','0','onclick','')">{{Button76__cap}}
-</el-button>
-<el-button size="medium" v-if="Button77__vis" :disabled="Button77__dis" type="primary" :style="{left:Button77__lef,top:Button77__top,width:Button77__wid,height:Button77__hei}" style="position:absolute;" @click="dwevent('Button77','0','onclick','')">{{Button77__cap}}
-</el-button>
-<el-button size="medium" v-if="Button78__vis" :disabled="Button78__dis" type="primary" :style="{left:Button78__lef,top:Button78__top,width:Button78__wid,height:Button78__hei}" style="position:absolute;" @click="dwevent('Button78','0','onclick','')">{{Button78__cap}}
-</el-button>
-<el-button size="medium" v-if="Button79__vis" :disabled="Button79__dis" type="primary" :style="{left:Button79__lef,top:Button79__top,width:Button79__wid,height:Button79__hei}" style="position:absolute;" @click="dwevent('Button79','0','onclick','')">{{Button79__cap}}
-</el-button>
-<el-button size="medium" v-if="Button80__vis" :disabled="Button80__dis" type="default" :style="{left:Button80__lef,top:Button80__top,width:Button80__wid,height:Button80__hei}" style="position:absolute;" @click="dwevent('Button80','0','onclick','')">{{Button80__cap}}
-</el-button>
-<el-button size="medium" v-if="Button81__vis" :disabled="Button81__dis" type="default" :style="{left:Button81__lef,top:Button81__top,width:Button81__wid,height:Button81__hei}" style="position:absolute;" @click="dwevent('Button81','0','onclick','')">{{Button81__cap}}
-</el-button>
-</el-main>
-<el-main v-if="PageControl__apg=='TabSheet14'" :disabled="TabSheet14__dis" :style="{backgroundColor:TabSheet14__col,left:TabSheet14__lef,top:TabSheet14__top,width:TabSheet14__wid,height:TabSheet14__hei}" style="position:absolute;overflow:hidden;">
-<el-checkbox v-if="CheckBox13__vis" :disabled="CheckBox13__dis" v-model="CheckBox13__chk" type="default" :style="{left:CheckBox13__lef,top:CheckBox13__top,width:CheckBox13__wid,height:CheckBox13__hei}" style="position:absolute;">{{CheckBox13__cap}}
-</el-checkbox>
-<el-button size="medium" v-if="Button82__vis" :disabled="Button82__dis" type="primary" :style="{left:Button82__lef,top:Button82__top,width:Button82__wid,height:Button82__hei}" style="position:absolute;" @click="dwevent('Button82','0','onclick','')">{{Button82__cap}}
-</el-button>
-<el-button size="medium" v-if="Button83__vis" :disabled="Button83__dis" type="primary" :style="{left:Button83__lef,top:Button83__top,width:Button83__wid,height:Button83__hei}" style="position:absolute;" @click="dwevent('Button83','0','onclick','')">{{Button83__cap}}
-</el-button>
-<el-button size="medium" v-if="Button84__vis" :disabled="Button84__dis" type="primary" :style="{left:Button84__lef,top:Button84__top,width:Button84__wid,height:Button84__hei}" style="position:absolute;" @click="dwevent('Button84','0','onclick','')">{{Button84__cap}}
-</el-button>
-<el-button size="medium" v-if="Button85__vis" :disabled="Button85__dis" type="primary" :style="{left:Button85__lef,top:Button85__top,width:Button85__wid,height:Button85__hei}" style="position:absolute;" @click="dwevent('Button85','0','onclick','')">{{Button85__cap}}
-</el-button>
-<el-button size="medium" v-if="Button86__vis" :disabled="Button86__dis" type="default" :style="{left:Button86__lef,top:Button86__top,width:Button86__wid,height:Button86__hei}" style="position:absolute;">{{Button86__cap}}
-</el-button>
-<el-button size="medium" v-if="Button87__vis" :disabled="Button87__dis" type="default" :style="{left:Button87__lef,top:Button87__top,width:Button87__wid,height:Button87__hei}" style="position:absolute;">{{Button87__cap}}
-</el-button>
-</el-main>
-    </div>
-</el-tabs>
+<el-image :src="Image1__src" fit="none" v-if="Image1__vis" :disabled="Image1__dis" :style="{left:Image1__lef,top:Image1__top,width:Image1__wid,height:Image1__hei}" style="position:absolute;border-radius:5px" @click="dwevent('Image1','0','onclick','')">
+</el-Image>
+<el-image :src="Image2__src" fit="contain" v-if="Image2__vis" :disabled="Image2__dis" :style="{left:Image2__lef,top:Image2__top,width:Image2__wid,height:Image2__hei}" style="position:absolute;" @click="dwevent('Image2','0','onclick','')">
+</el-Image>
+<el-image :src="Image4__src" fit="contain" v-if="Image4__vis" :disabled="Image4__dis" :style="{left:Image4__lef,top:Image4__top,width:Image4__wid,height:Image4__hei}" style="position:absolute;" @click="dwevent('Image4','0','onclick','')">
+</el-Image>
+<el-image :src="Image3__src" fit="fill" v-if="Image3__vis" :disabled="Image3__dis" :style="{left:Image3__lef,top:Image3__top,width:Image3__wid,height:Image3__hei}" style="position:absolute;border-radius:50%" @click="dwevent('Image3','0','onclick','')">
+</el-Image>
 	 </div>
     <script>
 	    Vue.prototype.procResp = function (data){
@@ -519,1566 +37,38 @@
 				el: '#app',
 				data: function () {
 					return {
-					    Demos__lef:"13000px",
-					    Demos__top:"20px",
-					    Demos__wid:"1096px",
-					    Demos__hei:"794px",
-Label_Title__lef:"153px",
-Label_Title__top:"12px",
-Label_Title__wid:"716px",
-Label_Title__hei:"48px",
-Label_Title__vis:true,
-Label_Title__dis:false,
-Label_Title__cap:"DeWeb : Delphi-Web ",
-Panel_Line__lef:"0px",
-Panel_Line__top:"80px",
-Panel_Line__wid:"1100px",
-Panel_Line__hei:"2px",
-Panel_Line__vis:true,
-Panel_Line__dis:false,
-Panel_Line__col:"#F0F0F0",
-Label1__lef:"30px",
-Label1__top:"36px",
-Label1__wid:"134px",
-Label1__hei:"24px",
-Label1__vis:true,
-Label1__dis:false,
-Label1__cap:"Color",
-Label2__lef:"30px",
-Label2__top:"106px",
-Label2__wid:"134px",
-Label2__hei:"24px",
-Label2__vis:true,
-Label2__dis:false,
-Label2__cap:"OnClick",
-Label3__lef:"30px",
-Label3__top:"178px",
-Label3__wid:"134px",
-Label3__hei:"24px",
-Label3__vis:true,
-Label3__dis:false,
-Label3__cap:"Enabled",
-Label4__lef:"30px",
-Label4__top:"254px",
-Label4__wid:"134px",
-Label4__hei:"24px",
-Label4__vis:true,
-Label4__dis:false,
-Label4__cap:"Position",
-Label5__lef:"30px",
-Label5__top:"334px",
-Label5__wid:"134px",
-Label5__hei:"24px",
-Label5__vis:true,
-Label5__dis:false,
-Label5__cap:"Size",
-Label6__lef:"30px",
-Label6__top:"417px",
-Label6__wid:"134px",
-Label6__hei:"24px",
-Label6__vis:true,
-Label6__dis:false,
-Label6__cap:"Caption",
-Button1__lef:"180px",
-Button1__top:"30px",
-Button1__wid:"90px",
-Button1__hei:"35px",
-Button1__vis:true,
-Button1__dis:false,
-Button1__cap:"Default",
-Button2__lef:"276px",
-Button2__top:"30px",
-Button2__wid:"90px",
-Button2__hei:"35px",
-Button2__vis:true,
-Button2__dis:false,
-Button2__cap:"Primary",
-Button3__lef:"372px",
-Button3__top:"30px",
-Button3__wid:"90px",
-Button3__hei:"35px",
-Button3__vis:true,
-Button3__dis:false,
-Button3__cap:"Success",
-Button4__lef:"468px",
-Button4__top:"30px",
-Button4__wid:"90px",
-Button4__hei:"35px",
-Button4__vis:true,
-Button4__dis:false,
-Button4__cap:"Info",
-Button5__lef:"564px",
-Button5__top:"30px",
-Button5__wid:"90px",
-Button5__hei:"35px",
-Button5__vis:true,
-Button5__dis:false,
-Button5__cap:"Warning",
-Button6__lef:"660px",
-Button6__top:"30px",
-Button6__wid:"90px",
-Button6__hei:"35px",
-Button6__vis:true,
-Button6__dis:false,
-Button6__cap:"Danger",
-Button7__lef:"180px",
-Button7__top:"100px",
-Button7__wid:"150px",
-Button7__hei:"35px",
-Button7__vis:true,
-Button7__dis:false,
-Button7__cap:"Click me",
-Button8__lef:"180px",
-Button8__top:"170px",
-Button8__wid:"150px",
-Button8__hei:"35px",
-Button8__vis:true,
-Button8__dis:true,
-Button8__cap:"Diabled",
-Button9__lef:"372px",
-Button9__top:"170px",
-Button9__wid:"90px",
-Button9__hei:"35px",
-Button9__vis:true,
-Button9__dis:false,
-Button9__cap:"Change",
-Button10__lef:"180px",
-Button10__top:"246px",
-Button10__wid:"150px",
-Button10__hei:"35px",
-Button10__vis:true,
-Button10__dis:false,
-Button10__cap:"Button",
-Button11__lef:"372px",
-Button11__top:"246px",
-Button11__wid:"90px",
-Button11__hei:"35px",
-Button11__vis:true,
-Button11__dis:false,
-Button11__cap:"Change",
-Button12__lef:"180px",
-Button12__top:"328px",
-Button12__wid:"150px",
-Button12__hei:"35px",
-Button12__vis:true,
-Button12__dis:false,
-Button12__cap:"Button",
-Button13__lef:"372px",
-Button13__top:"328px",
-Button13__wid:"90px",
-Button13__hei:"35px",
-Button13__vis:true,
-Button13__dis:false,
-Button13__cap:"Change",
-Button14__lef:"180px",
-Button14__top:"411px",
-Button14__wid:"150px",
-Button14__hei:"35px",
-Button14__vis:true,
-Button14__dis:false,
-Button14__cap:"ButtonÖÐ123",
-Button15__lef:"372px",
-Button15__top:"411px",
-Button15__wid:"90px",
-Button15__hei:"35px",
-Button15__vis:true,
-Button15__dis:false,
-Button15__cap:"Change",
-TabSheet1__lef:"58px",
-TabSheet1__top:"4px",
-TabSheet1__wid:"1038px",
-TabSheet1__hei:"1017px",
-TabSheet1__vis:false,
-TabSheet1__dis:false,
-TabSheet1__cap:"Button",
-Label14__lef:"47px",
-Label14__top:"41px",
-Label14__wid:"134px",
-Label14__hei:"24px",
-Label14__vis:true,
-Label14__dis:false,
-Label14__cap:"Normal",
-Label15__lef:"47px",
-Label15__top:"112px",
-Label15__wid:"134px",
-Label15__hei:"24px",
-Label15__vis:true,
-Label15__dis:false,
-Label15__cap:"Enabled",
-Label16__lef:"47px",
-Label16__top:"188px",
-Label16__wid:"134px",
-Label16__hei:"24px",
-Label16__vis:true,
-Label16__dis:false,
-Label16__cap:"Position",
-Label17__lef:"47px",
-Label17__top:"268px",
-Label17__wid:"134px",
-Label17__hei:"24px",
-Label17__vis:true,
-Label17__dis:false,
-Label17__cap:"Size",
-Label18__lef:"40px",
-Label18__top:"346px",
-Label18__wid:"134px",
-Label18__hei:"24px",
-Label18__vis:true,
-Label18__dis:false,
-Label18__cap:"Checked",
-Label19__lef:"40px",
-Label19__top:"427px",
-Label19__wid:"134px",
-Label19__hei:"24px",
-Label19__vis:true,
-Label19__dis:false,
-Label19__cap:"Caption",
-Label20__lef:"40px",
-Label20__top:"514px",
-Label20__wid:"134px",
-Label20__hei:"24px",
-Label20__vis:true,
-Label20__dis:false,
-Label20__cap:"OnClick",
-Button20__lef:"390px",
-Button20__top:"340px",
-Button20__wid:"90px",
-Button20__hei:"35px",
-Button20__vis:true,
-Button20__dis:false,
-Button20__cap:"Change",
-Button21__lef:"390px",
-Button21__top:"264px",
-Button21__wid:"90px",
-Button21__hei:"35px",
-Button21__vis:true,
-Button21__dis:false,
-Button21__cap:"Change",
-Button22__lef:"390px",
-Button22__top:"182px",
-Button22__wid:"90px",
-Button22__hei:"35px",
-Button22__vis:true,
-Button22__dis:false,
-Button22__cap:"Change",
-Button23__lef:"390px",
-Button23__top:"100px",
-Button23__wid:"90px",
-Button23__hei:"35px",
-Button23__vis:true,
-Button23__dis:false,
-Button23__cap:"Change",
-CheckBox1__lef:"144px",
-CheckBox1__top:"42px",
-CheckBox1__wid:"120px",
-CheckBox1__hei:"17px",
-CheckBox1__vis:true,
-CheckBox1__dis:false,
-CheckBox1__cap:"CheckBox1",
-CheckBox1__chk:false,
-CheckBox2__lef:"276px",
-CheckBox2__top:"41px",
-CheckBox2__wid:"97px",
-CheckBox2__hei:"17px",
-CheckBox2__vis:true,
-CheckBox2__dis:false,
-CheckBox2__cap:"CheckBox_Checked",
-CheckBox2__chk:true,
-CheckBox3__lef:"144px",
-CheckBox3__top:"114px",
-CheckBox3__wid:"120px",
-CheckBox3__hei:"17px",
-CheckBox3__vis:true,
-CheckBox3__dis:false,
-CheckBox3__cap:"CheckBox3",
-CheckBox3__chk:false,
-CheckBox4__lef:"141px",
-CheckBox4__top:"193px",
-CheckBox4__wid:"120px",
-CheckBox4__hei:"17px",
-CheckBox4__vis:true,
-CheckBox4__dis:false,
-CheckBox4__cap:"CheckBox4",
-CheckBox4__chk:false,
-CheckBox5__lef:"141px",
-CheckBox5__top:"270px",
-CheckBox5__wid:"120px",
-CheckBox5__hei:"17px",
-CheckBox5__vis:true,
-CheckBox5__dis:false,
-CheckBox5__cap:"CheckBox5",
-CheckBox5__chk:false,
-CheckBox6__lef:"141px",
-CheckBox6__top:"348px",
-CheckBox6__wid:"120px",
-CheckBox6__hei:"17px",
-CheckBox6__vis:true,
-CheckBox6__dis:false,
-CheckBox6__cap:"CheckBox6",
-CheckBox6__chk:false,
-CheckBox7__lef:"141px",
-CheckBox7__top:"429px",
-CheckBox7__wid:"180px",
-CheckBox7__hei:"17px",
-CheckBox7__vis:true,
-CheckBox7__dis:false,
-CheckBox7__cap:"CheckÑ¡ÖÐ¿ò",
-CheckBox7__chk:false,
-Button24__lef:"390px",
-Button24__top:"421px",
-Button24__wid:"90px",
-Button24__hei:"35px",
-Button24__vis:true,
-Button24__dis:false,
-Button24__cap:"Change",
-CheckBox8__lef:"148px",
-CheckBox8__top:"515px",
-CheckBox8__wid:"120px",
-CheckBox8__hei:"17px",
-CheckBox8__vis:true,
-CheckBox8__dis:false,
-CheckBox8__cap:"CheckBox7",
-CheckBox8__chk:false,
-TabSheet4__lef:"58px",
-TabSheet4__top:"4px",
-TabSheet4__wid:"1038px",
-TabSheet4__hei:"1017px",
-TabSheet4__vis:false,
-TabSheet4__dis:false,
-TabSheet4__cap:"CheckBox",
-Label50__lef:"47px",
-Label50__top:"49px",
-Label50__wid:"134px",
-Label50__hei:"24px",
-Label50__vis:true,
-Label50__dis:false,
-Label50__cap:"Normal",
-Label52__lef:"47px",
-Label52__top:"120px",
-Label52__wid:"134px",
-Label52__hei:"24px",
-Label52__vis:true,
-Label52__dis:false,
-Label52__cap:"Enabled",
-Label53__lef:"47px",
-Label53__top:"191px",
-Label53__wid:"134px",
-Label53__hei:"24px",
-Label53__vis:true,
-Label53__dis:false,
-Label53__cap:"Position",
-Label54__lef:"47px",
-Label54__top:"261px",
-Label54__wid:"134px",
-Label54__hei:"24px",
-Label54__vis:true,
-Label54__dis:false,
-Label54__cap:"Size",
-Label55__lef:"47px",
-Label55__top:"332px",
-Label55__wid:"134px",
-Label55__hei:"24px",
-Label55__vis:true,
-Label55__dis:false,
-Label55__cap:"Text",
-Label57__lef:"47px",
-Label57__top:"404px",
-Label57__wid:"134px",
-Label57__hei:"24px",
-Label57__vis:true,
-Label57__dis:false,
-Label57__cap:"OnChange",
-Button41__lef:"390px",
-Button41__top:"117px",
-Button41__wid:"90px",
-Button41__hei:"35px",
-Button41__vis:true,
-Button41__dis:false,
-Button41__cap:"Change",
-Button42__lef:"390px",
-Button42__top:"185px",
-Button42__wid:"90px",
-Button42__hei:"35px",
-Button42__vis:true,
-Button42__dis:false,
-Button42__cap:"Change",
-Button43__lef:"390px",
-Button43__top:"255px",
-Button43__wid:"90px",
-Button43__hei:"35px",
-Button43__vis:true,
-Button43__dis:false,
-Button43__cap:"Change",
-Button44__lef:"390px",
-Button44__top:"326px",
-Button44__wid:"90px",
-Button44__hei:"35px",
-Button44__vis:true,
-Button44__dis:false,
-Button44__cap:"Change",
-ComboBox1__options:[{value:'New York'},{value:'BeiJing'},{value:'¶«¾©'},{value:'Nibilu'}],
-ComboBox1__lef:"180px",
-ComboBox1__top:"50px",
-ComboBox1__wid:"145px",
-ComboBox1__hei:"28px",
-ComboBox1__vis:true,
-ComboBox1__dis:false,
-ComboBox1__txt:"ComboBox1",
-ComboBox3__options:[{value:'New York'},{value:'BeiJing'},{value:'¶«¾©'},{value:'Nibilu'}],
-ComboBox3__lef:"180px",
-ComboBox3__top:"190px",
-ComboBox3__wid:"145px",
-ComboBox3__hei:"28px",
-ComboBox3__vis:true,
-ComboBox3__dis:false,
-ComboBox3__txt:"ComboBox3",
-ComboBox2__options:[{value:'New York'},{value:'BeiJing'},{value:'¶«¾©'},{value:'Nibilu'}],
-ComboBox2__lef:"179px",
-ComboBox2__top:"120px",
-ComboBox2__wid:"145px",
-ComboBox2__hei:"28px",
-ComboBox2__vis:true,
-ComboBox2__dis:false,
-ComboBox2__txt:"ComboBox2",
-ComboBox5__options:[{value:'New York'},{value:'BeiJing'},{value:'¶«¾©'},{value:'Nibilu'}],
-ComboBox5__lef:"180px",
-ComboBox5__top:"329px",
-ComboBox5__wid:"145px",
-ComboBox5__hei:"28px",
-ComboBox5__vis:true,
-ComboBox5__dis:false,
-ComboBox5__txt:"ComboÎ÷·ç",
-ComboBox4__options:[{value:'New York'},{value:'BeiJing'},{value:'¶«¾©'},{value:'Nibilu'}],
-ComboBox4__lef:"180px",
-ComboBox4__top:"260px",
-ComboBox4__wid:"145px",
-ComboBox4__hei:"28px",
-ComboBox4__vis:true,
-ComboBox4__dis:false,
-ComboBox4__txt:"ComboBox4",
-ComboBox6__options:[{value:'New York'},{value:'BeiJing'},{value:'¶«¾©'},{value:'Nibilu'}],
-ComboBox6__lef:"180px",
-ComboBox6__top:"400px",
-ComboBox6__wid:"145px",
-ComboBox6__hei:"28px",
-ComboBox6__vis:true,
-ComboBox6__dis:false,
-ComboBox6__txt:"ComboBox6",
-TabSheet8__lef:"58px",
-TabSheet8__top:"4px",
-TabSheet8__wid:"1038px",
-TabSheet8__hei:"1017px",
-TabSheet8__vis:false,
-TabSheet8__dis:false,
-TabSheet8__cap:"ComboBox",
-Label51__lef:"71px",
-Label51__top:"58px",
-Label51__wid:"134px",
-Label51__hei:"24px",
-Label51__vis:true,
-Label51__dis:false,
-Label51__cap:"Normal",
-Label56__lef:"71px",
-Label56__top:"128px",
-Label56__wid:"134px",
-Label56__hei:"24px",
-Label56__vis:true,
-Label56__dis:false,
-Label56__cap:"Enabled",
-Label58__lef:"71px",
-Label58__top:"198px",
-Label58__wid:"134px",
-Label58__hei:"24px",
-Label58__vis:true,
-Label58__dis:false,
-Label58__cap:"Position",
-Label59__lef:"71px",
-Label59__top:"268px",
-Label59__wid:"134px",
-Label59__hei:"24px",
-Label59__vis:true,
-Label59__dis:false,
-Label59__cap:"Size",
-Label60__lef:"71px",
-Label60__top:"338px",
-Label60__wid:"134px",
-Label60__hei:"24px",
-Label60__vis:true,
-Label60__dis:false,
-Label60__cap:"Value",
-Label62__lef:"71px",
-Label62__top:"478px",
-Label62__wid:"88px",
-Label62__hei:"24px",
-Label62__vis:true,
-Label62__dis:false,
-Label62__cap:"OnChange",
-Button45__lef:"501px",
-Button45__top:"122px",
-Button45__wid:"90px",
-Button45__hei:"35px",
-Button45__vis:true,
-Button45__dis:false,
-Button45__cap:"Change",
-Button46__lef:"501px",
-Button46__top:"196px",
-Button46__wid:"90px",
-Button46__hei:"35px",
-Button46__vis:true,
-Button46__dis:false,
-Button46__cap:"Change",
-Button47__lef:"501px",
-Button47__top:"262px",
-Button47__wid:"90px",
-Button47__hei:"35px",
-Button47__vis:true,
-Button47__dis:false,
-Button47__cap:"Change",
-Button48__lef:"502px",
-Button48__top:"327px",
-Button48__wid:"90px",
-Button48__hei:"35px",
-Button48__vis:true,
-Button48__dis:false,
-Button48__cap:"Change",
-TabSheet10__lef:"58px",
-TabSheet10__top:"4px",
-TabSheet10__wid:"1038px",
-TabSheet10__hei:"1017px",
-TabSheet10__vis:false,
-TabSheet10__dis:false,
-TabSheet10__cap:"DateTimePicker",
-Label7__lef:"39px",
-Label7__top:"33px",
-Label7__wid:"134px",
-Label7__hei:"24px",
-Label7__vis:true,
-Label7__dis:false,
-Label7__cap:"Normal",
-Label8__lef:"39px",
-Label8__top:"102px",
-Label8__wid:"134px",
-Label8__hei:"24px",
-Label8__vis:true,
-Label8__dis:false,
-Label8__cap:"Password",
-Label9__lef:"39px",
-Label9__top:"175px",
-Label9__wid:"134px",
-Label9__hei:"24px",
-Label9__vis:true,
-Label9__dis:false,
-Label9__cap:"Enabled",
-Label10__lef:"39px",
-Label10__top:"251px",
-Label10__wid:"134px",
-Label10__hei:"24px",
-Label10__vis:true,
-Label10__dis:false,
-Label10__cap:"Position",
-Label11__lef:"39px",
-Label11__top:"331px",
-Label11__wid:"134px",
-Label11__hei:"24px",
-Label11__vis:true,
-Label11__dis:false,
-Label11__cap:"Size",
-Label12__lef:"39px",
-Label12__top:"409px",
-Label12__wid:"134px",
-Label12__hei:"24px",
-Label12__vis:true,
-Label12__dis:false,
-Label12__cap:"Text",
-Label13__lef:"39px",
-Label13__top:"479px",
-Label13__wid:"134px",
-Label13__hei:"24px",
-Label13__vis:true,
-Label13__dis:false,
-Label13__cap:"Placeholder/icon",
-Label49__lef:"39px",
-Label49__top:"553px",
-Label49__wid:"134px",
-Label49__hei:"24px",
-Label49__vis:true,
-Label49__dis:false,
-Label49__cap:"OnChange",
-Edit1__lef:"179px",
-Edit1__top:"30px",
-Edit1__wid:"160px",
-Edit1__hei:"28px",
-Edit1__vis:true,
-Edit1__dis:false,
-Edit1__txt:"Edit1",
-Edit2__lef:"179px",
-Edit2__top:"99px",
-Edit2__wid:"160px",
-Edit2__hei:"28px",
-Edit2__vis:true,
-Edit2__dis:false,
-Edit2__txt:"Edit2",
-Edit3__lef:"179px",
-Edit3__top:"172px",
-Edit3__wid:"160px",
-Edit3__hei:"28px",
-Edit3__vis:true,
-Edit3__dis:true,
-Edit3__txt:"Edit3",
-Edit4__lef:"179px",
-Edit4__top:"248px",
-Edit4__wid:"160px",
-Edit4__hei:"28px",
-Edit4__vis:true,
-Edit4__dis:false,
-Edit4__txt:"Edit4",
-Edit5__lef:"179px",
-Edit5__top:"328px",
-Edit5__wid:"160px",
-Edit5__hei:"28px",
-Edit5__vis:true,
-Edit5__dis:false,
-Edit5__txt:"Edit5",
-Edit6__lef:"179px",
-Edit6__top:"406px",
-Edit6__wid:"160px",
-Edit6__hei:"28px",
-Edit6__vis:true,
-Edit6__dis:false,
-Edit6__txt:"±à¼­¿ò",
-Edit7__lef:"179px",
-Edit7__top:"479px",
-Edit7__wid:"160px",
-Edit7__hei:"28px",
-Edit7__vis:true,
-Edit7__dis:false,
-Edit7__txt:"",
-Button16__lef:"382px",
-Button16__top:"169px",
-Button16__wid:"90px",
-Button16__hei:"35px",
-Button16__vis:true,
-Button16__dis:false,
-Button16__cap:"Change",
-Button17__lef:"382px",
-Button17__top:"245px",
-Button17__wid:"90px",
-Button17__hei:"35px",
-Button17__vis:true,
-Button17__dis:false,
-Button17__cap:"Change",
-Button18__lef:"382px",
-Button18__top:"327px",
-Button18__wid:"90px",
-Button18__hei:"35px",
-Button18__vis:true,
-Button18__dis:false,
-Button18__cap:"Change",
-Button19__lef:"382px",
-Button19__top:"403px",
-Button19__wid:"90px",
-Button19__hei:"35px",
-Button19__vis:true,
-Button19__dis:false,
-Button19__cap:"Change",
-Edit8__lef:"179px",
-Edit8__top:"550px",
-Edit8__wid:"160px",
-Edit8__hei:"28px",
-Edit8__vis:true,
-Edit8__dis:false,
-Edit8__txt:"",
-TabSheet2__lef:"58px",
-TabSheet2__top:"4px",
-TabSheet2__wid:"1038px",
-TabSheet2__hei:"1017px",
-TabSheet2__vis:true,
-TabSheet2__dis:false,
-TabSheet2__cap:"Edit",
-Label61__lef:"30px",
-Label61__top:"193px",
-Label61__wid:"177px",
-Label61__hei:"20px",
-Label61__vis:true,
-Label61__dis:false,
-Label61__cap:"normal",
-Label63__lef:"276px",
-Label63__top:"187px",
-Label63__wid:"177px",
-Label63__hei:"20px",
-Label63__vis:true,
-Label63__dis:false,
-Label63__cap:"Proportional = True",
-Label64__lef:"32px",
-Label64__top:"403px",
-Label64__wid:"177px",
-Label64__hei:"20px",
-Label64__vis:true,
-Label64__dis:false,
-Label64__cap:"Stretch = True",
-Label65__lef:"267px",
-Label65__top:"403px",
-Label65__wid:"177px",
-Label65__hei:"20px",
-Label65__vis:true,
-Label65__dis:false,
-Label65__cap:"Stretch = True",
-Label66__lef:"276px",
-Label66__top:"429px",
-Label66__wid:"177px",
-Label66__hei:"20px",
-Label66__vis:true,
-Label66__dis:false,
-Label66__cap:"Proportional = True",
-Button49__lef:"30px",
-Button49__top:"454px",
-Button49__wid:"90px",
-Button49__hei:"35px",
-Button49__vis:true,
-Button49__dis:false,
-Button49__cap:"Visible",
-Button50__lef:"30px",
-Button50__top:"515px",
-Button50__wid:"90px",
-Button50__hei:"35px",
-Button50__vis:true,
-Button50__dis:false,
-Button50__cap:"Position",
-Button51__lef:"30px",
-Button51__top:"579px",
-Button51__wid:"90px",
-Button51__hei:"35px",
-Button51__vis:true,
-Button51__dis:false,
-Button51__cap:"Size",
-TabSheet13__lef:"58px",
-TabSheet13__top:"4px",
-TabSheet13__wid:"1038px",
-TabSheet13__hei:"1017px",
-TabSheet13__vis:false,
-TabSheet13__dis:false,
-TabSheet13__cap:"Image",
-Label21__lef:"38px",
-Label21__top:"44px",
-Label21__wid:"134px",
-Label21__hei:"24px",
-Label21__vis:true,
-Label21__dis:false,
-Label21__cap:"Font",
-Label24__lef:"39px",
-Label24__top:"114px",
-Label24__wid:"134px",
-Label24__hei:"24px",
-Label24__vis:true,
-Label24__dis:false,
-Label24__cap:"Position",
-Label26__lef:"39px",
-Label26__top:"188px",
-Label26__wid:"134px",
-Label26__hei:"24px",
-Label26__vis:true,
-Label26__dis:false,
-Label26__cap:"Caption",
-Label27__lef:"147px",
-Label27__top:"39px",
-Label27__wid:"134px",
-Label27__hei:"24px",
-Label27__vis:true,
-Label27__dis:false,
-Label27__cap:"Label",
-Label28__lef:"239px",
-Label28__top:"32px",
-Label28__wid:"134px",
-Label28__hei:"46px",
-Label28__vis:true,
-Label28__dis:false,
-Label28__cap:"Large",
-Label29__lef:"362px",
-Label29__top:"44px",
-Label29__wid:"134px",
-Label29__hei:"24px",
-Label29__vis:true,
-Label29__dis:false,
-Label29__cap:"Small",
-Label30__lef:"464px",
-Label30__top:"40px",
-Label30__wid:"134px",
-Label30__hei:"24px",
-Label30__vis:true,
-Label30__dis:false,
-Label30__cap:"Bold",
-Label31__lef:"565px",
-Label31__top:"40px",
-Label31__wid:"83px",
-Label31__hei:"24px",
-Label31__vis:true,
-Label31__dis:false,
-Label31__cap:"Italic",
-Label32__lef:"663px",
-Label32__top:"39px",
-Label32__wid:"134px",
-Label32__hei:"24px",
-Label32__vis:true,
-Label32__dis:false,
-Label32__cap:"Color",
-Label35__lef:"148px",
-Label35__top:"112px",
-Label35__wid:"134px",
-Label35__hei:"24px",
-Label35__vis:true,
-Label35__dis:false,
-Label35__cap:"Label2",
-Label37__lef:"148px",
-Label37__top:"188px",
-Label37__wid:"134px",
-Label37__hei:"24px",
-Label37__vis:true,
-Label37__dis:false,
-Label37__cap:"Label±êÇ©",
-Button35__lef:"381px",
-Button35__top:"106px",
-Button35__wid:"90px",
-Button35__hei:"35px",
-Button35__vis:true,
-Button35__dis:false,
-Button35__cap:"Change",
-Button39__lef:"381px",
-Button39__top:"182px",
-Button39__wid:"90px",
-Button39__hei:"35px",
-Button39__vis:true,
-Button39__dis:false,
-Button39__cap:"Change",
-TabSheet3__lef:"58px",
-TabSheet3__top:"4px",
-TabSheet3__wid:"1038px",
-TabSheet3__hei:"1017px",
-TabSheet3__vis:false,
-TabSheet3__dis:false,
-TabSheet3__cap:"Label",
-Button52__lef:"48px",
-Button52__top:"216px",
-Button52__wid:"90px",
-Button52__hei:"35px",
-Button52__vis:true,
-Button52__dis:false,
-Button52__cap:"Visible",
-Button53__lef:"48px",
-Button53__top:"280px",
-Button53__wid:"90px",
-Button53__hei:"35px",
-Button53__vis:true,
-Button53__dis:false,
-Button53__cap:"Position",
-Button54__lef:"160px",
-Button54__top:"280px",
-Button54__wid:"90px",
-Button54__hei:"35px",
-Button54__vis:true,
-Button54__dis:false,
-Button54__cap:"Size",
-Button55__lef:"160px",
-Button55__top:"216px",
-Button55__wid:"90px",
-Button55__hei:"35px",
-Button55__vis:true,
-Button55__dis:false,
-Button55__cap:"Enabled",
-Button56__lef:"44px",
-Button56__top:"345px",
-Button56__wid:"91px",
-Button56__hei:"35px",
-Button56__vis:true,
-Button56__dis:false,
-Button56__cap:"Get",
-Button57__lef:"44px",
-Button57__top:"413px",
-Button57__wid:"91px",
-Button57__hei:"35px",
-Button57__vis:true,
-Button57__dis:false,
-Button57__cap:"Set",
-TabSheet15__lef:"58px",
-TabSheet15__top:"4px",
-TabSheet15__wid:"1038px",
-TabSheet15__hei:"1017px",
-TabSheet15__vis:false,
-TabSheet15__dis:false,
-TabSheet15__cap:"ListBox",
-Button58__lef:"56px",
-Button58__top:"220px",
-Button58__wid:"90px",
-Button58__hei:"35px",
-Button58__vis:true,
-Button58__dis:false,
-Button58__cap:"Visible",
-Button59__lef:"170px",
-Button59__top:"220px",
-Button59__wid:"90px",
-Button59__hei:"35px",
-Button59__vis:true,
-Button59__dis:false,
-Button59__cap:"Enabled",
-Button60__lef:"170px",
-Button60__top:"280px",
-Button60__wid:"90px",
-Button60__hei:"35px",
-Button60__vis:true,
-Button60__dis:false,
-Button60__cap:"Size",
-Button61__lef:"56px",
-Button61__top:"280px",
-Button61__wid:"90px",
-Button61__hei:"35px",
-Button61__vis:true,
-Button61__dis:false,
-Button61__cap:"Position",
-Button62__lef:"55px",
-Button62__top:"340px",
-Button62__wid:"91px",
-Button62__hei:"35px",
-Button62__vis:true,
-Button62__dis:false,
-Button62__cap:"Get",
-Button63__lef:"170px",
-Button63__top:"340px",
-Button63__wid:"90px",
-Button63__hei:"35px",
-Button63__vis:true,
-Button63__dis:false,
-Button63__cap:"Set",
-CheckBox9__lef:"56px",
-CheckBox9__top:"183px",
-CheckBox9__wid:"344px",
-CheckBox9__hei:"17px",
-CheckBox9__vis:true,
-CheckBox9__dis:false,
-CheckBox9__cap:"ShowMessage OnChange",
-CheckBox9__chk:false,
-TabSheet9__lef:"58px",
-TabSheet9__top:"4px",
-TabSheet9__wid:"1038px",
-TabSheet9__hei:"1017px",
-TabSheet9__vis:false,
-TabSheet9__dis:false,
-TabSheet9__cap:"Memo",
-CheckBox10__lef:"22px",
-CheckBox10__top:"414px",
-CheckBox10__wid:"344px",
-CheckBox10__hei:"17px",
-CheckBox10__vis:true,
-CheckBox10__dis:false,
-CheckBox10__cap:"ShowMessage OnChange",
-CheckBox10__chk:false,
-Button64__lef:"20px",
-Button64__top:"450px",
-Button64__wid:"90px",
-Button64__hei:"35px",
-Button64__vis:true,
-Button64__dis:false,
-Button64__cap:"Visible",
-Button65__lef:"131px",
-Button65__top:"450px",
-Button65__wid:"90px",
-Button65__hei:"35px",
-Button65__vis:true,
-Button65__dis:true,
-Button65__cap:"Enabled",
-Button66__lef:"20px",
-Button66__top:"510px",
-Button66__wid:"90px",
-Button66__hei:"35px",
-Button66__vis:true,
-Button66__dis:false,
-Button66__cap:"Position",
-Button67__lef:"131px",
-Button67__top:"510px",
-Button67__wid:"90px",
-Button67__hei:"35px",
-Button67__vis:true,
-Button67__dis:false,
-Button67__cap:"Size",
-Button68__lef:"20px",
-Button68__top:"570px",
-Button68__wid:"91px",
-Button68__hei:"35px",
-Button68__vis:true,
-Button68__dis:false,
-Button68__cap:"Get",
-Button69__lef:"131px",
-Button69__top:"570px",
-Button69__wid:"90px",
-Button69__hei:"35px",
-Button69__vis:true,
-Button69__dis:false,
-Button69__cap:"Set",
-TabSheet16__lef:"58px",
-TabSheet16__top:"4px",
-TabSheet16__wid:"1038px",
-TabSheet16__hei:"1017px",
-TabSheet16__vis:false,
-TabSheet16__dis:false,
-TabSheet16__cap:"MonthCalendar",
-TabSheet17__lef:"4px",
-TabSheet17__top:"31px",
-TabSheet17__wid:"373px",
-TabSheet17__hei:"184px",
-TabSheet17__vis:false,
-TabSheet17__dis:false,
-TabSheet17__cap:"TabÒ»",
-TabSheet18__lef:"4px",
-TabSheet18__top:"31px",
-TabSheet18__wid:"373px",
-TabSheet18__hei:"184px",
-TabSheet18__vis:false,
-TabSheet18__dis:false,
-TabSheet18__cap:"Tab¶þ",
-TabSheet19__lef:"4px",
-TabSheet19__top:"31px",
-TabSheet19__wid:"373px",
-TabSheet19__hei:"184px",
-TabSheet19__vis:true,
-TabSheet19__dis:false,
-TabSheet19__cap:"TabÈý",
-PageControl1__lef:"45px",
-PageControl1__top:"20px",
-PageControl1__wid:"381px",
-PageControl1__hei:"219px",
-PageControl1__vis:true,
-PageControl1__dis:false,
-PageControl1__apg:"TabSheet19",
-PageControl1__tps:"top",
-TabSheet22__lef:"31px",
-TabSheet22__top:"4px",
-TabSheet22__wid:"346px",
-TabSheet22__hei:"211px",
-TabSheet22__vis:false,
-TabSheet22__dis:false,
-TabSheet22__cap:"TabÒ»",
-TabSheet23__lef:"31px",
-TabSheet23__top:"4px",
-TabSheet23__wid:"346px",
-TabSheet23__hei:"211px",
-TabSheet23__vis:true,
-TabSheet23__dis:false,
-TabSheet23__cap:"Tab¶þ",
-PageControl3__lef:"473px",
-PageControl3__top:"20px",
-PageControl3__wid:"381px",
-PageControl3__hei:"219px",
-PageControl3__vis:true,
-PageControl3__dis:false,
-PageControl3__apg:"TabSheet23",
-PageControl3__tps:"left",
-Button70__lef:"39px",
-Button70__top:"323px",
-Button70__wid:"90px",
-Button70__hei:"35px",
-Button70__vis:true,
-Button70__dis:false,
-Button70__cap:"Visible",
-Button71__lef:"154px",
-Button71__top:"324px",
-Button71__wid:"90px",
-Button71__hei:"35px",
-Button71__vis:true,
-Button71__dis:true,
-Button71__cap:"Enabled",
-Button72__lef:"154px",
-Button72__top:"384px",
-Button72__wid:"90px",
-Button72__hei:"35px",
-Button72__vis:true,
-Button72__dis:false,
-Button72__cap:"Size",
-Button73__lef:"40px",
-Button73__top:"384px",
-Button73__wid:"90px",
-Button73__hei:"35px",
-Button73__vis:true,
-Button73__dis:false,
-Button73__cap:"Position",
-Button74__lef:"39px",
-Button74__top:"444px",
-Button74__wid:"91px",
-Button74__hei:"35px",
-Button74__vis:true,
-Button74__dis:false,
-Button74__cap:"Get",
-Button75__lef:"154px",
-Button75__top:"444px",
-Button75__wid:"90px",
-Button75__hei:"35px",
-Button75__vis:true,
-Button75__dis:false,
-Button75__cap:"Set",
-CheckBox11__lef:"40px",
-CheckBox11__top:"287px",
-CheckBox11__wid:"344px",
-CheckBox11__hei:"22px",
-CheckBox11__vis:true,
-CheckBox11__dis:false,
-CheckBox11__cap:"ShowMessage OnChange",
-CheckBox11__chk:false,
-TabSheet11__lef:"58px",
-TabSheet11__top:"4px",
-TabSheet11__wid:"1038px",
-TabSheet11__hei:"1017px",
-TabSheet11__vis:false,
-TabSheet11__dis:false,
-TabSheet11__cap:"PageControl",
-Label22__lef:"158px",
-Label22__top:"129px",
-Label22__wid:"51px",
-Label22__hei:"20px",
-Label22__vis:true,
-Label22__dis:false,
-Label22__cap:"border",
-Label23__lef:"393px",
-Label23__top:"129px",
-Label23__wid:"74px",
-Label23__hei:"20px",
-Label23__vis:true,
-Label23__dis:false,
-Label23__cap:"no border",
-Label25__lef:"654px",
-Label25__top:"129px",
-Label25__wid:"38px",
-Label25__hei:"20px",
-Label25__vis:true,
-Label25__dis:false,
-Label25__cap:"color",
-Panel2__lef:"95px",
-Panel2__top:"30px",
-Panel2__wid:"185px",
-Panel2__hei:"93px",
-Panel2__vis:true,
-Panel2__dis:false,
-Panel2__col:"#FFFFFF",
-Panel3__lef:"331px",
-Panel3__top:"29px",
-Panel3__wid:"185px",
-Panel3__hei:"94px",
-Panel3__vis:true,
-Panel3__dis:false,
-Panel3__col:"#FFFFFF",
-Button88__lef:"127px",
-Button88__top:"58px",
-Button88__wid:"164px",
-Button88__hei:"68px",
-Button88__vis:true,
-Button88__dis:false,
-Button88__cap:"Visible",
-Panel4__lef:"588px",
-Panel4__top:"30px",
-Panel4__wid:"185px",
-Panel4__hei:"93px",
-Panel4__vis:true,
-Panel4__dis:false,
-Panel4__col:"#008000",
-Button25__lef:"95px",
-Button25__top:"210px",
-Button25__wid:"90px",
-Button25__hei:"35px",
-Button25__vis:true,
-Button25__dis:false,
-Button25__cap:"Visible",
-Button26__lef:"95px",
-Button26__top:"268px",
-Button26__wid:"90px",
-Button26__hei:"35px",
-Button26__vis:true,
-Button26__dis:false,
-Button26__cap:"Position",
-Button27__lef:"95px",
-Button27__top:"327px",
-Button27__wid:"90px",
-Button27__hei:"35px",
-Button27__vis:true,
-Button27__dis:false,
-Button27__cap:"Size",
-Button28__lef:"95px",
-Button28__top:"386px",
-Button28__wid:"90px",
-Button28__hei:"35px",
-Button28__vis:false,
-Button28__dis:false,
-Button28__cap:"Enabled",
-TabSheet5__lef:"58px",
-TabSheet5__top:"4px",
-TabSheet5__wid:"1038px",
-TabSheet5__hei:"1017px",
-TabSheet5__vis:false,
-TabSheet5__dis:false,
-TabSheet5__cap:"Panel",
-Label33__lef:"55px",
-Label33__top:"49px",
-Label33__wid:"134px",
-Label33__hei:"24px",
-Label33__vis:true,
-Label33__dis:false,
-Label33__cap:"Normal",
-Label34__lef:"55px",
-Label34__top:"127px",
-Label34__wid:"134px",
-Label34__hei:"24px",
-Label34__vis:true,
-Label34__dis:false,
-Label34__cap:"Enabled",
-Label36__lef:"55px",
-Label36__top:"206px",
-Label36__wid:"134px",
-Label36__hei:"24px",
-Label36__vis:true,
-Label36__dis:false,
-Label36__cap:"Position",
-Label38__lef:"55px",
-Label38__top:"285px",
-Label38__wid:"134px",
-Label38__hei:"24px",
-Label38__vis:true,
-Label38__dis:false,
-Label38__cap:"Size",
-Label39__lef:"55px",
-Label39__top:"364px",
-Label39__wid:"134px",
-Label39__hei:"24px",
-Label39__vis:true,
-Label39__dis:false,
-Label39__cap:"Checked",
-Label40__lef:"55px",
-Label40__top:"443px",
-Label40__wid:"134px",
-Label40__hei:"24px",
-Label40__vis:true,
-Label40__dis:false,
-Label40__cap:"Caption",
-Label41__lef:"55px",
-Label41__top:"522px",
-Label41__wid:"134px",
-Label41__hei:"24px",
-Label41__vis:true,
-Label41__dis:false,
-Label41__cap:"OnClick",
-Button29__lef:"406px",
-Button29__top:"362px",
-Button29__wid:"90px",
-Button29__hei:"35px",
-Button29__vis:true,
-Button29__dis:false,
-Button29__cap:"Change",
-Button30__lef:"406px",
-Button30__top:"279px",
-Button30__wid:"90px",
-Button30__hei:"35px",
-Button30__vis:true,
-Button30__dis:false,
-Button30__cap:"Change",
-Button31__lef:"406px",
-Button31__top:"199px",
-Button31__wid:"90px",
-Button31__hei:"35px",
-Button31__vis:true,
-Button31__dis:false,
-Button31__cap:"Change",
-Button32__lef:"406px",
-Button32__top:"121px",
-Button32__wid:"90px",
-Button32__hei:"35px",
-Button32__vis:true,
-Button32__dis:false,
-Button32__cap:"Change",
-Button33__lef:"406px",
-Button33__top:"434px",
-Button33__wid:"90px",
-Button33__hei:"35px",
-Button33__vis:true,
-Button33__dis:false,
-Button33__cap:"Change",
-RadioButton1__lef:"179px",
-RadioButton1__top:"51px",
-RadioButton1__wid:"140px",
-RadioButton1__hei:"17px",
-RadioButton1__vis:true,
-RadioButton1__dis:false,
-RadioButton1__cap:"RadioButton1",
-RadioButton1__chk:false,
-RadioButton2__lef:"331px",
-RadioButton2__top:"51px",
-RadioButton2__wid:"140px",
-RadioButton2__hei:"17px",
-RadioButton2__vis:true,
-RadioButton2__dis:false,
-RadioButton2__cap:"RadioButton2",
-RadioButton2__chk:true,
-RadioButton3__lef:"179px",
-RadioButton3__top:"129px",
-RadioButton3__wid:"140px",
-RadioButton3__hei:"17px",
-RadioButton3__vis:true,
-RadioButton3__dis:false,
-RadioButton3__cap:"RadioButton3",
-RadioButton3__chk:false,
-RadioButton4__lef:"179px",
-RadioButton4__top:"206px",
-RadioButton4__wid:"140px",
-RadioButton4__hei:"17px",
-RadioButton4__vis:true,
-RadioButton4__dis:false,
-RadioButton4__cap:"RadioButton4",
-RadioButton4__chk:false,
-RadioButton7__lef:"180px",
-RadioButton7__top:"442px",
-RadioButton7__wid:"140px",
-RadioButton7__hei:"17px",
-RadioButton7__vis:true,
-RadioButton7__dis:false,
-RadioButton7__cap:"µ¥Ñ¡¿ò",
-RadioButton7__chk:false,
-RadioButton6__lef:"180px",
-RadioButton6__top:"365px",
-RadioButton6__wid:"140px",
-RadioButton6__hei:"17px",
-RadioButton6__vis:true,
-RadioButton6__dis:false,
-RadioButton6__cap:"RadioButton6",
-RadioButton6__chk:false,
-RadioButton5__lef:"180px",
-RadioButton5__top:"287px",
-RadioButton5__wid:"152px",
-RadioButton5__hei:"17px",
-RadioButton5__vis:true,
-RadioButton5__dis:false,
-RadioButton5__cap:"RadioButton5",
-RadioButton5__chk:false,
-RadioButton8__lef:"179px",
-RadioButton8__top:"523px",
-RadioButton8__wid:"140px",
-RadioButton8__hei:"17px",
-RadioButton8__vis:true,
-RadioButton8__dis:false,
-RadioButton8__cap:"RadioButton8",
-RadioButton8__chk:false,
-TabSheet6__lef:"58px",
-TabSheet6__top:"4px",
-TabSheet6__wid:"1038px",
-TabSheet6__hei:"1017px",
-TabSheet6__vis:false,
-TabSheet6__dis:false,
-TabSheet6__cap:"RadioButton",
-Label42__lef:"63px",
-Label42__top:"50px",
-Label42__wid:"134px",
-Label42__hei:"24px",
-Label42__vis:true,
-Label42__dis:false,
-Label42__cap:"Normal",
-Label44__lef:"63px",
-Label44__top:"120px",
-Label44__wid:"134px",
-Label44__hei:"24px",
-Label44__vis:true,
-Label44__dis:false,
-Label44__cap:"Enabled",
-Label45__lef:"63px",
-Label45__top:"190px",
-Label45__wid:"134px",
-Label45__hei:"24px",
-Label45__vis:true,
-Label45__dis:false,
-Label45__cap:"Position",
-Label46__lef:"63px",
-Label46__top:"260px",
-Label46__wid:"134px",
-Label46__hei:"24px",
-Label46__vis:true,
-Label46__dis:false,
-Label46__cap:"Size",
-Label47__lef:"63px",
-Label47__top:"330px",
-Label47__wid:"134px",
-Label47__hei:"24px",
-Label47__vis:true,
-Label47__dis:false,
-Label47__cap:"Value",
-Label43__lef:"63px",
-Label43__top:"400px",
-Label43__wid:"134px",
-Label43__hei:"24px",
-Label43__vis:true,
-Label43__dis:false,
-Label43__cap:"Min - Max",
-Label48__lef:"63px",
-Label48__top:"470px",
-Label48__wid:"88px",
-Label48__hei:"24px",
-Label48__vis:true,
-Label48__dis:false,
-Label48__cap:"OnChange",
-Button34__lef:"390px",
-Button34__top:"115px",
-Button34__wid:"90px",
-Button34__hei:"35px",
-Button34__vis:true,
-Button34__dis:false,
-Button34__cap:"Change",
-Button36__lef:"390px",
-Button36__top:"185px",
-Button36__wid:"90px",
-Button36__hei:"35px",
-Button36__vis:true,
-Button36__dis:false,
-Button36__cap:"Change",
-Button37__lef:"390px",
-Button37__top:"255px",
-Button37__wid:"90px",
-Button37__hei:"35px",
-Button37__vis:true,
-Button37__dis:false,
-Button37__cap:"Change",
-Button38__lef:"390px",
-Button38__top:"325px",
-Button38__wid:"90px",
-Button38__hei:"35px",
-Button38__vis:true,
-Button38__dis:false,
-Button38__cap:"Change",
-Button40__lef:"390px",
-Button40__top:"395px",
-Button40__wid:"90px",
-Button40__hei:"35px",
-Button40__vis:true,
-Button40__dis:false,
-Button40__cap:"to [-15,15]",
-TabSheet7__lef:"58px",
-TabSheet7__top:"4px",
-TabSheet7__wid:"1038px",
-TabSheet7__hei:"1017px",
-TabSheet7__vis:false,
-TabSheet7__dis:false,
-TabSheet7__cap:"SpinEdit",
-CheckBox12__lef:"45px",
-CheckBox12__top:"292px",
-CheckBox12__wid:"344px",
-CheckBox12__hei:"22px",
-CheckBox12__vis:true,
-CheckBox12__dis:false,
-CheckBox12__cap:"ShowMessage OnChange",
-CheckBox12__chk:false,
-Button76__lef:"44px",
-Button76__top:"328px",
-Button76__wid:"90px",
-Button76__hei:"35px",
-Button76__vis:true,
-Button76__dis:false,
-Button76__cap:"Visible",
-Button77__lef:"159px",
-Button77__top:"329px",
-Button77__wid:"90px",
-Button77__hei:"35px",
-Button77__vis:true,
-Button77__dis:false,
-Button77__cap:"Enabled",
-Button78__lef:"159px",
-Button78__top:"388px",
-Button78__wid:"90px",
-Button78__hei:"35px",
-Button78__vis:true,
-Button78__dis:false,
-Button78__cap:"Size",
-Button79__lef:"45px",
-Button79__top:"389px",
-Button79__wid:"90px",
-Button79__hei:"35px",
-Button79__vis:true,
-Button79__dis:false,
-Button79__cap:"Position",
-Button80__lef:"44px",
-Button80__top:"449px",
-Button80__wid:"91px",
-Button80__hei:"35px",
-Button80__vis:true,
-Button80__dis:false,
-Button80__cap:"Get",
-Button81__lef:"159px",
-Button81__top:"449px",
-Button81__wid:"90px",
-Button81__hei:"35px",
-Button81__vis:true,
-Button81__dis:false,
-Button81__cap:"Set",
-TabSheet12__lef:"58px",
-TabSheet12__top:"4px",
-TabSheet12__wid:"1038px",
-TabSheet12__hei:"1017px",
-TabSheet12__vis:false,
-TabSheet12__dis:false,
-TabSheet12__cap:"StringGrid",
-CheckBox13__lef:"355px",
-CheckBox13__top:"28px",
-CheckBox13__wid:"344px",
-CheckBox13__hei:"22px",
-CheckBox13__vis:true,
-CheckBox13__dis:false,
-CheckBox13__cap:"ShowMessage OnClick",
-CheckBox13__chk:false,
-Button82__lef:"354px",
-Button82__top:"64px",
-Button82__wid:"90px",
-Button82__hei:"35px",
-Button82__vis:true,
-Button82__dis:false,
-Button82__cap:"Visible",
-Button83__lef:"469px",
-Button83__top:"65px",
-Button83__wid:"90px",
-Button83__hei:"35px",
-Button83__vis:true,
-Button83__dis:false,
-Button83__cap:"Enabled",
-Button84__lef:"469px",
-Button84__top:"125px",
-Button84__wid:"90px",
-Button84__hei:"35px",
-Button84__vis:true,
-Button84__dis:false,
-Button84__cap:"Size",
-Button85__lef:"355px",
-Button85__top:"125px",
-Button85__wid:"90px",
-Button85__hei:"35px",
-Button85__vis:true,
-Button85__dis:false,
-Button85__cap:"Position",
-Button86__lef:"354px",
-Button86__top:"185px",
-Button86__wid:"91px",
-Button86__hei:"35px",
-Button86__vis:true,
-Button86__dis:false,
-Button86__cap:"Get",
-Button87__lef:"469px",
-Button87__top:"185px",
-Button87__wid:"90px",
-Button87__hei:"35px",
-Button87__vis:true,
-Button87__dis:false,
-Button87__cap:"Set",
-TabSheet14__lef:"58px",
-TabSheet14__top:"4px",
-TabSheet14__wid:"1038px",
-TabSheet14__hei:"1017px",
-TabSheet14__vis:false,
-TabSheet14__dis:false,
-TabSheet14__cap:"TreeView",
-PageControl__lef:"0px",
-PageControl__top:"100px",
-PageControl__wid:"1100px",
-PageControl__hei:"1025px",
-PageControl__vis:true,
-PageControl__dis:false,
-PageControl__apg:"TabSheet2",
-PageControl__tps:"left",
+					    Test__lef:"13000px",
+					    Test__top:"150px",
+					    Test__wid:"606px",
+					    Test__hei:"622px",
+Image1__lef:"22px",
+Image1__top:"20px",
+Image1__wid:"177px",
+Image1__hei:"145px",
+Image1__vis:true,
+Image1__dis:false,
+Image1__src:"dist/webimages/Image1.jpg",
+Image2__lef:"268px",
+Image2__top:"20px",
+Image2__wid:"177px",
+Image2__hei:"145px",
+Image2__vis:true,
+Image2__dis:false,
+Image2__src:"dist/webimages/Image2.jpg",
+Image4__lef:"268px",
+Image4__top:"236px",
+Image4__wid:"177px",
+Image4__hei:"145px",
+Image4__vis:true,
+Image4__dis:false,
+Image4__src:"dist/webimages/Image4.jpg",
+Image3__lef:"24px",
+Image3__top:"236px",
+Image3__wid:"177px",
+Image3__hei:"145px",
+Image3__vis:true,
+Image3__dis:false,
+Image3__src:"dist/webimages/Image3.jpg",
 					    input_query_visible:false,
 					    input_query_caption:"Input Query",
 					    input_query_inputname:"new",
@@ -2106,10 +96,10 @@ PageControl__tps:"left",
                         },
                         false
                     );
-                    let Demoshearttimer = window.setInterval(function() {
+                    let Testhearttimer = window.setInterval(function() {
                         axios.get('{"mode":"heart","cid":[!clientid!]}')
                         .then(resp =>{me.procResp(resp.data)})
-                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(Demoshearttimer);});
+                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(Testhearttimer);});
                     }, 30000);
                 },
 				methods: {

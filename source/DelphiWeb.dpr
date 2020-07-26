@@ -26,6 +26,8 @@ uses
   dwTabSheets in 'dwVcls\dwTabSheets.pas',
   dwCheckBoxs in 'dwVcls\dwCheckBoxs.pas',
   dwPanels in 'dwVcls\dwPanels.pas',
+  dwDateTimePickers in 'dwVcls\dwDateTimePickers.pas',
+  dwImages in 'dwVcls\dwImages.pas',
   dwButtons in 'dwVcls\dwButtons.pas';
 
 {$R *.RES}
