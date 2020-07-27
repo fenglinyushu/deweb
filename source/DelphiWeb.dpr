@@ -18,9 +18,9 @@ uses
   DriverUnit in 'DriverUnit.pas' {Driver},
   dwDatas in 'dwDatas.pas' {DM: TDataModule},
   dwCtrlBase in 'dwCtrlBase.pas',
-  dwComboBoxs in 'dwVcls\dwComboBoxs.pas',
+  dwListBoxs in 'dwVcls\dwListBoxs.pas',
   dwRadioButtons in 'dwVcls\dwRadioButtons.pas',
-  dwEdits in 'dwVcls\dwEdits.pas',
+  dwMemos in 'dwVcls\dwMemos.pas',
   dwLabels in 'dwVcls\dwLabels.pas',
   dwPageControls in 'dwVcls\dwPageControls.pas',
   dwTabSheets in 'dwVcls\dwTabSheets.pas',
@@ -28,7 +28,11 @@ uses
   dwPanels in 'dwVcls\dwPanels.pas',
   dwDateTimePickers in 'dwVcls\dwDateTimePickers.pas',
   dwImages in 'dwVcls\dwImages.pas',
-  dwButtons in 'dwVcls\dwButtons.pas';
+  dwButtons in 'dwVcls\dwButtons.pas',
+  dwComboBoxs in 'dwVcls\dwComboBoxs.pas',
+  dwSpinEdits in 'dwVcls\dwSpinEdits.pas',
+  dwStringGrids in 'dwVcls\dwStringGrids.pas',
+  dwEdits in 'dwVcls\dwEdits.pas';
 
 {$R *.RES}
 

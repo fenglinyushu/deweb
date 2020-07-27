@@ -256,6 +256,7 @@ type
     StringGrid1: TStringGrid;
     TreeView1: TTreeView;
     Button88: TButton;
+    CheckBox14: TCheckBox;
     procedure Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure Button11Click(Sender: TObject);
@@ -935,8 +936,9 @@ end;
 
 procedure TDemos.ListBox1Click(Sender: TObject);
 begin
-     dwShowMessage('ListBox Clicked!','DeWeb','OK',Self);
-
+     if CheckBox14.Checked then begin
+          dwShowMessage('ListBox Clicked!','DeWeb','OK',Self);
+     end;
 end;
 
 procedure TDemos.Memo1Change(Sender: TObject);

@@ -357,7 +357,7 @@ object Demos: TDemos
     Top = 100
     Width = 1100
     Height = 1025
-    ActivePage = TabSheet13
+    ActivePage = TabSheet12
     BiDiMode = bdLeftToRight
     MultiLine = True
     ParentBiDiMode = False
@@ -8697,8 +8697,8 @@ object Demos: TDemos
       Caption = 'ListBox'
       ImageIndex = 14
       object Button52: TButton
-        Left = 48
-        Top = 216
+        Left = 16
+        Top = 16
         Width = 90
         Height = 35
         Hint = '{"type":"primary"}'
@@ -8707,8 +8707,8 @@ object Demos: TDemos
         OnClick = Button52Click
       end
       object Button53: TButton
-        Left = 48
-        Top = 280
+        Left = 213
+        Top = 16
         Width = 90
         Height = 35
         Hint = '{"type":"primary"}'
@@ -8717,8 +8717,8 @@ object Demos: TDemos
         OnClick = Button53Click
       end
       object Button54: TButton
-        Left = 160
-        Top = 280
+        Left = 312
+        Top = 16
         Width = 90
         Height = 35
         Hint = '{"type":"primary"}'
@@ -8727,8 +8727,8 @@ object Demos: TDemos
         OnClick = Button54Click
       end
       object Button55: TButton
-        Left = 160
-        Top = 216
+        Left = 114
+        Top = 16
         Width = 90
         Height = 35
         Hint = '{"type":"primary"}'
@@ -8737,8 +8737,8 @@ object Demos: TDemos
         OnClick = Button55Click
       end
       object ListBox1: TListBox
-        Left = 50
-        Top = 23
+        Left = 18
+        Top = 103
         Width = 209
         Height = 159
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
@@ -8757,8 +8757,8 @@ object Demos: TDemos
         OnClick = ListBox1Click
       end
       object Button56: TButton
-        Left = 44
-        Top = 345
+        Left = 410
+        Top = 16
         Width = 91
         Height = 35
         Caption = 'Get'
@@ -8766,8 +8766,8 @@ object Demos: TDemos
         OnClick = Button56Click
       end
       object Button57: TButton
-        Left = 44
-        Top = 413
+        Left = 509
+        Top = 16
         Width = 91
         Height = 35
         Caption = 'Set'
@@ -8775,22 +8775,30 @@ object Demos: TDemos
         OnClick = Button57Click
       end
       object SpinEdit8: TSpinEdit
-        Left = 160
-        Top = 414
-        Width = 131
-        Height = 30
+        Left = 608
+        Top = 16
+        Width = 121
+        Height = 35
         MaxValue = 5
         MinValue = 0
         TabOrder = 7
         Value = 2
+      end
+      object CheckBox14: TCheckBox
+        Left = 24
+        Top = 64
+        Width = 344
+        Height = 17
+        Caption = 'ShowMessage OnChange'
+        TabOrder = 8
       end
     end
     object TabSheet9: TTabSheet
       Caption = 'Memo'
       ImageIndex = 8
       object Button58: TButton
-        Left = 56
-        Top = 220
+        Left = 16
+        Top = 16
         Width = 90
         Height = 35
         Hint = '{"type":"primary"}'
@@ -8799,8 +8807,8 @@ object Demos: TDemos
         OnClick = Button58Click
       end
       object Button59: TButton
-        Left = 170
-        Top = 220
+        Left = 112
+        Top = 16
         Width = 90
         Height = 35
         Hint = '{"type":"primary"}'
@@ -8809,8 +8817,8 @@ object Demos: TDemos
         OnClick = Button59Click
       end
       object Button60: TButton
-        Left = 170
-        Top = 280
+        Left = 304
+        Top = 16
         Width = 90
         Height = 35
         Hint = '{"type":"primary"}'
@@ -8819,8 +8827,8 @@ object Demos: TDemos
         OnClick = Button60Click
       end
       object Button61: TButton
-        Left = 56
-        Top = 280
+        Left = 208
+        Top = 16
         Width = 90
         Height = 35
         Hint = '{"type":"primary"}'
@@ -8829,8 +8837,8 @@ object Demos: TDemos
         OnClick = Button61Click
       end
       object Button62: TButton
-        Left = 55
-        Top = 340
+        Left = 400
+        Top = 16
         Width = 91
         Height = 35
         Caption = 'Get'
@@ -8838,8 +8846,8 @@ object Demos: TDemos
         OnClick = Button62Click
       end
       object Button63: TButton
-        Left = 170
-        Top = 340
+        Left = 496
+        Top = 16
         Width = 90
         Height = 35
         Caption = 'Set'
@@ -8847,8 +8855,8 @@ object Demos: TDemos
         OnClick = Button63Click
       end
       object Memo1: TMemo
-        Left = 56
-        Top = 19
+        Left = 16
+        Top = 107
         Width = 202
         Height = 153
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
@@ -8861,8 +8869,8 @@ object Demos: TDemos
         OnChange = Memo1Change
       end
       object CheckBox9: TCheckBox
-        Left = 56
-        Top = 183
+        Left = 24
+        Top = 64
         Width = 344
         Height = 17
         Caption = 'ShowMessage OnChange'
@@ -9413,7 +9421,7 @@ object Demos: TDemos
       object Button34: TButton
         Left = 390
         Top = 115
-        Width = 90
+        Width = 120
         Height = 35
         Caption = 'Change'
         TabOrder = 0
@@ -9422,7 +9430,7 @@ object Demos: TDemos
       object Button36: TButton
         Left = 390
         Top = 185
-        Width = 90
+        Width = 120
         Height = 35
         Caption = 'Change'
         TabOrder = 1
@@ -9431,7 +9439,7 @@ object Demos: TDemos
       object Button37: TButton
         Left = 390
         Top = 255
-        Width = 90
+        Width = 120
         Height = 35
         Caption = 'Change'
         TabOrder = 2
@@ -9440,7 +9448,7 @@ object Demos: TDemos
       object Button38: TButton
         Left = 390
         Top = 325
-        Width = 90
+        Width = 120
         Height = 35
         Caption = 'Change'
         TabOrder = 3
@@ -9509,7 +9517,7 @@ object Demos: TDemos
       object Button40: TButton
         Left = 390
         Top = 395
-        Width = 90
+        Width = 120
         Height = 35
         Caption = 'to [-15,15]'
         TabOrder = 10
@@ -9531,16 +9539,16 @@ object Demos: TDemos
       Caption = 'StringGrid'
       ImageIndex = 11
       object CheckBox12: TCheckBox
-        Left = 45
-        Top = 292
+        Left = 13
+        Top = 64
         Width = 344
         Height = 22
         Caption = 'ShowMessage OnChange'
         TabOrder = 0
       end
       object Button76: TButton
-        Left = 44
-        Top = 328
+        Left = 16
+        Top = 16
         Width = 90
         Height = 35
         Hint = '{"type":"primary"}'
@@ -9549,8 +9557,8 @@ object Demos: TDemos
         OnClick = Button76Click
       end
       object Button77: TButton
-        Left = 159
-        Top = 329
+        Left = 112
+        Top = 16
         Width = 90
         Height = 35
         Hint = '{"type":"primary"}'
@@ -9559,8 +9567,8 @@ object Demos: TDemos
         OnClick = Button77Click
       end
       object Button78: TButton
-        Left = 159
-        Top = 388
+        Left = 304
+        Top = 16
         Width = 90
         Height = 35
         Hint = '{"type":"primary"}'
@@ -9569,8 +9577,8 @@ object Demos: TDemos
         OnClick = Button78Click
       end
       object Button79: TButton
-        Left = 45
-        Top = 389
+        Left = 208
+        Top = 16
         Width = 90
         Height = 35
         Hint = '{"type":"primary"}'
@@ -9579,8 +9587,8 @@ object Demos: TDemos
         OnClick = Button79Click
       end
       object Button80: TButton
-        Left = 44
-        Top = 449
+        Left = 400
+        Top = 16
         Width = 91
         Height = 35
         Caption = 'Get'
@@ -9588,8 +9596,8 @@ object Demos: TDemos
         OnClick = Button80Click
       end
       object Button81: TButton
-        Left = 159
-        Top = 449
+        Left = 496
+        Top = 16
         Width = 90
         Height = 35
         Caption = 'Set'
@@ -9597,10 +9605,10 @@ object Demos: TDemos
         OnClick = Button81Click
       end
       object StringGrid1: TStringGrid
-        Left = 36
-        Top = 15
-        Width = 459
-        Height = 240
+        Left = 12
+        Top = 103
+        Width = 509
+        Height = 274
         DefaultColWidth = 100
         DefaultRowHeight = 48
         TabOrder = 7
