@@ -18,7 +18,7 @@ uses
   DriverUnit in 'DriverUnit.pas' {Driver},
   dwDatas in 'dwDatas.pas' {DM: TDataModule},
   dwCtrlBase in 'dwCtrlBase.pas',
-  dwListBoxs in 'dwVcls\dwListBoxs.pas',
+  dwTreeViews in 'dwVcls\dwTreeViews.pas',
   dwRadioButtons in 'dwVcls\dwRadioButtons.pas',
   dwMemos in 'dwVcls\dwMemos.pas',
   dwLabels in 'dwVcls\dwLabels.pas',
@@ -32,7 +32,8 @@ uses
   dwComboBoxs in 'dwVcls\dwComboBoxs.pas',
   dwSpinEdits in 'dwVcls\dwSpinEdits.pas',
   dwStringGrids in 'dwVcls\dwStringGrids.pas',
-  dwEdits in 'dwVcls\dwEdits.pas';
+  dwEdits in 'dwVcls\dwEdits.pas',
+  dwListBoxs in 'dwVcls\dwListBoxs.pas';
 
 {$R *.RES}
 
