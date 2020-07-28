@@ -780,6 +780,7 @@ begin
      //Result    := StringReplace(Result,' ','&nbsp;',[rfReplaceAll]);
      Result    := StringReplace(Result,'"','\"',[rfReplaceAll]);
      Result    := StringReplace(Result,'''','\''',[rfReplaceAll]);
+     Result    := StringReplace(Result,#13#10,'\n',[rfReplaceAll]);
      Result    := Trim(Result);
 end;
 

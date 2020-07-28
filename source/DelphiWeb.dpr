@@ -31,9 +31,10 @@ uses
   dwButtons in 'dwVcls\dwButtons.pas',
   dwComboBoxs in 'dwVcls\dwComboBoxs.pas',
   dwSpinEdits in 'dwVcls\dwSpinEdits.pas',
-  dwStringGrids in 'dwVcls\dwStringGrids.pas',
+  dwDBGrids in 'dwVcls\dwDBGrids.pas',
   dwEdits in 'dwVcls\dwEdits.pas',
-  dwListBoxs in 'dwVcls\dwListBoxs.pas';
+  dwListBoxs in 'dwVcls\dwListBoxs.pas',
+  dwStringGrids in 'dwVcls\dwStringGrids.pas';
 
 {$R *.RES}
 

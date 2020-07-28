@@ -28,14 +28,14 @@ object DM: TDM
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'SELECT * FROM QuestionBank')
+      'SELECT Top 20 * FROM QuestionBank')
     Left = 48
     Top = 120
   end
   object ADOTable1: TADOTable
     Connection = ADOConnection_Driver
     TableName = 'QuestionBank'
-    Left = 56
+    Left = 48
     Top = 192
   end
 end
