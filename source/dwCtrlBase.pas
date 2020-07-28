@@ -50,6 +50,9 @@ function dwIsNull(AVar:Variant):Boolean;
 //处理DELPHI中的特殊字符
 function dwConvertStr(AStr:String):String;
 
+//处理DELPHI中Caption的特殊字符
+function dwProcessCaption(AStr:String):String;
+
 //用于对中文进行编码, 对应JS中的escape函数
 function dwEscape(const StrToEscape:string):String;
 function dwUnescape(S: string): string;
@@ -770,6 +773,15 @@ begin
      Result    := StringReplace(AStr,' ','&ensp;',[rfReplaceAll]);
 end;
 
+function dwProcessCaption(AStr:String):String;
+begin
+     //替换空格
+     Result    := AStr;
+     //Result    := StringReplace(Result,' ','&nbsp;',[rfReplaceAll]);
+     Result    := StringReplace(Result,'"','\"',[rfReplaceAll]);
+     Result    := StringReplace(Result,'''','\''',[rfReplaceAll]);
+     Result    := Trim(Result);
+end;
 
 
 function dwBoolToStr(AVal:Boolean):string;

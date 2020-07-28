@@ -21,14 +21,8 @@ type
     Label_Title: TLabel;
     Panel_Space1: TPanel;
     Panel2: TPanel;
-    Panel_ZZ_Buttons: TPanel;
+    Panel_99_Buttons: TPanel;
     Button_OK: TButton;
-    Panel__02_Judge: TPanel;
-    Label1: TLabel;
-    Panel3: TPanel;
-    Panel5: TPanel;
-    RadioButton9: TRadioButton;
-    RadioButton10: TRadioButton;
     Panel_01_Select: TPanel;
     Label_Item: TLabel;
     Panel8: TPanel;
@@ -37,12 +31,12 @@ type
     RadioButton15: TRadioButton;
     RadioButton16: TRadioButton;
     procedure RadioButton17Click(Sender: TObject);
-    procedure FormShow(Sender: TObject);
     procedure FormMouseUp(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure Button_OKClick(Sender: TObject);
     function FormHelp(Command: Word; Data: NativeInt;
       var CallHelp: Boolean): Boolean;
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -71,7 +65,7 @@ begin
      for iCtrl := 0 to Panel_Content.ControlCount-1 do begin
           oPanel    := TPanel(Panel_Content.Controls[iCtrl]);
           //
-          if (oPanel = Panel_00_Logo) or (oPanel = Panel_ZZ_Buttons) then begin
+          if (oPanel = Panel_00_Logo) or (oPanel = Panel_99_Buttons) then begin
                Continue;
           end;
           if not oPanel.Visible then begin
@@ -110,15 +104,15 @@ begin
 
      //根据是否移动端, 分别处理. 因为 clientwidth/clientheight取得的是实际值, 也就是分辨率;而手机端采用的是虚拟值
      if (sOS = '0') or (sOS='1') then begin
-          Panel_ZZ_Buttons.Align   := alNone;
-          Panel_ZZ_Buttons.Width   := 130;
-          Panel_ZZ_Buttons.Top     := Data+StrTointDef(dwGetProp(Self,'clientheight'),0)-Panel_ZZ_Buttons.Height-15;
-          Panel_ZZ_Buttons.Left    := StrTointDef(dwGetProp(Self,'clientwidth'),0)-Panel_ZZ_Buttons.Width-15;
+          Panel_99_Buttons.Align   := alNone;
+          Panel_99_Buttons.Width   := 130;
+          Panel_99_Buttons.Top     := Data+StrTointDef(dwGetProp(Self,'clientheight'),0)-Panel_99_Buttons.Height-15;
+          Panel_99_Buttons.Left    := StrTointDef(dwGetProp(Self,'clientwidth'),0)-Panel_99_Buttons.Width-15;
      end else begin
-          Panel_ZZ_Buttons.Align   := alNone;
-          Panel_ZZ_Buttons.Width   := 130;
-          Panel_ZZ_Buttons.Top     := Data+StrTointDef(dwGetProp(Self,'screenheight'),0)-Panel_ZZ_Buttons.Height-25;
-          Panel_ZZ_Buttons.Left    := StrTointDef(dwGetProp(Self,'screenwidth'),0)-Panel_ZZ_Buttons.Width-15;
+          Panel_99_Buttons.Align   := alNone;
+          Panel_99_Buttons.Width   := 130;
+          Panel_99_Buttons.Top     := Data+StrTointDef(dwGetProp(Self,'screenheight'),0)-Panel_99_Buttons.Height-25;
+          Panel_99_Buttons.Left    := StrTointDef(dwGetProp(Self,'screenwidth'),0)-Panel_99_Buttons.Width-15;
      end;
 end;
 
@@ -145,7 +139,7 @@ begin
                oPanel    := TPanel(Panel_Content.Controls[iCtrl]);
 
                //
-               if (oPanel = Panel_00_Logo) or (oPanel = Panel_ZZ_Buttons) then begin
+               if (oPanel = Panel_00_Logo) or (oPanel = Panel_99_Buttons) then begin
                     Continue;
                end;
 
@@ -183,7 +177,7 @@ begin
                oPanel    := TPanel(Panel_Content.Controls[iCtrl]);
 
                //
-               if (oPanel = Panel_00_Logo) or (oPanel = Panel_ZZ_Buttons) then begin
+               if (oPanel = Panel_00_Logo) or (oPanel = Panel_99_Buttons) then begin
                     Continue;
                end;
 
@@ -204,139 +198,6 @@ begin
           //
           dwSetHeight(self,Panel_Content.Height)
      end;
-
-end;
-
-procedure TDriver.FormShow(Sender: TObject);
-var
-     //
-     iItem     : Integer;
-     iCount    : Integer;
-     iA,iB     : Integer;
-     iC,iD     : Integer;
-     iRandom   : Integer;
-     //
-     oPanel    : TPanel;
-     oTitle    : TLabel;
-     oPanelALL : TPanel;
-     oCheckA   : TCheckBox;
-     oCheckB   : TCheckBox;
-     oCheckC   : TCheckBox;
-     oCheckD   : TCheckBox;
-
-     //
-     sContent  : String;
-     sTitle    : string;
-     sRight    : string;
-begin
-     DM.ADOQuery_Driver.Filter     := 'FQuestionTypeID=1';
-     DM.ADOQuery_Driver.Filtered   := True;
-     DM.ADOQuery_Driver.First;
-
-     //
-     iRandom   := Random(100);
-     for iItem := 0 to iRandom-1 do begin
-          if DM.ADOQuery_Driver.Eof then begin
-               DM.ADOQuery_Driver.First;
-          end else begin
-               DM.ADOQuery_Driver.Next;
-          end;
-     end;
-
-     //生成20个选择题
-     iCount    := 0;
-     for iItem := 0 to 39 do  begin
-          //
-          sContent  := DM.ADOQuery_Driver.FieldByName('FContent').AsString;
-
-          //暂时略过带图的
-          if Pos('图',sContent)>0 then begin
-               DM.ADOQuery_Driver.First;
-               Continue;
-          end;
-
-          //略过空
-          if Pos('A、',sContent)<=0 then begin
-               DM.ADOQuery_Driver.First;
-               Continue;
-          end;
-
-
-          //克隆控件
-          oPanel    := TPanel(CloneComponent(Panel_01_Select));
-          oPanel.Visible      := True;
-          oPanel.Top          := 9999;  //置最底
-
-          //保存答案
-          sRight    := UpperCase(DM.ADOQuery_Driver.FieldByName('FRightSolution').AsString);
-          if sRight = 'A' then begin
-               oPanel.Tag     := 0;
-          end else if sRight = 'B' then begin
-               oPanel.Tag     := 1;
-          end else if sRight = 'C' then begin
-               oPanel.Tag     := 2;
-          end else if sRight = 'D' then begin
-               oPanel.Tag     := 3;
-          end;
-
-          //得到各对象
-          oTitle    := TLabel(oPanel.Controls[0]);
-          oPanelAll := TPanel(oPanel.Controls[1]);
-          oCheckA   := TCheckBox(oPanelAll.Controls[0]);
-          oCheckB   := TCheckBox(oPanelAll.Controls[1]);
-          oCheckC   := TCheckBox(oPanelAll.Controls[2]);
-          oCheckD   := TCheckBox(oPanelAll.Controls[3]);
-
-          //题目
-          sTitle    := IntToStr(iCount+1)+'、 '+Copy(sContent,1,Pos('A、',sContent)-1);
-          sTitle    := StringReplace(sTitle,#13#10,'',[rfReplaceAll]);
-          oTitle.Caption      := Trim(sTitle);
-          //以下两行是为了刷新oTitle自动高度
-          oTitle.AutoSize     := False;
-          oTitle.AutoSize     := True;
-          //以下两行是为了解决网页显示不全的问题
-          oTitle.AutoSize     := False;
-          oTitle.Height       := oTitle.Height+5;
-
-
-          //得到ABCD选项
-          iA   := Pos('A、',sContent);
-          iB   := Pos('B、',sContent);
-          iC   := Pos('C、',sContent);
-          iD   := Pos('D、',sContent);
-          oCheckA.Caption     := Trim(Copy(sContent,iA,iB-iA));
-          oCheckB.Caption     := Trim(Copy(sContent,iB,iC-iB));
-          oCheckC.Caption     := Trim(Copy(sContent,iC,iD-iC));
-          oCheckD.Caption     := Trim(Copy(sContent,iD,Length(sContent)-iD));
-
-          //
-          oPanelAll.Top  := 40;
-          dwRealignChildren(oPanelAll,False,0);
-          //
-          oPanel.AutoSize     := True;
-
-          //
-          DM.ADOQuery_Driver.Next;
-
-          //
-          Inc(iCount);
-
-          //
-          if iCount>=20 then begin
-               break;
-          end;
-     end;
-
-     //
-     Panel_ZZ_Buttons.Top     := 99999;
-     Panel_ZZ_Buttons.TabOrder     := 9999;
-
-
-
-     //
-     Panel_Content.AutoSize   := True;
-     //
-     dwSetHeight(self,Panel_Content.Height)
 
 end;
 
@@ -366,6 +227,134 @@ begin
      TRadioButton(oPanel.Controls[1]).OnClick   := RadioButton17Click;
      TRadioButton(oPanel.Controls[2]).OnClick   := RadioButton17Click;
      TRadioButton(oPanel.Controls[3]).OnClick   := RadioButton17Click;
+end;
+
+procedure TDriver.FormCreate(Sender: TObject);
+var
+     iIDs      : array[0..19] of 0..255;
+     iRec      : Integer;
+     I,J,K     : Integer;
+     //
+     iItem     : Integer;
+     iA,iB     : Integer;
+     iC,iD     : Integer;
+     iRandom   : Integer;
+     //
+     oPanel    : TPanel;
+     oTitle    : TLabel;
+     oPanelALL : TPanel;
+     oCheckA   : TCheckBox;
+     oCheckB   : TCheckBox;
+     oCheckC   : TCheckBox;
+     oCheckD   : TCheckBox;
+
+     //
+     sContent  : String;
+     sTitle    : string;
+     sRight    : string;
+begin
+     DM.ADOQuery_Driver.Filter     := 'FQuestionTypeID=1';
+     DM.ADOQuery_Driver.Filtered   := True;
+     DM.ADOQuery_Driver.First;
+
+     //
+     randomize;
+     for I := 0 to High(iIDs) do begin
+          iIDs[i]   := random(256);
+     end;
+     for i:=0 to 19-1 do begin
+          for j:= i+1 to 19 do begin
+               if iIDs[i]>iIDs[j] then begin
+                     k        := iIDs[i];
+                     iIDs[i]  := iIDs[j];
+                     iIDs[j]  := k;
+               end;
+          end;
+     end;
+
+     //生成20个选择题
+     DM.ADOQuery_Driver.First;
+     for iItem := 0 to iIDs[0]-1 do begin
+          DM.ADOQuery_Driver.Next;
+     end;
+     for iItem := 0 to 19 do  begin
+          //
+          sContent  := DM.ADOQuery_Driver.FieldByName('FContent').AsString;
+
+          //克隆控件
+          oPanel    := TPanel(CloneComponent(Panel_01_Select));
+          oPanel.Visible      := True;
+          oPanel.Top          := 9999;  //置最底
+
+          //保存答案
+          sRight    := UpperCase(DM.ADOQuery_Driver.FieldByName('FRightSolution').AsString);
+          if sRight = 'A' then begin
+               oPanel.Tag     := 0;
+          end else if sRight = 'B' then begin
+               oPanel.Tag     := 1;
+          end else if sRight = 'C' then begin
+               oPanel.Tag     := 2;
+          end else if sRight = 'D' then begin
+               oPanel.Tag     := 3;
+          end;
+
+          //得到各对象
+          oTitle    := TLabel(oPanel.Controls[0]);
+          oPanelAll := TPanel(oPanel.Controls[1]);
+          oCheckA   := TCheckBox(oPanelAll.Controls[0]);
+          oCheckB   := TCheckBox(oPanelAll.Controls[1]);
+          oCheckC   := TCheckBox(oPanelAll.Controls[2]);
+          oCheckD   := TCheckBox(oPanelAll.Controls[3]);
+
+          //题目
+          sTitle    := IntToStr(iItem+1)+'、 '+Copy(sContent,1,Pos('A、',sContent)-1);
+          sTitle    := StringReplace(sTitle,#13#10,'',[rfReplaceAll]);
+          oTitle.Caption      := Trim(sTitle);
+          //以下两行是为了刷新oTitle自动高度
+          oTitle.AutoSize     := False;
+          oTitle.AutoSize     := True;
+          //以下两行是为了解决网页显示不全的问题
+          oTitle.AutoSize     := False;
+          oTitle.Height       := oTitle.Height+5;
+
+
+          //得到ABCD选项
+          iA   := Pos('A、',sContent);
+          iB   := Pos('B、',sContent);
+          iC   := Pos('C、',sContent);
+          iD   := Pos('D、',sContent);
+          oCheckA.Caption     := Trim(Copy(sContent,iA,iB-iA));
+          oCheckB.Caption     := Trim(Copy(sContent,iB,iC-iB));
+          oCheckC.Caption     := Trim(Copy(sContent,iC,iD-iC));
+          oCheckD.Caption     := Trim(Copy(sContent,iD,Length(sContent)-iD));
+
+          //
+          oPanelAll.Top  := 40;
+          dwRealignChildren(oPanelAll,False,0);
+          //
+          oPanelAll.AutoSize     := False;
+          oPanelAll.AutoSize     := True;
+          //
+          oPanel.AutoSize     := False;
+          oPanel.AutoSize     := True;
+
+          //
+          if iItem < 19 then begin
+               for iRec := 0 to iIDs[iItem+1]-iIDs[iItem] do begin
+                    DM.ADOQuery_Driver.Next;
+               end;
+          end;
+
+     end;
+
+     //
+     Panel_99_Buttons.Top     := 9999;
+     Panel_99_Buttons.TabOrder     := 9999;
+     //
+     Panel_Content.AutoSize   := False;
+     Panel_Content.AutoSize   := True;
+     //
+     dwSetHeight(self,Panel_Content.Height);
 end;
 
 end.

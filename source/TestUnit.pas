@@ -15,6 +15,7 @@ type
     Button1: TButton;
     Button2: TButton;
     TreeView1: TTreeView;
+    Label1: TLabel;
   private
     { Private declarations }
   public

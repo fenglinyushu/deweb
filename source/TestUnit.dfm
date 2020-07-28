@@ -13,6 +13,13 @@ object Test: TTest
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 25
+  object Label1: TLabel
+    Left = 312
+    Top = 40
+    Width = 98
+    Height = 25
+    Caption = 'Lab'#20013#25991'el1'
+  end
   object Button1: TButton
     Left = 32
     Top = 32

@@ -1,8 +1,9 @@
 object Driver: TDriver
-  Left = 0
-  Top = 0
+  Left = 471
+  Top = 157
   Width = 817
   Height = 920
+  VertScrollBar.Visible = False
   Caption = 'Driver'
   Color = clBtnFace
   Font.Charset = GB2312_CHARSET
@@ -12,14 +13,14 @@ object Driver: TDriver
   Font.Style = []
   OldCreateOrder = False
   OnMouseUp = FormMouseUp
-  OnShow = FormShow
+  OnShow = FormCreate
   PixelsPerInch = 96
   TextHeight = 21
   object Panel_Content: TPanel
     Left = 0
     Top = 0
-    Width = 784
-    Height = 1999
+    Width = 801
+    Height = 3000
     Align = alTop
     BevelOuter = bvNone
     BorderWidth = 10
@@ -29,8 +30,8 @@ object Driver: TDriver
     object Panel_00_Logo: TPanel
       Left = 10
       Top = 10
-      Width = 764
-      Height = 67
+      Width = 781
+      Height = 63
       Align = alTop
       AutoSize = True
       BevelOuter = bvNone
@@ -39,7 +40,7 @@ object Driver: TDriver
       object Panel1: TPanel
         Left = 0
         Top = 0
-        Width = 764
+        Width = 781
         Height = 50
         Align = alTop
         AutoSize = True
@@ -377,7 +378,7 @@ object Driver: TDriver
       object Panel_Space1: TPanel
         Left = 0
         Top = 50
-        Width = 764
+        Width = 781
         Height = 12
         Align = alTop
         BevelOuter = bvNone
@@ -387,16 +388,16 @@ object Driver: TDriver
       object Panel2: TPanel
         Left = 0
         Top = 62
-        Width = 764
+        Width = 781
         Height = 1
         Align = alTop
         TabOrder = 2
       end
     end
-    object Panel_ZZ_Buttons: TPanel
+    object Panel_99_Buttons: TPanel
       Left = 10
-      Top = 500
-      Width = 764
+      Top = 385
+      Width = 781
       Height = 50
       Hint = '{"z-index":9}'
       Align = alTop
@@ -415,83 +416,22 @@ object Driver: TDriver
         OnClick = Button_OKClick
       end
     end
-    object Panel__02_Judge: TPanel
-      Left = 10
-      Top = 401
-      Width = 764
-      Height = 99
-      Align = alTop
-      AutoSize = True
-      BevelOuter = bvNone
-      BorderWidth = 8
-      ParentColor = True
-      TabOrder = 2
-      Visible = False
-      object Label1: TLabel
-        Left = 8
-        Top = 8
-        Width = 748
-        Height = 21
-        Align = alTop
-        Caption = '    2.  '#26368#22909#30340#25163#26426#21697#29260#26159'?'
-        WordWrap = True
-      end
-      object Panel3: TPanel
-        Left = 8
-        Top = 29
-        Width = 748
-        Height = 58
-        Align = alTop
-        AutoSize = True
-        BevelOuter = bvNone
-        BorderWidth = 8
-        ParentColor = True
-        TabOrder = 0
-        object Panel5: TPanel
-          Left = 8
-          Top = 8
-          Width = 732
-          Height = 38
-          Align = alTop
-          BevelOuter = bvNone
-          BorderWidth = 5
-          ParentColor = True
-          TabOrder = 0
-          object RadioButton9: TRadioButton
-            Left = 10
-            Top = 5
-            Width = 113
-            Height = 17
-            Caption = #21326#20026
-            TabOrder = 0
-          end
-          object RadioButton10: TRadioButton
-            Left = 300
-            Top = 5
-            Width = 113
-            Height = 17
-            Caption = #33529#26524
-            TabOrder = 1
-          end
-        end
-      end
-    end
     object Panel_01_Select: TPanel
       Left = 10
-      Top = 77
-      Width = 764
-      Height = 324
+      Top = 73
+      Width = 781
+      Height = 312
       Align = alTop
       BevelOuter = bvNone
       BorderWidth = 10
       Color = clWhite
       ParentBackground = False
-      TabOrder = 3
+      TabOrder = 2
       Visible = False
       object Label_Item: TLabel
         Left = 10
         Top = 10
-        Width = 744
+        Width = 761
         Height = 63
         Align = alTop
         Caption = 
@@ -502,7 +442,7 @@ object Driver: TDriver
       object Panel8: TPanel
         Left = 10
         Top = 73
-        Width = 744
+        Width = 761
         Height = 60
         Align = alTop
         BevelOuter = bvNone
