@@ -18211,7 +18211,8 @@
 	vertical-align: middle;
 	padding-left: 10px;
 	padding-right: 10px;
-	width: 100%
+	width: 100%;
+	white-space:nowrap;
 }
 
 .el-table th>.cell.highlight {

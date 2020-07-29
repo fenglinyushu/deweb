@@ -41,6 +41,11 @@ object Test: TTest
       end
       item
         Expanded = False
+        FieldName = 'FPicture'
+        Visible = True
+      end
+      item
+        Expanded = False
         FieldName = 'FRightSolution'
         Title.Caption = 'Right'
         Width = 59

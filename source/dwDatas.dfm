@@ -1,7 +1,7 @@
 object DM: TDM
   OldCreateOrder = False
-  Left = 174
-  Top = 99
+  Left = 529
+  Top = 170
   Height = 342
   Width = 405
   object ADOConnection_Driver: TADOConnection
@@ -28,7 +28,7 @@ object DM: TDM
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'SELECT Top 20 * FROM QuestionBank')
+      'SELECT Top 40 * FROM QuestionBank')
     Left = 48
     Top = 120
   end
