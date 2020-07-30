@@ -15,15 +15,15 @@
         	</div>
         </el-dialog>
         <div v-if="DBGrid1__vis" :disabled="DBGrid1__dis" :style="{left:DBGrid1__lef,top:DBGrid1__top,width:DBGrid1__wid,height:DBGrid1__hei}" style="position:absolute;">
-            <el-table :data="DBGrid1__ces" highlight-current-row stripe border v-if="DBGrid1__vis" :disabled="DBGrid1__dis" style="width:100%;height:100%;" @current-change="dwevent('DBGrid1','currentRow','onchange','')">
-                <el-table-column overflow="hidden" fixed v-if=false prop="d0" label="rowno" width="80"></el-table-column>
-                <el-table-column white-space="nowrap" prop="d1" label="FOrder" width="68"></el-table-column>
-                <el-table-column white-space="nowrap" prop="d2" label="FContent" width="356"></el-table-column>
-                <el-table-column white-space="nowrap" prop="d3" label="FPicture" width="114"></el-table-column>
-                <el-table-column white-space="nowrap" prop="d4" label="Right" width="59"></el-table-column>
-                <el-table-column white-space="nowrap" prop="d5" label="FSolution" width="101"></el-table-column>
-                <el-table-column white-space="nowrap" prop="d6" label="FSortID" width="87"></el-table-column>
-                <el-table-column white-space="nowrap" prop="d7" label="FIsFallible" width="93"></el-table-column>
+            <el-table :data="DBGrid1__ces" highlight-current-row stripe border v-if="DBGrid1__vis" :disabled="DBGrid1__dis" height="345" style="width:100%" @current-change="dwevent('DBGrid1','currentRow','onchange','')">
+                <el-table-column  show-overflow-tooltip fixed v-if=false prop="d0" label="rowno" width="80"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d1" label="FOrder" width="68"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d2" label="FContent" width="356"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d3" label="FPicture" width="114"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d4" label="Right" width="59"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d5" label="FSolution" width="101"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d6" label="FSortID" width="87"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d7" label="FIsFallible" width="93"></el-table-column>
             </el-table>
         </div>
 	 </div>
