@@ -21,7 +21,7 @@ uses
   dwTreeViews in 'dwVcls\dwTreeViews.pas',
   dwRadioButtons in 'dwVcls\dwRadioButtons.pas',
   dwMemos in 'dwVcls\dwMemos.pas',
-  dwLabels in 'dwVcls\dwLabels.pas',
+  dwDBTexts in 'dwVcls\dwDBTexts.pas',
   dwPageControls in 'dwVcls\dwPageControls.pas',
   dwTabSheets in 'dwVcls\dwTabSheets.pas',
   dwCheckBoxs in 'dwVcls\dwCheckBoxs.pas',
@@ -32,9 +32,11 @@ uses
   dwComboBoxs in 'dwVcls\dwComboBoxs.pas',
   dwSpinEdits in 'dwVcls\dwSpinEdits.pas',
   dwDBGrids in 'dwVcls\dwDBGrids.pas',
-  dwEdits in 'dwVcls\dwEdits.pas',
+  dwDBEdits in 'dwVcls\dwDBEdits.pas',
   dwListBoxs in 'dwVcls\dwListBoxs.pas',
-  dwStringGrids in 'dwVcls\dwStringGrids.pas';
+  dwStringGrids in 'dwVcls\dwStringGrids.pas',
+  dwEdits in 'dwVcls\dwEdits.pas',
+  dwLabels in 'dwVcls\dwLabels.pas';
 
 {$R *.RES}
 

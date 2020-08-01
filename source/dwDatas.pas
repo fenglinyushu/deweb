@@ -10,6 +10,7 @@ type
     ADOConnection_Driver: TADOConnection;
     ADOQuery_Driver: TADOQuery;
     ADOTable1: TADOTable;
+    procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,5 +41,13 @@ begin
 
 end;
 
+
+procedure TDM.DataModuleCreate(Sender: TObject);
+begin
+     if not ADOConnection_Driver.Connected then begin
+          ADOConnection_Driver.Open;
+          ADOQuery_Driver.Open;
+     end;
+end;
 
 end.

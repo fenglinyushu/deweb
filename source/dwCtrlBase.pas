@@ -33,7 +33,7 @@ function dwGetHintValue(AHint:Variant;AJsonName,AHtmlName,ADefault:String):Strin
 function dwIIF(ABool:Boolean;AYes,ANo:string):string;
 
 const
-     _DWEVENT = ' @%s="dwevent(''%s'',''%s'',''%s'',''%s'')"';            //参数依次为:JS事件名称 ---  控件名称,控件值,D事件名称,备用
+     _DWEVENT = ' @%s="dwevent($event,''%s'',''%s'',''%s'',''%s'')"';            //参数依次为:JS事件名称 ---  控件名称,控件值,D事件名称,备用
 
 //解密函数
 function dwDecryptKey (Src:String; Key:String):string;
@@ -440,6 +440,8 @@ function dwSetCompLTWH(AComponent:TComponent;ALeft,ATop,AWidth,AHeight:Integer):
 begin
      AComponent.DesignInfo    := ALeft  * 10000 + ATop;
      AComponent.Tag           := AWidth * 10000 + AHeight;
+     //
+     Result    := 0;
 end;
 
 //设置PlaceHolder
@@ -475,6 +477,8 @@ begin
      end;
      joHint.height  := AHeight;
      AControl.Hint  := VariantSaveJSON(joHint);
+     //
+     Result    := 0;
 end;
 
 

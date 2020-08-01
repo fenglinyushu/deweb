@@ -985,7 +985,7 @@ end;
 procedure TDemos.StringGrid1Click(Sender: TObject);
 begin
      if CheckBox12.Checked then begin
-          dwShowMessage('StringGrid OnClick','DeWeb','OK',Self);
+          dwShowMessage('StringGrid Row : '+IntToStr(StringGrid1.Row),'DeWeb','OK',Self);
      end;
 
 end;
