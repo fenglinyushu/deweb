@@ -210,7 +210,7 @@ end;
 
 procedure TForm4.MenuItem_AboutClick(Sender: TObject);
 begin
-     dwShowMessage('Welecome to DeWeb!','DeWeb Demo','确定',Self);
+     dwShowMessage('Welecome to DeWeb!',Self);
 end;
 
 procedure TForm4.MenuItem_AddClick(Sender: TObject);
@@ -258,13 +258,13 @@ end;
 
 procedure TForm4.MenuItem_NextClick(Sender: TObject);
 begin
-     dwShowMessage('建设中...','DeWeb Demo','确定',Self);
+     dwShowMessage('建设中...',Self);
 
 end;
 
 procedure TForm4.MenuItem_PrevClick(Sender: TObject);
 begin
-     dwShowMessage('建设中...','DeWeb Demo','确定',Self);
+     dwShowMessage('建设中...',Self);
 
 end;
 
@@ -304,7 +304,7 @@ var
      tnNode    : TTreeNode;
      iRec,iCol : Integer;
 begin
-     //     dwShowMessage('您输入了 : '+(AResult),'DeWeb Demo','确定',Self);
+     //     dwShowMessage('您输入了 : '+(AResult),Self);
      ADOQuery.Append;
      ADOQuery.FieldByName('姓名').AsString   := AResult;
      ADOQuery.FieldByName('GroupIDs').AsString    := ','+IntToStr(TreeView.Selected.SelectedIndex)+',';
@@ -341,7 +341,7 @@ begin
                ADOQuery.Next;
           end;
           ADOQuery.Delete;
-          dwShowMessage('删除成功!','DeWeb Demo','确定',Self);
+          dwShowMessage('删除成功!',Self);
 
           //更新数据
           ADOQuery.Close;
@@ -363,7 +363,7 @@ begin
           end;
 
      end else begin
-     //     dwShowMessage('您选择了Cancel!','DeWeb Demo','确定',Self);
+     //     dwShowMessage('您选择了Cancel!',Self);
      end;
 end;
 

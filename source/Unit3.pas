@@ -80,13 +80,13 @@ begin
      end;
      //
      if iScore=0 then begin
-          dwShowMessage('成绩很差,不要偷懒哟!','成绩','OK',Self);
+          dwShowMessage('成绩很差,不要偷懒哟!',Self);
      end else if iScore = 33 then begin
-          dwShowMessage('成绩较差,加油!','成绩','OK',Self);
+          dwShowMessage('成绩较差,加油!',Self);
      end else if iScore = 66 then begin
-          dwShowMessage('成绩还可以!,继续努力!','成绩','OK',Self);
+          dwShowMessage('成绩还可以!,继续努力!',Self);
      end else if iScore = 99 then begin
-          dwShowMessage('成绩很好! 你真棒!','成绩','OK',Self);
+          dwShowMessage('成绩很好! 你真棒!',Self);
      end;
 
 

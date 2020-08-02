@@ -43,7 +43,7 @@ begin
      if Edit_Psd.text = '123' then begin
           dwCreateForm('TForm4',Self.Handle);
      end else begin
-          dwShowMessage('The password is 123','Hint','OK',Self);
+          dwShowMessage('The password is 123',Self);
      end;
 end;
 

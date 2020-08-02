@@ -672,7 +672,7 @@ begin
                sValue    := sValue+ListBox1.Items[I]+', ';
           end;
      end;
-     dwShowMessage('Selected:'+sValue,'DeWeb','OK',Self);
+     dwShowMessage('Selected:'+sValue,Self);
 end;
 
 procedure TDemos.Button57Click(Sender: TObject);
@@ -710,7 +710,7 @@ end;
 
 procedure TDemos.Button62Click(Sender: TObject);
 begin
-     dwShowMessage(Memo1.Text,'DeWeb','OK',Self);
+     dwShowMessage(Memo1.Text,Self);
 
 end;
 
@@ -748,7 +748,7 @@ end;
 
 procedure TDemos.Button68Click(Sender: TObject);
 begin
-     dwShowMessage('Current : '+FormatDateTime('yyyy-MM-dd',MonthCalendar1.Date),'DeWeb','OK',Self);
+     dwShowMessage('Current : '+FormatDateTime('yyyy-MM-dd',MonthCalendar1.Date),Self);
 end;
 
 procedure TDemos.Button69Click(Sender: TObject);
@@ -787,7 +787,7 @@ end;
 
 procedure TDemos.Button74Click(Sender: TObject);
 begin
-     dwShowMessage('Current ActivePage :'+IntToStr(PageControl1.ActivePageIndex),'DeWeb','OK',Self);
+     dwShowMessage('Current ActivePage :'+IntToStr(PageControl1.ActivePageIndex),Self);
 
 end;
 
@@ -832,7 +832,7 @@ end;
 
 procedure TDemos.Button80Click(Sender: TObject);
 begin
-     dwShowMessage(StringGrid1.Cells[1,1],'DeWeb','OK',Self);
+     dwShowMessage(StringGrid1.Cells[1,1],Self);
 
 end;
 
@@ -878,33 +878,33 @@ end;
 procedure TDemos.CheckBox8Click(Sender: TObject);
 begin
      if CheckBox8.Checked then begin
-          dwShowMessage('Checked!','DeWeb','OK',Self);
+          dwShowMessage('Checked!',Self);
      end else begin
-          dwShowMessage('unChecked!','DeWeb','OK',Self);
+          dwShowMessage('unChecked!',Self);
      end;
 
 end;
 
 procedure TDemos.Click(Sender: TObject);
 begin
-     dwShowMessage('You Click a button!','DeWeb','OK',Self);
+     dwShowMessage('You Click a button!',Self);
 end;
 
 procedure TDemos.ComboBox6Change(Sender: TObject);
 begin
-     dwShowMessage('ComboBox Change:'+TComboBox(Sender).Text,'DeWeb','OK',Self);
+     dwShowMessage('ComboBox Change:'+TComboBox(Sender).Text,Self);
 
 end;
 
 procedure TDemos.DateTimePicker8Change(Sender: TObject);
 begin
-     dwShowMessage('DateTimePicker OnChange','DeWeb','OK',Self);
+     dwShowMessage('DateTimePicker OnChange',Self);
 
 end;
 
 procedure TDemos.Edit8Change(Sender: TObject);
 begin
-     dwShowMessage('Edit OnChange:'+TEdit(Sender).Text,'DeWeb','OK',Self);
+     dwShowMessage('Edit OnChange:'+TEdit(Sender).Text,Self);
 
 end;
 
@@ -931,20 +931,20 @@ end;
 
 procedure TDemos.Image3Click(Sender: TObject);
 begin
-     dwShowMessage('Image OnClick!','DeWeb','OK',Self);
+     dwShowMessage('Image OnClick!',Self);
 end;
 
 procedure TDemos.ListBox1Click(Sender: TObject);
 begin
      if CheckBox14.Checked then begin
-          dwShowMessage('ListBox Clicked!','DeWeb','OK',Self);
+          dwShowMessage('ListBox Clicked!',Self);
      end;
 end;
 
 procedure TDemos.Memo1Change(Sender: TObject);
 begin
      if CheckBOx9.Checked then begin
-          dwShowMessage('Memo OnChange','DeWeb','OK',Self);
+          dwShowMessage('Memo OnChange',Self);
      end;
 
 end;
@@ -952,7 +952,7 @@ end;
 procedure TDemos.MonthCalendar1Click(Sender: TObject);
 begin
      if CheckBOx10.Checked then begin
-          dwShowMessage('OnClick : '+FormatDateTime('yyyy-MM-dd',MonthCalendar1.Date),'DeWeb','OK',Self);
+          dwShowMessage('OnClick : '+FormatDateTime('yyyy-MM-dd',MonthCalendar1.Date),Self);
      end;
 
 end;
@@ -962,7 +962,7 @@ begin
 
      //
      if CheckBox11.Checked then begin
-          dwShowMessage('PageControl Changed!','DeWeb','OK',Self);
+          dwShowMessage('PageControl Changed!',Self);
      end;
 end;
 
@@ -970,22 +970,22 @@ procedure TDemos.RadioButton8Click(Sender: TObject);
 begin
      //
      if RadioButton8.Checked then begin
-          dwShowMessage('radio Checked!','DeWeb','OK',Self);
+          dwShowMessage('radio Checked!',Self);
      end else begin
-          dwShowMessage('radio unChecked!','DeWeb','OK',Self);
+          dwShowMessage('radio unChecked!',Self);
      end;
 end;
 
 procedure TDemos.SpinEdit7Change(Sender: TObject);
 begin
-     dwShowMessage('SpinEdit OnChange','DeWeb','OK',Self);
+     dwShowMessage('SpinEdit OnChange',Self);
 
 end;
 
 procedure TDemos.StringGrid1Click(Sender: TObject);
 begin
      if CheckBox12.Checked then begin
-          dwShowMessage('StringGrid Row : '+IntToStr(StringGrid1.Row),'DeWeb','OK',Self);
+          dwShowMessage('StringGrid Row : '+IntToStr(StringGrid1.Row),Self);
      end;
 
 end;
@@ -993,7 +993,11 @@ end;
 procedure TDemos.TreeView1Click(Sender: TObject);
 begin
      if CheckBox13.Checked then begin
-          dwShowMessage('TreeVIew OnClick','DeWeb','OK',Self);
+          if TreeView1.Selected <> nil then begin
+               dwShowMessage('TreeVIew OnClick at '+TreeView1.Selected.Text,Self);
+          end else begin
+               dwShowMessage('TreeVIew OnClick',Self);
+          end;
      end;
 
 end;

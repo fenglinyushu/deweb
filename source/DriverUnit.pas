@@ -85,13 +85,13 @@ begin
 
      //
      if iScore<60 then begin
-          dwShowMessage('成绩很差,分数为 '+IntToStr(iScore)+', 不要偷懒哟!','成绩','OK',Self);
+          dwShowMessage('成绩很差,分数为 '+IntToStr(iScore)+', 不要偷懒哟!',Self);
      end else if iScore < 70 then begin
-          dwShowMessage('成绩勉强及格,分数为 '+IntToStr(iScore)+',加油!','成绩','OK',Self);
+          dwShowMessage('成绩勉强及格,分数为 '+IntToStr(iScore)+',加油!',Self);
      end else if iScore < 80 then begin
-          dwShowMessage('成绩还可以!,分数为 '+IntToStr(iScore)+',继续努力!','成绩','OK',Self);
+          dwShowMessage('成绩还可以!,分数为 '+IntToStr(iScore)+',继续努力!',Self);
      end else begin
-          dwShowMessage('成绩很好! 分数为 '+IntToStr(iScore)+',你真棒!','成绩','OK',Self);
+          dwShowMessage('成绩很好! 分数为 '+IntToStr(iScore)+',你真棒!',Self);
      end;
 end;
 
