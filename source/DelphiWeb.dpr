@@ -36,7 +36,8 @@ uses
   dwListBoxs in 'dwVcls\dwListBoxs.pas',
   dwStringGrids in 'dwVcls\dwStringGrids.pas',
   dwEdits in 'dwVcls\dwEdits.pas',
-  dwLabels in 'dwVcls\dwLabels.pas';
+  dwLabels in 'dwVcls\dwLabels.pas',
+  DFWUnit in 'DFWUnit.pas' {DFW};
 
 {$R *.RES}
 
@@ -45,6 +46,7 @@ begin
      Application.Title := 'Deweb Server';
      Application.CreateForm(TDM, DM);
   Application.CreateForm(TMainForm, MainForm);
+  Application.CreateForm(TDFW, DFW);
   Application.Run;
      CoUninitialize;
 end.
