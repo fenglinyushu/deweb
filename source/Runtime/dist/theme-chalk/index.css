@@ -12388,8 +12388,7 @@
 	color: #606266;
 	display: inline-block;
 	font-size: inherit;
-	height: 35px;
-	line-height: 35px;
+	height:100%;
 	outline: 0;
 	padding: 0 15px;
 	-webkit-transition: border-color .2s cubic-bezier(.645,.045,.355,1);
@@ -13462,7 +13461,6 @@
 	-webkit-transition: .1s;
 	transition: .1s;
 	font-weight: 500;
-	padding: 12px 20px;
 	font-size: 14px;
 	border-radius: 4px
 }
@@ -13837,7 +13835,6 @@
 }
 
 .el-button--small,.el-button--small.is-round {
-	padding: 9px 15px
 }
 
 .el-button--small.is-circle {
@@ -27621,6 +27618,7 @@
 	position: relative;
 	font-size: 14px;
 	display: inline-block;
+	height:100%;
 	width: 100%
 }
 
@@ -27705,7 +27703,6 @@
 	position: absolute;
 	top: 0;
 	-webkit-transition: all .3s;
-	height: 35px;
 	color: #C0C4CC;
 	text-align: center
 }
@@ -27755,7 +27752,6 @@
 	text-align: center;
 	-webkit-transition: all .3s;
 	transition: all .3s;
-	line-height: 35px
 }
 
 .el-input__icon:after {
@@ -28765,7 +28761,6 @@
 	-webkit-transition: .1s;
 	transition: .1s;
 	font-weight: 500;
-	padding: 12px 20px;
 	font-size: 14px;
 	border-radius: 4px
 }
@@ -29141,7 +29136,6 @@
 }
 
 .el-button--small,.el-button--small.is-round {
-	padding: 9px 15px
 }
 
 .el-button--small.is-circle {

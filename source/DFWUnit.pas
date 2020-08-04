@@ -3,8 +3,16 @@ unit DFWUnit;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, jpeg, ExtCtrls, StdCtrls;
+     SynCommons,
+     //SynDB,SynDBZeos,
+
+     //
+     CloneComponents,
+
+     //
+     Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+     Dialogs, jpeg, ExtCtrls, StdCtrls, DB, ZAbstractRODataset, ZDataset,
+  ZConnection;
 
 type
   TDFW = class(TForm)
@@ -18,23 +26,12 @@ type
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
-    Panel1: TPanel;
     Panel2: TPanel;
-    Panel3: TPanel;
+    Panel_Search: TPanel;
     Label14: TLabel;
     Label15: TLabel;
     Panel4: TPanel;
     Panel_All: TPanel;
-    Label9: TLabel;
-    Label8: TLabel;
-    Label7: TLabel;
-    Label6: TLabel;
-    Edit5: TEdit;
-    Edit4: TEdit;
-    Edit1: TEdit;
-    CheckBox1: TCheckBox;
-    Button2: TButton;
-    Button1: TButton;
     Label13: TLabel;
     Label12: TLabel;
     ComboBox2: TComboBox;
@@ -46,112 +43,21 @@ type
     Label10: TLabel;
     RadioButton2: TRadioButton;
     RadioButton1: TRadioButton;
-    Panel5: TPanel;
     Panel_Subjects: TPanel;
     Label16: TLabel;
     Label17: TLabel;
     Label18: TLabel;
     Label19: TLabel;
-    Panel6: TPanel;
-    Label20: TLabel;
-    Label21: TLabel;
-    Label22: TLabel;
-    Label23: TLabel;
-    Label24: TLabel;
-    Label25: TLabel;
-    Label26: TLabel;
-    Panel8: TPanel;
-    Panel9: TPanel;
-    Label34: TLabel;
-    Label35: TLabel;
-    Label36: TLabel;
-    Label37: TLabel;
-    Label38: TLabel;
-    Label39: TLabel;
-    Label40: TLabel;
-    Panel10: TPanel;
-    Panel11: TPanel;
-    Label41: TLabel;
-    Label42: TLabel;
-    Label43: TLabel;
-    Label44: TLabel;
-    Label45: TLabel;
-    Label46: TLabel;
-    Label47: TLabel;
+    Panel_Thread: TPanel;
+    Label_New: TLabel;
+    Label_Score: TLabel;
+    Label_Subject: TLabel;
+    Label_ReplyRead: TLabel;
+    Label_Uper: TLabel;
+    Label_LastReply: TLabel;
+    Label_ReplyTime: TLabel;
     Panel12: TPanel;
-    Panel13: TPanel;
-    Label48: TLabel;
-    Label49: TLabel;
-    Label50: TLabel;
-    Label51: TLabel;
-    Label52: TLabel;
-    Label53: TLabel;
-    Label54: TLabel;
-    Panel14: TPanel;
-    Panel15: TPanel;
-    Label55: TLabel;
-    Label56: TLabel;
-    Label57: TLabel;
-    Label58: TLabel;
-    Label59: TLabel;
-    Label60: TLabel;
-    Label61: TLabel;
-    Panel16: TPanel;
-    Panel17: TPanel;
-    Label62: TLabel;
-    Label63: TLabel;
-    Label64: TLabel;
-    Label65: TLabel;
-    Label66: TLabel;
-    Label67: TLabel;
-    Label68: TLabel;
-    Panel18: TPanel;
-    Panel19: TPanel;
-    Label69: TLabel;
-    Label70: TLabel;
-    Label71: TLabel;
-    Label72: TLabel;
-    Label73: TLabel;
-    Label74: TLabel;
-    Label75: TLabel;
-    Panel20: TPanel;
-    Panel21: TPanel;
-    Label76: TLabel;
-    Label77: TLabel;
-    Label78: TLabel;
-    Label79: TLabel;
-    Label80: TLabel;
-    Label81: TLabel;
-    Label82: TLabel;
-    Panel22: TPanel;
-    Panel23: TPanel;
-    Label83: TLabel;
-    Label84: TLabel;
-    Label85: TLabel;
-    Label86: TLabel;
-    Label87: TLabel;
-    Label88: TLabel;
-    Label89: TLabel;
-    Panel24: TPanel;
-    Panel25: TPanel;
-    Label90: TLabel;
-    Label91: TLabel;
-    Label92: TLabel;
-    Label93: TLabel;
-    Label94: TLabel;
-    Label95: TLabel;
-    Label96: TLabel;
-    Panel26: TPanel;
-    Panel27: TPanel;
-    Label97: TLabel;
-    Label98: TLabel;
-    Label99: TLabel;
-    Label100: TLabel;
-    Label101: TLabel;
-    Label102: TLabel;
-    Label103: TLabel;
-    Panel28: TPanel;
-    Panel29: TPanel;
+    Panel_ThreadTitle: TPanel;
     Label104: TLabel;
     Label105: TLabel;
     Label106: TLabel;
@@ -159,93 +65,14 @@ type
     Label108: TLabel;
     Label109: TLabel;
     Label110: TLabel;
-    Panel30: TPanel;
-    Label111: TLabel;
-    Label112: TLabel;
-    Label113: TLabel;
-    Label114: TLabel;
-    Label115: TLabel;
-    Label116: TLabel;
-    Label117: TLabel;
-    Panel31: TPanel;
-    Panel32: TPanel;
-    Label118: TLabel;
-    Label119: TLabel;
-    Label120: TLabel;
-    Label121: TLabel;
-    Label122: TLabel;
-    Label123: TLabel;
-    Label124: TLabel;
-    Panel33: TPanel;
-    Panel34: TPanel;
-    Label125: TLabel;
-    Label126: TLabel;
-    Label127: TLabel;
-    Label128: TLabel;
-    Label129: TLabel;
-    Label130: TLabel;
-    Label131: TLabel;
-    Panel35: TPanel;
-    Panel36: TPanel;
-    Label132: TLabel;
-    Label133: TLabel;
-    Label134: TLabel;
-    Label135: TLabel;
-    Label136: TLabel;
-    Label137: TLabel;
-    Label138: TLabel;
-    Panel37: TPanel;
-    Panel38: TPanel;
-    Label139: TLabel;
-    Label140: TLabel;
-    Label141: TLabel;
-    Label142: TLabel;
-    Label143: TLabel;
-    Label144: TLabel;
-    Label145: TLabel;
-    Panel39: TPanel;
-    Panel40: TPanel;
-    Label146: TLabel;
-    Label147: TLabel;
-    Label148: TLabel;
-    Label149: TLabel;
-    Label150: TLabel;
-    Label151: TLabel;
-    Label152: TLabel;
-    Panel41: TPanel;
-    Panel42: TPanel;
-    Label153: TLabel;
-    Label154: TLabel;
-    Label155: TLabel;
-    Label156: TLabel;
-    Label157: TLabel;
-    Label158: TLabel;
-    Label159: TLabel;
-    Panel43: TPanel;
-    Panel44: TPanel;
-    Label160: TLabel;
-    Label161: TLabel;
-    Label162: TLabel;
-    Label163: TLabel;
-    Label164: TLabel;
-    Label165: TLabel;
-    Label166: TLabel;
-    Panel45: TPanel;
-    Panel46: TPanel;
-    Label167: TLabel;
-    Label168: TLabel;
-    Label169: TLabel;
-    Label170: TLabel;
-    Label171: TLabel;
-    Label172: TLabel;
-    Label173: TLabel;
-    Panel47: TPanel;
-    Panel7: TPanel;
+    Panel_Pages: TPanel;
     Label27: TLabel;
     Label28: TLabel;
     Label29: TLabel;
     Label31: TLabel;
     Edit6: TEdit;
+    ZConnection: TZConnection;
+    ZReadOnlyQuery_Threads: TZReadOnlyQuery;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -261,8 +88,84 @@ implementation
 {$R *.dfm}
 
 procedure TDFW.FormCreate(Sender: TObject);
+var
+     iItem     : Integer;
+     oPanel    : TPanel;
+begin
+     //设置TOP, 以修正编辑时的更改
+     Top  := 0;
+
+     //打开数据表
+     ZConnection.Connect;
+     ZReadOnlyQuery_Threads.SQL.Text:='Set Names GB2312';
+     ZReadOnlyQuery_Threads.ExecSQL;
+     ZReadOnlyQuery_Threads.SQL.Text    := 'SELECT  * FROM bbs_thread';
+     ZReadOnlyQuery_Threads.Open;
+
+
+     //显示
+     for iItem := 0 to 19 do begin
+          oPanel    := TPanel(CloneComponent(Panel_Thread));
+          oPanel.Visible := True;
+          oPanel.Top     := 9900+iItem;
+          //积分
+          TLabel(Self.FindComponent('Label_Score'+IntToStr(iItem+1))).Caption := '';//ZReadOnlyQuery_Threads.FieldByName('subject').AsString;
+          //主题
+          TLabel(Self.FindComponent('Label_Subject'+IntToStr(iItem+1))).Caption := ZReadOnlyQuery_Threads.FieldByName('subject').AsString;
+          //提问
+          TLabel(Self.FindComponent('Label_Uper'+IntToStr(iItem+1))).Caption := ZReadOnlyQuery_Threads.FieldByName('uid').AsString;
+          //回复/阅读
+          TLabel(Self.FindComponent('Label_ReplyRead'+IntToStr(iItem+1))).Caption := ZReadOnlyQuery_Threads.FieldByName('posts').AsString
+               +'/'+ZReadOnlyQuery_Threads.FieldByName('views').AsString;
+          //提问
+          TLabel(Self.FindComponent('Label_LastReply'+IntToStr(iItem+1))).Caption := ZReadOnlyQuery_Threads.FieldByName('lastuid').AsString;
+
+          //
+          ZReadOnlyQuery_Threads.Next;
+     end;
+     Panel_Pages.Top     := 9999;
+end;
+{var
+     gProps    : TSQLDBConnectionProperties;
+     rows      : ISQLDBRows;
 begin
      Top  := 0;
+     //
+     gProps    := TSQLDBZEOSConnectionProperties.Create(
+          'zdbc:mysql://qdm165429402.my3w.com/qdm165429402_db?username=qdm165429402;'+
+          'password=wghcgljt2210459;LibLocation=libmysql.dll', '', '', '');
+
+     if gProps.
+     rows := gProps.ExecuteInlined('select top 5 * from bbs_thread',  True);
+     if rows<>nil then
+          while rows.Step() do
+               showmessage(rows.ColumnString('subject'));
+const
+  MYSQL_CONSTR = 'zdbc:mysql://%s:%d/%s?username=%s;password=%s;LibLocation=libmysql.dll';
+var
+  constr, dbserver, dbdatabase, dbusername, dbpassword: string;
+  dbport: Integer;
+    fProps: TSQLDBConnectionProperties;
+     rows      : ISQLDBRows;
+begin
+  // 连接数据库
+  dbserver     := 'qdm165429402.my3w.com';
+  dbdatabase   := 'qdm165429402_db';
+  dbusername   := 'qdm165429402';
+  dbpassword   := 'wghcgljt2210459';
+  dbport       := 3306;
+  constr       := Format(MYSQL_CONSTR, [dbserver, dbport, dbdatabase, dbusername, dbpassword]);
+  try
+    fProps := TSQLDBZEOSConnectionProperties.Create(constr, '', '', '');
+     rows := fProps.ExecuteInlined('select top 5 * from bbs_thread',  True);
+     if rows<>nil then
+          while rows.Step() do
+               showmessage(rows.ColumnString('subject'));
+  except
+    raise Exception.Create('数据连接失败,请检数据库查配置参数!');
+  end;
+
 end;
+}
 
 end.

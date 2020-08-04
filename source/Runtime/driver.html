@@ -1,805 +1,0 @@
-<!DOCTYPE html>                                                                    <html lang="en">                                                                                                                                                    <head>                                                                                <meta charset="utf-8">                                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">            <meta http-equiv="X-UA-Compatible" content="ie=edge">                             <title>Driver</title>                                                          </head>                                                                           
-<body style="background-color:#F0F0F0">
-    <style type="text/css">                                                      #Loading {                                                                   top: 50%;                                                               left: 50%;                                                              position: absolute;                                                     -webkit-transform: translateY(-50%) translateX(-50%);                   transform: translateY(-50%) translateX(-50%);                           z-index: 100;                                                      }                                                                       @-webkit-keyframes ball-beat {                                               50% {                                                                        opacity: 0.2;                                                           -webkit-transform: scale(0.75);                                         transform: scale(0.75);                                            }                                                                       100% {                                                                       opacity: 1;                                                             -webkit-transform: scale(1);                                            transform: scale(1);                                               }                                                                  }                                                                       @keyframes ball-beat {                                                       50% {                                                                        opacity: 0.2;                                                           -webkit-transform: scale(0.75);                                         transform: scale(0.75);                                            }                                                                       100% {                                                                       opacity: 1;                                                             -webkit-transform: scale(1);                                            transform: scale(1);                                               }                                                                  }                                                                       .ball-beat>div {                                                             background-color: #279fcf;                                              width: 15px;                                                            height: 15px;                                                           border-radius: 100% !important;                                         margin: 2px;                                                            -webkit-animation-fill-mode: both;                                      animation-fill-mode: both;                                              display: inline-block;                                                  -webkit-animation: ball-beat 0.7s 0s infinite linear;                   animation: ball-beat 0.7s 0s infinite linear;                      }                                                                       .ball-beat>div:nth-child(2n-1) {                                             -webkit-animation-delay: 0.35s !important;                              animation-delay: 0.35s !important;                                 }                                                                       #loader-wrapper {                                                            position: fixed;                                                        top: 0;                                                                 left: 0;                                                                width: 100%;                                                            height: 100%;                                                           z-index: 999999;                                                        background: #fff;                                                  }                                                                       #loader {                                                                    display: block;                                                         position: relative;                                                     left: 50%;                                                              top: 50%;                                                               width: 150px;                                                           height: 150px;                                                          margin: -75px 0 0 -75px;                                                border-radius: 50%;                                                     border: 3px solid transparent;                                          /* COLOR 1 */                                                           border-top-color: #000;                                                 -webkit-animation: spin 2s linear infinite;                             /* Chrome, Opera 15+, Safari 5+ */                                      -ms-animation: spin 2s linear infinite;                                 /* Chrome, Opera 15+, Safari 5+ */                                      -moz-animation: spin 2s linear infinite;                                /* Chrome, Opera 15+, Safari 5+ */                                      -o-animation: spin 2s linear infinite;                                  /* Chrome, Opera 15+, Safari 5+ */                                      animation: spin 2s linear infinite;                                     /* Chrome, Firefox 16+, IE 10+, Opera */                                z-index: 1001;                                                     }                                                                       #loader:before {                                                             content: "";                                                            position: absolute;                                                     top: 5px;                                                               left: 5px;                                                              right: 5px;                                                             bottom: 5px;                                                            border-radius: 50%;                                                     border: 3px solid transparent;                                          /* COLOR 2 */                                                           border-top-color: #000;                                                 -webkit-animation: spin 3s linear infinite;                             /* Chrome, Opera 15+, Safari 5+ */                                      -moz-animation: spin 3s linear infinite;                                /* Chrome, Opera 15+, Safari 5+ */                                      -o-animation: spin 3s linear infinite;                                  /* Chrome, Opera 15+, Safari 5+ */                                      -ms-animation: spin 3s linear infinite;                                 /* Chrome, Opera 15+, Safari 5+ */                                      animation: spin 3s linear infinite;                                     /* Chrome, Firefox 16+, IE 10+, Opera */                           }                                                                       #loader:after {                                                              content: "";                                                            position: absolute;                                                     top: 15px;                                                              left: 15px;                                                             right: 15px;                                                            bottom: 15px;                                                           border-radius: 50%;                                                     border: 3px solid transparent;                                          border-top-color: #000;                                                 /* COLOR 3 */                                                           -moz-animation: spin 1.5s linear infinite;                              /* Chrome, Opera 15+, Safari 5+ */                                      -o-animation: spin 1.5s linear infinite;                                /* Chrome, Opera 15+, Safari 5+ */                                      -ms-animation: spin 1.5s linear infinite;                               /* Chrome, Opera 15+, Safari 5+ */                                      -webkit-animation: spin 1.5s linear infinite;                           /* Chrome, Opera 15+, Safari 5+ */                                      animation: spin 1.5s linear infinite;                                   /* Chrome, Firefox 16+, IE 10+, Opera */                           }                                                                       @-webkit-keyframes spin {                                                    0% {                                                                         -webkit-transform: rotate(0deg);                                        /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(0deg);                                            /* IE 9 */                                                              transform: rotate(0deg);                                                /* Firefox 16+, IE 10+, Opera */                                   }                                                                                                                                               100% {                                                                       -webkit-transform: rotate(360deg);                                      /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(360deg);                                          /* IE 9 */                                                              transform: rotate(360deg);                                              /* Firefox 16+, IE 10+, Opera */                                   }                                                                  }                                                                       @keyframes spin {                                                            0% {                                                                         -webkit-transform: rotate(0deg);                                        /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(0deg);                                            /* IE 9 */                                                              transform: rotate(0deg);                                                /* Firefox 16+, IE 10+, Opera */                                   }                                                                       100% {                                                                       -webkit-transform: rotate(360deg);                                      /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(360deg);                                          /* IE 9 */                                                              transform: rotate(360deg);                                              /* Firefox 16+, IE 10+, Opera */                                   }                                                                  }                                                                       #loader-wrapper .loader-section {                                            position: fixed;                                                        top: 0;                                                                 width: 51%;                                                             height: 100%;                                                           background: #fff;                                                       /* opacity: 0.7; */                                                     /* Old browsers */                                                      z-index: 1000;                                                          -webkit-transform: translateX(0);                                       /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateX(0);                                           /* IE 9 */                                                              transform: translateX(0);                                               /* Firefox 16+, IE 10+, Opera */                                   }                                                                       #loader-wrapper .loader-section.section-left {                               left: 0;                                                           }                                                                       #loader-wrapper .loader-section.section-right {                              right: 0;                                                          }                                                                       /* Loaded */                                                            .loaded #loader-wrapper .loader-section.section-left {                       -webkit-transform: translateX(-100%);                                   /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateX(-100%);                                       /* IE 9 */                                                              transform: translateX(-100%);                                           /* Firefox 16+, IE 10+, Opera */                                        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);               transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);                  }                                                                       .loaded #loader-wrapper .loader-section.section-right {                      -webkit-transform: translateX(100%);                                    /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateX(100%);                                        /* IE 9 */                                                              transform: translateX(100%);                                            /* Firefox 16+, IE 10+, Opera */                                        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);               transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);                  }                                                                       .loaded #loader {                                                            opacity: 0;                                                             -webkit-transition: all 0.3s ease-out;                                  transition: all 0.3s ease-out;                                     }                                                                       .loaded #loader-wrapper {                                                    visibility: hidden;                                                     -webkit-transform: translateY(-100%);                                   /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateY(-100%);                                       /* IE 9 */                                                              transform: translateY(-100%);                                           /* Firefox 16+, IE 10+, Opera */                                        -webkit-transition: all 0.3s 1s ease-out;                               transition: all 0.3s 1s ease-out;                                  }                                                                       /* JavaScript Turned Off */                                                                                                                     .no-js #loader-wrapper {                                                     display: none;                                                     }                                                                                                                                               .no-js h1 {                                                                  color: #222222;                                                    }                                                                       #loader-wrapper .load_title {                                                font-family: 'Open Sans';                                             color: rgb(245, 245, 245);                                              font-size: 19px;                                                        width: 100%;                                                            text-align: center;                                                     z-index: 9999999999999;                                                 position: absolute;                                                     top: 36px;                                                              opacity: 1;                                                             line-height: 30px;                                                 }                                                                       #loader-wrapper .load_title span {                                           font-weight: normal;                                                    font-style: italic;                                                     font-size: 13px;                                                        color: rgb(220, 220, 220);                                              opacity: 0.5;                                                      }                                                                       @keyframes moveover {                                                        0% {                                                                         transform: rotate(0deg);                                           }                                                                                                                                               100% {                                                                       transform: rotate(360deg);                                         }                                                                  }                                                                       .box {                                                                       position: relative;                                                     width: 100px;                                                           height: 100px;                                                          margin: 18% auto;                                                       /*整体旋转*/                                                            animation: moveover 3s linear infinite;                            }                                                                       .box_text {                                                                  position: absolute;                                                     top: 0;                                                                 left: 0;                                                           }                                                                       .box::before {                                                               content: "";                                                            position: absolute;                                                     width: 50px;                                                            height: 100px;                                                          border-radius: 50px 0 0 50px;                                           background: linear-gradient(#999, rgb(220, 220, 220));                  background-color: #999;                                                 z-index: 2;                                                        }                                                                       .box2 {                                                                      position: absolute;                                                     width: 50px;                                                            height: 100px;                                                          border-radius: 0 50px 50px 0;                                           left: 50%;                                                              background: linear-gradient(rgb(255,255,255),rgb(220,220, 220));                    z-index: 1;                                                        }                                                                       .box::after {                                                                content: "";                                                            position: absolute;                                                     width: 92px;                                                            height: 92px;                                                           top: 4px;                                                               left: 4px;                                                              border-radius: 50%;                                                     background-color: #fff;                                                 z-index: 2;                                                        }                                                                       .wrapper {                                                                   position: relative;                                                }                                                                  </style>                                                                <div id="loader-wrapper">                                                    <div class="wrapper">                                                        <div class='box'>                                                          <div class="box2"></div>                                           </div>                                                                  <div class="load_title">DeWeb                                           </div>                                                                                                                                     </div>                                                             </div>                                                                  <script src="dist/vue.js" type="text/javascript"></script>              <script src="dist/index.js" type="text/javascript"></script>            <script src="dist/axios.min.js" type="text/javascript"></script>        <link rel="icon" href="dist/webimages/[###].ico" type="image/x-icon">           <link rel="stylesheet" type="text/css" href="dist/theme-chalk/index.css" /> 
-    <div id="app" style="position:absolute;overflow:hidden;left:0;top:0;right:0;bottom:0;margin: 0 auto;background-color:#F0F0F0" :style="{width:Driver_1__wid,height:Driver_1__hei}" >
-        <el-button v-if="version__istrial" type="success" @click="this.window.open('http://www.web0000.com/buy')" size="mini" icon="el-icon-shopping-cart-2" style="position:relative;z-index:999;float:right;margin:10px;">Buy Now!</el-button>
-        <el-dialog :title="input_query_caption" :visible.sync="input_query_visible" >
-        	<el-form style="width:90%;padding-left:5%;">
-        		<el-form-item :label="input_query_inputname" >
-        			<el-input v-model="input_query_inputdefault" autocomplete="off"></el-input>
-        		</el-form-item>
-        	</el-form>
-        	<div slot="footer" class="dialog-footer">
-        		<el-button @click="input_query_visible=false">{{input_query_cancelcaption}}</el-button>
-        		<el-button type="primary" @click="processinputquery">{{input_query_okcaption}}</el-button>
-        	</div>
-        </el-dialog>
-        <el-main v-if="Panel_Content__vis" :disabled="Panel_Content__dis" type="default" :style="{backgroundColor:Panel_Content__col,left:Panel_Content__lef,top:Panel_Content__top,width:Panel_Content__wid,height:Panel_Content__hei}" style="position:absolute;overflow:hidden;">
-        <el-main v-if="Panel_00_Logo__vis" :disabled="Panel_00_Logo__dis" type="default" :style="{backgroundColor:Panel_00_Logo__col,left:Panel_00_Logo__lef,top:Panel_00_Logo__top,width:Panel_00_Logo__wid,height:Panel_00_Logo__hei}" style="position:absolute;overflow:hidden;">
-        <el-main v-if="Panel1__vis" :disabled="Panel1__dis" type="default" :style="{backgroundColor:Panel1__col,left:Panel1__lef,top:Panel1__top,width:Panel1__wid,height:Panel1__hei}" style="position:absolute;overflow:hidden;">
-        <el-image :src="Img__src" fit="none" v-if="Img__vis" :disabled="Img__dis" :style="{left:Img__lef,top:Img__top,width:Img__wid,height:Img__hei}" style="position:absolute;">
-        </el-Image>
-        <label v-if="Label_Title__vis" :disabled="Label_Title__dis" :style="{left:Label_Title__lef,top:Label_Title__top,width:Label_Title__wid,height:Label_Title__hei}" style="position:absolute;color:#800000;font-family:'微软雅黑';font-size:16pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Title__cap}}
-        </label>
-        </el-main>
-        <el-main v-if="Panel_Space1__vis" :disabled="Panel_Space1__dis" type="default" :style="{backgroundColor:Panel_Space1__col,left:Panel_Space1__lef,top:Panel_Space1__top,width:Panel_Space1__wid,height:Panel_Space1__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-main v-if="Panel2__vis" :disabled="Panel2__dis" type="default" :style="{backgroundColor:Panel2__col,left:Panel2__lef,top:Panel2__top,width:Panel2__wid,height:Panel2__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_ZZ_Buttons__vis" :disabled="Panel_ZZ_Buttons__dis" type="default" :style="{backgroundColor:Panel_ZZ_Buttons__col,left:Panel_ZZ_Buttons__lef,top:Panel_ZZ_Buttons__top,width:Panel_ZZ_Buttons__wid,height:Panel_ZZ_Buttons__hei}" style="position:absolute;overflow:hidden;">
-        <el-button size="medium" v-if="Button_OK__vis" :disabled="Button_OK__dis" type="success" icon="el-icon-circle-check" :style="{left:Button_OK__lef,top:Button_OK__top,width:Button_OK__wid,height:Button_OK__hei}" style="position:absolute;" @click="dwevent('Button_OK','0','onclick','')">{{Button_OK__cap}}
-        </el-button>
-        </el-main>
-        <el-main v-if="Panel_01_Select__vis" :disabled="Panel_01_Select__dis" type="default" :style="{backgroundColor:Panel_01_Select__col,left:Panel_01_Select__lef,top:Panel_01_Select__top,width:Panel_01_Select__wid,height:Panel_01_Select__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Item__vis" :disabled="Label_Item__dis" :style="{left:Label_Item__lef,top:Label_Item__top,width:Label_Item__wid,height:Label_Item__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item__cap}}
-        </label>
-        <el-main v-if="Panel8__vis" :disabled="Panel8__dis" type="default" :style="{backgroundColor:Panel8__col,left:Panel8__lef,top:Panel8__top,width:Panel8__wid,height:Panel8__hei}" style="position:absolute;overflow:hidden;">
-        <el-radio label="1" v-if="RadioButton17__vis" :disabled="RadioButton17__dis" v-model="RadioButton17__chk" :style="{left:RadioButton17__lef,top:RadioButton17__top,width:RadioButton17__wid,height:RadioButton17__hei}" style="position:absolute;" @change="dwevent('RadioButton17','(this.RadioButton17__chk)','onclick','')">{{RadioButton17__cap}}
-        </el-radio>
-        <el-radio label="1" v-if="RadioButton18__vis" :disabled="RadioButton18__dis" v-model="RadioButton18__chk" :style="{left:RadioButton18__lef,top:RadioButton18__top,width:RadioButton18__wid,height:RadioButton18__hei}" style="position:absolute;" @change="dwevent('RadioButton18','(this.RadioButton18__chk)','onclick','')">{{RadioButton18__cap}}
-        </el-radio>
-        <el-radio label="1" v-if="RadioButton15__vis" :disabled="RadioButton15__dis" v-model="RadioButton15__chk" :style="{left:RadioButton15__lef,top:RadioButton15__top,width:RadioButton15__wid,height:RadioButton15__hei}" style="position:absolute;" @change="dwevent('RadioButton15','(this.RadioButton15__chk)','onclick','')">{{RadioButton15__cap}}
-        </el-radio>
-        <el-radio label="1" v-if="RadioButton16__vis" :disabled="RadioButton16__dis" v-model="RadioButton16__chk" :style="{left:RadioButton16__lef,top:RadioButton16__top,width:RadioButton16__wid,height:RadioButton16__hei}" style="position:absolute;" @change="dwevent('RadioButton16','(this.RadioButton16__chk)','onclick','')">{{RadioButton16__cap}}
-        </el-radio>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_01_Select1__vis" :disabled="Panel_01_Select1__dis" type="default" :style="{backgroundColor:Panel_01_Select1__col,left:Panel_01_Select1__lef,top:Panel_01_Select1__top,width:Panel_01_Select1__wid,height:Panel_01_Select1__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Item1__vis" :disabled="Label_Item1__dis" :style="{left:Label_Item1__lef,top:Label_Item1__top,width:Label_Item1__wid,height:Label_Item1__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item1__cap}}
-        </label>
-        <el-main v-if="Panel81__vis" :disabled="Panel81__dis" type="default" :style="{backgroundColor:Panel81__col,left:Panel81__lef,top:Panel81__top,width:Panel81__wid,height:Panel81__hei}" style="position:absolute;overflow:hidden;">
-        <el-radio label="1" v-if="RadioButton171__vis" :disabled="RadioButton171__dis" v-model="RadioButton171__chk" :style="{left:RadioButton171__lef,top:RadioButton171__top,width:RadioButton171__wid,height:RadioButton171__hei}" style="position:absolute;" @change="dwevent('RadioButton171','(this.RadioButton171__chk)','onclick','')">{{RadioButton171__cap}}
-        </el-radio>
-        <el-radio label="1" v-if="RadioButton181__vis" :disabled="RadioButton181__dis" v-model="RadioButton181__chk" :style="{left:RadioButton181__lef,top:RadioButton181__top,width:RadioButton181__wid,height:RadioButton181__hei}" style="position:absolute;" @change="dwevent('RadioButton181','(this.RadioButton181__chk)','onclick','')">{{RadioButton181__cap}}
-        </el-radio>
-        <el-radio label="1" v-if="RadioButton151__vis" :disabled="RadioButton151__dis" v-model="RadioButton151__chk" :style="{left:RadioButton151__lef,top:RadioButton151__top,width:RadioButton151__wid,height:RadioButton151__hei}" style="position:absolute;" @change="dwevent('RadioButton151','(this.RadioButton151__chk)','onclick','')">{{RadioButton151__cap}}
-        </el-radio>
-        <el-radio label="1" v-if="RadioButton161__vis" :disabled="RadioButton161__dis" v-model="RadioButton161__chk" :style="{left:RadioButton161__lef,top:RadioButton161__top,width:RadioButton161__wid,height:RadioButton161__hei}" style="position:absolute;" @change="dwevent('RadioButton161','(this.RadioButton161__chk)','onclick','')">{{RadioButton161__cap}}
-        </el-radio>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_01_Select2__vis" :disabled="Panel_01_Select2__dis" type="default" :style="{backgroundColor:Panel_01_Select2__col,left:Panel_01_Select2__lef,top:Panel_01_Select2__top,width:Panel_01_Select2__wid,height:Panel_01_Select2__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Item2__vis" :disabled="Label_Item2__dis" :style="{left:Label_Item2__lef,top:Label_Item2__top,width:Label_Item2__wid,height:Label_Item2__hei}" style="position:absolute;color:#000000;font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item2__cap}}
-        </label>
-        <el-main v-if="Panel82__vis" :disabled="Panel82__dis" type="default" :style="{backgroundColor:Panel82__col,left:Panel82__lef,top:Panel82__top,width:Panel82__wid,height:Panel82__hei}" style="position:absolute;overflow:hidden;">
-        <el-radio label="1" v-if="RadioButton172__vis" :disabled="RadioButton172__dis" v-model="RadioButton172__chk" :style="{left:RadioButton172__lef,top:RadioButton172__top,width:RadioButton172__wid,height:RadioButton172__hei}" style="position:absolute;" @change="dwevent('RadioButton172','(this.RadioButton172__chk)','onclick','')">{{RadioButton172__cap}}
-        </el-radio>
-        <el-radio label="1" v-if="RadioButton182__vis" :disabled="RadioButton182__dis" v-model="RadioButton182__chk" :style="{left:RadioButton182__lef,top:RadioButton182__top,width:RadioButton182__wid,height:RadioButton182__hei}" style="position:absolute;" @change="dwevent('RadioButton182','(this.RadioButton182__chk)','onclick','')">{{RadioButton182__cap}}
-        </el-radio>
-        <el-radio label="1" v-if="RadioButton152__vis" :disabled="RadioButton152__dis" v-model="RadioButton152__chk" :style="{left:RadioButton152__lef,top:RadioButton152__top,width:RadioButton152__wid,height:RadioButton152__hei}" style="position:absolute;" @change="dwevent('RadioButton152','(this.RadioButton152__chk)','onclick','')">{{RadioButton152__cap}}
-        </el-radio>
-        <el-radio label="1" v-if="RadioButton162__vis" :disabled="RadioButton162__dis" v-model="RadioButton162__chk" :style="{left:RadioButton162__lef,top:RadioButton162__top,width:RadioButton162__wid,height:RadioButton162__hei}" style="position:absolute;" @change="dwevent('RadioButton162','(this.RadioButton162__chk)','onclick','')">{{RadioButton162__cap}}
-        </el-radio>
-        </el-main>
-        </el-main>
-	 </div>
-    <script>
-	    Vue.prototype.procResp = function (data){
-		    resp = JSON.parse(decodeURIComponent(String(data))); 
-		    if (resp.mode === "update"){
-		        eval(String(resp.code));
-		    } else if (resp.mode === "showform"){
-		        document.open();document.write(String(resp.code));
-		    }
-	    } 
-        new Vue(
-			{
-				el: '#app',
-				data: function () {
-					return {
-					    Driver_1__lef:"13000px",
-					    Driver_1__top:"49px",
-					    Driver_1__wid:"1440px",
-					    Driver_1__hei:"900px",
-Img__lef:"0px",
-Img__top:"0px",
-Img__wid:"60px",
-Img__hei:"50px",
-Img__vis:true,
-Img__dis:false,
-Img__src:"dist/webimages/Img.jpg",
-Label_Title__lef:"67px",
-Label_Title__top:"7px",
-Label_Title__wid:"334px",
-Label_Title__hei:"28px",
-Label_Title__vis:true,
-Label_Title__dis:false,
-Label_Title__cap:"123",
-Panel1__lef:"0px",
-Panel1__top:"0px",
-Panel1__wid:"1387px",
-Panel1__hei:"50px",
-Panel1__vis:true,
-Panel1__dis:false,
-Panel1__col:"#FFFFFF",
-Panel_Space1__lef:"0px",
-Panel_Space1__top:"50px",
-Panel_Space1__wid:"1387px",
-Panel_Space1__hei:"12px",
-Panel_Space1__vis:true,
-Panel_Space1__dis:false,
-Panel_Space1__col:"#FFFFFF",
-Panel2__lef:"0px",
-Panel2__top:"62px",
-Panel2__wid:"1387px",
-Panel2__hei:"1px",
-Panel2__vis:true,
-Panel2__dis:false,
-Panel2__col:"#F0F0F0",
-Panel_00_Logo__lef:"10px",
-Panel_00_Logo__top:"10px",
-Panel_00_Logo__wid:"1387px",
-Panel_00_Logo__hei:"63px",
-Panel_00_Logo__vis:true,
-Panel_00_Logo__dis:false,
-Panel_00_Logo__col:"#FFFFFF",
-Button_OK__lef:"5px",
-Button_OK__top:"5px",
-Button_OK__wid:"120px",
-Button_OK__hei:"40px",
-Button_OK__vis:true,
-Button_OK__dis:false,
-Button_OK__cap:"JiaoJuan",
-Panel_ZZ_Buttons__lef:"10px",
-Panel_ZZ_Buttons__top:"933px",
-Panel_ZZ_Buttons__wid:"1387px",
-Panel_ZZ_Buttons__hei:"50px",
-Panel_ZZ_Buttons__vis:true,
-Panel_ZZ_Buttons__dis:false,
-Panel_ZZ_Buttons__col:"#FFFFFF",
-Label_Item__lef:"10px",
-Label_Item__top:"10px",
-Label_Item__wid:"741px",
-Label_Item__hei:"68px",
-Label_Item__vis:true,
-Label_Item__dis:false,
-Label_Item__cap:"ABD",
-RadioButton17__lef:"99999px",
-RadioButton17__top:"0px",
-RadioButton17__wid:"184px",
-RadioButton17__hei:"25px",
-RadioButton17__vis:true,
-RadioButton17__dis:false,
-RadioButton17__cap:"C/C++",
-RadioButton17__chk:"0",
-RadioButton18__lef:"99999px",
-RadioButton18__top:"0px",
-RadioButton18__wid:"184px",
-RadioButton18__hei:"25px",
-RadioButton18__vis:true,
-RadioButton18__dis:false,
-RadioButton18__cap:"Java",
-RadioButton18__chk:"0",
-RadioButton15__lef:"99999px",
-RadioButton15__top:"0px",
-RadioButton15__wid:"184px",
-RadioButton15__hei:"25px",
-RadioButton15__vis:true,
-RadioButton15__dis:false,
-RadioButton15__cap:"Delphi",
-RadioButton15__chk:"0",
-RadioButton16__lef:"400px",
-RadioButton16__top:"10px",
-RadioButton16__wid:"113px",
-RadioButton16__hei:"25px",
-RadioButton16__vis:true,
-RadioButton16__dis:false,
-RadioButton16__cap:"PHP",
-RadioButton16__chk:"0",
-Panel8__lef:"10px",
-Panel8__top:"73px",
-Panel8__wid:"744px",
-Panel8__hei:"40px",
-Panel8__vis:true,
-Panel8__dis:false,
-Panel8__col:"#FFFFFF",
-Panel_01_Select__lef:"10px",
-Panel_01_Select__top:"77px",
-Panel_01_Select__wid:"764px",
-Panel_01_Select__hei:"324px",
-Panel_01_Select__vis:false,
-Panel_01_Select__dis:false,
-Panel_01_Select__col:"#FFFFFF",
-Label_Item1__lef:"10px",
-Label_Item1__top:"10px",
-Label_Item1__wid:"1367px",
-Label_Item1__hei:"26px",
-Label_Item1__vis:true,
-Label_Item1__dis:false,
-Label_Item1__cap:"CCC",
-RadioButton171__lef:"10px",
-RadioButton171__top:"10px",
-RadioButton171__wid:"339px",
-RadioButton171__hei:"20px",
-RadioButton171__vis:true,
-RadioButton171__dis:false,
-RadioButton171__cap:"AAA",
-RadioButton171__chk:"0",
-RadioButton181__lef:"349px",
-RadioButton181__top:"10px",
-RadioButton181__wid:"339px",
-RadioButton181__hei:"20px",
-RadioButton181__vis:true,
-RadioButton181__dis:false,
-RadioButton181__cap:"BBBB",
-RadioButton181__chk:"0",
-RadioButton151__lef:"688px",
-RadioButton151__top:"10px",
-RadioButton151__wid:"339px",
-RadioButton151__hei:"20px",
-RadioButton151__vis:true,
-RadioButton151__dis:false,
-RadioButton151__cap:"CCC",
-RadioButton151__chk:"0",
-RadioButton161__lef:"1027px",
-RadioButton161__top:"10px",
-RadioButton161__wid:"330px",
-RadioButton161__hei:"20px",
-RadioButton161__vis:true,
-RadioButton161__dis:false,
-RadioButton161__cap:"DDDD",
-RadioButton161__chk:"0",
-Panel81__lef:"10px",
-Panel81__top:"36px",
-Panel81__wid:"1367px",
-Panel81__hei:"40px",
-Panel81__vis:true,
-Panel81__dis:false,
-Panel81__col:"#FFFFFF",
-Panel_01_Select1__lef:"10px",
-Panel_01_Select1__top:"73px",
-Panel_01_Select1__wid:"1387px",
-Panel_01_Select1__hei:"86px",
-Panel_01_Select1__vis:true,
-Panel_01_Select1__dis:false,
-Panel_01_Select1__col:"#FFFFFF",
-Label_Item2__lef:"10px",
-Label_Item2__top:"10px",
-Label_Item2__wid:"1367px",
-Label_Item2__hei:"26px",
-Label_Item2__vis:true,
-Label_Item2__dis:false,
-Label_Item2__cap:"Lab中文el1",
-RadioButton172__lef:"10px",
-RadioButton172__top:"10px",
-RadioButton172__wid:"339px",
-RadioButton172__hei:"20px",
-RadioButton172__vis:true,
-RadioButton172__dis:false,
-RadioButton172__cap:"A、保证车辆高速行驶",
-RadioButton172__chk:"0",
-RadioButton182__lef:"349px",
-RadioButton182__top:"10px",
-RadioButton182__wid:"339px",
-RadioButton182__hei:"20px",
-RadioButton182__vis:true,
-RadioButton182__dis:false,
-RadioButton182__cap:"B、圆满完成运输任务",
-RadioButton182__chk:"0",
-RadioButton152__lef:"688px",
-RadioButton152__top:"10px",
-RadioButton152__wid:"339px",
-RadioButton152__hei:"20px",
-RadioButton152__vis:true,
-RadioButton152__dis:false,
-RadioButton152__cap:"C、保护公民合法权益",
-RadioButton152__chk:"0",
-RadioButton162__lef:"1027px",
-RadioButton162__top:"10px",
-RadioButton162__wid:"330px",
-RadioButton162__hei:"20px",
-RadioButton162__vis:true,
-RadioButton162__dis:false,
-RadioButton162__cap:"D、减少交通",
-RadioButton162__chk:"0",
-Panel82__lef:"10px",
-Panel82__top:"36px",
-Panel82__wid:"1367px",
-Panel82__hei:"40px",
-Panel82__vis:true,
-Panel82__dis:false,
-Panel82__col:"#FFFFFF",
-Panel_01_Select2__lef:"10px",
-Panel_01_Select2__top:"159px",
-Panel_01_Select2__wid:"1387px",
-Panel_01_Select2__hei:"86px",
-Panel_01_Select2__vis:true,
-Panel_01_Select2__dis:false,
-Panel_01_Select2__col:"#FFFFFF",
-Label_Item3__lef:"10px",
-Label_Item3__top:"10px",
-Label_Item3__wid:"1367px",
-Label_Item3__hei:"26px",
-Label_Item3__vis:true,
-Label_Item3__dis:false,
-Label_Item3__cap:"3、 机动车经______登记后，方可上道路行驶。",
-RadioButton173__lef:"10px",
-RadioButton173__top:"10px",
-RadioButton173__wid:"339px",
-RadioButton173__hei:"20px",
-RadioButton173__vis:true,
-RadioButton173__dis:false,
-RadioButton173__cap:"A、道路运输管理机构",
-RadioButton173__chk:"0",
-RadioButton183__lef:"349px",
-RadioButton183__top:"10px",
-RadioButton183__wid:"339px",
-RadioButton183__hei:"20px",
-RadioButton183__vis:true,
-RadioButton183__dis:false,
-RadioButton183__cap:"B、公安机关交通管理部门",
-RadioButton183__chk:"0",
-RadioButton153__lef:"688px",
-RadioButton153__top:"10px",
-RadioButton153__wid:"339px",
-RadioButton153__hei:"20px",
-RadioButton153__vis:true,
-RadioButton153__dis:false,
-RadioButton153__cap:"C、工商部门",
-RadioButton153__chk:"0",
-RadioButton163__lef:"1027px",
-RadioButton163__top:"10px",
-RadioButton163__wid:"330px",
-RadioButton163__hei:"20px",
-RadioButton163__vis:true,
-RadioButton163__dis:false,
-RadioButton163__cap:"D、税务部 ",
-RadioButton163__chk:"0",
-Panel83__lef:"10px",
-Panel83__top:"36px",
-Panel83__wid:"1367px",
-Panel83__hei:"40px",
-Panel83__vis:true,
-Panel83__dis:false,
-Panel83__col:"#FFFFFF",
-Panel_01_Select3__lef:"10px",
-Panel_01_Select3__top:"245px",
-Panel_01_Select3__wid:"1387px",
-Panel_01_Select3__hei:"86px",
-Panel_01_Select3__vis:true,
-Panel_01_Select3__dis:false,
-Panel_01_Select3__col:"#FFFFFF",
-Label_Item4__lef:"10px",
-Label_Item4__top:"10px",
-Label_Item4__wid:"1367px",
-Label_Item4__hei:"26px",
-Label_Item4__vis:true,
-Label_Item4__dis:false,
-Label_Item4__cap:"4、 尚未登记的机动车，需要临时上道路行驶，应当______。",
-RadioButton174__lef:"10px",
-RadioButton174__top:"10px",
-RadioButton174__wid:"339px",
-RadioButton174__hei:"20px",
-RadioButton174__vis:true,
-RadioButton174__dis:false,
-RadioButton174__cap:"A、取得临时通行牌证",
-RadioButton174__chk:"0",
-RadioButton184__lef:"349px",
-RadioButton184__top:"10px",
-RadioButton184__wid:"339px",
-RadioButton184__hei:"20px",
-RadioButton184__vis:true,
-RadioButton184__dis:false,
-RadioButton184__cap:"B、到公安机关备案",
-RadioButton184__chk:"0",
-RadioButton154__lef:"688px",
-RadioButton154__top:"10px",
-RadioButton154__wid:"339px",
-RadioButton154__hei:"20px",
-RadioButton154__vis:true,
-RadioButton154__dis:false,
-RadioButton154__cap:"C、直接上路行驶",
-RadioButton154__chk:"0",
-RadioButton164__lef:"1027px",
-RadioButton164__top:"10px",
-RadioButton164__wid:"330px",
-RadioButton164__hei:"20px",
-RadioButton164__vis:true,
-RadioButton164__dis:false,
-RadioButton164__cap:"D、在车窗上张贴合格证",
-RadioButton164__chk:"0",
-Panel84__lef:"10px",
-Panel84__top:"36px",
-Panel84__wid:"1367px",
-Panel84__hei:"40px",
-Panel84__vis:true,
-Panel84__dis:false,
-Panel84__col:"#FFFFFF",
-Panel_01_Select4__lef:"10px",
-Panel_01_Select4__top:"331px",
-Panel_01_Select4__wid:"1387px",
-Panel_01_Select4__hei:"86px",
-Panel_01_Select4__vis:true,
-Panel_01_Select4__dis:false,
-Panel_01_Select4__col:"#FFFFFF",
-Label_Item5__lef:"10px",
-Label_Item5__top:"10px",
-Label_Item5__wid:"1367px",
-Label_Item5__hei:"26px",
-Label_Item5__vis:true,
-Label_Item5__dis:false,
-Label_Item5__cap:"5、 申请机动车登记，机动车所有人不需要提交的证明或凭证是______。",
-RadioButton175__lef:"10px",
-RadioButton175__top:"10px",
-RadioButton175__wid:"339px",
-RadioButton175__hei:"20px",
-RadioButton175__vis:true,
-RadioButton175__dis:false,
-RadioButton175__cap:"A、驾驶证",
-RadioButton175__chk:"0",
-RadioButton185__lef:"349px",
-RadioButton185__top:"10px",
-RadioButton185__wid:"339px",
-RadioButton185__hei:"20px",
-RadioButton185__vis:true,
-RadioButton185__dis:false,
-RadioButton185__cap:"B、身份证明和机动车来历证明",
-RadioButton185__chk:"0",
-RadioButton155__lef:"688px",
-RadioButton155__top:"10px",
-RadioButton155__wid:"339px",
-RadioButton155__hei:"20px",
-RadioButton155__vis:true,
-RadioButton155__dis:false,
-RadioButton155__cap:"C、整车出厂合格证明或者机动车进口凭证",
-RadioButton155__chk:"0",
-RadioButton165__lef:"1027px",
-RadioButton165__top:"10px",
-RadioButton165__wid:"330px",
-RadioButton165__hei:"20px",
-RadioButton165__vis:true,
-RadioButton165__dis:false,
-RadioButton165__cap:"D、车辆购置税的完税证明或者免税凭证",
-RadioButton165__chk:"0",
-Panel85__lef:"10px",
-Panel85__top:"36px",
-Panel85__wid:"1367px",
-Panel85__hei:"40px",
-Panel85__vis:true,
-Panel85__dis:false,
-Panel85__col:"#FFFFFF",
-Panel_01_Select5__lef:"10px",
-Panel_01_Select5__top:"417px",
-Panel_01_Select5__wid:"1387px",
-Panel_01_Select5__hei:"86px",
-Panel_01_Select5__vis:true,
-Panel_01_Select5__dis:false,
-Panel_01_Select5__col:"#FFFFFF",
-Label_Item6__lef:"10px",
-Label_Item6__top:"10px",
-Label_Item6__wid:"1367px",
-Label_Item6__hei:"26px",
-Label_Item6__vis:true,
-Label_Item6__dis:false,
-Label_Item6__cap:"6、 机动车在以下哪种情形不需要办理相应的登记______。",
-RadioButton176__lef:"10px",
-RadioButton176__top:"10px",
-RadioButton176__wid:"339px",
-RadioButton176__hei:"20px",
-RadioButton176__vis:true,
-RadioButton176__dis:false,
-RadioButton176__cap:"A、所有权发生转移的",
-RadioButton176__chk:"0",
-RadioButton186__lef:"349px",
-RadioButton186__top:"10px",
-RadioButton186__wid:"339px",
-RadioButton186__hei:"20px",
-RadioButton186__vis:true,
-RadioButton186__dis:false,
-RadioButton186__cap:"B、用作抵押的",
-RadioButton186__chk:"0",
-RadioButton156__lef:"688px",
-RadioButton156__top:"10px",
-RadioButton156__wid:"339px",
-RadioButton156__hei:"20px",
-RadioButton156__vis:true,
-RadioButton156__dis:false,
-RadioButton156__cap:"C、进行大修的",
-RadioButton156__chk:"0",
-RadioButton166__lef:"1027px",
-RadioButton166__top:"10px",
-RadioButton166__wid:"330px",
-RadioButton166__hei:"20px",
-RadioButton166__vis:true,
-RadioButton166__dis:false,
-RadioButton166__cap:"D、报废 ",
-RadioButton166__chk:"0",
-Panel86__lef:"10px",
-Panel86__top:"36px",
-Panel86__wid:"1367px",
-Panel86__hei:"40px",
-Panel86__vis:true,
-Panel86__dis:false,
-Panel86__col:"#FFFFFF",
-Panel_01_Select6__lef:"10px",
-Panel_01_Select6__top:"503px",
-Panel_01_Select6__wid:"1387px",
-Panel_01_Select6__hei:"86px",
-Panel_01_Select6__vis:true,
-Panel_01_Select6__dis:false,
-Panel_01_Select6__col:"#FFFFFF",
-Label_Item7__lef:"10px",
-Label_Item7__top:"10px",
-Label_Item7__wid:"1367px",
-Label_Item7__hei:"26px",
-Label_Item7__vis:true,
-Label_Item7__dis:false,
-Label_Item7__cap:"7、 已达到报废标准的机动车______上道路行驶。",
-RadioButton177__lef:"10px",
-RadioButton177__top:"10px",
-RadioButton177__wid:"339px",
-RadioButton177__hei:"20px",
-RadioButton177__vis:true,
-RadioButton177__dis:false,
-RadioButton177__cap:"A、允许临时",
-RadioButton177__chk:"0",
-RadioButton187__lef:"349px",
-RadioButton187__top:"10px",
-RadioButton187__wid:"339px",
-RadioButton187__hei:"20px",
-RadioButton187__vis:true,
-RadioButton187__dis:false,
-RadioButton187__cap:"B、不得",
-RadioButton187__chk:"0",
-RadioButton157__lef:"688px",
-RadioButton157__top:"10px",
-RadioButton157__wid:"339px",
-RadioButton157__hei:"20px",
-RadioButton157__vis:true,
-RadioButton157__dis:false,
-RadioButton157__cap:"C、经维修后可以",
-RadioButton157__chk:"0",
-RadioButton167__lef:"1027px",
-RadioButton167__top:"10px",
-RadioButton167__wid:"330px",
-RadioButton167__hei:"20px",
-RadioButton167__vis:true,
-RadioButton167__dis:false,
-RadioButton167__cap:"D、缴管理费后可 ",
-RadioButton167__chk:"0",
-Panel87__lef:"10px",
-Panel87__top:"36px",
-Panel87__wid:"1367px",
-Panel87__hei:"40px",
-Panel87__vis:true,
-Panel87__dis:false,
-Panel87__col:"#FFFFFF",
-Panel_01_Select7__lef:"10px",
-Panel_01_Select7__top:"589px",
-Panel_01_Select7__wid:"1387px",
-Panel_01_Select7__hei:"86px",
-Panel_01_Select7__vis:true,
-Panel_01_Select7__dis:false,
-Panel_01_Select7__col:"#FFFFFF",
-Label_Item8__lef:"10px",
-Label_Item8__top:"10px",
-Label_Item8__wid:"1367px",
-Label_Item8__hei:"26px",
-Label_Item8__vis:true,
-Label_Item8__dis:false,
-Label_Item8__cap:"8、 允许收缴、扣留机动车驾驶证的机构是______。",
-RadioButton178__lef:"10px",
-RadioButton178__top:"10px",
-RadioButton178__wid:"339px",
-RadioButton178__hei:"20px",
-RadioButton178__vis:true,
-RadioButton178__dis:false,
-RadioButton178__cap:"A、道路运输管理部门",
-RadioButton178__chk:"0",
-RadioButton188__lef:"349px",
-RadioButton188__top:"10px",
-RadioButton188__wid:"339px",
-RadioButton188__hei:"20px",
-RadioButton188__vis:true,
-RadioButton188__dis:false,
-RadioButton188__cap:"B、公安机关交通管理部门",
-RadioButton188__chk:"0",
-RadioButton158__lef:"688px",
-RadioButton158__top:"10px",
-RadioButton158__wid:"339px",
-RadioButton158__hei:"20px",
-RadioButton158__vis:true,
-RadioButton158__dis:false,
-RadioButton158__cap:"C、工商部门",
-RadioButton158__chk:"0",
-RadioButton168__lef:"1027px",
-RadioButton168__top:"10px",
-RadioButton168__wid:"330px",
-RadioButton168__hei:"20px",
-RadioButton168__vis:true,
-RadioButton168__dis:false,
-RadioButton168__cap:"D、税务部 ",
-RadioButton168__chk:"0",
-Panel88__lef:"10px",
-Panel88__top:"36px",
-Panel88__wid:"1367px",
-Panel88__hei:"40px",
-Panel88__vis:true,
-Panel88__dis:false,
-Panel88__col:"#FFFFFF",
-Panel_01_Select8__lef:"10px",
-Panel_01_Select8__top:"675px",
-Panel_01_Select8__wid:"1387px",
-Panel_01_Select8__hei:"86px",
-Panel_01_Select8__vis:true,
-Panel_01_Select8__dis:false,
-Panel_01_Select8__col:"#FFFFFF",
-Label_Item9__lef:"10px",
-Label_Item9__top:"10px",
-Label_Item9__wid:"1367px",
-Label_Item9__hei:"26px",
-Label_Item9__vis:true,
-Label_Item9__dis:false,
-Label_Item9__cap:"9、 驾驶人在道路上驾驶机动车时，______。",
-RadioButton179__lef:"10px",
-RadioButton179__top:"10px",
-RadioButton179__wid:"339px",
-RadioButton179__hei:"20px",
-RadioButton179__vis:true,
-RadioButton179__dis:false,
-RadioButton179__cap:"A、可以不携带驾驶证",
-RadioButton179__chk:"0",
-RadioButton189__lef:"349px",
-RadioButton189__top:"10px",
-RadioButton189__wid:"339px",
-RadioButton189__hei:"20px",
-RadioButton189__vis:true,
-RadioButton189__dis:false,
-RadioButton189__cap:"B、可以不携带行驶证",
-RadioButton189__chk:"0",
-RadioButton159__lef:"688px",
-RadioButton159__top:"10px",
-RadioButton159__wid:"339px",
-RadioButton159__hei:"20px",
-RadioButton159__vis:true,
-RadioButton159__dis:false,
-RadioButton159__cap:"C、必须携带驾驶证、行驶证和强制保险标志",
-RadioButton159__chk:"0",
-RadioButton169__lef:"1027px",
-RadioButton169__top:"10px",
-RadioButton169__wid:"330px",
-RadioButton169__hei:"20px",
-RadioButton169__vis:true,
-RadioButton169__dis:false,
-RadioButton169__cap:"D、应携带出厂合格证明或进口凭证",
-RadioButton169__chk:"0",
-Panel89__lef:"10px",
-Panel89__top:"36px",
-Panel89__wid:"1367px",
-Panel89__hei:"40px",
-Panel89__vis:true,
-Panel89__dis:false,
-Panel89__col:"#FFFFFF",
-Panel_01_Select9__lef:"10px",
-Panel_01_Select9__top:"761px",
-Panel_01_Select9__wid:"1387px",
-Panel_01_Select9__hei:"86px",
-Panel_01_Select9__vis:true,
-Panel_01_Select9__dis:false,
-Panel_01_Select9__col:"#FFFFFF",
-Label_Item10__lef:"10px",
-Label_Item10__top:"10px",
-Label_Item10__wid:"1367px",
-Label_Item10__hei:"26px",
-Label_Item10__vis:true,
-Label_Item10__dis:false,
-Label_Item10__cap:"10、 驾驶人驾驶机动车上道路行驶前，应当对机动车的______进行认真检查。",
-RadioButton1710__lef:"10px",
-RadioButton1710__top:"10px",
-RadioButton1710__wid:"339px",
-RadioButton1710__hei:"20px",
-RadioButton1710__vis:true,
-RadioButton1710__dis:false,
-RadioButton1710__cap:"A、安全技术状况",
-RadioButton1710__chk:"0",
-RadioButton1810__lef:"349px",
-RadioButton1810__top:"10px",
-RadioButton1810__wid:"339px",
-RadioButton1810__hei:"20px",
-RadioButton1810__vis:true,
-RadioButton1810__dis:false,
-RadioButton1810__cap:"B、整体结构",
-RadioButton1810__chk:"0",
-RadioButton1510__lef:"688px",
-RadioButton1510__top:"10px",
-RadioButton1510__wid:"339px",
-RadioButton1510__hei:"20px",
-RadioButton1510__vis:true,
-RadioButton1510__dis:false,
-RadioButton1510__cap:"C、所有部件",
-RadioButton1510__chk:"0",
-RadioButton1610__lef:"1027px",
-RadioButton1610__top:"10px",
-RadioButton1610__wid:"330px",
-RadioButton1610__hei:"20px",
-RadioButton1610__vis:true,
-RadioButton1610__dis:false,
-RadioButton1610__cap:"D、齿轮油",
-RadioButton1610__chk:"0",
-Panel810__lef:"10px",
-Panel810__top:"36px",
-Panel810__wid:"1367px",
-Panel810__hei:"40px",
-Panel810__vis:true,
-Panel810__dis:false,
-Panel810__col:"#FFFFFF",
-Panel_01_Select10__lef:"10px",
-Panel_01_Select10__top:"847px",
-Panel_01_Select10__wid:"1387px",
-Panel_01_Select10__hei:"86px",
-Panel_01_Select10__vis:true,
-Panel_01_Select10__dis:false,
-Panel_01_Select10__col:"#FFFFFF",
-Panel_Content__lef:"0px",
-Panel_Content__top:"-132px",
-Panel_Content__wid:"1407px",
-Panel_Content__hei:"993px",
-Panel_Content__vis:true,
-Panel_Content__dis:false,
-Panel_Content__col:"#FFFFFF",
-					    input_query_visible:false,
-					    input_query_caption:"Input Query",
-					    input_query_inputname:"new",
-					    input_query_cancelcaption:"Cancel",
-					    input_query_okcaption:"OK",
-					    input_query_inputdefault:"",
-					    input_query_method:"processinputquery",
-					    input_query_visible:false,
-					    version__istrial:false,
-					    clientid:0
-                    }
-                },
-                mounted() {
-                    let me=this;
-                    window.addEventListener('scroll', function() {
-                        let top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
-                        axios.get('{"mode":"event","cid":0,"component":"_scroll","value":"'+top+'"}')
-                        .then(resp =>{me.procResp(resp.data)});
-                    });
-                    window.addEventListener(
-                        "onorientationchange" in window ? "orientationchange" : "resize",
-                        function() {
-                            axios.get('{"mode":"event","cid":0,"component":"_screen","orientation":"'+window.orientation+'","clientwidth":'+document.documentElement.clientWidth+',"clientheight":'+document.documentElement.clientHeight+',"innerwidth":'+window.innerWidth+',"innerheight":'+window.innerHeight+',"width":'+screen.width+',"height":'+screen.height+'}')
-                            .then(resp =>{me.procResp(resp.data)});
-                        },
-                        false
-                    );
-                    let Driver_1hearttimer = window.setInterval(function() {
-                        axios.get('{"mode":"heart","cid":0}')
-                        .then(resp =>{me.procResp(resp.data)})
-                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(Driver_1hearttimer);});
-                    }, 30000);
-                },
-				methods: {
-                    dwnotify(caption,text) {this.$notify.error({ title: caption, message: text, duration: 0,showClose: false });},
-                    dwevent(compname,compvalue,compevent,reserved) {
-                        var val={};
-                        val.mode="event";
-                        val.cid=this.clientid;
-                        val.component=compname;
-                        val.value=escape(eval(compvalue))
-                        val.event=compevent;
-                        axios.get(JSON.stringify(val))
-                        .then(resp =>{this.procResp(resp.data)});
-                    },
-                    processinputquery(val) {
-                        this.input_query_visible = false;
-                        axios.get('{"mode":"interaction","cid":0,"class":"inputquery","method":"'+this.input_query_method+'","value":"'+this.input_query_inputdefault+'"}')
-                        .then(resp =>{this.procResp(resp.data)});
-                    },
-                },
-                beforeDestroy() {
-                    clearInterval(hearttimer);
-                }
-            }
-        ); 
-    </script>
-</body>
-<script>
-    function Lodinng () {
-	     document.getElementById("loader-wrapper").style.display = "none"
-	 }
-	 Lodinng()
-</script> 
-</html>

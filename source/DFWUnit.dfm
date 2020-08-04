@@ -1,10 +1,10 @@
 object DFW: TDFW
-  Left = 306
-  Top = 18
-  Hint = '{"height":1000}'
+  Left = 349
+  Top = 121
+  Hint = '{"height":1100}'
   BorderStyle = bsNone
   Caption = 'DFW'
-  ClientHeight = 959
+  ClientHeight = 821
   ClientWidth = 984
   Color = clWhite
   TransparentColor = True
@@ -22,21 +22,21 @@ object DFW: TDFW
     Left = 0
     Top = 0
     Width = 984
-    Height = 1000
+    Height = 1060
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 0
     object Panel_99_Foot: TPanel
       Left = 0
-      Top = 929
+      Top = 990
       Width = 984
-      Height = 71
+      Height = 70
       Align = alBottom
       Color = clWhite
       TabOrder = 0
       object Label14: TLabel
         Left = 1
-        Top = 50
+        Top = 49
         Width = 982
         Height = 20
         Align = alBottom
@@ -51,7 +51,7 @@ object DFW: TDFW
       end
       object Label15: TLabel
         Left = 1
-        Top = 30
+        Top = 29
         Width = 982
         Height = 20
         Align = alBottom
@@ -464,7 +464,7 @@ object DFW: TDFW
       Left = 0
       Top = 80
       Width = 984
-      Height = 28
+      Height = 30
       Align = alTop
       BevelOuter = bvNone
       Color = clWhite
@@ -514,12 +514,6 @@ object DFW: TDFW
         Width = 60
         Height = 20
         Caption = #38382#39064#21015#34920
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clGreen
-        Font.Height = -15
-        Font.Name = #24494#36719#38597#40657
-        Font.Style = []
-        ParentFont = False
       end
       object Label1: TLabel
         Left = 333
@@ -537,137 +531,33 @@ object DFW: TDFW
     end
     object Panel_10_Content: TPanel
       Left = 0
-      Top = 108
+      Top = 110
       Width = 984
-      Height = 821
+      Height = 880
       Align = alClient
       BevelOuter = bvNone
       Color = clWhite
       TabOrder = 3
-      object Panel1: TPanel
+      object Panel2: TPanel
         Left = 0
         Top = 0
-        Width = 200
-        Height = 821
-        Align = alLeft
-        BevelInner = bvLowered
-        Color = clWhite
-        TabOrder = 0
-        object Panel5: TPanel
-          Left = 2
-          Top = 2
-          Width = 196
-          Height = 336
-          Align = alTop
-          BorderStyle = bsSingle
-          TabOrder = 0
-          object Label9: TLabel
-            Left = 103
-            Top = 299
-            Width = 60
-            Height = 20
-            Caption = #20813#36153#27880#20876
-            Font.Charset = ANSI_CHARSET
-            Font.Color = clBlue
-            Font.Height = -15
-            Font.Name = #24494#36719#38597#40657
-            Font.Style = []
-            ParentFont = False
-          end
-          object Label6: TLabel
-            Left = 16
-            Top = 57
-            Width = 60
-            Height = 20
-            Caption = #23500#32705#23494#30721
-          end
-          object Label7: TLabel
-            Left = 16
-            Top = 197
-            Width = 60
-            Height = 20
-            Caption = #23500#32705#21517#31216
-          end
-          object Label8: TLabel
-            Left = 16
-            Top = 11
-            Width = 60
-            Height = 20
-            Caption = #23500#32705#21517#31216
-          end
-          object Button1: TButton
-            Left = 78
-            Top = 92
-            Width = 110
-            Height = 35
-            Hint = '{"type":"primary"}'
-            Caption = #36827#20837#35770#22363
-            TabOrder = 0
-          end
-          object Button2: TButton
-            Left = 79
-            Top = 236
-            Width = 110
-            Height = 35
-            Hint = '{"type":"primary"}'
-            Caption = #21457#36865#23494#30721
-            TabOrder = 1
-          end
-          object CheckBox1: TCheckBox
-            Left = 63
-            Top = 134
-            Width = 98
-            Height = 17
-            Caption = #35831#35760#20303#25105
-            TabOrder = 2
-          end
-          object Edit1: TEdit
-            Left = 80
-            Top = 195
-            Width = 110
-            Height = 28
-            ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
-            TabOrder = 3
-          end
-          object Edit4: TEdit
-            Left = 80
-            Top = 51
-            Width = 110
-            Height = 28
-            ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
-            PasswordChar = '*'
-            TabOrder = 4
-          end
-          object Edit5: TEdit
-            Left = 80
-            Top = 11
-            Width = 110
-            Height = 28
-            ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
-            TabOrder = 5
-          end
-        end
-      end
-      object Panel2: TPanel
-        Left = 200
-        Top = 0
-        Width = 784
-        Height = 821
+        Width = 984
+        Height = 880
         Align = alClient
         Color = clWhite
-        TabOrder = 1
-        object Panel3: TPanel
+        TabOrder = 0
+        object Panel_Search: TPanel
           Left = 1
           Top = 1
-          Width = 782
-          Height = 96
+          Width = 982
+          Height = 90
           Align = alTop
           BevelOuter = bvNone
           Color = 16767438
           TabOrder = 0
           object Label13: TLabel
             Left = 277
-            Top = 59
+            Top = 52
             Width = 75
             Height = 20
             Caption = #25552#38382#22823#23500#32705
@@ -681,7 +571,7 @@ object DFW: TDFW
           end
           object Label11: TLabel
             Left = 16
-            Top = 59
+            Top = 52
             Width = 75
             Height = 20
             Caption = #26631#39064#20851#38190#23383
@@ -695,7 +585,7 @@ object DFW: TDFW
           end
           object ComboBox2: TComboBox
             Left = 549
-            Top = 11
+            Top = 10
             Width = 193
             Height = 28
             ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
@@ -708,7 +598,7 @@ object DFW: TDFW
           end
           object ComboBox1: TComboBox
             Left = 72
-            Top = 11
+            Top = 10
             Width = 161
             Height = 28
             ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
@@ -723,16 +613,16 @@ object DFW: TDFW
           end
           object Button3: TButton
             Left = 548
-            Top = 52
+            Top = 53
             Width = 90
-            Height = 35
+            Height = 28
             Hint = '{"type":"primary"}'
             Caption = #26816#32034#38382#39064
             TabOrder = 2
           end
           object Edit2: TEdit
-            Left = 120
-            Top = 51
+            Left = 112
+            Top = 53
             Width = 113
             Height = 28
             ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
@@ -740,9 +630,10 @@ object DFW: TDFW
           end
           object Edit3: TEdit
             Left = 366
-            Top = 51
+            Top = 53
             Width = 130
             Height = 28
+            AutoSelect = False
             ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
             TabOrder = 4
           end
@@ -767,39 +658,40 @@ object DFW: TDFW
         end
         object Panel_Subjects: TPanel
           Left = 1
-          Top = 97
-          Width = 782
-          Height = 723
+          Top = 91
+          Width = 982
+          Height = 788
           Align = alClient
           Color = clWhite
           TabOrder = 1
-          object Panel6: TPanel
+          object Panel_Thread: TPanel
             Left = 1
-            Top = 641
-            Width = 780
-            Height = 32
+            Top = 33
+            Width = 980
+            Height = 40
             Align = alTop
             BevelOuter = bvNone
             Color = clWhite
             TabOrder = 0
-            object Label20: TLabel
+            Visible = False
+            object Label_New: TLabel
               Left = 8
-              Top = 4
+              Top = 8
               Width = 10
               Height = 20
               Caption = #9679
             end
-            object Label21: TLabel
+            object Label_Score: TLabel
               Left = 32
-              Top = 4
+              Top = 8
               Width = 18
               Height = 20
-              Caption = '30'
+              Caption = '50'
             end
-            object Label22: TLabel
+            object Label_Subject: TLabel
               Left = 80
-              Top = 4
-              Width = 393
+              Top = 8
+              Width = 585
               Height = 20
               AutoSize = False
               Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
@@ -810,178 +702,30 @@ object DFW: TDFW
               Font.Style = []
               ParentFont = False
             end
-            object Label23: TLabel
-              Left = 544
-              Top = 4
-              Width = 65
-              Height = 20
-              Caption = '10/32'
-            end
-            object Label24: TLabel
-              Left = 480
-              Top = 4
-              Width = 41
-              Height = 20
-              Caption = 'yysun'
-            end
-            object Label25: TLabel
-              Left = 616
-              Top = 4
-              Width = 60
-              Height = 20
-              Caption = #30887#26641#35199#39118
-            end
-            object Label26: TLabel
-              Left = 688
-              Top = 4
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-            end
-            object Panel8: TPanel
-              Left = 0
-              Top = 0
-              Width = 780
-              Height = 1
-              Align = alTop
-              TabOrder = 0
-            end
-          end
-          object Panel9: TPanel
-            Left = 1
-            Top = 577
-            Width = 780
-            Height = 32
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            TabOrder = 1
-            object Label34: TLabel
-              Left = 8
-              Top = 4
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Label35: TLabel
-              Left = 32
-              Top = 4
-              Width = 18
-              Height = 20
-              Caption = '30'
-            end
-            object Label36: TLabel
-              Left = 80
-              Top = 4
-              Width = 393
-              Height = 20
-              AutoSize = False
-              Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
-              Font.Charset = ANSI_CHARSET
-              Font.Color = clBlue
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label37: TLabel
-              Left = 544
-              Top = 4
+            object Label_ReplyRead: TLabel
+              Left = 749
+              Top = 8
               Width = 42
               Height = 20
               Caption = '10/32'
             end
-            object Label38: TLabel
-              Left = 480
-              Top = 4
+            object Label_Uper: TLabel
+              Left = 685
+              Top = 8
               Width = 41
               Height = 20
               Caption = 'yysun'
             end
-            object Label39: TLabel
-              Left = 616
-              Top = 4
+            object Label_LastReply: TLabel
+              Left = 821
+              Top = 8
               Width = 60
               Height = 20
               Caption = #30887#26641#35199#39118
             end
-            object Label40: TLabel
-              Left = 688
-              Top = 4
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-            end
-            object Panel10: TPanel
-              Left = 0
-              Top = 0
-              Width = 780
-              Height = 1
-              Align = alTop
-              TabOrder = 0
-            end
-          end
-          object Panel11: TPanel
-            Left = 1
-            Top = 545
-            Width = 780
-            Height = 32
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            TabOrder = 2
-            object Label41: TLabel
-              Left = 8
-              Top = 4
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Label42: TLabel
-              Left = 32
-              Top = 4
-              Width = 18
-              Height = 20
-              Caption = '30'
-            end
-            object Label43: TLabel
-              Left = 80
-              Top = 4
-              Width = 393
-              Height = 20
-              AutoSize = False
-              Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
-              Font.Charset = ANSI_CHARSET
-              Font.Color = clBlue
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label44: TLabel
-              Left = 544
-              Top = 4
-              Width = 42
-              Height = 20
-              Caption = '10/32'
-            end
-            object Label45: TLabel
-              Left = 480
-              Top = 4
-              Width = 41
-              Height = 20
-              Caption = 'yysun'
-            end
-            object Label46: TLabel
-              Left = 616
-              Top = 4
-              Width = 60
-              Height = 20
-              Caption = #30887#26641#35199#39118
-            end
-            object Label47: TLabel
-              Left = 688
-              Top = 4
+            object Label_ReplyTime: TLabel
+              Left = 893
+              Top = 8
               Width = 84
               Height = 20
               Caption = '2020-08-03'
@@ -989,613 +733,21 @@ object DFW: TDFW
             object Panel12: TPanel
               Left = 0
               Top = 0
-              Width = 780
+              Width = 980
               Height = 1
               Align = alTop
               TabOrder = 0
             end
           end
-          object Panel13: TPanel
-            Left = 1
-            Top = 481
-            Width = 780
-            Height = 32
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            TabOrder = 3
-            object Label48: TLabel
-              Left = 8
-              Top = 4
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Label49: TLabel
-              Left = 32
-              Top = 4
-              Width = 18
-              Height = 20
-              Caption = '30'
-            end
-            object Label50: TLabel
-              Left = 80
-              Top = 4
-              Width = 393
-              Height = 20
-              AutoSize = False
-              Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
-              Font.Charset = ANSI_CHARSET
-              Font.Color = clBlue
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label51: TLabel
-              Left = 544
-              Top = 4
-              Width = 42
-              Height = 20
-              Caption = '10/32'
-            end
-            object Label52: TLabel
-              Left = 480
-              Top = 4
-              Width = 41
-              Height = 20
-              Caption = 'yysun'
-            end
-            object Label53: TLabel
-              Left = 616
-              Top = 4
-              Width = 60
-              Height = 20
-              Caption = #30887#26641#35199#39118
-            end
-            object Label54: TLabel
-              Left = 688
-              Top = 4
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-            end
-            object Panel14: TPanel
-              Left = 0
-              Top = 0
-              Width = 780
-              Height = 1
-              Align = alTop
-              TabOrder = 0
-            end
-          end
-          object Panel15: TPanel
-            Left = 1
-            Top = 417
-            Width = 780
-            Height = 32
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            TabOrder = 4
-            object Label55: TLabel
-              Left = 8
-              Top = 4
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Label56: TLabel
-              Left = 32
-              Top = 4
-              Width = 18
-              Height = 20
-              Caption = '30'
-            end
-            object Label57: TLabel
-              Left = 80
-              Top = 4
-              Width = 393
-              Height = 20
-              AutoSize = False
-              Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
-              Font.Charset = ANSI_CHARSET
-              Font.Color = clBlue
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label58: TLabel
-              Left = 544
-              Top = 4
-              Width = 42
-              Height = 20
-              Caption = '10/32'
-            end
-            object Label59: TLabel
-              Left = 480
-              Top = 4
-              Width = 41
-              Height = 20
-              Caption = 'yysun'
-            end
-            object Label60: TLabel
-              Left = 616
-              Top = 4
-              Width = 60
-              Height = 20
-              Caption = #30887#26641#35199#39118
-            end
-            object Label61: TLabel
-              Left = 688
-              Top = 4
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-            end
-            object Panel16: TPanel
-              Left = 0
-              Top = 0
-              Width = 780
-              Height = 1
-              Align = alTop
-              TabOrder = 0
-            end
-          end
-          object Panel17: TPanel
-            Left = 1
-            Top = 353
-            Width = 780
-            Height = 32
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            TabOrder = 5
-            object Label62: TLabel
-              Left = 8
-              Top = 4
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Label63: TLabel
-              Left = 32
-              Top = 4
-              Width = 18
-              Height = 20
-              Caption = '30'
-            end
-            object Label64: TLabel
-              Left = 80
-              Top = 4
-              Width = 393
-              Height = 20
-              AutoSize = False
-              Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
-              Font.Charset = ANSI_CHARSET
-              Font.Color = clBlue
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label65: TLabel
-              Left = 544
-              Top = 4
-              Width = 42
-              Height = 20
-              Caption = '10/32'
-            end
-            object Label66: TLabel
-              Left = 480
-              Top = 4
-              Width = 41
-              Height = 20
-              Caption = 'yysun'
-            end
-            object Label67: TLabel
-              Left = 616
-              Top = 4
-              Width = 60
-              Height = 20
-              Caption = #30887#26641#35199#39118
-            end
-            object Label68: TLabel
-              Left = 688
-              Top = 4
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-            end
-            object Panel18: TPanel
-              Left = 0
-              Top = 0
-              Width = 780
-              Height = 1
-              Align = alTop
-              TabOrder = 0
-            end
-          end
-          object Panel19: TPanel
-            Left = 1
-            Top = 289
-            Width = 780
-            Height = 32
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            TabOrder = 6
-            object Label69: TLabel
-              Left = 8
-              Top = 4
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Label70: TLabel
-              Left = 32
-              Top = 4
-              Width = 18
-              Height = 20
-              Caption = '30'
-            end
-            object Label71: TLabel
-              Left = 80
-              Top = 4
-              Width = 393
-              Height = 20
-              AutoSize = False
-              Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
-              Font.Charset = ANSI_CHARSET
-              Font.Color = clBlue
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label72: TLabel
-              Left = 544
-              Top = 4
-              Width = 42
-              Height = 20
-              Caption = '10/32'
-            end
-            object Label73: TLabel
-              Left = 480
-              Top = 4
-              Width = 41
-              Height = 20
-              Caption = 'yysun'
-            end
-            object Label74: TLabel
-              Left = 616
-              Top = 4
-              Width = 60
-              Height = 20
-              Caption = #30887#26641#35199#39118
-            end
-            object Label75: TLabel
-              Left = 688
-              Top = 4
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-            end
-            object Panel20: TPanel
-              Left = 0
-              Top = 0
-              Width = 780
-              Height = 1
-              Align = alTop
-              TabOrder = 0
-            end
-          end
-          object Panel21: TPanel
-            Left = 1
-            Top = 225
-            Width = 780
-            Height = 32
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            TabOrder = 7
-            object Label76: TLabel
-              Left = 8
-              Top = 4
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Label77: TLabel
-              Left = 32
-              Top = 4
-              Width = 18
-              Height = 20
-              Caption = '30'
-            end
-            object Label78: TLabel
-              Left = 80
-              Top = 4
-              Width = 393
-              Height = 20
-              AutoSize = False
-              Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
-              Font.Charset = ANSI_CHARSET
-              Font.Color = clBlue
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label79: TLabel
-              Left = 544
-              Top = 4
-              Width = 42
-              Height = 20
-              Caption = '10/32'
-            end
-            object Label80: TLabel
-              Left = 480
-              Top = 4
-              Width = 41
-              Height = 20
-              Caption = 'yysun'
-            end
-            object Label81: TLabel
-              Left = 616
-              Top = 4
-              Width = 60
-              Height = 20
-              Caption = #30887#26641#35199#39118
-            end
-            object Label82: TLabel
-              Left = 688
-              Top = 4
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-            end
-            object Panel22: TPanel
-              Left = 0
-              Top = 0
-              Width = 780
-              Height = 1
-              Align = alTop
-              TabOrder = 0
-            end
-          end
-          object Panel23: TPanel
-            Left = 1
-            Top = 161
-            Width = 780
-            Height = 32
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            TabOrder = 8
-            object Label83: TLabel
-              Left = 8
-              Top = 4
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Label84: TLabel
-              Left = 32
-              Top = 4
-              Width = 18
-              Height = 20
-              Caption = '30'
-            end
-            object Label85: TLabel
-              Left = 80
-              Top = 4
-              Width = 393
-              Height = 20
-              AutoSize = False
-              Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
-              Font.Charset = ANSI_CHARSET
-              Font.Color = clBlue
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label86: TLabel
-              Left = 544
-              Top = 4
-              Width = 42
-              Height = 20
-              Caption = '10/32'
-            end
-            object Label87: TLabel
-              Left = 480
-              Top = 4
-              Width = 41
-              Height = 20
-              Caption = 'yysun'
-            end
-            object Label88: TLabel
-              Left = 616
-              Top = 4
-              Width = 60
-              Height = 20
-              Caption = #30887#26641#35199#39118
-            end
-            object Label89: TLabel
-              Left = 688
-              Top = 4
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-            end
-            object Panel24: TPanel
-              Left = 0
-              Top = 0
-              Width = 780
-              Height = 1
-              Align = alTop
-              TabOrder = 0
-            end
-          end
-          object Panel25: TPanel
-            Left = 1
-            Top = 97
-            Width = 780
-            Height = 32
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            TabOrder = 9
-            object Label90: TLabel
-              Left = 8
-              Top = 4
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Label91: TLabel
-              Left = 32
-              Top = 4
-              Width = 18
-              Height = 20
-              Caption = '30'
-            end
-            object Label92: TLabel
-              Left = 80
-              Top = 4
-              Width = 393
-              Height = 20
-              AutoSize = False
-              Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
-              Font.Charset = ANSI_CHARSET
-              Font.Color = clBlue
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label93: TLabel
-              Left = 544
-              Top = 4
-              Width = 42
-              Height = 20
-              Caption = '10/32'
-            end
-            object Label94: TLabel
-              Left = 480
-              Top = 4
-              Width = 41
-              Height = 20
-              Caption = 'yysun'
-            end
-            object Label95: TLabel
-              Left = 616
-              Top = 4
-              Width = 60
-              Height = 20
-              Caption = #30887#26641#35199#39118
-            end
-            object Label96: TLabel
-              Left = 688
-              Top = 4
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-            end
-            object Panel26: TPanel
-              Left = 0
-              Top = 0
-              Width = 780
-              Height = 1
-              Align = alTop
-              TabOrder = 0
-            end
-          end
-          object Panel27: TPanel
-            Left = 1
-            Top = 609
-            Width = 780
-            Height = 32
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            TabOrder = 10
-            object Label97: TLabel
-              Left = 8
-              Top = 4
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Label98: TLabel
-              Left = 32
-              Top = 4
-              Width = 18
-              Height = 20
-              Caption = '30'
-            end
-            object Label99: TLabel
-              Left = 80
-              Top = 4
-              Width = 393
-              Height = 20
-              AutoSize = False
-              Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
-              Font.Charset = ANSI_CHARSET
-              Font.Color = clBlue
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label100: TLabel
-              Left = 544
-              Top = 4
-              Width = 42
-              Height = 20
-              Caption = '10/32'
-            end
-            object Label101: TLabel
-              Left = 480
-              Top = 4
-              Width = 41
-              Height = 20
-              Caption = 'yysun'
-            end
-            object Label102: TLabel
-              Left = 616
-              Top = 4
-              Width = 60
-              Height = 20
-              Caption = #30887#26641#35199#39118
-            end
-            object Label103: TLabel
-              Left = 688
-              Top = 4
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-            end
-            object Panel28: TPanel
-              Left = 0
-              Top = 0
-              Width = 780
-              Height = 1
-              Align = alTop
-              TabOrder = 0
-            end
-          end
-          object Panel29: TPanel
+          object Panel_ThreadTitle: TPanel
             Left = 1
             Top = 1
-            Width = 780
+            Width = 980
             Height = 32
             Align = alTop
             BevelOuter = bvNone
             Color = 16771553
-            TabOrder = 11
+            TabOrder = 1
             object Label104: TLabel
               Left = 8
               Top = 4
@@ -1618,709 +770,43 @@ object DFW: TDFW
               Caption = #26631#39064
             end
             object Label107: TLabel
-              Left = 544
+              Left = 754
               Top = 4
               Width = 66
               Height = 20
               Caption = #22238#22797'/'#38405#35835
             end
             object Label108: TLabel
-              Left = 480
+              Left = 690
               Top = 4
               Width = 30
               Height = 20
               Caption = #25552#38382
             end
             object Label109: TLabel
-              Left = 616
+              Left = 826
               Top = 4
               Width = 60
               Height = 20
               Caption = #26368#21518#22238#22797
             end
             object Label110: TLabel
-              Left = 696
+              Left = 906
               Top = 4
               Width = 60
               Height = 20
               Caption = #26368#21518#26102#38388
             end
           end
-          object Panel30: TPanel
+          object Panel_Pages: TPanel
             Left = 1
-            Top = 513
-            Width = 780
-            Height = 32
+            Top = 73
+            Width = 980
+            Height = 40
             Align = alTop
             BevelOuter = bvNone
             Color = clWhite
-            TabOrder = 12
-            object Label111: TLabel
-              Left = 8
-              Top = 4
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Label112: TLabel
-              Left = 32
-              Top = 4
-              Width = 18
-              Height = 20
-              Caption = '30'
-            end
-            object Label113: TLabel
-              Left = 80
-              Top = 4
-              Width = 393
-              Height = 20
-              AutoSize = False
-              Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
-              Font.Charset = ANSI_CHARSET
-              Font.Color = clBlue
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label114: TLabel
-              Left = 544
-              Top = 4
-              Width = 42
-              Height = 20
-              Caption = '10/32'
-            end
-            object Label115: TLabel
-              Left = 480
-              Top = 4
-              Width = 41
-              Height = 20
-              Caption = 'yysun'
-            end
-            object Label116: TLabel
-              Left = 616
-              Top = 4
-              Width = 60
-              Height = 20
-              Caption = #30887#26641#35199#39118
-            end
-            object Label117: TLabel
-              Left = 688
-              Top = 4
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-            end
-            object Panel31: TPanel
-              Left = 0
-              Top = 0
-              Width = 780
-              Height = 1
-              Align = alTop
-              TabOrder = 0
-            end
-          end
-          object Panel32: TPanel
-            Left = 1
-            Top = 449
-            Width = 780
-            Height = 32
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            TabOrder = 13
-            object Label118: TLabel
-              Left = 8
-              Top = 4
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Label119: TLabel
-              Left = 32
-              Top = 4
-              Width = 18
-              Height = 20
-              Caption = '30'
-            end
-            object Label120: TLabel
-              Left = 80
-              Top = 4
-              Width = 393
-              Height = 20
-              AutoSize = False
-              Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
-              Font.Charset = ANSI_CHARSET
-              Font.Color = clBlue
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label121: TLabel
-              Left = 544
-              Top = 4
-              Width = 42
-              Height = 20
-              Caption = '10/32'
-            end
-            object Label122: TLabel
-              Left = 480
-              Top = 4
-              Width = 41
-              Height = 20
-              Caption = 'yysun'
-            end
-            object Label123: TLabel
-              Left = 616
-              Top = 4
-              Width = 60
-              Height = 20
-              Caption = #30887#26641#35199#39118
-            end
-            object Label124: TLabel
-              Left = 688
-              Top = 4
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-            end
-            object Panel33: TPanel
-              Left = 0
-              Top = 0
-              Width = 780
-              Height = 1
-              Align = alTop
-              TabOrder = 0
-            end
-          end
-          object Panel34: TPanel
-            Left = 1
-            Top = 385
-            Width = 780
-            Height = 32
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            TabOrder = 14
-            object Label125: TLabel
-              Left = 8
-              Top = 4
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Label126: TLabel
-              Left = 32
-              Top = 4
-              Width = 18
-              Height = 20
-              Caption = '30'
-            end
-            object Label127: TLabel
-              Left = 80
-              Top = 4
-              Width = 393
-              Height = 20
-              AutoSize = False
-              Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
-              Font.Charset = ANSI_CHARSET
-              Font.Color = clBlue
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label128: TLabel
-              Left = 544
-              Top = 4
-              Width = 42
-              Height = 20
-              Caption = '10/32'
-            end
-            object Label129: TLabel
-              Left = 480
-              Top = 4
-              Width = 41
-              Height = 20
-              Caption = 'yysun'
-            end
-            object Label130: TLabel
-              Left = 616
-              Top = 4
-              Width = 60
-              Height = 20
-              Caption = #30887#26641#35199#39118
-            end
-            object Label131: TLabel
-              Left = 688
-              Top = 4
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-            end
-            object Panel35: TPanel
-              Left = 0
-              Top = 0
-              Width = 780
-              Height = 1
-              Align = alTop
-              TabOrder = 0
-            end
-          end
-          object Panel36: TPanel
-            Left = 1
-            Top = 321
-            Width = 780
-            Height = 32
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            TabOrder = 15
-            object Label132: TLabel
-              Left = 8
-              Top = 4
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Label133: TLabel
-              Left = 32
-              Top = 4
-              Width = 18
-              Height = 20
-              Caption = '30'
-            end
-            object Label134: TLabel
-              Left = 80
-              Top = 4
-              Width = 393
-              Height = 20
-              AutoSize = False
-              Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
-              Font.Charset = ANSI_CHARSET
-              Font.Color = clBlue
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label135: TLabel
-              Left = 544
-              Top = 4
-              Width = 42
-              Height = 20
-              Caption = '10/32'
-            end
-            object Label136: TLabel
-              Left = 480
-              Top = 4
-              Width = 41
-              Height = 20
-              Caption = 'yysun'
-            end
-            object Label137: TLabel
-              Left = 616
-              Top = 4
-              Width = 60
-              Height = 20
-              Caption = #30887#26641#35199#39118
-            end
-            object Label138: TLabel
-              Left = 688
-              Top = 4
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-            end
-            object Panel37: TPanel
-              Left = 0
-              Top = 0
-              Width = 780
-              Height = 1
-              Align = alTop
-              TabOrder = 0
-            end
-          end
-          object Panel38: TPanel
-            Left = 1
-            Top = 257
-            Width = 780
-            Height = 32
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            TabOrder = 16
-            object Label139: TLabel
-              Left = 8
-              Top = 4
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Label140: TLabel
-              Left = 32
-              Top = 4
-              Width = 18
-              Height = 20
-              Caption = '30'
-            end
-            object Label141: TLabel
-              Left = 80
-              Top = 4
-              Width = 393
-              Height = 20
-              AutoSize = False
-              Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
-              Font.Charset = ANSI_CHARSET
-              Font.Color = clBlue
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label142: TLabel
-              Left = 544
-              Top = 4
-              Width = 42
-              Height = 20
-              Caption = '10/32'
-            end
-            object Label143: TLabel
-              Left = 480
-              Top = 4
-              Width = 41
-              Height = 20
-              Caption = 'yysun'
-            end
-            object Label144: TLabel
-              Left = 616
-              Top = 4
-              Width = 60
-              Height = 20
-              Caption = #30887#26641#35199#39118
-            end
-            object Label145: TLabel
-              Left = 688
-              Top = 4
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-            end
-            object Panel39: TPanel
-              Left = 0
-              Top = 0
-              Width = 780
-              Height = 1
-              Align = alTop
-              TabOrder = 0
-            end
-          end
-          object Panel40: TPanel
-            Left = 1
-            Top = 193
-            Width = 780
-            Height = 32
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            TabOrder = 17
-            object Label146: TLabel
-              Left = 8
-              Top = 4
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Label147: TLabel
-              Left = 32
-              Top = 4
-              Width = 18
-              Height = 20
-              Caption = '30'
-            end
-            object Label148: TLabel
-              Left = 80
-              Top = 4
-              Width = 393
-              Height = 20
-              AutoSize = False
-              Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
-              Font.Charset = ANSI_CHARSET
-              Font.Color = clBlue
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label149: TLabel
-              Left = 544
-              Top = 4
-              Width = 42
-              Height = 20
-              Caption = '10/32'
-            end
-            object Label150: TLabel
-              Left = 480
-              Top = 4
-              Width = 41
-              Height = 20
-              Caption = 'yysun'
-            end
-            object Label151: TLabel
-              Left = 616
-              Top = 4
-              Width = 60
-              Height = 20
-              Caption = #30887#26641#35199#39118
-            end
-            object Label152: TLabel
-              Left = 688
-              Top = 4
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-            end
-            object Panel41: TPanel
-              Left = 0
-              Top = 0
-              Width = 780
-              Height = 1
-              Align = alTop
-              TabOrder = 0
-            end
-          end
-          object Panel42: TPanel
-            Left = 1
-            Top = 129
-            Width = 780
-            Height = 32
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            TabOrder = 18
-            object Label153: TLabel
-              Left = 8
-              Top = 4
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Label154: TLabel
-              Left = 32
-              Top = 4
-              Width = 18
-              Height = 20
-              Caption = '30'
-            end
-            object Label155: TLabel
-              Left = 80
-              Top = 4
-              Width = 393
-              Height = 20
-              AutoSize = False
-              Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
-              Font.Charset = ANSI_CHARSET
-              Font.Color = clBlue
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label156: TLabel
-              Left = 544
-              Top = 4
-              Width = 42
-              Height = 20
-              Caption = '10/32'
-            end
-            object Label157: TLabel
-              Left = 480
-              Top = 4
-              Width = 41
-              Height = 20
-              Caption = 'yysun'
-            end
-            object Label158: TLabel
-              Left = 616
-              Top = 4
-              Width = 60
-              Height = 20
-              Caption = #30887#26641#35199#39118
-            end
-            object Label159: TLabel
-              Left = 688
-              Top = 4
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-            end
-            object Panel43: TPanel
-              Left = 0
-              Top = 0
-              Width = 780
-              Height = 1
-              Align = alTop
-              TabOrder = 0
-            end
-          end
-          object Panel44: TPanel
-            Left = 1
-            Top = 65
-            Width = 780
-            Height = 32
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            TabOrder = 19
-            object Label160: TLabel
-              Left = 8
-              Top = 4
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Label161: TLabel
-              Left = 32
-              Top = 4
-              Width = 18
-              Height = 20
-              Caption = '30'
-            end
-            object Label162: TLabel
-              Left = 80
-              Top = 4
-              Width = 393
-              Height = 20
-              AutoSize = False
-              Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
-              Font.Charset = ANSI_CHARSET
-              Font.Color = clBlue
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label163: TLabel
-              Left = 544
-              Top = 4
-              Width = 42
-              Height = 20
-              Caption = '10/32'
-            end
-            object Label164: TLabel
-              Left = 480
-              Top = 4
-              Width = 41
-              Height = 20
-              Caption = 'yysun'
-            end
-            object Label165: TLabel
-              Left = 616
-              Top = 4
-              Width = 60
-              Height = 20
-              Caption = #30887#26641#35199#39118
-            end
-            object Label166: TLabel
-              Left = 688
-              Top = 4
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-            end
-            object Panel45: TPanel
-              Left = 0
-              Top = 0
-              Width = 780
-              Height = 1
-              Align = alTop
-              TabOrder = 0
-            end
-          end
-          object Panel46: TPanel
-            Left = 1
-            Top = 33
-            Width = 780
-            Height = 32
-            Align = alTop
-            BevelOuter = bvNone
-            Color = clWhite
-            TabOrder = 20
-            object Label167: TLabel
-              Left = 8
-              Top = 4
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Label168: TLabel
-              Left = 32
-              Top = 4
-              Width = 18
-              Height = 20
-              Caption = '30'
-            end
-            object Label169: TLabel
-              Left = 80
-              Top = 4
-              Width = 393
-              Height = 20
-              AutoSize = False
-              Caption = #27426#36814#20809#20020#22823#23500#32705#35770#22363
-              Font.Charset = ANSI_CHARSET
-              Font.Color = clBlue
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label170: TLabel
-              Left = 544
-              Top = 4
-              Width = 42
-              Height = 20
-              Caption = '10/32'
-            end
-            object Label171: TLabel
-              Left = 480
-              Top = 4
-              Width = 41
-              Height = 20
-              Caption = 'yysun'
-            end
-            object Label172: TLabel
-              Left = 616
-              Top = 4
-              Width = 60
-              Height = 20
-              Caption = #30887#26641#35199#39118
-            end
-            object Label173: TLabel
-              Left = 688
-              Top = 4
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-            end
-            object Panel47: TPanel
-              Left = 0
-              Top = 0
-              Width = 780
-              Height = 1
-              Align = alTop
-              TabOrder = 0
-            end
-          end
-          object Panel7: TPanel
-            Left = 1
-            Top = 673
-            Width = 780
-            Height = 39
-            Align = alTop
-            BevelOuter = bvNone
-            Color = 16767438
-            TabOrder = 21
+            TabOrder = 2
             object Label27: TLabel
               Left = 496
               Top = 8
@@ -2350,16 +836,33 @@ object DFW: TDFW
               Caption = #26368#21518#39029
             end
             object Edit6: TEdit
-              Left = 590
-              Top = 2
+              Left = 592
+              Top = 6
               Width = 67
-              Height = 35
+              Height = 28
               ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
               TabOrder = 0
+              Text = '1'
             end
           end
         end
       end
     end
+  end
+  object ZConnection: TZConnection
+    Protocol = 'mysqld-5'
+    HostName = 'qdm165429402.my3w.com'
+    Port = 3306
+    Database = 'qdm165429402_db'
+    User = 'qdm165429402'
+    Password = 'wghcgljt2210459'
+    Left = 64
+    Top = 320
+  end
+  object ZReadOnlyQuery_Threads: TZReadOnlyQuery
+    Connection = ZConnection
+    Params = <>
+    Left = 64
+    Top = 368
   end
 end

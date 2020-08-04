@@ -46,7 +46,6 @@ begin
      Application.Title := 'Deweb Server';
      Application.CreateForm(TDM, DM);
   Application.CreateForm(TMainForm, MainForm);
-  Application.CreateForm(TDFW, DFW);
   Application.Run;
      CoUninitialize;
 end.
