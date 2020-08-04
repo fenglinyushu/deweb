@@ -10,19 +10,12 @@ uses
      SynCommons,
 
      //
-     httpApp,
-     Windows, Messages, SysUtils, Variants, Classes, Graphics,
-     Controls, Forms, Dialogs, StdCtrls, ExtCtrls,Jpeg, DB, ADODB, ComCtrls,
-     Spin, Grids, DBGrids, Mask, DBCtrls;
+     Forms,
+     Windows, Classes, Controls, StdCtrls ;
 
 type
   TTest = class(TForm)
-    DBGrid1: TDBGrid;
-    DataSource1: TDataSource;
-    DBEdit1: TDBEdit;
-    Label1: TLabel;
-    Label2: TLabel;
-    DBText1: TDBText;
+    StaticText1: TStaticText;
   private
     { Private declarations }
   public

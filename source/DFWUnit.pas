@@ -49,12 +49,8 @@ type
     Label18: TLabel;
     Label19: TLabel;
     Panel_Thread: TPanel;
-    Label_New: TLabel;
     Label_Score: TLabel;
-    Label_Subject: TLabel;
     Label_ReplyRead: TLabel;
-    Label_Uper: TLabel;
-    Label_LastReply: TLabel;
     Label_ReplyTime: TLabel;
     Panel12: TPanel;
     Panel_ThreadTitle: TPanel;
@@ -73,6 +69,10 @@ type
     Edit6: TEdit;
     ZConnection: TZConnection;
     ZReadOnlyQuery_Threads: TZReadOnlyQuery;
+    StaticText_Subject: TStaticText;
+    StaticText_Uper: TStaticText;
+    StaticText_LastPost: TStaticText;
+    Label_New: TLabel;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -99,7 +99,11 @@ begin
      ZConnection.Connect;
      ZReadOnlyQuery_Threads.SQL.Text:='Set Names GB2312';
      ZReadOnlyQuery_Threads.ExecSQL;
-     ZReadOnlyQuery_Threads.SQL.Text    := 'SELECT  * FROM bbs_thread';
+     ZReadOnlyQuery_Threads.SQL.Text    := 'SELECT a.tid,a.subject,a.posts,a.views,a.lastpid,a.uid,b.username,c.username lastname '
+               +'FROM bbs_thread a,bbs_user b,bbs_user c '
+               +'WHERE a.uid=b.uid and a.uid=c.uid '
+               +'ORDER BY last_date DESC '
+               +'LIMIT 0,20';
      ZReadOnlyQuery_Threads.Open;
 
 
@@ -111,14 +115,26 @@ begin
           //积分
           TLabel(Self.FindComponent('Label_Score'+IntToStr(iItem+1))).Caption := '';//ZReadOnlyQuery_Threads.FieldByName('subject').AsString;
           //主题
-          TLabel(Self.FindComponent('Label_Subject'+IntToStr(iItem+1))).Caption := ZReadOnlyQuery_Threads.FieldByName('subject').AsString;
-          //提问
-          TLabel(Self.FindComponent('Label_Uper'+IntToStr(iItem+1))).Caption := ZReadOnlyQuery_Threads.FieldByName('uid').AsString;
+          with TStaticText(Self.FindComponent('StaticText_Subject'+IntToStr(iItem+1))) do begin
+               Caption   := Trim(ZReadOnlyQuery_Threads.FieldByName('subject').AsString);
+               Hint      := '{"href":"http://www.web0000.com:8080/dfw_thread.dw?tid='+ZReadOnlyQuery_Threads.FieldByName('tid').AsString+'"}';
+          end;
+
+          //题主
+          with TStaticText(Self.FindComponent('StaticText_Uper'+IntToStr(iItem+1))) do begin
+               Caption := ZReadOnlyQuery_Threads.FieldByName('username').AsString;
+               Hint      := '{"href":"http://www.web0000.com:8080/dfw_user.dw?uid='+ZReadOnlyQuery_Threads.FieldByName('uid').AsString+'"}';
+          end;
+          
           //回复/阅读
           TLabel(Self.FindComponent('Label_ReplyRead'+IntToStr(iItem+1))).Caption := ZReadOnlyQuery_Threads.FieldByName('posts').AsString
                +'/'+ZReadOnlyQuery_Threads.FieldByName('views').AsString;
+
           //提问
-          TLabel(Self.FindComponent('Label_LastReply'+IntToStr(iItem+1))).Caption := ZReadOnlyQuery_Threads.FieldByName('lastuid').AsString;
+          with TStaticText(Self.FindComponent('StaticText_LastPost'+IntToStr(iItem+1))) do begin
+               Caption := ZReadOnlyQuery_Threads.FieldByName('lastname').AsString;
+               Hint      := '{"href":"http://www.web0000.com:8080/dfw_user.dw?uid='+ZReadOnlyQuery_Threads.FieldByName('lastpid').AsString+'"}';
+          end;
 
           //
           ZReadOnlyQuery_Threads.Next;

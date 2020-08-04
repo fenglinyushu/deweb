@@ -36,8 +36,9 @@ uses
   dwListBoxs in 'dwVcls\dwListBoxs.pas',
   dwStringGrids in 'dwVcls\dwStringGrids.pas',
   dwEdits in 'dwVcls\dwEdits.pas',
-  dwLabels in 'dwVcls\dwLabels.pas',
-  DFWUnit in 'DFWUnit.pas' {DFW};
+  dwStaticTexts in 'dwVcls\dwStaticTexts.pas',
+  DFWUnit in 'DFWUnit.pas' {DFW},
+  dwLabels in 'dwVcls\dwLabels.pas';
 
 {$R *.RES}
 
