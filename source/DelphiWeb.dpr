@@ -38,7 +38,8 @@ uses
   dwEdits in 'dwVcls\dwEdits.pas',
   dwStaticTexts in 'dwVcls\dwStaticTexts.pas',
   DFWUnit in 'DFWUnit.pas' {DFW},
-  dwLabels in 'dwVcls\dwLabels.pas';
+  dwLabels in 'dwVcls\dwLabels.pas',
+  DFWThreadUnit in 'DFWThreadUnit.pas' {dfw_thread};
 
 {$R *.RES}
 
@@ -47,6 +48,7 @@ begin
      Application.Title := 'Deweb Server';
      Application.CreateForm(TDM, DM);
   Application.CreateForm(TMainForm, MainForm);
+  Application.CreateForm(Tdfw_thread, dfw_thread);
   Application.Run;
      CoUninitialize;
 end.

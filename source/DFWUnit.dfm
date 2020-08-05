@@ -1,11 +1,11 @@
 object DFW: TDFW
-  Left = 349
-  Top = 121
+  Left = 271
+  Top = 171
   Hint = '{"height":1100}'
   BorderStyle = bsNone
   Caption = #22823#23500#32705#35770#22363
   ClientHeight = 821
-  ClientWidth = 984
+  ClientWidth = 1000
   Color = clWhite
   TransparentColor = True
   TransparentColorValue = clBtnFace
@@ -2721,7 +2721,7 @@ object DFW: TDFW
   object Panel_All: TPanel
     Left = 0
     Top = 0
-    Width = 984
+    Width = 1000
     Height = 1060
     Align = alTop
     BevelOuter = bvNone
@@ -2729,7 +2729,7 @@ object DFW: TDFW
     object Panel_99_Foot: TPanel
       Left = 0
       Top = 990
-      Width = 984
+      Width = 1000
       Height = 70
       Align = alBottom
       Color = clWhite
@@ -2737,7 +2737,7 @@ object DFW: TDFW
       object Label14: TLabel
         Left = 1
         Top = 49
-        Width = 982
+        Width = 998
         Height = 20
         Align = alBottom
         Alignment = taCenter
@@ -2752,7 +2752,7 @@ object DFW: TDFW
       object Label15: TLabel
         Left = 1
         Top = 29
-        Width = 982
+        Width = 998
         Height = 20
         Align = alBottom
         Alignment = taCenter
@@ -2767,7 +2767,7 @@ object DFW: TDFW
       object Panel4: TPanel
         Left = 1
         Top = 1
-        Width = 982
+        Width = 998
         Height = 1
         Align = alTop
         TabOrder = 0
@@ -2776,18 +2776,18 @@ object DFW: TDFW
     object Panel_00_Head: TPanel
       Left = 0
       Top = 0
-      Width = 984
+      Width = 1000
       Height = 80
       Align = alTop
       BevelOuter = bvNone
       Color = clWhite
       TabOrder = 1
       DesignSize = (
-        984
+        1000
         80)
       object Img_dfw: TImage
-        Left = 381
-        Top = 14
+        Left = 388
+        Top = 6
         Width = 240
         Height = 60
         Anchors = [akTop]
@@ -3119,6 +3119,7 @@ object DFW: TDFW
         Font.Name = #24494#36719#38597#40657
         Font.Style = []
         ParentFont = False
+        Visible = False
       end
       object Label17: TLabel
         Left = 301
@@ -3132,6 +3133,7 @@ object DFW: TDFW
         Font.Name = #24494#36719#38597#40657
         Font.Style = []
         ParentFont = False
+        Visible = False
       end
       object Label18: TLabel
         Left = 645
@@ -3145,6 +3147,7 @@ object DFW: TDFW
         Font.Name = #24494#36719#38597#40657
         Font.Style = []
         ParentFont = False
+        Visible = False
       end
       object Label19: TLabel
         Left = 717
@@ -3158,17 +3161,19 @@ object DFW: TDFW
         Font.Name = #24494#36719#38597#40657
         Font.Style = []
         ParentFont = False
+        Visible = False
       end
     end
     object Panel_01_Menu: TPanel
       Left = 0
       Top = 80
-      Width = 984
+      Width = 1000
       Height = 30
       Align = alTop
       BevelOuter = bvNone
       Color = clWhite
       TabOrder = 2
+      Visible = False
       object Label5: TLabel
         Left = 621
         Top = 4
@@ -3232,7 +3237,7 @@ object DFW: TDFW
     object Panel_10_Content: TPanel
       Left = 0
       Top = 110
-      Width = 984
+      Width = 1000
       Height = 880
       Align = alClient
       BevelOuter = bvNone
@@ -3241,7 +3246,7 @@ object DFW: TDFW
       object Panel2: TPanel
         Left = 0
         Top = 0
-        Width = 984
+        Width = 1000
         Height = 880
         Align = alClient
         Color = clWhite
@@ -3249,12 +3254,13 @@ object DFW: TDFW
         object Panel_Search: TPanel
           Left = 1
           Top = 1
-          Width = 982
+          Width = 998
           Height = 90
           Align = alTop
           BevelOuter = bvNone
           Color = 16767438
           TabOrder = 0
+          Visible = False
           object Label13: TLabel
             Left = 277
             Top = 52
@@ -3359,7 +3365,7 @@ object DFW: TDFW
         object Panel_Subjects: TPanel
           Left = 1
           Top = 91
-          Width = 982
+          Width = 998
           Height = 788
           Align = alClient
           Color = clWhite
@@ -3367,11 +3373,17 @@ object DFW: TDFW
           object Panel_Thread: TPanel
             Left = 1
             Top = 33
-            Width = 980
+            Width = 996
             Height = 40
             Align = alTop
             BevelOuter = bvNone
             Color = clWhite
+            Font.Charset = ANSI_CHARSET
+            Font.Color = 6579300
+            Font.Height = -15
+            Font.Name = #24494#36719#38597#40657
+            Font.Style = []
+            ParentFont = False
             TabOrder = 0
             Visible = False
             object Label_Score: TLabel
@@ -3387,13 +3399,25 @@ object DFW: TDFW
               Width = 42
               Height = 20
               Caption = '10/32'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = 6579300
+              Font.Height = -15
+              Font.Name = #24494#36719#38597#40657
+              Font.Style = []
+              ParentFont = False
             end
-            object Label_ReplyTime: TLabel
+            object Label_LastPostTime: TLabel
               Left = 893
               Top = 8
               Width = 84
               Height = 20
               Caption = '2020-08-03'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = 6579300
+              Font.Height = -15
+              Font.Name = #24494#36719#38597#40657
+              Font.Style = []
+              ParentFont = False
             end
             object Label_New: TLabel
               Left = 8
@@ -3405,7 +3429,7 @@ object DFW: TDFW
             object Panel12: TPanel
               Left = 0
               Top = 0
-              Width = 980
+              Width = 996
               Height = 1
               Align = alTop
               TabOrder = 0
@@ -3441,11 +3465,18 @@ object DFW: TDFW
           object Panel_ThreadTitle: TPanel
             Left = 1
             Top = 1
-            Width = 980
+            Width = 996
             Height = 32
             Align = alTop
             BevelOuter = bvNone
+            BorderStyle = bsSingle
             Color = 16771553
+            Font.Charset = ANSI_CHARSET
+            Font.Color = 6579300
+            Font.Height = -15
+            Font.Name = #24494#36719#38597#40657
+            Font.Style = []
+            ParentFont = False
             TabOrder = 1
             object Label104: TLabel
               Left = 8
@@ -3453,6 +3484,7 @@ object DFW: TDFW
               Width = 15
               Height = 20
               Caption = #26032
+              Visible = False
             end
             object Label105: TLabel
               Left = 32
@@ -3460,9 +3492,10 @@ object DFW: TDFW
               Width = 30
               Height = 20
               Caption = #31215#20998
+              Visible = False
             end
             object Label106: TLabel
-              Left = 248
+              Left = 140
               Top = 4
               Width = 30
               Height = 20
@@ -3500,48 +3533,83 @@ object DFW: TDFW
           object Panel_Pages: TPanel
             Left = 1
             Top = 73
-            Width = 980
+            Width = 996
             Height = 40
             Align = alTop
             BevelOuter = bvNone
             Color = clWhite
             TabOrder = 2
-            object Label27: TLabel
-              Left = 496
+            DesignSize = (
+              996
+              40)
+            object Edit_PageNo: TEdit
+              Left = 892
               Top = 8
-              Width = 30
-              Height = 20
-              Caption = #39318#39029
-            end
-            object Label28: TLabel
-              Left = 536
-              Top = 8
-              Width = 45
-              Height = 20
-              Caption = #19979#19968#39029
-            end
-            object Label29: TLabel
-              Left = 672
-              Top = 8
-              Width = 45
-              Height = 20
-              Caption = #19978#19968#39029
-            end
-            object Label31: TLabel
-              Left = 728
-              Top = 8
-              Width = 45
-              Height = 20
-              Caption = #26368#21518#39029
-            end
-            object Edit6: TEdit
-              Left = 592
-              Top = 6
-              Width = 67
-              Height = 28
+              Width = 51
+              Height = 25
+              Anchors = [akTop, akRight]
               ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
               TabOrder = 0
               Text = '1'
+            end
+            object Button_Next: TButton
+              Left = 50
+              Top = 8
+              Width = 50
+              Height = 25
+              Hint = '{"type":"text"}'
+              Caption = #19979#19968#39029
+              TabOrder = 1
+              OnClick = Button_NextClick
+            end
+            object Button1: TButton
+              Left = 10
+              Top = 8
+              Width = 40
+              Height = 25
+              Hint = '{"type":"text"}'
+              Caption = #39318#39029
+              TabOrder = 2
+              OnClick = Button1Click
+            end
+            object Button2: TButton
+              Left = 100
+              Top = 8
+              Width = 50
+              Height = 25
+              Hint = '{"type":"text"}'
+              Caption = #19978#19968#39029
+              TabOrder = 3
+              OnClick = Button2Click
+            end
+            object Button4: TButton
+              Left = 150
+              Top = 8
+              Width = 50
+              Height = 25
+              Hint = '{"type":"text"}'
+              Caption = #26368#21518#39029
+              TabOrder = 4
+              OnClick = Button4Click
+            end
+            object Button5: TButton
+              Left = 944
+              Top = 8
+              Width = 40
+              Height = 25
+              Hint = '{"type":"text"}'
+              Anchors = [akTop, akRight]
+              Caption = #36339#36716
+              TabOrder = 5
+              OnClick = Button5Click
+            end
+            object Panel1: TPanel
+              Left = 0
+              Top = 0
+              Width = 996
+              Height = 1
+              Align = alTop
+              TabOrder = 6
             end
           end
         end

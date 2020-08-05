@@ -14,7 +14,9 @@ uses
      DemosUnit,
      TestUnit,
      DriverUnit,
+     //
      DFWUnit,  //¥Û∏ªŒÃ¬€Ã≥
+     DFWThreadUnit,
 
      //
      SynCommons,
@@ -193,6 +195,7 @@ end;
 
 initialization
     RegisterClass(TDFW);
+    RegisterClass(TDFW_Thread);
     RegisterClass(TDriver);
     RegisterClass(TTest);
     RegisterClass(TDWSDK);
@@ -204,6 +207,7 @@ initialization
 
 finalization
     UnRegisterClass(TDFW);
+    UnRegisterClass(TDFW_Thread);
     UnRegisterClass(TDriver);
     UnRegisterClass(TTest);
     UnRegisterClass(TDWSDK);
