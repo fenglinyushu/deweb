@@ -3,13 +3,14 @@ unit dwDatas;
 interface
 
 uses
-  SysUtils, Classes, DB, ADODB;
+  SysUtils, Classes, DB, ADODB, ZConnection;
 
 type
   TDM = class(TDataModule)
     ADOConnection_Driver: TADOConnection;
     ADOQuery_Driver: TADOQuery;
     ADOTable1: TADOTable;
+    ZConnection: TZConnection;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
@@ -48,6 +49,7 @@ begin
           ADOConnection_Driver.Open;
           ADOQuery_Driver.Open;
      end;
+     ZConnection.Connect;
 end;
 
 end.

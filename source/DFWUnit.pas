@@ -4,6 +4,7 @@ interface
 
 uses
      //
+     dwDatas,
      dwCtrlBase,
 
      //
@@ -65,7 +66,6 @@ type
     Label110: TLabel;
     Panel_Pages: TPanel;
     Edit_PageNo: TEdit;
-    ZConnection: TZConnection;
     ZReadOnlyQuery_Threads: TZReadOnlyQuery;
     StaticText_Subject: TStaticText;
     StaticText_Uper: TStaticText;
@@ -96,16 +96,12 @@ var
      DFW  : TDFW;
 
 const
-     _WEBSITE  = 'http://127.0.0.1/';
+     _WEBSITE  = '';//http://127.0.0.1/';
 
 implementation
 
 {$R *.dfm}
 
-function dfwPHPToDate(ADate:Integer):TDateTime;
-begin
-     Result    := ((ADate+28800)/86400+25569);
-end;
 
 
 procedure TDFW.FormCreate(Sender: TObject);
@@ -120,7 +116,6 @@ begin
      giPageNo  := 0;
 
      //打开数据表
-     ZConnection.Connect;
      ZReadOnlyQuery_Threads.SQL.Text:='Set Names GB2312';
      ZReadOnlyQuery_Threads.ExecSQL;
 
@@ -143,7 +138,8 @@ var
 begin
      //打开数据表
      ZReadOnlyQuery_Threads.Close;
-     ZReadOnlyQuery_Threads.SQL.Text    := 'SELECT a.last_date,a.tid,a.subject,a.posts,a.views,a.lastpid,a.uid,b.username,c.username lastname '
+     ZReadOnlyQuery_Threads.SQL.Text    := 'SELECT a.last_date,a.tid,a.subject,a.posts,a.views,'
+               +'a.lastpid,a.uid,a.create_date,b.username,c.username lastname '
                +'FROM bbs_thread a,bbs_user b,bbs_user c '
                +'WHERE a.uid=b.uid and a.lastuid=c.uid '
                +'ORDER BY last_date DESC '
@@ -186,7 +182,10 @@ begin
                //主题
                with TStaticText(Self.FindComponent('StaticText_Subject'+IntToStr(iItem+1))) do begin
                     Caption   := Trim(ZReadOnlyQuery_Threads.FieldByName('subject').AsString);
-                    Hint      := '{"href":"'+_WEBSITE+'dfw_thread.dw?tid='+ZReadOnlyQuery_Threads.FieldByName('tid').AsString
+                    Hint      := '{"href":"'+_WEBSITE+'dfw_thread.dw?'
+                              +'tid='+ZReadOnlyQuery_Threads.FieldByName('tid').AsString
+                              +'&&uid='+ZReadOnlyQuery_Threads.FieldByName('uid').AsString
+                              +'&&create_date='+ZReadOnlyQuery_Threads.FieldByName('create_date').AsString
                               +'&&subject='+dwEscape(ZReadOnlyQuery_Threads.FieldByName('subject').AsString)
                               +'&&uper='+dwEscape(ZReadOnlyQuery_Threads.FieldByName('username').AsString)
                               +'"}';

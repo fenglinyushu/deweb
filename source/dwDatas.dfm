@@ -3,10 +3,9 @@ object DM: TDM
   OnCreate = DataModuleCreate
   Left = 529
   Top = 170
-  Height = 342
+  Height = 335
   Width = 405
   object ADOConnection_Driver: TADOConnection
-    Connected = True
     ConnectionString = 
       'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=drive' +
       'r.mdb;Mode=Share Deny None;Persist Security Info=False;Jet OLEDB' +
@@ -16,15 +15,13 @@ object DM: TDM
       'k Transactions=1;Jet OLEDB:New Database Password="";Jet OLEDB:Cr' +
       'eate System Database=False;Jet OLEDB:Encrypt Database=False;Jet ' +
       'OLEDB:Don'#39't Copy Locale on Compact=False;Jet OLEDB:Compact Witho' +
-      'ut Replica Repair=False;Jet OLEDB:SFP=False'
+      'ut Replica Repair=False;Jet OLEDB:SFP=False;'
     LoginPrompt = False
-    Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'
     Left = 48
     Top = 56
   end
   object ADOQuery_Driver: TADOQuery
-    Active = True
     Connection = ADOConnection_Driver
     CursorType = ctStatic
     Parameters = <>
@@ -38,5 +35,15 @@ object DM: TDM
     TableName = 'QuestionBank'
     Left = 48
     Top = 192
+  end
+  object ZConnection: TZConnection
+    Protocol = 'mysqld-5'
+    HostName = 'qdm165429402.my3w.com'
+    Port = 3306
+    Database = 'qdm165429402_db'
+    User = 'qdm165429402'
+    Password = 'DeWeb12345'
+    Left = 184
+    Top = 56
   end
 end

@@ -1,4 +1,4 @@
-unit DFWThreadUnit;
+unit DFWUserUnit;
 
 interface
 
@@ -16,7 +16,7 @@ uses
      Dialogs, StdCtrls, jpeg, ExtCtrls, DB;
 
 type
-  Tdfw_thread = class(TForm)
+  Tdfw_user = class(TForm)
     Panel_All: TPanel;
     Panel_99_Foot: TPanel;
     Label14: TLabel;
@@ -46,20 +46,20 @@ type
   end;
 
 var
-  dfw_thread: Tdfw_thread;
+  dfw_user: Tdfw_user;
 
 implementation
 
 {$R *.dfm}
 
-procedure Tdfw_thread.FormCreate(Sender: TObject);
+procedure Tdfw_user.FormCreate(Sender: TObject);
 begin
      Top  := 0;
      //
 
 end;
 
-procedure Tdfw_thread.FormShow(Sender: TObject);
+procedure Tdfw_user.FormShow(Sender: TObject);
 var
      sParams   : String;
      sUper     : string;

@@ -1,4 +1,4 @@
-object dfw_thread: Tdfw_thread
+object dfw_user: Tdfw_user
   Left = 370
   Top = 190
   Width = 1033

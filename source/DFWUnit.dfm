@@ -3546,7 +3546,7 @@ object DFW: TDFW
               Left = 892
               Top = 8
               Width = 51
-              Height = 25
+              Height = 28
               Anchors = [akTop, akRight]
               ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
               TabOrder = 0
@@ -3616,18 +3616,8 @@ object DFW: TDFW
       end
     end
   end
-  object ZConnection: TZConnection
-    Protocol = 'mysqld-5'
-    HostName = 'qdm165429402.my3w.com'
-    Port = 3306
-    Database = 'qdm165429402_db'
-    User = 'qdm165429402'
-    Password = 'wghcgljt2210459'
-    Left = 64
-    Top = 320
-  end
   object ZReadOnlyQuery_Threads: TZReadOnlyQuery
-    Connection = ZConnection
+    Connection = DM.ZConnection
     Params = <>
     Left = 64
     Top = 368

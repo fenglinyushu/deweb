@@ -88,6 +88,9 @@ function  dwSetCompLTWH(AComponent:TComponent;ALeft,ATop,AWidth,AHeight:Integer)
 //反编码函数
 function  dwDecode(AText:string):string;
 
+function dfwPHPToDate(ADate:Integer):TDateTime;
+
+
 const
      _Head : string =
           '<!DOCTYPE html>                                                                    '#13
@@ -425,6 +428,12 @@ const
 
 
 implementation
+
+function dfwPHPToDate(ADate:Integer):TDateTime;
+begin
+     Result    := ((ADate+28800)/86400+25569);
+end;
+
 
 //反编码函数
 function dwDecode(AText:string):string;
