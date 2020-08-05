@@ -17,6 +17,7 @@ uses
      //
      DFWUnit,  //¥Û∏ªŒÃ¬€Ã≥
      DFWThreadUnit,
+     DFWUserUnit,
 
      //
      SynCommons,
@@ -196,6 +197,8 @@ end;
 initialization
     RegisterClass(TDFW);
     RegisterClass(TDFW_Thread);
+    RegisterClass(TDFW_User);
+    //
     RegisterClass(TDriver);
     RegisterClass(TTest);
     RegisterClass(TDWSDK);
@@ -208,6 +211,8 @@ initialization
 finalization
     UnRegisterClass(TDFW);
     UnRegisterClass(TDFW_Thread);
+    UnRegisterClass(TDFW_User);
+    //
     UnRegisterClass(TDriver);
     UnRegisterClass(TTest);
     UnRegisterClass(TDWSDK);

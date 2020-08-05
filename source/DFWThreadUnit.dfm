@@ -110,7 +110,7 @@ object dfw_thread: Tdfw_thread
             Left = 880
             Top = 4
             Width = 94
-            Height = 24
+            Height = 20
             Alignment = taCenter
             Anchors = [akTop, akRight]
             Caption = '(2020-08-05)'
