@@ -38,9 +38,10 @@ uses
   dwEdits in 'dwVcls\dwEdits.pas',
   dwStaticTexts in 'dwVcls\dwStaticTexts.pas',
   DFWUnit in 'DFWUnit.pas' {DFW},
-  dwLabels in 'dwVcls\dwLabels.pas',
+  dwMainMenus in 'dwVcls\dwMainMenus.pas',
   DFWUserUnit in 'DFWUserUnit.pas' {dfw_user},
-  DFWThreadUnit in 'DFWThreadUnit.pas' {dfw_thread};
+  DFWThreadUnit in 'DFWThreadUnit.pas' {dfw_thread},
+  dwLabels in 'dwVcls\dwLabels.pas';
 
 {$R *.RES}
 
@@ -48,7 +49,7 @@ begin
      CoInitialize(nil); 
      Application.Title := 'Deweb Server';
      Application.CreateForm(TDM, DM);
-     Application.CreateForm(TMainForm, MainForm);
-     Application.Run;
+  Application.CreateForm(TMainForm, MainForm);
+  Application.Run;
      CoUninitialize;
 end.

@@ -17348,7 +17348,7 @@
 .el-menu-item {
 	font-size: 14px;
 	color: #303133;
-	padding: 0 20px;
+	padding: 10px 20px;
 	cursor: pointer;
 	-webkit-transition: border-color .3s,background-color .3s,color .3s;
 	transition: border-color .3s,background-color .3s,color .3s;
@@ -17399,7 +17399,7 @@
 .el-submenu__title {
 	font-size: 14px;
 	color: #303133;
-	padding: 0 20px;
+	padding: 10px 20px;
 	cursor: pointer;
 	-webkit-transition: border-color .3s,background-color .3s,color .3s;
 	transition: border-color .3s,background-color .3s,color .3s;

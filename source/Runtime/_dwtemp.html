@@ -1,7 +1,7 @@
-<!DOCTYPE html>                                                                    <html lang="en">                                                                                                                                                    <head>                                                                                <meta charset="utf-8">                                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">            <meta http-equiv="X-UA-Compatible" content="ie=edge">                             <title>´ó¸»ÎÌÂÛÌ³</title>                                                          </head>                                                                           
+<!DOCTYPE html>                                                                    <html lang="en">                                                                                                                                                    <head>                                                                                <meta charset="utf-8">                                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">            <meta http-equiv="X-UA-Compatible" content="ie=edge">                             <title>Test</title>                                                          </head>                                                                           
 <body style="background-color:#F0F0F0">
     <style type="text/css">                                                      #Loading {                                                                   top: 50%;                                                               left: 50%;                                                              position: absolute;                                                     -webkit-transform: translateY(-50%) translateX(-50%);                   transform: translateY(-50%) translateX(-50%);                           z-index: 100;                                                      }                                                                       @-webkit-keyframes ball-beat {                                               50% {                                                                        opacity: 0.2;                                                           -webkit-transform: scale(0.75);                                         transform: scale(0.75);                                            }                                                                       100% {                                                                       opacity: 1;                                                             -webkit-transform: scale(1);                                            transform: scale(1);                                               }                                                                  }                                                                       @keyframes ball-beat {                                                       50% {                                                                        opacity: 0.2;                                                           -webkit-transform: scale(0.75);                                         transform: scale(0.75);                                            }                                                                       100% {                                                                       opacity: 1;                                                             -webkit-transform: scale(1);                                            transform: scale(1);                                               }                                                                  }                                                                       .ball-beat>div {                                                             background-color: #279fcf;                                              width: 15px;                                                            height: 15px;                                                           border-radius: 100% !important;                                         margin: 2px;                                                            -webkit-animation-fill-mode: both;                                      animation-fill-mode: both;                                              display: inline-block;                                                  -webkit-animation: ball-beat 0.7s 0s infinite linear;                   animation: ball-beat 0.7s 0s infinite linear;                      }                                                                       .ball-beat>div:nth-child(2n-1) {                                             -webkit-animation-delay: 0.35s !important;                              animation-delay: 0.35s !important;                                 }                                                                       #loader-wrapper {                                                            position: fixed;                                                        top: 0;                                                                 left: 0;                                                                width: 100%;                                                            height: 100%;                                                           z-index: 999999;                                                        background: #fff;                                                  }                                                                       #loader {                                                                    display: block;                                                         position: relative;                                                     left: 50%;                                                              top: 50%;                                                               width: 150px;                                                           height: 150px;                                                          margin: -75px 0 0 -75px;                                                border-radius: 50%;                                                     border: 3px solid transparent;                                          /* COLOR 1 */                                                           border-top-color: #000;                                                 -webkit-animation: spin 2s linear infinite;                             /* Chrome, Opera 15+, Safari 5+ */                                      -ms-animation: spin 2s linear infinite;                                 /* Chrome, Opera 15+, Safari 5+ */                                      -moz-animation: spin 2s linear infinite;                                /* Chrome, Opera 15+, Safari 5+ */                                      -o-animation: spin 2s linear infinite;                                  /* Chrome, Opera 15+, Safari 5+ */                                      animation: spin 2s linear infinite;                                     /* Chrome, Firefox 16+, IE 10+, Opera */                                z-index: 1001;                                                     }                                                                       #loader:before {                                                             content: "";                                                            position: absolute;                                                     top: 5px;                                                               left: 5px;                                                              right: 5px;                                                             bottom: 5px;                                                            border-radius: 50%;                                                     border: 3px solid transparent;                                          /* COLOR 2 */                                                           border-top-color: #000;                                                 -webkit-animation: spin 3s linear infinite;                             /* Chrome, Opera 15+, Safari 5+ */                                      -moz-animation: spin 3s linear infinite;                                /* Chrome, Opera 15+, Safari 5+ */                                      -o-animation: spin 3s linear infinite;                                  /* Chrome, Opera 15+, Safari 5+ */                                      -ms-animation: spin 3s linear infinite;                                 /* Chrome, Opera 15+, Safari 5+ */                                      animation: spin 3s linear infinite;                                     /* Chrome, Firefox 16+, IE 10+, Opera */                           }                                                                       #loader:after {                                                              content: "";                                                            position: absolute;                                                     top: 15px;                                                              left: 15px;                                                             right: 15px;                                                            bottom: 15px;                                                           border-radius: 50%;                                                     border: 3px solid transparent;                                          border-top-color: #000;                                                 /* COLOR 3 */                                                           -moz-animation: spin 1.5s linear infinite;                              /* Chrome, Opera 15+, Safari 5+ */                                      -o-animation: spin 1.5s linear infinite;                                /* Chrome, Opera 15+, Safari 5+ */                                      -ms-animation: spin 1.5s linear infinite;                               /* Chrome, Opera 15+, Safari 5+ */                                      -webkit-animation: spin 1.5s linear infinite;                           /* Chrome, Opera 15+, Safari 5+ */                                      animation: spin 1.5s linear infinite;                                   /* Chrome, Firefox 16+, IE 10+, Opera */                           }                                                                       @-webkit-keyframes spin {                                                    0% {                                                                         -webkit-transform: rotate(0deg);                                        /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(0deg);                                            /* IE 9 */                                                              transform: rotate(0deg);                                                /* Firefox 16+, IE 10+, Opera */                                   }                                                                                                                                               100% {                                                                       -webkit-transform: rotate(360deg);                                      /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(360deg);                                          /* IE 9 */                                                              transform: rotate(360deg);                                              /* Firefox 16+, IE 10+, Opera */                                   }                                                                  }                                                                       @keyframes spin {                                                            0% {                                                                         -webkit-transform: rotate(0deg);                                        /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(0deg);                                            /* IE 9 */                                                              transform: rotate(0deg);                                                /* Firefox 16+, IE 10+, Opera */                                   }                                                                       100% {                                                                       -webkit-transform: rotate(360deg);                                      /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(360deg);                                          /* IE 9 */                                                              transform: rotate(360deg);                                              /* Firefox 16+, IE 10+, Opera */                                   }                                                                  }                                                                       #loader-wrapper .loader-section {                                            position: fixed;                                                        top: 0;                                                                 width: 51%;                                                             height: 100%;                                                           background: #fff;                                                       /* opacity: 0.7; */                                                     /* Old browsers */                                                      z-index: 1000;                                                          -webkit-transform: translateX(0);                                       /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateX(0);                                           /* IE 9 */                                                              transform: translateX(0);                                               /* Firefox 16+, IE 10+, Opera */                                   }                                                                       #loader-wrapper .loader-section.section-left {                               left: 0;                                                           }                                                                       #loader-wrapper .loader-section.section-right {                              right: 0;                                                          }                                                                       /* Loaded */                                                            .loaded #loader-wrapper .loader-section.section-left {                       -webkit-transform: translateX(-100%);                                   /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateX(-100%);                                       /* IE 9 */                                                              transform: translateX(-100%);                                           /* Firefox 16+, IE 10+, Opera */                                        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);               transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);                  }                                                                       .loaded #loader-wrapper .loader-section.section-right {                      -webkit-transform: translateX(100%);                                    /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateX(100%);                                        /* IE 9 */                                                              transform: translateX(100%);                                            /* Firefox 16+, IE 10+, Opera */                                        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);               transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);                  }                                                                       .loaded #loader {                                                            opacity: 0;                                                             -webkit-transition: all 0.3s ease-out;                                  transition: all 0.3s ease-out;                                     }                                                                       .loaded #loader-wrapper {                                                    visibility: hidden;                                                     -webkit-transform: translateY(-100%);                                   /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateY(-100%);                                       /* IE 9 */                                                              transform: translateY(-100%);                                           /* Firefox 16+, IE 10+, Opera */                                        -webkit-transition: all 0.3s 1s ease-out;                               transition: all 0.3s 1s ease-out;                                  }                                                                       /* JavaScript Turned Off */                                                                                                                     .no-js #loader-wrapper {                                                     display: none;                                                     }                                                                                                                                               .no-js h1 {                                                                  color: #222222;                                                    }                                                                       #loader-wrapper .load_title {                                                font-family: 'Open Sans';                                             color: rgb(245, 245, 245);                                              font-size: 19px;                                                        width: 100%;                                                            text-align: center;                                                     z-index: 9999999999999;                                                 position: absolute;                                                     top: 36px;                                                              opacity: 1;                                                             line-height: 30px;                                                 }                                                                       #loader-wrapper .load_title span {                                           font-weight: normal;                                                    font-style: italic;                                                     font-size: 13px;                                                        color: rgb(220, 220, 220);                                              opacity: 0.5;                                                      }                                                                       @keyframes moveover {                                                        0% {                                                                         transform: rotate(0deg);                                           }                                                                                                                                               100% {                                                                       transform: rotate(360deg);                                         }                                                                  }                                                                       .box {                                                                       position: relative;                                                     width: 100px;                                                           height: 100px;                                                          margin: 18% auto;                                                       /*ÕûÌåÐý×ª*/                                                            animation: moveover 3s linear infinite;                            }                                                                       .box_text {                                                                  position: absolute;                                                     top: 0;                                                                 left: 0;                                                           }                                                                       .box::before {                                                               content: "";                                                            position: absolute;                                                     width: 50px;                                                            height: 100px;                                                          border-radius: 50px 0 0 50px;                                           background: linear-gradient(#999, rgb(220, 220, 220));                  background-color: #999;                                                 z-index: 2;                                                        }                                                                       .box2 {                                                                      position: absolute;                                                     width: 50px;                                                            height: 100px;                                                          border-radius: 0 50px 50px 0;                                           left: 50%;                                                              background: linear-gradient(rgb(255,255,255),rgb(220,220, 220));                    z-index: 1;                                                        }                                                                       .box::after {                                                                content: "";                                                            position: absolute;                                                     width: 92px;                                                            height: 92px;                                                           top: 4px;                                                               left: 4px;                                                              border-radius: 50%;                                                     background-color: #fff;                                                 z-index: 2;                                                        }                                                                       .wrapper {                                                                   position: relative;                                                }                                                                  </style>                                                                <div id="loader-wrapper">                                                    <div class="wrapper">                                                        <div class='box'>                                                          <div class="box2"></div>                                           </div>                                                                  <div class="load_title">DeWeb                                           </div>                                                                                                                                     </div>                                                             </div>                                                                  <script src="dist/vue.js" type="text/javascript"></script>              <script src="dist/index.js" type="text/javascript"></script>            <script src="dist/axios.min.js" type="text/javascript"></script>        <link rel="icon" href="dist/webimages/[###].ico" type="image/x-icon">           <link rel="stylesheet" type="text/css" href="dist/theme-chalk/index.css" /> 
-    <div id="app" style="position:absolute;overflow:hidden;left:0;right:0;bottom:0;margin: 0 auto;background-color:#FFFFFF" :style="{top:DFW__top,width:DFW__wid,height:DFW__hei}" >
+    <div id="app" style="position:absolute;overflow:hidden;left:0;top:0;right:0;bottom:0;margin: 0 auto;background-color:#F0F0F0" :style="{width:Test_2__wid,height:Test_2__hei}" >
         <el-button v-if="version__istrial" type="success" @click="this.window.open('http://www.web0000.com/buy')" size="mini" icon="el-icon-shopping-cart-2" style="position:relative;z-index:999;float:right;margin:10px;">Buy Now!</el-button>
         <el-dialog :title="input_query_caption" :visible.sync="input_query_visible" >
         	<el-form style="width:90%;padding-left:5%;">
@@ -14,482 +14,20 @@
         		<el-button type="primary" @click="processinputquery">{{input_query_okcaption}}</el-button>
         	</div>
         </el-dialog>
-        <el-main v-if="Panel_All__vis" :disabled="Panel_All__dis" :style="{backgroundColor:Panel_All__col,left:Panel_All__lef,top:Panel_All__top,width:Panel_All__wid,height:Panel_All__hei}" style="position:absolute;overflow:hidden;">
-        <el-main v-if="Panel_99_Foot__vis" :disabled="Panel_99_Foot__dis" :style="{backgroundColor:Panel_99_Foot__col,left:Panel_99_Foot__lef,top:Panel_99_Foot__top,width:Panel_99_Foot__wid,height:Panel_99_Foot__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label14__vis" :disabled="Label14__dis" :style="{left:Label14__lef,top:Label14__top,width:Label14__wid,height:Label14__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;text-align:center;">{{Label14__cap}}
-        </label>
-        <label v-if="Label15__vis" :disabled="Label15__dis" :style="{left:Label15__lef,top:Label15__top,width:Label15__wid,height:Label15__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;text-align:center;">{{Label15__cap}}
-        </label>
-        <el-main v-if="Panel4__vis" :disabled="Panel4__dis" :style="{backgroundColor:Panel4__col,left:Panel4__lef,top:Panel4__top,width:Panel4__wid,height:Panel4__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_00_Head__vis" :disabled="Panel_00_Head__dis" :style="{backgroundColor:Panel_00_Head__col,left:Panel_00_Head__lef,top:Panel_00_Head__top,width:Panel_00_Head__wid,height:Panel_00_Head__hei}" style="position:absolute;overflow:hidden;">
-        <el-image :src="Img_dfw__src" fit="none" v-if="Img_dfw__vis" :disabled="Img_dfw__dis" :style="{left:Img_dfw__lef,top:Img_dfw__top,width:Img_dfw__wid,height:Img_dfw__hei}" style="position:absolute;">
-        </el-Image>
-        <label v-if="Label16__vis" :disabled="Label16__dis" :style="{left:Label16__lef,top:Label16__top,width:Label16__wid,height:Label16__hei}" style="position:absolute;color:#0000FF;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label16__cap}}
-        </label>
-        <label v-if="Label17__vis" :disabled="Label17__dis" :style="{left:Label17__lef,top:Label17__top,width:Label17__wid,height:Label17__hei}" style="position:absolute;color:#0000FF;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label17__cap}}
-        </label>
-        <label v-if="Label18__vis" :disabled="Label18__dis" :style="{left:Label18__lef,top:Label18__top,width:Label18__wid,height:Label18__hei}" style="position:absolute;color:#0000FF;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label18__cap}}
-        </label>
-        <label v-if="Label19__vis" :disabled="Label19__dis" :style="{left:Label19__lef,top:Label19__top,width:Label19__wid,height:Label19__hei}" style="position:absolute;color:#0000FF;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label19__cap}}
-        </label>
-        </el-main>
-        <el-main v-if="Panel_01_Menu__vis" :disabled="Panel_01_Menu__dis" :style="{backgroundColor:Panel_01_Menu__col,left:Panel_01_Menu__lef,top:Panel_01_Menu__top,width:Panel_01_Menu__wid,height:Panel_01_Menu__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label5__vis" :disabled="Label5__dis" :style="{left:Label5__lef,top:Label5__top,width:Label5__wid,height:Label5__hei}" style="position:absolute;color:#000080;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label5__cap}}
-        </label>
-        <label v-if="Label4__vis" :disabled="Label4__dis" :style="{left:Label4__lef,top:Label4__top,width:Label4__wid,height:Label4__hei}" style="position:absolute;color:#000080;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label4__cap}}
-        </label>
-        <label v-if="Label3__vis" :disabled="Label3__dis" :style="{left:Label3__lef,top:Label3__top,width:Label3__wid,height:Label3__hei}" style="position:absolute;color:#000080;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label3__cap}}
-        </label>
-        <label v-if="Label2__vis" :disabled="Label2__dis" :style="{left:Label2__lef,top:Label2__top,width:Label2__wid,height:Label2__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label2__cap}}
-        </label>
-        <label v-if="Label1__vis" :disabled="Label1__dis" :style="{left:Label1__lef,top:Label1__top,width:Label1__wid,height:Label1__hei}" style="position:absolute;color:#000080;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label1__cap}}
-        </label>
-        </el-main>
-        <el-main v-if="Panel_10_Content__vis" :disabled="Panel_10_Content__dis" :style="{backgroundColor:Panel_10_Content__col,left:Panel_10_Content__lef,top:Panel_10_Content__top,width:Panel_10_Content__wid,height:Panel_10_Content__hei}" style="position:absolute;overflow:hidden;">
-        <el-main v-if="Panel2__vis" :disabled="Panel2__dis" :style="{backgroundColor:Panel2__col,left:Panel2__lef,top:Panel2__top,width:Panel2__wid,height:Panel2__hei}" style="position:absolute;overflow:hidden;">
-        <el-main v-if="Panel_Search__vis" :disabled="Panel_Search__dis" :style="{backgroundColor:Panel_Search__col,left:Panel_Search__lef,top:Panel_Search__top,width:Panel_Search__wid,height:Panel_Search__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label13__vis" :disabled="Label13__dis" :style="{left:Label13__lef,top:Label13__top,width:Label13__wid,height:Label13__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label13__cap}}
-        </label>
-        <label v-if="Label12__vis" :disabled="Label12__dis" :style="{left:Label12__lef,top:Label12__top,width:Label12__wid,height:Label12__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label12__cap}}
-        </label>
-        <label v-if="Label11__vis" :disabled="Label11__dis" :style="{left:Label11__lef,top:Label11__top,width:Label11__wid,height:Label11__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label11__cap}}
-        </label>
-        <label v-if="Label10__vis" :disabled="Label10__dis" :style="{left:Label10__lef,top:Label10__top,width:Label10__wid,height:Label10__hei}" style="position:absolute;color:#000000;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label10__cap}}
-        </label>
-        <el-select v-model="ComboBox2__txt" v-if="ComboBox2__vis" :disabled="ComboBox2__dis" :style="{left:ComboBox2__lef,top:ComboBox2__top,width:ComboBox2__wid,height:ComboBox2__hei}" style="position:absolute;" @change="dwevent($event,'ComboBox2','this.ComboBox2__txt','onchange','')">
-            <el-option v-for="item in ComboBox2__options" :key="item.value" :label="item.value" :value="item.value"/>
-        </el-select>
-        <el-select v-model="ComboBox1__txt" v-if="ComboBox1__vis" :disabled="ComboBox1__dis" :style="{left:ComboBox1__lef,top:ComboBox1__top,width:ComboBox1__wid,height:ComboBox1__hei}" style="position:absolute;" @change="dwevent($event,'ComboBox1','this.ComboBox1__txt','onchange','')">
-            <el-option v-for="item in ComboBox1__options" :key="item.value" :label="item.value" :value="item.value"/>
-        </el-select>
-        <el-button v-if="Button3__vis" :disabled="Button3__dis" type="primary" :style="{left:Button3__lef,top:Button3__top,width:Button3__wid,height:Button3__hei}" style="position:absolute;">{{Button3__cap}}
-        </el-button>
-        <el-input v-if="Edit2__vis" :disabled="Edit2__dis" v-model="Edit2__txt" :style="{left:Edit2__lef,top:Edit2__top,width:Edit2__wid,height:Edit2__hei}" style="position:absolute;" @input="dwevent($event,'Edit2','(this.Edit2__txt)','onchange','')">
-        </el-input>
-        <el-input v-if="Edit3__vis" :disabled="Edit3__dis" v-model="Edit3__txt" :style="{left:Edit3__lef,top:Edit3__top,width:Edit3__wid,height:Edit3__hei}" style="position:absolute;" @input="dwevent($event,'Edit3','(this.Edit3__txt)','onchange','')">
-        </el-input>
-        <el-radio label="1" v-if="RadioButton2__vis" :disabled="RadioButton2__dis" v-model="RadioButton2__chk" :style="{left:RadioButton2__lef,top:RadioButton2__top,width:RadioButton2__wid,height:RadioButton2__hei}" style="position:absolute;">{{RadioButton2__cap}}
-        </el-radio>
-        <el-radio label="1" v-if="RadioButton1__vis" :disabled="RadioButton1__dis" v-model="RadioButton1__chk" :style="{left:RadioButton1__lef,top:RadioButton1__top,width:RadioButton1__wid,height:RadioButton1__hei}" style="position:absolute;">{{RadioButton1__cap}}
-        </el-radio>
-        </el-main>
-        <el-main v-if="Panel_Subjects__vis" :disabled="Panel_Subjects__dis" :style="{backgroundColor:Panel_Subjects__col,left:Panel_Subjects__lef,top:Panel_Subjects__top,width:Panel_Subjects__wid,height:Panel_Subjects__hei}" style="position:absolute;overflow:hidden;">
-        <el-main v-if="Panel_Thread__vis" :disabled="Panel_Thread__dis" :style="{backgroundColor:Panel_Thread__col,left:Panel_Thread__lef,top:Panel_Thread__top,width:Panel_Thread__wid,height:Panel_Thread__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score__vis" :disabled="Label_Score__dis" :style="{left:Label_Score__lef,top:Label_Score__top,width:Label_Score__wid,height:Label_Score__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score__cap}}
-        </label>
-        <label v-if="Label_ReplyRead__vis" :disabled="Label_ReplyRead__dis" :style="{left:Label_ReplyRead__lef,top:Label_ReplyRead__top,width:Label_ReplyRead__wid,height:Label_ReplyRead__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead__cap}}
-        </label>
-        <label v-if="Label_LastPostTime__vis" :disabled="Label_LastPostTime__dis" :style="{left:Label_LastPostTime__lef,top:Label_LastPostTime__top,width:Label_LastPostTime__wid,height:Label_LastPostTime__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime__cap}}
-        </label>
-        <label v-if="Label_New__vis" :disabled="Label_New__dis" :style="{left:Label_New__lef,top:Label_New__top,width:Label_New__wid,height:Label_New__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New__cap}}
-        </label>
-        <el-main v-if="Panel12__vis" :disabled="Panel12__dis" :style="{backgroundColor:Panel12__col,left:Panel12__lef,top:Panel12__top,width:Panel12__wid,height:Panel12__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject__vis" :disabled="StaticText_Subject__dis" type="primary" :href="StaticText_Subject__hrf" :style="{left:StaticText_Subject__lef,top:StaticText_Subject__top,width:StaticText_Subject__wid,height:StaticText_Subject__hei}" style="position:absolute;">{{StaticText_Subject__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper__vis" :disabled="StaticText_Uper__dis" type="primary" :href="StaticText_Uper__hrf" :style="{left:StaticText_Uper__lef,top:StaticText_Uper__top,width:StaticText_Uper__wid,height:StaticText_Uper__hei}" style="position:absolute;">{{StaticText_Uper__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost__vis" :disabled="StaticText_LastPost__dis" type="primary" :href="StaticText_LastPost__hrf" :style="{left:StaticText_LastPost__lef,top:StaticText_LastPost__top,width:StaticText_LastPost__wid,height:StaticText_LastPost__hei}" style="position:absolute;">{{StaticText_LastPost__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_ThreadTitle__vis" :disabled="Panel_ThreadTitle__dis" :style="{backgroundColor:Panel_ThreadTitle__col,left:Panel_ThreadTitle__lef,top:Panel_ThreadTitle__top,width:Panel_ThreadTitle__wid,height:Panel_ThreadTitle__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <label v-if="Label104__vis" :disabled="Label104__dis" :style="{left:Label104__lef,top:Label104__top,width:Label104__wid,height:Label104__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label104__cap}}
-        </label>
-        <label v-if="Label105__vis" :disabled="Label105__dis" :style="{left:Label105__lef,top:Label105__top,width:Label105__wid,height:Label105__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label105__cap}}
-        </label>
-        <label v-if="Label106__vis" :disabled="Label106__dis" :style="{left:Label106__lef,top:Label106__top,width:Label106__wid,height:Label106__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label106__cap}}
-        </label>
-        <label v-if="Label107__vis" :disabled="Label107__dis" :style="{left:Label107__lef,top:Label107__top,width:Label107__wid,height:Label107__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label107__cap}}
-        </label>
-        <label v-if="Label108__vis" :disabled="Label108__dis" :style="{left:Label108__lef,top:Label108__top,width:Label108__wid,height:Label108__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label108__cap}}
-        </label>
-        <label v-if="Label109__vis" :disabled="Label109__dis" :style="{left:Label109__lef,top:Label109__top,width:Label109__wid,height:Label109__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label109__cap}}
-        </label>
-        <label v-if="Label110__vis" :disabled="Label110__dis" :style="{left:Label110__lef,top:Label110__top,width:Label110__wid,height:Label110__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label110__cap}}
-        </label>
-        </el-main>
-        <el-main v-if="Panel_Pages__vis" :disabled="Panel_Pages__dis" :style="{backgroundColor:Panel_Pages__col,left:Panel_Pages__lef,top:Panel_Pages__top,width:Panel_Pages__wid,height:Panel_Pages__hei}" style="position:absolute;overflow:hidden;">
-        <el-input v-if="Edit_PageNo__vis" :disabled="Edit_PageNo__dis" v-model="Edit_PageNo__txt" :style="{left:Edit_PageNo__lef,top:Edit_PageNo__top,width:Edit_PageNo__wid,height:Edit_PageNo__hei}" style="position:absolute;" @input="dwevent($event,'Edit_PageNo','(this.Edit_PageNo__txt)','onchange','')">
-        </el-input>
-        <el-button v-if="Button_Next__vis" :disabled="Button_Next__dis" type="text" :style="{left:Button_Next__lef,top:Button_Next__top,width:Button_Next__wid,height:Button_Next__hei}" style="position:absolute;" @click="dwevent($event,'Button_Next','0','onclick','')">{{Button_Next__cap}}
-        </el-button>
-        <el-button v-if="Button1__vis" :disabled="Button1__dis" type="text" :style="{left:Button1__lef,top:Button1__top,width:Button1__wid,height:Button1__hei}" style="position:absolute;" @click="dwevent($event,'Button1','0','onclick','')">{{Button1__cap}}
-        </el-button>
-        <el-button v-if="Button2__vis" :disabled="Button2__dis" type="text" :style="{left:Button2__lef,top:Button2__top,width:Button2__wid,height:Button2__hei}" style="position:absolute;" @click="dwevent($event,'Button2','0','onclick','')">{{Button2__cap}}
-        </el-button>
-        <el-button v-if="Button4__vis" :disabled="Button4__dis" type="text" :style="{left:Button4__lef,top:Button4__top,width:Button4__wid,height:Button4__hei}" style="position:absolute;" @click="dwevent($event,'Button4','0','onclick','')">{{Button4__cap}}
-        </el-button>
-        <el-button v-if="Button5__vis" :disabled="Button5__dis" type="text" :style="{left:Button5__lef,top:Button5__top,width:Button5__wid,height:Button5__hei}" style="position:absolute;" @click="dwevent($event,'Button5','0','onclick','')">{{Button5__cap}}
-        </el-button>
-        <el-main v-if="Panel1__vis" :disabled="Panel1__dis" :style="{backgroundColor:Panel1__col,left:Panel1__lef,top:Panel1__top,width:Panel1__wid,height:Panel1__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread1__vis" :disabled="Panel_Thread1__dis" :style="{backgroundColor:Panel_Thread1__col,left:Panel_Thread1__lef,top:Panel_Thread1__top,width:Panel_Thread1__wid,height:Panel_Thread1__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score1__vis" :disabled="Label_Score1__dis" :style="{left:Label_Score1__lef,top:Label_Score1__top,width:Label_Score1__wid,height:Label_Score1__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score1__cap}}
-        </label>
-        <label v-if="Label_ReplyRead1__vis" :disabled="Label_ReplyRead1__dis" :style="{left:Label_ReplyRead1__lef,top:Label_ReplyRead1__top,width:Label_ReplyRead1__wid,height:Label_ReplyRead1__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead1__cap}}
-        </label>
-        <label v-if="Label_LastPostTime1__vis" :disabled="Label_LastPostTime1__dis" :style="{left:Label_LastPostTime1__lef,top:Label_LastPostTime1__top,width:Label_LastPostTime1__wid,height:Label_LastPostTime1__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime1__cap}}
-        </label>
-        <label v-if="Label_New1__vis" :disabled="Label_New1__dis" :style="{left:Label_New1__lef,top:Label_New1__top,width:Label_New1__wid,height:Label_New1__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New1__cap}}
-        </label>
-        <el-main v-if="Panel121__vis" :disabled="Panel121__dis" :style="{backgroundColor:Panel121__col,left:Panel121__lef,top:Panel121__top,width:Panel121__wid,height:Panel121__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject1__vis" :disabled="StaticText_Subject1__dis" type="primary" :href="StaticText_Subject1__hrf" :style="{left:StaticText_Subject1__lef,top:StaticText_Subject1__top,width:StaticText_Subject1__wid,height:StaticText_Subject1__hei}" style="position:absolute;">{{StaticText_Subject1__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper1__vis" :disabled="StaticText_Uper1__dis" type="primary" :href="StaticText_Uper1__hrf" :style="{left:StaticText_Uper1__lef,top:StaticText_Uper1__top,width:StaticText_Uper1__wid,height:StaticText_Uper1__hei}" style="position:absolute;">{{StaticText_Uper1__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost1__vis" :disabled="StaticText_LastPost1__dis" type="primary" :href="StaticText_LastPost1__hrf" :style="{left:StaticText_LastPost1__lef,top:StaticText_LastPost1__top,width:StaticText_LastPost1__wid,height:StaticText_LastPost1__hei}" style="position:absolute;">{{StaticText_LastPost1__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Thread2__vis" :disabled="Panel_Thread2__dis" :style="{backgroundColor:Panel_Thread2__col,left:Panel_Thread2__lef,top:Panel_Thread2__top,width:Panel_Thread2__wid,height:Panel_Thread2__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score2__vis" :disabled="Label_Score2__dis" :style="{left:Label_Score2__lef,top:Label_Score2__top,width:Label_Score2__wid,height:Label_Score2__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score2__cap}}
-        </label>
-        <label v-if="Label_ReplyRead2__vis" :disabled="Label_ReplyRead2__dis" :style="{left:Label_ReplyRead2__lef,top:Label_ReplyRead2__top,width:Label_ReplyRead2__wid,height:Label_ReplyRead2__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead2__cap}}
-        </label>
-        <label v-if="Label_LastPostTime2__vis" :disabled="Label_LastPostTime2__dis" :style="{left:Label_LastPostTime2__lef,top:Label_LastPostTime2__top,width:Label_LastPostTime2__wid,height:Label_LastPostTime2__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime2__cap}}
-        </label>
-        <label v-if="Label_New2__vis" :disabled="Label_New2__dis" :style="{left:Label_New2__lef,top:Label_New2__top,width:Label_New2__wid,height:Label_New2__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New2__cap}}
-        </label>
-        <el-main v-if="Panel122__vis" :disabled="Panel122__dis" :style="{backgroundColor:Panel122__col,left:Panel122__lef,top:Panel122__top,width:Panel122__wid,height:Panel122__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject2__vis" :disabled="StaticText_Subject2__dis" type="primary" :href="StaticText_Subject2__hrf" :style="{left:StaticText_Subject2__lef,top:StaticText_Subject2__top,width:StaticText_Subject2__wid,height:StaticText_Subject2__hei}" style="position:absolute;">{{StaticText_Subject2__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper2__vis" :disabled="StaticText_Uper2__dis" type="primary" :href="StaticText_Uper2__hrf" :style="{left:StaticText_Uper2__lef,top:StaticText_Uper2__top,width:StaticText_Uper2__wid,height:StaticText_Uper2__hei}" style="position:absolute;">{{StaticText_Uper2__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost2__vis" :disabled="StaticText_LastPost2__dis" type="primary" :href="StaticText_LastPost2__hrf" :style="{left:StaticText_LastPost2__lef,top:StaticText_LastPost2__top,width:StaticText_LastPost2__wid,height:StaticText_LastPost2__hei}" style="position:absolute;">{{StaticText_LastPost2__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Thread3__vis" :disabled="Panel_Thread3__dis" :style="{backgroundColor:Panel_Thread3__col,left:Panel_Thread3__lef,top:Panel_Thread3__top,width:Panel_Thread3__wid,height:Panel_Thread3__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score3__vis" :disabled="Label_Score3__dis" :style="{left:Label_Score3__lef,top:Label_Score3__top,width:Label_Score3__wid,height:Label_Score3__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score3__cap}}
-        </label>
-        <label v-if="Label_ReplyRead3__vis" :disabled="Label_ReplyRead3__dis" :style="{left:Label_ReplyRead3__lef,top:Label_ReplyRead3__top,width:Label_ReplyRead3__wid,height:Label_ReplyRead3__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead3__cap}}
-        </label>
-        <label v-if="Label_LastPostTime3__vis" :disabled="Label_LastPostTime3__dis" :style="{left:Label_LastPostTime3__lef,top:Label_LastPostTime3__top,width:Label_LastPostTime3__wid,height:Label_LastPostTime3__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime3__cap}}
-        </label>
-        <label v-if="Label_New3__vis" :disabled="Label_New3__dis" :style="{left:Label_New3__lef,top:Label_New3__top,width:Label_New3__wid,height:Label_New3__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New3__cap}}
-        </label>
-        <el-main v-if="Panel123__vis" :disabled="Panel123__dis" :style="{backgroundColor:Panel123__col,left:Panel123__lef,top:Panel123__top,width:Panel123__wid,height:Panel123__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject3__vis" :disabled="StaticText_Subject3__dis" type="primary" :href="StaticText_Subject3__hrf" :style="{left:StaticText_Subject3__lef,top:StaticText_Subject3__top,width:StaticText_Subject3__wid,height:StaticText_Subject3__hei}" style="position:absolute;">{{StaticText_Subject3__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper3__vis" :disabled="StaticText_Uper3__dis" type="primary" :href="StaticText_Uper3__hrf" :style="{left:StaticText_Uper3__lef,top:StaticText_Uper3__top,width:StaticText_Uper3__wid,height:StaticText_Uper3__hei}" style="position:absolute;">{{StaticText_Uper3__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost3__vis" :disabled="StaticText_LastPost3__dis" type="primary" :href="StaticText_LastPost3__hrf" :style="{left:StaticText_LastPost3__lef,top:StaticText_LastPost3__top,width:StaticText_LastPost3__wid,height:StaticText_LastPost3__hei}" style="position:absolute;">{{StaticText_LastPost3__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Thread4__vis" :disabled="Panel_Thread4__dis" :style="{backgroundColor:Panel_Thread4__col,left:Panel_Thread4__lef,top:Panel_Thread4__top,width:Panel_Thread4__wid,height:Panel_Thread4__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score4__vis" :disabled="Label_Score4__dis" :style="{left:Label_Score4__lef,top:Label_Score4__top,width:Label_Score4__wid,height:Label_Score4__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score4__cap}}
-        </label>
-        <label v-if="Label_ReplyRead4__vis" :disabled="Label_ReplyRead4__dis" :style="{left:Label_ReplyRead4__lef,top:Label_ReplyRead4__top,width:Label_ReplyRead4__wid,height:Label_ReplyRead4__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead4__cap}}
-        </label>
-        <label v-if="Label_LastPostTime4__vis" :disabled="Label_LastPostTime4__dis" :style="{left:Label_LastPostTime4__lef,top:Label_LastPostTime4__top,width:Label_LastPostTime4__wid,height:Label_LastPostTime4__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime4__cap}}
-        </label>
-        <label v-if="Label_New4__vis" :disabled="Label_New4__dis" :style="{left:Label_New4__lef,top:Label_New4__top,width:Label_New4__wid,height:Label_New4__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New4__cap}}
-        </label>
-        <el-main v-if="Panel124__vis" :disabled="Panel124__dis" :style="{backgroundColor:Panel124__col,left:Panel124__lef,top:Panel124__top,width:Panel124__wid,height:Panel124__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject4__vis" :disabled="StaticText_Subject4__dis" type="primary" :href="StaticText_Subject4__hrf" :style="{left:StaticText_Subject4__lef,top:StaticText_Subject4__top,width:StaticText_Subject4__wid,height:StaticText_Subject4__hei}" style="position:absolute;">{{StaticText_Subject4__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper4__vis" :disabled="StaticText_Uper4__dis" type="primary" :href="StaticText_Uper4__hrf" :style="{left:StaticText_Uper4__lef,top:StaticText_Uper4__top,width:StaticText_Uper4__wid,height:StaticText_Uper4__hei}" style="position:absolute;">{{StaticText_Uper4__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost4__vis" :disabled="StaticText_LastPost4__dis" type="primary" :href="StaticText_LastPost4__hrf" :style="{left:StaticText_LastPost4__lef,top:StaticText_LastPost4__top,width:StaticText_LastPost4__wid,height:StaticText_LastPost4__hei}" style="position:absolute;">{{StaticText_LastPost4__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Thread5__vis" :disabled="Panel_Thread5__dis" :style="{backgroundColor:Panel_Thread5__col,left:Panel_Thread5__lef,top:Panel_Thread5__top,width:Panel_Thread5__wid,height:Panel_Thread5__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score5__vis" :disabled="Label_Score5__dis" :style="{left:Label_Score5__lef,top:Label_Score5__top,width:Label_Score5__wid,height:Label_Score5__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score5__cap}}
-        </label>
-        <label v-if="Label_ReplyRead5__vis" :disabled="Label_ReplyRead5__dis" :style="{left:Label_ReplyRead5__lef,top:Label_ReplyRead5__top,width:Label_ReplyRead5__wid,height:Label_ReplyRead5__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead5__cap}}
-        </label>
-        <label v-if="Label_LastPostTime5__vis" :disabled="Label_LastPostTime5__dis" :style="{left:Label_LastPostTime5__lef,top:Label_LastPostTime5__top,width:Label_LastPostTime5__wid,height:Label_LastPostTime5__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime5__cap}}
-        </label>
-        <label v-if="Label_New5__vis" :disabled="Label_New5__dis" :style="{left:Label_New5__lef,top:Label_New5__top,width:Label_New5__wid,height:Label_New5__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New5__cap}}
-        </label>
-        <el-main v-if="Panel125__vis" :disabled="Panel125__dis" :style="{backgroundColor:Panel125__col,left:Panel125__lef,top:Panel125__top,width:Panel125__wid,height:Panel125__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject5__vis" :disabled="StaticText_Subject5__dis" type="primary" :href="StaticText_Subject5__hrf" :style="{left:StaticText_Subject5__lef,top:StaticText_Subject5__top,width:StaticText_Subject5__wid,height:StaticText_Subject5__hei}" style="position:absolute;">{{StaticText_Subject5__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper5__vis" :disabled="StaticText_Uper5__dis" type="primary" :href="StaticText_Uper5__hrf" :style="{left:StaticText_Uper5__lef,top:StaticText_Uper5__top,width:StaticText_Uper5__wid,height:StaticText_Uper5__hei}" style="position:absolute;">{{StaticText_Uper5__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost5__vis" :disabled="StaticText_LastPost5__dis" type="primary" :href="StaticText_LastPost5__hrf" :style="{left:StaticText_LastPost5__lef,top:StaticText_LastPost5__top,width:StaticText_LastPost5__wid,height:StaticText_LastPost5__hei}" style="position:absolute;">{{StaticText_LastPost5__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Thread6__vis" :disabled="Panel_Thread6__dis" :style="{backgroundColor:Panel_Thread6__col,left:Panel_Thread6__lef,top:Panel_Thread6__top,width:Panel_Thread6__wid,height:Panel_Thread6__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score6__vis" :disabled="Label_Score6__dis" :style="{left:Label_Score6__lef,top:Label_Score6__top,width:Label_Score6__wid,height:Label_Score6__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score6__cap}}
-        </label>
-        <label v-if="Label_ReplyRead6__vis" :disabled="Label_ReplyRead6__dis" :style="{left:Label_ReplyRead6__lef,top:Label_ReplyRead6__top,width:Label_ReplyRead6__wid,height:Label_ReplyRead6__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead6__cap}}
-        </label>
-        <label v-if="Label_LastPostTime6__vis" :disabled="Label_LastPostTime6__dis" :style="{left:Label_LastPostTime6__lef,top:Label_LastPostTime6__top,width:Label_LastPostTime6__wid,height:Label_LastPostTime6__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime6__cap}}
-        </label>
-        <label v-if="Label_New6__vis" :disabled="Label_New6__dis" :style="{left:Label_New6__lef,top:Label_New6__top,width:Label_New6__wid,height:Label_New6__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New6__cap}}
-        </label>
-        <el-main v-if="Panel126__vis" :disabled="Panel126__dis" :style="{backgroundColor:Panel126__col,left:Panel126__lef,top:Panel126__top,width:Panel126__wid,height:Panel126__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject6__vis" :disabled="StaticText_Subject6__dis" type="primary" :href="StaticText_Subject6__hrf" :style="{left:StaticText_Subject6__lef,top:StaticText_Subject6__top,width:StaticText_Subject6__wid,height:StaticText_Subject6__hei}" style="position:absolute;">{{StaticText_Subject6__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper6__vis" :disabled="StaticText_Uper6__dis" type="primary" :href="StaticText_Uper6__hrf" :style="{left:StaticText_Uper6__lef,top:StaticText_Uper6__top,width:StaticText_Uper6__wid,height:StaticText_Uper6__hei}" style="position:absolute;">{{StaticText_Uper6__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost6__vis" :disabled="StaticText_LastPost6__dis" type="primary" :href="StaticText_LastPost6__hrf" :style="{left:StaticText_LastPost6__lef,top:StaticText_LastPost6__top,width:StaticText_LastPost6__wid,height:StaticText_LastPost6__hei}" style="position:absolute;">{{StaticText_LastPost6__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Thread7__vis" :disabled="Panel_Thread7__dis" :style="{backgroundColor:Panel_Thread7__col,left:Panel_Thread7__lef,top:Panel_Thread7__top,width:Panel_Thread7__wid,height:Panel_Thread7__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score7__vis" :disabled="Label_Score7__dis" :style="{left:Label_Score7__lef,top:Label_Score7__top,width:Label_Score7__wid,height:Label_Score7__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score7__cap}}
-        </label>
-        <label v-if="Label_ReplyRead7__vis" :disabled="Label_ReplyRead7__dis" :style="{left:Label_ReplyRead7__lef,top:Label_ReplyRead7__top,width:Label_ReplyRead7__wid,height:Label_ReplyRead7__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead7__cap}}
-        </label>
-        <label v-if="Label_LastPostTime7__vis" :disabled="Label_LastPostTime7__dis" :style="{left:Label_LastPostTime7__lef,top:Label_LastPostTime7__top,width:Label_LastPostTime7__wid,height:Label_LastPostTime7__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime7__cap}}
-        </label>
-        <label v-if="Label_New7__vis" :disabled="Label_New7__dis" :style="{left:Label_New7__lef,top:Label_New7__top,width:Label_New7__wid,height:Label_New7__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New7__cap}}
-        </label>
-        <el-main v-if="Panel127__vis" :disabled="Panel127__dis" :style="{backgroundColor:Panel127__col,left:Panel127__lef,top:Panel127__top,width:Panel127__wid,height:Panel127__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject7__vis" :disabled="StaticText_Subject7__dis" type="primary" :href="StaticText_Subject7__hrf" :style="{left:StaticText_Subject7__lef,top:StaticText_Subject7__top,width:StaticText_Subject7__wid,height:StaticText_Subject7__hei}" style="position:absolute;">{{StaticText_Subject7__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper7__vis" :disabled="StaticText_Uper7__dis" type="primary" :href="StaticText_Uper7__hrf" :style="{left:StaticText_Uper7__lef,top:StaticText_Uper7__top,width:StaticText_Uper7__wid,height:StaticText_Uper7__hei}" style="position:absolute;">{{StaticText_Uper7__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost7__vis" :disabled="StaticText_LastPost7__dis" type="primary" :href="StaticText_LastPost7__hrf" :style="{left:StaticText_LastPost7__lef,top:StaticText_LastPost7__top,width:StaticText_LastPost7__wid,height:StaticText_LastPost7__hei}" style="position:absolute;">{{StaticText_LastPost7__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Thread8__vis" :disabled="Panel_Thread8__dis" :style="{backgroundColor:Panel_Thread8__col,left:Panel_Thread8__lef,top:Panel_Thread8__top,width:Panel_Thread8__wid,height:Panel_Thread8__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score8__vis" :disabled="Label_Score8__dis" :style="{left:Label_Score8__lef,top:Label_Score8__top,width:Label_Score8__wid,height:Label_Score8__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score8__cap}}
-        </label>
-        <label v-if="Label_ReplyRead8__vis" :disabled="Label_ReplyRead8__dis" :style="{left:Label_ReplyRead8__lef,top:Label_ReplyRead8__top,width:Label_ReplyRead8__wid,height:Label_ReplyRead8__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead8__cap}}
-        </label>
-        <label v-if="Label_LastPostTime8__vis" :disabled="Label_LastPostTime8__dis" :style="{left:Label_LastPostTime8__lef,top:Label_LastPostTime8__top,width:Label_LastPostTime8__wid,height:Label_LastPostTime8__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime8__cap}}
-        </label>
-        <label v-if="Label_New8__vis" :disabled="Label_New8__dis" :style="{left:Label_New8__lef,top:Label_New8__top,width:Label_New8__wid,height:Label_New8__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New8__cap}}
-        </label>
-        <el-main v-if="Panel128__vis" :disabled="Panel128__dis" :style="{backgroundColor:Panel128__col,left:Panel128__lef,top:Panel128__top,width:Panel128__wid,height:Panel128__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject8__vis" :disabled="StaticText_Subject8__dis" type="primary" :href="StaticText_Subject8__hrf" :style="{left:StaticText_Subject8__lef,top:StaticText_Subject8__top,width:StaticText_Subject8__wid,height:StaticText_Subject8__hei}" style="position:absolute;">{{StaticText_Subject8__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper8__vis" :disabled="StaticText_Uper8__dis" type="primary" :href="StaticText_Uper8__hrf" :style="{left:StaticText_Uper8__lef,top:StaticText_Uper8__top,width:StaticText_Uper8__wid,height:StaticText_Uper8__hei}" style="position:absolute;">{{StaticText_Uper8__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost8__vis" :disabled="StaticText_LastPost8__dis" type="primary" :href="StaticText_LastPost8__hrf" :style="{left:StaticText_LastPost8__lef,top:StaticText_LastPost8__top,width:StaticText_LastPost8__wid,height:StaticText_LastPost8__hei}" style="position:absolute;">{{StaticText_LastPost8__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Thread9__vis" :disabled="Panel_Thread9__dis" :style="{backgroundColor:Panel_Thread9__col,left:Panel_Thread9__lef,top:Panel_Thread9__top,width:Panel_Thread9__wid,height:Panel_Thread9__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score9__vis" :disabled="Label_Score9__dis" :style="{left:Label_Score9__lef,top:Label_Score9__top,width:Label_Score9__wid,height:Label_Score9__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score9__cap}}
-        </label>
-        <label v-if="Label_ReplyRead9__vis" :disabled="Label_ReplyRead9__dis" :style="{left:Label_ReplyRead9__lef,top:Label_ReplyRead9__top,width:Label_ReplyRead9__wid,height:Label_ReplyRead9__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead9__cap}}
-        </label>
-        <label v-if="Label_LastPostTime9__vis" :disabled="Label_LastPostTime9__dis" :style="{left:Label_LastPostTime9__lef,top:Label_LastPostTime9__top,width:Label_LastPostTime9__wid,height:Label_LastPostTime9__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime9__cap}}
-        </label>
-        <label v-if="Label_New9__vis" :disabled="Label_New9__dis" :style="{left:Label_New9__lef,top:Label_New9__top,width:Label_New9__wid,height:Label_New9__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New9__cap}}
-        </label>
-        <el-main v-if="Panel129__vis" :disabled="Panel129__dis" :style="{backgroundColor:Panel129__col,left:Panel129__lef,top:Panel129__top,width:Panel129__wid,height:Panel129__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject9__vis" :disabled="StaticText_Subject9__dis" type="primary" :href="StaticText_Subject9__hrf" :style="{left:StaticText_Subject9__lef,top:StaticText_Subject9__top,width:StaticText_Subject9__wid,height:StaticText_Subject9__hei}" style="position:absolute;">{{StaticText_Subject9__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper9__vis" :disabled="StaticText_Uper9__dis" type="primary" :href="StaticText_Uper9__hrf" :style="{left:StaticText_Uper9__lef,top:StaticText_Uper9__top,width:StaticText_Uper9__wid,height:StaticText_Uper9__hei}" style="position:absolute;">{{StaticText_Uper9__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost9__vis" :disabled="StaticText_LastPost9__dis" type="primary" :href="StaticText_LastPost9__hrf" :style="{left:StaticText_LastPost9__lef,top:StaticText_LastPost9__top,width:StaticText_LastPost9__wid,height:StaticText_LastPost9__hei}" style="position:absolute;">{{StaticText_LastPost9__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Thread10__vis" :disabled="Panel_Thread10__dis" :style="{backgroundColor:Panel_Thread10__col,left:Panel_Thread10__lef,top:Panel_Thread10__top,width:Panel_Thread10__wid,height:Panel_Thread10__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score10__vis" :disabled="Label_Score10__dis" :style="{left:Label_Score10__lef,top:Label_Score10__top,width:Label_Score10__wid,height:Label_Score10__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score10__cap}}
-        </label>
-        <label v-if="Label_ReplyRead10__vis" :disabled="Label_ReplyRead10__dis" :style="{left:Label_ReplyRead10__lef,top:Label_ReplyRead10__top,width:Label_ReplyRead10__wid,height:Label_ReplyRead10__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead10__cap}}
-        </label>
-        <label v-if="Label_LastPostTime10__vis" :disabled="Label_LastPostTime10__dis" :style="{left:Label_LastPostTime10__lef,top:Label_LastPostTime10__top,width:Label_LastPostTime10__wid,height:Label_LastPostTime10__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime10__cap}}
-        </label>
-        <label v-if="Label_New10__vis" :disabled="Label_New10__dis" :style="{left:Label_New10__lef,top:Label_New10__top,width:Label_New10__wid,height:Label_New10__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New10__cap}}
-        </label>
-        <el-main v-if="Panel1210__vis" :disabled="Panel1210__dis" :style="{backgroundColor:Panel1210__col,left:Panel1210__lef,top:Panel1210__top,width:Panel1210__wid,height:Panel1210__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject10__vis" :disabled="StaticText_Subject10__dis" type="primary" :href="StaticText_Subject10__hrf" :style="{left:StaticText_Subject10__lef,top:StaticText_Subject10__top,width:StaticText_Subject10__wid,height:StaticText_Subject10__hei}" style="position:absolute;">{{StaticText_Subject10__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper10__vis" :disabled="StaticText_Uper10__dis" type="primary" :href="StaticText_Uper10__hrf" :style="{left:StaticText_Uper10__lef,top:StaticText_Uper10__top,width:StaticText_Uper10__wid,height:StaticText_Uper10__hei}" style="position:absolute;">{{StaticText_Uper10__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost10__vis" :disabled="StaticText_LastPost10__dis" type="primary" :href="StaticText_LastPost10__hrf" :style="{left:StaticText_LastPost10__lef,top:StaticText_LastPost10__top,width:StaticText_LastPost10__wid,height:StaticText_LastPost10__hei}" style="position:absolute;">{{StaticText_LastPost10__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Thread11__vis" :disabled="Panel_Thread11__dis" :style="{backgroundColor:Panel_Thread11__col,left:Panel_Thread11__lef,top:Panel_Thread11__top,width:Panel_Thread11__wid,height:Panel_Thread11__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score11__vis" :disabled="Label_Score11__dis" :style="{left:Label_Score11__lef,top:Label_Score11__top,width:Label_Score11__wid,height:Label_Score11__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score11__cap}}
-        </label>
-        <label v-if="Label_ReplyRead11__vis" :disabled="Label_ReplyRead11__dis" :style="{left:Label_ReplyRead11__lef,top:Label_ReplyRead11__top,width:Label_ReplyRead11__wid,height:Label_ReplyRead11__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead11__cap}}
-        </label>
-        <label v-if="Label_LastPostTime11__vis" :disabled="Label_LastPostTime11__dis" :style="{left:Label_LastPostTime11__lef,top:Label_LastPostTime11__top,width:Label_LastPostTime11__wid,height:Label_LastPostTime11__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime11__cap}}
-        </label>
-        <label v-if="Label_New11__vis" :disabled="Label_New11__dis" :style="{left:Label_New11__lef,top:Label_New11__top,width:Label_New11__wid,height:Label_New11__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New11__cap}}
-        </label>
-        <el-main v-if="Panel1211__vis" :disabled="Panel1211__dis" :style="{backgroundColor:Panel1211__col,left:Panel1211__lef,top:Panel1211__top,width:Panel1211__wid,height:Panel1211__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject11__vis" :disabled="StaticText_Subject11__dis" type="primary" :href="StaticText_Subject11__hrf" :style="{left:StaticText_Subject11__lef,top:StaticText_Subject11__top,width:StaticText_Subject11__wid,height:StaticText_Subject11__hei}" style="position:absolute;">{{StaticText_Subject11__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper11__vis" :disabled="StaticText_Uper11__dis" type="primary" :href="StaticText_Uper11__hrf" :style="{left:StaticText_Uper11__lef,top:StaticText_Uper11__top,width:StaticText_Uper11__wid,height:StaticText_Uper11__hei}" style="position:absolute;">{{StaticText_Uper11__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost11__vis" :disabled="StaticText_LastPost11__dis" type="primary" :href="StaticText_LastPost11__hrf" :style="{left:StaticText_LastPost11__lef,top:StaticText_LastPost11__top,width:StaticText_LastPost11__wid,height:StaticText_LastPost11__hei}" style="position:absolute;">{{StaticText_LastPost11__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Thread12__vis" :disabled="Panel_Thread12__dis" :style="{backgroundColor:Panel_Thread12__col,left:Panel_Thread12__lef,top:Panel_Thread12__top,width:Panel_Thread12__wid,height:Panel_Thread12__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score12__vis" :disabled="Label_Score12__dis" :style="{left:Label_Score12__lef,top:Label_Score12__top,width:Label_Score12__wid,height:Label_Score12__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score12__cap}}
-        </label>
-        <label v-if="Label_ReplyRead12__vis" :disabled="Label_ReplyRead12__dis" :style="{left:Label_ReplyRead12__lef,top:Label_ReplyRead12__top,width:Label_ReplyRead12__wid,height:Label_ReplyRead12__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead12__cap}}
-        </label>
-        <label v-if="Label_LastPostTime12__vis" :disabled="Label_LastPostTime12__dis" :style="{left:Label_LastPostTime12__lef,top:Label_LastPostTime12__top,width:Label_LastPostTime12__wid,height:Label_LastPostTime12__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime12__cap}}
-        </label>
-        <label v-if="Label_New12__vis" :disabled="Label_New12__dis" :style="{left:Label_New12__lef,top:Label_New12__top,width:Label_New12__wid,height:Label_New12__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New12__cap}}
-        </label>
-        <el-main v-if="Panel1212__vis" :disabled="Panel1212__dis" :style="{backgroundColor:Panel1212__col,left:Panel1212__lef,top:Panel1212__top,width:Panel1212__wid,height:Panel1212__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject12__vis" :disabled="StaticText_Subject12__dis" type="primary" :href="StaticText_Subject12__hrf" :style="{left:StaticText_Subject12__lef,top:StaticText_Subject12__top,width:StaticText_Subject12__wid,height:StaticText_Subject12__hei}" style="position:absolute;">{{StaticText_Subject12__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper12__vis" :disabled="StaticText_Uper12__dis" type="primary" :href="StaticText_Uper12__hrf" :style="{left:StaticText_Uper12__lef,top:StaticText_Uper12__top,width:StaticText_Uper12__wid,height:StaticText_Uper12__hei}" style="position:absolute;">{{StaticText_Uper12__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost12__vis" :disabled="StaticText_LastPost12__dis" type="primary" :href="StaticText_LastPost12__hrf" :style="{left:StaticText_LastPost12__lef,top:StaticText_LastPost12__top,width:StaticText_LastPost12__wid,height:StaticText_LastPost12__hei}" style="position:absolute;">{{StaticText_LastPost12__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Thread13__vis" :disabled="Panel_Thread13__dis" :style="{backgroundColor:Panel_Thread13__col,left:Panel_Thread13__lef,top:Panel_Thread13__top,width:Panel_Thread13__wid,height:Panel_Thread13__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score13__vis" :disabled="Label_Score13__dis" :style="{left:Label_Score13__lef,top:Label_Score13__top,width:Label_Score13__wid,height:Label_Score13__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score13__cap}}
-        </label>
-        <label v-if="Label_ReplyRead13__vis" :disabled="Label_ReplyRead13__dis" :style="{left:Label_ReplyRead13__lef,top:Label_ReplyRead13__top,width:Label_ReplyRead13__wid,height:Label_ReplyRead13__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead13__cap}}
-        </label>
-        <label v-if="Label_LastPostTime13__vis" :disabled="Label_LastPostTime13__dis" :style="{left:Label_LastPostTime13__lef,top:Label_LastPostTime13__top,width:Label_LastPostTime13__wid,height:Label_LastPostTime13__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime13__cap}}
-        </label>
-        <label v-if="Label_New13__vis" :disabled="Label_New13__dis" :style="{left:Label_New13__lef,top:Label_New13__top,width:Label_New13__wid,height:Label_New13__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New13__cap}}
-        </label>
-        <el-main v-if="Panel1213__vis" :disabled="Panel1213__dis" :style="{backgroundColor:Panel1213__col,left:Panel1213__lef,top:Panel1213__top,width:Panel1213__wid,height:Panel1213__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject13__vis" :disabled="StaticText_Subject13__dis" type="primary" :href="StaticText_Subject13__hrf" :style="{left:StaticText_Subject13__lef,top:StaticText_Subject13__top,width:StaticText_Subject13__wid,height:StaticText_Subject13__hei}" style="position:absolute;">{{StaticText_Subject13__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper13__vis" :disabled="StaticText_Uper13__dis" type="primary" :href="StaticText_Uper13__hrf" :style="{left:StaticText_Uper13__lef,top:StaticText_Uper13__top,width:StaticText_Uper13__wid,height:StaticText_Uper13__hei}" style="position:absolute;">{{StaticText_Uper13__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost13__vis" :disabled="StaticText_LastPost13__dis" type="primary" :href="StaticText_LastPost13__hrf" :style="{left:StaticText_LastPost13__lef,top:StaticText_LastPost13__top,width:StaticText_LastPost13__wid,height:StaticText_LastPost13__hei}" style="position:absolute;">{{StaticText_LastPost13__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Thread14__vis" :disabled="Panel_Thread14__dis" :style="{backgroundColor:Panel_Thread14__col,left:Panel_Thread14__lef,top:Panel_Thread14__top,width:Panel_Thread14__wid,height:Panel_Thread14__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score14__vis" :disabled="Label_Score14__dis" :style="{left:Label_Score14__lef,top:Label_Score14__top,width:Label_Score14__wid,height:Label_Score14__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score14__cap}}
-        </label>
-        <label v-if="Label_ReplyRead14__vis" :disabled="Label_ReplyRead14__dis" :style="{left:Label_ReplyRead14__lef,top:Label_ReplyRead14__top,width:Label_ReplyRead14__wid,height:Label_ReplyRead14__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead14__cap}}
-        </label>
-        <label v-if="Label_LastPostTime14__vis" :disabled="Label_LastPostTime14__dis" :style="{left:Label_LastPostTime14__lef,top:Label_LastPostTime14__top,width:Label_LastPostTime14__wid,height:Label_LastPostTime14__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime14__cap}}
-        </label>
-        <label v-if="Label_New14__vis" :disabled="Label_New14__dis" :style="{left:Label_New14__lef,top:Label_New14__top,width:Label_New14__wid,height:Label_New14__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New14__cap}}
-        </label>
-        <el-main v-if="Panel1214__vis" :disabled="Panel1214__dis" :style="{backgroundColor:Panel1214__col,left:Panel1214__lef,top:Panel1214__top,width:Panel1214__wid,height:Panel1214__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject14__vis" :disabled="StaticText_Subject14__dis" type="primary" :href="StaticText_Subject14__hrf" :style="{left:StaticText_Subject14__lef,top:StaticText_Subject14__top,width:StaticText_Subject14__wid,height:StaticText_Subject14__hei}" style="position:absolute;">{{StaticText_Subject14__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper14__vis" :disabled="StaticText_Uper14__dis" type="primary" :href="StaticText_Uper14__hrf" :style="{left:StaticText_Uper14__lef,top:StaticText_Uper14__top,width:StaticText_Uper14__wid,height:StaticText_Uper14__hei}" style="position:absolute;">{{StaticText_Uper14__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost14__vis" :disabled="StaticText_LastPost14__dis" type="primary" :href="StaticText_LastPost14__hrf" :style="{left:StaticText_LastPost14__lef,top:StaticText_LastPost14__top,width:StaticText_LastPost14__wid,height:StaticText_LastPost14__hei}" style="position:absolute;">{{StaticText_LastPost14__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Thread15__vis" :disabled="Panel_Thread15__dis" :style="{backgroundColor:Panel_Thread15__col,left:Panel_Thread15__lef,top:Panel_Thread15__top,width:Panel_Thread15__wid,height:Panel_Thread15__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score15__vis" :disabled="Label_Score15__dis" :style="{left:Label_Score15__lef,top:Label_Score15__top,width:Label_Score15__wid,height:Label_Score15__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score15__cap}}
-        </label>
-        <label v-if="Label_ReplyRead15__vis" :disabled="Label_ReplyRead15__dis" :style="{left:Label_ReplyRead15__lef,top:Label_ReplyRead15__top,width:Label_ReplyRead15__wid,height:Label_ReplyRead15__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead15__cap}}
-        </label>
-        <label v-if="Label_LastPostTime15__vis" :disabled="Label_LastPostTime15__dis" :style="{left:Label_LastPostTime15__lef,top:Label_LastPostTime15__top,width:Label_LastPostTime15__wid,height:Label_LastPostTime15__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime15__cap}}
-        </label>
-        <label v-if="Label_New15__vis" :disabled="Label_New15__dis" :style="{left:Label_New15__lef,top:Label_New15__top,width:Label_New15__wid,height:Label_New15__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New15__cap}}
-        </label>
-        <el-main v-if="Panel1215__vis" :disabled="Panel1215__dis" :style="{backgroundColor:Panel1215__col,left:Panel1215__lef,top:Panel1215__top,width:Panel1215__wid,height:Panel1215__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject15__vis" :disabled="StaticText_Subject15__dis" type="primary" :href="StaticText_Subject15__hrf" :style="{left:StaticText_Subject15__lef,top:StaticText_Subject15__top,width:StaticText_Subject15__wid,height:StaticText_Subject15__hei}" style="position:absolute;">{{StaticText_Subject15__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper15__vis" :disabled="StaticText_Uper15__dis" type="primary" :href="StaticText_Uper15__hrf" :style="{left:StaticText_Uper15__lef,top:StaticText_Uper15__top,width:StaticText_Uper15__wid,height:StaticText_Uper15__hei}" style="position:absolute;">{{StaticText_Uper15__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost15__vis" :disabled="StaticText_LastPost15__dis" type="primary" :href="StaticText_LastPost15__hrf" :style="{left:StaticText_LastPost15__lef,top:StaticText_LastPost15__top,width:StaticText_LastPost15__wid,height:StaticText_LastPost15__hei}" style="position:absolute;">{{StaticText_LastPost15__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Thread16__vis" :disabled="Panel_Thread16__dis" :style="{backgroundColor:Panel_Thread16__col,left:Panel_Thread16__lef,top:Panel_Thread16__top,width:Panel_Thread16__wid,height:Panel_Thread16__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score16__vis" :disabled="Label_Score16__dis" :style="{left:Label_Score16__lef,top:Label_Score16__top,width:Label_Score16__wid,height:Label_Score16__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score16__cap}}
-        </label>
-        <label v-if="Label_ReplyRead16__vis" :disabled="Label_ReplyRead16__dis" :style="{left:Label_ReplyRead16__lef,top:Label_ReplyRead16__top,width:Label_ReplyRead16__wid,height:Label_ReplyRead16__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead16__cap}}
-        </label>
-        <label v-if="Label_LastPostTime16__vis" :disabled="Label_LastPostTime16__dis" :style="{left:Label_LastPostTime16__lef,top:Label_LastPostTime16__top,width:Label_LastPostTime16__wid,height:Label_LastPostTime16__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime16__cap}}
-        </label>
-        <label v-if="Label_New16__vis" :disabled="Label_New16__dis" :style="{left:Label_New16__lef,top:Label_New16__top,width:Label_New16__wid,height:Label_New16__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New16__cap}}
-        </label>
-        <el-main v-if="Panel1216__vis" :disabled="Panel1216__dis" :style="{backgroundColor:Panel1216__col,left:Panel1216__lef,top:Panel1216__top,width:Panel1216__wid,height:Panel1216__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject16__vis" :disabled="StaticText_Subject16__dis" type="primary" :href="StaticText_Subject16__hrf" :style="{left:StaticText_Subject16__lef,top:StaticText_Subject16__top,width:StaticText_Subject16__wid,height:StaticText_Subject16__hei}" style="position:absolute;">{{StaticText_Subject16__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper16__vis" :disabled="StaticText_Uper16__dis" type="primary" :href="StaticText_Uper16__hrf" :style="{left:StaticText_Uper16__lef,top:StaticText_Uper16__top,width:StaticText_Uper16__wid,height:StaticText_Uper16__hei}" style="position:absolute;">{{StaticText_Uper16__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost16__vis" :disabled="StaticText_LastPost16__dis" type="primary" :href="StaticText_LastPost16__hrf" :style="{left:StaticText_LastPost16__lef,top:StaticText_LastPost16__top,width:StaticText_LastPost16__wid,height:StaticText_LastPost16__hei}" style="position:absolute;">{{StaticText_LastPost16__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Thread17__vis" :disabled="Panel_Thread17__dis" :style="{backgroundColor:Panel_Thread17__col,left:Panel_Thread17__lef,top:Panel_Thread17__top,width:Panel_Thread17__wid,height:Panel_Thread17__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score17__vis" :disabled="Label_Score17__dis" :style="{left:Label_Score17__lef,top:Label_Score17__top,width:Label_Score17__wid,height:Label_Score17__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score17__cap}}
-        </label>
-        <label v-if="Label_ReplyRead17__vis" :disabled="Label_ReplyRead17__dis" :style="{left:Label_ReplyRead17__lef,top:Label_ReplyRead17__top,width:Label_ReplyRead17__wid,height:Label_ReplyRead17__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead17__cap}}
-        </label>
-        <label v-if="Label_LastPostTime17__vis" :disabled="Label_LastPostTime17__dis" :style="{left:Label_LastPostTime17__lef,top:Label_LastPostTime17__top,width:Label_LastPostTime17__wid,height:Label_LastPostTime17__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime17__cap}}
-        </label>
-        <label v-if="Label_New17__vis" :disabled="Label_New17__dis" :style="{left:Label_New17__lef,top:Label_New17__top,width:Label_New17__wid,height:Label_New17__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New17__cap}}
-        </label>
-        <el-main v-if="Panel1217__vis" :disabled="Panel1217__dis" :style="{backgroundColor:Panel1217__col,left:Panel1217__lef,top:Panel1217__top,width:Panel1217__wid,height:Panel1217__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject17__vis" :disabled="StaticText_Subject17__dis" type="primary" :href="StaticText_Subject17__hrf" :style="{left:StaticText_Subject17__lef,top:StaticText_Subject17__top,width:StaticText_Subject17__wid,height:StaticText_Subject17__hei}" style="position:absolute;">{{StaticText_Subject17__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper17__vis" :disabled="StaticText_Uper17__dis" type="primary" :href="StaticText_Uper17__hrf" :style="{left:StaticText_Uper17__lef,top:StaticText_Uper17__top,width:StaticText_Uper17__wid,height:StaticText_Uper17__hei}" style="position:absolute;">{{StaticText_Uper17__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost17__vis" :disabled="StaticText_LastPost17__dis" type="primary" :href="StaticText_LastPost17__hrf" :style="{left:StaticText_LastPost17__lef,top:StaticText_LastPost17__top,width:StaticText_LastPost17__wid,height:StaticText_LastPost17__hei}" style="position:absolute;">{{StaticText_LastPost17__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Thread18__vis" :disabled="Panel_Thread18__dis" :style="{backgroundColor:Panel_Thread18__col,left:Panel_Thread18__lef,top:Panel_Thread18__top,width:Panel_Thread18__wid,height:Panel_Thread18__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score18__vis" :disabled="Label_Score18__dis" :style="{left:Label_Score18__lef,top:Label_Score18__top,width:Label_Score18__wid,height:Label_Score18__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score18__cap}}
-        </label>
-        <label v-if="Label_ReplyRead18__vis" :disabled="Label_ReplyRead18__dis" :style="{left:Label_ReplyRead18__lef,top:Label_ReplyRead18__top,width:Label_ReplyRead18__wid,height:Label_ReplyRead18__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead18__cap}}
-        </label>
-        <label v-if="Label_LastPostTime18__vis" :disabled="Label_LastPostTime18__dis" :style="{left:Label_LastPostTime18__lef,top:Label_LastPostTime18__top,width:Label_LastPostTime18__wid,height:Label_LastPostTime18__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime18__cap}}
-        </label>
-        <label v-if="Label_New18__vis" :disabled="Label_New18__dis" :style="{left:Label_New18__lef,top:Label_New18__top,width:Label_New18__wid,height:Label_New18__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New18__cap}}
-        </label>
-        <el-main v-if="Panel1218__vis" :disabled="Panel1218__dis" :style="{backgroundColor:Panel1218__col,left:Panel1218__lef,top:Panel1218__top,width:Panel1218__wid,height:Panel1218__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject18__vis" :disabled="StaticText_Subject18__dis" type="primary" :href="StaticText_Subject18__hrf" :style="{left:StaticText_Subject18__lef,top:StaticText_Subject18__top,width:StaticText_Subject18__wid,height:StaticText_Subject18__hei}" style="position:absolute;">{{StaticText_Subject18__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper18__vis" :disabled="StaticText_Uper18__dis" type="primary" :href="StaticText_Uper18__hrf" :style="{left:StaticText_Uper18__lef,top:StaticText_Uper18__top,width:StaticText_Uper18__wid,height:StaticText_Uper18__hei}" style="position:absolute;">{{StaticText_Uper18__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost18__vis" :disabled="StaticText_LastPost18__dis" type="primary" :href="StaticText_LastPost18__hrf" :style="{left:StaticText_LastPost18__lef,top:StaticText_LastPost18__top,width:StaticText_LastPost18__wid,height:StaticText_LastPost18__hei}" style="position:absolute;">{{StaticText_LastPost18__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Thread19__vis" :disabled="Panel_Thread19__dis" :style="{backgroundColor:Panel_Thread19__col,left:Panel_Thread19__lef,top:Panel_Thread19__top,width:Panel_Thread19__wid,height:Panel_Thread19__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score19__vis" :disabled="Label_Score19__dis" :style="{left:Label_Score19__lef,top:Label_Score19__top,width:Label_Score19__wid,height:Label_Score19__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score19__cap}}
-        </label>
-        <label v-if="Label_ReplyRead19__vis" :disabled="Label_ReplyRead19__dis" :style="{left:Label_ReplyRead19__lef,top:Label_ReplyRead19__top,width:Label_ReplyRead19__wid,height:Label_ReplyRead19__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead19__cap}}
-        </label>
-        <label v-if="Label_LastPostTime19__vis" :disabled="Label_LastPostTime19__dis" :style="{left:Label_LastPostTime19__lef,top:Label_LastPostTime19__top,width:Label_LastPostTime19__wid,height:Label_LastPostTime19__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime19__cap}}
-        </label>
-        <label v-if="Label_New19__vis" :disabled="Label_New19__dis" :style="{left:Label_New19__lef,top:Label_New19__top,width:Label_New19__wid,height:Label_New19__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New19__cap}}
-        </label>
-        <el-main v-if="Panel1219__vis" :disabled="Panel1219__dis" :style="{backgroundColor:Panel1219__col,left:Panel1219__lef,top:Panel1219__top,width:Panel1219__wid,height:Panel1219__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject19__vis" :disabled="StaticText_Subject19__dis" type="primary" :href="StaticText_Subject19__hrf" :style="{left:StaticText_Subject19__lef,top:StaticText_Subject19__top,width:StaticText_Subject19__wid,height:StaticText_Subject19__hei}" style="position:absolute;">{{StaticText_Subject19__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper19__vis" :disabled="StaticText_Uper19__dis" type="primary" :href="StaticText_Uper19__hrf" :style="{left:StaticText_Uper19__lef,top:StaticText_Uper19__top,width:StaticText_Uper19__wid,height:StaticText_Uper19__hei}" style="position:absolute;">{{StaticText_Uper19__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost19__vis" :disabled="StaticText_LastPost19__dis" type="primary" :href="StaticText_LastPost19__hrf" :style="{left:StaticText_LastPost19__lef,top:StaticText_LastPost19__top,width:StaticText_LastPost19__wid,height:StaticText_LastPost19__hei}" style="position:absolute;">{{StaticText_LastPost19__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Thread20__vis" :disabled="Panel_Thread20__dis" :style="{backgroundColor:Panel_Thread20__col,left:Panel_Thread20__lef,top:Panel_Thread20__top,width:Panel_Thread20__wid,height:Panel_Thread20__hei}" style="position:absolute;overflow:hidden;">
-        <label v-if="Label_Score20__vis" :disabled="Label_Score20__dis" :style="{left:Label_Score20__lef,top:Label_Score20__top,width:Label_Score20__wid,height:Label_Score20__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Score20__cap}}
-        </label>
-        <label v-if="Label_ReplyRead20__vis" :disabled="Label_ReplyRead20__dis" :style="{left:Label_ReplyRead20__lef,top:Label_ReplyRead20__top,width:Label_ReplyRead20__wid,height:Label_ReplyRead20__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_ReplyRead20__cap}}
-        </label>
-        <label v-if="Label_LastPostTime20__vis" :disabled="Label_LastPostTime20__dis" :style="{left:Label_LastPostTime20__lef,top:Label_LastPostTime20__top,width:Label_LastPostTime20__wid,height:Label_LastPostTime20__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_LastPostTime20__cap}}
-        </label>
-        <label v-if="Label_New20__vis" :disabled="Label_New20__dis" :style="{left:Label_New20__lef,top:Label_New20__top,width:Label_New20__wid,height:Label_New20__hei}" style="position:absolute;color:#646464;font-family:'Î¢ÈíÑÅºÚ';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_New20__cap}}
-        </label>
-        <el-main v-if="Panel1220__vis" :disabled="Panel1220__dis" :style="{backgroundColor:Panel1220__col,left:Panel1220__lef,top:Panel1220__top,width:Panel1220__wid,height:Panel1220__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Subject20__vis" :disabled="StaticText_Subject20__dis" type="primary" :href="StaticText_Subject20__hrf" :style="{left:StaticText_Subject20__lef,top:StaticText_Subject20__top,width:StaticText_Subject20__wid,height:StaticText_Subject20__hei}" style="position:absolute;">{{StaticText_Subject20__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Uper20__vis" :disabled="StaticText_Uper20__dis" type="primary" :href="StaticText_Uper20__hrf" :style="{left:StaticText_Uper20__lef,top:StaticText_Uper20__top,width:StaticText_Uper20__wid,height:StaticText_Uper20__hei}" style="position:absolute;">{{StaticText_Uper20__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost20__vis" :disabled="StaticText_LastPost20__dis" type="primary" :href="StaticText_LastPost20__hrf" :style="{left:StaticText_LastPost20__lef,top:StaticText_LastPost20__top,width:StaticText_LastPost20__wid,height:StaticText_LastPost20__hei}" style="position:absolute;">{{StaticText_LastPost20__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        </el-main>
-        </el-main>
-        </el-main>
+        <el-menu class="el-menu-demo" mode="horizontal" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" :style="{left:MainMenu1__lef,top:MainMenu1__top,width:MainMenu1__wid,height:MainMenu1__hei}" style="position:absolute;">
+        <el-menu-item index="0">File</el-menu-item>
+        <el-submenu index="1">
+        <template slot="title">Edit</template>
+        <el-menu-item index="2-0">Undo</el-menu-item><el-menu-item index="2-1">reado</el-menu-item><el-menu-item index="2-2">-</el-menu-item><el-submenu index="2-3"><template slot="title">Other</template><el-menu-item index="2-3-0">Copy</el-menu-item><el-menu-item index="2-3-1">Cut</el-menu-item><el-menu-item index="2-3-2">Paste</el-menu-item>    </template></el-submenu>
+        </el-submenu>
+        <el-menu-item index="2">Help</el-menu-item>
+        <el-menu-item index="3">AÖÐÎÄ</el-menu-item>
+        <el-submenu index="4">
+        <template slot="title">BÖÐÎÄ</template>
+        <el-submenu index="5-0"><template slot="title">ABÖÐ</template><el-menu-item index="5-0-0">ÏµÍ³¹ÜÀí</el-menu-item>    </template></el-submenu>
+        </el-submenu>
+        
+        </el-menu>
 	 </div>
     <script>
 	    Vue.prototype.procResp = function (data){
@@ -505,1735 +43,13 @@
 				el: '#app',
 				data: function () {
 					return {
-					    DFW__top:"0px",
-					    DFW__wid:"1000px",
-					    DFW__hei:"1100px",
-Label14__lef:"1px",
-Label14__top:"49px",
-Label14__wid:"998px",
-Label14__hei:"20px",
-Label14__vis:true,
-Label14__dis:false,
-Label14__cap:"¸ÐÐ»ÄúµÄ»Ý¹Ë,ÈçÓÐÈÎºÎ½¨ÒéºÍÒâ¼û,ÇëÁªÏµ°æÖ÷.2020.08.01",
-Label15__lef:"1px",
-Label15__top:"29px",
-Label15__wid:"998px",
-Label15__hei:"20px",
-Label15__vis:true,
-Label15__dis:false,
-Label15__cap:"(C) °æÈ¨ËùÓÐ. ´ó¸»ÎÌÂÛÌ³ 1998-2020",
-Panel4__lef:"1px",
-Panel4__top:"1px",
-Panel4__wid:"998px",
-Panel4__hei:"1px",
-Panel4__vis:true,
-Panel4__dis:false,
-Panel4__col:"#F0F0F0",
-Panel_99_Foot__lef:"0px",
-Panel_99_Foot__top:"990px",
-Panel_99_Foot__wid:"1000px",
-Panel_99_Foot__hei:"70px",
-Panel_99_Foot__vis:true,
-Panel_99_Foot__dis:false,
-Panel_99_Foot__col:"#FFFFFF",
-Img_dfw__lef:"388px",
-Img_dfw__top:"6px",
-Img_dfw__wid:"240px",
-Img_dfw__hei:"60px",
-Img_dfw__vis:true,
-Img_dfw__dis:false,
-Img_dfw__src:"dist/webimages/Img_dfw.jpg",
-Label16__lef:"229px",
-Label16__top:"44px",
-Label16__wid:"60px",
-Label16__hei:"20px",
-Label16__vis:false,
-Label16__dis:false,
-Label16__cap:"ÓÎÏ·¹æÔò",
-Label17__lef:"301px",
-Label17__top:"44px",
-Label17__wid:"60px",
-Label17__hei:"20px",
-Label17__vis:false,
-Label17__dis:false,
-Label17__cap:"Ãâ·Ñ×¢²á",
-Label18__lef:"645px",
-Label18__top:"44px",
-Label18__wid:"60px",
-Label18__hei:"20px",
-Label18__vis:false,
-Label18__dis:false,
-Label18__cap:"×ÊÁÏÏÂÔØ",
-Label19__lef:"717px",
-Label19__top:"44px",
-Label19__wid:"60px",
-Label19__hei:"20px",
-Label19__vis:false,
-Label19__dis:false,
-Label19__cap:"¹ØÓÚ±¾Õ¾",
-Panel_00_Head__lef:"0px",
-Panel_00_Head__top:"0px",
-Panel_00_Head__wid:"1000px",
-Panel_00_Head__hei:"80px",
-Panel_00_Head__vis:true,
-Panel_00_Head__dis:false,
-Panel_00_Head__col:"#FFFFFF",
-Label5__lef:"621px",
-Label5__top:"4px",
-Label5__wid:"60px",
-Label5__hei:"20px",
-Label5__vis:true,
-Label5__dis:false,
-Label5__cap:"Ìá³öÎÊÌâ",
-Label4__lef:"549px",
-Label4__top:"4px",
-Label4__wid:"60px",
-Label4__hei:"20px",
-Label4__vis:true,
-Label4__dis:false,
-Label4__cap:"ÎÒµÄÎÊÌâ",
-Label3__lef:"477px",
-Label3__top:"4px",
-Label3__wid:"60px",
-Label3__hei:"20px",
-Label3__vis:true,
-Label3__dis:false,
-Label3__cap:"¸»ÎÌÁÐ±í",
-Label2__lef:"405px",
-Label2__top:"4px",
-Label2__wid:"60px",
-Label2__hei:"20px",
-Label2__vis:true,
-Label2__dis:false,
-Label2__cap:"ÎÊÌâÁÐ±í",
-Label1__lef:"333px",
-Label1__top:"4px",
-Label1__wid:"60px",
-Label1__hei:"20px",
-Label1__vis:true,
-Label1__dis:false,
-Label1__cap:"ÎÊÌâ·ÖÀà",
-Panel_01_Menu__lef:"0px",
-Panel_01_Menu__top:"80px",
-Panel_01_Menu__wid:"1000px",
-Panel_01_Menu__hei:"30px",
-Panel_01_Menu__vis:false,
-Panel_01_Menu__dis:false,
-Panel_01_Menu__col:"#FFFFFF",
-Label13__lef:"277px",
-Label13__top:"52px",
-Label13__wid:"75px",
-Label13__hei:"20px",
-Label13__vis:true,
-Label13__dis:false,
-Label13__cap:"ÌáÎÊ´ó¸»ÎÌ",
-Label12__lef:"276px",
-Label12__top:"19px",
-Label12__wid:"60px",
-Label12__hei:"20px",
-Label12__vis:true,
-Label12__dis:false,
-Label12__cap:"ÎÊÌâÀàÐÍ",
-Label11__lef:"16px",
-Label11__top:"52px",
-Label11__wid:"75px",
-Label11__hei:"20px",
-Label11__vis:true,
-Label11__dis:false,
-Label11__cap:"±êÌâ¹Ø¼ü×Ö",
-Label10__lef:"16px",
-Label10__top:"19px",
-Label10__wid:"30px",
-Label10__hei:"20px",
-Label10__vis:true,
-Label10__dis:false,
-Label10__cap:"·ÖÀà",
-ComboBox2__options:[{value:'°´ÎÊÌâ Ìá³öÊ±¼ä ÅÅÐò'}],
-ComboBox2__lef:"549px",
-ComboBox2__top:"10px",
-ComboBox2__wid:"193px",
-ComboBox2__hei:"28px",
-ComboBox2__vis:true,
-ComboBox2__dis:false,
-ComboBox2__txt:"°´ÎÊÌâ Ìá³öÊ±¼ä ÅÅÐò",
-ComboBox1__options:[{value:'È«²¿'},{value:'Windows¿ª·¢'},{value:'Êý¾Ý¿â¿ª·¢'}],
-ComboBox1__lef:"72px",
-ComboBox1__top:"10px",
-ComboBox1__wid:"161px",
-ComboBox1__hei:"28px",
-ComboBox1__vis:true,
-ComboBox1__dis:false,
-ComboBox1__txt:"È«²¿",
-Button3__lef:"548px",
-Button3__top:"53px",
-Button3__wid:"90px",
-Button3__hei:"28px",
-Button3__vis:true,
-Button3__dis:false,
-Button3__cap:"¼ìË÷ÎÊÌâ",
-Edit2__lef:"112px",
-Edit2__top:"53px",
-Edit2__wid:"113px",
-Edit2__hei:"28px",
-Edit2__vis:true,
-Edit2__dis:false,
-Edit2__txt:"",
-Edit3__lef:"366px",
-Edit3__top:"53px",
-Edit3__wid:"130px",
-Edit3__hei:"28px",
-Edit3__vis:true,
-Edit3__dis:false,
-Edit3__txt:"",
-RadioButton2__lef:"367px",
-RadioButton2__top:"19px",
-RadioButton2__wid:"65px",
-RadioButton2__hei:"17px",
-RadioButton2__vis:true,
-RadioButton2__dis:false,
-RadioButton2__cap:"ÒÑ´ð",
-RadioButton2__chk:"1",
-RadioButton1__lef:"423px",
-RadioButton1__top:"19px",
-RadioButton1__wid:"65px",
-RadioButton1__hei:"17px",
-RadioButton1__vis:true,
-RadioButton1__dis:false,
-RadioButton1__cap:"´ý´ð",
-RadioButton1__chk:"0",
-Panel_Search__lef:"1px",
-Panel_Search__top:"1px",
-Panel_Search__wid:"998px",
-Panel_Search__hei:"90px",
-Panel_Search__vis:false,
-Panel_Search__dis:false,
-Panel_Search__col:"#CED9FF",
-Label_Score__lef:"32px",
-Label_Score__top:"8px",
-Label_Score__wid:"18px",
-Label_Score__hei:"20px",
-Label_Score__vis:true,
-Label_Score__dis:false,
-Label_Score__cap:"50",
-Label_ReplyRead__lef:"680px",
-Label_ReplyRead__top:"8px",
-Label_ReplyRead__wid:"42px",
-Label_ReplyRead__hei:"20px",
-Label_ReplyRead__vis:true,
-Label_ReplyRead__dis:false,
-Label_ReplyRead__cap:"10/32",
-Label_LastPostTime__lef:"893px",
-Label_LastPostTime__top:"8px",
-Label_LastPostTime__wid:"84px",
-Label_LastPostTime__hei:"20px",
-Label_LastPostTime__vis:true,
-Label_LastPostTime__dis:false,
-Label_LastPostTime__cap:"2020-08-03",
-Label_New__lef:"8px",
-Label_New__top:"8px",
-Label_New__wid:"10px",
-Label_New__hei:"20px",
-Label_New__vis:true,
-Label_New__dis:false,
-Label_New__cap:"¡ñ",
-Panel12__lef:"0px",
-Panel12__top:"0px",
-Panel12__wid:"996px",
-Panel12__hei:"1px",
-Panel12__vis:true,
-Panel12__dis:false,
-Panel12__col:"#F0F0F0",
-StaticText_Subject__lef:"70px",
-StaticText_Subject__top:"8px",
-StaticText_Subject__wid:"499px",
-StaticText_Subject__hei:"24px",
-StaticText_Subject__vis:true,
-StaticText_Subject__dis:false,
-StaticText_Subject__cap:"StaticText_Subject",
-StaticText_Subject__hrf:"",
-StaticText_Uper__lef:"570px",
-StaticText_Uper__top:"8px",
-StaticText_Uper__wid:"100px",
-StaticText_Uper__hei:"24px",
-StaticText_Uper__vis:true,
-StaticText_Uper__dis:false,
-StaticText_Uper__cap:"StaticText_Subject",
-StaticText_Uper__hrf:"",
-StaticText_LastPost__lef:"780px",
-StaticText_LastPost__top:"8px",
-StaticText_LastPost__wid:"100px",
-StaticText_LastPost__hei:"24px",
-StaticText_LastPost__vis:true,
-StaticText_LastPost__dis:false,
-StaticText_LastPost__cap:"StaticText_Subject",
-StaticText_LastPost__hrf:"",
-Panel_Thread__lef:"1px",
-Panel_Thread__top:"33px",
-Panel_Thread__wid:"996px",
-Panel_Thread__hei:"40px",
-Panel_Thread__vis:false,
-Panel_Thread__dis:false,
-Panel_Thread__col:"#FFFFFF",
-Label104__lef:"8px",
-Label104__top:"4px",
-Label104__wid:"15px",
-Label104__hei:"20px",
-Label104__vis:false,
-Label104__dis:false,
-Label104__cap:"ÐÂ",
-Label105__lef:"32px",
-Label105__top:"4px",
-Label105__wid:"30px",
-Label105__hei:"20px",
-Label105__vis:false,
-Label105__dis:false,
-Label105__cap:"»ý·Ö",
-Label106__lef:"140px",
-Label106__top:"4px",
-Label106__wid:"30px",
-Label106__hei:"20px",
-Label106__vis:true,
-Label106__dis:false,
-Label106__cap:"±êÌâ",
-Label107__lef:"680px",
-Label107__top:"4px",
-Label107__wid:"66px",
-Label107__hei:"20px",
-Label107__vis:true,
-Label107__dis:false,
-Label107__cap:"»Ø¸´/ÔÄ¶Á",
-Label108__lef:"570px",
-Label108__top:"4px",
-Label108__wid:"30px",
-Label108__hei:"20px",
-Label108__vis:true,
-Label108__dis:false,
-Label108__cap:"ÌáÎÊ",
-Label109__lef:"780px",
-Label109__top:"4px",
-Label109__wid:"60px",
-Label109__hei:"20px",
-Label109__vis:true,
-Label109__dis:false,
-Label109__cap:"×îºó»Ø¸´",
-Label110__lef:"906px",
-Label110__top:"4px",
-Label110__wid:"60px",
-Label110__hei:"20px",
-Label110__vis:true,
-Label110__dis:false,
-Label110__cap:"×îºóÊ±¼ä",
-Panel_ThreadTitle__lef:"1px",
-Panel_ThreadTitle__top:"1px",
-Panel_ThreadTitle__wid:"996px",
-Panel_ThreadTitle__hei:"32px",
-Panel_ThreadTitle__vis:true,
-Panel_ThreadTitle__dis:false,
-Panel_ThreadTitle__col:"#E1E9FF",
-Edit_PageNo__lef:"892px",
-Edit_PageNo__top:"8px",
-Edit_PageNo__wid:"51px",
-Edit_PageNo__hei:"28px",
-Edit_PageNo__vis:true,
-Edit_PageNo__dis:false,
-Edit_PageNo__txt:"1",
-Button_Next__lef:"50px",
-Button_Next__top:"8px",
-Button_Next__wid:"50px",
-Button_Next__hei:"25px",
-Button_Next__vis:true,
-Button_Next__dis:false,
-Button_Next__cap:"ÏÂÒ»Ò³",
-Button1__lef:"10px",
-Button1__top:"8px",
-Button1__wid:"40px",
-Button1__hei:"25px",
-Button1__vis:true,
-Button1__dis:false,
-Button1__cap:"Ê×Ò³",
-Button2__lef:"100px",
-Button2__top:"8px",
-Button2__wid:"50px",
-Button2__hei:"25px",
-Button2__vis:true,
-Button2__dis:false,
-Button2__cap:"ÉÏÒ»Ò³",
-Button4__lef:"150px",
-Button4__top:"8px",
-Button4__wid:"50px",
-Button4__hei:"25px",
-Button4__vis:true,
-Button4__dis:false,
-Button4__cap:"×îºóÒ³",
-Button5__lef:"944px",
-Button5__top:"8px",
-Button5__wid:"40px",
-Button5__hei:"25px",
-Button5__vis:true,
-Button5__dis:false,
-Button5__cap:"Ìø×ª",
-Panel1__lef:"0px",
-Panel1__top:"0px",
-Panel1__wid:"996px",
-Panel1__hei:"1px",
-Panel1__vis:true,
-Panel1__dis:false,
-Panel1__col:"#F0F0F0",
-Panel_Pages__lef:"1px",
-Panel_Pages__top:"833px",
-Panel_Pages__wid:"996px",
-Panel_Pages__hei:"40px",
-Panel_Pages__vis:true,
-Panel_Pages__dis:false,
-Panel_Pages__col:"#FFFFFF",
-Label_Score1__lef:"32px",
-Label_Score1__top:"8px",
-Label_Score1__wid:"4px",
-Label_Score1__hei:"20px",
-Label_Score1__vis:true,
-Label_Score1__dis:false,
-Label_Score1__cap:"",
-Label_ReplyRead1__lef:"680px",
-Label_ReplyRead1__top:"8px",
-Label_ReplyRead1__wid:"42px",
-Label_ReplyRead1__hei:"20px",
-Label_ReplyRead1__vis:true,
-Label_ReplyRead1__dis:false,
-Label_ReplyRead1__cap:"2/437",
-Label_LastPostTime1__lef:"893px",
-Label_LastPostTime1__top:"8px",
-Label_LastPostTime1__wid:"84px",
-Label_LastPostTime1__hei:"20px",
-Label_LastPostTime1__vis:true,
-Label_LastPostTime1__dis:false,
-Label_LastPostTime1__cap:"2020-03-27",
-Label_New1__lef:"8px",
-Label_New1__top:"8px",
-Label_New1__wid:"10px",
-Label_New1__hei:"20px",
-Label_New1__vis:true,
-Label_New1__dis:false,
-Label_New1__cap:"¡ñ",
-Panel121__lef:"0px",
-Panel121__top:"0px",
-Panel121__wid:"996px",
-Panel121__hei:"1px",
-Panel121__vis:true,
-Panel121__dis:false,
-Panel121__col:"#F0F0F0",
-StaticText_Subject1__lef:"70px",
-StaticText_Subject1__top:"8px",
-StaticText_Subject1__wid:"499px",
-StaticText_Subject1__hei:"24px",
-StaticText_Subject1__vis:true,
-StaticText_Subject1__dis:false,
-StaticText_Subject1__cap:"Delphi Á¬½ÓDBFÊý¾Ý",
-StaticText_Subject1__hrf:"dfw_thread.dw?tid=938&&uid=2&&create_date=1576500716&&subject=Delphi%20%C1%AC%BD%D3DBF%CA%FD%BE%DD&&uper=%B1%CC%CA%F7%CE%F7%B7%E7",
-StaticText_Uper1__lef:"570px",
-StaticText_Uper1__top:"8px",
-StaticText_Uper1__wid:"100px",
-StaticText_Uper1__hei:"24px",
-StaticText_Uper1__vis:true,
-StaticText_Uper1__dis:false,
-StaticText_Uper1__cap:"±ÌÊ÷Î÷·ç",
-StaticText_Uper1__hrf:"dfw_user.dw?uid=2",
-StaticText_LastPost1__lef:"780px",
-StaticText_LastPost1__top:"8px",
-StaticText_LastPost1__wid:"100px",
-StaticText_LastPost1__hei:"24px",
-StaticText_LastPost1__vis:true,
-StaticText_LastPost1__dis:false,
-StaticText_LastPost1__cap:"ufolc",
-StaticText_LastPost1__hrf:"dfw_user.dw?uid=2334",
-Panel_Thread1__lef:"1px",
-Panel_Thread1__top:"33px",
-Panel_Thread1__wid:"996px",
-Panel_Thread1__hei:"40px",
-Panel_Thread1__vis:true,
-Panel_Thread1__dis:false,
-Panel_Thread1__col:"#FFFFFF",
-Label_Score2__lef:"32px",
-Label_Score2__top:"8px",
-Label_Score2__wid:"4px",
-Label_Score2__hei:"20px",
-Label_Score2__vis:true,
-Label_Score2__dis:false,
-Label_Score2__cap:"",
-Label_ReplyRead2__lef:"680px",
-Label_ReplyRead2__top:"8px",
-Label_ReplyRead2__wid:"51px",
-Label_ReplyRead2__hei:"20px",
-Label_ReplyRead2__vis:true,
-Label_ReplyRead2__dis:false,
-Label_ReplyRead2__cap:"7/1503",
-Label_LastPostTime2__lef:"893px",
-Label_LastPostTime2__top:"8px",
-Label_LastPostTime2__wid:"84px",
-Label_LastPostTime2__hei:"20px",
-Label_LastPostTime2__vis:true,
-Label_LastPostTime2__dis:false,
-Label_LastPostTime2__cap:"2020-03-27",
-Label_New2__lef:"8px",
-Label_New2__top:"8px",
-Label_New2__wid:"10px",
-Label_New2__hei:"20px",
-Label_New2__vis:true,
-Label_New2__dis:false,
-Label_New2__cap:"¡ñ",
-Panel122__lef:"0px",
-Panel122__top:"0px",
-Panel122__wid:"996px",
-Panel122__hei:"1px",
-Panel122__vis:true,
-Panel122__dis:false,
-Panel122__col:"#F0F0F0",
-StaticText_Subject2__lef:"70px",
-StaticText_Subject2__top:"8px",
-StaticText_Subject2__wid:"499px",
-StaticText_Subject2__hei:"24px",
-StaticText_Subject2__vis:true,
-StaticText_Subject2__dis:false,
-StaticText_Subject2__cap:"15ÄêºóÖØ²Ù¾ÉÒµ£¬ÈËÆø²»ÐÐÑ½",
-StaticText_Subject2__hrf:"dfw_thread.dw?tid=693&&uid=10738&&create_date=1551414215&&subject=15%C4%EA%BA%F3%D6%D8%B2%D9%BE%C9%D2%B5%A3%AC%C8%CB%C6%F8%B2%BB%D0%D0%D1%BD&&uper=wxm3783",
-StaticText_Uper2__lef:"570px",
-StaticText_Uper2__top:"8px",
-StaticText_Uper2__wid:"100px",
-StaticText_Uper2__hei:"24px",
-StaticText_Uper2__vis:true,
-StaticText_Uper2__dis:false,
-StaticText_Uper2__cap:"wxm3783",
-StaticText_Uper2__hrf:"dfw_user.dw?uid=10738",
-StaticText_LastPost2__lef:"780px",
-StaticText_LastPost2__top:"8px",
-StaticText_LastPost2__wid:"100px",
-StaticText_LastPost2__hei:"24px",
-StaticText_LastPost2__vis:true,
-StaticText_LastPost2__dis:false,
-StaticText_LastPost2__cap:"ufolc",
-StaticText_LastPost2__hrf:"dfw_user.dw?uid=2332",
-Panel_Thread2__lef:"1px",
-Panel_Thread2__top:"73px",
-Panel_Thread2__wid:"996px",
-Panel_Thread2__hei:"40px",
-Panel_Thread2__vis:true,
-Panel_Thread2__dis:false,
-Panel_Thread2__col:"#FFFFFF",
-Label_Score3__lef:"32px",
-Label_Score3__top:"8px",
-Label_Score3__wid:"4px",
-Label_Score3__hei:"20px",
-Label_Score3__vis:true,
-Label_Score3__dis:false,
-Label_Score3__cap:"",
-Label_ReplyRead3__lef:"680px",
-Label_ReplyRead3__top:"8px",
-Label_ReplyRead3__wid:"69px",
-Label_ReplyRead3__hei:"20px",
-Label_ReplyRead3__vis:true,
-Label_ReplyRead3__dis:false,
-Label_ReplyRead3__cap:"18/11155",
-Label_LastPostTime3__lef:"893px",
-Label_LastPostTime3__top:"8px",
-Label_LastPostTime3__wid:"84px",
-Label_LastPostTime3__hei:"20px",
-Label_LastPostTime3__vis:true,
-Label_LastPostTime3__dis:false,
-Label_LastPostTime3__cap:"2020-03-15",
-Label_New3__lef:"8px",
-Label_New3__top:"8px",
-Label_New3__wid:"10px",
-Label_New3__hei:"20px",
-Label_New3__vis:true,
-Label_New3__dis:false,
-Label_New3__cap:"¡ñ",
-Panel123__lef:"0px",
-Panel123__top:"0px",
-Panel123__wid:"996px",
-Panel123__hei:"1px",
-Panel123__vis:true,
-Panel123__dis:false,
-Panel123__col:"#F0F0F0",
-StaticText_Subject3__lef:"70px",
-StaticText_Subject3__top:"8px",
-StaticText_Subject3__wid:"499px",
-StaticText_Subject3__hei:"24px",
-StaticText_Subject3__vis:true,
-StaticText_Subject3__dis:false,
-StaticText_Subject3__cap:"Delphi 10.3 RIO ºÍÐ³°²×°¹¤¾ß ×îÐÂ°æ",
-StaticText_Subject3__hrf:"dfw_thread.dw?tid=296&&uid=135&&create_date=1543162920&&subject=Delphi%2010%2E3%20RIO%20%BA%CD%D0%B3%B0%B2%D7%B0%B9%A4%BE%DF%20%D7%EE%D0%C2%B0%E6&&uper=chinacodegear",
-StaticText_Uper3__lef:"570px",
-StaticText_Uper3__top:"8px",
-StaticText_Uper3__wid:"100px",
-StaticText_Uper3__hei:"24px",
-StaticText_Uper3__vis:true,
-StaticText_Uper3__dis:false,
-StaticText_Uper3__cap:"chinacodegear",
-StaticText_Uper3__hrf:"dfw_user.dw?uid=135",
-StaticText_LastPost3__lef:"780px",
-StaticText_LastPost3__top:"8px",
-StaticText_LastPost3__wid:"100px",
-StaticText_LastPost3__hei:"24px",
-StaticText_LastPost3__vis:true,
-StaticText_LastPost3__dis:false,
-StaticText_LastPost3__cap:"ÂÌÑîÒñÀï",
-StaticText_LastPost3__hrf:"dfw_user.dw?uid=2317",
-Panel_Thread3__lef:"1px",
-Panel_Thread3__top:"113px",
-Panel_Thread3__wid:"996px",
-Panel_Thread3__hei:"40px",
-Panel_Thread3__vis:true,
-Panel_Thread3__dis:false,
-Panel_Thread3__col:"#FFFFFF",
-Label_Score4__lef:"32px",
-Label_Score4__top:"8px",
-Label_Score4__wid:"4px",
-Label_Score4__hei:"20px",
-Label_Score4__vis:true,
-Label_Score4__dis:false,
-Label_Score4__cap:"",
-Label_ReplyRead4__lef:"680px",
-Label_ReplyRead4__top:"8px",
-Label_ReplyRead4__wid:"69px",
-Label_ReplyRead4__hei:"20px",
-Label_ReplyRead4__vis:true,
-Label_ReplyRead4__dis:false,
-Label_ReplyRead4__cap:"10/12574",
-Label_LastPostTime4__lef:"893px",
-Label_LastPostTime4__top:"8px",
-Label_LastPostTime4__wid:"84px",
-Label_LastPostTime4__hei:"20px",
-Label_LastPostTime4__vis:true,
-Label_LastPostTime4__dis:false,
-Label_LastPostTime4__cap:"2020-03-15",
-Label_New4__lef:"8px",
-Label_New4__top:"8px",
-Label_New4__wid:"10px",
-Label_New4__hei:"20px",
-Label_New4__vis:true,
-Label_New4__dis:false,
-Label_New4__cap:"¡ñ",
-Panel124__lef:"0px",
-Panel124__top:"0px",
-Panel124__wid:"996px",
-Panel124__hei:"1px",
-Panel124__vis:true,
-Panel124__dis:false,
-Panel124__col:"#F0F0F0",
-StaticText_Subject4__lef:"70px",
-StaticText_Subject4__top:"8px",
-StaticText_Subject4__wid:"499px",
-StaticText_Subject4__hei:"24px",
-StaticText_Subject4__vis:true,
-StaticText_Subject4__dis:false,
-StaticText_Subject4__cap:"Delphi 10.3 RIO ºÍÐ³°²×°¹¤¾ß",
-StaticText_Subject4__hrf:"dfw_thread.dw?tid=295&&uid=135&&create_date=1543133552&&subject=Delphi%2010%2E3%20RIO%20%BA%CD%D0%B3%B0%B2%D7%B0%B9%A4%BE%DF&&uper=chinacodegear",
-StaticText_Uper4__lef:"570px",
-StaticText_Uper4__top:"8px",
-StaticText_Uper4__wid:"100px",
-StaticText_Uper4__hei:"24px",
-StaticText_Uper4__vis:true,
-StaticText_Uper4__dis:false,
-StaticText_Uper4__cap:"chinacodegear",
-StaticText_Uper4__hrf:"dfw_user.dw?uid=135",
-StaticText_LastPost4__lef:"780px",
-StaticText_LastPost4__top:"8px",
-StaticText_LastPost4__wid:"100px",
-StaticText_LastPost4__hei:"24px",
-StaticText_LastPost4__vis:true,
-StaticText_LastPost4__dis:false,
-StaticText_LastPost4__cap:"±ÌÊ÷Î÷·ç",
-StaticText_LastPost4__hrf:"dfw_user.dw?uid=2316",
-Panel_Thread4__lef:"1px",
-Panel_Thread4__top:"153px",
-Panel_Thread4__wid:"996px",
-Panel_Thread4__hei:"40px",
-Panel_Thread4__vis:true,
-Panel_Thread4__dis:false,
-Panel_Thread4__col:"#FFFFFF",
-Label_Score5__lef:"32px",
-Label_Score5__top:"8px",
-Label_Score5__wid:"4px",
-Label_Score5__hei:"20px",
-Label_Score5__vis:true,
-Label_Score5__dis:false,
-Label_Score5__cap:"",
-Label_ReplyRead5__lef:"680px",
-Label_ReplyRead5__top:"8px",
-Label_ReplyRead5__wid:"60px",
-Label_ReplyRead5__hei:"20px",
-Label_ReplyRead5__vis:true,
-Label_ReplyRead5__dis:false,
-Label_ReplyRead5__cap:"12/6745",
-Label_LastPostTime5__lef:"893px",
-Label_LastPostTime5__top:"8px",
-Label_LastPostTime5__wid:"84px",
-Label_LastPostTime5__hei:"20px",
-Label_LastPostTime5__vis:true,
-Label_LastPostTime5__dis:false,
-Label_LastPostTime5__cap:"2020-03-15",
-Label_New5__lef:"8px",
-Label_New5__top:"8px",
-Label_New5__wid:"10px",
-Label_New5__hei:"20px",
-Label_New5__vis:true,
-Label_New5__dis:false,
-Label_New5__cap:"¡ñ",
-Panel125__lef:"0px",
-Panel125__top:"0px",
-Panel125__wid:"996px",
-Panel125__hei:"1px",
-Panel125__vis:true,
-Panel125__dis:false,
-Panel125__col:"#F0F0F0",
-StaticText_Subject5__lef:"70px",
-StaticText_Subject5__top:"8px",
-StaticText_Subject5__wid:"499px",
-StaticText_Subject5__hei:"24px",
-StaticText_Subject5__vis:true,
-StaticText_Subject5__dis:false,
-StaticText_Subject5__cap:"Delphi 10.3 ISO",
-StaticText_Subject5__hrf:"dfw_thread.dw?tid=285&&uid=135&&create_date=1542856030&&subject=%20Delphi%2010%2E3%20ISO&&uper=chinacodegear",
-StaticText_Uper5__lef:"570px",
-StaticText_Uper5__top:"8px",
-StaticText_Uper5__wid:"100px",
-StaticText_Uper5__hei:"24px",
-StaticText_Uper5__vis:true,
-StaticText_Uper5__dis:false,
-StaticText_Uper5__cap:"chinacodegear",
-StaticText_Uper5__hrf:"dfw_user.dw?uid=135",
-StaticText_LastPost5__lef:"780px",
-StaticText_LastPost5__top:"8px",
-StaticText_LastPost5__wid:"100px",
-StaticText_LastPost5__hei:"24px",
-StaticText_LastPost5__vis:true,
-StaticText_LastPost5__dis:false,
-StaticText_LastPost5__cap:"ilikanba",
-StaticText_LastPost5__hrf:"dfw_user.dw?uid=2313",
-Panel_Thread5__lef:"1px",
-Panel_Thread5__top:"193px",
-Panel_Thread5__wid:"996px",
-Panel_Thread5__hei:"40px",
-Panel_Thread5__vis:true,
-Panel_Thread5__dis:false,
-Panel_Thread5__col:"#FFFFFF",
-Label_Score6__lef:"32px",
-Label_Score6__top:"8px",
-Label_Score6__wid:"4px",
-Label_Score6__hei:"20px",
-Label_Score6__vis:true,
-Label_Score6__dis:false,
-Label_Score6__cap:"",
-Label_ReplyRead6__lef:"680px",
-Label_ReplyRead6__top:"8px",
-Label_ReplyRead6__wid:"42px",
-Label_ReplyRead6__hei:"20px",
-Label_ReplyRead6__vis:true,
-Label_ReplyRead6__dis:false,
-Label_ReplyRead6__cap:"1/102",
-Label_LastPostTime6__lef:"893px",
-Label_LastPostTime6__top:"8px",
-Label_LastPostTime6__wid:"84px",
-Label_LastPostTime6__hei:"20px",
-Label_LastPostTime6__vis:true,
-Label_LastPostTime6__dis:false,
-Label_LastPostTime6__cap:"2020-03-15",
-Label_New6__lef:"8px",
-Label_New6__top:"8px",
-Label_New6__wid:"10px",
-Label_New6__hei:"20px",
-Label_New6__vis:true,
-Label_New6__dis:false,
-Label_New6__cap:"¡ñ",
-Panel126__lef:"0px",
-Panel126__top:"0px",
-Panel126__wid:"996px",
-Panel126__hei:"1px",
-Panel126__vis:true,
-Panel126__dis:false,
-Panel126__col:"#F0F0F0",
-StaticText_Subject6__lef:"70px",
-StaticText_Subject6__top:"8px",
-StaticText_Subject6__wid:"499px",
-StaticText_Subject6__hei:"24px",
-StaticText_Subject6__vis:true,
-StaticText_Subject6__dis:false,
-StaticText_Subject6__cap:"ÀûÓÃTChart´òÔì¼ò½àºÃÓÃµÄGISÏµÍ³! Ò»¸öº¯Êý¸ã¶¨!",
-StaticText_Subject6__hrf:"dfw_thread.dw?tid=966&&uid=2&&create_date=1584245483&&subject=%C0%FB%D3%C3TChart%B4%F2%D4%EC%BC%F2%BD%E0%BA%C3%D3%C3%B5%C4GIS%CF%B5%CD%B3%21%20%D2%BB%B8%F6%BA%AF%CA%FD%B8%E3%B6%A8%21&&uper=%B1%CC%CA%F7%CE%F7%B7%E7",
-StaticText_Uper6__lef:"570px",
-StaticText_Uper6__top:"8px",
-StaticText_Uper6__wid:"100px",
-StaticText_Uper6__hei:"24px",
-StaticText_Uper6__vis:true,
-StaticText_Uper6__dis:false,
-StaticText_Uper6__cap:"±ÌÊ÷Î÷·ç",
-StaticText_Uper6__hrf:"dfw_user.dw?uid=2",
-StaticText_LastPost6__lef:"780px",
-StaticText_LastPost6__top:"8px",
-StaticText_LastPost6__wid:"100px",
-StaticText_LastPost6__hei:"24px",
-StaticText_LastPost6__vis:true,
-StaticText_LastPost6__dis:false,
-StaticText_LastPost6__cap:"±ÌÊ÷Î÷·ç",
-StaticText_LastPost6__hrf:"dfw_user.dw?uid=2312",
-Panel_Thread6__lef:"1px",
-Panel_Thread6__top:"233px",
-Panel_Thread6__wid:"996px",
-Panel_Thread6__hei:"40px",
-Panel_Thread6__vis:true,
-Panel_Thread6__dis:false,
-Panel_Thread6__col:"#FFFFFF",
-Label_Score7__lef:"32px",
-Label_Score7__top:"8px",
-Label_Score7__wid:"4px",
-Label_Score7__hei:"20px",
-Label_Score7__vis:true,
-Label_Score7__dis:false,
-Label_Score7__cap:"",
-Label_ReplyRead7__lef:"680px",
-Label_ReplyRead7__top:"8px",
-Label_ReplyRead7__wid:"33px",
-Label_ReplyRead7__hei:"20px",
-Label_ReplyRead7__vis:true,
-Label_ReplyRead7__dis:false,
-Label_ReplyRead7__cap:"1/98",
-Label_LastPostTime7__lef:"893px",
-Label_LastPostTime7__top:"8px",
-Label_LastPostTime7__wid:"84px",
-Label_LastPostTime7__hei:"20px",
-Label_LastPostTime7__vis:true,
-Label_LastPostTime7__dis:false,
-Label_LastPostTime7__cap:"2020-03-15",
-Label_New7__lef:"8px",
-Label_New7__top:"8px",
-Label_New7__wid:"10px",
-Label_New7__hei:"20px",
-Label_New7__vis:true,
-Label_New7__dis:false,
-Label_New7__cap:"¡ñ",
-Panel127__lef:"0px",
-Panel127__top:"0px",
-Panel127__wid:"996px",
-Panel127__hei:"1px",
-Panel127__vis:true,
-Panel127__dis:false,
-Panel127__col:"#F0F0F0",
-StaticText_Subject7__lef:"70px",
-StaticText_Subject7__top:"8px",
-StaticText_Subject7__wid:"499px",
-StaticText_Subject7__hei:"24px",
-StaticText_Subject7__vis:true,
-StaticText_Subject7__dis:false,
-StaticText_Subject7__cap:"¶÷°Í¿¨µÂÂÞÆô¶¯Delphi·¢²¼25ÖÜÄêÊ¢´óÇì×£¼ÍÄî»î¶¯¹Ù·½ÍøÖ·£¡",
-StaticText_Subject7__hrf:"dfw_thread.dw?tid=957&&uid=10327&&create_date=1583671096&&subject=%B6%F7%B0%CD%BF%A8%B5%C2%C2%DE%C6%F4%B6%AFDelphi%B7%A2%B2%BC25%D6%DC%C4%EA%CA%A2%B4%F3%C7%EC%D7%A3%BC%CD%C4%EE%BB%EE%B6%AF%B9%D9%B7%BD%CD%F8%D6%B7%A3%A1&&uper=%CE%DE%C7%E9",
-StaticText_Uper7__lef:"570px",
-StaticText_Uper7__top:"8px",
-StaticText_Uper7__wid:"100px",
-StaticText_Uper7__hei:"24px",
-StaticText_Uper7__vis:true,
-StaticText_Uper7__dis:false,
-StaticText_Uper7__cap:"ÎÞÇé",
-StaticText_Uper7__hrf:"dfw_user.dw?uid=10327",
-StaticText_LastPost7__lef:"780px",
-StaticText_LastPost7__top:"8px",
-StaticText_LastPost7__wid:"100px",
-StaticText_LastPost7__hei:"24px",
-StaticText_LastPost7__vis:true,
-StaticText_LastPost7__dis:false,
-StaticText_LastPost7__cap:"chinacodegear",
-StaticText_LastPost7__hrf:"dfw_user.dw?uid=2310",
-Panel_Thread7__lef:"1px",
-Panel_Thread7__top:"273px",
-Panel_Thread7__wid:"996px",
-Panel_Thread7__hei:"40px",
-Panel_Thread7__vis:true,
-Panel_Thread7__dis:false,
-Panel_Thread7__col:"#FFFFFF",
-Label_Score8__lef:"32px",
-Label_Score8__top:"8px",
-Label_Score8__wid:"4px",
-Label_Score8__hei:"20px",
-Label_Score8__vis:true,
-Label_Score8__dis:false,
-Label_Score8__cap:"",
-Label_ReplyRead8__lef:"680px",
-Label_ReplyRead8__top:"8px",
-Label_ReplyRead8__wid:"42px",
-Label_ReplyRead8__hei:"20px",
-Label_ReplyRead8__vis:true,
-Label_ReplyRead8__dis:false,
-Label_ReplyRead8__cap:"2/134",
-Label_LastPostTime8__lef:"893px",
-Label_LastPostTime8__top:"8px",
-Label_LastPostTime8__wid:"84px",
-Label_LastPostTime8__hei:"20px",
-Label_LastPostTime8__vis:true,
-Label_LastPostTime8__dis:false,
-Label_LastPostTime8__cap:"2020-03-14",
-Label_New8__lef:"8px",
-Label_New8__top:"8px",
-Label_New8__wid:"10px",
-Label_New8__hei:"20px",
-Label_New8__vis:true,
-Label_New8__dis:false,
-Label_New8__cap:"¡ñ",
-Panel128__lef:"0px",
-Panel128__top:"0px",
-Panel128__wid:"996px",
-Panel128__hei:"1px",
-Panel128__vis:true,
-Panel128__dis:false,
-Panel128__col:"#F0F0F0",
-StaticText_Subject8__lef:"70px",
-StaticText_Subject8__top:"8px",
-StaticText_Subject8__wid:"499px",
-StaticText_Subject8__hei:"24px",
-StaticText_Subject8__vis:true,
-StaticText_Subject8__dis:false,
-StaticText_Subject8__cap:"²âÊÔ¼ÓÔØbmp,Jpg,png ËÙ¶È, ÓÐÈËÏëÖªµÀ½á¹ûÂð?",
-StaticText_Subject8__hrf:"dfw_thread.dw?tid=961&&uid=2&&create_date=1583927179&&subject=%B2%E2%CA%D4%BC%D3%D4%D8bmp%2CJpg%2Cpng%20%CB%D9%B6%C8%2C%20%D3%D0%C8%CB%CF%EB%D6%AA%B5%C0%BD%E1%B9%FB%C2%F0%3F&&uper=%B1%CC%CA%F7%CE%F7%B7%E7",
-StaticText_Uper8__lef:"570px",
-StaticText_Uper8__top:"8px",
-StaticText_Uper8__wid:"100px",
-StaticText_Uper8__hei:"24px",
-StaticText_Uper8__vis:true,
-StaticText_Uper8__dis:false,
-StaticText_Uper8__cap:"±ÌÊ÷Î÷·ç",
-StaticText_Uper8__hrf:"dfw_user.dw?uid=2",
-StaticText_LastPost8__lef:"780px",
-StaticText_LastPost8__top:"8px",
-StaticText_LastPost8__wid:"100px",
-StaticText_LastPost8__hei:"24px",
-StaticText_LastPost8__vis:true,
-StaticText_LastPost8__dis:false,
-StaticText_LastPost8__cap:"ustone",
-StaticText_LastPost8__hrf:"dfw_user.dw?uid=2309",
-Panel_Thread8__lef:"1px",
-Panel_Thread8__top:"313px",
-Panel_Thread8__wid:"996px",
-Panel_Thread8__hei:"40px",
-Panel_Thread8__vis:true,
-Panel_Thread8__dis:false,
-Panel_Thread8__col:"#FFFFFF",
-Label_Score9__lef:"32px",
-Label_Score9__top:"8px",
-Label_Score9__wid:"4px",
-Label_Score9__hei:"20px",
-Label_Score9__vis:true,
-Label_Score9__dis:false,
-Label_Score9__cap:"",
-Label_ReplyRead9__lef:"680px",
-Label_ReplyRead9__top:"8px",
-Label_ReplyRead9__wid:"78px",
-Label_ReplyRead9__hei:"20px",
-Label_ReplyRead9__vis:true,
-Label_ReplyRead9__dis:false,
-Label_ReplyRead9__cap:"100/27044",
-Label_LastPostTime9__lef:"893px",
-Label_LastPostTime9__top:"8px",
-Label_LastPostTime9__wid:"84px",
-Label_LastPostTime9__hei:"20px",
-Label_LastPostTime9__vis:true,
-Label_LastPostTime9__dis:false,
-Label_LastPostTime9__cap:"2020-03-01",
-Label_New9__lef:"8px",
-Label_New9__top:"8px",
-Label_New9__wid:"10px",
-Label_New9__hei:"20px",
-Label_New9__vis:true,
-Label_New9__dis:false,
-Label_New9__cap:"¡ñ",
-Panel129__lef:"0px",
-Panel129__top:"0px",
-Panel129__wid:"996px",
-Panel129__hei:"1px",
-Panel129__vis:true,
-Panel129__dis:false,
-Panel129__col:"#F0F0F0",
-StaticText_Subject9__lef:"70px",
-StaticText_Subject9__top:"8px",
-StaticText_Subject9__wid:"499px",
-StaticText_Subject9__hei:"24px",
-StaticText_Subject9__vis:true,
-StaticText_Subject9__dis:false,
-StaticText_Subject9__cap:"»¶Ó­»Ø¼Ò! Delphi fans~",
-StaticText_Subject9__hrf:"dfw_thread.dw?tid=1&&uid=2&&create_date=1527131377&&subject=%BB%B6%D3%AD%BB%D8%BC%D2%21%20Delphi%20fans%7E&&uper=%B1%CC%CA%F7%CE%F7%B7%E7",
-StaticText_Uper9__lef:"570px",
-StaticText_Uper9__top:"8px",
-StaticText_Uper9__wid:"100px",
-StaticText_Uper9__hei:"24px",
-StaticText_Uper9__vis:true,
-StaticText_Uper9__dis:false,
-StaticText_Uper9__cap:"±ÌÊ÷Î÷·ç",
-StaticText_Uper9__hrf:"dfw_user.dw?uid=2",
-StaticText_LastPost9__lef:"780px",
-StaticText_LastPost9__top:"8px",
-StaticText_LastPost9__wid:"100px",
-StaticText_LastPost9__hei:"24px",
-StaticText_LastPost9__vis:true,
-StaticText_LastPost9__dis:false,
-StaticText_LastPost9__cap:"johnsun2002",
-StaticText_LastPost9__hrf:"dfw_user.dw?uid=2291",
-Panel_Thread9__lef:"1px",
-Panel_Thread9__top:"353px",
-Panel_Thread9__wid:"996px",
-Panel_Thread9__hei:"40px",
-Panel_Thread9__vis:true,
-Panel_Thread9__dis:false,
-Panel_Thread9__col:"#FFFFFF",
-Label_Score10__lef:"32px",
-Label_Score10__top:"8px",
-Label_Score10__wid:"4px",
-Label_Score10__hei:"20px",
-Label_Score10__vis:true,
-Label_Score10__dis:false,
-Label_Score10__cap:"",
-Label_ReplyRead10__lef:"680px",
-Label_ReplyRead10__top:"8px",
-Label_ReplyRead10__wid:"60px",
-Label_ReplyRead10__hei:"20px",
-Label_ReplyRead10__vis:true,
-Label_ReplyRead10__dis:false,
-Label_ReplyRead10__cap:"13/2729",
-Label_LastPostTime10__lef:"893px",
-Label_LastPostTime10__top:"8px",
-Label_LastPostTime10__wid:"84px",
-Label_LastPostTime10__hei:"20px",
-Label_LastPostTime10__vis:true,
-Label_LastPostTime10__dis:false,
-Label_LastPostTime10__cap:"2020-02-23",
-Label_New10__lef:"8px",
-Label_New10__top:"8px",
-Label_New10__wid:"10px",
-Label_New10__hei:"20px",
-Label_New10__vis:true,
-Label_New10__dis:false,
-Label_New10__cap:"¡ñ",
-Panel1210__lef:"0px",
-Panel1210__top:"0px",
-Panel1210__wid:"996px",
-Panel1210__hei:"1px",
-Panel1210__vis:true,
-Panel1210__dis:false,
-Panel1210__col:"#F0F0F0",
-StaticText_Subject10__lef:"70px",
-StaticText_Subject10__top:"8px",
-StaticText_Subject10__wid:"499px",
-StaticText_Subject10__hei:"24px",
-StaticText_Subject10__vis:true,
-StaticText_Subject10__dis:false,
-StaticText_Subject10__cap:"»¹ÓÐÈËÑ§delphiÂð¡£",
-StaticText_Subject10__hrf:"dfw_thread.dw?tid=294&&uid=10544&&create_date=1543123253&&subject=%BB%B9%D3%D0%C8%CB%D1%A7delphi%C2%F0%A1%A3&&uper=kevinlin",
-StaticText_Uper10__lef:"570px",
-StaticText_Uper10__top:"8px",
-StaticText_Uper10__wid:"100px",
-StaticText_Uper10__hei:"24px",
-StaticText_Uper10__vis:true,
-StaticText_Uper10__dis:false,
-StaticText_Uper10__cap:"kevinlin",
-StaticText_Uper10__hrf:"dfw_user.dw?uid=10544",
-StaticText_LastPost10__lef:"780px",
-StaticText_LastPost10__top:"8px",
-StaticText_LastPost10__wid:"100px",
-StaticText_LastPost10__hei:"24px",
-StaticText_LastPost10__vis:true,
-StaticText_LastPost10__dis:false,
-StaticText_LastPost10__cap:"2725615484",
-StaticText_LastPost10__hrf:"dfw_user.dw?uid=2258",
-Panel_Thread10__lef:"1px",
-Panel_Thread10__top:"393px",
-Panel_Thread10__wid:"996px",
-Panel_Thread10__hei:"40px",
-Panel_Thread10__vis:true,
-Panel_Thread10__dis:false,
-Panel_Thread10__col:"#FFFFFF",
-Label_Score11__lef:"32px",
-Label_Score11__top:"8px",
-Label_Score11__wid:"4px",
-Label_Score11__hei:"20px",
-Label_Score11__vis:true,
-Label_Score11__dis:false,
-Label_Score11__cap:"",
-Label_ReplyRead11__lef:"680px",
-Label_ReplyRead11__top:"8px",
-Label_ReplyRead11__wid:"42px",
-Label_ReplyRead11__hei:"20px",
-Label_ReplyRead11__vis:true,
-Label_ReplyRead11__dis:false,
-Label_ReplyRead11__cap:"2/280",
-Label_LastPostTime11__lef:"893px",
-Label_LastPostTime11__top:"8px",
-Label_LastPostTime11__wid:"84px",
-Label_LastPostTime11__hei:"20px",
-Label_LastPostTime11__vis:true,
-Label_LastPostTime11__dis:false,
-Label_LastPostTime11__cap:"2020-02-23",
-Label_New11__lef:"8px",
-Label_New11__top:"8px",
-Label_New11__wid:"10px",
-Label_New11__hei:"20px",
-Label_New11__vis:true,
-Label_New11__dis:false,
-Label_New11__cap:"¡ñ",
-Panel1211__lef:"0px",
-Panel1211__top:"0px",
-Panel1211__wid:"996px",
-Panel1211__hei:"1px",
-Panel1211__vis:true,
-Panel1211__dis:false,
-Panel1211__col:"#F0F0F0",
-StaticText_Subject11__lef:"70px",
-StaticText_Subject11__top:"8px",
-StaticText_Subject11__wid:"499px",
-StaticText_Subject11__hei:"24px",
-StaticText_Subject11__vis:true,
-StaticText_Subject11__dis:false,
-StaticText_Subject11__cap:"Î÷·ç³öÆ· : (È«DelphiÔ´Âë) Í¨ÓÃÊ÷ÐÎ½Úµã¹ÜÀíÏµÍ³",
-StaticText_Subject11__hrf:"dfw_thread.dw?tid=947&&uid=2&&create_date=1582419188&&subject=%CE%F7%B7%E7%B3%F6%C6%B7%20%3A%20%28%C8%ABDelphi%D4%B4%C2%EB%29%20%CD%A8%D3%C3%CA%F7%D0%CE%BD%DA%B5%E3%B9%DC%C0%ED%CF%B5%CD%B3&&uper=%B1%CC%CA%F7%CE%F7%B7%E7",
-StaticText_Uper11__lef:"570px",
-StaticText_Uper11__top:"8px",
-StaticText_Uper11__wid:"100px",
-StaticText_Uper11__hei:"24px",
-StaticText_Uper11__vis:true,
-StaticText_Uper11__dis:false,
-StaticText_Uper11__cap:"±ÌÊ÷Î÷·ç",
-StaticText_Uper11__hrf:"dfw_user.dw?uid=2",
-StaticText_LastPost11__lef:"780px",
-StaticText_LastPost11__top:"8px",
-StaticText_LastPost11__wid:"100px",
-StaticText_LastPost11__hei:"24px",
-StaticText_LastPost11__vis:true,
-StaticText_LastPost11__dis:false,
-StaticText_LastPost11__cap:"±ÌÊ÷Î÷·ç",
-StaticText_LastPost11__hrf:"dfw_user.dw?uid=2286",
-Panel_Thread11__lef:"1px",
-Panel_Thread11__top:"433px",
-Panel_Thread11__wid:"996px",
-Panel_Thread11__hei:"40px",
-Panel_Thread11__vis:true,
-Panel_Thread11__dis:false,
-Panel_Thread11__col:"#FFFFFF",
-Label_Score12__lef:"32px",
-Label_Score12__top:"8px",
-Label_Score12__wid:"4px",
-Label_Score12__hei:"20px",
-Label_Score12__vis:true,
-Label_Score12__dis:false,
-Label_Score12__cap:"",
-Label_ReplyRead12__lef:"680px",
-Label_ReplyRead12__top:"8px",
-Label_ReplyRead12__wid:"42px",
-Label_ReplyRead12__hei:"20px",
-Label_ReplyRead12__vis:true,
-Label_ReplyRead12__dis:false,
-Label_ReplyRead12__cap:"4/329",
-Label_LastPostTime12__lef:"893px",
-Label_LastPostTime12__top:"8px",
-Label_LastPostTime12__wid:"84px",
-Label_LastPostTime12__hei:"20px",
-Label_LastPostTime12__vis:true,
-Label_LastPostTime12__dis:false,
-Label_LastPostTime12__cap:"2020-02-21",
-Label_New12__lef:"8px",
-Label_New12__top:"8px",
-Label_New12__wid:"10px",
-Label_New12__hei:"20px",
-Label_New12__vis:true,
-Label_New12__dis:false,
-Label_New12__cap:"¡ñ",
-Panel1212__lef:"0px",
-Panel1212__top:"0px",
-Panel1212__wid:"996px",
-Panel1212__hei:"1px",
-Panel1212__vis:true,
-Panel1212__dis:false,
-Panel1212__col:"#F0F0F0",
-StaticText_Subject12__lef:"70px",
-StaticText_Subject12__top:"8px",
-StaticText_Subject12__wid:"499px",
-StaticText_Subject12__hei:"24px",
-StaticText_Subject12__vis:true,
-StaticText_Subject12__dis:false,
-StaticText_Subject12__cap:"Î÷·ç³öÆ· : (È«DELPHIÔ´Âë) AutoCode-Python ¸ù¾ÝÁ÷³ÌÍ¼Éú³ÉPython´úÂë, ²¢ÔËÐÐ",
-StaticText_Subject12__hrf:"dfw_thread.dw?tid=942&&uid=2&&create_date=1581407651&&subject=%CE%F7%B7%E7%B3%F6%C6%B7%20%3A%20%28%C8%ABDELPHI%D4%B4%C2%EB%29%20AutoCode%2DPython%20%B8%F9%BE%DD%C1%F7%B3%CC%CD%BC%C9%FA%B3%C9Python%B4%FA%C2%EB%2C%20%B2%A2%D4%CB%D0%D0&&uper=%B1%CC%CA%F7%CE%F7%B7%E7",
-StaticText_Uper12__lef:"570px",
-StaticText_Uper12__top:"8px",
-StaticText_Uper12__wid:"100px",
-StaticText_Uper12__hei:"24px",
-StaticText_Uper12__vis:true,
-StaticText_Uper12__dis:false,
-StaticText_Uper12__cap:"±ÌÊ÷Î÷·ç",
-StaticText_Uper12__hrf:"dfw_user.dw?uid=2",
-StaticText_LastPost12__lef:"780px",
-StaticText_LastPost12__top:"8px",
-StaticText_LastPost12__wid:"100px",
-StaticText_LastPost12__hei:"24px",
-StaticText_LastPost12__vis:true,
-StaticText_LastPost12__dis:false,
-StaticText_LastPost12__cap:"fireboxsoft",
-StaticText_LastPost12__hrf:"dfw_user.dw?uid=2282",
-Panel_Thread12__lef:"1px",
-Panel_Thread12__top:"473px",
-Panel_Thread12__wid:"996px",
-Panel_Thread12__hei:"40px",
-Panel_Thread12__vis:true,
-Panel_Thread12__dis:false,
-Panel_Thread12__col:"#FFFFFF",
-Label_Score13__lef:"32px",
-Label_Score13__top:"8px",
-Label_Score13__wid:"4px",
-Label_Score13__hei:"20px",
-Label_Score13__vis:true,
-Label_Score13__dis:false,
-Label_Score13__cap:"",
-Label_ReplyRead13__lef:"680px",
-Label_ReplyRead13__top:"8px",
-Label_ReplyRead13__wid:"51px",
-Label_ReplyRead13__hei:"20px",
-Label_ReplyRead13__vis:true,
-Label_ReplyRead13__dis:false,
-Label_ReplyRead13__cap:"9/2531",
-Label_LastPostTime13__lef:"893px",
-Label_LastPostTime13__top:"8px",
-Label_LastPostTime13__wid:"84px",
-Label_LastPostTime13__hei:"20px",
-Label_LastPostTime13__vis:true,
-Label_LastPostTime13__dis:false,
-Label_LastPostTime13__cap:"2020-02-06",
-Label_New13__lef:"8px",
-Label_New13__top:"8px",
-Label_New13__wid:"10px",
-Label_New13__hei:"20px",
-Label_New13__vis:true,
-Label_New13__dis:false,
-Label_New13__cap:"¡ñ",
-Panel1213__lef:"0px",
-Panel1213__top:"0px",
-Panel1213__wid:"996px",
-Panel1213__hei:"1px",
-Panel1213__vis:true,
-Panel1213__dis:false,
-Panel1213__col:"#F0F0F0",
-StaticText_Subject13__lef:"70px",
-StaticText_Subject13__top:"8px",
-StaticText_Subject13__wid:"499px",
-StaticText_Subject13__hei:"24px",
-StaticText_Subject13__vis:true,
-StaticText_Subject13__dis:false,
-StaticText_Subject13__cap:"Ë­ÓÐ 10.2.3£¬ÇóÒ»¸ö",
-StaticText_Subject13__hrf:"dfw_thread.dw?tid=46&&uid=10221&&create_date=1528454022&&subject=%CB%AD%D3%D0%2010%2E2%2E3%A3%AC%C7%F3%D2%BB%B8%F6&&uper=%C0%CB%C0%EF%D0%A1%B0%D7%C1%FA",
-StaticText_Uper13__lef:"570px",
-StaticText_Uper13__top:"8px",
-StaticText_Uper13__wid:"100px",
-StaticText_Uper13__hei:"24px",
-StaticText_Uper13__vis:true,
-StaticText_Uper13__dis:false,
-StaticText_Uper13__cap:"ÀËÀïÐ¡°×Áú",
-StaticText_Uper13__hrf:"dfw_user.dw?uid=10221",
-StaticText_LastPost13__lef:"780px",
-StaticText_LastPost13__top:"8px",
-StaticText_LastPost13__wid:"100px",
-StaticText_LastPost13__hei:"24px",
-StaticText_LastPost13__vis:true,
-StaticText_LastPost13__dis:false,
-StaticText_LastPost13__cap:"sail_world",
-StaticText_LastPost13__hrf:"dfw_user.dw?uid=2273",
-Panel_Thread13__lef:"1px",
-Panel_Thread13__top:"513px",
-Panel_Thread13__wid:"996px",
-Panel_Thread13__hei:"40px",
-Panel_Thread13__vis:true,
-Panel_Thread13__dis:false,
-Panel_Thread13__col:"#FFFFFF",
-Label_Score14__lef:"32px",
-Label_Score14__top:"8px",
-Label_Score14__wid:"4px",
-Label_Score14__hei:"20px",
-Label_Score14__vis:true,
-Label_Score14__dis:false,
-Label_Score14__cap:"",
-Label_ReplyRead14__lef:"680px",
-Label_ReplyRead14__top:"8px",
-Label_ReplyRead14__wid:"42px",
-Label_ReplyRead14__hei:"20px",
-Label_ReplyRead14__vis:true,
-Label_ReplyRead14__dis:false,
-Label_ReplyRead14__cap:"3/616",
-Label_LastPostTime14__lef:"893px",
-Label_LastPostTime14__top:"8px",
-Label_LastPostTime14__wid:"84px",
-Label_LastPostTime14__hei:"20px",
-Label_LastPostTime14__vis:true,
-Label_LastPostTime14__dis:false,
-Label_LastPostTime14__cap:"2020-02-04",
-Label_New14__lef:"8px",
-Label_New14__top:"8px",
-Label_New14__wid:"10px",
-Label_New14__hei:"20px",
-Label_New14__vis:true,
-Label_New14__dis:false,
-Label_New14__cap:"¡ñ",
-Panel1214__lef:"0px",
-Panel1214__top:"0px",
-Panel1214__wid:"996px",
-Panel1214__hei:"1px",
-Panel1214__vis:true,
-Panel1214__dis:false,
-Panel1214__col:"#F0F0F0",
-StaticText_Subject14__lef:"70px",
-StaticText_Subject14__top:"8px",
-StaticText_Subject14__wid:"499px",
-StaticText_Subject14__hei:"24px",
-StaticText_Subject14__vis:true,
-StaticText_Subject14__dis:false,
-StaticText_Subject14__cap:"ÒÑ¾­×êDELPHIºÜÉîÁË£¬µ±È»ÏÖÔÚDELPHIÊÇ¹ýÁË×î»Ô»ÍµÄÊ±´ú¡£µ«ÎªÊ²Ã´Òª¼ÌÐøÏÂÈ¥£¬¶ø²»×ªÏòÆäËüµÄ?ÕâÊÇ²»ÊÇËÀÄÔ½î?",
-StaticText_Subject14__hrf:"dfw_thread.dw?tid=940&&uid=2&&create_date=1578669866&&subject=%D2%D1%BE%AD%D7%EADELPHI%BA%DC%C9%EE%C1%CB%A3%AC%B5%B1%C8%BB%CF%D6%D4%DADELPHI%CA%C7%B9%FD%C1%CB%D7%EE%BB%D4%BB%CD%B5%C4%CA%B1%B4%FA%A1%A3%B5%AB%CE%AA%CA%B2%C3%B4%D2%AA%BC%CC%D0%F8%CF%C2%C8%A5%A3%AC%B6%F8%B2%BB%D7%AA%CF%F2%C6%E4%CB%FC%B5%C4%3F%D5%E2%CA%C7%B2%BB%CA%C7%CB%C0%C4%D4%BD%EE%3F&&uper=%B1%CC%CA%F7%CE%F7%B7%E7",
-StaticText_Uper14__lef:"570px",
-StaticText_Uper14__top:"8px",
-StaticText_Uper14__wid:"100px",
-StaticText_Uper14__hei:"24px",
-StaticText_Uper14__vis:true,
-StaticText_Uper14__dis:false,
-StaticText_Uper14__cap:"±ÌÊ÷Î÷·ç",
-StaticText_Uper14__hrf:"dfw_user.dw?uid=2",
-StaticText_LastPost14__lef:"780px",
-StaticText_LastPost14__top:"8px",
-StaticText_LastPost14__wid:"100px",
-StaticText_LastPost14__hei:"24px",
-StaticText_LastPost14__vis:true,
-StaticText_LastPost14__dis:false,
-StaticText_LastPost14__cap:"860",
-StaticText_LastPost14__hrf:"dfw_user.dw?uid=2272",
-Panel_Thread14__lef:"1px",
-Panel_Thread14__top:"553px",
-Panel_Thread14__wid:"996px",
-Panel_Thread14__hei:"40px",
-Panel_Thread14__vis:true,
-Panel_Thread14__dis:false,
-Panel_Thread14__col:"#FFFFFF",
-Label_Score15__lef:"32px",
-Label_Score15__top:"8px",
-Label_Score15__wid:"4px",
-Label_Score15__hei:"20px",
-Label_Score15__vis:true,
-Label_Score15__dis:false,
-Label_Score15__cap:"",
-Label_ReplyRead15__lef:"680px",
-Label_ReplyRead15__top:"8px",
-Label_ReplyRead15__wid:"42px",
-Label_ReplyRead15__hei:"20px",
-Label_ReplyRead15__vis:true,
-Label_ReplyRead15__dis:false,
-Label_ReplyRead15__cap:"2/461",
-Label_LastPostTime15__lef:"893px",
-Label_LastPostTime15__top:"8px",
-Label_LastPostTime15__wid:"84px",
-Label_LastPostTime15__hei:"20px",
-Label_LastPostTime15__vis:true,
-Label_LastPostTime15__dis:false,
-Label_LastPostTime15__cap:"2020-02-04",
-Label_New15__lef:"8px",
-Label_New15__top:"8px",
-Label_New15__wid:"10px",
-Label_New15__hei:"20px",
-Label_New15__vis:true,
-Label_New15__dis:false,
-Label_New15__cap:"¡ñ",
-Panel1215__lef:"0px",
-Panel1215__top:"0px",
-Panel1215__wid:"996px",
-Panel1215__hei:"1px",
-Panel1215__vis:true,
-Panel1215__dis:false,
-Panel1215__col:"#F0F0F0",
-StaticText_Subject15__lef:"70px",
-StaticText_Subject15__top:"8px",
-StaticText_Subject15__wid:"499px",
-StaticText_Subject15__hei:"24px",
-StaticText_Subject15__vis:true,
-StaticText_Subject15__dis:false,
-StaticText_Subject15__cap:"ÈçºÎ¿ª·¢ÄÜÊÊÓÃËùÓÐ³ß´ç½çÃæµÄÊÖ»ú°²×¿³ÌÐò£¿",
-StaticText_Subject15__hrf:"dfw_thread.dw?tid=937&&uid=10801&&create_date=1574826054&&subject=%C8%E7%BA%CE%BF%AA%B7%A2%C4%DC%CA%CA%D3%C3%CB%F9%D3%D0%B3%DF%B4%E7%BD%E7%C3%E6%B5%C4%CA%D6%BB%FA%B0%B2%D7%BF%B3%CC%D0%F2%A3%BF&&uper=zjm6008",
-StaticText_Uper15__lef:"570px",
-StaticText_Uper15__top:"8px",
-StaticText_Uper15__wid:"100px",
-StaticText_Uper15__hei:"24px",
-StaticText_Uper15__vis:true,
-StaticText_Uper15__dis:false,
-StaticText_Uper15__cap:"zjm6008",
-StaticText_Uper15__hrf:"dfw_user.dw?uid=10801",
-StaticText_LastPost15__lef:"780px",
-StaticText_LastPost15__top:"8px",
-StaticText_LastPost15__wid:"100px",
-StaticText_LastPost15__hei:"24px",
-StaticText_LastPost15__vis:true,
-StaticText_LastPost15__dis:false,
-StaticText_LastPost15__cap:"860",
-StaticText_LastPost15__hrf:"dfw_user.dw?uid=2271",
-Panel_Thread15__lef:"1px",
-Panel_Thread15__top:"593px",
-Panel_Thread15__wid:"996px",
-Panel_Thread15__hei:"40px",
-Panel_Thread15__vis:true,
-Panel_Thread15__dis:false,
-Panel_Thread15__col:"#FFFFFF",
-Label_Score16__lef:"32px",
-Label_Score16__top:"8px",
-Label_Score16__wid:"4px",
-Label_Score16__hei:"20px",
-Label_Score16__vis:true,
-Label_Score16__dis:false,
-Label_Score16__cap:"",
-Label_ReplyRead16__lef:"680px",
-Label_ReplyRead16__top:"8px",
-Label_ReplyRead16__wid:"51px",
-Label_ReplyRead16__hei:"20px",
-Label_ReplyRead16__vis:true,
-Label_ReplyRead16__dis:false,
-Label_ReplyRead16__cap:"9/2139",
-Label_LastPostTime16__lef:"893px",
-Label_LastPostTime16__top:"8px",
-Label_LastPostTime16__wid:"84px",
-Label_LastPostTime16__hei:"20px",
-Label_LastPostTime16__vis:true,
-Label_LastPostTime16__dis:false,
-Label_LastPostTime16__cap:"2020-02-04",
-Label_New16__lef:"8px",
-Label_New16__top:"8px",
-Label_New16__wid:"10px",
-Label_New16__hei:"20px",
-Label_New16__vis:true,
-Label_New16__dis:false,
-Label_New16__cap:"¡ñ",
-Panel1216__lef:"0px",
-Panel1216__top:"0px",
-Panel1216__wid:"996px",
-Panel1216__hei:"1px",
-Panel1216__vis:true,
-Panel1216__dis:false,
-Panel1216__col:"#F0F0F0",
-StaticText_Subject16__lef:"70px",
-StaticText_Subject16__top:"8px",
-StaticText_Subject16__wid:"499px",
-StaticText_Subject16__hei:"24px",
-StaticText_Subject16__vis:true,
-StaticText_Subject16__dis:false,
-StaticText_Subject16__cap:"×£ºØ£¡ÓÖ¼û´ó¸»ÎÌ£¡",
-StaticText_Subject16__hrf:"dfw_thread.dw?tid=203&&uid=10483&&create_date=1539865846&&subject=%D7%A3%BA%D8%A3%A1%D3%D6%BC%FB%B4%F3%B8%BB%CE%CC%A3%A1&&uper=Delphi%C0%CF%D3%D1",
-StaticText_Uper16__lef:"570px",
-StaticText_Uper16__top:"8px",
-StaticText_Uper16__wid:"100px",
-StaticText_Uper16__hei:"24px",
-StaticText_Uper16__vis:true,
-StaticText_Uper16__dis:false,
-StaticText_Uper16__cap:"DelphiÀÏÓÑ",
-StaticText_Uper16__hrf:"dfw_user.dw?uid=10483",
-StaticText_LastPost16__lef:"780px",
-StaticText_LastPost16__top:"8px",
-StaticText_LastPost16__wid:"100px",
-StaticText_LastPost16__hei:"24px",
-StaticText_LastPost16__vis:true,
-StaticText_LastPost16__dis:false,
-StaticText_LastPost16__cap:"860",
-StaticText_LastPost16__hrf:"dfw_user.dw?uid=2160",
-Panel_Thread16__lef:"1px",
-Panel_Thread16__top:"633px",
-Panel_Thread16__wid:"996px",
-Panel_Thread16__hei:"40px",
-Panel_Thread16__vis:true,
-Panel_Thread16__dis:false,
-Panel_Thread16__col:"#FFFFFF",
-Label_Score17__lef:"32px",
-Label_Score17__top:"8px",
-Label_Score17__wid:"4px",
-Label_Score17__hei:"20px",
-Label_Score17__vis:true,
-Label_Score17__dis:false,
-Label_Score17__cap:"",
-Label_ReplyRead17__lef:"680px",
-Label_ReplyRead17__top:"8px",
-Label_ReplyRead17__wid:"42px",
-Label_ReplyRead17__hei:"20px",
-Label_ReplyRead17__vis:true,
-Label_ReplyRead17__dis:false,
-Label_ReplyRead17__cap:"0/244",
-Label_LastPostTime17__lef:"893px",
-Label_LastPostTime17__top:"8px",
-Label_LastPostTime17__wid:"84px",
-Label_LastPostTime17__hei:"20px",
-Label_LastPostTime17__vis:true,
-Label_LastPostTime17__dis:false,
-Label_LastPostTime17__cap:"2020-02-04",
-Label_New17__lef:"8px",
-Label_New17__top:"8px",
-Label_New17__wid:"10px",
-Label_New17__hei:"20px",
-Label_New17__vis:true,
-Label_New17__dis:false,
-Label_New17__cap:"¡ñ",
-Panel1217__lef:"0px",
-Panel1217__top:"0px",
-Panel1217__wid:"996px",
-Panel1217__hei:"1px",
-Panel1217__vis:true,
-Panel1217__dis:false,
-Panel1217__col:"#F0F0F0",
-StaticText_Subject17__lef:"70px",
-StaticText_Subject17__top:"8px",
-StaticText_Subject17__wid:"499px",
-StaticText_Subject17__hei:"24px",
-StaticText_Subject17__vis:true,
-StaticText_Subject17__dis:false,
-StaticText_Subject17__cap:"ÖØ½¨ÁË",
-StaticText_Subject17__hrf:"dfw_thread.dw?tid=941&&uid=10936&&create_date=1579240040&&subject=%D6%D8%BD%A8%C1%CB&&uper=xinghcn",
-StaticText_Uper17__lef:"570px",
-StaticText_Uper17__top:"8px",
-StaticText_Uper17__wid:"100px",
-StaticText_Uper17__hei:"24px",
-StaticText_Uper17__vis:true,
-StaticText_Uper17__dis:false,
-StaticText_Uper17__cap:"xinghcn",
-StaticText_Uper17__hrf:"dfw_user.dw?uid=10936",
-StaticText_LastPost17__lef:"780px",
-StaticText_LastPost17__top:"8px",
-StaticText_LastPost17__wid:"100px",
-StaticText_LastPost17__hei:"24px",
-StaticText_LastPost17__vis:true,
-StaticText_LastPost17__dis:false,
-StaticText_LastPost17__cap:"860",
-StaticText_LastPost17__hrf:"dfw_user.dw?uid=2265",
-Panel_Thread17__lef:"1px",
-Panel_Thread17__top:"673px",
-Panel_Thread17__wid:"996px",
-Panel_Thread17__hei:"40px",
-Panel_Thread17__vis:true,
-Panel_Thread17__dis:false,
-Panel_Thread17__col:"#FFFFFF",
-Label_Score18__lef:"32px",
-Label_Score18__top:"8px",
-Label_Score18__wid:"4px",
-Label_Score18__hei:"20px",
-Label_Score18__vis:true,
-Label_Score18__dis:false,
-Label_Score18__cap:"",
-Label_ReplyRead18__lef:"680px",
-Label_ReplyRead18__top:"8px",
-Label_ReplyRead18__wid:"42px",
-Label_ReplyRead18__hei:"20px",
-Label_ReplyRead18__vis:true,
-Label_ReplyRead18__dis:false,
-Label_ReplyRead18__cap:"1/718",
-Label_LastPostTime18__lef:"893px",
-Label_LastPostTime18__top:"8px",
-Label_LastPostTime18__wid:"84px",
-Label_LastPostTime18__hei:"20px",
-Label_LastPostTime18__vis:true,
-Label_LastPostTime18__dis:false,
-Label_LastPostTime18__cap:"2020-01-18",
-Label_New18__lef:"8px",
-Label_New18__top:"8px",
-Label_New18__wid:"10px",
-Label_New18__hei:"20px",
-Label_New18__vis:true,
-Label_New18__dis:false,
-Label_New18__cap:"¡ñ",
-Panel1218__lef:"0px",
-Panel1218__top:"0px",
-Panel1218__wid:"996px",
-Panel1218__hei:"1px",
-Panel1218__vis:true,
-Panel1218__dis:false,
-Panel1218__col:"#F0F0F0",
-StaticText_Subject18__lef:"70px",
-StaticText_Subject18__top:"8px",
-StaticText_Subject18__wid:"499px",
-StaticText_Subject18__hei:"24px",
-StaticText_Subject18__vis:true,
-StaticText_Subject18__dis:false,
-StaticText_Subject18__cap:"Î÷·ç³öÆ· : WebXone ×ÛºÏÑÝÊ¾°¸Àý",
-StaticText_Subject18__hrf:"dfw_thread.dw?tid=934&&uid=2&&create_date=1574071020&&subject=%CE%F7%B7%E7%B3%F6%C6%B7%20%3A%20WebXone%20%D7%DB%BA%CF%D1%DD%CA%BE%B0%B8%C0%FD&&uper=%B1%CC%CA%F7%CE%F7%B7%E7",
-StaticText_Uper18__lef:"570px",
-StaticText_Uper18__top:"8px",
-StaticText_Uper18__wid:"100px",
-StaticText_Uper18__hei:"24px",
-StaticText_Uper18__vis:true,
-StaticText_Uper18__dis:false,
-StaticText_Uper18__cap:"±ÌÊ÷Î÷·ç",
-StaticText_Uper18__hrf:"dfw_user.dw?uid=2",
-StaticText_LastPost18__lef:"780px",
-StaticText_LastPost18__top:"8px",
-StaticText_LastPost18__wid:"100px",
-StaticText_LastPost18__hei:"24px",
-StaticText_LastPost18__vis:true,
-StaticText_LastPost18__dis:false,
-StaticText_LastPost18__cap:"ty",
-StaticText_LastPost18__hrf:"dfw_user.dw?uid=2266",
-Panel_Thread18__lef:"1px",
-Panel_Thread18__top:"713px",
-Panel_Thread18__wid:"996px",
-Panel_Thread18__hei:"40px",
-Panel_Thread18__vis:true,
-Panel_Thread18__dis:false,
-Panel_Thread18__col:"#FFFFFF",
-Label_Score19__lef:"32px",
-Label_Score19__top:"8px",
-Label_Score19__wid:"4px",
-Label_Score19__hei:"20px",
-Label_Score19__vis:true,
-Label_Score19__dis:false,
-Label_Score19__cap:"",
-Label_ReplyRead19__lef:"680px",
-Label_ReplyRead19__top:"8px",
-Label_ReplyRead19__wid:"42px",
-Label_ReplyRead19__hei:"20px",
-Label_ReplyRead19__vis:true,
-Label_ReplyRead19__dis:false,
-Label_ReplyRead19__cap:"2/525",
-Label_LastPostTime19__lef:"893px",
-Label_LastPostTime19__top:"8px",
-Label_LastPostTime19__wid:"84px",
-Label_LastPostTime19__hei:"20px",
-Label_LastPostTime19__vis:true,
-Label_LastPostTime19__dis:false,
-Label_LastPostTime19__cap:"2019-11-30",
-Label_New19__lef:"8px",
-Label_New19__top:"8px",
-Label_New19__wid:"10px",
-Label_New19__hei:"20px",
-Label_New19__vis:true,
-Label_New19__dis:false,
-Label_New19__cap:"¡ñ",
-Panel1219__lef:"0px",
-Panel1219__top:"0px",
-Panel1219__wid:"996px",
-Panel1219__hei:"1px",
-Panel1219__vis:true,
-Panel1219__dis:false,
-Panel1219__col:"#F0F0F0",
-StaticText_Subject19__lef:"70px",
-StaticText_Subject19__top:"8px",
-StaticText_Subject19__wid:"499px",
-StaticText_Subject19__hei:"24px",
-StaticText_Subject19__vis:true,
-StaticText_Subject19__dis:false,
-StaticText_Subject19__cap:"×öÒ»¸öÍ¨ÓÃ»¯µÄÏÔÊ¾ÏµÍ³! ¿ÉÒÔÓÃÀ´×öGIS, ÓÎÏ·ºÍÒÇ±í·ÂÕæ! ÓÐÐËÈ¤µÄ½ø",
-StaticText_Subject19__hrf:"dfw_thread.dw?tid=936&&uid=2&&create_date=1574826017&&subject=%D7%F6%D2%BB%B8%F6%CD%A8%D3%C3%BB%AF%B5%C4%CF%D4%CA%BE%CF%B5%CD%B3%21%20%BF%C9%D2%D4%D3%C3%C0%B4%D7%F6GIS%2C%20%D3%CE%CF%B7%BA%CD%D2%C7%B1%ED%B7%C2%D5%E6%21%20%D3%D0%D0%CB%C8%A4%B5%C4%BD%F8&&uper=%B1%CC%CA%F7%CE%F7%B7%E7",
-StaticText_Uper19__lef:"570px",
-StaticText_Uper19__top:"8px",
-StaticText_Uper19__wid:"100px",
-StaticText_Uper19__hei:"24px",
-StaticText_Uper19__vis:true,
-StaticText_Uper19__dis:false,
-StaticText_Uper19__cap:"±ÌÊ÷Î÷·ç",
-StaticText_Uper19__hrf:"dfw_user.dw?uid=2",
-StaticText_LastPost19__lef:"780px",
-StaticText_LastPost19__top:"8px",
-StaticText_LastPost19__wid:"100px",
-StaticText_LastPost19__hei:"24px",
-StaticText_LastPost19__vis:true,
-StaticText_LastPost19__dis:false,
-StaticText_LastPost19__cap:"±ÌÊ÷Î÷·ç",
-StaticText_LastPost19__hrf:"dfw_user.dw?uid=2257",
-Panel_Thread19__lef:"1px",
-Panel_Thread19__top:"753px",
-Panel_Thread19__wid:"996px",
-Panel_Thread19__hei:"40px",
-Panel_Thread19__vis:true,
-Panel_Thread19__dis:false,
-Panel_Thread19__col:"#FFFFFF",
-Label_Score20__lef:"32px",
-Label_Score20__top:"8px",
-Label_Score20__wid:"4px",
-Label_Score20__hei:"20px",
-Label_Score20__vis:true,
-Label_Score20__dis:false,
-Label_Score20__cap:"",
-Label_ReplyRead20__lef:"680px",
-Label_ReplyRead20__top:"8px",
-Label_ReplyRead20__wid:"42px",
-Label_ReplyRead20__hei:"20px",
-Label_ReplyRead20__vis:true,
-Label_ReplyRead20__dis:false,
-Label_ReplyRead20__cap:"2/575",
-Label_LastPostTime20__lef:"893px",
-Label_LastPostTime20__top:"8px",
-Label_LastPostTime20__wid:"84px",
-Label_LastPostTime20__hei:"20px",
-Label_LastPostTime20__vis:true,
-Label_LastPostTime20__dis:false,
-Label_LastPostTime20__cap:"2019-11-18",
-Label_New20__lef:"8px",
-Label_New20__top:"8px",
-Label_New20__wid:"10px",
-Label_New20__hei:"20px",
-Label_New20__vis:true,
-Label_New20__dis:false,
-Label_New20__cap:"¡ñ",
-Panel1220__lef:"0px",
-Panel1220__top:"0px",
-Panel1220__wid:"996px",
-Panel1220__hei:"1px",
-Panel1220__vis:true,
-Panel1220__dis:false,
-Panel1220__col:"#F0F0F0",
-StaticText_Subject20__lef:"70px",
-StaticText_Subject20__top:"8px",
-StaticText_Subject20__wid:"499px",
-StaticText_Subject20__hei:"24px",
-StaticText_Subject20__vis:true,
-StaticText_Subject20__dis:false,
-StaticText_Subject20__cap:"InIOCPÐ¡Ðý·ç·þÎñÌ×¼þ£¨¿ªÔ´£¬ÕýÊ½°æ£º2.6.52.1328£©",
-StaticText_Subject20__hrf:"dfw_thread.dw?tid=932&&uid=59&&create_date=1573789254&&subject=InIOCP%D0%A1%D0%FD%B7%E7%B7%FE%CE%F1%CC%D7%BC%FE%A3%A8%BF%AA%D4%B4%A3%AC%D5%FD%CA%BD%B0%E6%A3%BA2%2E6%2E52%2E1328%A3%A9&&uper=%B8%DF%C1%B9%D0%C2%C5%A9",
-StaticText_Uper20__lef:"570px",
-StaticText_Uper20__top:"8px",
-StaticText_Uper20__wid:"100px",
-StaticText_Uper20__hei:"24px",
-StaticText_Uper20__vis:true,
-StaticText_Uper20__dis:false,
-StaticText_Uper20__cap:"¸ßÁ¹ÐÂÅ©",
-StaticText_Uper20__hrf:"dfw_user.dw?uid=59",
-StaticText_LastPost20__lef:"780px",
-StaticText_LastPost20__top:"8px",
-StaticText_LastPost20__wid:"100px",
-StaticText_LastPost20__hei:"24px",
-StaticText_LastPost20__vis:true,
-StaticText_LastPost20__dis:false,
-StaticText_LastPost20__cap:"¸ßÁ¹ÐÂÅ©",
-StaticText_LastPost20__hrf:"dfw_user.dw?uid=2245",
-Panel_Thread20__lef:"1px",
-Panel_Thread20__top:"793px",
-Panel_Thread20__wid:"996px",
-Panel_Thread20__hei:"40px",
-Panel_Thread20__vis:true,
-Panel_Thread20__dis:false,
-Panel_Thread20__col:"#FFFFFF",
-Panel_Subjects__lef:"1px",
-Panel_Subjects__top:"1px",
-Panel_Subjects__wid:"998px",
-Panel_Subjects__hei:"908px",
-Panel_Subjects__vis:true,
-Panel_Subjects__dis:false,
-Panel_Subjects__col:"#FFFFFF",
-Panel2__lef:"0px",
-Panel2__top:"0px",
-Panel2__wid:"1000px",
-Panel2__hei:"910px",
-Panel2__vis:true,
-Panel2__dis:false,
-Panel2__col:"#FFFFFF",
-Panel_10_Content__lef:"0px",
-Panel_10_Content__top:"80px",
-Panel_10_Content__wid:"1000px",
-Panel_10_Content__hei:"910px",
-Panel_10_Content__vis:true,
-Panel_10_Content__dis:false,
-Panel_10_Content__col:"#FFFFFF",
-Panel_All__lef:"0px",
-Panel_All__top:"0px",
-Panel_All__wid:"1000px",
-Panel_All__hei:"1060px",
-Panel_All__vis:true,
-Panel_All__dis:false,
-Panel_All__col:"#F0F0F0",
+					    Test_2__top:"150px",
+					    Test_2__wid:"851px",
+					    Test_2__hei:"563px",
+MainMenu1__lef:"10px",
+MainMenu1__top:"10px",
+MainMenu1__wid:"847px",
+MainMenu1__hei:"40px",
 					    input_query_visible:false,
 					    input_query_caption:"Input Query",
 					    input_query_inputname:"new",
@@ -2261,10 +77,10 @@ Panel_All__col:"#F0F0F0",
                         },
                         false
                     );
-                    let DFWhearttimer = window.setInterval(function() {
+                    let Test_2hearttimer = window.setInterval(function() {
                         axios.get('{"mode":"heart","cid":[!clientid!]}')
                         .then(resp =>{me.procResp(resp.data)})
-                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(DFWhearttimer);});
+                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(Test_2hearttimer);});
                     }, 30000);
                 },
 				methods: {

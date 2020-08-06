@@ -24,6 +24,7 @@ function dwDisable(ACtrl:TControl):String;
 
 //生成LTWH字符串
 function dwLTWH(ACtrl:TControl):String;      //可以更新位置的用法
+function dwLTWHComp(ACtrl:TComponent):String;  //可以更新位置的用法
 
 //检查HINT的JOSN对象中如果存在在某属性,则返回字符串
 //如果存在 AJsonName 则 返回 AHtmlName = AJson.AJsonName;
@@ -935,6 +936,15 @@ begin
      with ACtrl do begin
           Result    := ' :style="{left:'+Name+'__lef,top:'+Name+'__top,width:'+Name+'__wid,height:'+Name+'__hei}"'
                     +' style="position:absolute;'+sZI;
+     end;
+end;
+function dwLTWHComp(ACtrl:TComponent):String;  //可以更新位置的用法
+begin
+
+     //
+     with ACtrl do begin
+          Result    := ' :style="{left:'+Name+'__lef,top:'+Name+'__top,width:'+Name+'__wid,height:'+Name+'__hei}"'
+                    +' style="position:absolute;';
      end;
 end;
 
