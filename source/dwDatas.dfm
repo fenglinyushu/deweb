@@ -37,12 +37,10 @@ object DM: TDM
     Top = 192
   end
   object ZConnection: TZConnection
-    Protocol = 'mysqld-5'
-    HostName = 'qdm165429402.my3w.com'
+    Protocol = 'sqlite-3'
     Port = 3306
-    Database = 'qdm165429402_db'
-    User = 'qdm165429402'
-    Password = 'DeWeb12345'
+    Database = 'deweb.db'
+    Connected = True
     Left = 184
     Top = 56
   end

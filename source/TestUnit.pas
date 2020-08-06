@@ -11,8 +11,8 @@ uses
      SynCommons,
 
      //
-     Forms,
-     Windows, Classes, Controls, StdCtrls, Menus ;
+     Forms, SysUtils,
+     Windows, Classes, Controls, StdCtrls, Menus, ExtCtrls ;
 
 type
   TTest = class(TForm)
@@ -31,7 +31,25 @@ type
     B1: TMenuItem;
     AB1: TMenuItem;
     N2: TMenuItem;
+    MainMenu2: TMainMenu;
+    MenuItem1: TMenuItem;
+    MenuItem2: TMenuItem;
+    MenuItem3: TMenuItem;
+    MenuItem4: TMenuItem;
+    MenuItem5: TMenuItem;
+    MenuItem6: TMenuItem;
+    MenuItem7: TMenuItem;
+    MenuItem8: TMenuItem;
+    MenuItem9: TMenuItem;
+    MenuItem10: TMenuItem;
+    MenuItem11: TMenuItem;
+    MenuItem12: TMenuItem;
+    MenuItem13: TMenuItem;
+    MenuItem14: TMenuItem;
+    Timer1: TTimer;
+    Label1: TLabel;
     procedure FormCreate(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
   private
     { Private declarations }
   public
@@ -47,7 +65,14 @@ implementation
 
 procedure TTest.FormCreate(Sender: TObject);
 begin
-     dwSetCompLTWH(MainMenu1,10,10,Width-20,40);
+     dwSetCompLTWH(MainMenu1,10,10,Width-20,41);
+     dwSetCompLTWH(MainMenu2,10,300,200,300);
+end;
+
+procedure TTest.Timer1Timer(Sender: TObject);
+begin
+     //
+     Label1.Caption := IntToStr(GetTickCount);
 end;
 
 end.

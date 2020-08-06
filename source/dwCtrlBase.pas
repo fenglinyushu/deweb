@@ -89,7 +89,11 @@ function  dwSetCompLTWH(AComponent:TComponent;ALeft,ATop,AWidth,AHeight:Integer)
 //·´±àÂëº¯Êý
 function  dwDecode(AText:string):string;
 
-function dfwPHPToDate(ADate:Integer):TDateTime;
+//
+function dwPHPToDate(ADate:Integer):TDateTime;
+
+//
+function dwLongStr(AText:String):String;
 
 
 const
@@ -430,7 +434,29 @@ const
 
 implementation
 
-function dfwPHPToDate(ADate:Integer):TDateTime;
+function dwLongStr(AText:String):String;
+var
+     slTmp     : TStringList;
+     iItem     : Integer;
+begin
+     if AText = '' then begin
+          Result    := AText;
+     end else begin
+          slTmp     := TStringList.Create;
+          //AText     := StringReplace(AText,'<br/>','"'#13'+"',[rfReplaceAll]);
+          //AText     := StringReplace(AText,'<br>', '"'#13'+"',[rfReplaceAll]);
+          slTmp.Text     := AText;
+          //
+          Result    := '';
+          for iItem := 0 to slTmp.Count-2 do begin
+               Result    := Result + slTmp[iItem]+#13#10;
+          end;
+          Result    := Result + slTmp[slTmp.Count-1];
+          slTmp.Destroy;
+     end;
+end;
+
+function dwPHPToDate(ADate:Integer):TDateTime;
 begin
      Result    := ((ADate+28800)/86400+25569);
 end;

@@ -115,7 +115,7 @@ begin
      Label_ThreadTitle.Caption     := sSubject;
      //StaticText_Uper.Caption       := sUper;
      //StaticText_Uper.Hint          := '{"href":"dfw_user.dw?uid='+IntToStr(giUid)+'"}';
-     Label_CreateDate.Caption      := FormatDateTime('yyyy-mm-dd',dfwPHPToDate(iCreate));
+     Label_CreateDate.Caption      := FormatDateTime('yyyy-mm-dd',dwPHPToDate(iCreate));
 
      //∂¡»°post
      ZQuery_Posts.Close;
@@ -132,16 +132,16 @@ begin
 
           //
           with TStaticText(Self.FindComponent('StaticText_Poster'+IntToStr(iItem+1))) do begin
-               Caption := ZQuery_Posts.FieldByName('username').AsString;
+               Caption := UTF8ToAnsi(ZQuery_Posts.FieldByName('username').AsString);
                Hint      := '{"href":"dfw_user.dw?uid='+ZQuery_Posts.FieldByName('uid').AsString+'"}';
           end;
           //
           with TLabel(Self.FindComponent('Label_Message'+IntToStr(iItem+1))) do begin
-               Caption   := ZQuery_Posts.FieldByName('message').AsString;
+               Caption   := dwLongStr(UTF8ToAnsi(ZQuery_Posts.FieldByName('message').AsString));
                AutoSize  := False;
                AutoSize  := True;
                AutoSize  := False;
-               Height    := Height + 20;
+               Height    := Height + 50;
           end;
 
           //

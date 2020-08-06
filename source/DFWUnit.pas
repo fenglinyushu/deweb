@@ -66,7 +66,7 @@ type
     Label110: TLabel;
     Panel_Pages: TPanel;
     Edit_PageNo: TEdit;
-    ZReadOnlyQuery_Threads: TZReadOnlyQuery;
+    ZQuery_Threads: TZReadOnlyQuery;
     StaticText_Subject: TStaticText;
     StaticText_Uper: TStaticText;
     StaticText_LastPost: TStaticText;
@@ -116,8 +116,8 @@ begin
      giPageNo  := 0;
 
      //打开数据表
-     ZReadOnlyQuery_Threads.SQL.Text:='Set Names GB2312';
-     ZReadOnlyQuery_Threads.ExecSQL;
+     //ZReadOnlyQuery_Threads.SQL.Text:='Set Names GB2312';
+     //ZReadOnlyQuery_Threads.ExecSQL;
 
      //显示
      for iItem := 0 to 19 do begin
@@ -138,19 +138,29 @@ var
 begin
      try
           //打开数据表
-          ZReadOnlyQuery_Threads.Close;
-          ZReadOnlyQuery_Threads.SQL.Text    := 'SELECT a.last_date,a.tid,a.subject,a.posts,a.views,'
-                    +'a.lastpid,a.uid,a.create_date,b.username,c.username lastname '
-                    +'FROM bbs_thread a,bbs_user b,bbs_user c '
-                    +'WHERE a.uid=b.uid and a.lastuid=c.uid '
-                    +'ORDER BY last_date DESC '
-                    +'LIMIT '+IntToStr(giPageNo*20)+',20';
-          ZReadOnlyQuery_Threads.Open;
+          ZQuery_Threads.Close;
+          //ZQuery_Threads.SQL.Text    := 'SELECT a.last_date,a.tid,a.subject,a.posts,a.views,'
+          //          +'a.lastpid,a.uid,a.create_date,b.username,c.username lastname '
+          //          +'FROM bbs_thread a,bbs_user b,bbs_user c '
+          //          +'WHERE a.uid=b.uid and a.lastuid=c.uid '
+                    //+'ORDER BY last_date DESC '
+                    //+'LIMIT 20 OFFSET '+IntToStr(giPageNo*20)
+          //          ;
+          ZQuery_Threads.SQL.Text    := 'SELECT a.last_date,a.tid,a.subject,a.posts,a.views,'
+                    +'a.lastpid,a.uid,a.create_date'
+                    +',b.username'
+                    +',c.username lastname'
+                    +' FROM bbs_thread a LEFT JOIN bbs_user b ON a.uid=b.uid LEFT JOIN bbs_user c ON a.lastuid=c.uid '
+                    +' ORDER BY a.last_date DESC '
+                    +' LIMIT 20 OFFSET '+IntToStr(giPageNo*20)
+                    ;
+
+          ZQuery_Threads.Open;
 
 
           //更新显示
           for iItem := 0 to 19 do begin
-               if ZReadOnlyQuery_Threads.Eof then begin
+               if ZQuery_Threads.Eof then begin
                     //积分
                     TLabel(Self.FindComponent('Label_Score'+IntToStr(iItem+1))).Caption := '';
                     //主题
@@ -182,38 +192,38 @@ begin
                     TLabel(Self.FindComponent('Label_Score'+IntToStr(iItem+1))).Caption := '';
                     //主题
                     with TStaticText(Self.FindComponent('StaticText_Subject'+IntToStr(iItem+1))) do begin
-                         Caption   := Trim(ZReadOnlyQuery_Threads.FieldByName('subject').AsString);
+                         Caption   := UTF8ToAnsi(Trim(ZQuery_Threads.FieldByName('subject').AsString));
                          Hint      := '{"href":"'+_WEBSITE+'dfw_thread.dw?'
-                                   +'tid='+ZReadOnlyQuery_Threads.FieldByName('tid').AsString
-                                   +'&&uid='+ZReadOnlyQuery_Threads.FieldByName('uid').AsString
-                                   +'&&create_date='+ZReadOnlyQuery_Threads.FieldByName('create_date').AsString
-                                   +'&&subject='+dwEscape(ZReadOnlyQuery_Threads.FieldByName('subject').AsString)
-                                   +'&&uper='+dwEscape(ZReadOnlyQuery_Threads.FieldByName('username').AsString)
+                                   +'tid='+ZQuery_Threads.FieldByName('tid').AsString
+                                   +'&&uid='+ZQuery_Threads.FieldByName('uid').AsString
+                                   +'&&create_date='+ZQuery_Threads.FieldByName('create_date').AsString
+                                   +'&&subject='+dwEscape(UTF8ToAnsi(ZQuery_Threads.FieldByName('subject').AsString))
+                                   +'&&uper='+dwEscape(UTF8ToAnsi(ZQuery_Threads.FieldByName('username').AsString))
                                    +'"}';
                     end;
 
                     //题主
                     with TStaticText(Self.FindComponent('StaticText_Uper'+IntToStr(iItem+1))) do begin
-                         Caption := ZReadOnlyQuery_Threads.FieldByName('username').AsString;
-                         Hint      := '{"href":"'+_WEBSITE+'dfw_user.dw?uid='+ZReadOnlyQuery_Threads.FieldByName('uid').AsString+'"}';
+                         Caption := UTF8ToAnsi(ZQuery_Threads.FieldByName('username').AsString);
+                         Hint      := '{"href":"'+_WEBSITE+'dfw_user.dw?uid='+ZQuery_Threads.FieldByName('uid').AsString+'"}';
                     end;
 
                     //回复/阅读
-                    TLabel(Self.FindComponent('Label_ReplyRead'+IntToStr(iItem+1))).Caption := ZReadOnlyQuery_Threads.FieldByName('posts').AsString
-                         +'/'+ZReadOnlyQuery_Threads.FieldByName('views').AsString;
+                    TLabel(Self.FindComponent('Label_ReplyRead'+IntToStr(iItem+1))).Caption := ZQuery_Threads.FieldByName('posts').AsString
+                         +'/'+ZQuery_Threads.FieldByName('views').AsString;
 
                     //提问
                     with TStaticText(Self.FindComponent('StaticText_LastPost'+IntToStr(iItem+1))) do begin
-                         Caption := ZReadOnlyQuery_Threads.FieldByName('lastname').AsString;
-                         Hint      := '{"href":"'+_WEBSITE+'dfw_user.dw?uid='+ZReadOnlyQuery_Threads.FieldByName('lastpid').AsString+'"}';
+                         Caption := UTF8ToAnsi(ZQuery_Threads.FieldByName('lastname').AsString);
+                         Hint      := '{"href":"'+_WEBSITE+'dfw_user.dw?uid='+ZQuery_Threads.FieldByName('lastpid').AsString+'"}';
                     end;
 
                     //最后回复时间
                     TLabel(Self.FindComponent('Label_LastPostTime'+IntToStr(iItem+1))).Caption :=
-                         FormatDateTime('yyyy-mm-dd',dfwPHPToDate(ZReadOnlyQuery_Threads.FieldByName('last_date').AsInteger));
+                         FormatDateTime('yyyy-mm-dd',dwPHPToDate(ZQuery_Threads.FieldByName('last_date').AsInteger));
 
                     //
-                    ZReadOnlyQuery_Threads.Next;
+                    ZQuery_Threads.Next;
                end;
           end;
 

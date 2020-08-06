@@ -41,6 +41,7 @@ uses
   dwMainMenus in 'dwVcls\dwMainMenus.pas',
   DFWUserUnit in 'DFWUserUnit.pas' {dfw_user},
   DFWThreadUnit in 'DFWThreadUnit.pas' {dfw_thread},
+  dwTimers in 'dwVcls\dwTimers.pas',
   dwLabels in 'dwVcls\dwLabels.pas';
 
 {$R *.RES}

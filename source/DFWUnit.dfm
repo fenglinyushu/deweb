@@ -3616,7 +3616,7 @@ object DFW: TDFW
       end
     end
   end
-  object ZReadOnlyQuery_Threads: TZReadOnlyQuery
+  object ZQuery_Threads: TZReadOnlyQuery
     Connection = DM.ZConnection
     Params = <>
     Left = 64
