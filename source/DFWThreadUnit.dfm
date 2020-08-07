@@ -14,6 +14,7 @@ object dfw_thread: Tdfw_thread
   Font.Style = []
   OldCreateOrder = False
   OnCreate = FormCreate
+  OnMouseUp = FormMouseUp
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 20
@@ -107,18 +108,39 @@ object dfw_thread: Tdfw_thread
             978
             24)
           object Label_CreateDate: TLabel
-            Left = 880
+            Left = 840
             Top = 4
-            Width = 94
-            Height = 20
+            Width = 150
+            Height = 19
             Alignment = taCenter
             Anchors = [akTop, akRight]
-            Caption = '(2020-08-05)'
+            AutoSize = False
+            Caption = '2020-08-05 08:00:00'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = 16752192
+            Font.Height = -13
+            Font.Name = #24494#36719#38597#40657
+            Font.Style = []
+            ParentFont = False
+          end
+          object Label_Floor: TLabel
+            Left = 10
+            Top = 4
+            Width = 40
+            Height = 19
+            AutoSize = False
+            Caption = '999'#27004
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = 16752192
+            Font.Height = -13
+            Font.Name = #24494#36719#38597#40657
+            Font.Style = []
+            ParentFont = False
           end
           object StaticText_Poster: TStaticText
-            Left = 10
+            Left = 55
             Top = 0
-            Width = 417
+            Width = 411
             Height = 24
             Hint = '{"type":"default"}'
             AutoSize = False

@@ -1,9 +1,9 @@
 object MsgMonitor: TMsgMonitor
-  Left = 0
-  Top = 0
+  Left = 370
+  Top = 158
+  Width = 787
+  Height = 459
   Caption = 'MsgMonitor'
-  ClientHeight = 420
-  ClientWidth = 771
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -49,6 +49,7 @@ object MsgMonitor: TMsgMonitor
     Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = []
+    ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
     Lines.Strings = (
       'Memo_Msg')
     ParentFont = False
@@ -56,8 +57,8 @@ object MsgMonitor: TMsgMonitor
     TabOrder = 0
   end
   object Button1: TButton
-    Left = 666
-    Top = 8
+    Left = 690
+    Top = 32
     Width = 75
     Height = 25
     Anchors = [akTop, akRight]

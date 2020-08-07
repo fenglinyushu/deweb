@@ -34,8 +34,11 @@ type
     StaticText_Poster: TStaticText;
     ZQuery_Posts: TZReadOnlyQuery;
     Panel_Space: TPanel;
+    Label_Floor: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure FormMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
   private
      giTid : Integer;
      giUid : Integer;
@@ -130,12 +133,19 @@ begin
           oPanel.Visible      := True;
           oPanel.Top          := 9000;
 
-          //
+
+          //日期
+          with TLabel(Self.FindComponent('Label_Floor'+IntToStr(iItem+1))) do begin
+               Caption   := IntToStr(iItem+1)+' 楼';
+          end;
+
+          //答主
           with TStaticText(Self.FindComponent('StaticText_Poster'+IntToStr(iItem+1))) do begin
                Caption := UTF8ToAnsi(ZQuery_Posts.FieldByName('username').AsString);
                Hint      := '{"href":"dfw_user.dw?uid='+ZQuery_Posts.FieldByName('uid').AsString+'"}';
           end;
-          //
+
+          //消息
           with TLabel(Self.FindComponent('Label_Message'+IntToStr(iItem+1))) do begin
                Caption   := dwLongStr(UTF8ToAnsi(ZQuery_Posts.FieldByName('message').AsString));
                AutoSize  := False;
@@ -144,6 +154,10 @@ begin
                Height    := Height + 50;
           end;
 
+          //日期
+          with TLabel(Self.FindComponent('Label_CreateDate'+IntToStr(iItem+1))) do begin
+               Caption   := FormatDateTime('yyyy-mm-dd hh:MM:ss',dwPHPToDate(ZQuery_Posts.FieldByName('create_date').AsInteger));
+          end;
           //
           oPanel.AutoSize     := False;
           oPanel.AutoSize     := True;
@@ -160,6 +174,12 @@ begin
      Panel_All.AutoSize  := True;
      //
      dwSetHeight(self,Panel_All.Height);
+end;
+
+procedure Tdfw_thread.FormMouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+     Width     := X;
 end;
 
 end.

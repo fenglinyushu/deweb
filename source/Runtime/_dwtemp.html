@@ -1,7 +1,7 @@
 <!DOCTYPE html>                                                                    <html lang="en">                                                                                                                                                    <head>                                                                                <meta charset="utf-8">                                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">            <meta http-equiv="X-UA-Compatible" content="ie=edge">                             <title>大富翁论坛</title>                                                          </head>                                                                           
 <body style="background-color:#F0F0F0">
     <style type="text/css">                                                      #Loading {                                                                   top: 50%;                                                               left: 50%;                                                              position: absolute;                                                     -webkit-transform: translateY(-50%) translateX(-50%);                   transform: translateY(-50%) translateX(-50%);                           z-index: 100;                                                      }                                                                       @-webkit-keyframes ball-beat {                                               50% {                                                                        opacity: 0.2;                                                           -webkit-transform: scale(0.75);                                         transform: scale(0.75);                                            }                                                                       100% {                                                                       opacity: 1;                                                             -webkit-transform: scale(1);                                            transform: scale(1);                                               }                                                                  }                                                                       @keyframes ball-beat {                                                       50% {                                                                        opacity: 0.2;                                                           -webkit-transform: scale(0.75);                                         transform: scale(0.75);                                            }                                                                       100% {                                                                       opacity: 1;                                                             -webkit-transform: scale(1);                                            transform: scale(1);                                               }                                                                  }                                                                       .ball-beat>div {                                                             background-color: #279fcf;                                              width: 15px;                                                            height: 15px;                                                           border-radius: 100% !important;                                         margin: 2px;                                                            -webkit-animation-fill-mode: both;                                      animation-fill-mode: both;                                              display: inline-block;                                                  -webkit-animation: ball-beat 0.7s 0s infinite linear;                   animation: ball-beat 0.7s 0s infinite linear;                      }                                                                       .ball-beat>div:nth-child(2n-1) {                                             -webkit-animation-delay: 0.35s !important;                              animation-delay: 0.35s !important;                                 }                                                                       #loader-wrapper {                                                            position: fixed;                                                        top: 0;                                                                 left: 0;                                                                width: 100%;                                                            height: 100%;                                                           z-index: 999999;                                                        background: #fff;                                                  }                                                                       #loader {                                                                    display: block;                                                         position: relative;                                                     left: 50%;                                                              top: 50%;                                                               width: 150px;                                                           height: 150px;                                                          margin: -75px 0 0 -75px;                                                border-radius: 50%;                                                     border: 3px solid transparent;                                          /* COLOR 1 */                                                           border-top-color: #000;                                                 -webkit-animation: spin 2s linear infinite;                             /* Chrome, Opera 15+, Safari 5+ */                                      -ms-animation: spin 2s linear infinite;                                 /* Chrome, Opera 15+, Safari 5+ */                                      -moz-animation: spin 2s linear infinite;                                /* Chrome, Opera 15+, Safari 5+ */                                      -o-animation: spin 2s linear infinite;                                  /* Chrome, Opera 15+, Safari 5+ */                                      animation: spin 2s linear infinite;                                     /* Chrome, Firefox 16+, IE 10+, Opera */                                z-index: 1001;                                                     }                                                                       #loader:before {                                                             content: "";                                                            position: absolute;                                                     top: 5px;                                                               left: 5px;                                                              right: 5px;                                                             bottom: 5px;                                                            border-radius: 50%;                                                     border: 3px solid transparent;                                          /* COLOR 2 */                                                           border-top-color: #000;                                                 -webkit-animation: spin 3s linear infinite;                             /* Chrome, Opera 15+, Safari 5+ */                                      -moz-animation: spin 3s linear infinite;                                /* Chrome, Opera 15+, Safari 5+ */                                      -o-animation: spin 3s linear infinite;                                  /* Chrome, Opera 15+, Safari 5+ */                                      -ms-animation: spin 3s linear infinite;                                 /* Chrome, Opera 15+, Safari 5+ */                                      animation: spin 3s linear infinite;                                     /* Chrome, Firefox 16+, IE 10+, Opera */                           }                                                                       #loader:after {                                                              content: "";                                                            position: absolute;                                                     top: 15px;                                                              left: 15px;                                                             right: 15px;                                                            bottom: 15px;                                                           border-radius: 50%;                                                     border: 3px solid transparent;                                          border-top-color: #000;                                                 /* COLOR 3 */                                                           -moz-animation: spin 1.5s linear infinite;                              /* Chrome, Opera 15+, Safari 5+ */                                      -o-animation: spin 1.5s linear infinite;                                /* Chrome, Opera 15+, Safari 5+ */                                      -ms-animation: spin 1.5s linear infinite;                               /* Chrome, Opera 15+, Safari 5+ */                                      -webkit-animation: spin 1.5s linear infinite;                           /* Chrome, Opera 15+, Safari 5+ */                                      animation: spin 1.5s linear infinite;                                   /* Chrome, Firefox 16+, IE 10+, Opera */                           }                                                                       @-webkit-keyframes spin {                                                    0% {                                                                         -webkit-transform: rotate(0deg);                                        /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(0deg);                                            /* IE 9 */                                                              transform: rotate(0deg);                                                /* Firefox 16+, IE 10+, Opera */                                   }                                                                                                                                               100% {                                                                       -webkit-transform: rotate(360deg);                                      /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(360deg);                                          /* IE 9 */                                                              transform: rotate(360deg);                                              /* Firefox 16+, IE 10+, Opera */                                   }                                                                  }                                                                       @keyframes spin {                                                            0% {                                                                         -webkit-transform: rotate(0deg);                                        /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(0deg);                                            /* IE 9 */                                                              transform: rotate(0deg);                                                /* Firefox 16+, IE 10+, Opera */                                   }                                                                       100% {                                                                       -webkit-transform: rotate(360deg);                                      /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(360deg);                                          /* IE 9 */                                                              transform: rotate(360deg);                                              /* Firefox 16+, IE 10+, Opera */                                   }                                                                  }                                                                       #loader-wrapper .loader-section {                                            position: fixed;                                                        top: 0;                                                                 width: 51%;                                                             height: 100%;                                                           background: #fff;                                                       /* opacity: 0.7; */                                                     /* Old browsers */                                                      z-index: 1000;                                                          -webkit-transform: translateX(0);                                       /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateX(0);                                           /* IE 9 */                                                              transform: translateX(0);                                               /* Firefox 16+, IE 10+, Opera */                                   }                                                                       #loader-wrapper .loader-section.section-left {                               left: 0;                                                           }                                                                       #loader-wrapper .loader-section.section-right {                              right: 0;                                                          }                                                                       /* Loaded */                                                            .loaded #loader-wrapper .loader-section.section-left {                       -webkit-transform: translateX(-100%);                                   /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateX(-100%);                                       /* IE 9 */                                                              transform: translateX(-100%);                                           /* Firefox 16+, IE 10+, Opera */                                        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);               transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);                  }                                                                       .loaded #loader-wrapper .loader-section.section-right {                      -webkit-transform: translateX(100%);                                    /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateX(100%);                                        /* IE 9 */                                                              transform: translateX(100%);                                            /* Firefox 16+, IE 10+, Opera */                                        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);               transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);                  }                                                                       .loaded #loader {                                                            opacity: 0;                                                             -webkit-transition: all 0.3s ease-out;                                  transition: all 0.3s ease-out;                                     }                                                                       .loaded #loader-wrapper {                                                    visibility: hidden;                                                     -webkit-transform: translateY(-100%);                                   /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateY(-100%);                                       /* IE 9 */                                                              transform: translateY(-100%);                                           /* Firefox 16+, IE 10+, Opera */                                        -webkit-transition: all 0.3s 1s ease-out;                               transition: all 0.3s 1s ease-out;                                  }                                                                       /* JavaScript Turned Off */                                                                                                                     .no-js #loader-wrapper {                                                     display: none;                                                     }                                                                                                                                               .no-js h1 {                                                                  color: #222222;                                                    }                                                                       #loader-wrapper .load_title {                                                font-family: 'Open Sans';                                             color: rgb(245, 245, 245);                                              font-size: 19px;                                                        width: 100%;                                                            text-align: center;                                                     z-index: 9999999999999;                                                 position: absolute;                                                     top: 36px;                                                              opacity: 1;                                                             line-height: 30px;                                                 }                                                                       #loader-wrapper .load_title span {                                           font-weight: normal;                                                    font-style: italic;                                                     font-size: 13px;                                                        color: rgb(220, 220, 220);                                              opacity: 0.5;                                                      }                                                                       @keyframes moveover {                                                        0% {                                                                         transform: rotate(0deg);                                           }                                                                                                                                               100% {                                                                       transform: rotate(360deg);                                         }                                                                  }                                                                       .box {                                                                       position: relative;                                                     width: 100px;                                                           height: 100px;                                                          margin: 18% auto;                                                       /*整体旋转*/                                                            animation: moveover 3s linear infinite;                            }                                                                       .box_text {                                                                  position: absolute;                                                     top: 0;                                                                 left: 0;                                                           }                                                                       .box::before {                                                               content: "";                                                            position: absolute;                                                     width: 50px;                                                            height: 100px;                                                          border-radius: 50px 0 0 50px;                                           background: linear-gradient(#999, rgb(220, 220, 220));                  background-color: #999;                                                 z-index: 2;                                                        }                                                                       .box2 {                                                                      position: absolute;                                                     width: 50px;                                                            height: 100px;                                                          border-radius: 0 50px 50px 0;                                           left: 50%;                                                              background: linear-gradient(rgb(255,255,255),rgb(220,220, 220));                    z-index: 1;                                                        }                                                                       .box::after {                                                                content: "";                                                            position: absolute;                                                     width: 92px;                                                            height: 92px;                                                           top: 4px;                                                               left: 4px;                                                              border-radius: 50%;                                                     background-color: #fff;                                                 z-index: 2;                                                        }                                                                       .wrapper {                                                                   position: relative;                                                }                                                                  </style>                                                                <div id="loader-wrapper">                                                    <div class="wrapper">                                                        <div class='box'>                                                          <div class="box2"></div>                                           </div>                                                                  <div class="load_title">DeWeb                                           </div>                                                                                                                                     </div>                                                             </div>                                                                  <script src="dist/vue.js" type="text/javascript"></script>              <script src="dist/index.js" type="text/javascript"></script>            <script src="dist/axios.min.js" type="text/javascript"></script>        <link rel="icon" href="dist/webimages/[###].ico" type="image/x-icon">           <link rel="stylesheet" type="text/css" href="dist/theme-chalk/index.css" /> 
-    <div id="app" style="position:absolute;overflow:hidden;left:0;right:0;bottom:0;margin: 0 auto;background-color:#FFFFFF" :style="{top:dfw_thread_1__top,width:dfw_thread_1__wid,height:dfw_thread_1__hei}" >
+    <div id="app" style="position:absolute;overflow:hidden;left:0;right:0;bottom:0;margin: 0 auto;background-color:#FFFFFF" :style="{top:dfw_thread_2__top,width:dfw_thread_2__wid,height:dfw_thread_2__hei}" >
         <el-button v-if="version__istrial" type="success" @click="this.window.open('http://www.web0000.com/buy')" size="mini" icon="el-icon-shopping-cart-2" style="position:relative;z-index:999;float:right;margin:10px;">Buy Now!</el-button>
         <el-dialog :title="input_query_caption" :visible.sync="input_query_visible" >
         	<el-form style="width:90%;padding-left:5%;">
@@ -28,7 +28,9 @@
         <div  v-html="Label_Message__cap" v-if="Label_Message__vis" :disabled="Label_Message__dis" :style="{left:Label_Message__lef,top:Label_Message__top,width:Label_Message__wid,height:Label_Message__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Message__cap}}
         </div>
         <el-main v-if="Panel_00_PostBase__vis" :disabled="Panel_00_PostBase__dis" :style="{backgroundColor:Panel_00_PostBase__col,left:Panel_00_PostBase__lef,top:Panel_00_PostBase__top,width:Panel_00_PostBase__wid,height:Panel_00_PostBase__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <div  v-html="Label_CreateDate__cap" v-if="Label_CreateDate__vis" :disabled="Label_CreateDate__dis" :style="{left:Label_CreateDate__lef,top:Label_CreateDate__top,width:Label_CreateDate__wid,height:Label_CreateDate__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;text-align:center;">{{Label_CreateDate__cap}}
+        <div  v-html="Label_CreateDate__cap" v-if="Label_CreateDate__vis" :disabled="Label_CreateDate__dis" :style="{left:Label_CreateDate__lef,top:Label_CreateDate__top,width:Label_CreateDate__wid,height:Label_CreateDate__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;text-align:center;">{{Label_CreateDate__cap}}
+        </div>
+        <div  v-html="Label_Floor__cap" v-if="Label_Floor__vis" :disabled="Label_Floor__dis" :style="{left:Label_Floor__lef,top:Label_Floor__top,width:Label_Floor__wid,height:Label_Floor__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Floor__cap}}
         </div>
         <el-link :underline="false" v-if="StaticText_Poster__vis" :disabled="StaticText_Poster__dis" type="default" :href="StaticText_Poster__hrf" :style="{left:StaticText_Poster__lef,top:StaticText_Poster__top,width:StaticText_Poster__wid,height:StaticText_Poster__hei}" style="position:absolute;">{{StaticText_Poster__cap}}
         </el-link>
@@ -40,7 +42,9 @@
         <div  v-html="Label_Message1__cap" v-if="Label_Message1__vis" :disabled="Label_Message1__dis" :style="{left:Label_Message1__lef,top:Label_Message1__top,width:Label_Message1__wid,height:Label_Message1__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Message1__cap}}
         </div>
         <el-main v-if="Panel_00_PostBase1__vis" :disabled="Panel_00_PostBase1__dis" :style="{backgroundColor:Panel_00_PostBase1__col,left:Panel_00_PostBase1__lef,top:Panel_00_PostBase1__top,width:Panel_00_PostBase1__wid,height:Panel_00_PostBase1__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <div  v-html="Label_CreateDate1__cap" v-if="Label_CreateDate1__vis" :disabled="Label_CreateDate1__dis" :style="{left:Label_CreateDate1__lef,top:Label_CreateDate1__top,width:Label_CreateDate1__wid,height:Label_CreateDate1__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;text-align:center;">{{Label_CreateDate1__cap}}
+        <div  v-html="Label_CreateDate1__cap" v-if="Label_CreateDate1__vis" :disabled="Label_CreateDate1__dis" :style="{left:Label_CreateDate1__lef,top:Label_CreateDate1__top,width:Label_CreateDate1__wid,height:Label_CreateDate1__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;text-align:center;">{{Label_CreateDate1__cap}}
+        </div>
+        <div  v-html="Label_Floor1__cap" v-if="Label_Floor1__vis" :disabled="Label_Floor1__dis" :style="{left:Label_Floor1__lef,top:Label_Floor1__top,width:Label_Floor1__wid,height:Label_Floor1__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Floor1__cap}}
         </div>
         <el-link :underline="false" v-if="StaticText_Poster1__vis" :disabled="StaticText_Poster1__dis" type="primary" :href="StaticText_Poster1__hrf" :style="{left:StaticText_Poster1__lef,top:StaticText_Poster1__top,width:StaticText_Poster1__wid,height:StaticText_Poster1__hei}" style="position:absolute;">{{StaticText_Poster1__cap}}
         </el-link>
@@ -52,12 +56,28 @@
         <div  v-html="Label_Message2__cap" v-if="Label_Message2__vis" :disabled="Label_Message2__dis" :style="{left:Label_Message2__lef,top:Label_Message2__top,width:Label_Message2__wid,height:Label_Message2__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Message2__cap}}
         </div>
         <el-main v-if="Panel_00_PostBase2__vis" :disabled="Panel_00_PostBase2__dis" :style="{backgroundColor:Panel_00_PostBase2__col,left:Panel_00_PostBase2__lef,top:Panel_00_PostBase2__top,width:Panel_00_PostBase2__wid,height:Panel_00_PostBase2__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <div  v-html="Label_CreateDate2__cap" v-if="Label_CreateDate2__vis" :disabled="Label_CreateDate2__dis" :style="{left:Label_CreateDate2__lef,top:Label_CreateDate2__top,width:Label_CreateDate2__wid,height:Label_CreateDate2__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;text-align:center;">{{Label_CreateDate2__cap}}
+        <div  v-html="Label_CreateDate2__cap" v-if="Label_CreateDate2__vis" :disabled="Label_CreateDate2__dis" :style="{left:Label_CreateDate2__lef,top:Label_CreateDate2__top,width:Label_CreateDate2__wid,height:Label_CreateDate2__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;text-align:center;">{{Label_CreateDate2__cap}}
+        </div>
+        <div  v-html="Label_Floor2__cap" v-if="Label_Floor2__vis" :disabled="Label_Floor2__dis" :style="{left:Label_Floor2__lef,top:Label_Floor2__top,width:Label_Floor2__wid,height:Label_Floor2__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Floor2__cap}}
         </div>
         <el-link :underline="false" v-if="StaticText_Poster2__vis" :disabled="StaticText_Poster2__dis" type="primary" :href="StaticText_Poster2__hrf" :style="{left:StaticText_Poster2__lef,top:StaticText_Poster2__top,width:StaticText_Poster2__wid,height:StaticText_Poster2__hei}" style="position:absolute;">{{StaticText_Poster2__cap}}
         </el-link>
         </el-main>
         <el-main v-if="Panel_Space2__vis" :disabled="Panel_Space2__dis" :style="{backgroundColor:Panel_Space2__col,left:Panel_Space2__lef,top:Panel_Space2__top,width:Panel_Space2__wid,height:Panel_Space2__hei}" style="position:absolute;overflow:hidden;">
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_Post3__vis" :disabled="Panel_Post3__dis" :style="{backgroundColor:Panel_Post3__col,left:Panel_Post3__lef,top:Panel_Post3__top,width:Panel_Post3__wid,height:Panel_Post3__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Message3__cap" v-if="Label_Message3__vis" :disabled="Label_Message3__dis" :style="{left:Label_Message3__lef,top:Label_Message3__top,width:Label_Message3__wid,height:Label_Message3__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Message3__cap}}
+        </div>
+        <el-main v-if="Panel_00_PostBase3__vis" :disabled="Panel_00_PostBase3__dis" :style="{backgroundColor:Panel_00_PostBase3__col,left:Panel_00_PostBase3__lef,top:Panel_00_PostBase3__top,width:Panel_00_PostBase3__wid,height:Panel_00_PostBase3__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
+        <div  v-html="Label_CreateDate3__cap" v-if="Label_CreateDate3__vis" :disabled="Label_CreateDate3__dis" :style="{left:Label_CreateDate3__lef,top:Label_CreateDate3__top,width:Label_CreateDate3__wid,height:Label_CreateDate3__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;text-align:center;">{{Label_CreateDate3__cap}}
+        </div>
+        <div  v-html="Label_Floor3__cap" v-if="Label_Floor3__vis" :disabled="Label_Floor3__dis" :style="{left:Label_Floor3__lef,top:Label_Floor3__top,width:Label_Floor3__wid,height:Label_Floor3__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Floor3__cap}}
+        </div>
+        <el-link :underline="false" v-if="StaticText_Poster3__vis" :disabled="StaticText_Poster3__dis" type="primary" :href="StaticText_Poster3__hrf" :style="{left:StaticText_Poster3__lef,top:StaticText_Poster3__top,width:StaticText_Poster3__wid,height:StaticText_Poster3__hei}" style="position:absolute;">{{StaticText_Poster3__cap}}
+        </el-link>
+        </el-main>
+        <el-main v-if="Panel_Space3__vis" :disabled="Panel_Space3__dis" :style="{backgroundColor:Panel_Space3__col,left:Panel_Space3__lef,top:Panel_Space3__top,width:Panel_Space3__wid,height:Panel_Space3__hei}" style="position:absolute;overflow:hidden;">
         </el-main>
         </el-main>
         </el-main>
@@ -85,33 +105,33 @@
 				el: '#app',
 				data: function () {
 					return {
-					    dfw_thread_1__top:"0px",
-					    dfw_thread_1__wid:"1000px",
-					    dfw_thread_1__hei:"1018px",
+					    dfw_thread_2__top:"0px",
+					    dfw_thread_2__wid:"1407px",
+					    dfw_thread_2__hei:"644px",
 Label14__lef:"1px",
 Label14__top:"49px",
-Label14__wid:"998px",
+Label14__wid:"1405px",
 Label14__hei:"20px",
 Label14__vis:true,
 Label14__dis:false,
 Label14__cap:"感谢您的惠顾,如有任何建议和意见,请联系版主.2020.08.01",
 Label15__lef:"1px",
 Label15__top:"29px",
-Label15__wid:"998px",
+Label15__wid:"1405px",
 Label15__hei:"20px",
 Label15__vis:true,
 Label15__dis:false,
 Label15__cap:"(C) 版权所有. 大富翁论坛 1998-2020",
 Panel4__lef:"1px",
 Panel4__top:"1px",
-Panel4__wid:"998px",
+Panel4__wid:"1405px",
 Panel4__hei:"1px",
 Panel4__vis:true,
 Panel4__dis:false,
 Panel4__col:"#F0F0F0",
 Panel_99_Foot__lef:"0px",
-Panel_99_Foot__top:"948px",
-Panel_99_Foot__wid:"1000px",
+Panel_99_Foot__top:"574px",
+Panel_99_Foot__wid:"1407px",
 Panel_99_Foot__hei:"70px",
 Panel_99_Foot__vis:true,
 Panel_99_Foot__dis:false,
@@ -123,16 +143,23 @@ Label_Message__hei:"40px",
 Label_Message__vis:true,
 Label_Message__dis:false,
 Label_Message__cap:"大家看看，为什么我的jsp页面中的汉字在程序执行后变成了乱码<p align=\"center\"><fontolor=\"#0000FF\">&Icirc;&Ograve;&micro;&Auml;&sup1;¤×÷&Igrave;¨</font></p>，我知道是字符集的问题，可是我用的是GBK呀，为什么还是有问题呢？请那位朋友帮帮忙，给个最简单的方法",
-Label_CreateDate__lef:"876px",
+Label_CreateDate__lef:"836px",
 Label_CreateDate__top:"4px",
-Label_CreateDate__wid:"84px",
-Label_CreateDate__hei:"20px",
+Label_CreateDate__wid:"150px",
+Label_CreateDate__hei:"19px",
 Label_CreateDate__vis:true,
 Label_CreateDate__dis:false,
-Label_CreateDate__cap:"1975-11-25",
-StaticText_Poster__lef:"10px",
+Label_CreateDate__cap:"1975-10-06",
+Label_Floor__lef:"10px",
+Label_Floor__top:"4px",
+Label_Floor__wid:"40px",
+Label_Floor__hei:"19px",
+Label_Floor__vis:true,
+Label_Floor__dis:false,
+Label_Floor__cap:"999楼",
+StaticText_Poster__lef:"55px",
 StaticText_Poster__top:"0px",
-StaticText_Poster__wid:"417px",
+StaticText_Poster__wid:"411px",
 StaticText_Poster__hei:"24px",
 StaticText_Poster__vis:true,
 StaticText_Poster__dis:false,
@@ -161,94 +188,158 @@ Panel_Post__dis:false,
 Panel_Post__col:"#FFFFFF",
 Label_Message1__lef:"9px",
 Label_Message1__top:"47px",
-Label_Message1__wid:"982px",
-Label_Message1__hei:"730px",
+Label_Message1__wid:"1389px",
+Label_Message1__hei:"150px",
 Label_Message1__vis:true,
 Label_Message1__dis:false,
-Label_Message1__cap:"<p><span class=\"bjh-p\">1、准备下班的时候，测试又提bug过来了…</span></p><div class=\"img-container\"><img src=\"upload/attach/201903/10327_MA6T6G5WZY5TX9R.gif\" width=\"165\" height=\"156\"/></div><p><span class=\"bjh-p\">2、当我以为这是最后一个Bug，改完就可以去吃饭时…</span></p><div class=\"img-container\"><img src=\"upload/attach/201903/10327_MCW3JDP93PYT2HR.gif\" width=\"300\" height=\"225\"/></div><p><span class=\"bjh-p\">3、精简代码，臃肿代码</span></p><div class=\"img-container\"><img src=\"upload/attach/201903/10327_JAFQR7S8N7BNHQA.gif\" width=\"270\" height=\"359\"/></div><p><span class=\"bjh-p\">4、三个月后回看自己写的代码</span></p><div class=\"img-container\"><img src=\"upload/attach/201903/10327_MH3QS4Z8MTK3KXE.gif\" width=\"500\" height=\"230\"/></div><p><span class=\"bjh-p\">5、什么，需求又改了？</span></p><div class=\"img-container\"><img src=\"upload/attach/201903/10327_77BAHYEB3JZ4YVN.gif\" width=\"160\" height=\"162\"/></div><p><span class=\"bjh-p\">6、上线后，bug 一大堆的时候</span></p><div class=\"img-container\"><img src=\"upload/attach/201903/10327_NXZ4P8NYVQPTT28.gif\" width=\"245\" height=\"138\"/></div><p><span class=\"bjh-p\">7、敲代码，调 bug 的你</span></p><div class=\"img-container\"><img src=\"upload/attach/201903/10327_9Z77JJTUQ4GAY95.gif\" width=\"260\" height=\"208\"/></div><p><span class=\"bjh-p\">8、管理员给了我 root 访问权后</span></p><div class=\"img-container\"><img src=\"upload/attach/201903/10327_YXDDDNZUC69KY78.gif\" width=\"340\" height=\"255\"/></div><p><span class=\"bjh-p\">9、此刻的你</span></p><div class=\"img-container\"><img src=\"upload/attach/201903/10327_QCWC2BAU5T422CF.gif\" width=\"299\" height=\"302\"/></div><p><span class=\"bjh-p\">10、程序员的生存状态 。</span></p><div class=\"img-container\"><img src=\"upload/attach/201903/10327_8RDC7UFU4U6EEMD.gif\" width=\"208\" height=\"117\"/></div><p><span class=\"bjh-p\">11、双核CPU的真相。</span></p><div class=\"img-container\"><img src=\"upload/attach/201903/10327_KKKVD5DNTM9M9N3.gif\" width=\"320\" height=\"240\"/></div><p><span class=\"bjh-p\">12、当年学C语言的过程。</span></p><div class=\"img-container\"><img src=\"upload/attach/201903/10327_G6GWXRQS339G5EZ.gif\" width=\"400\" height=\"286\"/></div><p><span class=\"bjh-p\">13、测试环境一切ok，马上上线</span></p><div class=\"img-container\"><img src=\"upload/attach/201903/10327_W4NHEXD9C44NYP6.gif\" width=\"215\" height=\"116\"/></div><p><span class=\"bjh-p\">14、调试bug</span></p><div class=\"img-container\"><img src=\"upload/attach/201903/10327_S6T3QRS3GFZZJD3.gif\" width=\"480\" height=\"270\"/></div><p><span class=\"bjh-p\">15、正在调试，突然内存溢出了</span></p><div class=\"img-container\"><img src=\"upload/attach/201903/10327_7DZDYUHE72S9QEH.gif\" width=\"160\" height=\"140\"/></div><p><span class=\"bjh-p\">16、卧槽，你动我代码，知道后果有多严重吗？！</span></p><div class=\"img-container\"><img src=\"upload/attach/201903/10327_JSG4A2QVMMZDKJ5.gif\" width=\"270\" height=\"202\"/></div><p><span class=\"bjh-p\">17、需求文档又改了</span></p><div class=\"img-container\"><img src=\"upload/attach/201903/10327_ZGW5CU7X6D5FC38.gif\" width=\"359\" height=\"250\"/></div><p><span class=\"bjh-p\">18、资深程序员解释如何用他的库~</span></p><div class=\"img-container\"><img src=\"upload/attach/201903/10327_E8DZBYZW9T9Q2JG.gif\" width=\"320\" height=\"270\"/></div><p><span class=\"bjh-p\">19、单身互联网狗的一天</span></p><div class=\"img-container\"><img src=\"upload/attach/201903/10327_ETWY9X9MTWVM9Q7.gif\" width=\"346\" height=\"194\"/></div><p><span class=\"bjh-p\">20、如果大家喜欢这篇文章的话，希望大家能够点个赞，谢谢！</span></p><div class=\"img-container\"><img class=\"normal\" data-loadfunc=\"0\" src=\"http://t11.baidu.com/it/u=3969420754,3358290328&fm=173&app=25&f=JPEG?w=350&h=320&s=BDA17933C39671DCDF154FEA03007036\" data-loaded=\"0\" width=\"350px\"/></div><div class=\"img-container\"><img class=\"normal\" data-loadfunc=\"0\" src=\"http://t11.baidu.com/it/u=960304027,377678134&fm=173&app=25&f=JPEG?w=456&h=325&s=82B3548152A23CA20205DD9D0300A011\" data-loaded=\"0\" width=\"456px\"/></div><p><br/></p>",
-Label_CreateDate1__lef:"872px",
+Label_Message1__cap:"<p>https://github.com/fenglinyushu/treeedit</p><p>一个通用树形节点编辑系统.\n很多项目中, 都需要用到一个树形结构来管理. <br/></p><p>但目前的树形结构系统基本上都是定制的, 需要增加节点类型或节点属性都需要手动撸代码.</p><p>本系统的树形管理系统立足于通用化管理, 节点的类型和属性通过外置modules.json来进行, <br/></p><p>使用者可以通过修改该JSON文件很快搭建自己的树形结构管理系统, <br/></p><p>可以把编程重心放在相应业务处理上</p><p>欢迎交流! <br/></p><p>欢迎star!</p><p>欢迎fork!</p><p><img src=\"upload/attach/202002/2_HQDKDG8WD7Z94DW.jpg\" alt=\"\"/></p><p><br/></p>",
+Label_CreateDate1__lef:"1239px",
 Label_CreateDate1__top:"4px",
-Label_CreateDate1__wid:"84px",
-Label_CreateDate1__hei:"20px",
+Label_CreateDate1__wid:"150px",
+Label_CreateDate1__hei:"19px",
 Label_CreateDate1__vis:true,
 Label_CreateDate1__dis:false,
-Label_CreateDate1__cap:"1975-11-25",
-StaticText_Poster1__lef:"10px",
+Label_CreateDate1__cap:"2020-02-23 00:53:08",
+Label_Floor1__lef:"10px",
+Label_Floor1__top:"4px",
+Label_Floor1__wid:"40px",
+Label_Floor1__hei:"19px",
+Label_Floor1__vis:true,
+Label_Floor1__dis:false,
+Label_Floor1__cap:"1 楼",
+StaticText_Poster1__lef:"55px",
 StaticText_Poster1__top:"0px",
-StaticText_Poster1__wid:"417px",
+StaticText_Poster1__wid:"411px",
 StaticText_Poster1__hei:"24px",
 StaticText_Poster1__vis:true,
 StaticText_Poster1__dis:false,
-StaticText_Poster1__cap:"无情",
-StaticText_Poster1__hrf:"dfw_user.dw?uid=10327",
+StaticText_Poster1__cap:"碧树西风",
+StaticText_Poster1__hrf:"dfw_user.dw?uid=2",
 Panel_00_PostBase1__lef:"9px",
 Panel_00_PostBase1__top:"9px",
-Panel_00_PostBase1__wid:"982px",
+Panel_00_PostBase1__wid:"1389px",
 Panel_00_PostBase1__hei:"28px",
 Panel_00_PostBase1__vis:true,
 Panel_00_PostBase1__dis:false,
 Panel_00_PostBase1__col:"#E1E9FF",
 Panel_Space1__lef:"9px",
 Panel_Space1__top:"37px",
-Panel_Space1__wid:"982px",
+Panel_Space1__wid:"1389px",
 Panel_Space1__hei:"10px",
 Panel_Space1__vis:true,
 Panel_Space1__dis:false,
 Panel_Space1__col:"#FFFFFF",
 Panel_Post1__lef:"0px",
 Panel_Post1__top:"0px",
-Panel_Post1__wid:"1000px",
-Panel_Post1__hei:"786px",
+Panel_Post1__wid:"1407px",
+Panel_Post1__hei:"206px",
 Panel_Post1__vis:true,
 Panel_Post1__dis:false,
 Panel_Post1__col:"#FFFFFF",
 Label_Message2__lef:"9px",
 Label_Message2__top:"47px",
-Label_Message2__wid:"982px",
-Label_Message2__hei:"50px",
+Label_Message2__wid:"1389px",
+Label_Message2__hei:"70px",
 Label_Message2__vis:true,
 Label_Message2__dis:false,
-Label_Message2__cap:"汗",
-Label_CreateDate2__lef:"872px",
+Label_Message2__cap:"看不懂，帮顶",
+Label_CreateDate2__lef:"1239px",
 Label_CreateDate2__top:"4px",
-Label_CreateDate2__wid:"84px",
-Label_CreateDate2__hei:"20px",
+Label_CreateDate2__wid:"150px",
+Label_CreateDate2__hei:"19px",
 Label_CreateDate2__vis:true,
 Label_CreateDate2__dis:false,
-Label_CreateDate2__cap:"1975-11-25",
-StaticText_Poster2__lef:"10px",
+Label_CreateDate2__cap:"2020-02-23 10:35:49",
+Label_Floor2__lef:"10px",
+Label_Floor2__top:"4px",
+Label_Floor2__wid:"40px",
+Label_Floor2__hei:"19px",
+Label_Floor2__vis:true,
+Label_Floor2__dis:false,
+Label_Floor2__cap:"2 楼",
+StaticText_Poster2__lef:"55px",
 StaticText_Poster2__top:"0px",
-StaticText_Poster2__wid:"417px",
+StaticText_Poster2__wid:"411px",
 StaticText_Poster2__hei:"24px",
 StaticText_Poster2__vis:true,
 StaticText_Poster2__dis:false,
-StaticText_Poster2__cap:"无情",
-StaticText_Poster2__hrf:"dfw_user.dw?uid=10327",
+StaticText_Poster2__cap:"ustone",
+StaticText_Poster2__hrf:"dfw_user.dw?uid=84",
 Panel_00_PostBase2__lef:"9px",
 Panel_00_PostBase2__top:"9px",
-Panel_00_PostBase2__wid:"982px",
+Panel_00_PostBase2__wid:"1389px",
 Panel_00_PostBase2__hei:"28px",
 Panel_00_PostBase2__vis:true,
 Panel_00_PostBase2__dis:false,
 Panel_00_PostBase2__col:"#E1E9FF",
 Panel_Space2__lef:"9px",
 Panel_Space2__top:"37px",
-Panel_Space2__wid:"982px",
+Panel_Space2__wid:"1389px",
 Panel_Space2__hei:"10px",
 Panel_Space2__vis:true,
 Panel_Space2__dis:false,
 Panel_Space2__col:"#FFFFFF",
 Panel_Post2__lef:"0px",
-Panel_Post2__top:"786px",
-Panel_Post2__wid:"1000px",
-Panel_Post2__hei:"106px",
+Panel_Post2__top:"206px",
+Panel_Post2__wid:"1407px",
+Panel_Post2__hei:"126px",
 Panel_Post2__vis:true,
 Panel_Post2__dis:false,
 Panel_Post2__col:"#FFFFFF",
+Label_Message3__lef:"9px",
+Label_Message3__top:"47px",
+Label_Message3__wid:"1389px",
+Label_Message3__hei:"130px",
+Label_Message3__vis:true,
+Label_Message3__dis:false,
+Label_Message3__cap:"<p><br/>这个项目确实相对基础一些. 比如: 另一个项目AutoCode-Python, 核心需要几个部分:<br/>1 流程结构管理(其实是一个树形结构)<br/>2 树形结构-&gt;Pyhton<br/>3 运行Python</p><p>4 ....</p><p>这是流程结构管理(其实是一个树形结构)比较麻烦, 每增加一个模块(类似 if/fo/while )等都需要修改和测试大量代码,</p><p>本项目主要是就是解决这个问题. 增加或减少模块(类似 if/fo/while )只需要更改相应的json文件即可</p><p>我实现工作中也用到了许多类似的结构, 每次都需要重新写一遍, 这次下决心把这部分单独做好.<br/></p>",
+Label_CreateDate3__lef:"1239px",
+Label_CreateDate3__top:"4px",
+Label_CreateDate3__wid:"150px",
+Label_CreateDate3__hei:"19px",
+Label_CreateDate3__vis:true,
+Label_CreateDate3__dis:false,
+Label_CreateDate3__cap:"2020-02-23 11:27:31",
+Label_Floor3__lef:"10px",
+Label_Floor3__top:"4px",
+Label_Floor3__wid:"40px",
+Label_Floor3__hei:"19px",
+Label_Floor3__vis:true,
+Label_Floor3__dis:false,
+Label_Floor3__cap:"3 楼",
+StaticText_Poster3__lef:"55px",
+StaticText_Poster3__top:"0px",
+StaticText_Poster3__wid:"411px",
+StaticText_Poster3__hei:"24px",
+StaticText_Poster3__vis:true,
+StaticText_Poster3__dis:false,
+StaticText_Poster3__cap:"碧树西风",
+StaticText_Poster3__hrf:"dfw_user.dw?uid=2",
+Panel_00_PostBase3__lef:"9px",
+Panel_00_PostBase3__top:"9px",
+Panel_00_PostBase3__wid:"1389px",
+Panel_00_PostBase3__hei:"28px",
+Panel_00_PostBase3__vis:true,
+Panel_00_PostBase3__dis:false,
+Panel_00_PostBase3__col:"#E1E9FF",
+Panel_Space3__lef:"9px",
+Panel_Space3__top:"37px",
+Panel_Space3__wid:"1389px",
+Panel_Space3__hei:"10px",
+Panel_Space3__vis:true,
+Panel_Space3__dis:false,
+Panel_Space3__col:"#FFFFFF",
+Panel_Post3__lef:"0px",
+Panel_Post3__top:"332px",
+Panel_Post3__wid:"1407px",
+Panel_Post3__hei:"186px",
+Panel_Post3__vis:true,
+Panel_Post3__dis:false,
+Panel_Post3__col:"#FFFFFF",
 Panel_10_Posts__lef:"0px",
 Panel_10_Posts__top:"56px",
-Panel_10_Posts__wid:"1000px",
-Panel_10_Posts__hei:"892px",
+Panel_10_Posts__wid:"1407px",
+Panel_10_Posts__hei:"518px",
 Panel_10_Posts__vis:true,
 Panel_10_Posts__dis:false,
 Panel_10_Posts__col:"#FFFFFF",
@@ -272,18 +363,18 @@ Label_ThreadTitle__wid:"929px",
 Label_ThreadTitle__hei:"45px",
 Label_ThreadTitle__vis:true,
 Label_ThreadTitle__dis:false,
-Label_ThreadTitle__cap:"只有程序员才能看懂的搞笑动图",
+Label_ThreadTitle__cap:"西风出品 : (全Delphi源码) 通用树形节点管理系统",
 Panel_00_Title__lef:"0px",
 Panel_00_Title__top:"0px",
-Panel_00_Title__wid:"1000px",
+Panel_00_Title__wid:"1407px",
 Panel_00_Title__hei:"56px",
 Panel_00_Title__vis:true,
 Panel_00_Title__dis:false,
 Panel_00_Title__col:"#FFFFFF",
 Panel_All__lef:"0px",
 Panel_All__top:"0px",
-Panel_All__wid:"1000px",
-Panel_All__hei:"1018px",
+Panel_All__wid:"1407px",
+Panel_All__hei:"644px",
 Panel_All__vis:true,
 Panel_All__dis:false,
 Panel_All__col:"#F0F0F0",
@@ -314,10 +405,10 @@ Panel_All__col:"#F0F0F0",
                         },
                         false
                     );
-                    let dfw_thread_1hearttimer = window.setInterval(function() {
+                    let dfw_thread_2hearttimer = window.setInterval(function() {
                         axios.get('{"mode":"heart","cid":[!clientid!]}')
                         .then(resp =>{me.procResp(resp.data)})
-                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(dfw_thread_1hearttimer);});
+                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(dfw_thread_2hearttimer);});
                     }, 30000);
                 },
 				methods: {

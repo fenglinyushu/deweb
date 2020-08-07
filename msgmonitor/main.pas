@@ -43,18 +43,32 @@ end;
 
 procedure TMsgMonitor.MyCopyDataMsg(var Msg: TMessage);
 var
-     cdds : TcopyDataStruct;
+     cdds      : TcopyDataStruct;
+     sCaption  : string;
+     slError   : TStringList;
+     iItem     : Integer;
 begin
      if msg.Msg = WM_COPYDATA then begin
           cdds := PcopyDataStruct(Msg.LParam)^;
           //Memo_Msg.Lines.Add(Pchar(cdds.lpData));
           with ListView.Items.Add do begin
                Caption   := FormatDateTime('hh:mm:ss',Now);
-               SubItems.Add(Pchar(cdds.lpData))
+               SubItems.Add(Pchar(cdds.lpData));
+               sCaption  := SubItems[0];
           end;
           //
           ListView.ItemIndex  := ListView.Items.Count-1;
           ListView.Selected.MakeVisible(True);
+
+          //
+          if Copy(sCaption,1,7)='[ERROR]' then begin
+               slError   := TStringList.Create;
+               for iItem := 0 to ListView.Items.Count-1 do begin
+                    slError.Add(ListView.Items[iItem].Caption+' , '+ListView.Items[iItem].SubItems[0] );
+               end;
+               slError.SaveToFile('c:\'+IntToStr(gettickCount)+'.csv');
+               slError.Destroy;
+          end;
      end;
 end;
 

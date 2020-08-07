@@ -30,35 +30,13 @@ type
     Label4: TLabel;
     Label5: TLabel;
     Panel2: TPanel;
-    Panel_Search: TPanel;
     Label14: TLabel;
     Label15: TLabel;
     Panel4: TPanel;
     Panel_All: TPanel;
-    Label13: TLabel;
-    Label12: TLabel;
-    ComboBox2: TComboBox;
-    ComboBox1: TComboBox;
-    Button3: TButton;
-    Label11: TLabel;
-    Edit2: TEdit;
-    Edit3: TEdit;
-    Label10: TLabel;
-    RadioButton2: TRadioButton;
-    RadioButton1: TRadioButton;
     Panel_Subjects: TPanel;
-    Label16: TLabel;
-    Label17: TLabel;
-    Label18: TLabel;
-    Label19: TLabel;
     Panel_Thread: TPanel;
-    Label_Score: TLabel;
-    Label_ReplyRead: TLabel;
-    Label_LastPostTime: TLabel;
-    Panel12: TPanel;
     Panel_ThreadTitle: TPanel;
-    Label104: TLabel;
-    Label105: TLabel;
     Label106: TLabel;
     Label107: TLabel;
     Label108: TLabel;
@@ -67,22 +45,27 @@ type
     Panel_Pages: TPanel;
     Edit_PageNo: TEdit;
     ZQuery_Threads: TZReadOnlyQuery;
-    StaticText_Subject: TStaticText;
-    StaticText_Uper: TStaticText;
-    StaticText_LastPost: TStaticText;
-    Label_New: TLabel;
     Button_Next: TButton;
     Button1: TButton;
     Button2: TButton;
     Button4: TButton;
     Button5: TButton;
     Panel1: TPanel;
+    Panel3: TPanel;
+    StaticText_Subject: TStaticText;
+    Panel5: TPanel;
+    StaticText_Uper: TStaticText;
+    Label_ReplyRead: TLabel;
+    StaticText_LastPost: TStaticText;
+    Label_LastPostTime: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure Button_NextClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure FormMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
   private
     { Private declarations }
   public
@@ -263,6 +246,53 @@ begin
      giPageNo  := StrToIntDef(Edit_PageNo.Text,giPageNo+1);
      giPageNo  := giPageNo-1;
      UpdateThreads;
+end;
+
+procedure TDFW.FormMouseUp(Sender: TObject; Button: TMouseButton;  Shift: TShiftState; X, Y: Integer);
+var
+     iComp     : Integer;
+     oPanel    : TPanel;
+begin
+     {
+     X,Y分别表示当前设备的Width/Height；
+     Button : mbLeft : 屏幕纵向, mbRight:屏幕横向；
+     Shift：ssShift, ssAlt, ssCtrl,ssLeft, ssRight,
+     分别对应0:未知/1:PC/2:Android/3:iPhone/4:Tablet
+     另外，浏览窗体的
+     screenWidth可以通过dwGetProp(Self,'screenwidth')得到；
+     screenHeight可以通过dwGetProp(Self,'screenheight')得到；
+     innerWidth可以通过dwGetProp(Self,'innerwidth')得到；
+     innerHeight可以通过dwGetProp(Self,'innerheight')得到；
+     clientWidth可以通过dwGetProp(Self,'clientwidth')得到；
+     clientHeight可以通过dwGetProp(Self,'clientheight')得到；
+     }
+
+     if (X>700)and(Y>700) then begin
+          Width     := X;
+          Panel_ThreadTitle.Visible     := True;
+
+          //
+          for iComp := 0 to Self.ComponentCount-1 do begin
+               if Components[iComp].ClassType = TPanel then begin
+                    oPanel    := TPanel(Components[iComp]);
+                    if not oPanel.ParentBiDiMode then begin
+                         dwRealignPanel(oPanel,True);
+                    end;
+               end;
+          end;
+     end else begin
+          Width     := X;
+          Panel_ThreadTitle.Visible     := False;
+          //
+          for iComp := 0 to Self.ComponentCount-1 do begin
+               if Components[iComp].ClassType = TPanel then begin
+                    oPanel    := TPanel(Components[iComp]);
+                    if not oPanel.ParentBiDiMode then begin
+                         dwRealignPanel(oPanel,False);
+                    end;
+               end;
+          end;
+     end;
 end;
 
 end.

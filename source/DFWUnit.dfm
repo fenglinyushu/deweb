@@ -2716,6 +2716,7 @@ object DFW: TDFW
     A3AA8001FFFF8001D6A4C003F5F5E007A3A3F81FFFFF}
   OldCreateOrder = False
   OnCreate = FormCreate
+  OnMouseUp = FormMouseUp
   PixelsPerInch = 96
   TextHeight = 20
   object Panel_All: TPanel
@@ -3107,62 +3108,6 @@ object DFW: TDFW
           CA0F2E36674F91BCDDE0A00980A315F4059D9C3A759C56F6F0C705BC08238A28
           D42A46A06028038000E00152514F7DC5CCDEE7FFD9}
       end
-      object Label16: TLabel
-        Left = 229
-        Top = 44
-        Width = 60
-        Height = 20
-        Caption = #28216#25103#35268#21017
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clBlue
-        Font.Height = -15
-        Font.Name = #24494#36719#38597#40657
-        Font.Style = []
-        ParentFont = False
-        Visible = False
-      end
-      object Label17: TLabel
-        Left = 301
-        Top = 44
-        Width = 60
-        Height = 20
-        Caption = #20813#36153#27880#20876
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clBlue
-        Font.Height = -15
-        Font.Name = #24494#36719#38597#40657
-        Font.Style = []
-        ParentFont = False
-        Visible = False
-      end
-      object Label18: TLabel
-        Left = 645
-        Top = 44
-        Width = 60
-        Height = 20
-        Caption = #36164#26009#19979#36733
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clBlue
-        Font.Height = -15
-        Font.Name = #24494#36719#38597#40657
-        Font.Style = []
-        ParentFont = False
-        Visible = False
-      end
-      object Label19: TLabel
-        Left = 717
-        Top = 44
-        Width = 60
-        Height = 20
-        Caption = #20851#20110#26412#31449
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clBlue
-        Font.Height = -15
-        Font.Name = #24494#36719#38597#40657
-        Font.Style = []
-        ParentFont = False
-        Visible = False
-      end
     end
     object Panel_01_Menu: TPanel
       Left = 0
@@ -3251,125 +3196,14 @@ object DFW: TDFW
         Align = alClient
         Color = clWhite
         TabOrder = 0
-        object Panel_Search: TPanel
+        object Panel_Subjects: TPanel
           Left = 1
           Top = 1
           Width = 998
-          Height = 90
-          Align = alTop
-          BevelOuter = bvNone
-          Color = 16767438
-          TabOrder = 0
-          Visible = False
-          object Label13: TLabel
-            Left = 277
-            Top = 52
-            Width = 75
-            Height = 20
-            Caption = #25552#38382#22823#23500#32705
-          end
-          object Label12: TLabel
-            Left = 276
-            Top = 19
-            Width = 60
-            Height = 20
-            Caption = #38382#39064#31867#22411
-          end
-          object Label11: TLabel
-            Left = 16
-            Top = 52
-            Width = 75
-            Height = 20
-            Caption = #26631#39064#20851#38190#23383
-          end
-          object Label10: TLabel
-            Left = 16
-            Top = 19
-            Width = 30
-            Height = 20
-            Caption = #20998#31867
-          end
-          object ComboBox2: TComboBox
-            Left = 549
-            Top = 10
-            Width = 193
-            Height = 28
-            ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
-            ItemHeight = 20
-            ItemIndex = 0
-            TabOrder = 0
-            Text = #25353#38382#39064' '#25552#20986#26102#38388' '#25490#24207
-            Items.Strings = (
-              #25353#38382#39064' '#25552#20986#26102#38388' '#25490#24207)
-          end
-          object ComboBox1: TComboBox
-            Left = 72
-            Top = 10
-            Width = 161
-            Height = 28
-            ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
-            ItemHeight = 20
-            ItemIndex = 0
-            TabOrder = 1
-            Text = #20840#37096
-            Items.Strings = (
-              #20840#37096
-              'Windows'#24320#21457
-              #25968#25454#24211#24320#21457)
-          end
-          object Button3: TButton
-            Left = 548
-            Top = 53
-            Width = 90
-            Height = 28
-            Hint = '{"type":"primary"}'
-            Caption = #26816#32034#38382#39064
-            TabOrder = 2
-          end
-          object Edit2: TEdit
-            Left = 112
-            Top = 53
-            Width = 113
-            Height = 28
-            ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
-            TabOrder = 3
-          end
-          object Edit3: TEdit
-            Left = 366
-            Top = 53
-            Width = 130
-            Height = 28
-            AutoSelect = False
-            ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
-            TabOrder = 4
-          end
-          object RadioButton2: TRadioButton
-            Left = 367
-            Top = 19
-            Width = 65
-            Height = 17
-            Caption = #24050#31572
-            Checked = True
-            TabOrder = 5
-            TabStop = True
-          end
-          object RadioButton1: TRadioButton
-            Left = 423
-            Top = 19
-            Width = 65
-            Height = 17
-            Caption = #24453#31572
-            TabOrder = 6
-          end
-        end
-        object Panel_Subjects: TPanel
-          Left = 1
-          Top = 91
-          Width = 998
-          Height = 788
+          Height = 878
           Align = alClient
           Color = clWhite
-          TabOrder = 1
+          TabOrder = 0
           object Panel_Thread: TPanel
             Left = 1
             Top = 33
@@ -3377,89 +3211,96 @@ object DFW: TDFW
             Height = 40
             Align = alTop
             BevelOuter = bvNone
+            BiDiMode = bdLeftToRight
+            BorderWidth = 3
+            BorderStyle = bsSingle
             Color = clWhite
             Font.Charset = ANSI_CHARSET
             Font.Color = 6579300
             Font.Height = -15
             Font.Name = #24494#36719#38597#40657
             Font.Style = []
+            ParentBiDiMode = False
             ParentFont = False
             TabOrder = 0
             Visible = False
-            object Label_Score: TLabel
-              Left = 32
-              Top = 8
-              Width = 18
-              Height = 20
-              Caption = '50'
-            end
-            object Label_ReplyRead: TLabel
-              Left = 680
-              Top = 8
-              Width = 42
-              Height = 20
-              Caption = '10/32'
-              Font.Charset = ANSI_CHARSET
-              Font.Color = 6579300
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label_LastPostTime: TLabel
-              Left = 893
-              Top = 8
-              Width = 84
-              Height = 20
-              Caption = '2020-08-03'
-              Font.Charset = ANSI_CHARSET
-              Font.Color = 6579300
-              Font.Height = -15
-              Font.Name = #24494#36719#38597#40657
-              Font.Style = []
-              ParentFont = False
-            end
-            object Label_New: TLabel
-              Left = 8
-              Top = 8
-              Width = 10
-              Height = 20
-              Caption = #9679
-            end
-            object Panel12: TPanel
-              Left = 0
-              Top = 0
-              Width = 996
-              Height = 1
-              Align = alTop
+            object Panel3: TPanel
+              Left = 3
+              Top = 3
+              Width = 500
+              Height = 30
+              Align = alLeft
+              Caption = 'Panel3'
+              Color = clWhite
               TabOrder = 0
+              object StaticText_Subject: TStaticText
+                Left = 1
+                Top = 1
+                Width = 498
+                Height = 28
+                Align = alClient
+                AutoSize = False
+                Caption = 'StaticText_Subject'
+                TabOrder = 0
+              end
             end
-            object StaticText_Subject: TStaticText
-              Left = 70
-              Top = 8
-              Width = 499
-              Height = 24
-              AutoSize = False
-              Caption = 'StaticText_Subject'
+            object Panel5: TPanel
+              Left = 503
+              Top = 3
+              Width = 486
+              Height = 30
+              Align = alClient
+              Color = clWhite
               TabOrder = 1
-            end
-            object StaticText_Uper: TStaticText
-              Left = 570
-              Top = 8
-              Width = 100
-              Height = 24
-              AutoSize = False
-              Caption = 'StaticText_Subject'
-              TabOrder = 2
-            end
-            object StaticText_LastPost: TStaticText
-              Left = 780
-              Top = 8
-              Width = 100
-              Height = 24
-              AutoSize = False
-              Caption = 'StaticText_Subject'
-              TabOrder = 3
+              object Label_ReplyRead: TLabel
+                Left = 137
+                Top = 1
+                Width = 136
+                Height = 28
+                Align = alLeft
+                AutoSize = False
+                Caption = '10/32'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = 16752192
+                Font.Height = -15
+                Font.Name = #24494#36719#38597#40657
+                Font.Style = []
+                ParentFont = False
+              end
+              object Label_LastPostTime: TLabel
+                Left = 393
+                Top = 1
+                Width = 92
+                Height = 28
+                Align = alClient
+                Caption = '2020-08-03'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = 16752192
+                Font.Height = -15
+                Font.Name = #24494#36719#38597#40657
+                Font.Style = []
+                ParentFont = False
+              end
+              object StaticText_Uper: TStaticText
+                Left = 1
+                Top = 1
+                Width = 136
+                Height = 28
+                Align = alLeft
+                AutoSize = False
+                Caption = 'StaticText_Subject'
+                TabOrder = 0
+              end
+              object StaticText_LastPost: TStaticText
+                Left = 273
+                Top = 1
+                Width = 120
+                Height = 28
+                Align = alLeft
+                AutoSize = False
+                Caption = 'StaticText_Subject'
+                TabOrder = 1
+              end
             end
           end
           object Panel_ThreadTitle: TPanel
@@ -3478,45 +3319,29 @@ object DFW: TDFW
             Font.Style = []
             ParentFont = False
             TabOrder = 1
-            object Label104: TLabel
-              Left = 8
-              Top = 4
-              Width = 15
-              Height = 20
-              Caption = #26032
-              Visible = False
-            end
-            object Label105: TLabel
-              Left = 32
-              Top = 4
-              Width = 30
-              Height = 20
-              Caption = #31215#20998
-              Visible = False
-            end
             object Label106: TLabel
-              Left = 140
+              Left = 4
               Top = 4
-              Width = 30
+              Width = 45
               Height = 20
               Caption = #26631#39064
             end
             object Label107: TLabel
-              Left = 680
+              Left = 640
               Top = 4
               Width = 66
               Height = 20
               Caption = #22238#22797'/'#38405#35835
             end
             object Label108: TLabel
-              Left = 570
+              Left = 506
               Top = 4
               Width = 30
               Height = 20
               Caption = #25552#38382
             end
             object Label109: TLabel
-              Left = 780
+              Left = 772
               Top = 4
               Width = 60
               Height = 20

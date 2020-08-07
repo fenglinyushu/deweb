@@ -95,6 +95,8 @@ function dwPHPToDate(ADate:Integer):TDateTime;
 //
 function dwLongStr(AText:String):String;
 
+//排列Panel的子控件
+procedure dwRealignPanel(APanel:TPanel;AHorz:Boolean);
 
 const
      _Head : string =
@@ -457,12 +459,17 @@ begin
 end;
 
 function dwPHPToDate(ADate:Integer):TDateTime;
+var
+     f1970     : TDateTime;
 begin
-     Result    := ((ADate+28800)/86400+25569);
+     //PHP时间是格林威治时间1970-1-1 00:00:00到当前流逝的秒数
+     f1970     := StrToDateTime('1970-01-01 00:00:00');
+     Result    := IncSecond(f1970,ADate);
+     //Result    := ((ADate+28800)/86400+25569);
 end;
 
 
-//反编码函数
+//反编码函数                                                                    
 function dwDecode(AText:string):string;
 begin
      Result    := StringReplace(AText,'%7B','{',[rfReplaceAll]);
@@ -555,6 +562,59 @@ begin
 
 end;
 
+procedure dwRealignPanel(APanel:TPanel;AHorz:Boolean);
+var
+     iCtrl     : Integer;
+     oCtrl     : TControl;
+     oCtrl0    : TControl;
+begin
+     //
+     if APanel.ControlCount<=1 then begin
+          Exit;
+     end;
+
+     //取得第一个控件, 以检测当前状态
+     oCtrl0    := APanel.Controls[0];
+
+     if AHorz then begin
+          //水平排列的情况
+          if oCtrl0.Align = alLeft then begin
+               //已经水平排列,
+          end else begin
+               APanel.Height  := APanel.BorderWidth*2+oCtrl0.Height;
+               //
+               for iCtrl := 0 to APanel.ControlCount-2 do begin
+                    oCtrl     := APanel.Controls[iCtrl];
+                    //
+                    oCtrl.Align    := alLeft;
+                    oCtrl.Width    := (APanel.Width-2*APanel.BorderWidth) div APanel.ControlCount;
+                    oCtrl.Left     := 9000+iCtrl;
+               end;
+               //最后一个alClient
+               oCtrl     := APanel.Controls[APanel.ControlCount-1];
+               oCtrl.Align    := alClient;
+          end;
+     end else begin
+          //垂直排列的情况
+          if oCtrl0.Align = alTop then begin
+               //已经垂直排列,
+          end else begin
+               APanel.Height  := APanel.BorderWidth*2+oCtrl0.Height*APanel.ControlCount;
+               //
+               for iCtrl := 0 to APanel.ControlCount-2 do begin
+                    oCtrl     := APanel.Controls[iCtrl];
+                    //
+                    oCtrl.Align    := alTop;
+                    oCtrl.Height   := (APanel.Height-2*APanel.BorderWidth) div APanel.ControlCount;
+                    oCtrl.Top      := 9000+iCtrl;
+               end;
+               //最后一个alClient
+               oCtrl     := APanel.Controls[APanel.ControlCount-1];
+               oCtrl.Align    := alClient;
+          end;
+     end;
+
+end;
 
 procedure dwRealignChildren(ACtrl:TWinControl;AHorz:Boolean;ASize:Integer);
 var
