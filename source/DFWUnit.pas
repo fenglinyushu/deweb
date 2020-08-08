@@ -21,20 +21,12 @@ type
   TDFW = class(TForm)
     Panel_00_Head: TPanel;
     Img_dfw: TImage;
-    Panel_10_Content: TPanel;
     Panel_99_Foot: TPanel;
-    Panel_01_Menu: TPanel;
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
-    Label5: TLabel;
-    Panel2: TPanel;
     Label14: TLabel;
     Label15: TLabel;
     Panel4: TPanel;
     Panel_All: TPanel;
-    Panel_Subjects: TPanel;
+    Panel_10_Content: TPanel;
     Panel_Thread: TPanel;
     Panel_ThreadTitle: TPanel;
     Label106: TLabel;
@@ -58,6 +50,7 @@ type
     Label_ReplyRead: TLabel;
     StaticText_LastPost: TStaticText;
     Label_LastPostTime: TLabel;
+    Panel6: TPanel;
     procedure FormCreate(Sender: TObject);
     procedure Button_NextClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
@@ -95,21 +88,28 @@ begin
      //设置TOP, 以修正编辑时的更改
      Top  := 0;
 
-     //
+     //默认为第1页
      giPageNo  := 0;
 
-     //打开数据表
-     //ZReadOnlyQuery_Threads.SQL.Text:='Set Names GB2312';
-     //ZReadOnlyQuery_Threads.ExecSQL;
-
-     //显示
+     //动态生成主题贴
      for iItem := 0 to 19 do begin
           oPanel    := TPanel(CloneComponent(Panel_Thread));
           oPanel.Visible := True;
           oPanel.Top     := 9900+iItem;
      end;
      Panel_Pages.Top     := 9999;
-     
+
+     //
+     Panel_10_Content.Height  := Panel_Thread.Height*20 + Panel_ThreadTitle.Height;
+
+     //
+     Panel_All.Height    := Panel_10_Content.Height + Panel_00_Head.Height + Panel_99_Foot.Height
+          +2*Panel_All.BorderWidth+50;
+   
+
+     //
+     dwSetHeight(Self,Panel_All.Height);
+
      //
      UpdateThreads;
 
@@ -122,13 +122,6 @@ begin
      try
           //打开数据表
           ZQuery_Threads.Close;
-          //ZQuery_Threads.SQL.Text    := 'SELECT a.last_date,a.tid,a.subject,a.posts,a.views,'
-          //          +'a.lastpid,a.uid,a.create_date,b.username,c.username lastname '
-          //          +'FROM bbs_thread a,bbs_user b,bbs_user c '
-          //          +'WHERE a.uid=b.uid and a.lastuid=c.uid '
-                    //+'ORDER BY last_date DESC '
-                    //+'LIMIT 20 OFFSET '+IntToStr(giPageNo*20)
-          //          ;
           ZQuery_Threads.SQL.Text    := 'SELECT a.last_date,a.tid,a.subject,a.posts,a.views,'
                     +'a.lastpid,a.uid,a.create_date'
                     +',b.username'
@@ -175,7 +168,8 @@ begin
                     TLabel(Self.FindComponent('Label_Score'+IntToStr(iItem+1))).Caption := '';
                     //主题
                     with TStaticText(Self.FindComponent('StaticText_Subject'+IntToStr(iItem+1))) do begin
-                         Caption   := UTF8ToAnsi(Trim(ZQuery_Threads.FieldByName('subject').AsString));
+                         //Caption   := UTF8ToAnsi(Trim(ZQuery_Threads.FieldByName('subject').AsString));
+                         Caption   := dwGetText(UTF8ToAnsi(Trim(ZQuery_Threads.FieldByName('subject').AsString)),90);
                          Hint      := '{"href":"'+_WEBSITE+'dfw_thread.dw?'
                                    +'tid='+ZQuery_Threads.FieldByName('tid').AsString
                                    +'&&uid='+ZQuery_Threads.FieldByName('uid').AsString
@@ -252,6 +246,7 @@ procedure TDFW.FormMouseUp(Sender: TObject; Button: TMouseButton;  Shift: TShift
 var
      iComp     : Integer;
      oPanel    : TPanel;
+     bLarge    : Boolean;
 begin
      {
      X,Y分别表示当前设备的Width/Height；
@@ -267,32 +262,31 @@ begin
      clientHeight可以通过dwGetProp(Self,'clientheight')得到；
      }
 
-     if (X>700)and(Y>700) then begin
-          Width     := X;
-          Panel_ThreadTitle.Visible     := True;
+     //是否为大屏显示
+     bLarge    := (X>700)and(Y>700);
 
-          //
-          for iComp := 0 to Self.ComponentCount-1 do begin
-               if Components[iComp].ClassType = TPanel then begin
-                    oPanel    := TPanel(Components[iComp]);
-                    if not oPanel.ParentBiDiMode then begin
-                         dwRealignPanel(oPanel,True);
-                    end;
-               end;
-          end;
-     end else begin
-          Width     := X;
-          Panel_ThreadTitle.Visible     := False;
-          //
-          for iComp := 0 to Self.ComponentCount-1 do begin
-               if Components[iComp].ClassType = TPanel then begin
-                    oPanel    := TPanel(Components[iComp]);
-                    if not oPanel.ParentBiDiMode then begin
-                         dwRealignPanel(oPanel,False);
-                    end;
+
+     Width     := Min(1000,X);
+     Panel_ThreadTitle.Visible     := bLarge;
+
+     //
+     for iComp := 0 to Self.ComponentCount-1 do begin
+          if Components[iComp].ClassType = TPanel then begin
+               oPanel    := TPanel(Components[iComp]);
+               if not oPanel.ParentBiDiMode then begin
+                    dwRealignPanel(oPanel,bLarge);
                end;
           end;
      end;
+     
+     //
+     Panel_10_Content.Height  := Panel_Thread.Height*20 + Panel_ThreadTitle.Height;
+
+     //
+     Panel_All.Height    := Panel_10_Content.Height + Panel_00_Head.Height + Panel_99_Foot.Height
+          +2*Panel_All.BorderWidth+50;
+     //
+     dwSetHeight(Self,Panel_All.Height);
 end;
 
 end.

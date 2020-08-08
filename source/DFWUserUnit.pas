@@ -12,6 +12,7 @@ uses
      ZAbstractRODataset, ZDataset,
 
      //
+     Math,
      Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
      Dialogs, StdCtrls, jpeg, ExtCtrls, DB;
 
@@ -22,12 +23,14 @@ type
     Label14: TLabel;
     Label15: TLabel;
     Panel4: TPanel;
-    Panel_10_Posts: TPanel;
     Panel_00_Title: TPanel;
     Label_UserName: TLabel;
     ZQuery_Users: TZReadOnlyQuery;
+    Image_User: TImage;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure FormMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
   private
      giTid : Integer;
      giUid : Integer;
@@ -88,12 +91,19 @@ begin
 
           //
           if not ZQuery_Users.IsEmpty then begin
-               Label_UserName.Caption   := ZQuery_Users.FieldByName('username').AsString;
+               Label_UserName.Caption   := UTF8ToAnsi(ZQuery_Users.FieldByName('username').AsString);
           end;
      except
 
      end;
 
+
+end;
+
+procedure Tdfw_user.FormMouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+     Width     := Min(1000,X);
 
 end;
 

@@ -433,8 +433,22 @@ const
           +'    <link rel="icon" href="dist/webimages/[###].ico" type="image/x-icon">       '#13
           +'    <link rel="stylesheet" type="text/css" href="dist/theme-chalk/index.css" /> '#13;
 
+function dwGetText(AText:string;ALen:integer):string;
 
 implementation
+
+function dwGetText(AText:string;ALen:integer):string;
+begin
+     if Length(AText)<ALen then begin
+          Result    := AText;
+     end else begin
+          //先判断要截取的字符串最后一个字节的类型
+          //如果为汉字的第一个字节则减(加)一位
+          if ByteType(AText,ALen) = mbLeadByte then
+               ALen := ALen - 1;
+          result := copy(AText,1,ALen) + '...';
+     end;
+end;
 
 function dwLongStr(AText:String):String;
 var

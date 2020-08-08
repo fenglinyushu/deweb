@@ -6,7 +6,7 @@ object dfw_thread: Tdfw_thread
   Caption = #22823#23500#32705#35770#22363
   Color = clWhite
   TransparentColor = True
-  TransparentColorValue = clBtnFace
+  TransparentColorValue = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = 6579300
   Font.Height = -15
@@ -25,10 +25,11 @@ object dfw_thread: Tdfw_thread
     Height = 1060
     Align = alTop
     BevelOuter = bvNone
+    Color = clWhite
     TabOrder = 0
     object Panel_99_Foot: TPanel
       Left = 0
-      Top = 152
+      Top = 146
       Width = 1000
       Height = 70
       Align = alTop
@@ -41,7 +42,7 @@ object dfw_thread: Tdfw_thread
         Height = 20
         Align = alBottom
         Alignment = taCenter
-        Caption = #24863#35874#24744#30340#24800#39038','#22914#26377#20219#20309#24314#35758#21644#24847#35265','#35831#32852#31995#29256#20027'.2020.08.01'
+        Caption = #24863#35874#24800#39038','#22914#26377#20219#20309#24314#35758#21644#24847#35265','#35831#32852#31995#29256#20027'1'
       end
       object Label15: TLabel
         Left = 1
@@ -65,7 +66,7 @@ object dfw_thread: Tdfw_thread
       Left = 0
       Top = 56
       Width = 1000
-      Height = 96
+      Height = 90
       Align = alTop
       AutoSize = True
       BevelOuter = bvNone
@@ -75,17 +76,17 @@ object dfw_thread: Tdfw_thread
         Left = 0
         Top = 0
         Width = 1000
-        Height = 96
+        Height = 90
         Align = alTop
         AutoSize = True
-        BorderWidth = 8
+        BorderWidth = 5
         Color = clWhite
         TabOrder = 0
         Visible = False
         object Label_Message: TLabel
-          Left = 9
-          Top = 47
-          Width = 982
+          Left = 6
+          Top = 44
+          Width = 988
           Height = 40
           Align = alTop
           Caption = 
@@ -95,9 +96,9 @@ object dfw_thread: Tdfw_thread
           WordWrap = True
         end
         object Panel_00_PostBase: TPanel
-          Left = 9
-          Top = 9
-          Width = 982
+          Left = 6
+          Top = 6
+          Width = 988
           Height = 28
           Align = alTop
           BevelOuter = bvNone
@@ -105,10 +106,10 @@ object dfw_thread: Tdfw_thread
           Color = 16771553
           TabOrder = 0
           DesignSize = (
-            978
+            984
             24)
           object Label_CreateDate: TLabel
-            Left = 840
+            Left = 846
             Top = 4
             Width = 150
             Height = 19
@@ -149,9 +150,9 @@ object dfw_thread: Tdfw_thread
           end
         end
         object Panel_Space: TPanel
-          Left = 9
-          Top = 37
-          Width = 982
+          Left = 6
+          Top = 34
+          Width = 988
           Height = 10
           Align = alTop
           BevelOuter = bvNone

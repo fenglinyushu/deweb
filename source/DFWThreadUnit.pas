@@ -12,6 +12,7 @@ uses
      ZAbstractRODataset, ZDataset,
 
      //
+     Math,
      Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
      Dialogs, StdCtrls, jpeg, ExtCtrls, DB;
 
@@ -179,7 +180,7 @@ end;
 procedure Tdfw_thread.FormMouseUp(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
 begin
-     Width     := X;
+     Width     := Min(1000,X);
 end;
 
 end.
