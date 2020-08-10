@@ -42,6 +42,7 @@ uses
   DFWUserUnit in 'DFWUserUnit.pas' {dfw_user},
   DFWThreadUnit in 'DFWThreadUnit.pas' {dfw_thread},
   dwTimers in 'dwVcls\dwTimers.pas',
+  dwCharts in 'dwVcls\dwCharts.pas',
   dwLabels in 'dwVcls\dwLabels.pas';
 
 {$R *.RES}

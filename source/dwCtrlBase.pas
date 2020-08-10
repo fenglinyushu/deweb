@@ -432,6 +432,11 @@ const
           +'    <script src="dist/vue.js" type="text/javascript"></script>          '#13
           +'    <script src="dist/index.js" type="text/javascript"></script>        '#13
           +'    <script src="dist/axios.min.js" type="text/javascript"></script>    '#13
+                                                                                    
+          +'    <script src="dist/charts/echarts.min.js"></script>                  '#13
+          +'    <script src="dist/charts/lib/index.min.js"></script>                '#13
+          +'    <link rel="stylesheet" href="dist/charts/lib/style.min.css">        '#13
+
           +'    <link rel="icon" href="dist/webimages/[###].ico" type="image/x-icon">       '#13
           +'    <link rel="stylesheet" type="text/css" href="dist/theme-chalk/index.css" /> '#13;
 

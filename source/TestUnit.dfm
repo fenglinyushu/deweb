@@ -13,33 +13,51 @@ object Test: TTest
   Font.Name = #24494#36719#38597#40657
   Font.Style = []
   OldCreateOrder = False
-  DesignSize = (
-    851
-    583)
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 20
-  object StaticText_Login: TStaticText
-    Left = 745
+  object Chart1: TChart
+    Left = 16
     Top = 16
-    Width = 90
-    Height = 24
-    Hint = '{"href":"dfw_login.dw"}'
-    Alignment = taRightJustify
-    Anchors = [akTop, akRight]
-    AutoSize = False
-    Caption = #30331#24405
+    Width = 433
+    Height = 305
+    BackWall.Brush.Color = clWhite
+    Title.Text.Strings = (
+      'TChart')
+    View3DOptions.Elevation = 315
+    View3DOptions.Orthogonal = False
+    View3DOptions.Perspective = 0
+    View3DOptions.Rotation = 360
     TabOrder = 0
-  end
-  object StaticText_Post: TStaticText
-    Left = 745
-    Top = 40
-    Width = 90
-    Height = 24
-    Hint = '{"href":"dfw_post.dw"}'
-    Alignment = taRightJustify
-    Anchors = [akTop, akRight]
-    AutoSize = False
-    Caption = #25552#38382
-    TabOrder = 1
+    object Series1: TLineSeries
+      Marks.ArrowLength = 8
+      Marks.Visible = False
+      SeriesColor = clRed
+      Pointer.InflateMargins = True
+      Pointer.Style = psRectangle
+      Pointer.Visible = False
+      XValues.DateTime = False
+      XValues.Name = 'X'
+      XValues.Multiplier = 1.000000000000000000
+      XValues.Order = loAscending
+      YValues.DateTime = False
+      YValues.Name = 'Y'
+      YValues.Multiplier = 1.000000000000000000
+      YValues.Order = loNone
+    end
+    object Series2: TFastLineSeries
+      Marks.ArrowLength = 8
+      Marks.Visible = False
+      SeriesColor = clGreen
+      LinePen.Color = clGreen
+      XValues.DateTime = False
+      XValues.Name = 'X'
+      XValues.Multiplier = 1.000000000000000000
+      XValues.Order = loAscending
+      YValues.DateTime = False
+      YValues.Name = 'Y'
+      YValues.Multiplier = 1.000000000000000000
+      YValues.Order = loNone
+    end
   end
 end

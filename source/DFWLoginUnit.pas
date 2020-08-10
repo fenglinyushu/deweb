@@ -67,7 +67,7 @@ begin
           sPsd      := ZQuery.FieldByName('password').AsString;
           //
           if dwGetMD5(dwGetMD5(Edit_Psd.text)+sSalt)=sPsd then begin
-               dwShowMessage('感谢惠顾!',Self);
+               //dwShowMessage('感谢惠顾!',Self);
                dwNavigate('dfw.dw?uid=' + ZQuery.FieldByName('uid').AsString+'&&name='+dwescape(Edit_UserName.text),False,self);
           end else begin
                dwShowMessage('用户名或密码不正确!',Self);
