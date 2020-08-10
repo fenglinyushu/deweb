@@ -14,6 +14,13 @@ object Form_Base: TForm_Base
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
+  object Image1: TImage
+    Left = 32
+    Top = 72
+    Width = 105
+    Height = 105
+    Hint = '{"src":"dist/webimages/xamh.png"}'
+  end
   object Timer_Manager: TTimer
     Enabled = False
     Interval = 30000

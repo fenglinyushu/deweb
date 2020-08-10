@@ -12,7 +12,7 @@ uses
   Unit2 in 'Unit2.pas' {dwsdk},
   Unit3 in 'Unit3.pas' {Form_OnlineTestSystem},
   Unit4 in 'Unit4.pas' {Form4},
-  Unit5 in 'Unit5.pas' {Login},
+  DFWLoginUnit in 'DFWLoginUnit.pas' {DFW_Login},
   DemosUnit in 'DemosUnit.pas' {Demos},
   TestUnit in 'TestUnit.pas' {Test},
   DriverUnit in 'DriverUnit.pas' {Driver},

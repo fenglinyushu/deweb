@@ -18,6 +18,8 @@ uses
      DFWUnit,  //¥Û∏ªŒÃ¬€Ã≥
      DFWThreadUnit,
      DFWUserUnit,
+     DFWLoginUnit,
+
 
      //
      SynCommons,
@@ -50,6 +52,7 @@ type
     CheckBox_AutoHide: TCheckBox;
     Label2: TLabel;
     SpinEdit_Port: TSpinEdit;
+    Timer_FormCount: TTimer;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Button_StartClick(Sender: TObject);
@@ -60,6 +63,7 @@ type
     procedure FormMouseUp(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure FormCreate(Sender: TObject);
+    procedure Timer_FormCountTimer(Sender: TObject);
   private
     FInitialized   : Boolean;
     FCountRequests : Integer;
@@ -194,10 +198,16 @@ begin
      Self.Visible   := True;
 end;
 
+procedure TMainForm.Timer_FormCountTimer(Sender: TObject);
+begin
+     Caption   := 'DeWeb --- Count : '+ IntToStr(Screen.FormCount-2);
+end;
+
 initialization
     RegisterClass(TDFW);
     RegisterClass(TDFW_Thread);
     RegisterClass(TDFW_User);
+    RegisterClass(TDFW_Login);
     //
     RegisterClass(TDriver);
     RegisterClass(TTest);
@@ -212,6 +222,7 @@ finalization
     UnRegisterClass(TDFW);
     UnRegisterClass(TDFW_Thread);
     UnRegisterClass(TDFW_User);
+    UnRegisterClass(TDFW_Login);
     //
     UnRegisterClass(TDriver);
     UnRegisterClass(TTest);

@@ -16,9 +16,8 @@ uses
 
 type
   TTest = class(TForm)
-    Panel1: TPanel;
-    Label1: TLabel;
-    procedure Timer1Timer(Sender: TObject);
+    StaticText_Login: TStaticText;
+    StaticText_Post: TStaticText;
   private
     { Private declarations }
   public
@@ -31,11 +30,5 @@ var
 implementation
 
 {$R *.dfm}
-
-procedure TTest.Timer1Timer(Sender: TObject);
-begin
-     //
-     Label1.Caption := IntToStr(GetTickCount);
-end;
 
 end.

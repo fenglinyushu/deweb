@@ -25,8 +25,22 @@ type
     Panel4: TPanel;
     Panel_00_Title: TPanel;
     Label_UserName: TLabel;
-    ZQuery_Users: TZReadOnlyQuery;
+    ZQuery: TZReadOnlyQuery;
     Image_User: TImage;
+    Panel_00_Head: TPanel;
+    Img_dfw: TImage;
+    Panel6: TPanel;
+    Panel1: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    StaticText_Create_Date: TStaticText;
+    StaticText_Login_Date: TStaticText;
+    StaticText_Logins: TStaticText;
+    StaticText_Threads: TStaticText;
+    StaticText_Posts: TStaticText;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormMouseUp(Sender: TObject; Button: TMouseButton;
@@ -83,15 +97,35 @@ begin
           giUid     := StrToIntDef(sParams,-1);
 
           //打开数据表
-          ZQuery_Users.Close;
-          ZQuery_Users.SQL.Text    := 'SELECT username '
+          ZQuery.Close;
+          ZQuery.SQL.Text    := 'SELECT uid,username,create_date,login_date,logins,threads,posts '
                     +'FROM bbs_user '
                     +'WHERE uid='+IntToStr(giUid)+' ';
-          ZQuery_Users.Open;
+          ZQuery.Open;
 
           //
-          if not ZQuery_Users.IsEmpty then begin
-               Label_UserName.Caption   := UTF8ToAnsi(ZQuery_Users.FieldByName('username').AsString);
+          if not ZQuery.IsEmpty then begin
+               Label_UserName.Caption   := UTF8ToAnsi(ZQuery.FieldByName('username').AsString);
+               with StaticText_Create_Date do begin
+                    Caption   := FormatDateTime('yyyy-mm-dd',dwPHPToDate(ZQuery.FieldByName('create_date').AsInteger));
+                    Hint      := '';//{"href":"dfw_user.dw?uid='+ZQuery.FieldByName('lastuid').AsString+'"}';
+               end;
+               with StaticText_login_Date do begin
+                    Caption   := FormatDateTime('yyyy-mm-dd',dwPHPToDate(ZQuery.FieldByName('login_date').AsInteger));
+                    Hint      := '';//{"href":"dfw_user.dw?uid='+ZQuery.FieldByName('lastuid').AsString+'"}';
+               end;
+               with StaticText_logins do begin
+                    Caption   := IntToStr(ZQuery.FieldByName('logins').AsInteger);
+                    Hint      := '';//{"href":"dfw_user.dw?uid='+ZQuery.FieldByName('lastuid').AsString+'"}';
+               end;
+               with StaticText_threads do begin
+                    Caption   := IntToStr(ZQuery.FieldByName('threads').AsInteger);
+                    Hint      := '{"href":"dfw_userthreads.dw?uid='+ZQuery.FieldByName('uid').AsString+'"}';
+               end;
+               with StaticText_posts do begin
+                    Caption   := IntToStr(ZQuery.FieldByName('posts').AsInteger);
+                    Hint      := '{"href":"dfw_userposts.dw?uid='+ZQuery.FieldByName('uid').AsString+'"}';
+               end;
           end;
      except
 

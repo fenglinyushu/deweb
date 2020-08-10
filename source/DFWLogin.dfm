@@ -1,14 +1,15 @@
-object MainForm: TMainForm
-  Left = 429
-  Top = 145
-  Width = 728
-  Height = 243
-  Caption = 'DeWeb'
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
+object Login: TLogin
+  Left = 457
+  Top = 153
+  BorderStyle = bsNone
+  Caption = #25163#26426#25903#25345#28436#31034
+  ClientHeight = 538
+  ClientWidth = 483
+  Color = clWhite
+  Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
-  Font.Height = -13
-  Font.Name = 'Verdana'
+  Font.Height = -15
+  Font.Name = #24494#36719#38597#40657
   Font.Style = []
   Icon.Data = {
     0000010001003030000001002000A82500001600000028000000300000006000
@@ -314,185 +315,117 @@ object MainForm: TMainForm
     7FFE00070000F0000FF0000F0000F8000000001F0000FC000000003F0000FF00
     000000FF0000FF80000001FF0000FFE0000003FF0000FFF800001FFF0000}
   OldCreateOrder = False
-  OnClose = FormClose
-  OnCreate = FormCreate
   OnMouseUp = FormMouseUp
-  OnShow = FormShow
+  DesignSize = (
+    483
+    538)
   PixelsPerInch = 96
-  TextHeight = 16
-  object DisplayMemo: TMemo
-    Left = 0
-    Top = 61
-    Width = 712
-    Height = 143
-    Align = alClient
-    ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
-    Lines.Strings = (
-      'DeWeb : Delphi - Web'
-      'www.web0000.com'
-      '-')
-    ScrollBars = ssBoth
-    TabOrder = 0
-    WordWrap = False
-  end
-  object Panel_Buttons: TPanel
-    Left = 0
-    Top = 0
-    Width = 712
-    Height = 61
-    Align = alTop
+  TextHeight = 20
+  object Panel_Content: TPanel
+    Left = 62
+    Top = 20
+    Width = 360
+    Height = 491
+    Anchors = [akTop]
     BevelOuter = bvNone
+    BorderWidth = 10
     Color = clWhite
     ParentBackground = False
-    TabOrder = 1
-    object Label3: TLabel
-      Left = 363
-      Top = 19
-      Width = 27
-      Height = 16
-      Caption = 'Port'
-    end
-    object Label1: TLabel
-      Left = 466
-      Top = 19
-      Width = 50
-      Height = 16
-      Caption = 'Clients:'
-    end
-    object Button_Start: TButton
-      Left = 8
-      Top = 15
-      Width = 80
-      Height = 29
-      Caption = '&Start'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -13
-      Font.Name = 'Verdana'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 0
-      OnClick = Button_StartClick
-    end
-    object Button_Stop: TButton
-      Left = 96
-      Top = 15
-      Width = 80
-      Height = 29
-      Caption = 'St&op'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -13
-      Font.Name = 'Verdana'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 1
-      OnClick = Button_StopClick
-    end
-    object ClearButton: TButton
-      Left = 184
-      Top = 15
-      Width = 80
-      Height = 29
-      Caption = '&Clear'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -13
-      Font.Name = 'Verdana'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 2
-      OnClick = ClearButtonClick
-    end
-    object Button1: TButton
-      Left = 272
-      Top = 15
-      Width = 80
-      Height = 29
-      Caption = '&Hide'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -13
-      Font.Name = 'Verdana'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 3
-    end
-    object Panel_WebXone: TPanel
-      Left = 549
-      Top = 0
-      Width = 163
-      Height = 61
-      Align = alRight
+    TabOrder = 0
+    object Panel_Logo: TPanel
+      Left = 10
+      Top = 10
+      Width = 340
+      Height = 58
+      Align = alTop
       BevelOuter = bvNone
-      Color = clWhite
-      ParentBackground = False
-      TabOrder = 4
-      object Label2: TLabel
-        Left = 0
-        Top = 0
-        Width = 163
-        Height = 61
-        Align = alClient
-        Alignment = taCenter
-        Caption = 'DeWeb'
-        Color = clWhite
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -32
-        Font.Name = 'Verdana'
-        Font.Style = [fsBold, fsItalic]
-        ParentColor = False
-        ParentFont = False
+      BorderWidth = 4
+      ParentColor = True
+      TabOrder = 0
+    end
+    object Panel_Mail: TPanel
+      Left = 10
+      Top = 68
+      Width = 340
+      Height = 60
+      Align = alTop
+      BevelOuter = bvNone
+      BorderWidth = 8
+      ParentColor = True
+      TabOrder = 1
+      object Label_MailBox: TLabel
+        Left = 8
+        Top = 8
+        Width = 80
+        Height = 44
+        Align = alLeft
+        AutoSize = False
+        Caption = 'Mail :'
         Layout = tlCenter
       end
+      object Edit_MailBox: TEdit
+        Left = 88
+        Top = 8
+        Width = 244
+        Height = 28
+        Hint = '{"type":"text","placeholder":"'#35831#36755#20837#29992#25143#21517#25110#37038#31665'"}'
+        ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
+        TabOrder = 0
+        Text = 'webmaster@web0000.com'
+      end
     end
-    object CheckBox_AutoHide: TCheckBox
-      Left = 379
-      Top = 41
-      Width = 97
-      Height = 18
-      Caption = 'Auto Hide'
-      TabOrder = 5
-      Visible = False
+    object Panel_Psd: TPanel
+      Left = 10
+      Top = 128
+      Width = 340
+      Height = 60
+      Align = alTop
+      BevelOuter = bvNone
+      BorderWidth = 8
+      ParentColor = True
+      TabOrder = 2
+      object Label_Psd: TLabel
+        Left = 8
+        Top = 8
+        Width = 80
+        Height = 44
+        Align = alLeft
+        AutoSize = False
+        Caption = 'Password :'
+        Layout = tlCenter
+      end
+      object Edit_Psd: TEdit
+        Left = 88
+        Top = 8
+        Width = 244
+        Height = 28
+        Hint = '{"placeholder":"'#35831#36755#20837#23494#30721'"}'
+        ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
+        PasswordChar = '*'
+        TabOrder = 0
+        Text = '123'
+      end
     end
-    object SpinEdit_Port: TSpinEdit
-      Left = 400
-      Top = 16
-      Width = 60
-      Height = 26
-      MaxValue = 0
-      MinValue = 0
-      TabOrder = 6
-      Value = 80
+    object Panel_Buttons: TPanel
+      Left = 10
+      Top = 188
+      Width = 340
+      Height = 103
+      Align = alTop
+      BevelOuter = bvNone
+      BorderWidth = 4
+      ParentColor = True
+      TabOrder = 3
+      object Button_Login: TButton
+        Left = 8
+        Top = 27
+        Width = 134
+        Height = 40
+        Hint = '{"type":"success","icon":"el-icon-user"}'
+        Caption = #30331#24405
+        TabOrder = 0
+        OnClick = Button_LoginClick
+      end
     end
-  end
-  object Timer_Hide: TTimer
-    Enabled = False
-    Interval = 100
-    Left = 248
-    Top = 80
-  end
-  object PopupMenu: TPopupMenu
-    Alignment = paRight
-    Left = 320
-    Top = 81
-    object PopItem_Show: TMenuItem
-      Caption = 'Show'
-      OnClick = PopItem_ShowClick
-    end
-    object N2: TMenuItem
-      Caption = '-'
-    end
-    object PopItem_Exit: TMenuItem
-      Caption = 'Exit'
-      OnClick = PopItem_ExitClick
-    end
-  end
-  object Timer_FormCount: TTimer
-    Interval = 10000
-    OnTimer = Timer_FormCountTimer
-    Left = 416
-    Top = 80
   end
 end

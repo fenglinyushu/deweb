@@ -1,6 +1,6 @@
 object DFW: TDFW
-  Left = 273
-  Top = 47
+  Left = 254
+  Top = 158
   Hint = '{"height":1100}'
   BorderStyle = bsNone
   Caption = #22823#23500#32705#35770#22363
@@ -2717,6 +2717,10 @@ object DFW: TDFW
   OldCreateOrder = False
   OnCreate = FormCreate
   OnMouseUp = FormMouseUp
+  OnShow = FormShow
+  DesignSize = (
+    1000
+    821)
   PixelsPerInch = 96
   TextHeight = 20
   object Panel_All: TPanel
@@ -3168,10 +3172,16 @@ object DFW: TDFW
             Align = alClient
             AutoSize = False
             Caption = 'StaticText_Subject'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = 16752192
+            Font.Height = -15
+            Font.Name = #24494#36719#38597#40657
+            Font.Style = [fsBold]
+            ParentFont = False
             TabOrder = 0
           end
         end
-        object Panel5: TPanel
+        object Panel_Info: TPanel
           Left = 503
           Top = 3
           Width = 478
@@ -3179,37 +3189,6 @@ object DFW: TDFW
           Align = alClient
           Color = clWhite
           TabOrder = 1
-          object Label_ReplyRead: TLabel
-            Left = 137
-            Top = 1
-            Width = 136
-            Height = 38
-            Align = alLeft
-            AutoSize = False
-            Caption = '10/32'
-            Font.Charset = ANSI_CHARSET
-            Font.Color = 16752192
-            Font.Height = -15
-            Font.Name = #24494#36719#38597#40657
-            Font.Style = []
-            ParentFont = False
-            Layout = tlCenter
-          end
-          object Label_LastPostTime: TLabel
-            Left = 393
-            Top = 1
-            Width = 84
-            Height = 38
-            Align = alClient
-            Caption = '2020-08-03'
-            Font.Charset = ANSI_CHARSET
-            Font.Color = 16752192
-            Font.Height = -15
-            Font.Name = #24494#36719#38597#40657
-            Font.Style = []
-            ParentFont = False
-            Layout = tlCenter
-          end
           object StaticText_Uper: TStaticText
             Left = 1
             Top = 1
@@ -3220,6 +3199,17 @@ object DFW: TDFW
             Caption = 'StaticText_Subject'
             TabOrder = 0
           end
+          object StaticText_ReplyRead: TStaticText
+            Left = 137
+            Top = 1
+            Width = 136
+            Height = 38
+            Align = alLeft
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = 'StaticText_Subject'
+            TabOrder = 2
+          end
           object StaticText_LastPost: TStaticText
             Left = 273
             Top = 1
@@ -3229,6 +3219,17 @@ object DFW: TDFW
             AutoSize = False
             Caption = 'StaticText_Subject'
             TabOrder = 1
+          end
+          object StaticText_LastPostTime: TStaticText
+            Left = 393
+            Top = 1
+            Width = 120
+            Height = 38
+            Align = alLeft
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = 'StaticText_Subject'
+            TabOrder = 3
           end
         end
       end
@@ -3256,28 +3257,28 @@ object DFW: TDFW
           Caption = #26631#39064
         end
         object Label107: TLabel
-          Left = 640
+          Left = 620
           Top = 4
           Width = 66
           Height = 20
           Caption = #22238#22797'/'#38405#35835
         end
         object Label108: TLabel
-          Left = 506
+          Left = 500
           Top = 4
           Width = 30
           Height = 20
           Caption = #25552#38382
         end
         object Label109: TLabel
-          Left = 772
+          Left = 740
           Top = 4
           Width = 60
           Height = 20
           Caption = #26368#21518#22238#22797
         end
         object Label110: TLabel
-          Left = 906
+          Left = 860
           Top = 4
           Width = 60
           Height = 20
@@ -3300,14 +3301,14 @@ object DFW: TDFW
           Left = 884
           Top = 8
           Width = 51
-          Height = 25
+          Height = 28
           Anchors = [akTop, akRight]
           ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
           TabOrder = 0
           Text = '1'
         end
         object Button_Next: TButton
-          Left = 50
+          Left = 44
           Top = 8
           Width = 50
           Height = 25
@@ -3317,7 +3318,7 @@ object DFW: TDFW
           OnClick = Button_NextClick
         end
         object Button1: TButton
-          Left = 10
+          Left = 4
           Top = 8
           Width = 40
           Height = 25
@@ -3327,7 +3328,7 @@ object DFW: TDFW
           OnClick = Button1Click
         end
         object Button2: TButton
-          Left = 100
+          Left = 94
           Top = 8
           Width = 50
           Height = 25
@@ -3337,7 +3338,7 @@ object DFW: TDFW
           OnClick = Button2Click
         end
         object Button4: TButton
-          Left = 150
+          Left = 144
           Top = 8
           Width = 50
           Height = 25
@@ -3367,6 +3368,30 @@ object DFW: TDFW
         end
       end
     end
+  end
+  object StaticText_Login: TStaticText
+    Left = 900
+    Top = 24
+    Width = 90
+    Height = 24
+    Hint = '{"href":"dfw_login.dw"}'
+    Alignment = taRightJustify
+    Anchors = [akTop, akRight]
+    AutoSize = False
+    Caption = #30331#24405
+    TabOrder = 1
+  end
+  object StaticText_Post: TStaticText
+    Left = 900
+    Top = 48
+    Width = 90
+    Height = 24
+    Hint = '{"href":"dfw_post.dw"}'
+    Alignment = taRightJustify
+    Anchors = [akTop, akRight]
+    AutoSize = False
+    Caption = #25552#38382
+    TabOrder = 2
   end
   object ZQuery_Threads: TZReadOnlyQuery
     Connection = DM.ZConnection

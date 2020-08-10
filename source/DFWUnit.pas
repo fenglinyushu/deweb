@@ -45,12 +45,14 @@ type
     Panel1: TPanel;
     Panel3: TPanel;
     StaticText_Subject: TStaticText;
-    Panel5: TPanel;
+    Panel_Info: TPanel;
     StaticText_Uper: TStaticText;
-    Label_ReplyRead: TLabel;
-    StaticText_LastPost: TStaticText;
-    Label_LastPostTime: TLabel;
     Panel6: TPanel;
+    StaticText_LastPost: TStaticText;
+    StaticText_ReplyRead: TStaticText;
+    StaticText_LastPostTime: TStaticText;
+    StaticText_Login: TStaticText;
+    StaticText_Post: TStaticText;
     procedure FormCreate(Sender: TObject);
     procedure Button_NextClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
@@ -59,6 +61,7 @@ type
     procedure Button5Click(Sender: TObject);
     procedure FormMouseUp(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -123,7 +126,7 @@ begin
           //打开数据表
           ZQuery_Threads.Close;
           ZQuery_Threads.SQL.Text    := 'SELECT a.last_date,a.tid,a.subject,a.posts,a.views,'
-                    +'a.lastpid,a.uid,a.create_date'
+                    +'a.lastpid,a.uid,a.lastuid,a.create_date'
                     +',b.username'
                     +',c.username lastname'
                     +' FROM bbs_thread a LEFT JOIN bbs_user b ON a.uid=b.uid LEFT JOIN bbs_user c ON a.lastuid=c.uid '
@@ -137,8 +140,6 @@ begin
           //更新显示
           for iItem := 0 to 19 do begin
                if ZQuery_Threads.Eof then begin
-                    //积分
-                    TLabel(Self.FindComponent('Label_Score'+IntToStr(iItem+1))).Caption := '';
                     //主题
                     with TStaticText(Self.FindComponent('StaticText_Subject'+IntToStr(iItem+1))) do begin
                          Caption   := '';
@@ -152,7 +153,7 @@ begin
                     end;
 
                     //回复/阅读
-                    TLabel(Self.FindComponent('Label_ReplyRead'+IntToStr(iItem+1))).Caption := '';
+                    TStaticText(Self.FindComponent('StaticText_ReplyRead'+IntToStr(iItem+1))).Caption := '';
 
                     //提问
                     with TStaticText(Self.FindComponent('StaticText_LastPost'+IntToStr(iItem+1))) do begin
@@ -161,15 +162,13 @@ begin
                     end;
 
                     //最后回复时间
-                    TLabel(Self.FindComponent('Label_LastPostTime'+IntToStr(iItem+1))).Caption := '';
+                    TLabel(Self.FindComponent('StaticText_LastPostTime'+IntToStr(iItem+1))).Caption := '';
 
                end else begin
-                    //积分
-                    TLabel(Self.FindComponent('Label_Score'+IntToStr(iItem+1))).Caption := '';
                     //主题
                     with TStaticText(Self.FindComponent('StaticText_Subject'+IntToStr(iItem+1))) do begin
                          //Caption   := UTF8ToAnsi(Trim(ZQuery_Threads.FieldByName('subject').AsString));
-                         Caption   := dwGetText(UTF8ToAnsi(Trim(ZQuery_Threads.FieldByName('subject').AsString)),90);
+                         Caption   := dwGetText(UTF8ToAnsi(Trim(ZQuery_Threads.FieldByName('subject').AsString)),80);
                          Hint      := '{"href":"'+_WEBSITE+'dfw_thread.dw?'
                                    +'tid='+ZQuery_Threads.FieldByName('tid').AsString
                                    +'&&uid='+ZQuery_Threads.FieldByName('uid').AsString
@@ -186,18 +185,22 @@ begin
                     end;
 
                     //回复/阅读
-                    TLabel(Self.FindComponent('Label_ReplyRead'+IntToStr(iItem+1))).Caption := ZQuery_Threads.FieldByName('posts').AsString
-                         +'/'+ZQuery_Threads.FieldByName('views').AsString;
+                    with TStaticText(Self.FindComponent('StaticText_ReplyRead'+IntToStr(iItem+1))) do begin
+                         Caption := ZQuery_Threads.FieldByName('posts').AsString +'/'+ZQuery_Threads.FieldByName('views').AsString;
+                         Hint := '';
+                    end;
 
                     //提问
                     with TStaticText(Self.FindComponent('StaticText_LastPost'+IntToStr(iItem+1))) do begin
-                         Caption := UTF8ToAnsi(ZQuery_Threads.FieldByName('lastname').AsString);
-                         Hint      := '{"href":"'+_WEBSITE+'dfw_user.dw?uid='+ZQuery_Threads.FieldByName('lastpid').AsString+'"}';
+                         Caption   := UTF8ToAnsi(ZQuery_Threads.FieldByName('lastname').AsString);
+                         Hint      := '{"href":"'+_WEBSITE+'dfw_user.dw?uid='+ZQuery_Threads.FieldByName('lastuid').AsString+'"}';
                     end;
 
                     //最后回复时间
-                    TLabel(Self.FindComponent('Label_LastPostTime'+IntToStr(iItem+1))).Caption :=
-                         FormatDateTime('yyyy-mm-dd',dwPHPToDate(ZQuery_Threads.FieldByName('last_date').AsInteger));
+                    with TStaticText(Self.FindComponent('StaticText_LastPostTime'+IntToStr(iItem+1))) do begin
+                         Caption   := FormatDateTime('yyyy-mm-dd',dwPHPToDate(ZQuery_Threads.FieldByName('last_date').AsInteger));
+                         Hint      := '';
+                    end;
 
                     //
                     ZQuery_Threads.Next;
@@ -275,6 +278,8 @@ begin
                oPanel    := TPanel(Components[iComp]);
                if not oPanel.ParentBiDiMode then begin
                     dwRealignPanel(oPanel,bLarge);
+               end else if Copy(oPanel.Name,1,10)='Panel_Info' then begin
+                    dwRealignPanel(oPanel,True);
                end;
           end;
      end;
@@ -287,6 +292,49 @@ begin
           +2*Panel_All.BorderWidth+50;
      //
      dwSetHeight(Self,Panel_All.Height);
+end;
+
+procedure TDFW.FormShow(Sender: TObject);
+var
+     sParams   : String;
+     sName     : string;
+     sSubject  : string;
+
+     //
+     iUid      : Integer;
+     iPos      : Integer;
+     iItem     : Integer;
+
+     //
+     oPanel    : TPanel;
+     
+begin
+
+     //uid=294&&name=还有人学delphi吗。
+
+     //得到URL参数
+     sParams   := dwUnescape(dwGetProp(self,'params'));
+
+     //异常检测
+     if sParams = '' then begin
+          Exit;
+     end;
+
+     //得到各个参数
+     //tid
+     iPos      := Pos('&&',sParams);
+     iUid     := StrToIntDef(Copy(sParams,5,iPos-5),-1);
+     Delete(sParams,1,iPos+1);
+     //
+     Delete(sParams,1,5);
+     sName     := sParams;
+
+     //
+     with StaticText_Login do begin
+          Caption := dwUnescape(sName);
+          Hint      := '{"href":"dfw_user.dw?uid='+IntToStr(iUID)+'"}';
+     end;
+
 end;
 
 end.

@@ -5,6 +5,8 @@ interface
 uses
      SynCommons,
      
+     //求MD5
+     IdHashMessageDigest,IdGlobal, IdHash,
      //
      Messages, SysUtils, Variants, Classes, Graphics,
      Controls, Forms, Dialogs, ComCtrls, ExtCtrls,
@@ -435,7 +437,20 @@ const
 
 function dwGetText(AText:string;ALen:integer):string;
 
-implementation
+function dwGetMD5(AStr:String):string;
+
+implementation      //==============================================================================
+
+
+function dwGetMD5(AStr:String):string;
+var
+     oMD5      : TIdHashMessageDigest5;
+begin
+     oMD5      := TIdHashMessageDigest5.Create;
+     Result    := LowerCase(oMD5.AsHex(oMD5.HashValue(AStr)));
+     oMD5.Free;
+end;
+
 
 function dwGetText(AText:string;ALen:integer):string;
 begin
@@ -592,7 +607,7 @@ begin
 
      if AHorz then begin
           //水平排列的情况
-          if oCtrl0.Align = alLeft then begin
+          if (oCtrl0.Align = alLeft) and (oCtrl0.Width = (APanel.Width-2*APanel.BorderWidth) div APanel.ControlCount) then begin
                //已经水平排列,
           end else begin
                APanel.Height  := APanel.BorderWidth*2+oCtrl0.Height;
@@ -610,7 +625,7 @@ begin
           end;
      end else begin
           //垂直排列的情况
-          if oCtrl0.Align = alTop then begin
+          if (oCtrl0.Align = alTop) and (oCtrl0.Height = (APanel.Height-2*APanel.BorderWidth) div APanel.ControlCount) then begin
                //已经垂直排列,
           end else begin
                APanel.Height  := APanel.BorderWidth*2+oCtrl0.Height*APanel.ControlCount;
