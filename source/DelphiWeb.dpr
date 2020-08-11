@@ -2,6 +2,7 @@ program DelphiWeb;
 
 
 uses
+  ShareMem,
   Forms,
   ActiveX,
   dwVars in 'dwVars.pas',
@@ -18,32 +19,9 @@ uses
   DriverUnit in 'DriverUnit.pas' {Driver},
   dwDatas in 'dwDatas.pas' {DM: TDataModule},
   dwCtrlBase in 'dwCtrlBase.pas',
-  dwTreeViews in 'dwVcls\dwTreeViews.pas',
-  dwRadioButtons in 'dwVcls\dwRadioButtons.pas',
-  dwMemos in 'dwVcls\dwMemos.pas',
-  dwDBTexts in 'dwVcls\dwDBTexts.pas',
-  dwPageControls in 'dwVcls\dwPageControls.pas',
-  dwTabSheets in 'dwVcls\dwTabSheets.pas',
-  dwCheckBoxs in 'dwVcls\dwCheckBoxs.pas',
-  dwPanels in 'dwVcls\dwPanels.pas',
-  dwDateTimePickers in 'dwVcls\dwDateTimePickers.pas',
-  dwImages in 'dwVcls\dwImages.pas',
-  dwButtons in 'dwVcls\dwButtons.pas',
-  dwComboBoxs in 'dwVcls\dwComboBoxs.pas',
-  dwSpinEdits in 'dwVcls\dwSpinEdits.pas',
-  dwDBGrids in 'dwVcls\dwDBGrids.pas',
-  dwDBEdits in 'dwVcls\dwDBEdits.pas',
-  dwListBoxs in 'dwVcls\dwListBoxs.pas',
-  dwStringGrids in 'dwVcls\dwStringGrids.pas',
-  dwEdits in 'dwVcls\dwEdits.pas',
-  dwStaticTexts in 'dwVcls\dwStaticTexts.pas',
   DFWUnit in 'DFWUnit.pas' {DFW},
-  dwMainMenus in 'dwVcls\dwMainMenus.pas',
   DFWUserUnit in 'DFWUserUnit.pas' {dfw_user},
-  DFWThreadUnit in 'DFWThreadUnit.pas' {dfw_thread},
-  dwTimers in 'dwVcls\dwTimers.pas',
-  dwCharts in 'dwVcls\dwCharts.pas',
-  dwLabels in 'dwVcls\dwLabels.pas';
+  DFWThreadUnit in 'DFWThreadUnit.pas' {dfw_thread};
 
 {$R *.RES}
 

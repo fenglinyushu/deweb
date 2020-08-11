@@ -23,6 +23,13 @@ var
      //
      gfStartTime         : Double;           //DeWeb Start Time
 
+Type
+     PdwGetExtra    = function (ACtrl:TComponent):string;stdcall;
+     PdwGetEvent    = function (ACtrl:TComponent;AData:String):string;StdCall;
+     PdwGetHead     = function (ACtrl:TComponent):string;StdCall;
+     PdwGetTail     = function (ACtrl:TComponent):string;StdCall;
+     PdwGetData     = function (ACtrl:TComponent;ASeparator:String):string;StdCall;
+
 
 
 implementation

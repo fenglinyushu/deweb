@@ -4,7 +4,7 @@ object Test: TTest
   Width = 867
   Height = 622
   Caption = 'Test'
-  Color = clBtnFace
+  Color = clWhite
   TransparentColor = True
   TransparentColorValue = clBtnFace
   Font.Charset = ANSI_CHARSET
@@ -16,48 +16,13 @@ object Test: TTest
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 20
-  object Chart1: TChart
-    Left = 16
-    Top = 16
-    Width = 433
-    Height = 305
-    BackWall.Brush.Color = clWhite
-    Title.Text.Strings = (
-      'TChart')
-    View3DOptions.Elevation = 315
-    View3DOptions.Orthogonal = False
-    View3DOptions.Perspective = 0
-    View3DOptions.Rotation = 360
+  object Button1: TButton
+    Left = 64
+    Top = 64
+    Width = 105
+    Height = 41
+    Caption = #20013#25991#25353#38062
     TabOrder = 0
-    object Series1: TLineSeries
-      Marks.ArrowLength = 8
-      Marks.Visible = False
-      SeriesColor = clRed
-      Pointer.InflateMargins = True
-      Pointer.Style = psRectangle
-      Pointer.Visible = False
-      XValues.DateTime = False
-      XValues.Name = 'X'
-      XValues.Multiplier = 1.000000000000000000
-      XValues.Order = loAscending
-      YValues.DateTime = False
-      YValues.Name = 'Y'
-      YValues.Multiplier = 1.000000000000000000
-      YValues.Order = loNone
-    end
-    object Series2: TFastLineSeries
-      Marks.ArrowLength = 8
-      Marks.Visible = False
-      SeriesColor = clGreen
-      LinePen.Color = clGreen
-      XValues.DateTime = False
-      XValues.Name = 'X'
-      XValues.Multiplier = 1.000000000000000000
-      XValues.Order = loAscending
-      YValues.DateTime = False
-      YValues.Name = 'Y'
-      YValues.Multiplier = 1.000000000000000000
-      YValues.Order = loNone
-    end
+    OnClick = Button1Click
   end
 end

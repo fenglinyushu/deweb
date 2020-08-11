@@ -17,10 +17,9 @@ uses
 
 type
   TTest = class(TForm)
-    Chart1: TChart;
-    Series1: TLineSeries;
-    Series2: TFastLineSeries;
+    Button1: TButton;
     procedure FormCreate(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,7 +36,7 @@ implementation
 procedure TTest.FormCreate(Sender: TObject);
 begin
      Top  := 0;
-     
+{
      Series1.Add(1393);
      Series1.Add(3530);
      Series1.Add(2923);
@@ -51,8 +50,14 @@ begin
      Series2.Add(1423);
      Series2.Add(3492);
      Series2.Add(4293);
+}
 
+end;
 
+procedure TTest.Button1Click(Sender: TObject);
+begin
+     //dwShowMessage('dwOK!',self);
+     Button1.Caption     := 'жа'+IntToStr(GetTickCount mod 1000);
 end;
 
 end.
