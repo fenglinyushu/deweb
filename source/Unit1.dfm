@@ -1,6 +1,6 @@
 object Default: TDefault
-  Left = 551
-  Top = 90
+  Left = 553
+  Top = 32
   BorderStyle = bsNone
   Caption = 'DeWeb : Delphi -Web'
   ClientHeight = 720

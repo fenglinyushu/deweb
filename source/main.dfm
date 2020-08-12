@@ -1,6 +1,6 @@
 object MainForm: TMainForm
-  Left = 429
-  Top = 145
+  Left = 430
+  Top = 147
   Width = 728
   Height = 243
   Caption = 'DeWeb'
