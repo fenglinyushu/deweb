@@ -27,20 +27,6 @@
 #
 
 # Delphi compiler-generated binaries (safe to delete)
-*.bpl
-*.bpi
-*.dcp
-*.so
-*.apk
-*.drc
-*.map
-*.dres
-*.rsm
-*.tds
-*.lib
-*.a
-*.o
-*.ocx
 
 /regor/
 /source/dwCore.pas
