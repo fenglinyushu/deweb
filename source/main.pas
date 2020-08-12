@@ -66,7 +66,6 @@ type
     procedure Timer_FormCountTimer(Sender: TObject);
   private
     FInitialized   : Boolean;
-    FCountRequests : Integer;
   public
     procedure Display(const Msg : String);
   protected

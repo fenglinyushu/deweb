@@ -357,7 +357,7 @@ object Demos: TDemos
     Top = 100
     Width = 1100
     Height = 1025
-    ActivePage = TabSheet14
+    ActivePage = TabSheet2
     BiDiMode = bdLeftToRight
     MultiLine = True
     ParentBiDiMode = False
@@ -8885,7 +8885,7 @@ object Demos: TDemos
         Top = 18
         Width = 409
         Height = 263
-        Date = 43975.479494456020000000
+        Date = 43975.313417407410000000
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         TabOrder = 0
         OnClick = MonthCalendar1Click
