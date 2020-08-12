@@ -13,37 +13,8 @@
         		<el-button type="primary" @click="processinputquery">{{input_query_okcaption}}</el-button>
         	</div>
         </el-dialog>
-        <el-tabs v-if="PageControl1__vis" :disabled="PageControl1__dis" v-model="PageControl1__apg" :tab-position="PageControl1__tps" type="border-card" :style="{left:PageControl1__lef,top:PageControl1__top,width:PageControl1__wid,height:PageControl1__hei}" style="position:absolute;" @tab-click="dwevent($event,'PageControl1','this.PageControl1__apg','onchange','')">
-            <el-tab-pane label="首页" name="TabSheet1">
-            </el-tab-pane>
-            <el-tab-pane label="TabSheet2" name="TabSheet2">
-            </el-tab-pane>
-            <el-tab-pane label="TabSheet3" name="TabSheet3">
-            </el-tab-pane>
-        <div :style="{width:PageControl1__wid,height:PageControl1__hei}" style="position:absolute;left:0px;top:0px;">
-        <el-main v-if="PageControl1__apg=='TabSheet1'" :disabled="TabSheet1__dis" :style="{backgroundColor:TabSheet1__col,left:TabSheet1__lef,top:TabSheet1__top,width:TabSheet1__wid,height:TabSheet1__hei}" style="position:absolute;overflow:hidden;">
-        <el-input v-if="Edit1__vis" :disabled="Edit1__dis" v-model="Edit1__txt" placeholder="用户名" prefix-icon="el-icon-refresh" suffix-icon="el-icon-search" :style="{left:Edit1__lef,top:Edit1__top,width:Edit1__wid,height:Edit1__hei}" style="position:absolute;" @input="dwevent($event,'Edit1','(this.Edit1__txt)','onchange','')" @focus="dwevent($event,'Edit1','(this.Edit1__txt)','onenter','')">
-        </el-input>
-        <el-button v-if="Button2__vis" :disabled="Button2__dis" type="default" :style="{left:Button2__lef,top:Button2__top,width:Button2__wid,height:Button2__hei}" style="position:absolute;" @click="dwevent($event,'Button2','0','onclick','')">{{Button2__cap}}
-        </el-button>
-        <el-checkbox v-if="CheckBox1__vis" :disabled="CheckBox1__dis" v-model="CheckBox1__chk" type="default" :style="{left:CheckBox1__lef,top:CheckBox1__top,width:CheckBox1__wid,height:CheckBox1__hei}" style="position:absolute;" @change="dwevent($event,'CheckBox1','this.CheckBox1__chk','onclick','')">{{CheckBox1__cap}}
-        </el-checkbox>
-        <el-select v-model="ComboBox1__txt" v-if="ComboBox1__vis" :disabled="ComboBox1__dis" :style="{left:ComboBox1__lef,top:ComboBox1__top,width:ComboBox1__wid,height:ComboBox1__hei}" style="position:absolute;" @change="dwevent($event,'ComboBox1','this.ComboBox1__txt','onchange','')">
-            <el-option v-for="item in ComboBox1__options" :key="item.value" :label="item.value" :value="item.value"/>
-        </el-select>
-        </el-main>
-        <el-main v-if="PageControl1__apg=='TabSheet2'" :disabled="TabSheet2__dis" :style="{backgroundColor:TabSheet2__col,left:TabSheet2__lef,top:TabSheet2__top,width:TabSheet2__wid,height:TabSheet2__hei}" style="position:absolute;overflow:hidden;">
-        <el-button v-if="Button1__vis" :disabled="Button1__dis" type="default" :style="{left:Button1__lef,top:Button1__top,width:Button1__wid,height:Button1__hei}" style="position:absolute;" @click="dwevent($event,'Button1','0','onclick','')">{{Button1__cap}}
-        </el-button>
-        <el-input v-if="Edit7__vis" :disabled="Edit7__dis" v-model="Edit7__txt" placeholder="用户名" prefix-icon="el-icon-refresh" suffix-icon="el-icon-search" :style="{left:Edit7__lef,top:Edit7__top,width:Edit7__wid,height:Edit7__hei}" style="position:absolute;" @input="dwevent($event,'Edit7','(this.Edit7__txt)','onchange','')" @focus="dwevent($event,'Edit7','(this.Edit7__txt)','onenter','')">
-        </el-input>
-        </el-main>
-        <el-main v-if="PageControl1__apg=='TabSheet3'" :disabled="TabSheet3__dis" :style="{backgroundColor:TabSheet3__col,left:TabSheet3__lef,top:TabSheet3__top,width:TabSheet3__wid,height:TabSheet3__hei}" style="position:absolute;overflow:hidden;">
-        <el-main v-if="Panel1__vis" :disabled="Panel1__dis" :style="{backgroundColor:Panel1__col,left:Panel1__lef,top:Panel1__top,width:Panel1__wid,height:Panel1__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        </el-main>
-        </el-main>
-            </div>
-        </el-tabs>
+        <el-image :src="Image1__src" fit="fill" v-if="Image1__vis" :disabled="Image1__dis" :style="{left:Image1__lef,top:Image1__top,width:Image1__wid,height:Image1__hei}" style="position:absolute;">
+        </el-Image>
 	 </div>
     <script>
 	    Vue.prototype.procResp = function (data){
@@ -62,86 +33,13 @@
 					    Test__top:"0px",
 					    Test__wid:"851px",
 					    Test__hei:"583px",
-Edit1__lef:"129px",
-Edit1__top:"15px",
-Edit1__wid:"160px",
-Edit1__hei:"42px",
-Edit1__vis:true,
-Edit1__dis:false,
-Edit1__txt:"AB编辑123",
-Button2__lef:"16px",
-Button2__top:"16px",
-Button2__wid:"105px",
-Button2__hei:"41px",
-Button2__vis:true,
-Button2__dis:false,
-Button2__cap:"中文按钮",
-CheckBox1__lef:"24px",
-CheckBox1__top:"80px",
-CheckBox1__wid:"97px",
-CheckBox1__hei:"17px",
-CheckBox1__vis:true,
-CheckBox1__dis:false,
-CheckBox1__cap:"多选框",
-CheckBox1__chk:false,
-ComboBox1__options:[{value:'张兮'},{value:'陈少贵'},{value:'CSDF'}],
-ComboBox1__lef:"24px",
-ComboBox1__top:"128px",
-ComboBox1__wid:"145px",
-ComboBox1__hei:"28px",
-ComboBox1__vis:true,
-ComboBox1__dis:false,
-ComboBox1__txt:"ComboBox1",
-TabSheet1__lef:"4px",
-TabSheet1__top:"31px",
-TabSheet1__wid:"417px",
-TabSheet1__hei:"310px",
-TabSheet1__vis:true,
-TabSheet1__dis:false,
-TabSheet1__cap:"首页",
-Button1__lef:"16px",
-Button1__top:"16px",
-Button1__wid:"105px",
-Button1__hei:"41px",
-Button1__vis:true,
-Button1__dis:false,
-Button1__cap:"中文按钮",
-Edit7__lef:"17px",
-Edit7__top:"71px",
-Edit7__wid:"160px",
-Edit7__hei:"42px",
-Edit7__vis:true,
-Edit7__dis:false,
-Edit7__txt:"AB编辑123",
-TabSheet2__lef:"4px",
-TabSheet2__top:"31px",
-TabSheet2__wid:"417px",
-TabSheet2__hei:"310px",
-TabSheet2__vis:false,
-TabSheet2__dis:false,
-TabSheet2__cap:"TabSheet2",
-Panel1__lef:"40px",
-Panel1__top:"21px",
-Panel1__wid:"289px",
-Panel1__hei:"185px",
-Panel1__vis:true,
-Panel1__dis:false,
-Panel1__col:"#BFCDDB",
-TabSheet3__lef:"4px",
-TabSheet3__top:"31px",
-TabSheet3__wid:"417px",
-TabSheet3__hei:"310px",
-TabSheet3__vis:false,
-TabSheet3__dis:false,
-TabSheet3__cap:"TabSheet3",
-PageControl1__lef:"40px",
-PageControl1__top:"16px",
-PageControl1__wid:"425px",
-PageControl1__hei:"345px",
-PageControl1__vis:true,
-PageControl1__dis:false,
-PageControl1__apg:"TabSheet1",
-PageControl1__tps:"top",
+Image1__lef:"48px",
+Image1__top:"8px",
+Image1__wid:"369px",
+Image1__hei:"249px",
+Image1__vis:true,
+Image1__dis:false,
+Image1__src:"dist/webimages/Image1.jpg",
 					    input_query_visible:false,
 					    input_query_caption:"Input Query",
 					    input_query_inputname:"new",

@@ -1,0 +1,179 @@
+library dwTImage;
+
+uses
+     ShareMem,      //必须添加
+
+     //
+     dwCtrlBase,    //一些基础函数
+
+     //
+     SynCommons,    //mormot用于解析JSON的单元
+
+     //
+     SysUtils,DateUtils,ComCtrls, ExtCtrls,
+     Classes,
+     Dialogs,
+     StdCtrls,
+     Windows,
+     Controls,
+     Forms;
+
+//当前控件需要引入的第三方JS/CSS ,一般为不做改动,目前仅在TChart使用时需要用到
+function dwGetExtra(ACtrl:TComponent):string;stdCall;
+var
+     joRes     : Variant;
+begin
+     //生成返回值数组
+     joRes    := _Json('[]');
+
+     {
+     //以下是TChart时的代码,供参考
+     joRes.Add('<script src="dist/charts/echarts.min.js"></script>');
+     joRes.Add('<script src="dist/charts/lib/index.min.js"></script>');
+     joRes.Add('<link rel="stylesheet" href="dist/charts/lib/style.min.css">');
+     }
+
+     //
+     Result    := joRes;
+end;
+
+//根据JSON对象AData执行当前控件的事件, 并返回结果字符串
+function dwGetEvent(ACtrl:TComponent;AData:String):string;StdCall;
+var
+     joData    : Variant;
+begin
+     //
+     joData    := _Json(AData);
+
+     if joData.event = 'onclick' then begin
+          //
+          if Assigned(TImage(ACtrl).OnClick) then begin
+               TImage(ACtrl).OnClick(TImage(ACtrl));
+          end;
+     end else if joData.event = 'onenter' then begin
+     end;
+
+end;
+
+
+//取得HTML头部消息
+function dwGetHead(ACtrl:TComponent):string;StdCall;
+var
+     sCode     : string;
+     sSize     : string;
+     sName     : string;
+     sRadius   : string;
+     //
+     joHint    : Variant;
+     joRes     : Variant;
+begin
+     //生成返回值数组
+     joRes    := _Json('[]');
+
+     //取得HINT对象JSON
+     joHint    := dwGetHintJson(TControl(ACtrl));
+
+     //
+     sRadius   := dwGetHintValue(joHint,'radius','border-radius','');
+     sRadius   := StringReplace(sRadius,'=',':',[]);
+     sRadius   := Trim(StringReplace(sRadius,'"','',[rfReplaceAll]));
+
+     with TImage(ACtrl) do begin
+          //如果没有手动设置图片源，则自动保存当前图片，并设置为图片源
+          if dwGetProp(TControl(ACtrl),'src')='' then begin
+               sName     := 'dist\webimages\'+Name+'.jpg';
+               //保存图片到本地
+               if not FileExists(sName) then begin
+                    Picture.SaveToFile(sName);
+               end;
+          end;
+
+          if Proportional then begin
+               joRes.Add('<el-image :src="'+Name+'__src" fit="contain"'
+                         +dwVisible(TControl(ACtrl))
+                         +dwDisable(TControl(ACtrl))
+                         +dwLTWH(TControl(ACtrl))
+                         +sRadius
+                         +'"'
+                         +dwIIF(Assigned(OnClick),Format(_DWEVENT,['click',Name,'0','onclick','']),'')
+                         +'>');
+          end else begin
+               if Stretch then begin
+                    joRes.Add('<el-image :src="'+Name+'__src" fit="fill"'
+                              +dwVisible(TControl(ACtrl))
+                              +dwDisable(TControl(ACtrl))
+                              +dwLTWH(TControl(ACtrl))
+                              +sRadius
+                              +'"'
+                              +dwIIF(Assigned(OnClick),Format(_DWEVENT,['click',Name,'0','onclick','']),'')
+                         +'>');
+               end else begin
+                    joRes.Add('<el-image :src="'+Name+'__src" fit="none"'
+                              +dwVisible(TControl(ACtrl))
+                              +dwDisable(TControl(ACtrl))
+                              +dwLTWH(TControl(ACtrl))
+                              +sRadius
+                              +'"'
+                              +dwIIF(Assigned(OnClick),Format(_DWEVENT,['click',Name,'0','onclick','']),'')
+                         +'>');
+               end;
+          end;
+     end;
+
+     //
+     Result    := (joRes);
+end;
+
+//取得HTML尾部消息
+function dwGetTail(ACtrl:TComponent):string;StdCall;
+var
+     joRes     : Variant;
+begin
+     //生成返回值数组
+     joRes    := _Json('[]');
+
+     //生成返回值数组
+     joRes.Add('</el-Image>');          //此处需要和dwGetHead对应
+
+     //
+     Result    := (joRes);
+end;
+
+//取得Data消息, ASeparator为分隔符, 一般为:或=
+function dwGetData(ACtrl:TComponent;ASeparator:String):string;StdCall;
+var
+     joRes     : Variant;
+begin
+     //生成返回值数组
+     joRes    := _Json('[]');
+     //
+     with TImage(ACtrl) do begin
+          joRes.Add(Name+'__lef'+ASeparator+'"'+IntToStr(Left)+'px"');
+          joRes.Add(Name+'__top'+ASeparator+'"'+IntToStr(Top)+'px"');
+          joRes.Add(Name+'__wid'+ASeparator+'"'+IntToStr(Width)+'px"');
+          joRes.Add(Name+'__hei'+ASeparator+'"'+IntToStr(Height)+'px"');
+          //
+          joRes.Add(Name+'__vis'+ASeparator+dwIIF(Visible,'true','false'));
+          joRes.Add(Name+'__dis'+ASeparator+dwIIF(Enabled,'false','true'));
+          //
+          if dwGetProp(TControl(ACtrl),'src')='' then begin
+               joRes.Add(Name+'__src'+ASeparator+'"dist/webimages/'+Name+'.jpg"');
+          end else begin
+               joRes.Add(Name+'__src'+ASeparator+'"'+dwGetProp(TControl(ACtrl),'src')+'"');
+          end;
+     end;
+     //
+     Result    := (joRes);
+end;
+
+
+exports
+     dwGetExtra,
+     dwGetEvent,
+     dwGetHead,
+     dwGetTail,
+     dwGetData;
+     
+begin
+end.
+ 
