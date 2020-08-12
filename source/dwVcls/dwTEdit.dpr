@@ -1,13 +1,13 @@
 library dwTEdit;
 
 uses
-     ShareMem,
+     ShareMem,      //必须添加
 
      //
-     dwCtrlBase,
+     dwCtrlBase,    //一些基础函数
 
      //
-     SynCommons,
+     SynCommons,    //mormot用于解析JSON的单元
 
      //
      SysUtils,
@@ -18,10 +18,23 @@ uses
      Controls,
      Forms;
 
-//当前控件需要引入的第三方JS/CSS
+//当前控件需要引入的第三方JS/CSS ,一般为不做改动,目前仅在TChart使用时需要用到
 function dwGetExtra(ACtrl:TComponent):string;stdCall;
+var
+     joRes     : Variant;
 begin
-     Result    := '[]';
+     //生成返回值数组
+     joRes    := _Json('[]');
+
+     {
+     //以下是TChart时的代码,供参考
+     joRes.Add('<script src="dist/charts/echarts.min.js"></script>');
+     joRes.Add('<script src="dist/charts/lib/index.min.js"></script>');
+     joRes.Add('<link rel="stylesheet" href="dist/charts/lib/style.min.css">');
+     }
+
+     //
+     Result    := joRes;
 end;
 
 //根据JSON对象AData执行当前控件的事件, 并返回结果字符串
@@ -81,17 +94,17 @@ begin
      joHint    := dwGetHintJson(TControl(ACtrl));
      with TEdit(ACtrl) do begin
           sCode     := '<el-input'
-                    +dwVisible(TControl(ACtrl))
-                    +dwDisable(TControl(ACtrl))
-                    +dwIIF(PasswordChar=#0,'',' show-password')
-                    +' v-model="'+Name+'__txt"'
-                    +dwGetHintValue(joHint,'placeholder','placeholder','')         //placeholder
-                    +dwGetHintValue(joHint,'prefix-icon','prefix-icon','')         //Icon
-                    +dwGetHintValue(joHint,'suffix-icon','suffix-icon','')         //Icon
-                    +dwLTWH(TControl(ACtrl))
-                    +'"' //style 封闭
-                    +Format(_DWEVENT,['input',Name,'(this.'+Name+'__txt)','onchange',''])
-                    +Format(_DWEVENT,['focus',Name,'(this.'+Name+'__txt)','onenter',''])
+                    +dwVisible(TControl(ACtrl))                            //用于控制可见性Visible
+                    +dwDisable(TControl(ACtrl))                            //用于控制可用性Enabled(部分控件不支持)
+                    +dwIIF(PasswordChar=#0,'',' show-password')            //是否为密码
+                    +' v-model="'+Name+'__txt"'                            //前置
+                    +dwGetHintValue(joHint,'placeholder','placeholder','') //placeholder,提示语
+                    +dwGetHintValue(joHint,'prefix-icon','prefix-icon','') //前置Icon
+                    +dwGetHintValue(joHint,'suffix-icon','suffix-icon','') //后置Icon
+                    +dwLTWH(TControl(ACtrl))                               //Left/Top/Width/Height
+                    +'"' // 封闭style
+                    +Format(_DWEVENT,['input',Name,'(this.'+Name+'__txt)','onchange','']) //绑定OnChange事件
+                    +Format(_DWEVENT,['focus',Name,'(this.'+Name+'__txt)','onenter',''])  //绑定OnEnter事件
                     +'>';
           //添加到返回值数据
           joRes.Add(sCode);
@@ -108,7 +121,7 @@ begin
      //生成返回值数组
      joRes    := _Json('[]');
      //生成返回值数组
-     joRes.Add('</el-input>');
+     joRes.Add('</el-input>');          //此处需要和dwGetHead对应
      //
      Result    := (joRes);
 end;
