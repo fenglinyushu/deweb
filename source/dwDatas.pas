@@ -10,11 +10,11 @@ type
     ADOConnection_Driver: TADOConnection;
     ADOQuery_Driver: TADOQuery;
     ADOTable1: TADOTable;
-    ZConnection: TZConnection;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
   public
+    ZConnection: TZConnection;
      procedure ExeAQ(AQ: TADOQuery; S: String);
   end;
 
@@ -49,7 +49,14 @@ begin
           ADOConnection_Driver.Open;
           ADOQuery_Driver.Open;
      end;
-     ZConnection.Connect;
+
+     ZConnection    := TZConnection.Create(self);
+     with ZConnection do begin
+          DataBase       := 'deweb.db';
+          port           := 3306;
+          Protocol       := 'sqlite-3';
+          Connect;
+     end;
 end;
 
 end.

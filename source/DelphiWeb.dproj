@@ -98,6 +98,7 @@
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
         <AppDPIAwarenessMode>PerMonitor</AppDPIAwarenessMode>
+        <DCC_UnitSearchPath>.\Vcls\ics\;.\Vcls\mormot;.\Vcls\zeosdbo-7.2.6.1-stable\src;.\Vcls\zeosdbo-7.2.6.1-stable\src\component;.\Vcls\zeosdbo-7.2.6.1-stable\src\dbc;.\Vcls\zeosdbo-7.2.6.1-stable\src\core;.\Vcls\zeosdbo-7.2.6.1-stable\src\parsesql;.\Vcls\zeosdbo-7.2.6.1-stable\src\plain;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -128,14 +129,8 @@
             <Form>Form4</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="dwDatas.pas">
-            <Form>DM</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Unit5.pas">
-            <Form>Login</Form>
-            <FormType>dfm</FormType>
+        <DCCReference Include="DFWLoginUnit.pas">
+            <Form>DFW_Login</Form>
         </DCCReference>
         <DCCReference Include="DemosUnit.pas">
             <Form>Demos</Form>
@@ -149,9 +144,21 @@
             <Form>Driver</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="dfwunit.pas">
+        <DCCReference Include="dwDatas.pas">
+            <Form>DM</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="dwCtrlBase.pas"/>
+        <DCCReference Include="DFWUnit.pas">
             <Form>DFW</Form>
             <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="DFWUserUnit.pas">
+            <Form>dfw_user</Form>
+        </DCCReference>
+        <DCCReference Include="DFWThreadUnit.pas">
+            <Form>dfw_thread</Form>
         </DCCReference>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_2</Key>

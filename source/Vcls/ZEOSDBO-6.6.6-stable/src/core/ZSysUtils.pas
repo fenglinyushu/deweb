@@ -494,15 +494,15 @@ function SQLStrToFloatDef(Str: string; Def: Extended): Extended;
 var
   OldDecimalSeparator: Char;
 begin
-  OldDecimalSeparator := DecimalSeparator;
-  DecimalSeparator := '.';
+  OldDecimalSeparator := FormatSettings.DecimalSeparator;
+  FormatSettings.DecimalSeparator := '.';
   if Pos('$', Str) = 1 then
     Str := Copy(Str, 2, Pred(Length(Str)));
   If Str = '' then
     Result := Def
   else
     Result := StrToFloatDef(Str, Def);
-  DecimalSeparator := OldDecimalSeparator;
+  FormatSettings.DecimalSeparator := OldDecimalSeparator;
 end;
 
 {**
@@ -514,12 +514,12 @@ function SQLStrToFloat(const Str: string): Extended;
 var
   OldDecimalSeparator: Char;
 begin
-  OldDecimalSeparator := DecimalSeparator;
-  DecimalSeparator := '.';
+  OldDecimalSeparator := FormatSettings.DecimalSeparator;
+  FormatSettings.DecimalSeparator := '.';
   try
     Result := StrToFloat(Str);
   finally
-    DecimalSeparator := OldDecimalSeparator;
+    FormatSettings.DecimalSeparator := OldDecimalSeparator;
   end;
 end;
 
@@ -696,12 +696,12 @@ function FloatToSQLStr(Value: Extended): string;
 var
   OldDecimalSeparator: Char;
 begin
-  OldDecimalSeparator := DecimalSeparator;
-  DecimalSeparator := '.';
+  OldDecimalSeparator := FormatSettings.DecimalSeparator;
+  FormatSettings.DecimalSeparator := '.';
   try
     Result := FloatToStr(Value);
   finally
-    DecimalSeparator := OldDecimalSeparator;
+    FormatSettings.DecimalSeparator := OldDecimalSeparator;
   end;
 end;
 
@@ -1008,8 +1008,13 @@ end;
 }
 procedure TZSortedList.Sort(Compare: TZListSortCompare);
 begin
-  if (List <> nil) and (Count > 0) then
-    QuickSort(List, 0, Count - 1, Compare);
+     {$IFDEF VER150}
+     if (List <> nil) and (Count > 0) then
+          QuickSort(List, 0, Count - 1, Compare);
+     {$ELSE}
+     if (List <> nil) and (Count > 0) then
+          QuickSort(@List, 0, Count - 1, Compare);
+     {$ENDIF}
 end;
 
 {**

@@ -2874,7 +2874,7 @@ begin
   begin
     SetLength(TempString, High(Value) + 1);
     for I := 0 to High(Value) do
-      TempString[I + 1] := Chr(Value[I]);
+      TempString[I + 1] := AnsiChar(Chr(Value[I]));
     SetString(TempString);
   end else
     Clear;

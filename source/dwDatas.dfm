@@ -1,8 +1,6 @@
 object DM: TDM
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Left = 529
-  Top = 170
   Height = 335
   Width = 405
   object ADOConnection_Driver: TADOConnection
@@ -35,13 +33,5 @@ object DM: TDM
     TableName = 'QuestionBank'
     Left = 48
     Top = 192
-  end
-  object ZConnection: TZConnection
-    Protocol = 'sqlite-3'
-    Port = 3306
-    Database = 'deweb.db'
-    Connected = True
-    Left = 184
-    Top = 56
   end
 end

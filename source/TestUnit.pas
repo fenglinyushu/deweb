@@ -13,12 +13,13 @@ uses
      //
      Forms, SysUtils,
      Windows, Classes, Controls, StdCtrls, Menus, ExtCtrls, 
-     Series, TeeProcs, Chart, TeEngine, ComCtrls, jpeg ;
+      ComCtrls, jpeg ;
 
 type
   TTest = class(TForm)
-    Panel1: TPanel;
-    StaticText1: TStaticText;
+    Label1: TLabel;
+    Button1: TButton;
+    Edit1: TEdit;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }

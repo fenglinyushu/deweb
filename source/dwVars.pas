@@ -3,8 +3,6 @@ unit dwVars;
 interface
 
 uses
-     //
-     //JsonDataObjects,
 
      //
      OverbyteIcsWinSock,  OverbyteIcsWSocket, OverbyteIcsWndControl,

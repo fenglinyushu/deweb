@@ -1,9 +1,9 @@
 object Test: TTest
   Left = 464
   Top = 154
-  Width = 867
-  Height = 622
   Caption = 'Test'
+  ClientHeight = 583
+  ClientWidth = 851
   Color = clWhite
   TransparentColor = True
   TransparentColorValue = clBtnFace
@@ -16,21 +16,27 @@ object Test: TTest
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 20
-  object Panel1: TPanel
-    Left = 40
-    Top = 96
-    Width = 185
-    Height = 41
+  object Label1: TLabel
+    Left = 255
+    Top = 40
+    Width = 48
+    Height = 20
+    Caption = 'Label1'
+  end
+  object Button1: TButton
+    Left = 200
+    Top = 80
+    Width = 81
+    Height = 31
+    Caption = 'Button1'
     TabOrder = 0
-    object StaticText1: TStaticText
-      Left = 1
-      Top = 1
-      Width = 183
-      Height = 39
-      Align = alClient
-      Alignment = taRightJustify
-      Caption = 'StaticText1'
-      TabOrder = 0
-    end
+  end
+  object Edit1: TEdit
+    Left = 245
+    Top = 150
+    Width = 121
+    Height = 28
+    TabOrder = 1
+    Text = 'Edit1'
   end
 end

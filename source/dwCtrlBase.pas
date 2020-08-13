@@ -4,14 +4,17 @@ interface
 
 uses
      SynCommons,
-     
+
      //«ÛMD5
      IdHashMessageDigest,IdGlobal, IdHash,
      //
+     {$IFDEF VER150}
+     {$ELSE}
+     {$ENDIF}
      Messages, SysUtils, Variants, Classes, Graphics,
      Controls, Forms, Dialogs, ComCtrls, ExtCtrls,
      Spin, Grids,
-     Math,typinfo,
+     Math,typinfo, HttpApp,
      DateUtils, StdCtrls, Menus,
      Windows,Types;
 
@@ -452,7 +455,11 @@ var
      oMD5      : TIdHashMessageDigest5;
 begin
      oMD5      := TIdHashMessageDigest5.Create;
+     {$IFDEF VER150} //D7
      Result    := LowerCase(oMD5.AsHex(oMD5.HashValue(AStr)));
+     {$ELSE}
+     Result    := LowerCase(oMD5.HashStringAsHex(AStr));
+     {$ENDIF}
      oMD5.Free;
 end;
 
@@ -956,9 +963,20 @@ begin
      SetLength(Result, Rp - PChar(Result));
 end;
 
+
+
 function dwEncodeURIComponent(S:AnsiString):AnsiString;
 begin
+     {$IFDEF VER150}
      Result    := HTTPEncodeEx(AnsiToUtf8(S));
+     {$ELSE}
+     //S    := 'ABC+12  3';
+     S    := StringReplace(S,'+','[&&&]',[rfReplaceAll]);
+     S    := HttpEncode(AnsiToUtf8(S));
+     S    := StringReplace(S,'+',' ',[rfReplaceAll]);
+     S    := StringReplace(S,'%5B%26%26%26%5D','+',[rfReplaceAll]);
+     Result    := S;
+     {$ENDIF}
 end;
 
 

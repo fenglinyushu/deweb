@@ -19,13 +19,13 @@ uses
      Forms;
 
 //当前控件需要引入的第三方JS/CSS
-function dwGetExtra(ACtrl:TComponent):string;stdCall;
+function dwGetExtra(ACtrl:TComponent):String;stdCall;
 begin
      Result    := '[]';
 end;
 
 //根据JSON对象AData执行当前控件的事件, 并返回结果字符串
-function dwGetEvent(ACtrl:TComponent;AData:String):string;StdCall;
+function dwGetEvent(ACtrl:TComponent;AData:String):String;StdCall;
 begin
      //
      TButton(ACtrl).OnClick(TButton(ACtrl));
@@ -33,9 +33,9 @@ end;
 
 
 //取得HTML头部消息
-function dwGetHead(ACtrl:TComponent):string;StdCall;
+function dwGetHead(ACtrl:TComponent):String;StdCall;
 var
-     sCode     : string;
+     sCode     : String;
 
      //
      joHint    : Variant;
@@ -67,7 +67,7 @@ begin
 end;
 
 //取得HTML尾部消息
-function dwGetTail(ACtrl:TComponent):string;StdCall;
+function dwGetTail(ACtrl:TComponent):String;StdCall;
 var
      joRes     : Variant;
 begin
@@ -80,7 +80,7 @@ begin
 end;
 
 //取得Data消息, ASeparator为分隔符, 一般为:或=
-function dwGetData(ACtrl:TComponent;ASeparator:String):string;StdCall;
+function dwGetData(ACtrl:TComponent;ASeparator:String):String;StdCall;
 var
      joRes     : Variant;
 begin
