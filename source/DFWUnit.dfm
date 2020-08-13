@@ -3205,7 +3205,7 @@ object DFW: TDFW
             Width = 136
             Height = 38
             Align = alLeft
-            Alignment = taRightJustify
+            Alignment = taCenter
             AutoSize = False
             Caption = 'StaticText_Subject'
             TabOrder = 2
@@ -3216,6 +3216,7 @@ object DFW: TDFW
             Width = 120
             Height = 38
             Align = alLeft
+            Alignment = taCenter
             AutoSize = False
             Caption = 'StaticText_Subject'
             TabOrder = 1

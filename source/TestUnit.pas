@@ -17,7 +17,8 @@ uses
 
 type
   TTest = class(TForm)
-    Image1: TImage;
+    Panel1: TPanel;
+    StaticText1: TStaticText;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }

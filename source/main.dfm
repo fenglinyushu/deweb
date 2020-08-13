@@ -2,7 +2,7 @@ object MainForm: TMainForm
   Left = 430
   Top = 147
   Width = 728
-  Height = 243
+  Height = 100
   Caption = 'DeWeb'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -320,21 +320,6 @@ object MainForm: TMainForm
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 16
-  object DisplayMemo: TMemo
-    Left = 0
-    Top = 61
-    Width = 712
-    Height = 143
-    Align = alClient
-    ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
-    Lines.Strings = (
-      'DeWeb : Delphi - Web'
-      'www.web0000.com'
-      '-')
-    ScrollBars = ssBoth
-    TabOrder = 0
-    WordWrap = False
-  end
   object Panel_Buttons: TPanel
     Left = 0
     Top = 0
@@ -344,20 +329,13 @@ object MainForm: TMainForm
     BevelOuter = bvNone
     Color = clWhite
     ParentBackground = False
-    TabOrder = 1
+    TabOrder = 0
     object Label3: TLabel
-      Left = 363
+      Left = 275
       Top = 19
       Width = 27
       Height = 16
       Caption = 'Port'
-    end
-    object Label1: TLabel
-      Left = 466
-      Top = 19
-      Width = 50
-      Height = 16
-      Caption = 'Clients:'
     end
     object Button_Start: TButton
       Left = 8
@@ -389,23 +367,8 @@ object MainForm: TMainForm
       TabOrder = 1
       OnClick = Button_StopClick
     end
-    object ClearButton: TButton
-      Left = 184
-      Top = 15
-      Width = 80
-      Height = 29
-      Caption = '&Clear'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -13
-      Font.Name = 'Verdana'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 2
-      OnClick = ClearButtonClick
-    end
     object Button1: TButton
-      Left = 272
+      Left = 184
       Top = 15
       Width = 80
       Height = 29
@@ -416,7 +379,7 @@ object MainForm: TMainForm
       Font.Name = 'Verdana'
       Font.Style = []
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 2
     end
     object Panel_WebXone: TPanel
       Left = 549
@@ -427,7 +390,7 @@ object MainForm: TMainForm
       BevelOuter = bvNone
       Color = clWhite
       ParentBackground = False
-      TabOrder = 4
+      TabOrder = 3
       object Label2: TLabel
         Left = 0
         Top = 0
@@ -453,30 +416,30 @@ object MainForm: TMainForm
       Width = 97
       Height = 18
       Caption = 'Auto Hide'
-      TabOrder = 5
+      TabOrder = 4
       Visible = False
     end
     object SpinEdit_Port: TSpinEdit
-      Left = 400
+      Left = 312
       Top = 16
       Width = 60
       Height = 26
       MaxValue = 0
       MinValue = 0
-      TabOrder = 6
+      TabOrder = 5
       Value = 80
     end
   end
   object Timer_Hide: TTimer
     Enabled = False
     Interval = 100
-    Left = 248
-    Top = 80
+    Left = 408
+    Top = 8
   end
   object PopupMenu: TPopupMenu
     Alignment = paRight
-    Left = 320
-    Top = 81
+    Left = 488
+    Top = 9
     object PopItem_Show: TMenuItem
       Caption = 'Show'
       OnClick = PopItem_ShowClick
@@ -492,7 +455,7 @@ object MainForm: TMainForm
   object Timer_FormCount: TTimer
     Interval = 10000
     OnTimer = Timer_FormCountTimer
-    Left = 416
-    Top = 80
+    Left = 544
+    Top = 8
   end
 end

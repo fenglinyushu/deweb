@@ -23,11 +23,13 @@ uses
 
      //
      SynCommons,
+
+
      OverbyteIcsWinSock,  OverbyteIcsWSocket, OverbyteIcsWndControl,
      OverbyteIcsHttpSrv, OverbyteIcsUtils, OverbyteIcsFormDataDecoder, OverbyteIcsMimeUtils,
 
      //
-     HTTPApp,
+     HTTPApp,XpMan,
      Windows, Messages, SysUtils, Classes, Controls, Forms,
      StdCtrls, ExtCtrls, StrUtils,
      IniFiles,  jpeg, Menus,  ShellAPI,  Spin;
@@ -35,11 +37,9 @@ uses
 
 type
   TMainForm = class(TForm)
-    DisplayMemo: TMemo;
     Panel_Buttons: TPanel;
     Button_Start: TButton;
     Button_Stop: TButton;
-    ClearButton: TButton;
     Button1: TButton;
     Label3: TLabel;
     Panel_WebXone: TPanel;
@@ -48,7 +48,6 @@ type
     PopItem_Show: TMenuItem;
     N2: TMenuItem;
     PopItem_Exit: TMenuItem;
-    Label1: TLabel;
     CheckBox_AutoHide: TCheckBox;
     Label2: TLabel;
     SpinEdit_Port: TSpinEdit;
@@ -57,7 +56,6 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Button_StartClick(Sender: TObject);
     procedure Button_StopClick(Sender: TObject);
-    procedure ClearButtonClick(Sender: TObject);
     procedure PopItem_ExitClick(Sender: TObject);
     procedure PopItem_ShowClick(Sender: TObject);
     procedure FormMouseUp(Sender: TObject; Button: TMouseButton;
@@ -135,23 +133,7 @@ end;
 
 { Display a message in display memo box, making sure we don't overflow it.  }
 procedure TMainForm.Display(const Msg : String);
-var
-    I : Integer;
 begin
-     if DisplayMemo.Lines.Count > 200 then begin
-          with TStringList.Create do begin
-               try
-                    BeginUpdate;
-                    Assign(DisplayMemo.Lines);
-                for I := 1 to 50 do
-                    Delete(0);
-                    DisplayMemo.Lines.Text := Text;
-               finally
-                    Free;
-               end;
-          end;
-     end;
-     DisplayMemo.Lines.Add(Msg);
 end;
 
 
@@ -175,13 +157,6 @@ begin
      Button_Start.Enabled     := True;
      Button_Stop.Enabled      := not Button_Start.Enabled;
      SpinEdit_Port.Enabled    := Button_Start.Enabled;
-end;
-
-
-
-procedure TMainForm.ClearButtonClick(Sender: TObject);
-begin
-     DisplayMemo.Clear;
 end;
 
 
