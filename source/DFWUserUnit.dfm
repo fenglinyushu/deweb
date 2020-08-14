@@ -860,7 +860,6 @@ object dfw_user: Tdfw_user
     end
   end
   object ZQuery: TZReadOnlyQuery
-    Connection = DM.ZConnection
     Params = <>
     Left = 368
     Top = 216

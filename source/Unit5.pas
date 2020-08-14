@@ -3,7 +3,7 @@ unit Unit5;
 interface
 
 uses
-     dwCore,
+     dwBase,
      //
      Math,
   Windows, Messages, SysUtils, Variants, Classes, Graphics,

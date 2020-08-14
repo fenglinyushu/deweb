@@ -202,7 +202,6 @@ object dfw_thread: Tdfw_thread
     end
   end
   object ZQuery_Posts: TZReadOnlyQuery
-    Connection = DM.ZConnection
     Params = <>
     Left = 96
     Top = 216

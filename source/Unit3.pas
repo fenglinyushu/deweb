@@ -3,8 +3,7 @@ unit Unit3;
 interface
 
 uses
-     dwCore,
-     dwCtrlBase,
+     dwBase,
      Forms,SysUtils,
      Math, StdCtrls, Graphics, Controls, ExtCtrls, Classes;
 

@@ -5,7 +5,7 @@ interface
 uses
      //
      dwDatas,
-     dwCtrlBase,
+     dwBase,
 
      //
      SynCommons,

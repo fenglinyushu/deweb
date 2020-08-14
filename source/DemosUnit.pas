@@ -3,8 +3,7 @@ unit DemosUnit;
 interface
 
 uses
-     dwCore,
-     dwCtrlBase,
+     dwBase,
 
   Windows, Messages, SysUtils, Variants, Classes, Graphics,
   Controls, Forms, Dialogs, ExtCtrls, StdCtrls, ComCtrls, Spin, jpeg,

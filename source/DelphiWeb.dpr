@@ -7,7 +7,6 @@ uses
   ActiveX,
   dwVars in 'dwVars.pas',
   main in 'main.pas' {MainForm},
-  dwCore in 'dwCore.pas',
   dwBase in 'dwBase.pas' {Form_Base},
   Unit1 in 'Unit1.pas' {Default},
   Unit2 in 'Unit2.pas' {dwsdk},
@@ -18,7 +17,6 @@ uses
   TestUnit in 'TestUnit.pas' {Test},
   DriverUnit in 'DriverUnit.pas' {Driver},
   dwDatas in 'dwDatas.pas' {DM: TDataModule},
-  dwCtrlBase in 'dwCtrlBase.pas',
   DFWUnit in 'DFWUnit.pas' {DFW},
   DFWUserUnit in 'DFWUserUnit.pas' {dfw_user},
   DFWThreadUnit in 'DFWThreadUnit.pas' {dfw_thread};

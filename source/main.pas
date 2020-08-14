@@ -6,7 +6,6 @@ interface
 uses
      //
      dwVars,
-     dwCore,
      dwBase,
 
      //

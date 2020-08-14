@@ -4,8 +4,7 @@ interface
 
 uses
      dwDatas,
-     dwCore,
-     dwCtrlBase,
+     dwBase,
      //
      CloneComponents,
      //

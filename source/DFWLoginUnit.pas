@@ -3,8 +3,7 @@ unit DFWLoginUnit;
 interface
 
 uses
-     dwCore,
-     dwCtrlBase,
+     dwBase,
 
      //
      ZAbstractRODataset, ZDataset,

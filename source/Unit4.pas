@@ -5,8 +5,7 @@ interface
 uses
      //
      dwVars,
-     dwCore,
-     dwCtrlBase,
+     dwBase,
      
      dwDatas,
 

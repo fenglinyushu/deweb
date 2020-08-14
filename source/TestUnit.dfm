@@ -1,9 +1,9 @@
 object Test: TTest
   Left = 464
   Top = 154
+  Width = 867
+  Height = 622
   Caption = 'Test'
-  ClientHeight = 583
-  ClientWidth = 851
   Color = clWhite
   TransparentColor = True
   TransparentColorValue = clBtnFace
@@ -36,6 +36,7 @@ object Test: TTest
     Top = 150
     Width = 121
     Height = 28
+    ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
     TabOrder = 1
     Text = 'Edit1'
   end

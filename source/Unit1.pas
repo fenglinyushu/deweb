@@ -3,7 +3,6 @@ unit Unit1;
 interface
 
 uses
-     dwCore,
 
      //
      Math,

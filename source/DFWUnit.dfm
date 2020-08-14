@@ -3395,7 +3395,6 @@ object DFW: TDFW
     TabOrder = 2
   end
   object ZQuery_Threads: TZReadOnlyQuery
-    Connection = DM.ZConnection
     Params = <>
     Left = 64
     Top = 368

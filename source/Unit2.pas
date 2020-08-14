@@ -4,7 +4,7 @@ interface
 
 uses
      //
-     dwCore,
+     dwBase,
 
      //
      Forms, SysUtils,

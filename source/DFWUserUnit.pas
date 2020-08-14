@@ -4,7 +4,7 @@ interface
 
 uses
      //
-     dwCtrlBase,
+     dwBase,
 
      
      //

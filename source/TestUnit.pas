@@ -3,8 +3,7 @@ unit TestUnit;
 interface
 
 uses
-     dwCore,
-     dwCtrlBase,
+     dwBase,
      dwDatas,
 
      //
