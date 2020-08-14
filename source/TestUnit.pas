@@ -12,13 +12,11 @@ uses
      //
      Forms, SysUtils,
      Windows, Classes, Controls, StdCtrls, Menus, ExtCtrls, 
-      ComCtrls, jpeg ;
+      ComCtrls, jpeg, MPlayer ;
 
 type
   TTest = class(TForm)
-    Label1: TLabel;
-    Button1: TButton;
-    Edit1: TEdit;
+    MediaPlayer1: TMediaPlayer;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }

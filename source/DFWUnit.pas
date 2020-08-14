@@ -36,7 +36,7 @@ type
     Label110: TLabel;
     Panel_Pages: TPanel;
     Edit_PageNo: TEdit;
-    ZQuery_Threads: TZReadOnlyQuery;
+    ZQuery: TZReadOnlyQuery;
     Button_Next: TButton;
     Button1: TButton;
     Button2: TButton;
@@ -91,6 +91,10 @@ begin
      //设置TOP, 以修正编辑时的更改
      Top  := 0;
 
+     //
+     ZQuery.Connection   := DM.ZConnection;
+
+
      //默认为第1页
      giPageNo  := 0;
 
@@ -124,8 +128,8 @@ var
 begin
      try
           //打开数据表
-          ZQuery_Threads.Close;
-          ZQuery_Threads.SQL.Text    := 'SELECT a.last_date,a.tid,a.subject,a.posts,a.views,'
+          ZQuery.Close;
+          ZQuery.SQL.Text    := 'SELECT a.last_date,a.tid,a.subject,a.posts,a.views,'
                     +'a.lastpid,a.uid,a.lastuid,a.create_date'
                     +',b.username'
                     +',c.username lastname'
@@ -134,12 +138,12 @@ begin
                     +' LIMIT 20 OFFSET '+IntToStr(giPageNo*20)
                     ;
 
-          ZQuery_Threads.Open;
+          ZQuery.Open;
 
 
           //更新显示
           for iItem := 0 to 19 do begin
-               if ZQuery_Threads.Eof then begin
+               if ZQuery.Eof then begin
                     //主题
                     with TStaticText(Self.FindComponent('StaticText_Subject'+IntToStr(iItem+1))) do begin
                          Caption   := '';
@@ -167,43 +171,43 @@ begin
                end else begin
                     //主题
                     with TStaticText(Self.FindComponent('StaticText_Subject'+IntToStr(iItem+1))) do begin
-                         //Caption   := UTF8ToAnsi(Trim(ZQuery_Threads.FieldByName('subject').AsString));
-                         Caption   := dwGetText(UTF8ToAnsi(Trim(ZQuery_Threads.FieldByName('subject').AsString)),80);
+                         //Caption   := UTF8ToAnsi(Trim(ZQuery.FieldByName('subject').AsString));
+                         Caption   := dwGetText(UTF8ToAnsi(Trim(ZQuery.FieldByName('subject').AsString)),80);
                          Hint      := '{"href":"'+_WEBSITE+'dfw_thread.dw?'
-                                   +'tid='+ZQuery_Threads.FieldByName('tid').AsString
-                                   +'&&uid='+ZQuery_Threads.FieldByName('uid').AsString
-                                   +'&&create_date='+ZQuery_Threads.FieldByName('create_date').AsString
-                                   +'&&subject='+dwEscape(UTF8ToAnsi(ZQuery_Threads.FieldByName('subject').AsString))
-                                   +'&&uper='+dwEscape(UTF8ToAnsi(ZQuery_Threads.FieldByName('username').AsString))
+                                   +'tid='+ZQuery.FieldByName('tid').AsString
+                                   +'&&uid='+ZQuery.FieldByName('uid').AsString
+                                   +'&&create_date='+ZQuery.FieldByName('create_date').AsString
+                                   +'&&subject='+dwEscape(UTF8ToAnsi(ZQuery.FieldByName('subject').AsString))
+                                   +'&&uper='+dwEscape(UTF8ToAnsi(ZQuery.FieldByName('username').AsString))
                                    +'"}';
                     end;
 
                     //题主
                     with TStaticText(Self.FindComponent('StaticText_Uper'+IntToStr(iItem+1))) do begin
-                         Caption := UTF8ToAnsi(ZQuery_Threads.FieldByName('username').AsString);
-                         Hint      := '{"href":"'+_WEBSITE+'dfw_user.dw?uid='+ZQuery_Threads.FieldByName('uid').AsString+'"}';
+                         Caption := UTF8ToAnsi(ZQuery.FieldByName('username').AsString);
+                         Hint      := '{"href":"'+_WEBSITE+'dfw_user.dw?uid='+ZQuery.FieldByName('uid').AsString+'"}';
                     end;
 
                     //回复/阅读
                     with TStaticText(Self.FindComponent('StaticText_ReplyRead'+IntToStr(iItem+1))) do begin
-                         Caption := ZQuery_Threads.FieldByName('posts').AsString +'/'+ZQuery_Threads.FieldByName('views').AsString;
+                         Caption := ZQuery.FieldByName('posts').AsString +'/'+ZQuery.FieldByName('views').AsString;
                          Hint := '';
                     end;
 
                     //提问
                     with TStaticText(Self.FindComponent('StaticText_LastPost'+IntToStr(iItem+1))) do begin
-                         Caption   := UTF8ToAnsi(ZQuery_Threads.FieldByName('lastname').AsString);
-                         Hint      := '{"href":"'+_WEBSITE+'dfw_user.dw?uid='+ZQuery_Threads.FieldByName('lastuid').AsString+'"}';
+                         Caption   := UTF8ToAnsi(ZQuery.FieldByName('lastname').AsString);
+                         Hint      := '{"href":"'+_WEBSITE+'dfw_user.dw?uid='+ZQuery.FieldByName('lastuid').AsString+'"}';
                     end;
 
                     //最后回复时间
                     with TStaticText(Self.FindComponent('StaticText_LastPostTime'+IntToStr(iItem+1))) do begin
-                         Caption   := FormatDateTime('yyyy-mm-dd',dwPHPToDate(ZQuery_Threads.FieldByName('last_date').AsInteger));
+                         Caption   := FormatDateTime('yyyy-mm-dd',dwPHPToDate(ZQuery.FieldByName('last_date').AsInteger));
                          Hint      := '';
                     end;
 
                     //
-                    ZQuery_Threads.Next;
+                    ZQuery.Next;
                end;
           end;
 

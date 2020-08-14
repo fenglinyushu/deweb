@@ -7,10 +7,11 @@ uses
      dwVars,
      dwBase,
      
-     dwDatas,
+     dwDatas, 
 
      //
-
+     ZAbstractRODataset, ZAbstractDataset,ZDataset,
+     //
      Math,
      Windows, Messages, SysUtils, Variants, Classes, Graphics,
      Controls, Forms, Dialogs, StdCtrls, ExtCtrls, Grids,
@@ -24,7 +25,6 @@ type
     MenuItem_Edit: TMenuItem;
     MenuItem_Delete: TMenuItem;
     MenuItem_About: TMenuItem;
-    ADOQuery: TADOQuery;
     TreeView: TTreeView;
     Panel1: TPanel;
     Label1: TLabel;
@@ -65,6 +65,8 @@ type
   private
      function CreateNodeSQL(Node: TTreeNode): String;
   public
+     ZQuery: TZQuery;
+
   end;
 
 var
@@ -144,12 +146,17 @@ var
      iLeft     : Integer;
 begin
      try
+          ZQuery    := TZQuery.Create(Self);
+          ZQuery.Connection   := DM.ZConnection;
+          
           //设置菜单的Left/Top/Width/Height
           dwSetCompLTWH(MainMenu,200,0,600,50);
 
           //导入通讯录的TreeView组
-          DM.ExeAQ(ADOQuery,'SELECT * FROM Groups ORDER BY LinkID,Ord');
-          DataToTreeView(ADOQuery,'ID','LinkID','Name','',TreeView);
+          ZQuery.SQL.Text     := 'SELECT * FROM Groups ORDER BY LinkID,Ord';
+          ZQuery.Open;
+          //
+          DataToTreeView(ZQuery,'ID','LinkID','Name','',TreeView);
           TreeView.Items.BeginUpdate;
           TreeView.Items[0].Expand(False);
           TreeView.Items[0].Selected    := True;
@@ -157,9 +164,9 @@ begin
 
 
           //
-          ADOQuery.Close;
-          ADOQuery.SQL.Text := 'select * from Member ORDER BY id DESC';
-          ADOQuery.Open;
+          ZQuery.Close;
+          ZQuery.SQL.Text := 'select * from Member ORDER BY id DESC';
+          ZQuery.Open;
 
           //列宽
           with SG do begin
@@ -178,7 +185,7 @@ begin
           //列标题
           iLeft     := 0;
           for iCol := 0 to SG.ColCount-1 do begin
-               SG.Cells[iCol,0]    := ADOQuery.FieldList[iCol].FieldName;
+               SG.Cells[iCol,0]    := ZQuery.FieldList[iCol].FieldName;
                //
                with TEdit(Self.FindComponent('Edit'+IntToStr(iCol+1))) do begin
                     Width     := SG.ColWidths[iCol];
@@ -187,13 +194,13 @@ begin
                end;
           end;
           //内容
-          for iRec := 0 to Min(SG.RowCount,ADOquery.RecordCount)-1 do begin
+          for iRec := 0 to Min(SG.RowCount,ZQuery.RecordCount)-1 do begin
                for iCol := 0 to SG.ColCount-1 do begin
-                    SG.Cells[iCol,iRec+1]    := ADOQuery.FieldList[iCol].AsString;
+                    SG.Cells[iCol,iRec+1]    := ZQuery.FieldList[iCol].AsString;
                end;
-               ADOQuery.Next;
+               ZQuery.Next;
                //
-               if ADOQuery.Eof then begin
+               if ZQuery.Eof then begin
                     break;
                end;
           end;
@@ -272,21 +279,21 @@ var
      iRow,iCol : Integer;
 begin
      //根据行号找到记录
-     ADOQuery.First;
+     ZQuery.First;
      for iRow := 0 to SG.Row-2 do begin
-          ADOQuery.Next;
+          ZQuery.Next;
      end;
 
      //更新数据
-     ADOQuery.Edit;
+     ZQuery.Edit;
 
      //内容
      for iCol := 0 to 9 do begin
-          ADOQuery.Fields[iCol].AsString     := TEdit(Self.FindComponent('Edit'+IntToStr(iCol+1))).Text;
-          SG.Cells[iCol,SG.Row]              := ADOQuery.Fields[iCol].AsString;
+          ZQuery.Fields[iCol].AsString     := TEdit(Self.FindComponent('Edit'+IntToStr(iCol+1))).Text;
+          SG.Cells[iCol,SG.Row]              := ZQuery.Fields[iCol].AsString;
      end;
      //
-     ADOQuery.Post;
+     ZQuery.Post;
 
      //
      Panel_Edit.Visible  := False;
@@ -304,23 +311,23 @@ var
      iRec,iCol : Integer;
 begin
      //     dwShowMessage('您输入了 : '+(AResult),Self);
-     ADOQuery.Append;
-     ADOQuery.FieldByName('姓名').AsString   := AResult;
-     ADOQuery.FieldByName('GroupIDs').AsString    := ','+IntToStr(TreeView.Selected.SelectedIndex)+',';
-     ADOQuery.Post;
+     ZQuery.Append;
+     ZQuery.FieldByName('姓名').AsString   := AResult;
+     ZQuery.FieldByName('GroupIDs').AsString    := ','+IntToStr(TreeView.Selected.SelectedIndex)+',';
+     ZQuery.Post;
      //
-     ADOQuery.Close;
-     ADOQuery.SQL.Text := CreateNodeSQL(TreeView.Selected);
-     ADOQuery.Open;
+     ZQuery.Close;
+     ZQuery.SQL.Text := CreateNodeSQL(TreeView.Selected);
+     ZQuery.Open;
 
      //内容
      for iRec := 0 to SG.RowCount-1 do begin
           for iCol := 0 to SG.ColCount-1 do begin
-               SG.Cells[iCol,iRec+1]    := ADOQuery.FieldList[iCol].AsString;
+               SG.Cells[iCol,iRec+1]    := ZQuery.FieldList[iCol].AsString;
           end;
-          ADOQuery.Next;
+          ZQuery.Next;
           //
-          if ADOQuery.Eof then begin
+          if ZQuery.Eof then begin
                for iCol := 0 to SG.ColCount-1 do begin
                     SG.Cells[iCol,iRec+1]    := '';
                end;
@@ -335,26 +342,26 @@ begin
 
      if AResult ='1' then begin
           //根据行号找到记录
-          ADOQuery.First;
+          ZQuery.First;
           for iRow := 0 to SG.Row-2 do begin
-               ADOQuery.Next;
+               ZQuery.Next;
           end;
-          ADOQuery.Delete;
+          ZQuery.Delete;
           dwShowMessage('删除成功!',Self);
 
           //更新数据
-          ADOQuery.Close;
-          //ADOQuery.SQL.Text := 'select * from Member';
-          ADOQuery.Open;
+          ZQuery.Close;
+          //ZQuery.SQL.Text := 'select * from Member';
+          ZQuery.Open;
 
           //内容
-          for iRow := 0 to Min(SG.RowCount,ADOquery.RecordCount)-1 do begin
+          for iRow := 0 to Min(SG.RowCount,ZQuery.RecordCount)-1 do begin
                for iCol := 0 to SG.ColCount-1 do begin
-                    SG.Cells[iCol,iRow+1]    := ADOQuery.FieldList[iCol].AsString;
+                    SG.Cells[iCol,iRow+1]    := ZQuery.FieldList[iCol].AsString;
                end;
-               ADOQuery.Next;
+               ZQuery.Next;
                //
-               if ADOQuery.Eof then begin
+               if ZQuery.Eof then begin
                     for iCol := 0 to SG.ColCount-1 do begin
                          SG.Cells[iCol,iRow+1]    := '';
                     end;
@@ -388,18 +395,18 @@ var
      iRec,iCol : Integer;
 begin
      //
-     ADOQuery.Close;
-     ADOQuery.SQL.Text := CreateNodeSQL(TreeView.Selected);
-     ADOQuery.Open;
+     ZQuery.Close;
+     ZQuery.SQL.Text := CreateNodeSQL(TreeView.Selected);
+     ZQuery.Open;
 
      //内容
      for iRec := 0 to SG.RowCount-1 do begin
           for iCol := 0 to SG.ColCount-1 do begin
-               SG.Cells[iCol,iRec+1]    := ADOQuery.FieldList[iCol].AsString;
+               SG.Cells[iCol,iRec+1]    := ZQuery.FieldList[iCol].AsString;
           end;
-          ADOQuery.Next;
+          ZQuery.Next;
           //
-          if ADOQuery.Eof then begin
+          if ZQuery.Eof then begin
                for iCol := 0 to SG.ColCount-1 do begin
                     SG.Cells[iCol,iRec+1]    := '';
                end;

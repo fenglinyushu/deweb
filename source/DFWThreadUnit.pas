@@ -4,6 +4,7 @@ interface
 
 uses
      //
+     dwDatas,
      dwBase,
 
      
@@ -33,7 +34,7 @@ type
     Label_Room: TLabel;
     Label_ThreadTitle: TLabel;
     StaticText_Poster: TStaticText;
-    ZQuery_Posts: TZReadOnlyQuery;
+    ZQuery: TZReadOnlyQuery;
     Panel_Space: TPanel;
     Label_Floor: TLabel;
     procedure FormCreate(Sender: TObject);
@@ -60,7 +61,7 @@ procedure Tdfw_thread.FormCreate(Sender: TObject);
 begin
      Top  := 0;
      //
-
+     ZQuery.Connection   := DM.ZConnection;
 end;
 
 procedure Tdfw_thread.FormShow(Sender: TObject);
@@ -122,14 +123,14 @@ begin
      Label_CreateDate.Caption      := FormatDateTime('yyyy-mm-dd',dwPHPToDate(iCreate));
 
      //读取post
-     ZQuery_Posts.Close;
-     ZQuery_Posts.SQL.Text    := 'SELECT a.uid,a.message,a.create_date,b.username'
+     ZQuery.Close;
+     ZQuery.SQL.Text    := 'SELECT a.uid,a.message,a.create_date,b.username'
                +' FROM bbs_post a,bbs_user b'
                +' WHERE a.uid=b.uid AND a.tid='+IntToStr(giTid)
                +' ORDER BY a.pid';
-     ZQuery_Posts.Open;
+     ZQuery.Open;
      //
-     for iItem := 0 to ZQuery_Posts.RecordCount-1 do begin
+     for iItem := 0 to ZQuery.RecordCount-1 do begin
           oPanel    := TPanel(CloneComponent(Panel_Post));
           oPanel.Visible      := True;
           oPanel.Top          := 9000;
@@ -142,13 +143,13 @@ begin
 
           //答主
           with TStaticText(Self.FindComponent('StaticText_Poster'+IntToStr(iItem+1))) do begin
-               Caption := UTF8ToAnsi(ZQuery_Posts.FieldByName('username').AsString);
-               Hint      := '{"href":"dfw_user.dw?uid='+ZQuery_Posts.FieldByName('uid').AsString+'"}';
+               Caption := UTF8ToAnsi(ZQuery.FieldByName('username').AsString);
+               Hint      := '{"href":"dfw_user.dw?uid='+ZQuery.FieldByName('uid').AsString+'"}';
           end;
 
           //消息
           with TLabel(Self.FindComponent('Label_Message'+IntToStr(iItem+1))) do begin
-               Caption   := dwLongStr(UTF8ToAnsi(ZQuery_Posts.FieldByName('message').AsString));
+               Caption   := dwLongStr(UTF8ToAnsi(ZQuery.FieldByName('message').AsString));
                AutoSize  := False;
                AutoSize  := True;
                AutoSize  := False;
@@ -157,14 +158,14 @@ begin
 
           //日期
           with TLabel(Self.FindComponent('Label_CreateDate'+IntToStr(iItem+1))) do begin
-               Caption   := FormatDateTime('yyyy-mm-dd hh:MM:ss',dwPHPToDate(ZQuery_Posts.FieldByName('create_date').AsInteger));
+               Caption   := FormatDateTime('yyyy-mm-dd hh:MM:ss',dwPHPToDate(ZQuery.FieldByName('create_date').AsInteger));
           end;
           //
           oPanel.AutoSize     := False;
           oPanel.AutoSize     := True;
 
           //
-          ZQuery_posts.Next;
+          ZQuery.Next;
      end;
 
      //

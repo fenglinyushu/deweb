@@ -922,6 +922,11 @@ begin
      Result    := StringReplace(Result,'''','\''',[rfReplaceAll]);
      Result    := StringReplace(Result,#13#10,'\n',[rfReplaceAll]);
      Result    := Trim(Result);
+     //异常处理(中文乱码)
+     if Length(Result)>800 then begin
+          Result    := dwGetText(Result,800);
+     end;
+
 end;
 
 

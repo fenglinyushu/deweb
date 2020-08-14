@@ -3394,7 +3394,7 @@ object DFW: TDFW
     Caption = #25552#38382
     TabOrder = 2
   end
-  object ZQuery_Threads: TZReadOnlyQuery
+  object ZQuery: TZReadOnlyQuery
     Params = <>
     Left = 64
     Top = 368

@@ -201,7 +201,7 @@ object dfw_thread: Tdfw_thread
       end
     end
   end
-  object ZQuery_Posts: TZReadOnlyQuery
+  object ZQuery: TZReadOnlyQuery
     Params = <>
     Left = 96
     Top = 216

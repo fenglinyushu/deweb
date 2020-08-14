@@ -3,7 +3,7 @@ object Test: TTest
   Top = 154
   Width = 867
   Height = 622
-  Caption = 'Test'
+  Caption = 'DeWeb'#27979#35797#32593#39029
   Color = clWhite
   TransparentColor = True
   TransparentColorValue = clBtnFace
@@ -16,28 +16,11 @@ object Test: TTest
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 20
-  object Label1: TLabel
-    Left = 255
-    Top = 40
-    Width = 48
-    Height = 20
-    Caption = 'Label1'
-  end
-  object Button1: TButton
-    Left = 200
+  object MediaPlayer1: TMediaPlayer
+    Left = 104
     Top = 80
-    Width = 81
-    Height = 31
-    Caption = 'Button1'
+    Width = 253
+    Height = 241
     TabOrder = 0
-  end
-  object Edit1: TEdit
-    Left = 245
-    Top = 150
-    Width = 121
-    Height = 28
-    ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
-    TabOrder = 1
-    Text = 'Edit1'
   end
 end

@@ -7,6 +7,7 @@ uses
      dwBase,
      //
      CloneComponents,
+     ZAbstractRODataset, ZAbstractDataset, ZDataset,
      //
      Windows, Messages, SysUtils, Variants, Classes, Graphics,
      Controls, Forms, Dialogs, StdCtrls, ExtCtrls;
@@ -39,7 +40,7 @@ type
   private
     { Private declarations }
   public
-    { Public declarations }
+     ZQuery    : TZReadOnlyQuery;
   end;
 
 var
@@ -252,9 +253,11 @@ var
      sTitle    : string;
      sRight    : string;
 begin
-     DM.ADOQuery_Driver.Filter     := 'FQuestionTypeID=1';
-     DM.ADOQuery_Driver.Filtered   := True;
-     DM.ADOQuery_Driver.First;
+     ZQuery    := TZReadOnlyQuery.Create(self);
+     ZQuery.Connection   := DM.ZConnection;
+     ZQuery.SQL.Text     := 'SELECT * FROM Questions WHERE FQuestionTypeID=1';
+     ZQuery.Open;
+     
 
      //
      randomize;
@@ -272,13 +275,13 @@ begin
      end;
 
      //生成20个选择题
-     DM.ADOQuery_Driver.First;
+     ZQuery.First;
      for iItem := 0 to iIDs[0]-1 do begin
-          DM.ADOQuery_Driver.Next;
+          ZQuery.Next;
      end;
      for iItem := 0 to 19 do  begin
           //
-          sContent  := DM.ADOQuery_Driver.FieldByName('FContent').AsString;
+          sContent  := UTF8ToAnsi(ZQuery.FieldByName('FContent').AsString);
 
           //克隆控件
           oPanel    := TPanel(CloneComponent(Panel_01_Select));
@@ -286,7 +289,7 @@ begin
           oPanel.Top          := 9999;  //置最底
 
           //保存答案
-          sRight    := UpperCase(DM.ADOQuery_Driver.FieldByName('FRightSolution').AsString);
+          sRight    := UpperCase(UTF8ToAnsi(ZQuery.FieldByName('FRightSolution').AsString));
           if sRight = 'A' then begin
                oPanel.Tag     := 0;
           end else if sRight = 'B' then begin
@@ -340,7 +343,7 @@ begin
           //
           if iItem < 19 then begin
                for iRec := 0 to iIDs[iItem+1]-iIDs[iItem] do begin
-                    DM.ADOQuery_Driver.Next;
+                    ZQuery.Next;
                end;
           end;
 

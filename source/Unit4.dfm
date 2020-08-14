@@ -1,6 +1,6 @@
 object Form4: TForm4
-  Left = 0
-  Top = 0
+  Left = 252
+  Top = 266
   BorderStyle = bsNone
   Caption = 'DeWeb - Clients Managemaent System'
   ClientHeight = 850
@@ -231,10 +231,5 @@ object Form4: TForm4
       Caption = #20851#20110
       OnClick = MenuItem_AboutClick
     end
-  end
-  object ADOQuery: TADOQuery
-    Parameters = <>
-    Left = 48
-    Top = 112
   end
 end
