@@ -14,6 +14,14 @@ object Form_Base: TForm_Base
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
+  object Panel_Forms: TPanel
+    Left = 24
+    Top = 128
+    Width = 10000
+    Height = 65535
+    BevelInner = bvLowered
+    TabOrder = 0
+  end
   object Timer_Manager: TTimer
     Enabled = False
     Interval = 30000

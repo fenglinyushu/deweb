@@ -1,7 +1,7 @@
 object Test: TTest
-  Left = 464
-  Top = 154
-  Width = 867
+  Left = 467
+  Top = 233
+  Width = 800
   Height = 622
   Caption = 'DeWeb'#27979#35797#32593#39029
   Color = clWhite
@@ -16,11 +16,44 @@ object Test: TTest
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 20
-  object MediaPlayer1: TMediaPlayer
-    Left = 104
-    Top = 80
-    Width = 253
-    Height = 241
+  object Label1: TLabel
+    Left = 128
+    Top = 32
+    Width = 48
+    Height = 20
+    Caption = 'Label1'
+  end
+  object Button1: TButton
+    Left = 72
+    Top = 128
+    Width = 75
+    Height = 25
+    Caption = 'Button1'
     TabOrder = 0
+  end
+  object Edit1: TEdit
+    Left = 208
+    Top = 80
+    Width = 121
+    Height = 28
+    ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
+    TabOrder = 1
+    Text = 'Edit1'
+  end
+  object CheckBox1: TCheckBox
+    Left = 176
+    Top = 152
+    Width = 97
+    Height = 17
+    Caption = 'CheckBox1'
+    TabOrder = 2
+  end
+  object RadioButton1: TRadioButton
+    Left = 80
+    Top = 216
+    Width = 113
+    Height = 17
+    Caption = 'RadioButton1'
+    TabOrder = 3
   end
 end

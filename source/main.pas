@@ -172,8 +172,14 @@ begin
 end;
 
 procedure TMainForm.Timer_FormCountTimer(Sender: TObject);
+var
+     I    : Integer;
 begin
      Caption   := 'DeWeb --- Count : '+ IntToStr(Screen.FormCount-2);
+     //Òþ²Ø´°Ìå
+     for I:=2 to Screen.FormCount-1 do begin
+          Screen.Forms[I].Left     := 13000;
+     end;
 end;
 
 initialization

@@ -7,19 +7,23 @@ uses
      dwDatas,
 
      //
-     SynCommons,
+     SynCommons, ZAbstractRODataset, ZDataset,
 
      //
      Forms, SysUtils,
      Windows, Classes, Controls, StdCtrls, Menus, ExtCtrls, 
-      ComCtrls, jpeg, MPlayer ;
+      ComCtrls, jpeg,  Grids, DBGrids, DB ;
 
 type
   TTest = class(TForm)
-    MediaPlayer1: TMediaPlayer;
+    Label1: TLabel;
+    Button1: TButton;
+    Edit1: TEdit;
+    CheckBox1: TCheckBox;
+    RadioButton1: TRadioButton;
     procedure FormCreate(Sender: TObject);
   private
-    { Private declarations }
+     ZQuery: TZReadOnlyQuery;
   public
     { Public declarations }
   end;
@@ -34,6 +38,16 @@ implementation
 procedure TTest.FormCreate(Sender: TObject);
 begin
      Top  := 0;
+
+     //
+     ZQuery    := TZReadOnlyQUery.Create(Self);
+     ZQuery.Connection   := DM.ZConnection;
+
+     //
+     ZQuery.SQL.Text     := 'SELECT * FROM Member';  //姓名,性别,民族,爱好,籍贯,地址
+     ZQuery.Open;
+
+
 {
      Series1.Add(1393);
      Series1.Add(3530);

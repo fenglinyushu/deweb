@@ -1,0 +1,301 @@
+<!DOCTYPE html>                                                                    <html lang="en">                                                                                                                                                    <head>                                                                                <meta charset="utf-8">                                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">            <meta http-equiv="X-UA-Compatible" content="ie=edge">                             <title>大富翁论坛</title>                                                          </head>                                                                           
+<body style="background-color:#FFFFFF">
+    <style type="text/css">                                                      #Loading {                                                                   top: 50%;                                                               left: 50%;                                                              position: absolute;                                                     -webkit-transform: translateY(-50%) translateX(-50%);                   transform: translateY(-50%) translateX(-50%);                           z-index: 100;                                                      }                                                                       @-webkit-keyframes ball-beat {                                               50% {                                                                        opacity: 0.2;                                                           -webkit-transform: scale(0.75);                                         transform: scale(0.75);                                            }                                                                       100% {                                                                       opacity: 1;                                                             -webkit-transform: scale(1);                                            transform: scale(1);                                               }                                                                  }                                                                       @keyframes ball-beat {                                                       50% {                                                                        opacity: 0.2;                                                           -webkit-transform: scale(0.75);                                         transform: scale(0.75);                                            }                                                                       100% {                                                                       opacity: 1;                                                             -webkit-transform: scale(1);                                            transform: scale(1);                                               }                                                                  }                                                                       .ball-beat>div {                                                             background-color: #279fcf;                                              width: 15px;                                                            height: 15px;                                                           border-radius: 100% !important;                                         margin: 2px;                                                            -webkit-animation-fill-mode: both;                                      animation-fill-mode: both;                                              display: inline-block;                                                  -webkit-animation: ball-beat 0.7s 0s infinite linear;                   animation: ball-beat 0.7s 0s infinite linear;                      }                                                                       .ball-beat>div:nth-child(2n-1) {                                             -webkit-animation-delay: 0.35s !important;                              animation-delay: 0.35s !important;                                 }                                                                       #loader-wrapper {                                                            position: fixed;                                                        top: 0;                                                                 left: 0;                                                                width: 100%;                                                            height: 100%;                                                           z-index: 999999;                                                        background: #fff;                                                  }                                                                       #loader {                                                                    display: block;                                                         position: relative;                                                     left: 50%;                                                              top: 50%;                                                               width: 150px;                                                           height: 150px;                                                          margin: -75px 0 0 -75px;                                                border-radius: 50%;                                                     border: 3px solid transparent;                                          /* COLOR 1 */                                                           border-top-color: #000;                                                 -webkit-animation: spin 2s linear infinite;                             /* Chrome, Opera 15+, Safari 5+ */                                      -ms-animation: spin 2s linear infinite;                                 /* Chrome, Opera 15+, Safari 5+ */                                      -moz-animation: spin 2s linear infinite;                                /* Chrome, Opera 15+, Safari 5+ */                                      -o-animation: spin 2s linear infinite;                                  /* Chrome, Opera 15+, Safari 5+ */                                      animation: spin 2s linear infinite;                                     /* Chrome, Firefox 16+, IE 10+, Opera */                                z-index: 1001;                                                     }                                                                       #loader:before {                                                             content: "";                                                            position: absolute;                                                     top: 5px;                                                               left: 5px;                                                              right: 5px;                                                             bottom: 5px;                                                            border-radius: 50%;                                                     border: 3px solid transparent;                                          /* COLOR 2 */                                                           border-top-color: #000;                                                 -webkit-animation: spin 3s linear infinite;                             /* Chrome, Opera 15+, Safari 5+ */                                      -moz-animation: spin 3s linear infinite;                                /* Chrome, Opera 15+, Safari 5+ */                                      -o-animation: spin 3s linear infinite;                                  /* Chrome, Opera 15+, Safari 5+ */                                      -ms-animation: spin 3s linear infinite;                                 /* Chrome, Opera 15+, Safari 5+ */                                      animation: spin 3s linear infinite;                                     /* Chrome, Firefox 16+, IE 10+, Opera */                           }                                                                       #loader:after {                                                              content: "";                                                            position: absolute;                                                     top: 15px;                                                              left: 15px;                                                             right: 15px;                                                            bottom: 15px;                                                           border-radius: 50%;                                                     border: 3px solid transparent;                                          border-top-color: #000;                                                 /* COLOR 3 */                                                           -moz-animation: spin 1.5s linear infinite;                              /* Chrome, Opera 15+, Safari 5+ */                                      -o-animation: spin 1.5s linear infinite;                                /* Chrome, Opera 15+, Safari 5+ */                                      -ms-animation: spin 1.5s linear infinite;                               /* Chrome, Opera 15+, Safari 5+ */                                      -webkit-animation: spin 1.5s linear infinite;                           /* Chrome, Opera 15+, Safari 5+ */                                      animation: spin 1.5s linear infinite;                                   /* Chrome, Firefox 16+, IE 10+, Opera */                           }                                                                       @-webkit-keyframes spin {                                                    0% {                                                                         -webkit-transform: rotate(0deg);                                        /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(0deg);                                            /* IE 9 */                                                              transform: rotate(0deg);                                                /* Firefox 16+, IE 10+, Opera */                                   }                                                                                                                                               100% {                                                                       -webkit-transform: rotate(360deg);                                      /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(360deg);                                          /* IE 9 */                                                              transform: rotate(360deg);                                              /* Firefox 16+, IE 10+, Opera */                                   }                                                                  }                                                                       @keyframes spin {                                                            0% {                                                                         -webkit-transform: rotate(0deg);                                        /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(0deg);                                            /* IE 9 */                                                              transform: rotate(0deg);                                                /* Firefox 16+, IE 10+, Opera */                                   }                                                                       100% {                                                                       -webkit-transform: rotate(360deg);                                      /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(360deg);                                          /* IE 9 */                                                              transform: rotate(360deg);                                              /* Firefox 16+, IE 10+, Opera */                                   }                                                                  }                                                                       #loader-wrapper .loader-section {                                            position: fixed;                                                        top: 0;                                                                 width: 51%;                                                             height: 100%;                                                           background: #fff;                                                       /* opacity: 0.7; */                                                     /* Old browsers */                                                      z-index: 1000;                                                          -webkit-transform: translateX(0);                                       /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateX(0);                                           /* IE 9 */                                                              transform: translateX(0);                                               /* Firefox 16+, IE 10+, Opera */                                   }                                                                       #loader-wrapper .loader-section.section-left {                               left: 0;                                                           }                                                                       #loader-wrapper .loader-section.section-right {                              right: 0;                                                          }                                                                       /* Loaded */                                                            .loaded #loader-wrapper .loader-section.section-left {                       -webkit-transform: translateX(-100%);                                   /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateX(-100%);                                       /* IE 9 */                                                              transform: translateX(-100%);                                           /* Firefox 16+, IE 10+, Opera */                                        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);               transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);                  }                                                                       .loaded #loader-wrapper .loader-section.section-right {                      -webkit-transform: translateX(100%);                                    /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateX(100%);                                        /* IE 9 */                                                              transform: translateX(100%);                                            /* Firefox 16+, IE 10+, Opera */                                        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);               transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);                  }                                                                       .loaded #loader {                                                            opacity: 0;                                                             -webkit-transition: all 0.3s ease-out;                                  transition: all 0.3s ease-out;                                     }                                                                       .loaded #loader-wrapper {                                                    visibility: hidden;                                                     -webkit-transform: translateY(-100%);                                   /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateY(-100%);                                       /* IE 9 */                                                              transform: translateY(-100%);                                           /* Firefox 16+, IE 10+, Opera */                                        -webkit-transition: all 0.3s 1s ease-out;                               transition: all 0.3s 1s ease-out;                                  }                                                                       /* JavaScript Turned Off */                                                                                                                     .no-js #loader-wrapper {                                                     display: none;                                                     }                                                                                                                                               .no-js h1 {                                                                  color: #222222;                                                    }                                                                       #loader-wrapper .load_title {                                                font-family: 'Open Sans';                                             color: rgb(245, 245, 245);                                              font-size: 19px;                                                        width: 100%;                                                            text-align: center;                                                     z-index: 9999999999999;                                                 position: absolute;                                                     top: 36px;                                                              opacity: 1;                                                             line-height: 30px;                                                 }                                                                       #loader-wrapper .load_title span {                                           font-weight: normal;                                                    font-style: italic;                                                     font-size: 13px;                                                        color: rgb(220, 220, 220);                                              opacity: 0.5;                                                      }                                                                       @keyframes moveover {                                                        0% {                                                                         transform: rotate(0deg);                                           }                                                                                                                                               100% {                                                                       transform: rotate(360deg);                                         }                                                                  }                                                                       .box {                                                                       position: relative;                                                     width: 100px;                                                           height: 100px;                                                          margin: 18% auto;                                                       /*整体旋转*/                                                            animation: moveover 3s linear infinite;                            }                                                                       .box_text {                                                                  position: absolute;                                                     top: 0;                                                                 left: 0;                                                           }                                                                       .box::before {                                                               content: "";                                                            position: absolute;                                                     width: 50px;                                                            height: 100px;                                                          border-radius: 50px 0 0 50px;                                           background: linear-gradient(#999, rgb(220, 220, 220));                  background-color: #999;                                                 z-index: 2;                                                        }                                                                       .box2 {                                                                      position: absolute;                                                     width: 50px;                                                            height: 100px;                                                          border-radius: 0 50px 50px 0;                                           left: 50%;                                                              background: linear-gradient(rgb(255,255,255),rgb(220,220, 220));                    z-index: 1;                                                        }                                                                       .box::after {                                                                content: "";                                                            position: absolute;                                                     width: 92px;                                                            height: 92px;                                                           top: 4px;                                                               left: 4px;                                                              border-radius: 50%;                                                     background-color: #fff;                                                 z-index: 2;                                                        }                                                                       .wrapper {                                                                   position: relative;                                                }                                                                  </style>                                                                <div id="loader-wrapper">                                                    <div class="wrapper">                                                        <div class='box'>                                                          <div class="box2"></div>                                           </div>                                                                  <div class="load_title">DeWeb                                           </div>                                                                                                                                     </div>                                                             </div>                                                                  <script src="dist/vue.js" type="text/javascript"></script>              <script src="dist/index.js" type="text/javascript"></script>            <script src="dist/axios.min.js" type="text/javascript"></script>        <link rel="icon" href="dist/webimages/[###].ico" type="image/x-icon">           <link rel="stylesheet" type="text/css" href="dist/theme-chalk/index.css" /> 
+    <div id="app" style="position:absolute;overflow:hidden;left:0;right:0;bottom:0;margin: 0 auto;background-color:#FFFFFF" :style="{top:dfw_user__top,width:dfw_user__wid,height:dfw_user__hei}" >
+        <el-dialog :title="input_query_caption" :visible.sync="input_query_visible" >
+        	<el-form style="width:90%;padding-left:5%;">
+        		<el-form-item :label="input_query_inputname" >
+        			<el-input v-model="input_query_inputdefault" autocomplete="off"></el-input>
+        		</el-form-item>
+        	</el-form>
+        	<div slot="footer" class="dialog-footer">
+        		<el-button @click="input_query_visible=false">{{input_query_cancelcaption}}</el-button>
+        		<el-button type="primary" @click="processinputquery">{{input_query_okcaption}}</el-button>
+        	</div>
+        </el-dialog>
+        <el-main v-if="Panel_All__vis" :disabled="Panel_All__dis" :style="{backgroundColor:Panel_All__col,left:Panel_All__lef,top:Panel_All__top,width:Panel_All__wid,height:Panel_All__hei}" style="position:absolute;overflow:hidden;">
+        <el-main v-if="Panel_99_Foot__vis" :disabled="Panel_99_Foot__dis" :style="{backgroundColor:Panel_99_Foot__col,left:Panel_99_Foot__lef,top:Panel_99_Foot__top,width:Panel_99_Foot__wid,height:Panel_99_Foot__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label14__cap" v-if="Label14__vis" :disabled="Label14__dis" :style="{left:Label14__lef,top:Label14__top,width:Label14__wid,height:Label14__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;text-align:center;">{{Label14__cap}}
+        </div>
+        <div  v-html="Label15__cap" v-if="Label15__vis" :disabled="Label15__dis" :style="{left:Label15__lef,top:Label15__top,width:Label15__wid,height:Label15__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;text-align:center;">{{Label15__cap}}
+        </div>
+        <el-main v-if="Panel4__vis" :disabled="Panel4__dis" :style="{backgroundColor:Panel4__col,left:Panel4__lef,top:Panel4__top,width:Panel4__wid,height:Panel4__hei}" style="position:absolute;overflow:hidden;">
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_00_Title__vis" :disabled="Panel_00_Title__dis" :style="{backgroundColor:Panel_00_Title__col,left:Panel_00_Title__lef,top:Panel_00_Title__top,width:Panel_00_Title__wid,height:Panel_00_Title__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_UserName__cap" v-if="Label_UserName__vis" :disabled="Label_UserName__dis" :style="{left:Label_UserName__lef,top:Label_UserName__top,width:Label_UserName__wid,height:Label_UserName__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;">{{Label_UserName__cap}}
+        </div>
+        <el-image :src="Image_User__src" fit="none" v-if="Image_User__vis" :disabled="Image_User__dis" :style="{left:Image_User__lef,top:Image_User__top,width:Image_User__wid,height:Image_User__hei}" style="position:absolute;border-radius:50%">
+        </el-Image>
+        </el-main>
+        <el-main v-if="Panel_00_Head__vis" :disabled="Panel_00_Head__dis" :style="{backgroundColor:Panel_00_Head__col,left:Panel_00_Head__lef,top:Panel_00_Head__top,width:Panel_00_Head__wid,height:Panel_00_Head__hei}" style="position:absolute;overflow:hidden;">
+        <el-image :src="Img_dfw__src" fit="none" v-if="Img_dfw__vis" :disabled="Img_dfw__dis" :style="{left:Img_dfw__lef,top:Img_dfw__top,width:Img_dfw__wid,height:Img_dfw__hei}" style="position:absolute;">
+        </el-Image>
+        <el-main v-if="Panel6__vis" :disabled="Panel6__dis" :style="{backgroundColor:Panel6__col,left:Panel6__lef,top:Panel6__top,width:Panel6__wid,height:Panel6__hei}" style="position:absolute;overflow:hidden;">
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel1__vis" :disabled="Panel1__dis" :style="{backgroundColor:Panel1__col,left:Panel1__lef,top:Panel1__top,width:Panel1__wid,height:Panel1__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label1__cap" v-if="Label1__vis" :disabled="Label1__dis" :style="{left:Label1__lef,top:Label1__top,width:Label1__wid,height:Label1__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label1__cap}}
+        </div>
+        <div  v-html="Label2__cap" v-if="Label2__vis" :disabled="Label2__dis" :style="{left:Label2__lef,top:Label2__top,width:Label2__wid,height:Label2__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label2__cap}}
+        </div>
+        <div  v-html="Label3__cap" v-if="Label3__vis" :disabled="Label3__dis" :style="{left:Label3__lef,top:Label3__top,width:Label3__wid,height:Label3__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label3__cap}}
+        </div>
+        <div  v-html="Label4__cap" v-if="Label4__vis" :disabled="Label4__dis" :style="{left:Label4__lef,top:Label4__top,width:Label4__wid,height:Label4__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label4__cap}}
+        </div>
+        <div  v-html="Label5__cap" v-if="Label5__vis" :disabled="Label5__dis" :style="{left:Label5__lef,top:Label5__top,width:Label5__wid,height:Label5__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label5__cap}}
+        </div>
+        <el-link :underline="false" v-if="StaticText_Create_Date__vis" :disabled="StaticText_Create_Date__dis" type="primary" :style="{left:StaticText_Create_Date__lef,top:StaticText_Create_Date__top,width:StaticText_Create_Date__wid,height:StaticText_Create_Date__hei}" style="position:absolute;">{{StaticText_Create_Date__cap}}
+        </el-link>
+        <el-link :underline="false" v-if="StaticText_Login_Date__vis" :disabled="StaticText_Login_Date__dis" type="primary" :style="{left:StaticText_Login_Date__lef,top:StaticText_Login_Date__top,width:StaticText_Login_Date__wid,height:StaticText_Login_Date__hei}" style="position:absolute;">{{StaticText_Login_Date__cap}}
+        </el-link>
+        <el-link :underline="false" v-if="StaticText_Logins__vis" :disabled="StaticText_Logins__dis" type="primary" :style="{left:StaticText_Logins__lef,top:StaticText_Logins__top,width:StaticText_Logins__wid,height:StaticText_Logins__hei}" style="position:absolute;">{{StaticText_Logins__cap}}
+        </el-link>
+        <el-link :underline="false" v-if="StaticText_Threads__vis" :disabled="StaticText_Threads__dis" type="primary" :href="StaticText_Threads__hrf" :style="{left:StaticText_Threads__lef,top:StaticText_Threads__top,width:StaticText_Threads__wid,height:StaticText_Threads__hei}" style="position:absolute;">{{StaticText_Threads__cap}}
+        </el-link>
+        <el-link :underline="false" v-if="StaticText_Posts__vis" :disabled="StaticText_Posts__dis" type="primary" :href="StaticText_Posts__hrf" :style="{left:StaticText_Posts__lef,top:StaticText_Posts__top,width:StaticText_Posts__wid,height:StaticText_Posts__hei}" style="position:absolute;">{{StaticText_Posts__cap}}
+        </el-link>
+        </el-main>
+        </el-main>
+	 </div>
+    <script>
+	    Vue.prototype.procResp = function (data){
+		    resp = JSON.parse(decodeURIComponent(String(data))); 
+		    if (resp.mode === "update"){
+		        eval(String(resp.code));
+		    } else if (resp.mode === "showform"){
+		        document.open();document.write(String(resp.code));
+		    }
+	    } 
+        new Vue(
+			{
+				el: '#app',
+				data: function () {
+					return {
+					    dfw_user__top:"0px",
+					    dfw_user__wid:"967px",
+					    dfw_user__hei:"524px",
+Label14__lef:"1px",
+Label14__top:"49px",
+Label14__wid:"965px",
+Label14__hei:"20px",
+Label14__vis:true,
+Label14__dis:false,
+Label14__cap:"感谢您的惠顾,如有任何建议和意见,请联系版主.2020.08.01",
+Label15__lef:"1px",
+Label15__top:"29px",
+Label15__wid:"965px",
+Label15__hei:"20px",
+Label15__vis:true,
+Label15__dis:false,
+Label15__cap:"(C) 版权所有. 大富翁论坛 1998-2020",
+Panel4__lef:"1px",
+Panel4__top:"1px",
+Panel4__wid:"965px",
+Panel4__hei:"1px",
+Panel4__vis:true,
+Panel4__dis:false,
+Panel4__col:"#F0F0F0",
+Panel_99_Foot__lef:"0px",
+Panel_99_Foot__top:"297px",
+Panel_99_Foot__wid:"967px",
+Panel_99_Foot__hei:"70px",
+Panel_99_Foot__vis:true,
+Panel_99_Foot__dis:false,
+Panel_99_Foot__col:"#FFFFFF",
+Label_UserName__lef:"96px",
+Label_UserName__top:"20px",
+Label_UserName__wid:"73px",
+Label_UserName__hei:"19px",
+Label_UserName__vis:true,
+Label_UserName__dis:false,
+Label_UserName__cap:"wxm3783",
+Image_User__lef:"5px",
+Image_User__top:"5px",
+Image_User__wid:"76px",
+Image_User__hei:"59px",
+Image_User__vis:true,
+Image_User__dis:false,
+Image_User__src:"dist/webimages/Image_User.jpg",
+Panel_00_Title__lef:"0px",
+Panel_00_Title__top:"80px",
+Panel_00_Title__wid:"967px",
+Panel_00_Title__hei:"69px",
+Panel_00_Title__vis:true,
+Panel_00_Title__dis:false,
+Panel_00_Title__col:"#FFFFFF",
+Img_dfw__lef:"366px",
+Img_dfw__top:"6px",
+Img_dfw__wid:"240px",
+Img_dfw__hei:"60px",
+Img_dfw__vis:true,
+Img_dfw__dis:false,
+Img_dfw__src:"dist/webimages/Img_dfw.jpg",
+Panel6__lef:"0px",
+Panel6__top:"79px",
+Panel6__wid:"967px",
+Panel6__hei:"1px",
+Panel6__vis:true,
+Panel6__dis:false,
+Panel6__col:"#E1E9FF",
+Panel_00_Head__lef:"0px",
+Panel_00_Head__top:"0px",
+Panel_00_Head__wid:"967px",
+Panel_00_Head__hei:"80px",
+Panel_00_Head__vis:true,
+Panel_00_Head__dis:false,
+Panel_00_Head__col:"#FFFFFF",
+Label1__lef:"11px",
+Label1__top:"12px",
+Label1__wid:"68px",
+Label1__hei:"20px",
+Label1__vis:true,
+Label1__dis:false,
+Label1__cap:"注册日期 :",
+Label2__lef:"11px",
+Label2__top:"36px",
+Label2__wid:"68px",
+Label2__hei:"20px",
+Label2__vis:true,
+Label2__dis:false,
+Label2__cap:"最近登录 :",
+Label3__lef:"11px",
+Label3__top:"60px",
+Label3__wid:"68px",
+Label3__hei:"20px",
+Label3__vis:true,
+Label3__dis:false,
+Label3__cap:"登录次数 :",
+Label4__lef:"11px",
+Label4__top:"84px",
+Label4__wid:"68px",
+Label4__hei:"20px",
+Label4__vis:true,
+Label4__dis:false,
+Label4__cap:"发贴次数 :",
+Label5__lef:"11px",
+Label5__top:"108px",
+Label5__wid:"68px",
+Label5__hei:"20px",
+Label5__vis:true,
+Label5__dis:false,
+Label5__cap:"回贴次数 :",
+StaticText_Create_Date__lef:"91px",
+StaticText_Create_Date__top:"9px",
+StaticText_Create_Date__wid:"88px",
+StaticText_Create_Date__hei:"24px",
+StaticText_Create_Date__vis:true,
+StaticText_Create_Date__dis:false,
+StaticText_Create_Date__cap:"2019-03-01",
+StaticText_Create_Date__hrf:"",
+StaticText_Login_Date__lef:"91px",
+StaticText_Login_Date__top:"33px",
+StaticText_Login_Date__wid:"88px",
+StaticText_Login_Date__hei:"24px",
+StaticText_Login_Date__vis:true,
+StaticText_Login_Date__dis:false,
+StaticText_Login_Date__cap:"2019-03-01",
+StaticText_Login_Date__hrf:"",
+StaticText_Logins__lef:"91px",
+StaticText_Logins__top:"57px",
+StaticText_Logins__wid:"13px",
+StaticText_Logins__hei:"24px",
+StaticText_Logins__vis:true,
+StaticText_Logins__dis:false,
+StaticText_Logins__cap:"1",
+StaticText_Logins__hrf:"",
+StaticText_Threads__lef:"91px",
+StaticText_Threads__top:"81px",
+StaticText_Threads__wid:"13px",
+StaticText_Threads__hei:"24px",
+StaticText_Threads__vis:true,
+StaticText_Threads__dis:false,
+StaticText_Threads__cap:"1",
+StaticText_Threads__hrf:"dfw_userthreads.dw?uid=10738",
+StaticText_Posts__lef:"91px",
+StaticText_Posts__top:"105px",
+StaticText_Posts__wid:"13px",
+StaticText_Posts__hei:"24px",
+StaticText_Posts__vis:true,
+StaticText_Posts__dis:false,
+StaticText_Posts__cap:"0",
+StaticText_Posts__hrf:"dfw_userposts.dw?uid=10738",
+Panel1__lef:"0px",
+Panel1__top:"149px",
+Panel1__wid:"967px",
+Panel1__hei:"148px",
+Panel1__vis:true,
+Panel1__dis:false,
+Panel1__col:"#FFFFFF",
+Panel_All__lef:"0px",
+Panel_All__top:"0px",
+Panel_All__wid:"967px",
+Panel_All__hei:"1060px",
+Panel_All__vis:true,
+Panel_All__dis:false,
+Panel_All__col:"#FFFFFF",
+					    input_query_visible:false,
+					    input_query_caption:"Input Query",
+					    input_query_inputname:"new",
+					    input_query_cancelcaption:"Cancel",
+					    input_query_okcaption:"OK",
+					    input_query_inputdefault:"",
+					    input_query_method:"processinputquery",
+					    input_query_visible:false,
+					    version__istrial:false,
+					    clientid:[!clientid!]
+                    }
+                },
+                mounted() {
+                    let me=this;
+                    window.addEventListener('scroll', function() {
+                        let top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
+                        axios.get('{"mode":"event","cid":[!clientid!],"component":"_scroll","value":"'+top+'"}')
+                        .then(resp =>{me.procResp(resp.data)});
+                    });
+                    window.addEventListener(
+                        "onorientationchange" in window ? "orientationchange" : "resize",
+                        function() {
+                            axios.get('{"mode":"event","cid":[!clientid!],"component":"_screen","orientation":"'+window.orientation+'","clientwidth":'+document.documentElement.clientWidth+',"clientheight":'+document.documentElement.clientHeight+',"innerwidth":'+window.innerWidth+',"innerheight":'+window.innerHeight+',"width":'+screen.width+',"height":'+screen.height+'}')
+                            .then(resp =>{me.procResp(resp.data)});
+                        },
+                        false
+                    );
+                    let dfw_userhearttimer = window.setInterval(function() {
+                        axios.get('{"mode":"heart","cid":[!clientid!]}')
+                        .then(resp =>{me.procResp(resp.data)})
+                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(dfw_userhearttimer);});
+                    }, 30000);
+                },
+				methods: {
+                    dwnotify(caption,text) {this.$notify.warning({ title: caption, message: text, duration: 0,showClose: false });},
+                    dwevent(val,compname,compvalue,compevent,reserved) {
+                        var jo={};
+                        jo.mode="event";
+                        jo.cid=this.clientid;
+                        jo.component=compname;
+                        jo.value=escape(eval(compvalue))
+                        jo.event=compevent;
+                        axios.get(JSON.stringify(jo))
+                        .then(resp =>{this.procResp(resp.data)});
+                    },
+                    processinputquery(val) {
+                        this.input_query_visible = false;
+                        axios.get('{"mode":"interaction","cid":[!clientid!],"class":"inputquery","method":"'+this.input_query_method+'","value":"'+this.input_query_inputdefault+'"}')
+                        .then(resp =>{this.procResp(resp.data)});
+                    },
+                },
+                beforeDestroy() {
+                    clearInterval(hearttimer);
+                }
+            }
+        ); 
+    </script>
+</body>
+<script>
+    function Lodinng () {
+	     document.getElementById("loader-wrapper").style.display = "none"
+	 }
+	 Lodinng()
+</script> 
+</html>

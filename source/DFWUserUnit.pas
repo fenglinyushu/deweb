@@ -25,7 +25,6 @@ type
     Panel4: TPanel;
     Panel_00_Title: TPanel;
     Label_UserName: TLabel;
-    ZQuery: TZReadOnlyQuery;
     Image_User: TImage;
     Panel_00_Head: TPanel;
     Img_dfw: TImage;
@@ -48,7 +47,7 @@ type
   private
      giTid : Integer;
      giUid : Integer;
-    { Private declarations }
+     ZQuery    : TZReadOnlyQuery;
   public
 
     { Public declarations }
@@ -59,13 +58,16 @@ var
 
 implementation
 
+uses dwDatas;
+
 {$R *.dfm}
 
 procedure Tdfw_user.FormCreate(Sender: TObject);
 begin
      Top  := 0;
      //
-
+     ZQuery    := TZReadOnlyQuery.Create(self);
+     ZQuery.Connection   := DM.ZConnection;
 end;
 
 procedure Tdfw_user.FormShow(Sender: TObject);

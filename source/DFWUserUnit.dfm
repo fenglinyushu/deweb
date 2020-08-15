@@ -859,9 +859,4 @@ object dfw_user: Tdfw_user
       end
     end
   end
-  object ZQuery: TZReadOnlyQuery
-    Params = <>
-    Left = 368
-    Top = 216
-  end
 end
