@@ -1,0 +1,180 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{5C9038B1-8C21-42EB-8D43-EF7FB00F258C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="dwTButton.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dwTCheckBox.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dwTComboBox.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dwTDateTimePicker.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dwTDBGrid.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dwTEdit.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dwTImage.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dwTLabel.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dwTPageControl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dwTPanel.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dwTRadioButton.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dwTStaticText.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dwTTabSheet.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="dwTButton">
+        <MSBuild Projects="dwTButton.dproj"/>
+    </Target>
+    <Target Name="dwTButton:Clean">
+        <MSBuild Projects="dwTButton.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTButton:Make">
+        <MSBuild Projects="dwTButton.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dwTCheckBox">
+        <MSBuild Projects="dwTCheckBox.dproj"/>
+    </Target>
+    <Target Name="dwTCheckBox:Clean">
+        <MSBuild Projects="dwTCheckBox.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTCheckBox:Make">
+        <MSBuild Projects="dwTCheckBox.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dwTComboBox">
+        <MSBuild Projects="dwTComboBox.dproj"/>
+    </Target>
+    <Target Name="dwTComboBox:Clean">
+        <MSBuild Projects="dwTComboBox.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTComboBox:Make">
+        <MSBuild Projects="dwTComboBox.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dwTDateTimePicker">
+        <MSBuild Projects="dwTDateTimePicker.dproj"/>
+    </Target>
+    <Target Name="dwTDateTimePicker:Clean">
+        <MSBuild Projects="dwTDateTimePicker.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTDateTimePicker:Make">
+        <MSBuild Projects="dwTDateTimePicker.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dwTDBGrid">
+        <MSBuild Projects="dwTDBGrid.dproj"/>
+    </Target>
+    <Target Name="dwTDBGrid:Clean">
+        <MSBuild Projects="dwTDBGrid.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTDBGrid:Make">
+        <MSBuild Projects="dwTDBGrid.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dwTEdit">
+        <MSBuild Projects="dwTEdit.dproj"/>
+    </Target>
+    <Target Name="dwTEdit:Clean">
+        <MSBuild Projects="dwTEdit.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTEdit:Make">
+        <MSBuild Projects="dwTEdit.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dwTImage">
+        <MSBuild Projects="dwTImage.dproj"/>
+    </Target>
+    <Target Name="dwTImage:Clean">
+        <MSBuild Projects="dwTImage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTImage:Make">
+        <MSBuild Projects="dwTImage.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dwTLabel">
+        <MSBuild Projects="dwTLabel.dproj"/>
+    </Target>
+    <Target Name="dwTLabel:Clean">
+        <MSBuild Projects="dwTLabel.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTLabel:Make">
+        <MSBuild Projects="dwTLabel.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dwTPageControl">
+        <MSBuild Projects="dwTPageControl.dproj"/>
+    </Target>
+    <Target Name="dwTPageControl:Clean">
+        <MSBuild Projects="dwTPageControl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTPageControl:Make">
+        <MSBuild Projects="dwTPageControl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dwTPanel">
+        <MSBuild Projects="dwTPanel.dproj"/>
+    </Target>
+    <Target Name="dwTPanel:Clean">
+        <MSBuild Projects="dwTPanel.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTPanel:Make">
+        <MSBuild Projects="dwTPanel.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dwTRadioButton">
+        <MSBuild Projects="dwTRadioButton.dproj"/>
+    </Target>
+    <Target Name="dwTRadioButton:Clean">
+        <MSBuild Projects="dwTRadioButton.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTRadioButton:Make">
+        <MSBuild Projects="dwTRadioButton.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dwTStaticText">
+        <MSBuild Projects="dwTStaticText.dproj"/>
+    </Target>
+    <Target Name="dwTStaticText:Clean">
+        <MSBuild Projects="dwTStaticText.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTStaticText:Make">
+        <MSBuild Projects="dwTStaticText.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dwTTabSheet">
+        <MSBuild Projects="dwTTabSheet.dproj"/>
+    </Target>
+    <Target Name="dwTTabSheet:Clean">
+        <MSBuild Projects="dwTTabSheet.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTTabSheet:Make">
+        <MSBuild Projects="dwTTabSheet.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="dwTButton;dwTCheckBox;dwTComboBox;dwTDateTimePicker;dwTDBGrid;dwTEdit;dwTImage;dwTLabel;dwTPageControl;dwTPanel;dwTRadioButton;dwTStaticText;dwTTabSheet"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="dwTButton:Clean;dwTCheckBox:Clean;dwTComboBox:Clean;dwTDateTimePicker:Clean;dwTDBGrid:Clean;dwTEdit:Clean;dwTImage:Clean;dwTLabel:Clean;dwTPageControl:Clean;dwTPanel:Clean;dwTRadioButton:Clean;dwTStaticText:Clean;dwTTabSheet:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="dwTButton:Make;dwTCheckBox:Make;dwTComboBox:Make;dwTDateTimePicker:Make;dwTDBGrid:Make;dwTEdit:Make;dwTImage:Make;dwTLabel:Make;dwTPageControl:Make;dwTPanel:Make;dwTRadioButton:Make;dwTStaticText:Make;dwTTabSheet:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

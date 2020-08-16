@@ -1,10 +1,10 @@
 object Driver: TDriver
   Left = 471
   Top = 157
-  Width = 817
-  Height = 920
   VertScrollBar.Visible = False
   Caption = 'Driver'
+  ClientHeight = 881
+  ClientWidth = 801
   Color = clBtnFace
   Font.Charset = GB2312_CHARSET
   Font.Color = clWindowText
@@ -431,7 +431,7 @@ object Driver: TDriver
       object Label_Item: TLabel
         Left = 10
         Top = 10
-        Width = 761
+        Width = 757
         Height = 63
         Align = alTop
         Caption = 

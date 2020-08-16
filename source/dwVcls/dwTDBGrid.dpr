@@ -157,23 +157,9 @@ begin
      //生成返回值数组
      joRes    := _Json('[]');
      //
-     oWinCtrl  := TDBGrid(ACtrl).Parent;
-     while not (oWinCtrl is TCustomForm) do begin
-          //
-          oWinCtrl  := oWinCtrl.Parent;
-     end;
-{
-     oForm     := TForm(oWinCtrl);
-}
      //
      with TDBGrid(ACtrl) do
       begin
-          if oForm <> nil then begin
-               joREs.add(oForm.Name);
-          end else begin
-               joRes.Add('NO FOUND!!!');
-          end;
-(*
           //
           oDataSet  := DataSource.DataSet;
 
@@ -219,7 +205,6 @@ begin
                     oDataSet.EnableControls;
                end;
           end
-*)
      end;
      //
      Result    := (joRes);

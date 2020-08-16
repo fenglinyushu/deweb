@@ -281,7 +281,7 @@ begin
      end;
      for iItem := 0 to 19 do  begin
           //
-          sContent  := UTF8ToAnsi(ZQuery.FieldByName('FContent').AsString);
+          sContent  := (ZQuery.FieldByName('FContent').AsString);
 
           //克隆控件
           oPanel    := TPanel(CloneComponent(Panel_01_Select));
@@ -289,7 +289,7 @@ begin
           oPanel.Top          := 9999;  //置最底
 
           //保存答案
-          sRight    := UpperCase(UTF8ToAnsi(ZQuery.FieldByName('FRightSolution').AsString));
+          sRight    := UpperCase((ZQuery.FieldByName('FRightSolution').AsString));
           if sRight = 'A' then begin
                oPanel.Tag     := 0;
           end else if sRight = 'B' then begin

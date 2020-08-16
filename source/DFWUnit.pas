@@ -36,7 +36,6 @@ type
     Label110: TLabel;
     Panel_Pages: TPanel;
     Edit_PageNo: TEdit;
-    ZQuery: TZReadOnlyQuery;
     Button_Next: TButton;
     Button1: TButton;
     Button2: TButton;
@@ -66,6 +65,7 @@ type
     { Private declarations }
   public
      giPageNo:Integer;
+     ZQuery : TZReadOnlyQuery;
      procedure UpdateThreads;
 
     { Public declarations }
@@ -92,6 +92,8 @@ begin
      Top  := 0;
 
      //
+     ZQuery    := TZReadOnlyQuery.Create(self);
+
      ZQuery.Connection   := DM.ZConnection;
 
 
@@ -171,20 +173,20 @@ begin
                end else begin
                     //主题
                     with TStaticText(Self.FindComponent('StaticText_Subject'+IntToStr(iItem+1))) do begin
-                         //Caption   := UTF8ToAnsi(Trim(ZQuery.FieldByName('subject').AsString));
-                         Caption   := dwGetText(UTF8ToAnsi(Trim(ZQuery.FieldByName('subject').AsString)),80);
+                         //Caption   := (Trim(ZQuery.FieldByName('subject').AsString));
+                         Caption   := dwGetText((Trim(ZQuery.FieldByName('subject').AsString)),80);
                          Hint      := '{"href":"'+_WEBSITE+'dfw_thread.dw?'
                                    +'tid='+ZQuery.FieldByName('tid').AsString
                                    +'&&uid='+ZQuery.FieldByName('uid').AsString
                                    +'&&create_date='+ZQuery.FieldByName('create_date').AsString
-                                   +'&&subject='+dwEscape(UTF8ToAnsi(ZQuery.FieldByName('subject').AsString))
-                                   +'&&uper='+dwEscape(UTF8ToAnsi(ZQuery.FieldByName('username').AsString))
+                                   +'&&subject='+dwEscape((ZQuery.FieldByName('subject').AsString))
+                                   +'&&uper='+dwEscape((ZQuery.FieldByName('username').AsString))
                                    +'"}';
                     end;
 
                     //题主
                     with TStaticText(Self.FindComponent('StaticText_Uper'+IntToStr(iItem+1))) do begin
-                         Caption := UTF8ToAnsi(ZQuery.FieldByName('username').AsString);
+                         Caption := (ZQuery.FieldByName('username').AsString);
                          Hint      := '{"href":"'+_WEBSITE+'dfw_user.dw?uid='+ZQuery.FieldByName('uid').AsString+'"}';
                     end;
 
@@ -196,7 +198,7 @@ begin
 
                     //提问
                     with TStaticText(Self.FindComponent('StaticText_LastPost'+IntToStr(iItem+1))) do begin
-                         Caption   := UTF8ToAnsi(ZQuery.FieldByName('lastname').AsString);
+                         Caption   := (ZQuery.FieldByName('lastname').AsString);
                          Hint      := '{"href":"'+_WEBSITE+'dfw_user.dw?uid='+ZQuery.FieldByName('lastuid').AsString+'"}';
                     end;
 

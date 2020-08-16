@@ -3176,7 +3176,7 @@ object DFW: TDFW
             Font.Color = 16752192
             Font.Height = -15
             Font.Name = #24494#36719#38597#40657
-            Font.Style = [fsBold]
+            Font.Style = []
             ParentFont = False
             TabOrder = 0
           end
@@ -3393,10 +3393,5 @@ object DFW: TDFW
     AutoSize = False
     Caption = #25552#38382
     TabOrder = 2
-  end
-  object ZQuery: TZReadOnlyQuery
-    Params = <>
-    Left = 64
-    Top = 368
   end
 end

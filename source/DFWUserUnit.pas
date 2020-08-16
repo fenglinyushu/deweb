@@ -107,7 +107,7 @@ begin
 
           //
           if not ZQuery.IsEmpty then begin
-               Label_UserName.Caption   := UTF8ToAnsi(ZQuery.FieldByName('username').AsString);
+               Label_UserName.Caption   := (ZQuery.FieldByName('username').AsString);
                with StaticText_Create_Date do begin
                     Caption   := FormatDateTime('yyyy-mm-dd',dwPHPToDate(ZQuery.FieldByName('create_date').AsInteger));
                     Hint      := '';//{"href":"dfw_user.dw?uid='+ZQuery.FieldByName('lastuid').AsString+'"}';

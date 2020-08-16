@@ -1,9 +1,9 @@
 object dfw_user: Tdfw_user
   Left = 370
   Top = 190
-  Width = 1033
-  Height = 563
   Caption = #22823#23500#32705#35770#22363
+  ClientHeight = 524
+  ClientWidth = 1017
   Color = clWhite
   TransparentColor = True
   TransparentColorValue = clWhite
@@ -21,7 +21,7 @@ object dfw_user: Tdfw_user
   object Panel_All: TPanel
     Left = 0
     Top = 0
-    Width = 1000
+    Width = 1017
     Height = 1060
     Align = alTop
     BevelOuter = bvNone
@@ -30,7 +30,7 @@ object dfw_user: Tdfw_user
     object Panel_99_Foot: TPanel
       Left = 0
       Top = 297
-      Width = 1000
+      Width = 1017
       Height = 70
       Align = alTop
       Color = clWhite
@@ -38,25 +38,27 @@ object dfw_user: Tdfw_user
       object Label14: TLabel
         Left = 1
         Top = 49
-        Width = 998
+        Width = 1015
         Height = 20
         Align = alBottom
         Alignment = taCenter
         Caption = #24863#35874#24744#30340#24800#39038','#22914#26377#20219#20309#24314#35758#21644#24847#35265','#35831#32852#31995#29256#20027'.2020.08.01'
+        ExplicitWidth = 392
       end
       object Label15: TLabel
         Left = 1
         Top = 29
-        Width = 998
+        Width = 1015
         Height = 20
         Align = alBottom
         Alignment = taCenter
         Caption = '(C) '#29256#26435#25152#26377'. '#22823#23500#32705#35770#22363' 1998-2020'
+        ExplicitWidth = 249
       end
       object Panel4: TPanel
         Left = 1
         Top = 1
-        Width = 998
+        Width = 1015
         Height = 1
         Align = alTop
         TabOrder = 0
@@ -65,7 +67,7 @@ object dfw_user: Tdfw_user
     object Panel_00_Title: TPanel
       Left = 0
       Top = 80
-      Width = 1000
+      Width = 1017
       Height = 69
       Align = alTop
       BevelOuter = bvNone
@@ -401,17 +403,17 @@ object dfw_user: Tdfw_user
     object Panel_00_Head: TPanel
       Left = 0
       Top = 0
-      Width = 1000
+      Width = 1017
       Height = 80
       Align = alTop
       BevelOuter = bvNone
       Color = clWhite
       TabOrder = 2
       DesignSize = (
-        1000
+        1017
         80)
       object Img_dfw: TImage
-        Left = 383
+        Left = 392
         Top = 6
         Width = 240
         Height = 60
@@ -731,11 +733,12 @@ object dfw_user: Tdfw_user
           DF04FF00688F10787E6F1B783EDF5ED0BC23008742F0C33FD97C3FA49C6D678E
           CA0F2E36674F91BCDDE0A00980A315F4059D9C3A759C56F6F0C705BC08238A28
           D42A46A06028038000E00152514F7DC5CCDEE7FFD9}
+        ExplicitLeft = 383
       end
       object Panel6: TPanel
         Left = 0
         Top = 79
-        Width = 1000
+        Width = 1017
         Height = 1
         Align = alBottom
         Color = 16771553
@@ -745,7 +748,7 @@ object dfw_user: Tdfw_user
     object Panel1: TPanel
       Left = 0
       Top = 149
-      Width = 1000
+      Width = 1017
       Height = 148
       Align = alTop
       BevelOuter = bvNone

@@ -34,7 +34,6 @@ type
     Label_Room: TLabel;
     Label_ThreadTitle: TLabel;
     StaticText_Poster: TStaticText;
-    ZQuery: TZReadOnlyQuery;
     Panel_Space: TPanel;
     Label_Floor: TLabel;
     procedure FormCreate(Sender: TObject);
@@ -44,7 +43,7 @@ type
   private
      giTid : Integer;
      giUid : Integer;
-    { Private declarations }
+     ZQuery    : TZReadOnlyQuery;
   public
 
     { Public declarations }
@@ -61,6 +60,7 @@ procedure Tdfw_thread.FormCreate(Sender: TObject);
 begin
      Top  := 0;
      //
+     ZQuery    := TZReadOnlyQuery.Create(self);
      ZQuery.Connection   := DM.ZConnection;
 end;
 
@@ -143,17 +143,17 @@ begin
 
           //答主
           with TStaticText(Self.FindComponent('StaticText_Poster'+IntToStr(iItem+1))) do begin
-               Caption := UTF8ToAnsi(ZQuery.FieldByName('username').AsString);
+               Caption := (ZQuery.FieldByName('username').AsString);
                Hint      := '{"href":"dfw_user.dw?uid='+ZQuery.FieldByName('uid').AsString+'"}';
           end;
 
           //消息
           with TLabel(Self.FindComponent('Label_Message'+IntToStr(iItem+1))) do begin
-               Caption   := dwLongStr(UTF8ToAnsi(ZQuery.FieldByName('message').AsString));
+               Caption   := dwLongStr((ZQuery.FieldByName('message').AsString));
                AutoSize  := False;
                AutoSize  := True;
                AutoSize  := False;
-               Height    := Height + 50;
+               Height    := Round(Height*1.3 + 20);
           end;
 
           //日期

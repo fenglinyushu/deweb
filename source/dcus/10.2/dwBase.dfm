@@ -1,9 +1,9 @@
 object Form_Base: TForm_Base
   Left = 430
   Top = 139
-  Width = 605
-  Height = 403
   Caption = 'Form_Base'
+  ClientHeight = 364
+  ClientWidth = 589
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,12 +14,13 @@ object Form_Base: TForm_Base
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object Image1: TImage
-    Left = 32
-    Top = 72
-    Width = 105
-    Height = 105
-    Hint = '{"src":"dist/webimages/xamh.png"}'
+  object Panel_Forms: TPanel
+    Left = 24
+    Top = 128
+    Width = 10000
+    Height = 65535
+    BevelInner = bvLowered
+    TabOrder = 0
   end
   object Timer_Manager: TTimer
     Enabled = False
