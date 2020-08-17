@@ -23,6 +23,8 @@
         </el-checkbox>
         <el-radio label="1" v-if="RadioButton1__vis" :disabled="RadioButton1__dis" v-model="RadioButton1__chk" :style="{left:RadioButton1__lef,top:RadioButton1__top,width:RadioButton1__wid,height:RadioButton1__hei}" style="position:absolute;">{{RadioButton1__cap}}
         </el-radio>
+        <el-main v-if="Panel1__vis" :disabled="Panel1__dis" :style="{backgroundColor:Panel1__col,left:Panel1__lef,top:Panel1__top,width:Panel1__wid,height:Panel1__hei}" style="position:absolute;overflow:hidden;">
+        </el-main>
 	 </div>
     <script>
 	    Vue.prototype.procResp = function (data){
@@ -41,7 +43,7 @@
 					    Test__top:"0px",
 					    Test__wid:"784px",
 					    Test__hei:"583px",
-Label1__lef:"128px",
+Label1__lef:"64px",
 Label1__top:"32px",
 Label1__wid:"48px",
 Label1__hei:"20px",
@@ -55,22 +57,22 @@ Button1__hei:"38px",
 Button1__vis:true,
 Button1__dis:false,
 Button1__cap:"Button1",
-Edit1__lef:"208px",
-Edit1__top:"80px",
+Edit1__lef:"64px",
+Edit1__top:"85px",
 Edit1__wid:"121px",
 Edit1__hei:"28px",
 Edit1__vis:true,
 Edit1__dis:false,
 Edit1__txt:"Edit1",
-CheckBox1__lef:"176px",
-CheckBox1__top:"152px",
+CheckBox1__lef:"64px",
+CheckBox1__top:"157px",
 CheckBox1__wid:"97px",
 CheckBox1__hei:"17px",
 CheckBox1__vis:true,
 CheckBox1__dis:false,
 CheckBox1__cap:"CheckBox1",
 CheckBox1__chk:false,
-RadioButton1__lef:"80px",
+RadioButton1__lef:"63px",
 RadioButton1__top:"216px",
 RadioButton1__wid:"113px",
 RadioButton1__hei:"17px",
@@ -78,6 +80,13 @@ RadioButton1__vis:true,
 RadioButton1__dis:false,
 RadioButton1__cap:"RadioButton1",
 RadioButton1__chk:"0",
+Panel1__lef:"290px",
+Panel1__top:"45px",
+Panel1__wid:"206px",
+Panel1__hei:"68px",
+Panel1__vis:true,
+Panel1__dis:false,
+Panel1__col:"#F0F0F0",
 					    input_query_visible:false,
 					    input_query_caption:"Input Query",
 					    input_query_inputname:"new",
@@ -92,6 +101,7 @@ RadioButton1__chk:"0",
                 },
                 mounted() {
                     let me=this;
+Timer1__tmr = window.setInterval(function() {axios.get('{"mode":"event","cid":[!clientid!],"component":"Timer1"}').then(resp =>{me.procResp(resp.data);  })}, 1000);
                     window.addEventListener('scroll', function() {
                         let top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
                         axios.get('{"mode":"event","cid":[!clientid!],"component":"_scroll","value":"'+top+'"}')

@@ -21,8 +21,11 @@ type
     Edit1: TEdit;
     CheckBox1: TCheckBox;
     RadioButton1: TRadioButton;
+    Panel1: TPanel;
+    Timer1: TTimer;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
   private
      ZQuery: TZReadOnlyQuery;
   public
@@ -38,7 +41,12 @@ implementation
 
 procedure TTest.Button1Click(Sender: TObject);
 begin
-     Label1.Caption := '±êÇ©  '+IntToStr(GetTickCount mod 1000);
+     Label1.Caption           := '±êÇ©  '+IntToStr(GetTickCount mod 1000);
+     Edit1.Text               := '±à¼­  '+IntToStr(GetTickCount mod 999);
+     CheckBox1.Checked        := not CheckBox1.Checked;
+     RadioButton1.Checked     := checkBox1.Checked;
+     //
+     dwShowMessage('Hello, DeWeb!',self);
 end;
 
 procedure TTest.FormCreate(Sender: TObject);
@@ -69,6 +77,19 @@ begin
      Series2.Add(3492);
      Series2.Add(4293);
 }
+
+end;
+
+procedure TTest.Timer1Timer(Sender: TObject);
+begin
+     TTimer(Sender).Tag  := TTimer(Sender).Tag+1;
+     //
+     if TTimer(Sender).Tag > 25 then begin
+          TTimer(Sender).Tag  := 0;
+     end;
+     //
+     Label1.Caption      := IntToStr(TTimer(Sender).Tag);
+     Panel1.Color        := RGB(TTimer(Sender).Tag*10,TTimer(Sender).Tag*10,TTimer(Sender).Tag*10);
 
 end;
 

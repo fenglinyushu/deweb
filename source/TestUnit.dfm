@@ -17,7 +17,7 @@ object Test: TTest
   PixelsPerInch = 96
   TextHeight = 20
   object Label1: TLabel
-    Left = 128
+    Left = 64
     Top = 32
     Width = 48
     Height = 20
@@ -34,8 +34,8 @@ object Test: TTest
     OnClick = Button1Click
   end
   object Edit1: TEdit
-    Left = 208
-    Top = 80
+    Left = 64
+    Top = 85
     Width = 121
     Height = 28
     ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
@@ -43,19 +43,32 @@ object Test: TTest
     Text = 'Edit1'
   end
   object CheckBox1: TCheckBox
-    Left = 176
-    Top = 152
+    Left = 64
+    Top = 157
     Width = 97
     Height = 17
     Caption = 'CheckBox1'
     TabOrder = 2
   end
   object RadioButton1: TRadioButton
-    Left = 80
+    Left = 63
     Top = 216
     Width = 113
     Height = 17
     Caption = 'RadioButton1'
     TabOrder = 3
+  end
+  object Panel1: TPanel
+    Left = 290
+    Top = 45
+    Width = 206
+    Height = 68
+    Caption = 'Panel1'
+    TabOrder = 4
+  end
+  object Timer1: TTimer
+    OnTimer = Timer1Timer
+    Left = 290
+    Top = 245
   end
 end
