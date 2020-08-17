@@ -1,9 +1,9 @@
 object Test: TTest
   Left = 467
   Top = 233
-  Width = 800
-  Height = 622
   Caption = 'DeWeb'#27979#35797#32593#39029
+  ClientHeight = 583
+  ClientWidth = 784
   Color = clWhite
   TransparentColor = True
   TransparentColorValue = clBtnFace
@@ -24,12 +24,14 @@ object Test: TTest
     Caption = 'Label1'
   end
   object Button1: TButton
-    Left = 72
-    Top = 128
-    Width = 75
-    Height = 25
+    Left = 57
+    Top = 268
+    Width = 104
+    Height = 38
+    Hint = '{"type":"primary"}'
     Caption = 'Button1'
     TabOrder = 0
+    OnClick = Button1Click
   end
   object Edit1: TEdit
     Left = 208

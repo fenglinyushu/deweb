@@ -22,6 +22,7 @@ type
     CheckBox1: TCheckBox;
     RadioButton1: TRadioButton;
     procedure FormCreate(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
      ZQuery: TZReadOnlyQuery;
   public
@@ -34,6 +35,11 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TTest.Button1Click(Sender: TObject);
+begin
+     Label1.Caption := '±Í«©  '+IntToStr(GetTickCount mod 1000);
+end;
 
 procedure TTest.FormCreate(Sender: TObject);
 begin

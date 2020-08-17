@@ -1052,23 +1052,24 @@ end;
 
 function dwLTWH(ACtrl:TControl):String;  //可以更新位置的用法
 var
-     joHint    : Variant;
+     //joHint    : Variant;
      sZI       : String;
 begin
      //
-     joHint    := dwGetHintJson(ACtrl);
+     //joHint    := dwGetHintJson(ACtrl);
 
      //
-     if joHint.Exists('z-index')  then begin
-          sZI  := 'z-index:'+IntToStr(Min(joHint._('z-index'),998))+';';
-     end;
+     //if joHint.Exists('z-index')  then begin
+     //     sZI  := 'z-index:'+IntToStr(Min(joHint._('z-index'),998))+';';
+     //end;
 
      //
      with ACtrl do begin
-          Result    := ' :style="{left:'+Name+'__lef,top:'+Name+'__top,width:'+Name+'__wid,height:'+Name+'__hei}"'
-                    +' style="position:absolute;'+sZI;
+          Result    := ' :style="{left:'+Name+'__lef,top:'+Name+'__top,width:'+Name+'__wid,'
+                    +'height:'+Name+'__hei}" style="position:absolute;';
      end;
 end;
+
 function dwLTWHComp(ACtrl:TComponent):String;  //可以更新位置的用法
 begin
 
