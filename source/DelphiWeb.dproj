@@ -95,7 +95,7 @@
         <DCC_ExeOutput>.\Runtime\</DCC_ExeOutput>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_MinorVer>0</VerInfo_MinorVer>
-        <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
+        <Icon_MainIcon>..\document\logo\web_rdio_48px_1175006_easyicon.net.ico</Icon_MainIcon>
         <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
         <AppDPIAwarenessMode>PerMonitor</AppDPIAwarenessMode>
         <DCC_UnitSearchPath>.\Vcls\ics\;.\Vcls\mormot;.\Vcls\zeosdbo-7.2.6.1-stable\src;.\Vcls\zeosdbo-7.2.6.1-stable\src\component;.\Vcls\zeosdbo-7.2.6.1-stable\src\dbc;.\Vcls\zeosdbo-7.2.6.1-stable\src\core;.\Vcls\zeosdbo-7.2.6.1-stable\src\parsesql;.\Vcls\zeosdbo-7.2.6.1-stable\src\plain;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
@@ -108,7 +108,6 @@
         <DCCReference Include="main.pas">
             <Form>MainForm</Form>
         </DCCReference>
-        <DCCReference Include="dwCore.pas"/>
         <DCCReference Include="dwBase.pas">
             <Form>Form_Base</Form>
             <FormType>dfm</FormType>
@@ -149,7 +148,6 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="dwCtrlBase.pas"/>
         <DCCReference Include="DFWUnit.pas">
             <Form>DFW</Form>
             <FormType>dfm</FormType>

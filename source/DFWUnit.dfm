@@ -3258,7 +3258,7 @@ object DFW: TDFW
           Caption = #26631#39064
         end
         object Label107: TLabel
-          Left = 620
+          Left = 640
           Top = 4
           Width = 66
           Height = 20
@@ -3272,14 +3272,14 @@ object DFW: TDFW
           Caption = #25552#38382
         end
         object Label109: TLabel
-          Left = 740
+          Left = 760
           Top = 4
           Width = 60
           Height = 20
           Caption = #26368#21518#22238#22797
         end
         object Label110: TLabel
-          Left = 860
+          Left = 900
           Top = 4
           Width = 60
           Height = 20

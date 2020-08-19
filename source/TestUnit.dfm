@@ -25,7 +25,7 @@ object Test: TTest
   end
   object Button1: TButton
     Left = 57
-    Top = 268
+    Top = 343
     Width = 104
     Height = 38
     Hint = '{"type":"primary"}'
@@ -68,7 +68,7 @@ object Test: TTest
   end
   object Timer1: TTimer
     OnTimer = Timer1Timer
-    Left = 290
-    Top = 245
+    Left = 205
+    Top = 355
   end
 end
