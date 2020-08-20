@@ -1,7 +1,7 @@
 <!DOCTYPE html>                                                                    <html lang="en">                                                                                                                                                    <head>                                                                                <meta charset="utf-8">                                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">            <meta http-equiv="X-UA-Compatible" content="ie=edge">                             <title>DeWeb测试网页</title>                                                          </head>                                                                           
 <body style="background-color:#F0F0F0">
     <script src="dist/vue.js" type="text/javascript"></script>              <script src="dist/index.js" type="text/javascript"></script>            <script src="dist/axios.min.js" type="text/javascript"></script>        <link rel="icon" href="dist/webimages/[###].ico" type="image/x-icon">           <link rel="stylesheet" type="text/css" href="dist/theme-chalk/index.css" /> 
-    <div id="app" style="position:absolute;overflow:hidden;left:0;right:0;bottom:0;margin: 0 auto;background-color:#FFFFFF" :style="{top:Test_2__top,width:Test_2__wid,height:Test_2__hei}" >
+    <div id="app" style="position:absolute;overflow:hidden;left:0;right:0;bottom:0;margin: 0 auto;background-color:#FFFFFF" :style="{top:Test__top,width:Test__wid,height:Test__hei}" >
         <el-dialog :title="input_query_caption" :visible.sync="input_query_visible" >
         	<el-form style="width:90%;padding-left:5%;">
         		<el-form-item :label="input_query_inputname" >
@@ -15,10 +15,23 @@
         </el-dialog>
         <el-button v-if="Button1__vis" :disabled="Button1__dis" type="primary" :style="{left:Button1__lef,top:Button1__top,width:Button1__wid,height:Button1__hei}" style="position:absolute;" @click="dwevent($event,'Button1','0','onclick','')">{{Button1__cap}}
         </el-button>
-        <el-date-picker type="date" format="yyyy-MM-dd" value-format="yyyy-MM-dd" v-if="DateTimePicker1__vis" :disabled="DateTimePicker1__dis" v-model="DateTimePicker1__val" :style="{left:DateTimePicker1__lef,top:DateTimePicker1__top,width:DateTimePicker1__wid,height:DateTimePicker1__hei}" style="position:absolute;" @change="dwevent($event,'DateTimePicker1','this.DateTimePicker1__val','onchange','')">
-        </el-date-picker>
-        <el-time-select :picker-options="{start: '00:00', step: '00:01', end: '23:59'}" format="HH:mm" value-format="HH:mm" v-if="DateTimePicker2__vis" :disabled="DateTimePicker2__dis" v-model="DateTimePicker2__val" :style="{left:DateTimePicker2__lef,top:DateTimePicker2__top,width:DateTimePicker2__wid,height:DateTimePicker2__hei}" style="position:absolute;" @change="dwevent($event,'DateTimePicker2','this.DateTimePicker2__val','onchange','')">
-        </el-time-select>
+        <div v-if="DBGrid1__vis" :disabled="DBGrid1__dis" :style="{left:DBGrid1__lef,top:DBGrid1__top,width:DBGrid1__wid,height:DBGrid1__hei}" style="position:absolute;">
+            <el-table :data="DBGrid1__ces" highlight-current-row stripe border v-if="DBGrid1__vis" :disabled="DBGrid1__dis" height="441" style="width:100%" @row-click="dwevent($event,'DBGrid1','val.d0','onchange','')">
+                <el-table-column  show-overflow-tooltip fixed v-if=false prop="d0" label="rowno" width="80"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d1" label="姓名" width="80"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d2" label="性别" width="80"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d3" label="民族" width="80"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d4" label="籍贯" width="80"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d5" label="出生日期" width="80"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d6" label="学历" width="80"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d7" label="爱好" width="80"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d8" label="职务" width="80"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d9" label="邮箱" width="80"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d10" label="地址" width="80"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d11" label="职称" width="80"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d12" label="手机" width="80"></el-table-column>
+            </el-table>
+        </div>
 	 </div>
     <script>
 	    Vue.prototype.procResp = function (data){
@@ -34,30 +47,50 @@
 				el: '#app',
 				data: function () {
 					return {
-					    Test_2__top:"0px",
-					    Test_2__wid:"784px",
-					    Test_2__hei:"583px",
-Button1__lef:"37px",
-Button1__top:"128px",
+					    Test__top:"0px",
+					    Test__wid:"784px",
+					    Test__hei:"583px",
+Button1__lef:"17px",
+Button1__top:"8px",
 Button1__wid:"104px",
 Button1__hei:"38px",
 Button1__vis:true,
 Button1__dis:false,
 Button1__cap:"Button1",
-DateTimePicker1__lef:"37px",
-DateTimePicker1__top:"45px",
-DateTimePicker1__wid:"186px",
-DateTimePicker1__hei:"28px",
-DateTimePicker1__vis:true,
-DateTimePicker1__dis:false,
-DateTimePicker1__val:"2020-08-20",
-DateTimePicker2__lef:"247px",
-DateTimePicker2__top:"45px",
-DateTimePicker2__wid:"186px",
-DateTimePicker2__hei:"28px",
-DateTimePicker2__vis:true,
-DateTimePicker2__dis:false,
-DateTimePicker2__val:"15:39:12",
+DBGrid1__lef:"17px",
+DBGrid1__top:"75px",
+DBGrid1__wid:"739px",
+DBGrid1__hei:"441px",
+DBGrid1__vis:true,
+DBGrid1__dis:false,
+DBGrid1__ces:[{"d0":'0',"d1":'钟一鸣',"d2":'女',"d3":'汉族',"d4":'广东',"d5":'1963-10-21',"d6":'硕士',"d7":'体育',"d8":'院长',"d9":'',"d10":'',"d11":'教授',"d11":'13301234567'},
+{"d0":'1',"d1":'马亮',"d2":'男',"d3":'苗族',"d4":'海南',"d5":'1983-10-21',"d6":'中专',"d7":'旅游',"d8":'',"d9":'',"d10":'',"d11":'',"d11":''},
+{"d0":'2',"d1":'西风',"d2":'男',"d3":'苗族',"d4":'海南',"d5":'1983-10-21',"d6":'中专',"d7":'旅游',"d8":'',"d9":'',"d10":'',"d11":'',"d11":''},
+{"d0":'3',"d1":'何泉',"d2":'女',"d3":'苗族',"d4":'海南',"d5":'1983-10-21',"d6":'中专',"d7":'旅游',"d8":'',"d9":'',"d10":'',"d11":'',"d11":''},
+{"d0":'4',"d1":'陆小方',"d2":'女',"d3":'维族',"d4":'四川',"d5":'1983-10-25',"d6":'初中',"d7":'跑男',"d8":'职员',"d9":'feesdinp@sina.com',"d10":'北京市三里屯250号路口38米',"d11":'教授',"d11":'13301234567'},
+{"d0":'5',"d1":'黄小剑',"d2":'女',"d3":'汉族',"d4":'广东',"d5":'1963-10-21',"d6":'硕士',"d7":'体育',"d8":'',"d9":'',"d10":'',"d11":'教授',"d11":'13301234567'},
+{"d0":'6',"d1":'马云',"d2":'男',"d3":'汉族',"d4":'浙江',"d5":'1960-01-01',"d6":'大专',"d7":'商业',"d8":'CEO',"d9":'webmaster@alibaba.com',"d10":'杭州市西湖路1号',"d11":'',"d11":'13012345678'},
+{"d0":'7',"d1":'胡妮',"d2":'女',"d3":'回族',"d4":'湖北',"d5":'1973-10-21',"d6":'本科',"d7":'娱乐',"d8":'CTO',"d9":'34234@QQ.com',"d10":'西安长安区911号',"d11":'教授',"d11":'18900000002'},
+{"d0":'8',"d1":'李小琳',"d2":'女',"d3":'回族',"d4":'湖北',"d5":'1973-10-21',"d6":'本科',"d7":'娱乐',"d8":'科长',"d9":'Mydssdfe@163.com',"d10":'西安长安区911号',"d11":'教授',"d11":'18900000002'},
+{"d0":'9',"d1":'张明歌',"d2":'女',"d3":'回族',"d4":'湖北',"d5":'1973-10-21',"d6":'本科',"d7":'音乐',"d8":'秘书',"d9":'ddddLove@163.com',"d10":'西安长安区911号',"d11":'教授',"d11":'18900000002'},
+{"d0":'10',"d1":'张玉',"d2":'女',"d3":'回族',"d4":'湖北',"d5":'1973-10-21',"d6":'本科',"d7":'娱乐',"d8":'秘书',"d9":'My123e@163.com',"d10":'上海市静安区3216号',"d11":'教授',"d11":'18900000002'},
+{"d0":'11',"d1":'刘制',"d2":'女',"d3":'回族',"d4":'湖北',"d5":'1973-10-21',"d6":'本科',"d7":'娱乐',"d8":'秘书',"d9":'MyLove@163.com',"d10":'西安长安区911号',"d11":'教授',"d11":'18900000002'},
+{"d0":'12',"d1":'刘西风',"d2":'男',"d3":'苗族',"d4":'海南',"d5":'1983-10-21',"d6":'中专',"d7":'旅游',"d8":'',"d9":'',"d10":'',"d11":'',"d11":''},
+{"d0":'13',"d1":'何小泉',"d2":'女',"d3":'苗族',"d4":'海南',"d5":'1983-10-21',"d6":'中专',"d7":'旅游',"d8":'',"d9":'',"d10":'',"d11":'',"d11":''},
+{"d0":'14',"d1":'张茹',"d2":'女',"d3":'汉族',"d4":'广东',"d5":'1963-10-21',"d6":'硕士',"d7":'体育',"d8":'经理',"d9":'',"d10":'',"d11":'工程师',"d11":'13301234567'},
+{"d0":'15',"d1":'肖大雅',"d2":'女',"d3":'汉族',"d4":'广东',"d5":'1963-10-21',"d6":'硕士',"d7":'体育',"d8":'',"d9":'',"d10":'',"d11":'教授',"d11":'13301234567'},
+{"d0":'16',"d1":'黄小剑',"d2":'女',"d3":'汉族',"d4":'广东',"d5":'1963-10-21',"d6":'硕士',"d7":'体育',"d8":'',"d9":'',"d10":'',"d11":'教授',"d11":'13301234567'},
+{"d0":'17',"d1":'刘大制',"d2":'女',"d3":'回族',"d4":'湖北',"d5":'1973-10-21',"d6":'本科',"d7":'娱乐',"d8":'秘书',"d9":'MyDddve@163.com',"d10":'西安长安区911号',"d11":'教授',"d11":'18900000002'},
+{"d0":'18',"d1":'钟二鸣',"d2":'女',"d3":'汉族',"d4":'广东',"d5":'1963-10-21',"d6":'硕士',"d7":'体育',"d8":'院长',"d9":'',"d10":'',"d11":'教授',"d11":'13301234567'},
+{"d0":'19',"d1":'马三亮',"d2":'男',"d3":'苗族',"d4":'海南',"d5":'1983-10-21',"d6":'中专',"d7":'旅游',"d8":'',"d9":'',"d10":'',"d11":'',"d11":''},
+{"d0":'20',"d1":'西二风',"d2":'男',"d3":'苗族',"d4":'海南',"d5":'1983-10-21',"d6":'中专',"d7":'旅游',"d8":'',"d9":'',"d10":'',"d11":'',"d11":''},
+{"d0":'21',"d1":'何五泉',"d2":'女',"d3":'苗族',"d4":'海南',"d5":'1983-10-21',"d6":'中专',"d7":'旅游',"d8":'',"d9":'',"d10":'',"d11":'',"d11":''},
+{"d0":'22',"d1":'张六茹',"d2":'女',"d3":'汉族',"d4":'广东',"d5":'1963-10-21',"d6":'硕士',"d7":'体育',"d8":'经理',"d9":'',"d10":'',"d11":'工程师',"d11":'13301234567'},
+{"d0":'23',"d1":'肖七雅',"d2":'女',"d3":'汉族',"d4":'广东',"d5":'1963-10-21',"d6":'硕士',"d7":'体育',"d8":'工勤',"d9":'',"d10":'',"d11":'教授',"d11":'13301234567'},
+{"d0":'24',"d1":'黄小剑',"d2":'女',"d3":'汉族',"d4":'广东',"d5":'1963-10-21',"d6":'硕士',"d7":'体育',"d8":'',"d9":'',"d10":'',"d11":'教授',"d11":'13301234567'},
+{"d0":'25',"d1":'刘小琳',"d2":'女',"d3":'回族',"d4":'湖北',"d5":'1973-10-21',"d6":'本科',"d7":'娱乐',"d8":'秘书',"d9":'MyTo34@163.com',"d10":'西安长安区911号',"d11":'教授',"d11":'18900000002'},
+{"d0":'26',"d1":'刘光树',"d2":'男',"d3":'壮族',"d4":'甘肃',"d5":'1981-02-01',"d6":'本科',"d7":'播音',"d8":'主持',"d9":'zengxiaoxian@wp.com',"d10":'兰州市大青山路虎头街道272号',"d11":'',"d11":''},
+{"d0":'27',"d1":'蒋飞',"d2":'女',"d3":'回族',"d4":'甘肃',"d5":'2000-01-14',"d6":'',"d7":'',"d8":'',"d9":'',"d10":'',"d11":'',"d11":''}],
 					    input_query_visible:false,
 					    input_query_caption:"Input Query",
 					    input_query_inputname:"new",
@@ -85,10 +118,10 @@ DateTimePicker2__val:"15:39:12",
                         },
                         false
                     );
-                    let Test_2hearttimer = window.setInterval(function() {
+                    let Testhearttimer = window.setInterval(function() {
                         axios.get('{"mode":"heart","cid":[!clientid!]}')
                         .then(resp =>{me.procResp(resp.data)})
-                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(Test_2hearttimer);});
+                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(Testhearttimer);});
                     }, 30000);
                 },
 				methods: {

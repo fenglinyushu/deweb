@@ -122,8 +122,95 @@ begin
      Result    := (joRes);
 end;
 
-//取得Data消息, ASeparator为分隔符, 一般为:或=
-function dwGetData(ACtrl:TControl;ASeparator:String):string;StdCall;
+function _GetValue(AField:TField):String;
+begin
+     try
+          if AField.DataType in [ftString, ftSmallint, ftInteger, ftWord, ftBoolean, ftFloat, ftCurrency,
+               ftBCD,ftBytes, ftVarBytes, ftAutoInc, ftFmtMemo,ftFixedChar, ftWideString, ftLargeint, ftMemo] then
+          begin
+               Result    := dwProcessCaption(AField.AsString);
+          end else if AField.DataType in [ftDate] then begin
+               Result    := FormatDateTime('yyyy-mm-dd',AField.AsDateTime);
+          end else if AField.DataType in [ftTime] then begin
+               Result    := FormatDateTime('HH:MM:SS',AField.AsDateTime);
+          end else if AField.DataType in [ftDateTime] then begin
+               Result    := FormatDateTime('yyyy-mm-dd HH:MM:SS',AField.AsDateTime);
+          end else begin
+               Result    := '';
+          end;
+     except
+     end;
+end;
+
+
+//取得Data
+function dwGetData(ACtrl:TControl):string;StdCall;
+var
+     joRes     : Variant;
+     iRow,iCol : Integer;
+     sCode     : String;
+     oDataSet  : TDataSet;
+
+begin
+     //生成返回值数组
+     joRes    := _Json('[]');
+     //
+     with TDBGrid(ACtrl) do begin
+          //
+          oDataSet  := DataSource.DataSet;
+
+          //
+          joRes.Add(Name+'__lef:"'+IntToStr(Left)+'px",');
+          joRes.Add(Name+'__top:"'+IntToStr(Top)+'px",');
+          joRes.Add(Name+'__wid:"'+IntToStr(Width)+'px",');
+          joRes.Add(Name+'__hei:"'+IntToStr(Height)+'px",');
+          //
+          joRes.Add(Name+'__vis:'+dwIIF(Visible,'true,','false,'));
+          joRes.Add(Name+'__dis:'+dwIIF(Enabled,'false,','true,'));
+          //
+          if oDataSet <> nil then begin
+               if not oDataSet.Active then begin
+                    sCode     := Name+'__ces:[],';
+                    joRes.Add(sCode);
+               end else begin
+                    oDataSet.DisableControls;
+                    //
+                    sCode     := '';
+                    oDataSet.First;
+                    iRow := 0;
+                    while not oDataSet.Eof do begin
+                         if sCode = '' then begin
+                              sCode     := Name+'__ces:[{"d0":'''+IntToStr(iRow)+''',';
+                         end else begin
+                              sCode     := '{"d0":'''+IntToStr(iRow)+''',';
+                         end;
+                         for iCol := 0 to Columns.Count-2 do begin
+                              sCode     := sCode +'"d'+IntToStr(iCol+1)+'":'''+_GetValue(Columns[iCol].Field)+''',';
+                         end;
+                         sCode     := sCode +'"d'+IntToStr(Columns.Count-1)+'":'''+_GetValue(Columns[Columns.Count-1].Field)+'''}';
+                         //
+                         oDataSet.Next;
+                         Inc(iRow);
+                         if oDataSet.Eof then begin
+                              joRes.Add(sCode+'],');
+                         end else begin
+                              joRes.Add(sCode+',');
+                         end;
+                    end;
+                    oDataSet.First;
+                    //
+                    oDataSet.EnableControls;
+               end;
+          end
+     end;
+     //
+     Result    := (joRes);
+end;
+
+
+
+//取得Method
+function dwGetMethod(ACtrl:TControl):string;StdCall;
 var
      joRes     : Variant;
      iRow,iCol : Integer;
@@ -133,26 +220,6 @@ var
      //
      oForm     : TForm;
      oWinCtrl  : TWinControl;
-     //
-     function _GetValue(AField:TField):String;
-     begin
-          try
-               if AField.DataType in [ftString, ftSmallint, ftInteger, ftWord, ftBoolean, ftFloat, ftCurrency,
-                    ftBCD,ftBytes, ftVarBytes, ftAutoInc, ftFmtMemo,ftFixedChar, ftWideString, ftLargeint, ftMemo] then
-               begin
-                    Result    := dwProcessCaption(UTF8ToAnsi(AField.AsString));
-               end else if AField.DataType in [ftDate] then begin
-                    Result    := FormatDateTime('yyyy-mm-dd',AField.AsDateTime);
-               end else if AField.DataType in [ftTime] then begin
-                    Result    := FormatDateTime('HH:MM:SS',AField.AsDateTime);
-               end else if AField.DataType in [ftDateTime] then begin
-                    Result    := FormatDateTime('yyyy-mm-dd HH:MM:SS',AField.AsDateTime);
-               end else begin
-                    Result    := '';
-               end;
-          except
-          end;
-     end;
 begin
      //生成返回值数组
      joRes    := _Json('[]');
@@ -164,33 +231,34 @@ begin
           oDataSet  := DataSource.DataSet;
 
           //
-          joRes.Add(Name+'__lef'+ASeparator+'"'+IntToStr(Left)+'px"');
-          joRes.Add(Name+'__top'+ASeparator+'"'+IntToStr(Top)+'px"');
-          joRes.Add(Name+'__wid'+ASeparator+'"'+IntToStr(Width)+'px"');
-          joRes.Add(Name+'__hei'+ASeparator+'"'+IntToStr(Height)+'px"');
+          joRes.Add(Name+'__lef="'+IntToStr(Left)+'px"');
+          joRes.Add(Name+'__top="'+IntToStr(Top)+'px"');
+          joRes.Add(Name+'__wid="'+IntToStr(Width)+'px"');
+          joRes.Add(Name+'__hei="'+IntToStr(Height)+'px"');
           //
-          joRes.Add(Name+'__vis'+ASeparator+''+dwIIF(Visible,'true','false'));
-          joRes.Add(Name+'__dis'+ASeparator+''+dwIIF(Enabled,'false','true'));
+          joRes.Add(Name+'__vis='+dwIIF(Visible,'true','false'));
+          joRes.Add(Name+'__dis='+dwIIF(Enabled,'false','true'));
           //
           if oDataSet <> nil then begin
                if not oDataSet.Active then begin
+                    sCode     := Name+'__ces:[],';
+                    joRes.Add(sCode);
                end else begin
                     oDataSet.DisableControls;
                     //
-                    if ASeparator = ':' then begin
                          sCode     := '';
                          oDataSet.First;
                          iRow := 0;
                          while not oDataSet.Eof do begin
                               if sCode = '' then begin
-                                   sCode     := Name+'__ces:[{"d0":'''+IntToStr(iRow)+''',';
+                                   sCode     := Name+'__ces=[{"d0"='''+IntToStr(iRow)+''',';
                               end else begin
-                                   sCode     := '{"d0":'''+IntToStr(iRow)+''',';
+                                   sCode     := '{"d0"='''+IntToStr(iRow)+''',';
                               end;
                               for iCol := 0 to Columns.Count-2 do begin
-                                   sCode     := sCode +'"d'+IntToStr(iCol+1)+'":'''+_GetValue(Columns[iCol].Field)+''',';
+                                   sCode     := sCode +'"d'+IntToStr(iCol+1)+'"='''+_GetValue(Columns[iCol].Field)+''',';
                               end;
-                              sCode     := sCode +'"d'+IntToStr(Columns.Count-1)+'":'''+_GetValue(Columns[Columns.Count-1].Field)+'''}';
+                              sCode     := sCode +'"d'+IntToStr(Columns.Count-1)+'"='''+_GetValue(Columns[Columns.Count-1].Field)+'''}';
                               //
                               oDataSet.Next;
                               Inc(iRow);
@@ -201,7 +269,6 @@ begin
                               end;
                          end;
                          oDataSet.First;
-                    end;
                     oDataSet.EnableControls;
                end;
           end
@@ -210,12 +277,12 @@ begin
      Result    := (joRes);
 end;
 
-
 exports
      dwGetExtra,
      dwGetEvent,
      dwGetHead,
      dwGetTail,
+     dwGetMethod,
      dwGetData;
 
 begin

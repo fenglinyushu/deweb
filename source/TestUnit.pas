@@ -12,13 +12,15 @@ uses
      //
      Forms, SysUtils,
      Windows, Classes, Controls, StdCtrls, Menus, ExtCtrls, 
-      ComCtrls, jpeg,  Grids, DBGrids, DB ;
+      ComCtrls, jpeg,  Grids, DBGrids, DB, Data.Win.ADODB ;
 
 type
   TTest = class(TForm)
     Button1: TButton;
-    DateTimePicker1: TDateTimePicker;
-    DateTimePicker2: TDateTimePicker;
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    ADOTable1: TADOTable;
+    ADOConnection1: TADOConnection;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
   private
@@ -36,7 +38,7 @@ implementation
 
 procedure TTest.Button1Click(Sender: TObject);
 begin
-     With DateTimePicker1 do begin
+{     With DateTimePicker1 do begin
           Left      := Left + 20;
           Top       := Top + 20;
           Width     := Width + 20;
@@ -46,6 +48,7 @@ begin
           //
           //Caption   := '∞¥≈•  '+IntToStr(GetTickCount mod 1000);
      end;
+}
 {
      Label1.Caption           := '±Í«©  '+IntToStr(GetTickCount mod 1000);
      Edit1.Text               := '±‡º≠  '+IntToStr(GetTickCount mod 999);
