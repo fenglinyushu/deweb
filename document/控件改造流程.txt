@@ -1,7 +1,0 @@
-控件改造流程
-
-1 更新Demos中的TabSheet
-2 生成HTML代码 dwCore   CTR+9
-3 GetDiff      dwCore   Ctr+8
-4 GetCompInfo  dwCore   Ctr+7
-5              dwBase   Ctr+9

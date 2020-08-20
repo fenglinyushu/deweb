@@ -1,7 +1,0 @@
-1 DELPHI中发送前全部为正常字符, 对JSON字段需要UTF8ToWideString()处理 
-2 发送时采用dwEncodeURIComponent(Edit1.Text)后发送
-3 JS接收到, 先进行decodeURIComponent解码
-
-
-
-

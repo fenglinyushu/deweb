@@ -60,9 +60,23 @@ end;
 function dwGetData(ACtrl:TComponent;ASeparator:String):String;StdCall;
 var
      joRes     : Variant;
+     sCode     : String;
 begin
      //生成返回值数组
      joRes    := _Json('[]');
+
+     with TTimer(ACtrl) do begin
+          if DesignInfo = 1 then begin   //创建定时器
+               sCode     := Name+'__tmr = window.setInterval(function() {'
+                    +'axios.get(''{"mode":"event","cid":''+this.clientid+'',"component":"'+Name+'"}'')'
+                    +'.then(resp =>{this.procResp(resp.data);  })'
+                    +'}, '+IntToStr(Interval)+');';
+
+          end else begin                     //清除定时器
+               sCOde     := 'clearInterval('+Name+'__tmr);';
+          end;
+     end;
+
      //
      Result    := (joRes);
 end;

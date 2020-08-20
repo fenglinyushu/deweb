@@ -1,9 +1,10 @@
 object MainForm: TMainForm
   Left = 430
   Top = 147
-  Width = 728
-  Height = 100
+  AutoSize = True
   Caption = 'DeWeb'
+  ClientHeight = 61
+  ClientWidth = 712
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -408,6 +409,8 @@ object MainForm: TMainForm
         ParentColor = False
         ParentFont = False
         Layout = tlCenter
+        ExplicitWidth = 127
+        ExplicitHeight = 38
       end
     end
     object CheckBox_AutoHide: TCheckBox

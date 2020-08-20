@@ -26,7 +26,8 @@ Type
      PdwGetEvent    = function (ACtrl:TComponent;AData:String):string;StdCall;
      PdwGetHead     = function (ACtrl:TComponent):string;StdCall;
      PdwGetTail     = function (ACtrl:TComponent):string;StdCall;
-     PdwGetData     = function (ACtrl:TComponent;ASeparator:String):string;StdCall;
+     PdwGetData     = function (ACtrl:TComponent):string;StdCall;
+     PdwGetMethod   = function (ACtrl:TComponent):string;StdCall;
 
 
 

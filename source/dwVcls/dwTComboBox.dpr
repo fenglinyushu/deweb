@@ -97,8 +97,8 @@ begin
      Result    := (joRes);
 end;
 
-//取得Data消息, ASeparator为分隔符, 一般为:或=
-function dwGetData(ACtrl:TComponent;ASeparator:String):string;StdCall;
+//取得Data
+function dwGetData(ACtrl:TComponent):string;StdCall;
 var
      joRes     : Variant;
      sCode     : string;
@@ -109,27 +109,68 @@ begin
      //
      with TComboBox(ACtrl) do begin
           //添加选项
-          sCode     := Name+'__options'+ASeparator+'[';
+          sCode     := Name+'__options:[';
           for iItem := 0 to Items.Count-1 do begin
                sCode     := sCode + '{value:'''+Items[iItem]+'''},';
           end;
-          Delete(sCode,Length(sCode),1);
-          sCode     := sCode + ']';
+          if Items.Count>0 then begin
+               Delete(sCode,Length(sCode),1);     //删除最后的逗号
+          end;
+          sCode     := sCode + '],';
           joRes.Add(sCode);
+
           //
-          joRes.Add(Name+'__lef'+ASeparator+'"'+IntToStr(Left)+'px"');
-          joRes.Add(Name+'__top'+ASeparator+'"'+IntToStr(Top)+'px"');
-          joRes.Add(Name+'__wid'+ASeparator+'"'+IntToStr(Width)+'px"');
+          joRes.Add(Name+'__lef:"'+IntToStr(Left)+'px",');
+          joRes.Add(Name+'__top:"'+IntToStr(Top)+'px",');
+          joRes.Add(Name+'__wid:"'+IntToStr(Width)+'px",');
           if dwGetProp(TControl(ACtrl),'height')='' then begin
-               joRes.Add(Name+'__hei'+ASeparator+'"'+IntToStr(Height)+'px"');
+               joRes.Add(Name+'__hei:"'+IntToStr(Height)+'px",');
           end else begin
-               joRes.Add(Name+'__hei'+ASeparator+'"'+dwGetProp(TControl(ACtrl),'height')+'px"');
+               joRes.Add(Name+'__hei:"'+dwGetProp(TControl(ACtrl),'height')+'px",');
           end;
           //
-          joRes.Add(Name+'__vis'+ASeparator+''+dwIIF(Visible,'true','false'));
-          joRes.Add(Name+'__dis'+ASeparator+''+dwIIF(Enabled,'false','true'));
+          joRes.Add(Name+'__vis:'+dwIIF(Visible,'true,','false,'));
+          joRes.Add(Name+'__dis:'+dwIIF(Enabled,'false,','true,'));
           //
-          joRes.Add(Name+'__txt'+ASeparator+'"'+Text+'"');
+          joRes.Add(Name+'__txt:"'+Text+'",');
+     end;
+     //
+     Result    := (joRes);
+end;
+
+//取得Method
+function dwGetMethod(ACtrl:TComponent):string;StdCall;
+var
+     joRes     : Variant;
+     sCode     : string;
+     iItem     : Integer;
+begin
+     //生成返回值数组
+     joRes    := _Json('[]');
+     //
+     with TComboBox(ACtrl) do begin
+          //添加选项
+          sCode     := 'this.'+Name+'__options=[';
+          for iItem := 0 to Items.Count-1 do begin
+               sCode     := sCode + '{value='''+Items[iItem]+'''},';
+          end;
+          Delete(sCode,Length(sCode),1);
+          sCode     := sCode + '];';
+          joRes.Add(sCode);
+          //
+          joRes.Add('this.'+Name+'__lef="'+IntToStr(Left)+'px";');
+          joRes.Add('this.'+Name+'__top="'+IntToStr(Top)+'px";');
+          joRes.Add('this.'+Name+'__wid="'+IntToStr(Width)+'px";');
+          if dwGetProp(TControl(ACtrl),'height')='' then begin
+               joRes.Add('this.'+Name+'__hei="'+IntToStr(Height)+'px";');
+          end else begin
+               joRes.Add('this.'+Name+'__hei="'+dwGetProp(TControl(ACtrl),'height')+'px";');
+          end;
+          //
+          joRes.Add('this.'+Name+'__vis='+dwIIF(Visible,'true;','false;'));
+          joRes.Add('this.'+Name+'__dis='+dwIIF(Enabled,'false;','true;'));
+          //
+          joRes.Add('this.'+Name+'__txt="'+Text+'";');
      end;
      //
      Result    := (joRes);
@@ -141,6 +182,7 @@ exports
      dwGetEvent,
      dwGetHead,
      dwGetTail,
+     dwGetMethod,
      dwGetData;
      
 begin

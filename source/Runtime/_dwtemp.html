@@ -1,7 +1,7 @@
-<!DOCTYPE html>                                                                    <html lang="en">                                                                                                                                                    <head>                                                                                <meta charset="utf-8">                                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">            <meta http-equiv="X-UA-Compatible" content="ie=edge">                             <title>大富翁论坛</title>                                                          </head>                                                                           
+<!DOCTYPE html>                                                                    <html lang="en">                                                                                                                                                    <head>                                                                                <meta charset="utf-8">                                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">            <meta http-equiv="X-UA-Compatible" content="ie=edge">                             <title>DeWeb测试网页</title>                                                          </head>                                                                           
 <body style="background-color:#F0F0F0">
-    <style type="text/css">                                                      #Loading {                                                                   top: 50%;                                                               left: 50%;                                                              position: absolute;                                                     -webkit-transform: translateY(-50%) translateX(-50%);                   transform: translateY(-50%) translateX(-50%);                           z-index: 100;                                                      }                                                                       @-webkit-keyframes ball-beat {                                               50% {                                                                        opacity: 0.2;                                                           -webkit-transform: scale(0.75);                                         transform: scale(0.75);                                            }                                                                       100% {                                                                       opacity: 1;                                                             -webkit-transform: scale(1);                                            transform: scale(1);                                               }                                                                  }                                                                       @keyframes ball-beat {                                                       50% {                                                                        opacity: 0.2;                                                           -webkit-transform: scale(0.75);                                         transform: scale(0.75);                                            }                                                                       100% {                                                                       opacity: 1;                                                             -webkit-transform: scale(1);                                            transform: scale(1);                                               }                                                                  }                                                                       .ball-beat>div {                                                             background-color: #279fcf;                                              width: 15px;                                                            height: 15px;                                                           border-radius: 100% !important;                                         margin: 2px;                                                            -webkit-animation-fill-mode: both;                                      animation-fill-mode: both;                                              display: inline-block;                                                  -webkit-animation: ball-beat 0.7s 0s infinite linear;                   animation: ball-beat 0.7s 0s infinite linear;                      }                                                                       .ball-beat>div:nth-child(2n-1) {                                             -webkit-animation-delay: 0.35s !important;                              animation-delay: 0.35s !important;                                 }                                                                       #loader-wrapper {                                                            position: fixed;                                                        top: 0;                                                                 left: 0;                                                                width: 100%;                                                            height: 100%;                                                           z-index: 999999;                                                        background: #fff;                                                  }                                                                       #loader {                                                                    display: block;                                                         position: relative;                                                     left: 50%;                                                              top: 50%;                                                               width: 150px;                                                           height: 150px;                                                          margin: -75px 0 0 -75px;                                                border-radius: 50%;                                                     border: 3px solid transparent;                                          /* COLOR 1 */                                                           border-top-color: #000;                                                 -webkit-animation: spin 2s linear infinite;                             /* Chrome, Opera 15+, Safari 5+ */                                      -ms-animation: spin 2s linear infinite;                                 /* Chrome, Opera 15+, Safari 5+ */                                      -moz-animation: spin 2s linear infinite;                                /* Chrome, Opera 15+, Safari 5+ */                                      -o-animation: spin 2s linear infinite;                                  /* Chrome, Opera 15+, Safari 5+ */                                      animation: spin 2s linear infinite;                                     /* Chrome, Firefox 16+, IE 10+, Opera */                                z-index: 1001;                                                     }                                                                       #loader:before {                                                             content: "";                                                            position: absolute;                                                     top: 5px;                                                               left: 5px;                                                              right: 5px;                                                             bottom: 5px;                                                            border-radius: 50%;                                                     border: 3px solid transparent;                                          /* COLOR 2 */                                                           border-top-color: #000;                                                 -webkit-animation: spin 3s linear infinite;                             /* Chrome, Opera 15+, Safari 5+ */                                      -moz-animation: spin 3s linear infinite;                                /* Chrome, Opera 15+, Safari 5+ */                                      -o-animation: spin 3s linear infinite;                                  /* Chrome, Opera 15+, Safari 5+ */                                      -ms-animation: spin 3s linear infinite;                                 /* Chrome, Opera 15+, Safari 5+ */                                      animation: spin 3s linear infinite;                                     /* Chrome, Firefox 16+, IE 10+, Opera */                           }                                                                       #loader:after {                                                              content: "";                                                            position: absolute;                                                     top: 15px;                                                              left: 15px;                                                             right: 15px;                                                            bottom: 15px;                                                           border-radius: 50%;                                                     border: 3px solid transparent;                                          border-top-color: #000;                                                 /* COLOR 3 */                                                           -moz-animation: spin 1.5s linear infinite;                              /* Chrome, Opera 15+, Safari 5+ */                                      -o-animation: spin 1.5s linear infinite;                                /* Chrome, Opera 15+, Safari 5+ */                                      -ms-animation: spin 1.5s linear infinite;                               /* Chrome, Opera 15+, Safari 5+ */                                      -webkit-animation: spin 1.5s linear infinite;                           /* Chrome, Opera 15+, Safari 5+ */                                      animation: spin 1.5s linear infinite;                                   /* Chrome, Firefox 16+, IE 10+, Opera */                           }                                                                       @-webkit-keyframes spin {                                                    0% {                                                                         -webkit-transform: rotate(0deg);                                        /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(0deg);                                            /* IE 9 */                                                              transform: rotate(0deg);                                                /* Firefox 16+, IE 10+, Opera */                                   }                                                                                                                                               100% {                                                                       -webkit-transform: rotate(360deg);                                      /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(360deg);                                          /* IE 9 */                                                              transform: rotate(360deg);                                              /* Firefox 16+, IE 10+, Opera */                                   }                                                                  }                                                                       @keyframes spin {                                                            0% {                                                                         -webkit-transform: rotate(0deg);                                        /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(0deg);                                            /* IE 9 */                                                              transform: rotate(0deg);                                                /* Firefox 16+, IE 10+, Opera */                                   }                                                                       100% {                                                                       -webkit-transform: rotate(360deg);                                      /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: rotate(360deg);                                          /* IE 9 */                                                              transform: rotate(360deg);                                              /* Firefox 16+, IE 10+, Opera */                                   }                                                                  }                                                                       #loader-wrapper .loader-section {                                            position: fixed;                                                        top: 0;                                                                 width: 51%;                                                             height: 100%;                                                           background: #fff;                                                       /* opacity: 0.7; */                                                     /* Old browsers */                                                      z-index: 1000;                                                          -webkit-transform: translateX(0);                                       /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateX(0);                                           /* IE 9 */                                                              transform: translateX(0);                                               /* Firefox 16+, IE 10+, Opera */                                   }                                                                       #loader-wrapper .loader-section.section-left {                               left: 0;                                                           }                                                                       #loader-wrapper .loader-section.section-right {                              right: 0;                                                          }                                                                       /* Loaded */                                                            .loaded #loader-wrapper .loader-section.section-left {                       -webkit-transform: translateX(-100%);                                   /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateX(-100%);                                       /* IE 9 */                                                              transform: translateX(-100%);                                           /* Firefox 16+, IE 10+, Opera */                                        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);               transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);                  }                                                                       .loaded #loader-wrapper .loader-section.section-right {                      -webkit-transform: translateX(100%);                                    /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateX(100%);                                        /* IE 9 */                                                              transform: translateX(100%);                                            /* Firefox 16+, IE 10+, Opera */                                        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);               transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);                  }                                                                       .loaded #loader {                                                            opacity: 0;                                                             -webkit-transition: all 0.3s ease-out;                                  transition: all 0.3s ease-out;                                     }                                                                       .loaded #loader-wrapper {                                                    visibility: hidden;                                                     -webkit-transform: translateY(-100%);                                   /* Chrome, Opera 15+, Safari 3.1+ */                                    -ms-transform: translateY(-100%);                                       /* IE 9 */                                                              transform: translateY(-100%);                                           /* Firefox 16+, IE 10+, Opera */                                        -webkit-transition: all 0.3s 1s ease-out;                               transition: all 0.3s 1s ease-out;                                  }                                                                       /* JavaScript Turned Off */                                                                                                                     .no-js #loader-wrapper {                                                     display: none;                                                     }                                                                                                                                               .no-js h1 {                                                                  color: #222222;                                                    }                                                                       #loader-wrapper .load_title {                                                font-family: 'Open Sans';                                             color: rgb(245, 245, 245);                                              font-size: 19px;                                                        width: 100%;                                                            text-align: center;                                                     z-index: 9999999999999;                                                 position: absolute;                                                     top: 36px;                                                              opacity: 1;                                                             line-height: 30px;                                                 }                                                                       #loader-wrapper .load_title span {                                           font-weight: normal;                                                    font-style: italic;                                                     font-size: 13px;                                                        color: rgb(220, 220, 220);                                              opacity: 0.5;                                                      }                                                                       @keyframes moveover {                                                        0% {                                                                         transform: rotate(0deg);                                           }                                                                                                                                               100% {                                                                       transform: rotate(360deg);                                         }                                                                  }                                                                       .box {                                                                       position: relative;                                                     width: 100px;                                                           height: 100px;                                                          margin: 18% auto;                                                       /*整体旋转*/                                                            animation: moveover 3s linear infinite;                            }                                                                       .box_text {                                                                  position: absolute;                                                     top: 0;                                                                 left: 0;                                                           }                                                                       .box::before {                                                               content: "";                                                            position: absolute;                                                     width: 50px;                                                            height: 100px;                                                          border-radius: 50px 0 0 50px;                                           background: linear-gradient(#999, rgb(220, 220, 220));                  background-color: #999;                                                 z-index: 2;                                                        }                                                                       .box2 {                                                                      position: absolute;                                                     width: 50px;                                                            height: 100px;                                                          border-radius: 0 50px 50px 0;                                           left: 50%;                                                              background: linear-gradient(rgb(255,255,255),rgb(220,220, 220));                    z-index: 1;                                                        }                                                                       .box::after {                                                                content: "";                                                            position: absolute;                                                     width: 92px;                                                            height: 92px;                                                           top: 4px;                                                               left: 4px;                                                              border-radius: 50%;                                                     background-color: #fff;                                                 z-index: 2;                                                        }                                                                       .wrapper {                                                                   position: relative;                                                }                                                                  </style>                                                                <div id="loader-wrapper">                                                    <div class="wrapper">                                                        <div class='box'>                                                          <div class="box2"></div>                                           </div>                                                                  <div class="load_title">DeWeb                                           </div>                                                                                                                                     </div>                                                             </div>                                                                  <script src="dist/vue.js" type="text/javascript"></script>              <script src="dist/index.js" type="text/javascript"></script>            <script src="dist/axios.min.js" type="text/javascript"></script>        <link rel="icon" href="dist/webimages/[###].ico" type="image/x-icon">           <link rel="stylesheet" type="text/css" href="dist/theme-chalk/index.css" /> 
-    <div id="app" style="position:absolute;overflow:hidden;left:0;right:0;bottom:0;margin: 0 auto;background-color:#FFFFFF" :style="{top:DFW_1__top,width:DFW_1__wid,height:DFW_1__hei}" >
+    <script src="dist/vue.js" type="text/javascript"></script>              <script src="dist/index.js" type="text/javascript"></script>            <script src="dist/axios.min.js" type="text/javascript"></script>        <link rel="icon" href="dist/webimages/[###].ico" type="image/x-icon">           <link rel="stylesheet" type="text/css" href="dist/theme-chalk/index.css" /> 
+    <div id="app" style="position:absolute;overflow:hidden;left:0;right:0;bottom:0;margin: 0 auto;background-color:#FFFFFF" :style="{top:Test_2__top,width:Test_2__wid,height:Test_2__hei}" >
         <el-dialog :title="input_query_caption" :visible.sync="input_query_visible" >
         	<el-form style="width:90%;padding-left:5%;">
         		<el-form-item :label="input_query_inputname" >
@@ -13,392 +13,12 @@
         		<el-button type="primary" @click="processinputquery">{{input_query_okcaption}}</el-button>
         	</div>
         </el-dialog>
-        <el-main v-if="Panel_All__vis" :disabled="Panel_All__dis" :style="{backgroundColor:Panel_All__col,left:Panel_All__lef,top:Panel_All__top,width:Panel_All__wid,height:Panel_All__hei}" style="position:absolute;overflow:hidden;">
-        <el-main v-if="Panel_99_Foot__vis" :disabled="Panel_99_Foot__dis" :style="{backgroundColor:Panel_99_Foot__col,left:Panel_99_Foot__lef,top:Panel_99_Foot__top,width:Panel_99_Foot__wid,height:Panel_99_Foot__hei}" style="position:absolute;overflow:hidden;">
-        <div  v-html="Label14__cap" v-if="Label14__vis" :disabled="Label14__dis" :style="{left:Label14__lef,top:Label14__top,width:Label14__wid,height:Label14__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;text-align:center;">{{Label14__cap}}
-        </div>
-        <div  v-html="Label15__cap" v-if="Label15__vis" :disabled="Label15__dis" :style="{left:Label15__lef,top:Label15__top,width:Label15__wid,height:Label15__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;text-align:center;">{{Label15__cap}}
-        </div>
-        <el-main v-if="Panel4__vis" :disabled="Panel4__dis" :style="{backgroundColor:Panel4__col,left:Panel4__lef,top:Panel4__top,width:Panel4__wid,height:Panel4__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_00_Head__vis" :disabled="Panel_00_Head__dis" :style="{backgroundColor:Panel_00_Head__col,left:Panel_00_Head__lef,top:Panel_00_Head__top,width:Panel_00_Head__wid,height:Panel_00_Head__hei}" style="position:absolute;overflow:hidden;">
-        <el-image :src="Img_dfw__src" fit="none" v-if="Img_dfw__vis" :disabled="Img_dfw__dis" :style="{left:Img_dfw__lef,top:Img_dfw__top,width:Img_dfw__wid,height:Img_dfw__hei}" style="position:absolute;">
-        </el-Image>
-        <el-main v-if="Panel6__vis" :disabled="Panel6__dis" :style="{backgroundColor:Panel6__col,left:Panel6__lef,top:Panel6__top,width:Panel6__wid,height:Panel6__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_10_Content__vis" :disabled="Panel_10_Content__dis" :style="{backgroundColor:Panel_10_Content__col,left:Panel_10_Content__lef,top:Panel_10_Content__top,width:Panel_10_Content__wid,height:Panel_10_Content__hei}" style="position:absolute;overflow:hidden;">
-        <el-main v-if="Panel_Thread__vis" :disabled="Panel_Thread__dis" :style="{backgroundColor:Panel_Thread__col,left:Panel_Thread__lef,top:Panel_Thread__top,width:Panel_Thread__wid,height:Panel_Thread__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel3__vis" :disabled="Panel3__dis" :style="{backgroundColor:Panel3__col,left:Panel3__lef,top:Panel3__top,width:Panel3__wid,height:Panel3__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject__vis" :disabled="StaticText_Subject__dis" type="primary" :style="{left:StaticText_Subject__lef,top:StaticText_Subject__top,width:StaticText_Subject__wid,height:StaticText_Subject__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info__vis" :disabled="Panel_Info__dis" :style="{backgroundColor:Panel_Info__col,left:Panel_Info__lef,top:Panel_Info__top,width:Panel_Info__wid,height:Panel_Info__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper__vis" :disabled="StaticText_Uper__dis" type="primary" :style="{left:StaticText_Uper__lef,top:StaticText_Uper__top,width:StaticText_Uper__wid,height:StaticText_Uper__hei}" style="position:absolute;">{{StaticText_Uper__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead__vis" :disabled="StaticText_ReplyRead__dis" type="primary" :style="{left:StaticText_ReplyRead__lef,top:StaticText_ReplyRead__top,width:StaticText_ReplyRead__wid,height:StaticText_ReplyRead__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost__vis" :disabled="StaticText_LastPost__dis" type="primary" :style="{left:StaticText_LastPost__lef,top:StaticText_LastPost__top,width:StaticText_LastPost__wid,height:StaticText_LastPost__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime__vis" :disabled="StaticText_LastPostTime__dis" type="primary" :style="{left:StaticText_LastPostTime__lef,top:StaticText_LastPostTime__top,width:StaticText_LastPostTime__wid,height:StaticText_LastPostTime__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_ThreadTitle__vis" :disabled="Panel_ThreadTitle__dis" :style="{backgroundColor:Panel_ThreadTitle__col,left:Panel_ThreadTitle__lef,top:Panel_ThreadTitle__top,width:Panel_ThreadTitle__wid,height:Panel_ThreadTitle__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <div  v-html="Label106__cap" v-if="Label106__vis" :disabled="Label106__dis" :style="{left:Label106__lef,top:Label106__top,width:Label106__wid,height:Label106__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label106__cap}}
-        </div>
-        <div  v-html="Label107__cap" v-if="Label107__vis" :disabled="Label107__dis" :style="{left:Label107__lef,top:Label107__top,width:Label107__wid,height:Label107__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label107__cap}}
-        </div>
-        <div  v-html="Label108__cap" v-if="Label108__vis" :disabled="Label108__dis" :style="{left:Label108__lef,top:Label108__top,width:Label108__wid,height:Label108__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label108__cap}}
-        </div>
-        <div  v-html="Label109__cap" v-if="Label109__vis" :disabled="Label109__dis" :style="{left:Label109__lef,top:Label109__top,width:Label109__wid,height:Label109__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label109__cap}}
-        </div>
-        <div  v-html="Label110__cap" v-if="Label110__vis" :disabled="Label110__dis" :style="{left:Label110__lef,top:Label110__top,width:Label110__wid,height:Label110__hei}" style="position:absolute;color:#646464;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label110__cap}}
-        </div>
-        </el-main>
-        <el-main v-if="Panel_Pages__vis" :disabled="Panel_Pages__dis" :style="{backgroundColor:Panel_Pages__col,left:Panel_Pages__lef,top:Panel_Pages__top,width:Panel_Pages__wid,height:Panel_Pages__hei}" style="position:absolute;overflow:hidden;">
-        <el-input v-if="Edit_PageNo__vis" :disabled="Edit_PageNo__dis" v-model="Edit_PageNo__txt" :style="{left:Edit_PageNo__lef,top:Edit_PageNo__top,width:Edit_PageNo__wid,height:Edit_PageNo__hei}" style="position:absolute;" @input="dwevent($event,'Edit_PageNo','(this.Edit_PageNo__txt)','onchange','')" @focus="dwevent($event,'Edit_PageNo','(this.Edit_PageNo__txt)','onenter','')">
-        </el-input>
-        <el-button v-if="Button_Next__vis" :disabled="Button_Next__dis" type="text" :style="{left:Button_Next__lef,top:Button_Next__top,width:Button_Next__wid,height:Button_Next__hei}" style="position:absolute;" @click="dwevent($event,'Button_Next','0','onclick','')">{{Button_Next__cap}}
+        <el-button v-if="Button1__vis" :disabled="Button1__dis" type="primary" :style="{left:Button1__lef,top:Button1__top,width:Button1__wid,height:Button1__hei}" style="position:absolute;" @click="dwevent($event,'Button1','0','onclick','')">{{Button1__cap}}
         </el-button>
-        <el-button v-if="Button1__vis" :disabled="Button1__dis" type="text" :style="{left:Button1__lef,top:Button1__top,width:Button1__wid,height:Button1__hei}" style="position:absolute;" @click="dwevent($event,'Button1','0','onclick','')">{{Button1__cap}}
-        </el-button>
-        <el-button v-if="Button2__vis" :disabled="Button2__dis" type="text" :style="{left:Button2__lef,top:Button2__top,width:Button2__wid,height:Button2__hei}" style="position:absolute;" @click="dwevent($event,'Button2','0','onclick','')">{{Button2__cap}}
-        </el-button>
-        <el-button v-if="Button4__vis" :disabled="Button4__dis" type="text" :style="{left:Button4__lef,top:Button4__top,width:Button4__wid,height:Button4__hei}" style="position:absolute;" @click="dwevent($event,'Button4','0','onclick','')">{{Button4__cap}}
-        </el-button>
-        <el-button v-if="Button5__vis" :disabled="Button5__dis" type="text" :style="{left:Button5__lef,top:Button5__top,width:Button5__wid,height:Button5__hei}" style="position:absolute;" @click="dwevent($event,'Button5','0','onclick','')">{{Button5__cap}}
-        </el-button>
-        <el-main v-if="Panel1__vis" :disabled="Panel1__dis" :style="{backgroundColor:Panel1__col,left:Panel1__lef,top:Panel1__top,width:Panel1__wid,height:Panel1__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread1__vis" :disabled="Panel_Thread1__dis" :style="{backgroundColor:Panel_Thread1__col,left:Panel_Thread1__lef,top:Panel_Thread1__top,width:Panel_Thread1__wid,height:Panel_Thread1__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel31__vis" :disabled="Panel31__dis" :style="{backgroundColor:Panel31__col,left:Panel31__lef,top:Panel31__top,width:Panel31__wid,height:Panel31__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject1__vis" :disabled="StaticText_Subject1__dis" type="primary" :href="StaticText_Subject1__hrf" :style="{left:StaticText_Subject1__lef,top:StaticText_Subject1__top,width:StaticText_Subject1__wid,height:StaticText_Subject1__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject1__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info1__vis" :disabled="Panel_Info1__dis" :style="{backgroundColor:Panel_Info1__col,left:Panel_Info1__lef,top:Panel_Info1__top,width:Panel_Info1__wid,height:Panel_Info1__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper1__vis" :disabled="StaticText_Uper1__dis" type="primary" :href="StaticText_Uper1__hrf" :style="{left:StaticText_Uper1__lef,top:StaticText_Uper1__top,width:StaticText_Uper1__wid,height:StaticText_Uper1__hei}" style="position:absolute;">{{StaticText_Uper1__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead1__vis" :disabled="StaticText_ReplyRead1__dis" type="primary" :style="{left:StaticText_ReplyRead1__lef,top:StaticText_ReplyRead1__top,width:StaticText_ReplyRead1__wid,height:StaticText_ReplyRead1__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead1__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost1__vis" :disabled="StaticText_LastPost1__dis" type="primary" :href="StaticText_LastPost1__hrf" :style="{left:StaticText_LastPost1__lef,top:StaticText_LastPost1__top,width:StaticText_LastPost1__wid,height:StaticText_LastPost1__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost1__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime1__vis" :disabled="StaticText_LastPostTime1__dis" type="primary" :style="{left:StaticText_LastPostTime1__lef,top:StaticText_LastPostTime1__top,width:StaticText_LastPostTime1__wid,height:StaticText_LastPostTime1__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime1__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread2__vis" :disabled="Panel_Thread2__dis" :style="{backgroundColor:Panel_Thread2__col,left:Panel_Thread2__lef,top:Panel_Thread2__top,width:Panel_Thread2__wid,height:Panel_Thread2__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel32__vis" :disabled="Panel32__dis" :style="{backgroundColor:Panel32__col,left:Panel32__lef,top:Panel32__top,width:Panel32__wid,height:Panel32__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject2__vis" :disabled="StaticText_Subject2__dis" type="primary" :href="StaticText_Subject2__hrf" :style="{left:StaticText_Subject2__lef,top:StaticText_Subject2__top,width:StaticText_Subject2__wid,height:StaticText_Subject2__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject2__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info2__vis" :disabled="Panel_Info2__dis" :style="{backgroundColor:Panel_Info2__col,left:Panel_Info2__lef,top:Panel_Info2__top,width:Panel_Info2__wid,height:Panel_Info2__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper2__vis" :disabled="StaticText_Uper2__dis" type="primary" :href="StaticText_Uper2__hrf" :style="{left:StaticText_Uper2__lef,top:StaticText_Uper2__top,width:StaticText_Uper2__wid,height:StaticText_Uper2__hei}" style="position:absolute;">{{StaticText_Uper2__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead2__vis" :disabled="StaticText_ReplyRead2__dis" type="primary" :style="{left:StaticText_ReplyRead2__lef,top:StaticText_ReplyRead2__top,width:StaticText_ReplyRead2__wid,height:StaticText_ReplyRead2__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead2__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost2__vis" :disabled="StaticText_LastPost2__dis" type="primary" :href="StaticText_LastPost2__hrf" :style="{left:StaticText_LastPost2__lef,top:StaticText_LastPost2__top,width:StaticText_LastPost2__wid,height:StaticText_LastPost2__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost2__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime2__vis" :disabled="StaticText_LastPostTime2__dis" type="primary" :style="{left:StaticText_LastPostTime2__lef,top:StaticText_LastPostTime2__top,width:StaticText_LastPostTime2__wid,height:StaticText_LastPostTime2__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime2__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread3__vis" :disabled="Panel_Thread3__dis" :style="{backgroundColor:Panel_Thread3__col,left:Panel_Thread3__lef,top:Panel_Thread3__top,width:Panel_Thread3__wid,height:Panel_Thread3__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel33__vis" :disabled="Panel33__dis" :style="{backgroundColor:Panel33__col,left:Panel33__lef,top:Panel33__top,width:Panel33__wid,height:Panel33__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject3__vis" :disabled="StaticText_Subject3__dis" type="primary" :href="StaticText_Subject3__hrf" :style="{left:StaticText_Subject3__lef,top:StaticText_Subject3__top,width:StaticText_Subject3__wid,height:StaticText_Subject3__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject3__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info3__vis" :disabled="Panel_Info3__dis" :style="{backgroundColor:Panel_Info3__col,left:Panel_Info3__lef,top:Panel_Info3__top,width:Panel_Info3__wid,height:Panel_Info3__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper3__vis" :disabled="StaticText_Uper3__dis" type="primary" :href="StaticText_Uper3__hrf" :style="{left:StaticText_Uper3__lef,top:StaticText_Uper3__top,width:StaticText_Uper3__wid,height:StaticText_Uper3__hei}" style="position:absolute;">{{StaticText_Uper3__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead3__vis" :disabled="StaticText_ReplyRead3__dis" type="primary" :style="{left:StaticText_ReplyRead3__lef,top:StaticText_ReplyRead3__top,width:StaticText_ReplyRead3__wid,height:StaticText_ReplyRead3__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead3__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost3__vis" :disabled="StaticText_LastPost3__dis" type="primary" :href="StaticText_LastPost3__hrf" :style="{left:StaticText_LastPost3__lef,top:StaticText_LastPost3__top,width:StaticText_LastPost3__wid,height:StaticText_LastPost3__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost3__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime3__vis" :disabled="StaticText_LastPostTime3__dis" type="primary" :style="{left:StaticText_LastPostTime3__lef,top:StaticText_LastPostTime3__top,width:StaticText_LastPostTime3__wid,height:StaticText_LastPostTime3__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime3__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread4__vis" :disabled="Panel_Thread4__dis" :style="{backgroundColor:Panel_Thread4__col,left:Panel_Thread4__lef,top:Panel_Thread4__top,width:Panel_Thread4__wid,height:Panel_Thread4__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel34__vis" :disabled="Panel34__dis" :style="{backgroundColor:Panel34__col,left:Panel34__lef,top:Panel34__top,width:Panel34__wid,height:Panel34__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject4__vis" :disabled="StaticText_Subject4__dis" type="primary" :href="StaticText_Subject4__hrf" :style="{left:StaticText_Subject4__lef,top:StaticText_Subject4__top,width:StaticText_Subject4__wid,height:StaticText_Subject4__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject4__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info4__vis" :disabled="Panel_Info4__dis" :style="{backgroundColor:Panel_Info4__col,left:Panel_Info4__lef,top:Panel_Info4__top,width:Panel_Info4__wid,height:Panel_Info4__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper4__vis" :disabled="StaticText_Uper4__dis" type="primary" :href="StaticText_Uper4__hrf" :style="{left:StaticText_Uper4__lef,top:StaticText_Uper4__top,width:StaticText_Uper4__wid,height:StaticText_Uper4__hei}" style="position:absolute;">{{StaticText_Uper4__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead4__vis" :disabled="StaticText_ReplyRead4__dis" type="primary" :style="{left:StaticText_ReplyRead4__lef,top:StaticText_ReplyRead4__top,width:StaticText_ReplyRead4__wid,height:StaticText_ReplyRead4__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead4__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost4__vis" :disabled="StaticText_LastPost4__dis" type="primary" :href="StaticText_LastPost4__hrf" :style="{left:StaticText_LastPost4__lef,top:StaticText_LastPost4__top,width:StaticText_LastPost4__wid,height:StaticText_LastPost4__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost4__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime4__vis" :disabled="StaticText_LastPostTime4__dis" type="primary" :style="{left:StaticText_LastPostTime4__lef,top:StaticText_LastPostTime4__top,width:StaticText_LastPostTime4__wid,height:StaticText_LastPostTime4__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime4__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread5__vis" :disabled="Panel_Thread5__dis" :style="{backgroundColor:Panel_Thread5__col,left:Panel_Thread5__lef,top:Panel_Thread5__top,width:Panel_Thread5__wid,height:Panel_Thread5__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel35__vis" :disabled="Panel35__dis" :style="{backgroundColor:Panel35__col,left:Panel35__lef,top:Panel35__top,width:Panel35__wid,height:Panel35__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject5__vis" :disabled="StaticText_Subject5__dis" type="primary" :href="StaticText_Subject5__hrf" :style="{left:StaticText_Subject5__lef,top:StaticText_Subject5__top,width:StaticText_Subject5__wid,height:StaticText_Subject5__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject5__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info5__vis" :disabled="Panel_Info5__dis" :style="{backgroundColor:Panel_Info5__col,left:Panel_Info5__lef,top:Panel_Info5__top,width:Panel_Info5__wid,height:Panel_Info5__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper5__vis" :disabled="StaticText_Uper5__dis" type="primary" :href="StaticText_Uper5__hrf" :style="{left:StaticText_Uper5__lef,top:StaticText_Uper5__top,width:StaticText_Uper5__wid,height:StaticText_Uper5__hei}" style="position:absolute;">{{StaticText_Uper5__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead5__vis" :disabled="StaticText_ReplyRead5__dis" type="primary" :style="{left:StaticText_ReplyRead5__lef,top:StaticText_ReplyRead5__top,width:StaticText_ReplyRead5__wid,height:StaticText_ReplyRead5__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead5__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost5__vis" :disabled="StaticText_LastPost5__dis" type="primary" :href="StaticText_LastPost5__hrf" :style="{left:StaticText_LastPost5__lef,top:StaticText_LastPost5__top,width:StaticText_LastPost5__wid,height:StaticText_LastPost5__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost5__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime5__vis" :disabled="StaticText_LastPostTime5__dis" type="primary" :style="{left:StaticText_LastPostTime5__lef,top:StaticText_LastPostTime5__top,width:StaticText_LastPostTime5__wid,height:StaticText_LastPostTime5__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime5__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread6__vis" :disabled="Panel_Thread6__dis" :style="{backgroundColor:Panel_Thread6__col,left:Panel_Thread6__lef,top:Panel_Thread6__top,width:Panel_Thread6__wid,height:Panel_Thread6__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel36__vis" :disabled="Panel36__dis" :style="{backgroundColor:Panel36__col,left:Panel36__lef,top:Panel36__top,width:Panel36__wid,height:Panel36__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject6__vis" :disabled="StaticText_Subject6__dis" type="primary" :href="StaticText_Subject6__hrf" :style="{left:StaticText_Subject6__lef,top:StaticText_Subject6__top,width:StaticText_Subject6__wid,height:StaticText_Subject6__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject6__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info6__vis" :disabled="Panel_Info6__dis" :style="{backgroundColor:Panel_Info6__col,left:Panel_Info6__lef,top:Panel_Info6__top,width:Panel_Info6__wid,height:Panel_Info6__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper6__vis" :disabled="StaticText_Uper6__dis" type="primary" :href="StaticText_Uper6__hrf" :style="{left:StaticText_Uper6__lef,top:StaticText_Uper6__top,width:StaticText_Uper6__wid,height:StaticText_Uper6__hei}" style="position:absolute;">{{StaticText_Uper6__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead6__vis" :disabled="StaticText_ReplyRead6__dis" type="primary" :style="{left:StaticText_ReplyRead6__lef,top:StaticText_ReplyRead6__top,width:StaticText_ReplyRead6__wid,height:StaticText_ReplyRead6__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead6__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost6__vis" :disabled="StaticText_LastPost6__dis" type="primary" :href="StaticText_LastPost6__hrf" :style="{left:StaticText_LastPost6__lef,top:StaticText_LastPost6__top,width:StaticText_LastPost6__wid,height:StaticText_LastPost6__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost6__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime6__vis" :disabled="StaticText_LastPostTime6__dis" type="primary" :style="{left:StaticText_LastPostTime6__lef,top:StaticText_LastPostTime6__top,width:StaticText_LastPostTime6__wid,height:StaticText_LastPostTime6__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime6__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread7__vis" :disabled="Panel_Thread7__dis" :style="{backgroundColor:Panel_Thread7__col,left:Panel_Thread7__lef,top:Panel_Thread7__top,width:Panel_Thread7__wid,height:Panel_Thread7__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel37__vis" :disabled="Panel37__dis" :style="{backgroundColor:Panel37__col,left:Panel37__lef,top:Panel37__top,width:Panel37__wid,height:Panel37__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject7__vis" :disabled="StaticText_Subject7__dis" type="primary" :href="StaticText_Subject7__hrf" :style="{left:StaticText_Subject7__lef,top:StaticText_Subject7__top,width:StaticText_Subject7__wid,height:StaticText_Subject7__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject7__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info7__vis" :disabled="Panel_Info7__dis" :style="{backgroundColor:Panel_Info7__col,left:Panel_Info7__lef,top:Panel_Info7__top,width:Panel_Info7__wid,height:Panel_Info7__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper7__vis" :disabled="StaticText_Uper7__dis" type="primary" :href="StaticText_Uper7__hrf" :style="{left:StaticText_Uper7__lef,top:StaticText_Uper7__top,width:StaticText_Uper7__wid,height:StaticText_Uper7__hei}" style="position:absolute;">{{StaticText_Uper7__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead7__vis" :disabled="StaticText_ReplyRead7__dis" type="primary" :style="{left:StaticText_ReplyRead7__lef,top:StaticText_ReplyRead7__top,width:StaticText_ReplyRead7__wid,height:StaticText_ReplyRead7__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead7__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost7__vis" :disabled="StaticText_LastPost7__dis" type="primary" :href="StaticText_LastPost7__hrf" :style="{left:StaticText_LastPost7__lef,top:StaticText_LastPost7__top,width:StaticText_LastPost7__wid,height:StaticText_LastPost7__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost7__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime7__vis" :disabled="StaticText_LastPostTime7__dis" type="primary" :style="{left:StaticText_LastPostTime7__lef,top:StaticText_LastPostTime7__top,width:StaticText_LastPostTime7__wid,height:StaticText_LastPostTime7__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime7__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread8__vis" :disabled="Panel_Thread8__dis" :style="{backgroundColor:Panel_Thread8__col,left:Panel_Thread8__lef,top:Panel_Thread8__top,width:Panel_Thread8__wid,height:Panel_Thread8__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel38__vis" :disabled="Panel38__dis" :style="{backgroundColor:Panel38__col,left:Panel38__lef,top:Panel38__top,width:Panel38__wid,height:Panel38__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject8__vis" :disabled="StaticText_Subject8__dis" type="primary" :href="StaticText_Subject8__hrf" :style="{left:StaticText_Subject8__lef,top:StaticText_Subject8__top,width:StaticText_Subject8__wid,height:StaticText_Subject8__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject8__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info8__vis" :disabled="Panel_Info8__dis" :style="{backgroundColor:Panel_Info8__col,left:Panel_Info8__lef,top:Panel_Info8__top,width:Panel_Info8__wid,height:Panel_Info8__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper8__vis" :disabled="StaticText_Uper8__dis" type="primary" :href="StaticText_Uper8__hrf" :style="{left:StaticText_Uper8__lef,top:StaticText_Uper8__top,width:StaticText_Uper8__wid,height:StaticText_Uper8__hei}" style="position:absolute;">{{StaticText_Uper8__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead8__vis" :disabled="StaticText_ReplyRead8__dis" type="primary" :style="{left:StaticText_ReplyRead8__lef,top:StaticText_ReplyRead8__top,width:StaticText_ReplyRead8__wid,height:StaticText_ReplyRead8__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead8__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost8__vis" :disabled="StaticText_LastPost8__dis" type="primary" :href="StaticText_LastPost8__hrf" :style="{left:StaticText_LastPost8__lef,top:StaticText_LastPost8__top,width:StaticText_LastPost8__wid,height:StaticText_LastPost8__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost8__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime8__vis" :disabled="StaticText_LastPostTime8__dis" type="primary" :style="{left:StaticText_LastPostTime8__lef,top:StaticText_LastPostTime8__top,width:StaticText_LastPostTime8__wid,height:StaticText_LastPostTime8__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime8__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread9__vis" :disabled="Panel_Thread9__dis" :style="{backgroundColor:Panel_Thread9__col,left:Panel_Thread9__lef,top:Panel_Thread9__top,width:Panel_Thread9__wid,height:Panel_Thread9__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel39__vis" :disabled="Panel39__dis" :style="{backgroundColor:Panel39__col,left:Panel39__lef,top:Panel39__top,width:Panel39__wid,height:Panel39__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject9__vis" :disabled="StaticText_Subject9__dis" type="primary" :href="StaticText_Subject9__hrf" :style="{left:StaticText_Subject9__lef,top:StaticText_Subject9__top,width:StaticText_Subject9__wid,height:StaticText_Subject9__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject9__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info9__vis" :disabled="Panel_Info9__dis" :style="{backgroundColor:Panel_Info9__col,left:Panel_Info9__lef,top:Panel_Info9__top,width:Panel_Info9__wid,height:Panel_Info9__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper9__vis" :disabled="StaticText_Uper9__dis" type="primary" :href="StaticText_Uper9__hrf" :style="{left:StaticText_Uper9__lef,top:StaticText_Uper9__top,width:StaticText_Uper9__wid,height:StaticText_Uper9__hei}" style="position:absolute;">{{StaticText_Uper9__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead9__vis" :disabled="StaticText_ReplyRead9__dis" type="primary" :style="{left:StaticText_ReplyRead9__lef,top:StaticText_ReplyRead9__top,width:StaticText_ReplyRead9__wid,height:StaticText_ReplyRead9__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead9__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost9__vis" :disabled="StaticText_LastPost9__dis" type="primary" :href="StaticText_LastPost9__hrf" :style="{left:StaticText_LastPost9__lef,top:StaticText_LastPost9__top,width:StaticText_LastPost9__wid,height:StaticText_LastPost9__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost9__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime9__vis" :disabled="StaticText_LastPostTime9__dis" type="primary" :style="{left:StaticText_LastPostTime9__lef,top:StaticText_LastPostTime9__top,width:StaticText_LastPostTime9__wid,height:StaticText_LastPostTime9__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime9__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread10__vis" :disabled="Panel_Thread10__dis" :style="{backgroundColor:Panel_Thread10__col,left:Panel_Thread10__lef,top:Panel_Thread10__top,width:Panel_Thread10__wid,height:Panel_Thread10__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel310__vis" :disabled="Panel310__dis" :style="{backgroundColor:Panel310__col,left:Panel310__lef,top:Panel310__top,width:Panel310__wid,height:Panel310__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject10__vis" :disabled="StaticText_Subject10__dis" type="primary" :href="StaticText_Subject10__hrf" :style="{left:StaticText_Subject10__lef,top:StaticText_Subject10__top,width:StaticText_Subject10__wid,height:StaticText_Subject10__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject10__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info10__vis" :disabled="Panel_Info10__dis" :style="{backgroundColor:Panel_Info10__col,left:Panel_Info10__lef,top:Panel_Info10__top,width:Panel_Info10__wid,height:Panel_Info10__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper10__vis" :disabled="StaticText_Uper10__dis" type="primary" :href="StaticText_Uper10__hrf" :style="{left:StaticText_Uper10__lef,top:StaticText_Uper10__top,width:StaticText_Uper10__wid,height:StaticText_Uper10__hei}" style="position:absolute;">{{StaticText_Uper10__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead10__vis" :disabled="StaticText_ReplyRead10__dis" type="primary" :style="{left:StaticText_ReplyRead10__lef,top:StaticText_ReplyRead10__top,width:StaticText_ReplyRead10__wid,height:StaticText_ReplyRead10__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead10__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost10__vis" :disabled="StaticText_LastPost10__dis" type="primary" :href="StaticText_LastPost10__hrf" :style="{left:StaticText_LastPost10__lef,top:StaticText_LastPost10__top,width:StaticText_LastPost10__wid,height:StaticText_LastPost10__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost10__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime10__vis" :disabled="StaticText_LastPostTime10__dis" type="primary" :style="{left:StaticText_LastPostTime10__lef,top:StaticText_LastPostTime10__top,width:StaticText_LastPostTime10__wid,height:StaticText_LastPostTime10__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime10__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread11__vis" :disabled="Panel_Thread11__dis" :style="{backgroundColor:Panel_Thread11__col,left:Panel_Thread11__lef,top:Panel_Thread11__top,width:Panel_Thread11__wid,height:Panel_Thread11__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel311__vis" :disabled="Panel311__dis" :style="{backgroundColor:Panel311__col,left:Panel311__lef,top:Panel311__top,width:Panel311__wid,height:Panel311__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject11__vis" :disabled="StaticText_Subject11__dis" type="primary" :href="StaticText_Subject11__hrf" :style="{left:StaticText_Subject11__lef,top:StaticText_Subject11__top,width:StaticText_Subject11__wid,height:StaticText_Subject11__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject11__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info11__vis" :disabled="Panel_Info11__dis" :style="{backgroundColor:Panel_Info11__col,left:Panel_Info11__lef,top:Panel_Info11__top,width:Panel_Info11__wid,height:Panel_Info11__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper11__vis" :disabled="StaticText_Uper11__dis" type="primary" :href="StaticText_Uper11__hrf" :style="{left:StaticText_Uper11__lef,top:StaticText_Uper11__top,width:StaticText_Uper11__wid,height:StaticText_Uper11__hei}" style="position:absolute;">{{StaticText_Uper11__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead11__vis" :disabled="StaticText_ReplyRead11__dis" type="primary" :style="{left:StaticText_ReplyRead11__lef,top:StaticText_ReplyRead11__top,width:StaticText_ReplyRead11__wid,height:StaticText_ReplyRead11__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead11__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost11__vis" :disabled="StaticText_LastPost11__dis" type="primary" :href="StaticText_LastPost11__hrf" :style="{left:StaticText_LastPost11__lef,top:StaticText_LastPost11__top,width:StaticText_LastPost11__wid,height:StaticText_LastPost11__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost11__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime11__vis" :disabled="StaticText_LastPostTime11__dis" type="primary" :style="{left:StaticText_LastPostTime11__lef,top:StaticText_LastPostTime11__top,width:StaticText_LastPostTime11__wid,height:StaticText_LastPostTime11__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime11__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread12__vis" :disabled="Panel_Thread12__dis" :style="{backgroundColor:Panel_Thread12__col,left:Panel_Thread12__lef,top:Panel_Thread12__top,width:Panel_Thread12__wid,height:Panel_Thread12__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel312__vis" :disabled="Panel312__dis" :style="{backgroundColor:Panel312__col,left:Panel312__lef,top:Panel312__top,width:Panel312__wid,height:Panel312__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject12__vis" :disabled="StaticText_Subject12__dis" type="primary" :href="StaticText_Subject12__hrf" :style="{left:StaticText_Subject12__lef,top:StaticText_Subject12__top,width:StaticText_Subject12__wid,height:StaticText_Subject12__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject12__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info12__vis" :disabled="Panel_Info12__dis" :style="{backgroundColor:Panel_Info12__col,left:Panel_Info12__lef,top:Panel_Info12__top,width:Panel_Info12__wid,height:Panel_Info12__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper12__vis" :disabled="StaticText_Uper12__dis" type="primary" :href="StaticText_Uper12__hrf" :style="{left:StaticText_Uper12__lef,top:StaticText_Uper12__top,width:StaticText_Uper12__wid,height:StaticText_Uper12__hei}" style="position:absolute;">{{StaticText_Uper12__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead12__vis" :disabled="StaticText_ReplyRead12__dis" type="primary" :style="{left:StaticText_ReplyRead12__lef,top:StaticText_ReplyRead12__top,width:StaticText_ReplyRead12__wid,height:StaticText_ReplyRead12__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead12__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost12__vis" :disabled="StaticText_LastPost12__dis" type="primary" :href="StaticText_LastPost12__hrf" :style="{left:StaticText_LastPost12__lef,top:StaticText_LastPost12__top,width:StaticText_LastPost12__wid,height:StaticText_LastPost12__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost12__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime12__vis" :disabled="StaticText_LastPostTime12__dis" type="primary" :style="{left:StaticText_LastPostTime12__lef,top:StaticText_LastPostTime12__top,width:StaticText_LastPostTime12__wid,height:StaticText_LastPostTime12__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime12__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread13__vis" :disabled="Panel_Thread13__dis" :style="{backgroundColor:Panel_Thread13__col,left:Panel_Thread13__lef,top:Panel_Thread13__top,width:Panel_Thread13__wid,height:Panel_Thread13__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel313__vis" :disabled="Panel313__dis" :style="{backgroundColor:Panel313__col,left:Panel313__lef,top:Panel313__top,width:Panel313__wid,height:Panel313__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject13__vis" :disabled="StaticText_Subject13__dis" type="primary" :href="StaticText_Subject13__hrf" :style="{left:StaticText_Subject13__lef,top:StaticText_Subject13__top,width:StaticText_Subject13__wid,height:StaticText_Subject13__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject13__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info13__vis" :disabled="Panel_Info13__dis" :style="{backgroundColor:Panel_Info13__col,left:Panel_Info13__lef,top:Panel_Info13__top,width:Panel_Info13__wid,height:Panel_Info13__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper13__vis" :disabled="StaticText_Uper13__dis" type="primary" :href="StaticText_Uper13__hrf" :style="{left:StaticText_Uper13__lef,top:StaticText_Uper13__top,width:StaticText_Uper13__wid,height:StaticText_Uper13__hei}" style="position:absolute;">{{StaticText_Uper13__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead13__vis" :disabled="StaticText_ReplyRead13__dis" type="primary" :style="{left:StaticText_ReplyRead13__lef,top:StaticText_ReplyRead13__top,width:StaticText_ReplyRead13__wid,height:StaticText_ReplyRead13__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead13__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost13__vis" :disabled="StaticText_LastPost13__dis" type="primary" :href="StaticText_LastPost13__hrf" :style="{left:StaticText_LastPost13__lef,top:StaticText_LastPost13__top,width:StaticText_LastPost13__wid,height:StaticText_LastPost13__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost13__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime13__vis" :disabled="StaticText_LastPostTime13__dis" type="primary" :style="{left:StaticText_LastPostTime13__lef,top:StaticText_LastPostTime13__top,width:StaticText_LastPostTime13__wid,height:StaticText_LastPostTime13__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime13__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread14__vis" :disabled="Panel_Thread14__dis" :style="{backgroundColor:Panel_Thread14__col,left:Panel_Thread14__lef,top:Panel_Thread14__top,width:Panel_Thread14__wid,height:Panel_Thread14__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel314__vis" :disabled="Panel314__dis" :style="{backgroundColor:Panel314__col,left:Panel314__lef,top:Panel314__top,width:Panel314__wid,height:Panel314__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject14__vis" :disabled="StaticText_Subject14__dis" type="primary" :href="StaticText_Subject14__hrf" :style="{left:StaticText_Subject14__lef,top:StaticText_Subject14__top,width:StaticText_Subject14__wid,height:StaticText_Subject14__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject14__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info14__vis" :disabled="Panel_Info14__dis" :style="{backgroundColor:Panel_Info14__col,left:Panel_Info14__lef,top:Panel_Info14__top,width:Panel_Info14__wid,height:Panel_Info14__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper14__vis" :disabled="StaticText_Uper14__dis" type="primary" :href="StaticText_Uper14__hrf" :style="{left:StaticText_Uper14__lef,top:StaticText_Uper14__top,width:StaticText_Uper14__wid,height:StaticText_Uper14__hei}" style="position:absolute;">{{StaticText_Uper14__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead14__vis" :disabled="StaticText_ReplyRead14__dis" type="primary" :style="{left:StaticText_ReplyRead14__lef,top:StaticText_ReplyRead14__top,width:StaticText_ReplyRead14__wid,height:StaticText_ReplyRead14__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead14__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost14__vis" :disabled="StaticText_LastPost14__dis" type="primary" :href="StaticText_LastPost14__hrf" :style="{left:StaticText_LastPost14__lef,top:StaticText_LastPost14__top,width:StaticText_LastPost14__wid,height:StaticText_LastPost14__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost14__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime14__vis" :disabled="StaticText_LastPostTime14__dis" type="primary" :style="{left:StaticText_LastPostTime14__lef,top:StaticText_LastPostTime14__top,width:StaticText_LastPostTime14__wid,height:StaticText_LastPostTime14__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime14__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread15__vis" :disabled="Panel_Thread15__dis" :style="{backgroundColor:Panel_Thread15__col,left:Panel_Thread15__lef,top:Panel_Thread15__top,width:Panel_Thread15__wid,height:Panel_Thread15__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel315__vis" :disabled="Panel315__dis" :style="{backgroundColor:Panel315__col,left:Panel315__lef,top:Panel315__top,width:Panel315__wid,height:Panel315__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject15__vis" :disabled="StaticText_Subject15__dis" type="primary" :href="StaticText_Subject15__hrf" :style="{left:StaticText_Subject15__lef,top:StaticText_Subject15__top,width:StaticText_Subject15__wid,height:StaticText_Subject15__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject15__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info15__vis" :disabled="Panel_Info15__dis" :style="{backgroundColor:Panel_Info15__col,left:Panel_Info15__lef,top:Panel_Info15__top,width:Panel_Info15__wid,height:Panel_Info15__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper15__vis" :disabled="StaticText_Uper15__dis" type="primary" :href="StaticText_Uper15__hrf" :style="{left:StaticText_Uper15__lef,top:StaticText_Uper15__top,width:StaticText_Uper15__wid,height:StaticText_Uper15__hei}" style="position:absolute;">{{StaticText_Uper15__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead15__vis" :disabled="StaticText_ReplyRead15__dis" type="primary" :style="{left:StaticText_ReplyRead15__lef,top:StaticText_ReplyRead15__top,width:StaticText_ReplyRead15__wid,height:StaticText_ReplyRead15__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead15__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost15__vis" :disabled="StaticText_LastPost15__dis" type="primary" :href="StaticText_LastPost15__hrf" :style="{left:StaticText_LastPost15__lef,top:StaticText_LastPost15__top,width:StaticText_LastPost15__wid,height:StaticText_LastPost15__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost15__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime15__vis" :disabled="StaticText_LastPostTime15__dis" type="primary" :style="{left:StaticText_LastPostTime15__lef,top:StaticText_LastPostTime15__top,width:StaticText_LastPostTime15__wid,height:StaticText_LastPostTime15__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime15__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread16__vis" :disabled="Panel_Thread16__dis" :style="{backgroundColor:Panel_Thread16__col,left:Panel_Thread16__lef,top:Panel_Thread16__top,width:Panel_Thread16__wid,height:Panel_Thread16__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel316__vis" :disabled="Panel316__dis" :style="{backgroundColor:Panel316__col,left:Panel316__lef,top:Panel316__top,width:Panel316__wid,height:Panel316__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject16__vis" :disabled="StaticText_Subject16__dis" type="primary" :href="StaticText_Subject16__hrf" :style="{left:StaticText_Subject16__lef,top:StaticText_Subject16__top,width:StaticText_Subject16__wid,height:StaticText_Subject16__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject16__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info16__vis" :disabled="Panel_Info16__dis" :style="{backgroundColor:Panel_Info16__col,left:Panel_Info16__lef,top:Panel_Info16__top,width:Panel_Info16__wid,height:Panel_Info16__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper16__vis" :disabled="StaticText_Uper16__dis" type="primary" :href="StaticText_Uper16__hrf" :style="{left:StaticText_Uper16__lef,top:StaticText_Uper16__top,width:StaticText_Uper16__wid,height:StaticText_Uper16__hei}" style="position:absolute;">{{StaticText_Uper16__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead16__vis" :disabled="StaticText_ReplyRead16__dis" type="primary" :style="{left:StaticText_ReplyRead16__lef,top:StaticText_ReplyRead16__top,width:StaticText_ReplyRead16__wid,height:StaticText_ReplyRead16__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead16__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost16__vis" :disabled="StaticText_LastPost16__dis" type="primary" :href="StaticText_LastPost16__hrf" :style="{left:StaticText_LastPost16__lef,top:StaticText_LastPost16__top,width:StaticText_LastPost16__wid,height:StaticText_LastPost16__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost16__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime16__vis" :disabled="StaticText_LastPostTime16__dis" type="primary" :style="{left:StaticText_LastPostTime16__lef,top:StaticText_LastPostTime16__top,width:StaticText_LastPostTime16__wid,height:StaticText_LastPostTime16__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime16__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread17__vis" :disabled="Panel_Thread17__dis" :style="{backgroundColor:Panel_Thread17__col,left:Panel_Thread17__lef,top:Panel_Thread17__top,width:Panel_Thread17__wid,height:Panel_Thread17__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel317__vis" :disabled="Panel317__dis" :style="{backgroundColor:Panel317__col,left:Panel317__lef,top:Panel317__top,width:Panel317__wid,height:Panel317__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject17__vis" :disabled="StaticText_Subject17__dis" type="primary" :href="StaticText_Subject17__hrf" :style="{left:StaticText_Subject17__lef,top:StaticText_Subject17__top,width:StaticText_Subject17__wid,height:StaticText_Subject17__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject17__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info17__vis" :disabled="Panel_Info17__dis" :style="{backgroundColor:Panel_Info17__col,left:Panel_Info17__lef,top:Panel_Info17__top,width:Panel_Info17__wid,height:Panel_Info17__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper17__vis" :disabled="StaticText_Uper17__dis" type="primary" :href="StaticText_Uper17__hrf" :style="{left:StaticText_Uper17__lef,top:StaticText_Uper17__top,width:StaticText_Uper17__wid,height:StaticText_Uper17__hei}" style="position:absolute;">{{StaticText_Uper17__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead17__vis" :disabled="StaticText_ReplyRead17__dis" type="primary" :style="{left:StaticText_ReplyRead17__lef,top:StaticText_ReplyRead17__top,width:StaticText_ReplyRead17__wid,height:StaticText_ReplyRead17__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead17__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost17__vis" :disabled="StaticText_LastPost17__dis" type="primary" :href="StaticText_LastPost17__hrf" :style="{left:StaticText_LastPost17__lef,top:StaticText_LastPost17__top,width:StaticText_LastPost17__wid,height:StaticText_LastPost17__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost17__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime17__vis" :disabled="StaticText_LastPostTime17__dis" type="primary" :style="{left:StaticText_LastPostTime17__lef,top:StaticText_LastPostTime17__top,width:StaticText_LastPostTime17__wid,height:StaticText_LastPostTime17__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime17__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread18__vis" :disabled="Panel_Thread18__dis" :style="{backgroundColor:Panel_Thread18__col,left:Panel_Thread18__lef,top:Panel_Thread18__top,width:Panel_Thread18__wid,height:Panel_Thread18__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel318__vis" :disabled="Panel318__dis" :style="{backgroundColor:Panel318__col,left:Panel318__lef,top:Panel318__top,width:Panel318__wid,height:Panel318__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject18__vis" :disabled="StaticText_Subject18__dis" type="primary" :href="StaticText_Subject18__hrf" :style="{left:StaticText_Subject18__lef,top:StaticText_Subject18__top,width:StaticText_Subject18__wid,height:StaticText_Subject18__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject18__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info18__vis" :disabled="Panel_Info18__dis" :style="{backgroundColor:Panel_Info18__col,left:Panel_Info18__lef,top:Panel_Info18__top,width:Panel_Info18__wid,height:Panel_Info18__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper18__vis" :disabled="StaticText_Uper18__dis" type="primary" :href="StaticText_Uper18__hrf" :style="{left:StaticText_Uper18__lef,top:StaticText_Uper18__top,width:StaticText_Uper18__wid,height:StaticText_Uper18__hei}" style="position:absolute;">{{StaticText_Uper18__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead18__vis" :disabled="StaticText_ReplyRead18__dis" type="primary" :style="{left:StaticText_ReplyRead18__lef,top:StaticText_ReplyRead18__top,width:StaticText_ReplyRead18__wid,height:StaticText_ReplyRead18__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead18__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost18__vis" :disabled="StaticText_LastPost18__dis" type="primary" :href="StaticText_LastPost18__hrf" :style="{left:StaticText_LastPost18__lef,top:StaticText_LastPost18__top,width:StaticText_LastPost18__wid,height:StaticText_LastPost18__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost18__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime18__vis" :disabled="StaticText_LastPostTime18__dis" type="primary" :style="{left:StaticText_LastPostTime18__lef,top:StaticText_LastPostTime18__top,width:StaticText_LastPostTime18__wid,height:StaticText_LastPostTime18__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime18__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread19__vis" :disabled="Panel_Thread19__dis" :style="{backgroundColor:Panel_Thread19__col,left:Panel_Thread19__lef,top:Panel_Thread19__top,width:Panel_Thread19__wid,height:Panel_Thread19__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel319__vis" :disabled="Panel319__dis" :style="{backgroundColor:Panel319__col,left:Panel319__lef,top:Panel319__top,width:Panel319__wid,height:Panel319__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject19__vis" :disabled="StaticText_Subject19__dis" type="primary" :href="StaticText_Subject19__hrf" :style="{left:StaticText_Subject19__lef,top:StaticText_Subject19__top,width:StaticText_Subject19__wid,height:StaticText_Subject19__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject19__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info19__vis" :disabled="Panel_Info19__dis" :style="{backgroundColor:Panel_Info19__col,left:Panel_Info19__lef,top:Panel_Info19__top,width:Panel_Info19__wid,height:Panel_Info19__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper19__vis" :disabled="StaticText_Uper19__dis" type="primary" :href="StaticText_Uper19__hrf" :style="{left:StaticText_Uper19__lef,top:StaticText_Uper19__top,width:StaticText_Uper19__wid,height:StaticText_Uper19__hei}" style="position:absolute;">{{StaticText_Uper19__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead19__vis" :disabled="StaticText_ReplyRead19__dis" type="primary" :style="{left:StaticText_ReplyRead19__lef,top:StaticText_ReplyRead19__top,width:StaticText_ReplyRead19__wid,height:StaticText_ReplyRead19__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead19__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost19__vis" :disabled="StaticText_LastPost19__dis" type="primary" :href="StaticText_LastPost19__hrf" :style="{left:StaticText_LastPost19__lef,top:StaticText_LastPost19__top,width:StaticText_LastPost19__wid,height:StaticText_LastPost19__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost19__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime19__vis" :disabled="StaticText_LastPostTime19__dis" type="primary" :style="{left:StaticText_LastPostTime19__lef,top:StaticText_LastPostTime19__top,width:StaticText_LastPostTime19__wid,height:StaticText_LastPostTime19__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime19__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        <el-main v-if="Panel_Thread20__vis" :disabled="Panel_Thread20__dis" :style="{backgroundColor:Panel_Thread20__col,left:Panel_Thread20__lef,top:Panel_Thread20__top,width:Panel_Thread20__wid,height:Panel_Thread20__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <el-main v-if="Panel320__vis" :disabled="Panel320__dis" :style="{backgroundColor:Panel320__col,left:Panel320__lef,top:Panel320__top,width:Panel320__wid,height:Panel320__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Subject20__vis" :disabled="StaticText_Subject20__dis" type="primary" :href="StaticText_Subject20__hrf" :style="{left:StaticText_Subject20__lef,top:StaticText_Subject20__top,width:StaticText_Subject20__wid,height:StaticText_Subject20__hei}" style="position:absolute;color:#409EFF;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{StaticText_Subject20__cap}}
-        </el-link>
-        </el-main>
-        <el-main v-if="Panel_Info20__vis" :disabled="Panel_Info20__dis" :style="{backgroundColor:Panel_Info20__col,left:Panel_Info20__lef,top:Panel_Info20__top,width:Panel_Info20__wid,height:Panel_Info20__hei}" style="position:absolute;overflow:hidden;">
-        <el-link :underline="false" v-if="StaticText_Uper20__vis" :disabled="StaticText_Uper20__dis" type="primary" :href="StaticText_Uper20__hrf" :style="{left:StaticText_Uper20__lef,top:StaticText_Uper20__top,width:StaticText_Uper20__wid,height:StaticText_Uper20__hei}" style="position:absolute;">{{StaticText_Uper20__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_ReplyRead20__vis" :disabled="StaticText_ReplyRead20__dis" type="primary" :style="{left:StaticText_ReplyRead20__lef,top:StaticText_ReplyRead20__top,width:StaticText_ReplyRead20__wid,height:StaticText_ReplyRead20__hei}" style="position:absolute;text-align:center;">{{StaticText_ReplyRead20__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPost20__vis" :disabled="StaticText_LastPost20__dis" type="primary" :href="StaticText_LastPost20__hrf" :style="{left:StaticText_LastPost20__lef,top:StaticText_LastPost20__top,width:StaticText_LastPost20__wid,height:StaticText_LastPost20__hei}" style="position:absolute;text-align:center;">{{StaticText_LastPost20__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_LastPostTime20__vis" :disabled="StaticText_LastPostTime20__dis" type="primary" :style="{left:StaticText_LastPostTime20__lef,top:StaticText_LastPostTime20__top,width:StaticText_LastPostTime20__wid,height:StaticText_LastPostTime20__hei}" style="position:absolute;text-align:right;">{{StaticText_LastPostTime20__cap}}
-        </el-link>
-        </el-main>
-        </el-main>
-        </el-main>
-        </el-main>
-        <el-link :underline="false" v-if="StaticText_Login__vis" :disabled="StaticText_Login__dis" type="primary" :href="StaticText_Login__hrf" :style="{left:StaticText_Login__lef,top:StaticText_Login__top,width:StaticText_Login__wid,height:StaticText_Login__hei}" style="position:absolute;text-align:right;">{{StaticText_Login__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText_Post__vis" :disabled="StaticText_Post__dis" type="primary" :href="StaticText_Post__hrf" :style="{left:StaticText_Post__lef,top:StaticText_Post__top,width:StaticText_Post__wid,height:StaticText_Post__hei}" style="position:absolute;text-align:right;">{{StaticText_Post__cap}}
-        </el-link>
+        <el-date-picker type="date" format="yyyy-MM-dd" value-format="yyyy-MM-dd" v-if="DateTimePicker1__vis" :disabled="DateTimePicker1__dis" v-model="DateTimePicker1__val" :style="{left:DateTimePicker1__lef,top:DateTimePicker1__top,width:DateTimePicker1__wid,height:DateTimePicker1__hei}" style="position:absolute;" @change="dwevent($event,'DateTimePicker1','this.DateTimePicker1__val','onchange','')">
+        </el-date-picker>
+        <el-time-select :picker-options="{start: '00:00', step: '00:01', end: '23:59'}" format="HH:mm" value-format="HH:mm" v-if="DateTimePicker2__vis" :disabled="DateTimePicker2__dis" v-model="DateTimePicker2__val" :style="{left:DateTimePicker2__lef,top:DateTimePicker2__top,width:DateTimePicker2__wid,height:DateTimePicker2__hei}" style="position:absolute;" @change="dwevent($event,'DateTimePicker2','this.DateTimePicker2__val','onchange','')">
+        </el-time-select>
 	 </div>
     <script>
 	    Vue.prototype.procResp = function (data){
@@ -414,1467 +34,30 @@
 				el: '#app',
 				data: function () {
 					return {
-					    DFW_1__top:"0px",
-					    DFW_1__wid:"1000px",
-					    DFW_1__hei:"1226px",
-Label14__lef:"1px",
-Label14__top:"32px",
-Label14__wid:"988px",
-Label14__hei:"30px",
-Label14__vis:true,
-Label14__dis:false,
-Label14__cap:"感谢惠顾,如有任何建议和意见,请联系版主",
-Label15__lef:"1px",
-Label15__top:"2px",
-Label15__wid:"988px",
-Label15__hei:"30px",
-Label15__vis:true,
-Label15__dis:false,
-Label15__cap:"(C) 版权所有. 大富翁论坛 1998-2020",
-Panel4__lef:"1px",
-Panel4__top:"1px",
-Panel4__wid:"988px",
-Panel4__hei:"1px",
-Panel4__vis:true,
-Panel4__dis:false,
-Panel4__col:"#F0F0F0",
-Panel_99_Foot__lef:"5px",
-Panel_99_Foot__top:"1129px",
-Panel_99_Foot__wid:"990px",
-Panel_99_Foot__hei:"92px",
-Panel_99_Foot__vis:true,
-Panel_99_Foot__dis:false,
-Panel_99_Foot__col:"#FFFFFF",
-Img_dfw__lef:"383px",
-Img_dfw__top:"6px",
-Img_dfw__wid:"240px",
-Img_dfw__hei:"60px",
-Img_dfw__vis:true,
-Img_dfw__dis:false,
-Img_dfw__src:"dist/webimages/Img_dfw.jpg",
-Panel6__lef:"0px",
-Panel6__top:"79px",
-Panel6__wid:"990px",
-Panel6__hei:"1px",
-Panel6__vis:true,
-Panel6__dis:false,
-Panel6__col:"#E1E9FF",
-Panel_00_Head__lef:"5px",
-Panel_00_Head__top:"5px",
-Panel_00_Head__wid:"990px",
-Panel_00_Head__hei:"80px",
-Panel_00_Head__vis:true,
-Panel_00_Head__dis:false,
-Panel_00_Head__col:"#FFFFFF",
-StaticText_Subject__lef:"1px",
-StaticText_Subject__top:"1px",
-StaticText_Subject__wid:"498px",
-StaticText_Subject__hei:"38px",
-StaticText_Subject__vis:true,
-StaticText_Subject__dis:false,
-StaticText_Subject__cap:"StaticText_Subject",
-StaticText_Subject__hrf:"",
-Panel3__lef:"9000px",
-Panel3__top:"3px",
-Panel3__wid:"491px",
-Panel3__hei:"40px",
-Panel3__vis:true,
-Panel3__dis:false,
-Panel3__col:"#FFFFFF",
-StaticText_Uper__lef:"9000px",
-StaticText_Uper__top:"1px",
-StaticText_Uper__wid:"119px",
-StaticText_Uper__hei:"38px",
-StaticText_Uper__vis:true,
-StaticText_Uper__dis:false,
-StaticText_Uper__cap:"StaticText_Subject",
-StaticText_Uper__hrf:"",
-StaticText_ReplyRead__lef:"9001px",
-StaticText_ReplyRead__top:"1px",
-StaticText_ReplyRead__wid:"119px",
-StaticText_ReplyRead__hei:"38px",
-StaticText_ReplyRead__vis:true,
-StaticText_ReplyRead__dis:false,
-StaticText_ReplyRead__cap:"StaticText_Subject",
-StaticText_ReplyRead__hrf:"",
-StaticText_LastPost__lef:"9002px",
-StaticText_LastPost__top:"1px",
-StaticText_LastPost__wid:"119px",
-StaticText_LastPost__hei:"38px",
-StaticText_LastPost__vis:true,
-StaticText_LastPost__dis:false,
-StaticText_LastPost__cap:"StaticText_Subject",
-StaticText_LastPost__hrf:"",
-StaticText_LastPostTime__lef:"393px",
-StaticText_LastPostTime__top:"1px",
-StaticText_LastPostTime__wid:"120px",
-StaticText_LastPostTime__hei:"38px",
-StaticText_LastPostTime__vis:true,
-StaticText_LastPostTime__dis:false,
-StaticText_LastPostTime__cap:"StaticText_Subject",
-StaticText_LastPostTime__hrf:"",
-Panel_Info__lef:"503px",
-Panel_Info__top:"3px",
-Panel_Info__wid:"478px",
-Panel_Info__hei:"38px",
-Panel_Info__vis:true,
-Panel_Info__dis:false,
-Panel_Info__col:"#FFFFFF",
-Panel_Thread__lef:"1px",
-Panel_Thread__top:"33px",
-Panel_Thread__wid:"988px",
-Panel_Thread__hei:"46px",
-Panel_Thread__vis:false,
-Panel_Thread__dis:false,
-Panel_Thread__col:"#FFFFFF",
-Label106__lef:"4px",
-Label106__top:"4px",
-Label106__wid:"30px",
-Label106__hei:"20px",
-Label106__vis:true,
-Label106__dis:false,
-Label106__cap:"标题",
-Label107__lef:"640px",
-Label107__top:"4px",
-Label107__wid:"66px",
-Label107__hei:"20px",
-Label107__vis:true,
-Label107__dis:false,
-Label107__cap:"回复/阅读",
-Label108__lef:"500px",
-Label108__top:"4px",
-Label108__wid:"30px",
-Label108__hei:"20px",
-Label108__vis:true,
-Label108__dis:false,
-Label108__cap:"提问",
-Label109__lef:"760px",
-Label109__top:"4px",
-Label109__wid:"60px",
-Label109__hei:"20px",
-Label109__vis:true,
-Label109__dis:false,
-Label109__cap:"最后回复",
-Label110__lef:"900px",
-Label110__top:"4px",
-Label110__wid:"60px",
-Label110__hei:"20px",
-Label110__vis:true,
-Label110__dis:false,
-Label110__cap:"最后时间",
-Panel_ThreadTitle__lef:"1px",
-Panel_ThreadTitle__top:"1px",
-Panel_ThreadTitle__wid:"988px",
-Panel_ThreadTitle__hei:"32px",
-Panel_ThreadTitle__vis:true,
-Panel_ThreadTitle__dis:false,
-Panel_ThreadTitle__col:"#E1E9FF",
-Edit_PageNo__lef:"884px",
-Edit_PageNo__top:"8px",
-Edit_PageNo__wid:"51px",
-Edit_PageNo__hei:"28px",
-Edit_PageNo__vis:true,
-Edit_PageNo__dis:false,
-Edit_PageNo__txt:"1",
-Button_Next__lef:"44px",
-Button_Next__top:"8px",
-Button_Next__wid:"50px",
-Button_Next__hei:"25px",
-Button_Next__vis:true,
-Button_Next__dis:false,
-Button_Next__cap:"下一页",
-Button1__lef:"4px",
-Button1__top:"8px",
-Button1__wid:"40px",
-Button1__hei:"25px",
+					    Test_2__top:"0px",
+					    Test_2__wid:"784px",
+					    Test_2__hei:"583px",
+Button1__lef:"37px",
+Button1__top:"128px",
+Button1__wid:"104px",
+Button1__hei:"38px",
 Button1__vis:true,
 Button1__dis:false,
-Button1__cap:"首页",
-Button2__lef:"94px",
-Button2__top:"8px",
-Button2__wid:"50px",
-Button2__hei:"25px",
-Button2__vis:true,
-Button2__dis:false,
-Button2__cap:"上一页",
-Button4__lef:"144px",
-Button4__top:"8px",
-Button4__wid:"50px",
-Button4__hei:"25px",
-Button4__vis:true,
-Button4__dis:false,
-Button4__cap:"最后页",
-Button5__lef:"936px",
-Button5__top:"8px",
-Button5__wid:"40px",
-Button5__hei:"25px",
-Button5__vis:true,
-Button5__dis:false,
-Button5__cap:"跳转",
-Panel1__lef:"0px",
-Panel1__top:"0px",
-Panel1__wid:"988px",
-Panel1__hei:"1px",
-Panel1__vis:true,
-Panel1__dis:false,
-Panel1__col:"#F0F0F0",
-Panel_Pages__lef:"1px",
-Panel_Pages__top:"953px",
-Panel_Pages__wid:"988px",
-Panel_Pages__hei:"40px",
-Panel_Pages__vis:true,
-Panel_Pages__dis:false,
-Panel_Pages__col:"#FFFFFF",
-StaticText_Subject1__lef:"1px",
-StaticText_Subject1__top:"1px",
-StaticText_Subject1__wid:"489px",
-StaticText_Subject1__hei:"34px",
-StaticText_Subject1__vis:true,
-StaticText_Subject1__dis:false,
-StaticText_Subject1__cap:"Delphi 连接DBF数据",
-StaticText_Subject1__hrf:"dfw_thread.dw?tid=938&&uid=2&&create_date=1576500716&&subject=Delphi%20%u8FDE%u63A5DBF%u6570%u636E&&uper=%u78A7%u6811%u897F%u98CE",
-Panel31__lef:"3px",
-Panel31__top:"3px",
-Panel31__wid:"491px",
-Panel31__hei:"36px",
-Panel31__vis:true,
-Panel31__dis:false,
-Panel31__col:"#FFFFFF",
-StaticText_Uper1__lef:"1px",
-StaticText_Uper1__top:"1px",
-StaticText_Uper1__wid:"121px",
-StaticText_Uper1__hei:"34px",
-StaticText_Uper1__vis:true,
-StaticText_Uper1__dis:false,
-StaticText_Uper1__cap:"碧树西风",
-StaticText_Uper1__hrf:"dfw_user.dw?uid=2",
-StaticText_ReplyRead1__lef:"122px",
-StaticText_ReplyRead1__top:"1px",
-StaticText_ReplyRead1__wid:"121px",
-StaticText_ReplyRead1__hei:"34px",
-StaticText_ReplyRead1__vis:true,
-StaticText_ReplyRead1__dis:false,
-StaticText_ReplyRead1__cap:"2/437",
-StaticText_ReplyRead1__hrf:"",
-StaticText_LastPost1__lef:"243px",
-StaticText_LastPost1__top:"1px",
-StaticText_LastPost1__wid:"121px",
-StaticText_LastPost1__hei:"34px",
-StaticText_LastPost1__vis:true,
-StaticText_LastPost1__dis:false,
-StaticText_LastPost1__cap:"ufolc",
-StaticText_LastPost1__hrf:"dfw_user.dw?uid=10980",
-StaticText_LastPostTime1__lef:"364px",
-StaticText_LastPostTime1__top:"1px",
-StaticText_LastPostTime1__wid:"122px",
-StaticText_LastPostTime1__hei:"34px",
-StaticText_LastPostTime1__vis:true,
-StaticText_LastPostTime1__dis:false,
-StaticText_LastPostTime1__cap:"2020-03-27",
-StaticText_LastPostTime1__hrf:"",
-Panel_Info1__lef:"494px",
-Panel_Info1__top:"3px",
-Panel_Info1__wid:"487px",
-Panel_Info1__hei:"36px",
-Panel_Info1__vis:true,
-Panel_Info1__dis:false,
-Panel_Info1__col:"#FFFFFF",
-Panel_Thread1__lef:"1px",
-Panel_Thread1__top:"33px",
-Panel_Thread1__wid:"988px",
-Panel_Thread1__hei:"46px",
-Panel_Thread1__vis:true,
-Panel_Thread1__dis:false,
-Panel_Thread1__col:"#FFFFFF",
-StaticText_Subject2__lef:"1px",
-StaticText_Subject2__top:"1px",
-StaticText_Subject2__wid:"489px",
-StaticText_Subject2__hei:"34px",
-StaticText_Subject2__vis:true,
-StaticText_Subject2__dis:false,
-StaticText_Subject2__cap:"15年后重操旧业，人气不行呀",
-StaticText_Subject2__hrf:"dfw_thread.dw?tid=693&&uid=10738&&create_date=1551414215&&subject=15%u5E74%u540E%u91CD%u64CD%u65E7%u4E1A%uFF0C%u4EBA%u6C14%u4E0D%u884C%u5440&&uper=wxm3783",
-Panel32__lef:"3px",
-Panel32__top:"3px",
-Panel32__wid:"491px",
-Panel32__hei:"36px",
-Panel32__vis:true,
-Panel32__dis:false,
-Panel32__col:"#FFFFFF",
-StaticText_Uper2__lef:"1px",
-StaticText_Uper2__top:"1px",
-StaticText_Uper2__wid:"121px",
-StaticText_Uper2__hei:"34px",
-StaticText_Uper2__vis:true,
-StaticText_Uper2__dis:false,
-StaticText_Uper2__cap:"wxm3783",
-StaticText_Uper2__hrf:"dfw_user.dw?uid=10738",
-StaticText_ReplyRead2__lef:"122px",
-StaticText_ReplyRead2__top:"1px",
-StaticText_ReplyRead2__wid:"121px",
-StaticText_ReplyRead2__hei:"34px",
-StaticText_ReplyRead2__vis:true,
-StaticText_ReplyRead2__dis:false,
-StaticText_ReplyRead2__cap:"7/1503",
-StaticText_ReplyRead2__hrf:"",
-StaticText_LastPost2__lef:"243px",
-StaticText_LastPost2__top:"1px",
-StaticText_LastPost2__wid:"121px",
-StaticText_LastPost2__hei:"34px",
-StaticText_LastPost2__vis:true,
-StaticText_LastPost2__dis:false,
-StaticText_LastPost2__cap:"ufolc",
-StaticText_LastPost2__hrf:"dfw_user.dw?uid=10980",
-StaticText_LastPostTime2__lef:"364px",
-StaticText_LastPostTime2__top:"1px",
-StaticText_LastPostTime2__wid:"122px",
-StaticText_LastPostTime2__hei:"34px",
-StaticText_LastPostTime2__vis:true,
-StaticText_LastPostTime2__dis:false,
-StaticText_LastPostTime2__cap:"2020-03-27",
-StaticText_LastPostTime2__hrf:"",
-Panel_Info2__lef:"494px",
-Panel_Info2__top:"3px",
-Panel_Info2__wid:"487px",
-Panel_Info2__hei:"36px",
-Panel_Info2__vis:true,
-Panel_Info2__dis:false,
-Panel_Info2__col:"#FFFFFF",
-Panel_Thread2__lef:"1px",
-Panel_Thread2__top:"79px",
-Panel_Thread2__wid:"988px",
-Panel_Thread2__hei:"46px",
-Panel_Thread2__vis:true,
-Panel_Thread2__dis:false,
-Panel_Thread2__col:"#FFFFFF",
-StaticText_Subject3__lef:"1px",
-StaticText_Subject3__top:"1px",
-StaticText_Subject3__wid:"489px",
-StaticText_Subject3__hei:"34px",
-StaticText_Subject3__vis:true,
-StaticText_Subject3__dis:false,
-StaticText_Subject3__cap:"Delphi 10.3 RIO 和谐安装工具 最新版",
-StaticText_Subject3__hrf:"dfw_thread.dw?tid=296&&uid=135&&create_date=1543162920&&subject=Delphi%2010%2E3%20RIO%20%u548C%u8C10%u5B89%u88C5%u5DE5%u5177%20%u6700%u65B0%u7248&&uper=chinacodegear",
-Panel33__lef:"3px",
-Panel33__top:"3px",
-Panel33__wid:"491px",
-Panel33__hei:"36px",
-Panel33__vis:true,
-Panel33__dis:false,
-Panel33__col:"#FFFFFF",
-StaticText_Uper3__lef:"1px",
-StaticText_Uper3__top:"1px",
-StaticText_Uper3__wid:"121px",
-StaticText_Uper3__hei:"34px",
-StaticText_Uper3__vis:true,
-StaticText_Uper3__dis:false,
-StaticText_Uper3__cap:"chinacodegear",
-StaticText_Uper3__hrf:"dfw_user.dw?uid=135",
-StaticText_ReplyRead3__lef:"122px",
-StaticText_ReplyRead3__top:"1px",
-StaticText_ReplyRead3__wid:"121px",
-StaticText_ReplyRead3__hei:"34px",
-StaticText_ReplyRead3__vis:true,
-StaticText_ReplyRead3__dis:false,
-StaticText_ReplyRead3__cap:"18/11155",
-StaticText_ReplyRead3__hrf:"",
-StaticText_LastPost3__lef:"243px",
-StaticText_LastPost3__top:"1px",
-StaticText_LastPost3__wid:"121px",
-StaticText_LastPost3__hei:"34px",
-StaticText_LastPost3__vis:true,
-StaticText_LastPost3__dis:false,
-StaticText_LastPost3__cap:"绿杨荫里",
-StaticText_LastPost3__hrf:"dfw_user.dw?uid=10697",
-StaticText_LastPostTime3__lef:"364px",
-StaticText_LastPostTime3__top:"1px",
-StaticText_LastPostTime3__wid:"122px",
-StaticText_LastPostTime3__hei:"34px",
-StaticText_LastPostTime3__vis:true,
-StaticText_LastPostTime3__dis:false,
-StaticText_LastPostTime3__cap:"2020-03-15",
-StaticText_LastPostTime3__hrf:"",
-Panel_Info3__lef:"494px",
-Panel_Info3__top:"3px",
-Panel_Info3__wid:"487px",
-Panel_Info3__hei:"36px",
-Panel_Info3__vis:true,
-Panel_Info3__dis:false,
-Panel_Info3__col:"#FFFFFF",
-Panel_Thread3__lef:"1px",
-Panel_Thread3__top:"125px",
-Panel_Thread3__wid:"988px",
-Panel_Thread3__hei:"46px",
-Panel_Thread3__vis:true,
-Panel_Thread3__dis:false,
-Panel_Thread3__col:"#FFFFFF",
-StaticText_Subject4__lef:"1px",
-StaticText_Subject4__top:"1px",
-StaticText_Subject4__wid:"489px",
-StaticText_Subject4__hei:"34px",
-StaticText_Subject4__vis:true,
-StaticText_Subject4__dis:false,
-StaticText_Subject4__cap:"Delphi 10.3 RIO 和谐安装工具",
-StaticText_Subject4__hrf:"dfw_thread.dw?tid=295&&uid=135&&create_date=1543133552&&subject=Delphi%2010%2E3%20RIO%20%u548C%u8C10%u5B89%u88C5%u5DE5%u5177&&uper=chinacodegear",
-Panel34__lef:"3px",
-Panel34__top:"3px",
-Panel34__wid:"491px",
-Panel34__hei:"36px",
-Panel34__vis:true,
-Panel34__dis:false,
-Panel34__col:"#FFFFFF",
-StaticText_Uper4__lef:"1px",
-StaticText_Uper4__top:"1px",
-StaticText_Uper4__wid:"121px",
-StaticText_Uper4__hei:"34px",
-StaticText_Uper4__vis:true,
-StaticText_Uper4__dis:false,
-StaticText_Uper4__cap:"chinacodegear",
-StaticText_Uper4__hrf:"dfw_user.dw?uid=135",
-StaticText_ReplyRead4__lef:"122px",
-StaticText_ReplyRead4__top:"1px",
-StaticText_ReplyRead4__wid:"121px",
-StaticText_ReplyRead4__hei:"34px",
-StaticText_ReplyRead4__vis:true,
-StaticText_ReplyRead4__dis:false,
-StaticText_ReplyRead4__cap:"10/12574",
-StaticText_ReplyRead4__hrf:"",
-StaticText_LastPost4__lef:"243px",
-StaticText_LastPost4__top:"1px",
-StaticText_LastPost4__wid:"121px",
-StaticText_LastPost4__hei:"34px",
-StaticText_LastPost4__vis:true,
-StaticText_LastPost4__dis:false,
-StaticText_LastPost4__cap:"碧树西风",
-StaticText_LastPost4__hrf:"dfw_user.dw?uid=2",
-StaticText_LastPostTime4__lef:"364px",
-StaticText_LastPostTime4__top:"1px",
-StaticText_LastPostTime4__wid:"122px",
-StaticText_LastPostTime4__hei:"34px",
-StaticText_LastPostTime4__vis:true,
-StaticText_LastPostTime4__dis:false,
-StaticText_LastPostTime4__cap:"2020-03-15",
-StaticText_LastPostTime4__hrf:"",
-Panel_Info4__lef:"494px",
-Panel_Info4__top:"3px",
-Panel_Info4__wid:"487px",
-Panel_Info4__hei:"36px",
-Panel_Info4__vis:true,
-Panel_Info4__dis:false,
-Panel_Info4__col:"#FFFFFF",
-Panel_Thread4__lef:"1px",
-Panel_Thread4__top:"171px",
-Panel_Thread4__wid:"988px",
-Panel_Thread4__hei:"46px",
-Panel_Thread4__vis:true,
-Panel_Thread4__dis:false,
-Panel_Thread4__col:"#FFFFFF",
-StaticText_Subject5__lef:"1px",
-StaticText_Subject5__top:"1px",
-StaticText_Subject5__wid:"489px",
-StaticText_Subject5__hei:"34px",
-StaticText_Subject5__vis:true,
-StaticText_Subject5__dis:false,
-StaticText_Subject5__cap:"Delphi 10.3 ISO",
-StaticText_Subject5__hrf:"dfw_thread.dw?tid=285&&uid=135&&create_date=1542856030&&subject=%20Delphi%2010%2E3%20ISO&&uper=chinacodegear",
-Panel35__lef:"3px",
-Panel35__top:"3px",
-Panel35__wid:"491px",
-Panel35__hei:"36px",
-Panel35__vis:true,
-Panel35__dis:false,
-Panel35__col:"#FFFFFF",
-StaticText_Uper5__lef:"1px",
-StaticText_Uper5__top:"1px",
-StaticText_Uper5__wid:"121px",
-StaticText_Uper5__hei:"34px",
-StaticText_Uper5__vis:true,
-StaticText_Uper5__dis:false,
-StaticText_Uper5__cap:"chinacodegear",
-StaticText_Uper5__hrf:"dfw_user.dw?uid=135",
-StaticText_ReplyRead5__lef:"122px",
-StaticText_ReplyRead5__top:"1px",
-StaticText_ReplyRead5__wid:"121px",
-StaticText_ReplyRead5__hei:"34px",
-StaticText_ReplyRead5__vis:true,
-StaticText_ReplyRead5__dis:false,
-StaticText_ReplyRead5__cap:"12/6745",
-StaticText_ReplyRead5__hrf:"",
-StaticText_LastPost5__lef:"243px",
-StaticText_LastPost5__top:"1px",
-StaticText_LastPost5__wid:"121px",
-StaticText_LastPost5__hei:"34px",
-StaticText_LastPost5__vis:true,
-StaticText_LastPost5__dis:false,
-StaticText_LastPost5__cap:"ilikanba",
-StaticText_LastPost5__hrf:"dfw_user.dw?uid=10967",
-StaticText_LastPostTime5__lef:"364px",
-StaticText_LastPostTime5__top:"1px",
-StaticText_LastPostTime5__wid:"122px",
-StaticText_LastPostTime5__hei:"34px",
-StaticText_LastPostTime5__vis:true,
-StaticText_LastPostTime5__dis:false,
-StaticText_LastPostTime5__cap:"2020-03-15",
-StaticText_LastPostTime5__hrf:"",
-Panel_Info5__lef:"494px",
-Panel_Info5__top:"3px",
-Panel_Info5__wid:"487px",
-Panel_Info5__hei:"36px",
-Panel_Info5__vis:true,
-Panel_Info5__dis:false,
-Panel_Info5__col:"#FFFFFF",
-Panel_Thread5__lef:"1px",
-Panel_Thread5__top:"217px",
-Panel_Thread5__wid:"988px",
-Panel_Thread5__hei:"46px",
-Panel_Thread5__vis:true,
-Panel_Thread5__dis:false,
-Panel_Thread5__col:"#FFFFFF",
-StaticText_Subject6__lef:"1px",
-StaticText_Subject6__top:"1px",
-StaticText_Subject6__wid:"489px",
-StaticText_Subject6__hei:"34px",
-StaticText_Subject6__vis:true,
-StaticText_Subject6__dis:false,
-StaticText_Subject6__cap:"欢迎回家! Delphi fans~",
-StaticText_Subject6__hrf:"dfw_thread.dw?tid=1&&uid=2&&create_date=1527131377&&subject=%u6B22%u8FCE%u56DE%u5BB6%21%20Delphi%20fans%7E&&uper=%u78A7%u6811%u897F%u98CE",
-Panel36__lef:"3px",
-Panel36__top:"3px",
-Panel36__wid:"491px",
-Panel36__hei:"36px",
-Panel36__vis:true,
-Panel36__dis:false,
-Panel36__col:"#FFFFFF",
-StaticText_Uper6__lef:"1px",
-StaticText_Uper6__top:"1px",
-StaticText_Uper6__wid:"121px",
-StaticText_Uper6__hei:"34px",
-StaticText_Uper6__vis:true,
-StaticText_Uper6__dis:false,
-StaticText_Uper6__cap:"碧树西风",
-StaticText_Uper6__hrf:"dfw_user.dw?uid=2",
-StaticText_ReplyRead6__lef:"122px",
-StaticText_ReplyRead6__top:"1px",
-StaticText_ReplyRead6__wid:"121px",
-StaticText_ReplyRead6__hei:"34px",
-StaticText_ReplyRead6__vis:true,
-StaticText_ReplyRead6__dis:false,
-StaticText_ReplyRead6__cap:"100/27044",
-StaticText_ReplyRead6__hrf:"",
-StaticText_LastPost6__lef:"243px",
-StaticText_LastPost6__top:"1px",
-StaticText_LastPost6__wid:"121px",
-StaticText_LastPost6__hei:"34px",
-StaticText_LastPost6__vis:true,
-StaticText_LastPost6__dis:false,
-StaticText_LastPost6__cap:"johnsun2002",
-StaticText_LastPost6__hrf:"dfw_user.dw?uid=10957",
-StaticText_LastPostTime6__lef:"364px",
-StaticText_LastPostTime6__top:"1px",
-StaticText_LastPostTime6__wid:"122px",
-StaticText_LastPostTime6__hei:"34px",
-StaticText_LastPostTime6__vis:true,
-StaticText_LastPostTime6__dis:false,
-StaticText_LastPostTime6__cap:"2020-03-01",
-StaticText_LastPostTime6__hrf:"",
-Panel_Info6__lef:"494px",
-Panel_Info6__top:"3px",
-Panel_Info6__wid:"487px",
-Panel_Info6__hei:"36px",
-Panel_Info6__vis:true,
-Panel_Info6__dis:false,
-Panel_Info6__col:"#FFFFFF",
-Panel_Thread6__lef:"1px",
-Panel_Thread6__top:"263px",
-Panel_Thread6__wid:"988px",
-Panel_Thread6__hei:"46px",
-Panel_Thread6__vis:true,
-Panel_Thread6__dis:false,
-Panel_Thread6__col:"#FFFFFF",
-StaticText_Subject7__lef:"1px",
-StaticText_Subject7__top:"1px",
-StaticText_Subject7__wid:"489px",
-StaticText_Subject7__hei:"34px",
-StaticText_Subject7__vis:true,
-StaticText_Subject7__dis:false,
-StaticText_Subject7__cap:"西风出品 : (全Delphi源码) 通用树形节点管理系统",
-StaticText_Subject7__hrf:"dfw_thread.dw?tid=947&&uid=2&&create_date=1582419188&&subject=%u897F%u98CE%u51FA%u54C1%20%3A%20%28%u5168Delphi%u6E90%u7801%29%20%u901A%u7528%u6811%u5F62%u8282%u70B9%u7BA1%u7406%u7CFB%u7EDF&&uper=%u78A7%u6811%u897F%u98CE",
-Panel37__lef:"3px",
-Panel37__top:"3px",
-Panel37__wid:"491px",
-Panel37__hei:"36px",
-Panel37__vis:true,
-Panel37__dis:false,
-Panel37__col:"#FFFFFF",
-StaticText_Uper7__lef:"1px",
-StaticText_Uper7__top:"1px",
-StaticText_Uper7__wid:"121px",
-StaticText_Uper7__hei:"34px",
-StaticText_Uper7__vis:true,
-StaticText_Uper7__dis:false,
-StaticText_Uper7__cap:"碧树西风",
-StaticText_Uper7__hrf:"dfw_user.dw?uid=2",
-StaticText_ReplyRead7__lef:"122px",
-StaticText_ReplyRead7__top:"1px",
-StaticText_ReplyRead7__wid:"121px",
-StaticText_ReplyRead7__hei:"34px",
-StaticText_ReplyRead7__vis:true,
-StaticText_ReplyRead7__dis:false,
-StaticText_ReplyRead7__cap:"2/280",
-StaticText_ReplyRead7__hrf:"",
-StaticText_LastPost7__lef:"243px",
-StaticText_LastPost7__top:"1px",
-StaticText_LastPost7__wid:"121px",
-StaticText_LastPost7__hei:"34px",
-StaticText_LastPost7__vis:true,
-StaticText_LastPost7__dis:false,
-StaticText_LastPost7__cap:"碧树西风",
-StaticText_LastPost7__hrf:"dfw_user.dw?uid=2",
-StaticText_LastPostTime7__lef:"364px",
-StaticText_LastPostTime7__top:"1px",
-StaticText_LastPostTime7__wid:"122px",
-StaticText_LastPostTime7__hei:"34px",
-StaticText_LastPostTime7__vis:true,
-StaticText_LastPostTime7__dis:false,
-StaticText_LastPostTime7__cap:"2020-02-23",
-StaticText_LastPostTime7__hrf:"",
-Panel_Info7__lef:"494px",
-Panel_Info7__top:"3px",
-Panel_Info7__wid:"487px",
-Panel_Info7__hei:"36px",
-Panel_Info7__vis:true,
-Panel_Info7__dis:false,
-Panel_Info7__col:"#FFFFFF",
-Panel_Thread7__lef:"1px",
-Panel_Thread7__top:"309px",
-Panel_Thread7__wid:"988px",
-Panel_Thread7__hei:"46px",
-Panel_Thread7__vis:true,
-Panel_Thread7__dis:false,
-Panel_Thread7__col:"#FFFFFF",
-StaticText_Subject8__lef:"1px",
-StaticText_Subject8__top:"1px",
-StaticText_Subject8__wid:"489px",
-StaticText_Subject8__hei:"34px",
-StaticText_Subject8__vis:true,
-StaticText_Subject8__dis:false,
-StaticText_Subject8__cap:"西风出品 : (全DELPHI源码) AutoCode-Python 根据流程图生成Python代码, 并运行",
-StaticText_Subject8__hrf:"dfw_thread.dw?tid=942&&uid=2&&create_date=1581407651&&subject=%u897F%u98CE%u51FA%u54C1%20%3A%20%28%u5168DELPHI%u6E90%u7801%29%20AutoCode%2DPython%20%u6839%u636E%u6D41%u7A0B%u56FE%u751F%u6210Python%u4EE3%u7801%2C%20%u5E76%u8FD0%u884C&&uper=%u78A7%u6811%u897F%u98CE",
-Panel38__lef:"3px",
-Panel38__top:"3px",
-Panel38__wid:"491px",
-Panel38__hei:"36px",
-Panel38__vis:true,
-Panel38__dis:false,
-Panel38__col:"#FFFFFF",
-StaticText_Uper8__lef:"1px",
-StaticText_Uper8__top:"1px",
-StaticText_Uper8__wid:"121px",
-StaticText_Uper8__hei:"34px",
-StaticText_Uper8__vis:true,
-StaticText_Uper8__dis:false,
-StaticText_Uper8__cap:"碧树西风",
-StaticText_Uper8__hrf:"dfw_user.dw?uid=2",
-StaticText_ReplyRead8__lef:"122px",
-StaticText_ReplyRead8__top:"1px",
-StaticText_ReplyRead8__wid:"121px",
-StaticText_ReplyRead8__hei:"34px",
-StaticText_ReplyRead8__vis:true,
-StaticText_ReplyRead8__dis:false,
-StaticText_ReplyRead8__cap:"4/329",
-StaticText_ReplyRead8__hrf:"",
-StaticText_LastPost8__lef:"243px",
-StaticText_LastPost8__top:"1px",
-StaticText_LastPost8__wid:"121px",
-StaticText_LastPost8__hei:"34px",
-StaticText_LastPost8__vis:true,
-StaticText_LastPost8__dis:false,
-StaticText_LastPost8__cap:"fireboxsoft",
-StaticText_LastPost8__hrf:"dfw_user.dw?uid=10436",
-StaticText_LastPostTime8__lef:"364px",
-StaticText_LastPostTime8__top:"1px",
-StaticText_LastPostTime8__wid:"122px",
-StaticText_LastPostTime8__hei:"34px",
-StaticText_LastPostTime8__vis:true,
-StaticText_LastPostTime8__dis:false,
-StaticText_LastPostTime8__cap:"2020-02-21",
-StaticText_LastPostTime8__hrf:"",
-Panel_Info8__lef:"494px",
-Panel_Info8__top:"3px",
-Panel_Info8__wid:"487px",
-Panel_Info8__hei:"36px",
-Panel_Info8__vis:true,
-Panel_Info8__dis:false,
-Panel_Info8__col:"#FFFFFF",
-Panel_Thread8__lef:"1px",
-Panel_Thread8__top:"355px",
-Panel_Thread8__wid:"988px",
-Panel_Thread8__hei:"46px",
-Panel_Thread8__vis:true,
-Panel_Thread8__dis:false,
-Panel_Thread8__col:"#FFFFFF",
-StaticText_Subject9__lef:"1px",
-StaticText_Subject9__top:"1px",
-StaticText_Subject9__wid:"489px",
-StaticText_Subject9__hei:"34px",
-StaticText_Subject9__vis:true,
-StaticText_Subject9__dis:false,
-StaticText_Subject9__cap:"谁有 10.2.3，求一个",
-StaticText_Subject9__hrf:"dfw_thread.dw?tid=46&&uid=10221&&create_date=1528454022&&subject=%u8C01%u6709%2010%2E2%2E3%uFF0C%u6C42%u4E00%u4E2A&&uper=%u6D6A%u91CC%u5C0F%u767D%u9F99",
-Panel39__lef:"3px",
-Panel39__top:"3px",
-Panel39__wid:"491px",
-Panel39__hei:"36px",
-Panel39__vis:true,
-Panel39__dis:false,
-Panel39__col:"#FFFFFF",
-StaticText_Uper9__lef:"1px",
-StaticText_Uper9__top:"1px",
-StaticText_Uper9__wid:"121px",
-StaticText_Uper9__hei:"34px",
-StaticText_Uper9__vis:true,
-StaticText_Uper9__dis:false,
-StaticText_Uper9__cap:"浪里小白龙",
-StaticText_Uper9__hrf:"dfw_user.dw?uid=10221",
-StaticText_ReplyRead9__lef:"122px",
-StaticText_ReplyRead9__top:"1px",
-StaticText_ReplyRead9__wid:"121px",
-StaticText_ReplyRead9__hei:"34px",
-StaticText_ReplyRead9__vis:true,
-StaticText_ReplyRead9__dis:false,
-StaticText_ReplyRead9__cap:"9/2531",
-StaticText_ReplyRead9__hrf:"",
-StaticText_LastPost9__lef:"243px",
-StaticText_LastPost9__top:"1px",
-StaticText_LastPost9__wid:"121px",
-StaticText_LastPost9__hei:"34px",
-StaticText_LastPost9__vis:true,
-StaticText_LastPost9__dis:false,
-StaticText_LastPost9__cap:"sail_world",
-StaticText_LastPost9__hrf:"dfw_user.dw?uid=10939",
-StaticText_LastPostTime9__lef:"364px",
-StaticText_LastPostTime9__top:"1px",
-StaticText_LastPostTime9__wid:"122px",
-StaticText_LastPostTime9__hei:"34px",
-StaticText_LastPostTime9__vis:true,
-StaticText_LastPostTime9__dis:false,
-StaticText_LastPostTime9__cap:"2020-02-06",
-StaticText_LastPostTime9__hrf:"",
-Panel_Info9__lef:"494px",
-Panel_Info9__top:"3px",
-Panel_Info9__wid:"487px",
-Panel_Info9__hei:"36px",
-Panel_Info9__vis:true,
-Panel_Info9__dis:false,
-Panel_Info9__col:"#FFFFFF",
-Panel_Thread9__lef:"1px",
-Panel_Thread9__top:"401px",
-Panel_Thread9__wid:"988px",
-Panel_Thread9__hei:"46px",
-Panel_Thread9__vis:true,
-Panel_Thread9__dis:false,
-Panel_Thread9__col:"#FFFFFF",
-StaticText_Subject10__lef:"1px",
-StaticText_Subject10__top:"1px",
-StaticText_Subject10__wid:"489px",
-StaticText_Subject10__hei:"34px",
-StaticText_Subject10__vis:true,
-StaticText_Subject10__dis:false,
-StaticText_Subject10__cap:"已经钻DELPHI很深了，当然现在DELPHI是过了最辉煌的时代。但为什么要继续下去，而不转向其它的?这是不是死脑筋?",
-StaticText_Subject10__hrf:"dfw_thread.dw?tid=940&&uid=2&&create_date=1578669866&&subject=%u5DF2%u7ECF%u94BBDELPHI%u5F88%u6DF1%u4E86%uFF0C%u5F53%u7136%u73B0%u5728DELPHI%u662F%u8FC7%u4E86%u6700%u8F89%u714C%u7684%u65F6%u4EE3%u3002%u4F46%u4E3A%u4EC0%u4E48%u8981%u7EE7%u7EED%u4E0B%u53BB%uFF0C%u800C%u4E0D%u8F6C%u5411%u5176%u5B83%u7684%3F%u8FD9%u662F%u4E0D%u662F%u6B7B%u8111%u7B4B%3F&&uper=%u78A7%u6811%u897F%u98CE",
-Panel310__lef:"3px",
-Panel310__top:"3px",
-Panel310__wid:"491px",
-Panel310__hei:"36px",
-Panel310__vis:true,
-Panel310__dis:false,
-Panel310__col:"#FFFFFF",
-StaticText_Uper10__lef:"1px",
-StaticText_Uper10__top:"1px",
-StaticText_Uper10__wid:"121px",
-StaticText_Uper10__hei:"34px",
-StaticText_Uper10__vis:true,
-StaticText_Uper10__dis:false,
-StaticText_Uper10__cap:"碧树西风",
-StaticText_Uper10__hrf:"dfw_user.dw?uid=2",
-StaticText_ReplyRead10__lef:"122px",
-StaticText_ReplyRead10__top:"1px",
-StaticText_ReplyRead10__wid:"121px",
-StaticText_ReplyRead10__hei:"34px",
-StaticText_ReplyRead10__vis:true,
-StaticText_ReplyRead10__dis:false,
-StaticText_ReplyRead10__cap:"3/616",
-StaticText_ReplyRead10__hrf:"",
-StaticText_LastPost10__lef:"243px",
-StaticText_LastPost10__top:"1px",
-StaticText_LastPost10__wid:"121px",
-StaticText_LastPost10__hei:"34px",
-StaticText_LastPost10__vis:true,
-StaticText_LastPost10__dis:false,
-StaticText_LastPost10__cap:"860",
-StaticText_LastPost10__hrf:"dfw_user.dw?uid=10938",
-StaticText_LastPostTime10__lef:"364px",
-StaticText_LastPostTime10__top:"1px",
-StaticText_LastPostTime10__wid:"122px",
-StaticText_LastPostTime10__hei:"34px",
-StaticText_LastPostTime10__vis:true,
-StaticText_LastPostTime10__dis:false,
-StaticText_LastPostTime10__cap:"2020-02-04",
-StaticText_LastPostTime10__hrf:"",
-Panel_Info10__lef:"494px",
-Panel_Info10__top:"3px",
-Panel_Info10__wid:"487px",
-Panel_Info10__hei:"36px",
-Panel_Info10__vis:true,
-Panel_Info10__dis:false,
-Panel_Info10__col:"#FFFFFF",
-Panel_Thread10__lef:"1px",
-Panel_Thread10__top:"447px",
-Panel_Thread10__wid:"988px",
-Panel_Thread10__hei:"46px",
-Panel_Thread10__vis:true,
-Panel_Thread10__dis:false,
-Panel_Thread10__col:"#FFFFFF",
-StaticText_Subject11__lef:"1px",
-StaticText_Subject11__top:"1px",
-StaticText_Subject11__wid:"489px",
-StaticText_Subject11__hei:"34px",
-StaticText_Subject11__vis:true,
-StaticText_Subject11__dis:false,
-StaticText_Subject11__cap:"重建了",
-StaticText_Subject11__hrf:"dfw_thread.dw?tid=941&&uid=10936&&create_date=1579240040&&subject=%u91CD%u5EFA%u4E86&&uper=xinghcn",
-Panel311__lef:"3px",
-Panel311__top:"3px",
-Panel311__wid:"491px",
-Panel311__hei:"36px",
-Panel311__vis:true,
-Panel311__dis:false,
-Panel311__col:"#FFFFFF",
-StaticText_Uper11__lef:"1px",
-StaticText_Uper11__top:"1px",
-StaticText_Uper11__wid:"121px",
-StaticText_Uper11__hei:"34px",
-StaticText_Uper11__vis:true,
-StaticText_Uper11__dis:false,
-StaticText_Uper11__cap:"xinghcn",
-StaticText_Uper11__hrf:"dfw_user.dw?uid=10936",
-StaticText_ReplyRead11__lef:"122px",
-StaticText_ReplyRead11__top:"1px",
-StaticText_ReplyRead11__wid:"121px",
-StaticText_ReplyRead11__hei:"34px",
-StaticText_ReplyRead11__vis:true,
-StaticText_ReplyRead11__dis:false,
-StaticText_ReplyRead11__cap:"0/244",
-StaticText_ReplyRead11__hrf:"",
-StaticText_LastPost11__lef:"243px",
-StaticText_LastPost11__top:"1px",
-StaticText_LastPost11__wid:"121px",
-StaticText_LastPost11__hei:"34px",
-StaticText_LastPost11__vis:true,
-StaticText_LastPost11__dis:false,
-StaticText_LastPost11__cap:"860",
-StaticText_LastPost11__hrf:"dfw_user.dw?uid=10938",
-StaticText_LastPostTime11__lef:"364px",
-StaticText_LastPostTime11__top:"1px",
-StaticText_LastPostTime11__wid:"122px",
-StaticText_LastPostTime11__hei:"34px",
-StaticText_LastPostTime11__vis:true,
-StaticText_LastPostTime11__dis:false,
-StaticText_LastPostTime11__cap:"2020-02-03",
-StaticText_LastPostTime11__hrf:"",
-Panel_Info11__lef:"494px",
-Panel_Info11__top:"3px",
-Panel_Info11__wid:"487px",
-Panel_Info11__hei:"36px",
-Panel_Info11__vis:true,
-Panel_Info11__dis:false,
-Panel_Info11__col:"#FFFFFF",
-Panel_Thread11__lef:"1px",
-Panel_Thread11__top:"493px",
-Panel_Thread11__wid:"988px",
-Panel_Thread11__hei:"46px",
-Panel_Thread11__vis:true,
-Panel_Thread11__dis:false,
-Panel_Thread11__col:"#FFFFFF",
-StaticText_Subject12__lef:"1px",
-StaticText_Subject12__top:"1px",
-StaticText_Subject12__wid:"489px",
-StaticText_Subject12__hei:"34px",
-StaticText_Subject12__vis:true,
-StaticText_Subject12__dis:false,
-StaticText_Subject12__cap:"西风出品 : WebXone 综合演示案例",
-StaticText_Subject12__hrf:"dfw_thread.dw?tid=934&&uid=2&&create_date=1574071020&&subject=%u897F%u98CE%u51FA%u54C1%20%3A%20WebXone%20%u7EFC%u5408%u6F14%u793A%u6848%u4F8B&&uper=%u78A7%u6811%u897F%u98CE",
-Panel312__lef:"3px",
-Panel312__top:"3px",
-Panel312__wid:"491px",
-Panel312__hei:"36px",
-Panel312__vis:true,
-Panel312__dis:false,
-Panel312__col:"#FFFFFF",
-StaticText_Uper12__lef:"1px",
-StaticText_Uper12__top:"1px",
-StaticText_Uper12__wid:"121px",
-StaticText_Uper12__hei:"34px",
-StaticText_Uper12__vis:true,
-StaticText_Uper12__dis:false,
-StaticText_Uper12__cap:"碧树西风",
-StaticText_Uper12__hrf:"dfw_user.dw?uid=2",
-StaticText_ReplyRead12__lef:"122px",
-StaticText_ReplyRead12__top:"1px",
-StaticText_ReplyRead12__wid:"121px",
-StaticText_ReplyRead12__hei:"34px",
-StaticText_ReplyRead12__vis:true,
-StaticText_ReplyRead12__dis:false,
-StaticText_ReplyRead12__cap:"1/718",
-StaticText_ReplyRead12__hrf:"",
-StaticText_LastPost12__lef:"243px",
-StaticText_LastPost12__top:"1px",
-StaticText_LastPost12__wid:"121px",
-StaticText_LastPost12__hei:"34px",
-StaticText_LastPost12__vis:true,
-StaticText_LastPost12__dis:false,
-StaticText_LastPost12__cap:"ty",
-StaticText_LastPost12__hrf:"dfw_user.dw?uid=10937",
-StaticText_LastPostTime12__lef:"364px",
-StaticText_LastPostTime12__top:"1px",
-StaticText_LastPostTime12__wid:"122px",
-StaticText_LastPostTime12__hei:"34px",
-StaticText_LastPostTime12__vis:true,
-StaticText_LastPostTime12__dis:false,
-StaticText_LastPostTime12__cap:"2020-01-18",
-StaticText_LastPostTime12__hrf:"",
-Panel_Info12__lef:"494px",
-Panel_Info12__top:"3px",
-Panel_Info12__wid:"487px",
-Panel_Info12__hei:"36px",
-Panel_Info12__vis:true,
-Panel_Info12__dis:false,
-Panel_Info12__col:"#FFFFFF",
-Panel_Thread12__lef:"1px",
-Panel_Thread12__top:"539px",
-Panel_Thread12__wid:"988px",
-Panel_Thread12__hei:"46px",
-Panel_Thread12__vis:true,
-Panel_Thread12__dis:false,
-Panel_Thread12__col:"#FFFFFF",
-StaticText_Subject13__lef:"1px",
-StaticText_Subject13__top:"1px",
-StaticText_Subject13__wid:"489px",
-StaticText_Subject13__hei:"34px",
-StaticText_Subject13__vis:true,
-StaticText_Subject13__dis:false,
-StaticText_Subject13__cap:"做一个通用化的显示系统! 可以用来做GIS, 游戏和仪表仿真! 有兴趣的进",
-StaticText_Subject13__hrf:"dfw_thread.dw?tid=936&&uid=2&&create_date=1574826017&&subject=%u505A%u4E00%u4E2A%u901A%u7528%u5316%u7684%u663E%u793A%u7CFB%u7EDF%21%20%u53EF%u4EE5%u7528%u6765%u505AGIS%2C%20%u6E38%u620F%u548C%u4EEA%u8868%u4EFF%u771F%21%20%u6709%u5174%u8DA3%u7684%u8FDB&&uper=%u78A7%u6811%u897F%u98CE",
-Panel313__lef:"3px",
-Panel313__top:"3px",
-Panel313__wid:"491px",
-Panel313__hei:"36px",
-Panel313__vis:true,
-Panel313__dis:false,
-Panel313__col:"#FFFFFF",
-StaticText_Uper13__lef:"1px",
-StaticText_Uper13__top:"1px",
-StaticText_Uper13__wid:"121px",
-StaticText_Uper13__hei:"34px",
-StaticText_Uper13__vis:true,
-StaticText_Uper13__dis:false,
-StaticText_Uper13__cap:"碧树西风",
-StaticText_Uper13__hrf:"dfw_user.dw?uid=2",
-StaticText_ReplyRead13__lef:"122px",
-StaticText_ReplyRead13__top:"1px",
-StaticText_ReplyRead13__wid:"121px",
-StaticText_ReplyRead13__hei:"34px",
-StaticText_ReplyRead13__vis:true,
-StaticText_ReplyRead13__dis:false,
-StaticText_ReplyRead13__cap:"2/525",
-StaticText_ReplyRead13__hrf:"",
-StaticText_LastPost13__lef:"243px",
-StaticText_LastPost13__top:"1px",
-StaticText_LastPost13__wid:"121px",
-StaticText_LastPost13__hei:"34px",
-StaticText_LastPost13__vis:true,
-StaticText_LastPost13__dis:false,
-StaticText_LastPost13__cap:"碧树西风",
-StaticText_LastPost13__hrf:"dfw_user.dw?uid=2",
-StaticText_LastPostTime13__lef:"364px",
-StaticText_LastPostTime13__top:"1px",
-StaticText_LastPostTime13__wid:"122px",
-StaticText_LastPostTime13__hei:"34px",
-StaticText_LastPostTime13__vis:true,
-StaticText_LastPostTime13__dis:false,
-StaticText_LastPostTime13__cap:"2019-11-30",
-StaticText_LastPostTime13__hrf:"",
-Panel_Info13__lef:"494px",
-Panel_Info13__top:"3px",
-Panel_Info13__wid:"487px",
-Panel_Info13__hei:"36px",
-Panel_Info13__vis:true,
-Panel_Info13__dis:false,
-Panel_Info13__col:"#FFFFFF",
-Panel_Thread13__lef:"1px",
-Panel_Thread13__top:"585px",
-Panel_Thread13__wid:"988px",
-Panel_Thread13__hei:"46px",
-Panel_Thread13__vis:true,
-Panel_Thread13__dis:false,
-Panel_Thread13__col:"#FFFFFF",
-StaticText_Subject14__lef:"1px",
-StaticText_Subject14__top:"1px",
-StaticText_Subject14__wid:"489px",
-StaticText_Subject14__hei:"34px",
-StaticText_Subject14__vis:true,
-StaticText_Subject14__dis:false,
-StaticText_Subject14__cap:"InIOCP小旋风服务套件（开源，正式版：2.6.52.1328）",
-StaticText_Subject14__hrf:"dfw_thread.dw?tid=932&&uid=59&&create_date=1573789254&&subject=InIOCP%u5C0F%u65CB%u98CE%u670D%u52A1%u5957%u4EF6%uFF08%u5F00%u6E90%uFF0C%u6B63%u5F0F%u7248%uFF1A2%2E6%2E52%2E1328%uFF09&&uper=%u9AD8%u51C9%u65B0%u519C",
-Panel314__lef:"3px",
-Panel314__top:"3px",
-Panel314__wid:"491px",
-Panel314__hei:"36px",
-Panel314__vis:true,
-Panel314__dis:false,
-Panel314__col:"#FFFFFF",
-StaticText_Uper14__lef:"1px",
-StaticText_Uper14__top:"1px",
-StaticText_Uper14__wid:"121px",
-StaticText_Uper14__hei:"34px",
-StaticText_Uper14__vis:true,
-StaticText_Uper14__dis:false,
-StaticText_Uper14__cap:"高凉新农",
-StaticText_Uper14__hrf:"dfw_user.dw?uid=59",
-StaticText_ReplyRead14__lef:"122px",
-StaticText_ReplyRead14__top:"1px",
-StaticText_ReplyRead14__wid:"121px",
-StaticText_ReplyRead14__hei:"34px",
-StaticText_ReplyRead14__vis:true,
-StaticText_ReplyRead14__dis:false,
-StaticText_ReplyRead14__cap:"2/575",
-StaticText_ReplyRead14__hrf:"",
-StaticText_LastPost14__lef:"243px",
-StaticText_LastPost14__top:"1px",
-StaticText_LastPost14__wid:"121px",
-StaticText_LastPost14__hei:"34px",
-StaticText_LastPost14__vis:true,
-StaticText_LastPost14__dis:false,
-StaticText_LastPost14__cap:"高凉新农",
-StaticText_LastPost14__hrf:"dfw_user.dw?uid=59",
-StaticText_LastPostTime14__lef:"364px",
-StaticText_LastPostTime14__top:"1px",
-StaticText_LastPostTime14__wid:"122px",
-StaticText_LastPostTime14__hei:"34px",
-StaticText_LastPostTime14__vis:true,
-StaticText_LastPostTime14__dis:false,
-StaticText_LastPostTime14__cap:"2019-11-18",
-StaticText_LastPostTime14__hrf:"",
-Panel_Info14__lef:"494px",
-Panel_Info14__top:"3px",
-Panel_Info14__wid:"487px",
-Panel_Info14__hei:"36px",
-Panel_Info14__vis:true,
-Panel_Info14__dis:false,
-Panel_Info14__col:"#FFFFFF",
-Panel_Thread14__lef:"1px",
-Panel_Thread14__top:"631px",
-Panel_Thread14__wid:"988px",
-Panel_Thread14__hei:"46px",
-Panel_Thread14__vis:true,
-Panel_Thread14__dis:false,
-Panel_Thread14__col:"#FFFFFF",
-StaticText_Subject15__lef:"1px",
-StaticText_Subject15__top:"1px",
-StaticText_Subject15__wid:"489px",
-StaticText_Subject15__hei:"34px",
-StaticText_Subject15__vis:true,
-StaticText_Subject15__dis:false,
-StaticText_Subject15__cap:"求助! 请问Delphi写的程序如何指定在某一显示器全屏?",
-StaticText_Subject15__hrf:"dfw_thread.dw?tid=16&&uid=2&&create_date=1528014648&&subject=%u6C42%u52A9%21%20%u8BF7%u95EEDelphi%u5199%u7684%u7A0B%u5E8F%u5982%u4F55%u6307%u5B9A%u5728%u67D0%u4E00%u663E%u793A%u5668%u5168%u5C4F%3F&&uper=%u78A7%u6811%u897F%u98CE",
-Panel315__lef:"3px",
-Panel315__top:"3px",
-Panel315__wid:"491px",
-Panel315__hei:"36px",
-Panel315__vis:true,
-Panel315__dis:false,
-Panel315__col:"#FFFFFF",
-StaticText_Uper15__lef:"1px",
-StaticText_Uper15__top:"1px",
-StaticText_Uper15__wid:"121px",
-StaticText_Uper15__hei:"34px",
-StaticText_Uper15__vis:true,
-StaticText_Uper15__dis:false,
-StaticText_Uper15__cap:"碧树西风",
-StaticText_Uper15__hrf:"dfw_user.dw?uid=2",
-StaticText_ReplyRead15__lef:"122px",
-StaticText_ReplyRead15__top:"1px",
-StaticText_ReplyRead15__wid:"121px",
-StaticText_ReplyRead15__hei:"34px",
-StaticText_ReplyRead15__vis:true,
-StaticText_ReplyRead15__dis:false,
-StaticText_ReplyRead15__cap:"8/2760",
-StaticText_ReplyRead15__hrf:"",
-StaticText_LastPost15__lef:"243px",
-StaticText_LastPost15__top:"1px",
-StaticText_LastPost15__wid:"121px",
-StaticText_LastPost15__hei:"34px",
-StaticText_LastPost15__vis:true,
-StaticText_LastPost15__dis:false,
-StaticText_LastPost15__cap:"Max",
-StaticText_LastPost15__hrf:"dfw_user.dw?uid=10911",
-StaticText_LastPostTime15__lef:"364px",
-StaticText_LastPostTime15__top:"1px",
-StaticText_LastPostTime15__wid:"122px",
-StaticText_LastPostTime15__hei:"34px",
-StaticText_LastPostTime15__vis:true,
-StaticText_LastPostTime15__dis:false,
-StaticText_LastPostTime15__cap:"2019-11-14",
-StaticText_LastPostTime15__hrf:"",
-Panel_Info15__lef:"494px",
-Panel_Info15__top:"3px",
-Panel_Info15__wid:"487px",
-Panel_Info15__hei:"36px",
-Panel_Info15__vis:true,
-Panel_Info15__dis:false,
-Panel_Info15__col:"#FFFFFF",
-Panel_Thread15__lef:"1px",
-Panel_Thread15__top:"677px",
-Panel_Thread15__wid:"988px",
-Panel_Thread15__hei:"46px",
-Panel_Thread15__vis:true,
-Panel_Thread15__dis:false,
-Panel_Thread15__col:"#FFFFFF",
-StaticText_Subject16__lef:"1px",
-StaticText_Subject16__top:"1px",
-StaticText_Subject16__wid:"489px",
-StaticText_Subject16__hei:"34px",
-StaticText_Subject16__vis:true,
-StaticText_Subject16__dis:false,
-StaticText_Subject16__cap:"WebXone : 将C/S程序转换到浏览器的快速开发平台!",
-StaticText_Subject16__hrf:"dfw_thread.dw?tid=931&&uid=2&&create_date=1572920529&&subject=WebXone%20%3A%20%u5C06C%2FS%u7A0B%u5E8F%u8F6C%u6362%u5230%u6D4F%u89C8%u5668%u7684%u5FEB%u901F%u5F00%u53D1%u5E73%u53F0%21&&uper=%u78A7%u6811%u897F%u98CE",
-Panel316__lef:"3px",
-Panel316__top:"3px",
-Panel316__wid:"491px",
-Panel316__hei:"36px",
-Panel316__vis:true,
-Panel316__dis:false,
-Panel316__col:"#FFFFFF",
-StaticText_Uper16__lef:"1px",
-StaticText_Uper16__top:"1px",
-StaticText_Uper16__wid:"121px",
-StaticText_Uper16__hei:"34px",
-StaticText_Uper16__vis:true,
-StaticText_Uper16__dis:false,
-StaticText_Uper16__cap:"碧树西风",
-StaticText_Uper16__hrf:"dfw_user.dw?uid=2",
-StaticText_ReplyRead16__lef:"122px",
-StaticText_ReplyRead16__top:"1px",
-StaticText_ReplyRead16__wid:"121px",
-StaticText_ReplyRead16__hei:"34px",
-StaticText_ReplyRead16__vis:true,
-StaticText_ReplyRead16__dis:false,
-StaticText_ReplyRead16__cap:"0/611",
-StaticText_ReplyRead16__hrf:"",
-StaticText_LastPost16__lef:"243px",
-StaticText_LastPost16__top:"1px",
-StaticText_LastPost16__wid:"121px",
-StaticText_LastPost16__hei:"34px",
-StaticText_LastPost16__vis:true,
-StaticText_LastPost16__dis:false,
-StaticText_LastPost16__cap:"",
-StaticText_LastPost16__hrf:"dfw_user.dw?uid=0",
-StaticText_LastPostTime16__lef:"364px",
-StaticText_LastPostTime16__top:"1px",
-StaticText_LastPostTime16__wid:"122px",
-StaticText_LastPostTime16__hei:"34px",
-StaticText_LastPostTime16__vis:true,
-StaticText_LastPostTime16__dis:false,
-StaticText_LastPostTime16__cap:"2019-11-05",
-StaticText_LastPostTime16__hrf:"",
-Panel_Info16__lef:"494px",
-Panel_Info16__top:"3px",
-Panel_Info16__wid:"487px",
-Panel_Info16__hei:"36px",
-Panel_Info16__vis:true,
-Panel_Info16__dis:false,
-Panel_Info16__col:"#FFFFFF",
-Panel_Thread16__lef:"1px",
-Panel_Thread16__top:"723px",
-Panel_Thread16__wid:"988px",
-Panel_Thread16__hei:"46px",
-Panel_Thread16__vis:true,
-Panel_Thread16__dis:false,
-Panel_Thread16__col:"#FFFFFF",
-StaticText_Subject17__lef:"1px",
-StaticText_Subject17__top:"1px",
-StaticText_Subject17__wid:"489px",
-StaticText_Subject17__hei:"34px",
-StaticText_Subject17__vis:true,
-StaticText_Subject17__dis:false,
-StaticText_Subject17__cap:"用 firefox 打开网站，提示为：被举报提供流氓软件",
-StaticText_Subject17__hrf:"dfw_thread.dw?tid=930&&uid=10236&&create_date=1570868646&&subject=%u7528%20firefox%20%u6253%u5F00%u7F51%u7AD9%uFF0C%u63D0%u793A%u4E3A%uFF1A%u88AB%u4E3E%u62A5%u63D0%u4F9B%u6D41%u6C13%u8F6F%u4EF6&&uper=bjabc",
-Panel317__lef:"3px",
-Panel317__top:"3px",
-Panel317__wid:"491px",
-Panel317__hei:"36px",
-Panel317__vis:true,
-Panel317__dis:false,
-Panel317__col:"#FFFFFF",
-StaticText_Uper17__lef:"1px",
-StaticText_Uper17__top:"1px",
-StaticText_Uper17__wid:"121px",
-StaticText_Uper17__hei:"34px",
-StaticText_Uper17__vis:true,
-StaticText_Uper17__dis:false,
-StaticText_Uper17__cap:"bjabc",
-StaticText_Uper17__hrf:"dfw_user.dw?uid=10236",
-StaticText_ReplyRead17__lef:"122px",
-StaticText_ReplyRead17__top:"1px",
-StaticText_ReplyRead17__wid:"121px",
-StaticText_ReplyRead17__hei:"34px",
-StaticText_ReplyRead17__vis:true,
-StaticText_ReplyRead17__dis:false,
-StaticText_ReplyRead17__cap:"4/515",
-StaticText_ReplyRead17__hrf:"",
-StaticText_LastPost17__lef:"243px",
-StaticText_LastPost17__top:"1px",
-StaticText_LastPost17__wid:"121px",
-StaticText_LastPost17__hei:"34px",
-StaticText_LastPost17__vis:true,
-StaticText_LastPost17__dis:false,
-StaticText_LastPost17__cap:"碧树西风",
-StaticText_LastPost17__hrf:"dfw_user.dw?uid=2",
-StaticText_LastPostTime17__lef:"364px",
-StaticText_LastPostTime17__top:"1px",
-StaticText_LastPostTime17__wid:"122px",
-StaticText_LastPostTime17__hei:"34px",
-StaticText_LastPostTime17__vis:true,
-StaticText_LastPostTime17__dis:false,
-StaticText_LastPostTime17__cap:"2019-10-15",
-StaticText_LastPostTime17__hrf:"",
-Panel_Info17__lef:"494px",
-Panel_Info17__top:"3px",
-Panel_Info17__wid:"487px",
-Panel_Info17__hei:"36px",
-Panel_Info17__vis:true,
-Panel_Info17__dis:false,
-Panel_Info17__col:"#FFFFFF",
-Panel_Thread17__lef:"1px",
-Panel_Thread17__top:"769px",
-Panel_Thread17__wid:"988px",
-Panel_Thread17__hei:"46px",
-Panel_Thread17__vis:true,
-Panel_Thread17__dis:false,
-Panel_Thread17__col:"#FFFFFF",
-StaticText_Subject18__lef:"1px",
-StaticText_Subject18__top:"1px",
-StaticText_Subject18__wid:"489px",
-StaticText_Subject18__hei:"34px",
-StaticText_Subject18__vis:true,
-StaticText_Subject18__dis:false,
-StaticText_Subject18__cap:"关于自定义Style后找不到的问题解决办法. 发生过两次了, 记录下",
-StaticText_Subject18__hrf:"dfw_thread.dw?tid=929&&uid=2&&create_date=1570528795&&subject=%u5173%u4E8E%u81EA%u5B9A%u4E49Style%u540E%u627E%u4E0D%u5230%u7684%u95EE%u9898%u89E3%u51B3%u529E%u6CD5%2E%20%u53D1%u751F%u8FC7%u4E24%u6B21%u4E86%2C%20%u8BB0%u5F55%u4E0B&&uper=%u78A7%u6811%u897F%u98CE",
-Panel318__lef:"3px",
-Panel318__top:"3px",
-Panel318__wid:"491px",
-Panel318__hei:"36px",
-Panel318__vis:true,
-Panel318__dis:false,
-Panel318__col:"#FFFFFF",
-StaticText_Uper18__lef:"1px",
-StaticText_Uper18__top:"1px",
-StaticText_Uper18__wid:"121px",
-StaticText_Uper18__hei:"34px",
-StaticText_Uper18__vis:true,
-StaticText_Uper18__dis:false,
-StaticText_Uper18__cap:"碧树西风",
-StaticText_Uper18__hrf:"dfw_user.dw?uid=2",
-StaticText_ReplyRead18__lef:"122px",
-StaticText_ReplyRead18__top:"1px",
-StaticText_ReplyRead18__wid:"121px",
-StaticText_ReplyRead18__hei:"34px",
-StaticText_ReplyRead18__vis:true,
-StaticText_ReplyRead18__dis:false,
-StaticText_ReplyRead18__cap:"0/486",
-StaticText_ReplyRead18__hrf:"",
-StaticText_LastPost18__lef:"243px",
-StaticText_LastPost18__top:"1px",
-StaticText_LastPost18__wid:"121px",
-StaticText_LastPost18__hei:"34px",
-StaticText_LastPost18__vis:true,
-StaticText_LastPost18__dis:false,
-StaticText_LastPost18__cap:"",
-StaticText_LastPost18__hrf:"dfw_user.dw?uid=0",
-StaticText_LastPostTime18__lef:"364px",
-StaticText_LastPostTime18__top:"1px",
-StaticText_LastPostTime18__wid:"122px",
-StaticText_LastPostTime18__hei:"34px",
-StaticText_LastPostTime18__vis:true,
-StaticText_LastPostTime18__dis:false,
-StaticText_LastPostTime18__cap:"2019-10-08",
-StaticText_LastPostTime18__hrf:"",
-Panel_Info18__lef:"494px",
-Panel_Info18__top:"3px",
-Panel_Info18__wid:"487px",
-Panel_Info18__hei:"36px",
-Panel_Info18__vis:true,
-Panel_Info18__dis:false,
-Panel_Info18__col:"#FFFFFF",
-Panel_Thread18__lef:"1px",
-Panel_Thread18__top:"815px",
-Panel_Thread18__wid:"988px",
-Panel_Thread18__hei:"46px",
-Panel_Thread18__vis:true,
-Panel_Thread18__dis:false,
-Panel_Thread18__col:"#FFFFFF",
-StaticText_Subject19__lef:"1px",
-StaticText_Subject19__top:"1px",
-StaticText_Subject19__wid:"489px",
-StaticText_Subject19__hei:"34px",
-StaticText_Subject19__vis:true,
-StaticText_Subject19__dis:false,
-StaticText_Subject19__cap:"delphi xe 提示没有定义DecimalSeparator等的解决方法",
-StaticText_Subject19__hrf:"dfw_thread.dw?tid=927&&uid=2&&create_date=1570334743&&subject=delphi%20xe%20%u63D0%u793A%u6CA1%u6709%u5B9A%u4E49DecimalSeparator%u7B49%u7684%u89E3%u51B3%u65B9%u6CD5&&uper=%u78A7%u6811%u897F%u98CE",
-Panel319__lef:"3px",
-Panel319__top:"3px",
-Panel319__wid:"491px",
-Panel319__hei:"36px",
-Panel319__vis:true,
-Panel319__dis:false,
-Panel319__col:"#FFFFFF",
-StaticText_Uper19__lef:"1px",
-StaticText_Uper19__top:"1px",
-StaticText_Uper19__wid:"121px",
-StaticText_Uper19__hei:"34px",
-StaticText_Uper19__vis:true,
-StaticText_Uper19__dis:false,
-StaticText_Uper19__cap:"碧树西风",
-StaticText_Uper19__hrf:"dfw_user.dw?uid=2",
-StaticText_ReplyRead19__lef:"122px",
-StaticText_ReplyRead19__top:"1px",
-StaticText_ReplyRead19__wid:"121px",
-StaticText_ReplyRead19__hei:"34px",
-StaticText_ReplyRead19__vis:true,
-StaticText_ReplyRead19__dis:false,
-StaticText_ReplyRead19__cap:"0/529",
-StaticText_ReplyRead19__hrf:"",
-StaticText_LastPost19__lef:"243px",
-StaticText_LastPost19__top:"1px",
-StaticText_LastPost19__wid:"121px",
-StaticText_LastPost19__hei:"34px",
-StaticText_LastPost19__vis:true,
-StaticText_LastPost19__dis:false,
-StaticText_LastPost19__cap:"",
-StaticText_LastPost19__hrf:"dfw_user.dw?uid=0",
-StaticText_LastPostTime19__lef:"364px",
-StaticText_LastPostTime19__top:"1px",
-StaticText_LastPostTime19__wid:"122px",
-StaticText_LastPostTime19__hei:"34px",
-StaticText_LastPostTime19__vis:true,
-StaticText_LastPostTime19__dis:false,
-StaticText_LastPostTime19__cap:"2019-10-06",
-StaticText_LastPostTime19__hrf:"",
-Panel_Info19__lef:"494px",
-Panel_Info19__top:"3px",
-Panel_Info19__wid:"487px",
-Panel_Info19__hei:"36px",
-Panel_Info19__vis:true,
-Panel_Info19__dis:false,
-Panel_Info19__col:"#FFFFFF",
-Panel_Thread19__lef:"1px",
-Panel_Thread19__top:"861px",
-Panel_Thread19__wid:"988px",
-Panel_Thread19__hei:"46px",
-Panel_Thread19__vis:true,
-Panel_Thread19__dis:false,
-Panel_Thread19__col:"#FFFFFF",
-StaticText_Subject20__lef:"1px",
-StaticText_Subject20__top:"1px",
-StaticText_Subject20__wid:"489px",
-StaticText_Subject20__hei:"34px",
-StaticText_Subject20__vis:true,
-StaticText_Subject20__dis:false,
-StaticText_Subject20__cap:"开始折腾人脸识别",
-StaticText_Subject20__hrf:"dfw_thread.dw?tid=926&&uid=2&&create_date=1569827629&&subject=%u5F00%u59CB%u6298%u817E%u4EBA%u8138%u8BC6%u522B&&uper=%u78A7%u6811%u897F%u98CE",
-Panel320__lef:"3px",
-Panel320__top:"3px",
-Panel320__wid:"491px",
-Panel320__hei:"36px",
-Panel320__vis:true,
-Panel320__dis:false,
-Panel320__col:"#FFFFFF",
-StaticText_Uper20__lef:"1px",
-StaticText_Uper20__top:"1px",
-StaticText_Uper20__wid:"121px",
-StaticText_Uper20__hei:"34px",
-StaticText_Uper20__vis:true,
-StaticText_Uper20__dis:false,
-StaticText_Uper20__cap:"碧树西风",
-StaticText_Uper20__hrf:"dfw_user.dw?uid=2",
-StaticText_ReplyRead20__lef:"122px",
-StaticText_ReplyRead20__top:"1px",
-StaticText_ReplyRead20__wid:"121px",
-StaticText_ReplyRead20__hei:"34px",
-StaticText_ReplyRead20__vis:true,
-StaticText_ReplyRead20__dis:false,
-StaticText_ReplyRead20__cap:"0/711",
-StaticText_ReplyRead20__hrf:"",
-StaticText_LastPost20__lef:"243px",
-StaticText_LastPost20__top:"1px",
-StaticText_LastPost20__wid:"121px",
-StaticText_LastPost20__hei:"34px",
-StaticText_LastPost20__vis:true,
-StaticText_LastPost20__dis:false,
-StaticText_LastPost20__cap:"",
-StaticText_LastPost20__hrf:"dfw_user.dw?uid=0",
-StaticText_LastPostTime20__lef:"364px",
-StaticText_LastPostTime20__top:"1px",
-StaticText_LastPostTime20__wid:"122px",
-StaticText_LastPostTime20__hei:"34px",
-StaticText_LastPostTime20__vis:true,
-StaticText_LastPostTime20__dis:false,
-StaticText_LastPostTime20__cap:"2019-09-30",
-StaticText_LastPostTime20__hrf:"",
-Panel_Info20__lef:"494px",
-Panel_Info20__top:"3px",
-Panel_Info20__wid:"487px",
-Panel_Info20__hei:"36px",
-Panel_Info20__vis:true,
-Panel_Info20__dis:false,
-Panel_Info20__col:"#FFFFFF",
-Panel_Thread20__lef:"1px",
-Panel_Thread20__top:"907px",
-Panel_Thread20__wid:"988px",
-Panel_Thread20__hei:"46px",
-Panel_Thread20__vis:true,
-Panel_Thread20__dis:false,
-Panel_Thread20__col:"#FFFFFF",
-Panel_10_Content__lef:"5px",
-Panel_10_Content__top:"85px",
-Panel_10_Content__wid:"990px",
-Panel_10_Content__hei:"994px",
-Panel_10_Content__vis:true,
-Panel_10_Content__dis:false,
-Panel_10_Content__col:"#FFFFFF",
-Panel_All__lef:"0px",
-Panel_All__top:"0px",
-Panel_All__wid:"1000px",
-Panel_All__hei:"1226px",
-Panel_All__vis:true,
-Panel_All__dis:false,
-Panel_All__col:"#FFFFFF",
-StaticText_Login__lef:"900px",
-StaticText_Login__top:"24px",
-StaticText_Login__wid:"90px",
-StaticText_Login__hei:"24px",
-StaticText_Login__vis:true,
-StaticText_Login__dis:false,
-StaticText_Login__cap:"登录",
-StaticText_Login__hrf:"dfw_login.dw",
-StaticText_Post__lef:"900px",
-StaticText_Post__top:"48px",
-StaticText_Post__wid:"90px",
-StaticText_Post__hei:"24px",
-StaticText_Post__vis:true,
-StaticText_Post__dis:false,
-StaticText_Post__cap:"提问",
-StaticText_Post__hrf:"dfw_post.dw",
+Button1__cap:"Button1",
+DateTimePicker1__lef:"37px",
+DateTimePicker1__top:"45px",
+DateTimePicker1__wid:"186px",
+DateTimePicker1__hei:"28px",
+DateTimePicker1__vis:true,
+DateTimePicker1__dis:false,
+DateTimePicker1__val:"2020-08-20",
+DateTimePicker2__lef:"247px",
+DateTimePicker2__top:"45px",
+DateTimePicker2__wid:"186px",
+DateTimePicker2__hei:"28px",
+DateTimePicker2__vis:true,
+DateTimePicker2__dis:false,
+DateTimePicker2__val:"15:39:12",
 					    input_query_visible:false,
 					    input_query_caption:"Input Query",
 					    input_query_inputname:"new",
@@ -1902,10 +85,10 @@ StaticText_Post__hrf:"dfw_post.dw",
                         },
                         false
                     );
-                    let DFW_1hearttimer = window.setInterval(function() {
+                    let Test_2hearttimer = window.setInterval(function() {
                         axios.get('{"mode":"heart","cid":[!clientid!]}')
                         .then(resp =>{me.procResp(resp.data)})
-                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(DFW_1hearttimer);});
+                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(Test_2hearttimer);});
                     }, 30000);
                 },
 				methods: {
