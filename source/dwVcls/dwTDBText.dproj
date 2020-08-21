@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{CFDF36CA-CA93-43A7-B07E-920F7F857762}</ProjectGuid>
+        <ProjectGuid>{652B4B4C-7D72-4EF3-839F-04C5F8677303}</ProjectGuid>
         <MainSource>dwTDBText.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>

@@ -168,7 +168,7 @@ begin
           joRes.Add('this.'+Name+'__vis='+dwIIF(Visible,'true;','false;'));
           joRes.Add('this.'+Name+'__dis='+dwIIF(Enabled,'false;','true;'));
           //
-          joRes.Add('this.'+Name+'__cap="'+dwProcessCaption(Caption)+'"');
+          joRes.Add('this.'+Name+'__cap="'+dwProcessCaption(Caption)+'";');
      end;
      //
      Result    := (joRes);

@@ -3,10 +3,11 @@ object Default: TDefault
   Top = 32
   BorderStyle = bsNone
   Caption = 'DeWeb : Delphi -Web'
-  ClientHeight = 720
-  ClientWidth = 600
+  ClientHeight = 600
+  ClientWidth = 800
   Color = clWhite
-  TransparentColorValue = clWhite
+  TransparentColor = True
+  TransparentColorValue = clBtnFace
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
   Font.Height = -15
@@ -319,19 +320,80 @@ object Default: TDefault
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 20
-  object Label_deweb: TLabel
-    Left = 100
-    Top = 25
-    Width = 400
-    Height = 42
-    Alignment = taCenter
-    AutoSize = False
-    Caption = 'Hello,DeWeb!'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = 3289650
-    Font.Height = -32
-    Font.Name = #24494#36719#38597#40657
-    Font.Style = [fsBold]
-    ParentFont = False
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 800
+    Height = 50
+    Align = alTop
+    BevelOuter = bvNone
+    Color = 6577236
+    ParentBackground = False
+    TabOrder = 0
+    ExplicitWidth = 600
+    object Label_deweb: TLabel
+      Left = 0
+      Top = 0
+      Width = 291
+      Height = 50
+      Align = alLeft
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'CRM'#23458#25143#20851#31995#31649#29702#31995#32479
+      Font.Charset = ANSI_CHARSET
+      Font.Color = 13158600
+      Font.Height = -24
+      Font.Name = #24494#36719#38597#40657
+      Font.Style = [fsBold, fsItalic]
+      ParentFont = False
+      Layout = tlCenter
+      ExplicitHeight = 41
+    end
+  end
+  object MainMenu1: TMainMenu
+    AutoHotkeys = maManual
+    OwnerDraw = True
+    Left = 50
+    Top = 195
+    object N1: TMenuItem
+      Caption = #31995#32479#25991#20214
+      ImageIndex = 2
+      object N3: TMenuItem
+        Caption = #25968#25454#32500#25252
+        ImageIndex = 3
+      end
+      object N4: TMenuItem
+        Caption = #36164#26009#24405#20837
+        ImageIndex = 4
+      end
+      object N5: TMenuItem
+        Caption = #30331#24405
+        ImageIndex = 56
+      end
+      object N6: TMenuItem
+        Caption = #35745#31639#26426
+        ImageIndex = 7
+        object N8: TMenuItem
+          Caption = #32463#27982#31649#29702
+          ImageIndex = 111
+        end
+        object N9: TMenuItem
+          Caption = #22269#38469#25919#27835
+          ImageIndex = 12
+        end
+      end
+      object N7: TMenuItem
+        Caption = #36864#20986
+        ImageIndex = 8
+      end
+    end
+    object N2: TMenuItem
+      Caption = #39033#30446#31649#29702
+      ImageIndex = 45
+    end
+    object N10: TMenuItem
+      Caption = #24110#21161
+      ImageIndex = 32
+    end
   end
 end

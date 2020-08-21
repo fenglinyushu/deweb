@@ -11,7 +11,7 @@ uses
 
      //
      Messages, SysUtils, Variants, Classes, Graphics,
-     Controls, Forms, Dialogs, ComCtrls, ExtCtrls,DBCtrls,
+     Controls, Forms, Dialogs, ComCtrls, ExtCtrls, DBCtrls,
      StdCtrls, Windows;
 
 function _GetFont(AFont:TFont):string;
@@ -95,17 +95,19 @@ begin
      joHint    := dwGetHintJson(TControl(ACtrl));
 
      with TDBText(ACtrl) do begin
-          sCode     := '<el-link'
-                    +' :underline="false"'
+          sCode     := '<div '
+                    +' v-html="'+Name+'__cap"'
                     +dwVisible(TControl(ACtrl))
                     +dwDisable(TControl(ACtrl))
-                    +dwGetHintValue(joHint,'type','type',' type="primary"')         
-                    +dwIIF(dwGetProp(TControl(ACtrl),'href')='','',' :href="'+Name+'__hrf"')
-                    +dwGetHintValue(joHint,'target','target','')
                     +dwLTWH(TControl(ACtrl))
-                    +dwIIF(ParentFont,'',_GetFont(Font))
-                    +_GetAlignment(TDBText(ACtrl))
-                    +'"' //style 封闭
+                    +_GetFont(Font)
+                    //style
+                    +_GetAlignment(TControl(ACtrl))
+                    //+dwIIF(Layout=tlCenter,'line-height:'+IntToStr(Height)+'px;','')
+                    +'"'
+                    //style 封闭
+
+                    +dwIIF(Assigned(OnClick),Format(_DWEVENT,['click',Name,'0','onclick','']),'')
                     +'>{{'+Name+'__cap}}';
           //添加到返回值数据
           joRes.Add(sCode);
@@ -122,7 +124,7 @@ begin
      //生成返回值数组
      joRes    := _Json('[]');
      //生成返回值数组
-     joRes.Add('</el-link>');
+     joRes.Add('</div>');
      //
      Result    := (joRes);
 end;
@@ -145,7 +147,6 @@ begin
           joRes.Add(Name+'__dis:'+dwIIF(Enabled,'false,','true,'));
           //
           joRes.Add(Name+'__cap:"'+dwProcessCaption(Caption)+'",');
-          joRes.Add(Name+'__hrf:"'+dwGetProp(TControl(ACtrl),'href')+'",');
      end;
      //
      Result    := (joRes);
@@ -168,7 +169,6 @@ begin
           joRes.Add('this.'+Name+'__dis='+dwIIF(Enabled,'false;','true;'));
           //
           joRes.Add('this.'+Name+'__cap="'+dwProcessCaption(Caption)+'";');
-          joRes.Add('this.'+Name+'__hrf="'+dwGetProp(TControl(ACtrl),'href')+'";');
      end;
      //
      Result    := (joRes);

@@ -357,7 +357,7 @@ object Demos: TDemos
     Top = 100
     Width = 1100
     Height = 1025
-    ActivePage = TabSheet2
+    ActivePage = TabSheet5
     BiDiMode = bdLeftToRight
     MultiLine = True
     ParentBiDiMode = False
@@ -829,7 +829,6 @@ object Demos: TDemos
         Width = 145
         Height = 28
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
-        ItemHeight = 20
         TabOrder = 4
         Text = 'ComboBox1'
         Items.Strings = (
@@ -844,7 +843,6 @@ object Demos: TDemos
         Width = 145
         Height = 28
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
-        ItemHeight = 20
         TabOrder = 5
         Text = 'ComboBox3'
         Items.Strings = (
@@ -859,7 +857,6 @@ object Demos: TDemos
         Width = 145
         Height = 28
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
-        ItemHeight = 20
         TabOrder = 6
         Text = 'ComboBox2'
         Items.Strings = (
@@ -874,7 +871,6 @@ object Demos: TDemos
         Width = 145
         Height = 28
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
-        ItemHeight = 20
         TabOrder = 7
         Text = 'Combo'#35199#39118
         Items.Strings = (
@@ -889,7 +885,6 @@ object Demos: TDemos
         Width = 145
         Height = 28
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
-        ItemHeight = 20
         TabOrder = 8
         Text = 'ComboBox4'
         Items.Strings = (
@@ -904,7 +899,6 @@ object Demos: TDemos
         Width = 145
         Height = 28
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
-        ItemHeight = 20
         TabOrder = 9
         Text = 'ComboBox6'
         OnChange = ComboBox6Change
@@ -1013,8 +1007,8 @@ object Demos: TDemos
         Top = 56
         Width = 186
         Height = 28
-        Date = 43975.398459560190000000
-        Time = 43975.398459560190000000
+        Date = 43975.000000000000000000
+        Time = 0.398459560186893200
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         TabOrder = 4
       end
@@ -1023,8 +1017,8 @@ object Demos: TDemos
         Top = 56
         Width = 186
         Height = 28
-        Date = 43975.398459560190000000
-        Time = 43975.398459560190000000
+        Date = 43975.000000000000000000
+        Time = 0.398459560186893200
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         Kind = dtkTime
         TabOrder = 5
@@ -1034,8 +1028,8 @@ object Demos: TDemos
         Top = 124
         Width = 186
         Height = 28
-        Date = 43975.398459560190000000
-        Time = 43975.398459560190000000
+        Date = 43975.000000000000000000
+        Time = 0.398459560186893200
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         TabOrder = 6
       end
@@ -1044,8 +1038,8 @@ object Demos: TDemos
         Top = 199
         Width = 186
         Height = 28
-        Date = 43975.398459560190000000
-        Time = 43975.398459560190000000
+        Date = 43975.000000000000000000
+        Time = 0.398459560186893200
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         TabOrder = 7
       end
@@ -1054,8 +1048,8 @@ object Demos: TDemos
         Top = 268
         Width = 186
         Height = 28
-        Date = 43975.398459560190000000
-        Time = 43975.398459560190000000
+        Date = 43975.000000000000000000
+        Time = 0.398459560186893200
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         TabOrder = 8
       end
@@ -1064,8 +1058,8 @@ object Demos: TDemos
         Top = 338
         Width = 186
         Height = 28
-        Date = 43975.398459560190000000
-        Time = 43975.398459560190000000
+        Date = 43975.000000000000000000
+        Time = 0.398459560186893200
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         TabOrder = 9
       end
@@ -1074,8 +1068,8 @@ object Demos: TDemos
         Top = 409
         Width = 186
         Height = 28
-        Date = 43975.398459560190000000
-        Time = 43975.398459560190000000
+        Date = 43975.000000000000000000
+        Time = 0.398459560186893200
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         Kind = dtkTime
         TabOrder = 10
@@ -1085,8 +1079,8 @@ object Demos: TDemos
         Top = 478
         Width = 186
         Height = 28
-        Date = 43975.398459560190000000
-        Time = 43975.398459560190000000
+        Date = 43975.000000000000000000
+        Time = 0.398459560186893200
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         TabOrder = 11
         OnChange = DateTimePicker8Change
@@ -8757,8 +8751,8 @@ object Demos: TDemos
         OnClick = ListBox1Click
       end
       object Button56: TButton
-        Left = 410
-        Top = 16
+        Left = 412
+        Top = 15
         Width = 91
         Height = 35
         Caption = 'Get'
@@ -8767,7 +8761,7 @@ object Demos: TDemos
       end
       object Button57: TButton
         Left = 509
-        Top = 16
+        Top = 15
         Width = 91
         Height = 35
         Caption = 'Set'
@@ -8778,7 +8772,7 @@ object Demos: TDemos
         Left = 608
         Top = 16
         Width = 121
-        Height = 35
+        Height = 30
         MaxValue = 5
         MinValue = 0
         TabOrder = 7
@@ -8885,7 +8879,7 @@ object Demos: TDemos
         Top = 18
         Width = 409
         Height = 263
-        Date = 43975.427642118050000000
+        Date = 43975.000000000000000000
         ImeName = #20013#25991'('#31616#20307') - '#26497#28857#20116#31508
         TabOrder = 0
         OnClick = MonthCalendar1Click
@@ -9697,20 +9691,21 @@ object Demos: TDemos
         ParentFont = False
         TabOrder = 7
         OnClick = TreeView1Click
-        Items.Data = {
-          010000001D0000000000000000000000FFFFFFFFFFFFFFFF0000000005000000
-          04CFB5CDB31F0000000000000000000000FFFFFFFFFFFFFFFF00000000000000
-          0006BCE0BFD8CFAF1F0000000000000000000000FFFFFFFFFFFFFFFF00000000
-          0200000006C9E8B1B8CFAF1F0000000000000000000000FFFFFFFFFFFFFFFF00
-          0000000300000006D6F7C9E8B1B81D0000000000000000000000FFFFFFFFFFFF
-          FFFF000000000000000004D6F7BBFA1F0000000000000000000000FFFFFFFFFF
-          FFFFFF000000000000000006CFD4CABEC6F71D0000000000000000000000FFFF
-          FFFFFFFFFFFF000000000000000004BCFCC5CC210000000000000000000000FF
-          FFFFFFFFFFFFFF000000000000000008B8A8D6FAC9E8B1B81F00000000000000
-          00000000FFFFFFFFFFFFFFFF000000000000000006C6C0B9C0CFAF1F00000000
-          00000000000000FFFFFFFFFFFFFFFF000000000000000006B8A8D6FACFAF1F00
-          00000000000000000000FFFFFFFFFFFFFFFF000000000000000006CAFDBEDDCF
-          AF}
+        Items.NodeData = {
+          0301000000220000000000000000000000FFFFFFFFFFFFFFFF00000000000000
+          00050000000102FB7CDF7E240000000000000000000000FFFFFFFFFFFFFFFF00
+          00000000000000000000000103D176A7632D5E240000000000000000000000FF
+          FFFFFFFFFFFFFF0000000000000000020000000103BE8B07592D5E2400000000
+          00000000000000FFFFFFFFFFFFFFFF00000000000000000300000001033B4EBE
+          8B0759220000000000000000000000FFFFFFFFFFFFFFFF000000000000000000
+          00000001023B4E3A67240000000000000000000000FFFFFFFFFFFFFFFF000000
+          00000000000000000001033E663A796856220000000000000000000000FFFFFF
+          FFFFFFFFFF00000000000000000000000001022E95D876260000000000000000
+          000000FFFFFFFFFFFFFFFF0000000000000000000000000104858FA952BE8B07
+          59240000000000000000000000FFFFFFFFFFFFFFFF0000000000000000000000
+          000103C48B304F2D5E240000000000000000000000FFFFFFFFFFFFFFFF000000
+          0000000000000000000103858FA9522D5E240000000000000000000000FFFFFF
+          FFFFFFFFFF000000000000000000000000010370656E632D5E}
       end
     end
   end
