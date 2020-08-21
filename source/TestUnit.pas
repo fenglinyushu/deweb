@@ -12,12 +12,19 @@ uses
      //
      Forms, SysUtils,
      Windows, Classes, Controls, StdCtrls, Menus, ExtCtrls, 
-      ComCtrls, jpeg,  Grids, DBGrids, DB, Data.Win.ADODB ;
+      ComCtrls, jpeg,  Grids, DBGrids, DB, Data.Win.ADODB, Vcl.Mask, Vcl.DBCtrls ;
 
 type
   TTest = class(TForm)
     Button1: TButton;
-    StaticText1: TStaticText;
+    DBEdit1: TDBEdit;
+    ADOConnection1: TADOConnection;
+    ADOTable1: TADOTable;
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    DBText1: TDBText;
+    Label1: TLabel;
+    Label2: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
   private
@@ -35,7 +42,7 @@ implementation
 
 procedure TTest.Button1Click(Sender: TObject);
 begin
-     With StaticText1 do begin
+{     With StaticText1 do begin
           Left      := Left + 20;
           Top       := Top + 20;
           Width     := Width + 20;
@@ -45,7 +52,8 @@ begin
           //
           Caption   := '÷–—‘-'+IntToStr(GetTickCount mod 1000);
      end;
-
+}
+     ADOTable1.Next;
 {
      Label1.Caption           := '±Í«©  '+IntToStr(GetTickCount mod 1000);
      Edit1.Text               := '±‡º≠  '+IntToStr(GetTickCount mod 999);

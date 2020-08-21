@@ -15,10 +15,11 @@ object Form_Base: TForm_Base
   PixelsPerInch = 96
   TextHeight = 13
   object Panel_Forms: TPanel
-    Left = 24
-    Top = 128
-    Width = 10000
-    Height = 65535
+    Left = 0
+    Top = 175
+    Width = 589
+    Height = 189
+    Align = alBottom
     BevelInner = bvLowered
     TabOrder = 0
   end

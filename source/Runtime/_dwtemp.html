@@ -13,10 +13,28 @@
         		<el-button type="primary" @click="processinputquery">{{input_query_okcaption}}</el-button>
         	</div>
         </el-dialog>
+        <el-link :underline="false" v-if="DBText1__vis" :disabled="DBText1__dis" type="primary" :style="{left:DBText1__lef,top:DBText1__top,width:DBText1__wid,height:DBText1__hei}" style="position:absolute;">{{DBText1__cap}}
+        </el-link>
+        <div  v-html="Label1__cap" v-if="Label1__vis" :disabled="Label1__dis" :style="{left:Label1__lef,top:Label1__top,width:Label1__wid,height:Label1__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label1__cap}}
+        </div>
+        <div  v-html="Label2__cap" v-if="Label2__vis" :disabled="Label2__dis" :style="{left:Label2__lef,top:Label2__top,width:Label2__wid,height:Label2__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label2__cap}}
+        </div>
         <el-button v-if="Button1__vis" :disabled="Button1__dis" type="primary" :style="{left:Button1__lef,top:Button1__top,width:Button1__wid,height:Button1__hei}" style="position:absolute;" @click="dwevent($event,'Button1','0','onclick','')">{{Button1__cap}}
         </el-button>
-        <el-link :underline="false" v-if="StaticText1__vis" :disabled="StaticText1__dis" type="primary" :href="StaticText1__hrf" :style="{left:StaticText1__lef,top:StaticText1__top,width:StaticText1__wid,height:StaticText1__hei}" style="position:absolute;">{{StaticText1__cap}}
-        </el-link>
+        <el-input v-if="DBEdit1__vis" :disabled="DBEdit1__dis" v-model="DBEdit1__txt" :style="{left:DBEdit1__lef,top:DBEdit1__top,width:DBEdit1__wid,height:DBEdit1__hei}" style="position:absolute;" @input="dwevent($event,'DBEdit1','(this.DBEdit1__txt)','onchange','')" @focus="dwevent($event,'DBEdit1','(this.DBEdit1__txt)','onenter','')">
+        </el-input>
+        <div :style="{left:DBGrid1__lef,top:DBGrid1__top,width:DBGrid1__wid,height:DBGrid1__hei}" style="position:absolute;">
+            <el-table :data="DBGrid1__ces" highlight-current-row ref="DBGrid1" border v-if="DBGrid1__vis" :disabled="DBGrid1__dis" height="231" style="width:100%" @row-click="dwevent($event,'DBGrid1','val.d0','onchange','')">
+                <el-table-column  show-overflow-tooltip fixed v-if=false prop="d0" label="rowno" width="80"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d1" label="姓名" width="100"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d2" label="性别" width="100"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d3" label="民族" width="100"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d4" label="籍贯" width="100"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d5" label="出生日期" width="100"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d6" label="爱好" width="100"></el-table-column>
+                <el-table-column show-overflow-tooltip prop="d7" label="邮箱" width="120"></el-table-column>
+            </el-table>
+        </div>
 	 </div>
     <script>
 	    Vue.prototype.procResp = function (data){
@@ -35,21 +53,76 @@
 					    Test__top:"0px",
 					    Test__wid:"784px",
 					    Test__hei:"583px",
+                        DBText1__lef:"85px",
+                        DBText1__top:"378px",
+                        DBText1__wid:"65px",
+                        DBText1__hei:"17px",
+                        DBText1__vis:true,
+                        DBText1__dis:false,
+                        DBText1__cap:"女",
+                        DBText1__hrf:"",
+                        Label1__lef:"20px",
+                        Label1__top:"338px",
+                        Label1__wid:"38px",
+                        Label1__hei:"20px",
+                        Label1__vis:true,
+                        Label1__dis:false,
+                        Label1__cap:"姓名 :",
+                        Label2__lef:"20px",
+                        Label2__top:"378px",
+                        Label2__wid:"38px",
+                        Label2__hei:"20px",
+                        Label2__vis:true,
+                        Label2__dis:false,
+                        Label2__cap:"性别 :",
                         Button1__lef:"20px",
-                        Button1__top:"8px",
+                        Button1__top:"18px",
                         Button1__wid:"104px",
                         Button1__hei:"38px",
                         Button1__vis:true,
                         Button1__dis:false,
                         Button1__cap:"Button1",
-                        StaticText1__lef:"20px",
-                        StaticText1__top:"130px",
-                        StaticText1__wid:"86px",
-                        StaticText1__hei:"24px",
-                        StaticText1__vis:true,
-                        StaticText1__dis:false,
-                        StaticText1__cap:"StaticText1",
-                        StaticText1__hrf:"/www.163.com",
+                        DBEdit1__lef:"85px",
+                        DBEdit1__top:"335px",
+                        DBEdit1__wid:"121px",
+                        DBEdit1__hei:"28px",
+                        DBEdit1__vis:true,
+                        DBEdit1__dis:false,
+                        DBEdit1__txt:"钟一鸣",
+                        DBGrid1__lef:"20px",
+                        DBGrid1__top:"80px",
+                        DBGrid1__wid:"736px",
+                        DBGrid1__hei:"231px",
+                        DBGrid1__vis:true,
+                        DBGrid1__dis:false,
+                        DBGrid1__ces:[{"d0":'0',"d1":'钟一鸣',"d2":'女',"d3":'汉族',"d4":'广东',"d5":'1963-10-21',"d6":'体育',"d6":''},
+                        {"d0":'1',"d1":'马亮',"d2":'男',"d3":'苗族',"d4":'海南',"d5":'1983-10-21',"d6":'旅游',"d6":''},
+                        {"d0":'2',"d1":'西风',"d2":'男',"d3":'苗族',"d4":'海南',"d5":'1983-10-21',"d6":'旅游',"d6":''},
+                        {"d0":'3',"d1":'何泉',"d2":'女',"d3":'苗族',"d4":'海南',"d5":'1983-10-21',"d6":'旅游',"d6":''},
+                        {"d0":'4',"d1":'陆小方',"d2":'女',"d3":'维族',"d4":'四川',"d5":'1983-10-25',"d6":'跑男',"d6":'feesdinp@sina.com'},
+                        {"d0":'5',"d1":'黄小剑',"d2":'女',"d3":'汉族',"d4":'广东',"d5":'1963-10-21',"d6":'体育',"d6":''},
+                        {"d0":'6',"d1":'马云',"d2":'男',"d3":'汉族',"d4":'浙江',"d5":'1960-01-01',"d6":'商业',"d6":'webmaster@alibaba.com'},
+                        {"d0":'7',"d1":'胡妮',"d2":'女',"d3":'回族',"d4":'湖北',"d5":'1973-10-21',"d6":'娱乐',"d6":'34234@QQ.com'},
+                        {"d0":'8',"d1":'李小琳',"d2":'女',"d3":'回族',"d4":'湖北',"d5":'1973-10-21',"d6":'娱乐',"d6":'Mydssdfe@163.com'},
+                        {"d0":'9',"d1":'张明歌',"d2":'女',"d3":'回族',"d4":'湖北',"d5":'1973-10-21',"d6":'音乐',"d6":'ddddLove@163.com'},
+                        {"d0":'10',"d1":'张玉',"d2":'女',"d3":'回族',"d4":'湖北',"d5":'1973-10-21',"d6":'娱乐',"d6":'My123e@163.com'},
+                        {"d0":'11',"d1":'刘制',"d2":'女',"d3":'回族',"d4":'湖北',"d5":'1973-10-21',"d6":'娱乐',"d6":'MyLove@163.com'},
+                        {"d0":'12',"d1":'刘西风',"d2":'男',"d3":'苗族',"d4":'海南',"d5":'1983-10-21',"d6":'旅游',"d6":''},
+                        {"d0":'13',"d1":'何小泉',"d2":'女',"d3":'苗族',"d4":'海南',"d5":'1983-10-21',"d6":'旅游',"d6":''},
+                        {"d0":'14',"d1":'张茹',"d2":'女',"d3":'汉族',"d4":'广东',"d5":'1963-10-21',"d6":'体育',"d6":''},
+                        {"d0":'15',"d1":'肖大雅',"d2":'女',"d3":'汉族',"d4":'广东',"d5":'1963-10-21',"d6":'体育',"d6":''},
+                        {"d0":'16',"d1":'黄小剑',"d2":'女',"d3":'汉族',"d4":'广东',"d5":'1963-10-21',"d6":'体育',"d6":''},
+                        {"d0":'17',"d1":'刘大制',"d2":'女',"d3":'回族',"d4":'湖北',"d5":'1973-10-21',"d6":'娱乐',"d6":'MyDddve@163.com'},
+                        {"d0":'18',"d1":'钟二鸣',"d2":'女',"d3":'汉族',"d4":'广东',"d5":'1963-10-21',"d6":'体育',"d6":''},
+                        {"d0":'19',"d1":'马三亮',"d2":'男',"d3":'苗族',"d4":'海南',"d5":'1983-10-21',"d6":'旅游',"d6":''},
+                        {"d0":'20',"d1":'西二风',"d2":'男',"d3":'苗族',"d4":'海南',"d5":'1983-10-21',"d6":'旅游',"d6":''},
+                        {"d0":'21',"d1":'何五泉',"d2":'女',"d3":'苗族',"d4":'海南',"d5":'1983-10-21',"d6":'旅游',"d6":''},
+                        {"d0":'22',"d1":'张六茹',"d2":'女',"d3":'汉族',"d4":'广东',"d5":'1963-10-21',"d6":'体育',"d6":''},
+                        {"d0":'23',"d1":'肖七雅',"d2":'女',"d3":'汉族',"d4":'广东',"d5":'1963-10-21',"d6":'体育',"d6":''},
+                        {"d0":'24',"d1":'黄小剑',"d2":'女',"d3":'汉族',"d4":'广东',"d5":'1963-10-21',"d6":'体育',"d6":''},
+                        {"d0":'25',"d1":'刘小琳',"d2":'女',"d3":'回族',"d4":'湖北',"d5":'1973-10-21',"d6":'娱乐',"d6":'MyTo34@163.com'},
+                        {"d0":'26',"d1":'刘光树',"d2":'男',"d3":'壮族',"d4":'甘肃',"d5":'1981-02-01',"d6":'播音',"d6":'zengxiaoxian@wp.com'},
+                        {"d0":'27',"d1":'蒋飞',"d2":'女',"d3":'回族',"d4":'甘肃',"d5":'2000-01-14',"d6":'',"d6":''}],
 					    input_query_visible:false,
 					    input_query_caption:"Input Query",
 					    input_query_inputname:"new",
