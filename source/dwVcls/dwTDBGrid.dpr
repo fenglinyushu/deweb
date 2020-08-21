@@ -74,15 +74,15 @@ begin
      with TDBGrid(ACtrl) do begin
           //添加外框
           joRes.Add('<div'
-                    +dwVisible(TControl(ACtrl))
-                    +dwDisable(TControl(ACtrl))
                     +dwLTWH(TControl(ACtrl))
                     +'"' //style 封闭
                     +'>');
           //添加主体
           joRes.Add('    <el-table'
                     +' :data="'+Name+'__ces"'
-                    +' highlight-current-row stripe'
+                    +' highlight-current-row'
+                    +' ref="'+Name+'"'
+                    //+' stripe'
                     +dwIIF(Borderstyle<>bsNone,' border','')
                     +dwVisible(TControl(ACtrl))
                     +dwDisable(TControl(ACtrl))
@@ -147,10 +147,12 @@ end;
 function dwGetData(ACtrl:TControl):string;StdCall;
 var
      joRes     : Variant;
+     //
      iRow,iCol : Integer;
      sCode     : String;
+     //
      oDataSet  : TDataSet;
-
+     oBookMark : TBookMark;
 begin
      //生成返回值数组
      joRes    := _Json('[]');
@@ -173,7 +175,12 @@ begin
                     sCode     := Name+'__ces:[],';
                     joRes.Add(sCode);
                end else begin
+                    //保存当前位置
+                    oBookMark := oDataSet.GetBookmark;
+
+                    //
                     oDataSet.DisableControls;
+
                     //
                     sCode     := '';
                     oDataSet.First;
@@ -197,9 +204,11 @@ begin
                               joRes.Add(sCode+',');
                          end;
                     end;
-                    oDataSet.First;
                     //
+                    oDataSet.GotoBookmark(oBookMark); //重新定位记录指针回到原来的位置
                     oDataSet.EnableControls;
+                    //
+                    oDataSet.FreeBookmark(oBookMark); //删除书签BookMark标志
                end;
           end
      end;
@@ -213,17 +222,16 @@ end;
 function dwGetMethod(ACtrl:TControl):string;StdCall;
 var
      joRes     : Variant;
+     //
      iRow,iCol : Integer;
      sCode     : String;
-     oDataSet  : TDataSet;
-
      //
-     oForm     : TForm;
-     oWinCtrl  : TWinControl;
+     oDataSet  : TDataSet;
+     oBookMark : TBookMark;
 begin
      //生成返回值数组
      joRes    := _Json('[]');
-     //
+
      //
      with TDBGrid(ACtrl) do
       begin
@@ -238,41 +246,41 @@ begin
           //
           joRes.Add(Name+'__vis='+dwIIF(Visible,'true','false'));
           joRes.Add(Name+'__dis='+dwIIF(Enabled,'false','true'));
+
           //
           if oDataSet <> nil then begin
                if not oDataSet.Active then begin
                     sCode     := Name+'__ces:[],';
                     joRes.Add(sCode);
                end else begin
+                    //保存当前位置
+                    oBookMark := oDataSet.GetBookmark;
                     oDataSet.DisableControls;
-                    //
-                         sCode     := '';
-                         oDataSet.First;
-                         iRow := 0;
-                         while not oDataSet.Eof do begin
-                              if sCode = '' then begin
-                                   sCode     := Name+'__ces=[{"d0"='''+IntToStr(iRow)+''',';
-                              end else begin
-                                   sCode     := '{"d0"='''+IntToStr(iRow)+''',';
-                              end;
-                              for iCol := 0 to Columns.Count-2 do begin
-                                   sCode     := sCode +'"d'+IntToStr(iCol+1)+'"='''+_GetValue(Columns[iCol].Field)+''',';
-                              end;
-                              sCode     := sCode +'"d'+IntToStr(Columns.Count-1)+'"='''+_GetValue(Columns[Columns.Count-1].Field)+'''}';
-                              //
-                              oDataSet.Next;
-                              Inc(iRow);
-                              if oDataSet.Eof then begin
-                                   joRes.Add(sCode+']');
-                              end else begin
-                                   joRes.Add(sCode);
-                              end;
+                    oDataSet.First;
+                    iRow := 0;
+                    while not oDataSet.Eof do begin
+                         sCode     := 'this.$set(this.'+TDBGrid(ACtrl).Name+'__ces,'+IntToStr(iRow)+',{d0:"'+IntToStr(iRow)+'",';
+                         for iCol := 0 to Columns.Count-2 do begin
+                              sCode     := sCode +'d'+IntToStr(iCol+1)+':"'+_GetValue(Columns[iCol].Field)+'",';
                          end;
-                         oDataSet.First;
+                         sCode     := sCode +'d'+IntToStr(Columns.Count-1)+':"'+_GetValue(Columns[Columns.Count-1].Field)+'"});';
+                         joRes.Add(sCode);
+                         //
+                         oDataSet.Next;
+                         Inc(iRow);
+                    end;
+                    //
+                    oDataSet.GotoBookmark(oBookMark); //重新定位记录指针回到原来的位置
                     oDataSet.EnableControls;
+                    oDataSet.FreeBookmark(oBookMark); //删除书签BookMark标志
                end;
-          end
+          end;
+
      end;
+     //行号        this.$refs.multiplePlan.data[0]
+     joRes.Add('this.$refs.'+TDBGrid(ACtrl).Name+'.setCurrentRow('
+          +'this.$refs.'+TDBGrid(ACtrl).Name+'.data['+IntToStr(TDBGrid(ACtrl).DataSource.DataSet.RecNo-1)+']'
+          +');');
      //
      Result    := (joRes);
 end;

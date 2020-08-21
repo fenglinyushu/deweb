@@ -38,6 +38,10 @@ implementation
 
 procedure TTest.Button1Click(Sender: TObject);
 begin
+     ADOTAble1.Edit;
+     ADOTable1.FieldByName('ÐÕÃû').AsString  := ADOTable1.FieldByName('ÐÕÃû').AsString+IntToStr(GetTickCount mod 100);
+     ADOTable1.Post;
+     ADOTable1.Next;
 {     With DateTimePicker1 do begin
           Left      := Left + 20;
           Top       := Top + 20;

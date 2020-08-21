@@ -42,73 +42,19 @@ object Test: TTest
       item
         Expanded = False
         FieldName = #22995#21517
-        Width = 60
+        Width = 300
         Visible = True
       end
       item
         Expanded = False
         FieldName = #24615#21035
-        Width = 60
+        Width = 300
         Visible = True
       end
       item
         Expanded = False
         FieldName = #27665#26063
-        Width = 60
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = #31821#36143
-        Width = 60
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = #20986#29983#26085#26399
-        Width = 60
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = #23398#21382
-        Width = 60
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = #29233#22909
-        Width = 60
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = #32844#21153
-        Width = 60
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = #37038#31665
-        Width = 60
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = #22320#22336
-        Width = 60
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = #32844#31216
-        Width = 60
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = #25163#26426
-        Width = 60
+        Width = 300
         Visible = True
       end>
   end
