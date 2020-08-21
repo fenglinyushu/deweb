@@ -17,10 +17,7 @@ uses
 type
   TTest = class(TForm)
     Button1: TButton;
-    DataSource1: TDataSource;
-    DBGrid1: TDBGrid;
-    ADOTable1: TADOTable;
-    ADOConnection1: TADOConnection;
+    StaticText1: TStaticText;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
   private
@@ -38,21 +35,17 @@ implementation
 
 procedure TTest.Button1Click(Sender: TObject);
 begin
-     ADOTAble1.Edit;
-     ADOTable1.FieldByName('姓名').AsString  := ADOTable1.FieldByName('姓名').AsString+IntToStr(GetTickCount mod 100);
-     ADOTable1.Post;
-     ADOTable1.Next;
-{     With DateTimePicker1 do begin
+     With StaticText1 do begin
           Left      := Left + 20;
           Top       := Top + 20;
           Width     := Width + 20;
           Height    := Height + 20;
           //
-          DateTime := DateTime+1;
+          //Checked        := not Checked;
           //
-          //Caption   := '按钮  '+IntToStr(GetTickCount mod 1000);
+          Caption   := '中言-'+IntToStr(GetTickCount mod 1000);
      end;
-}
+
 {
      Label1.Caption           := '标签  '+IntToStr(GetTickCount mod 1000);
      Edit1.Text               := '编辑  '+IntToStr(GetTickCount mod 999);

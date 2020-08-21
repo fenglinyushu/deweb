@@ -75,8 +75,8 @@ begin
      Result    := (joRes);
 end;
 
-//取得Data消息, ASeparator为分隔符, 一般为:或=
-function dwGetData(ACtrl:TComponent;ASeparator:String):string;StdCall;
+//取得Data
+function dwGetData(ACtrl:TComponent):string;StdCall;
 var
      joRes     : Variant;
 begin
@@ -84,15 +84,37 @@ begin
      joRes    := _Json('[]');
      //
      with TPanel(ACtrl) do begin
-          joRes.Add(Name+'__lef'+ASeparator+'"'+IntToStr(Left)+'px"');
-          joRes.Add(Name+'__top'+ASeparator+'"'+IntToStr(Top)+'px"');
-          joRes.Add(Name+'__wid'+ASeparator+'"'+IntToStr(Width)+'px"');
-          joRes.Add(Name+'__hei'+ASeparator+'"'+IntToStr(Height)+'px"');
+          joRes.Add(Name+'__lef:"'+IntToStr(Left)+'px",');
+          joRes.Add(Name+'__top:"'+IntToStr(Top)+'px",');
+          joRes.Add(Name+'__wid:"'+IntToStr(Width)+'px",');
+          joRes.Add(Name+'__hei:"'+IntToStr(Height)+'px",');
           //
-          joRes.Add(Name+'__vis'+ASeparator+dwIIF(Visible,'true','false'));
-          joRes.Add(Name+'__dis'+ASeparator+dwIIF(Enabled,'false','true'));
+          joRes.Add(Name+'__vis:'+dwIIF(Visible,'true,','false,'));
+          joRes.Add(Name+'__dis:'+dwIIF(Enabled,'false,','true,'));
           //
-          joRes.Add(Name+'__col'+ASeparator+'"'+dwColor(Color)+'"');
+          joRes.Add(Name+'__col:"'+dwColor(Color)+'",');
+     end;
+     //
+     Result    := (joRes);
+end;
+
+function dwGetMethod(ACtrl:TComponent):string;StdCall;
+var
+     joRes     : Variant;
+begin
+     //生成返回值数组
+     joRes    := _Json('[]');
+     //
+     with TPanel(ACtrl) do begin
+          joRes.Add('this.'+Name+'__lef="'+IntToStr(Left)+'px";');
+          joRes.Add('this.'+Name+'__top="'+IntToStr(Top)+'px";');
+          joRes.Add('this.'+Name+'__wid="'+IntToStr(Width)+'px";');
+          joRes.Add('this.'+Name+'__hei="'+IntToStr(Height)+'px";');
+          //
+          joRes.Add('this.'+Name+'__vis='+dwIIF(Visible,'true;','false;'));
+          joRes.Add('this.'+Name+'__dis='+dwIIF(Enabled,'false;','true;'));
+          //
+          joRes.Add('this.'+Name+'__col+"'+dwColor(Color)+'";');
      end;
      //
      Result    := (joRes);
@@ -104,6 +126,7 @@ exports
      dwGetEvent,
      dwGetHead,
      dwGetTail,
+     dwGetMethod,
      dwGetData;
      
 begin

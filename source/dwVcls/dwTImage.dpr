@@ -139,8 +139,8 @@ begin
      Result    := (joRes);
 end;
 
-//取得Data消息, ASeparator为分隔符, 一般为:或=
-function dwGetData(ACtrl:TComponent;ASeparator:String):string;StdCall;
+//取得Data
+function dwGetData(ACtrl:TComponent):string;StdCall;
 var
      joRes     : Variant;
 begin
@@ -148,18 +148,44 @@ begin
      joRes    := _Json('[]');
      //
      with TImage(ACtrl) do begin
-          joRes.Add(Name+'__lef'+ASeparator+'"'+IntToStr(Left)+'px"');
-          joRes.Add(Name+'__top'+ASeparator+'"'+IntToStr(Top)+'px"');
-          joRes.Add(Name+'__wid'+ASeparator+'"'+IntToStr(Width)+'px"');
-          joRes.Add(Name+'__hei'+ASeparator+'"'+IntToStr(Height)+'px"');
+          joRes.Add(Name+'__lef:"'+IntToStr(Left)+'px",');
+          joRes.Add(Name+'__top:"'+IntToStr(Top)+'px",');
+          joRes.Add(Name+'__wid:"'+IntToStr(Width)+'px",');
+          joRes.Add(Name+'__hei:"'+IntToStr(Height)+'px",');
           //
-          joRes.Add(Name+'__vis'+ASeparator+dwIIF(Visible,'true','false'));
-          joRes.Add(Name+'__dis'+ASeparator+dwIIF(Enabled,'false','true'));
+          joRes.Add(Name+'__vis:'+dwIIF(Visible,'true,','false,'));
+          joRes.Add(Name+'__dis:'+dwIIF(Enabled,'false,','true,'));
           //
           if dwGetProp(TControl(ACtrl),'src')='' then begin
-               joRes.Add(Name+'__src'+ASeparator+'"dist/webimages/'+Name+'.jpg"');
+               joRes.Add(Name+'__src:"dist/webimages/'+Name+'.jpg",');
           end else begin
-               joRes.Add(Name+'__src'+ASeparator+'"'+dwGetProp(TControl(ACtrl),'src')+'"');
+               joRes.Add(Name+'__src:"'+dwGetProp(TControl(ACtrl),'src')+'",');
+          end;
+     end;
+     //
+     Result    := (joRes);
+end;
+
+function dwGetMethod(ACtrl:TComponent):string;StdCall;
+var
+     joRes     : Variant;
+begin
+     //生成返回值数组
+     joRes    := _Json('[]');
+     //
+     with TImage(ACtrl) do begin
+          joRes.Add('this.'+Name+'__lef="'+IntToStr(Left)+'px";');
+          joRes.Add('this.'+Name+'__top="'+IntToStr(Top)+'px";');
+          joRes.Add('this.'+Name+'__wid="'+IntToStr(Width)+'px";');
+          joRes.Add('this.'+Name+'__hei="'+IntToStr(Height)+'px";');
+          //
+          joRes.Add('this.'+Name+'__vis='+dwIIF(Visible,'true;','false;'));
+          joRes.Add('this.'+Name+'__dis='+dwIIF(Enabled,'false;','true;'));
+          //
+          if dwGetProp(TControl(ACtrl),'src')='' then begin
+               joRes.Add('this.'+Name+'__src="dist/webimages/'+Name+'.jpg";');
+          end else begin
+               joRes.Add('this.'+Name+'__src="'+dwGetProp(TControl(ACtrl),'src')+'";');
           end;
      end;
      //
@@ -172,6 +198,7 @@ exports
      dwGetEvent,
      dwGetHead,
      dwGetTail,
+     dwGetMethod,
      dwGetData;
      
 begin

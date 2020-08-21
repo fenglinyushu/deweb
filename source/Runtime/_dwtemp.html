@@ -15,14 +15,8 @@
         </el-dialog>
         <el-button v-if="Button1__vis" :disabled="Button1__dis" type="primary" :style="{left:Button1__lef,top:Button1__top,width:Button1__wid,height:Button1__hei}" style="position:absolute;" @click="dwevent($event,'Button1','0','onclick','')">{{Button1__cap}}
         </el-button>
-        <div :style="{left:DBGrid1__lef,top:DBGrid1__top,width:DBGrid1__wid,height:DBGrid1__hei}" style="position:absolute;">
-            <el-table :data="DBGrid1__ces" highlight-current-row ref="DBGrid1" border v-if="DBGrid1__vis" :disabled="DBGrid1__dis" height="441" style="width:100%" @row-click="dwevent($event,'DBGrid1','val.d0','onchange','')">
-                <el-table-column  show-overflow-tooltip fixed v-if=false prop="d0" label="rowno" width="80"></el-table-column>
-                <el-table-column show-overflow-tooltip prop="d1" label="姓名" width="300"></el-table-column>
-                <el-table-column show-overflow-tooltip prop="d2" label="性别" width="300"></el-table-column>
-                <el-table-column show-overflow-tooltip prop="d3" label="民族" width="300"></el-table-column>
-            </el-table>
-        </div>
+        <el-link :underline="false" v-if="StaticText1__vis" :disabled="StaticText1__dis" type="primary" :href="StaticText1__hrf" :style="{left:StaticText1__lef,top:StaticText1__top,width:StaticText1__wid,height:StaticText1__hei}" style="position:absolute;">{{StaticText1__cap}}
+        </el-link>
 	 </div>
     <script>
 	    Vue.prototype.procResp = function (data){
@@ -41,47 +35,21 @@
 					    Test__top:"0px",
 					    Test__wid:"784px",
 					    Test__hei:"583px",
-                        Button1__lef:"17px",
+                        Button1__lef:"20px",
                         Button1__top:"8px",
                         Button1__wid:"104px",
                         Button1__hei:"38px",
                         Button1__vis:true,
                         Button1__dis:false,
                         Button1__cap:"Button1",
-                        DBGrid1__lef:"17px",
-                        DBGrid1__top:"75px",
-                        DBGrid1__wid:"739px",
-                        DBGrid1__hei:"441px",
-                        DBGrid1__vis:true,
-                        DBGrid1__dis:false,
-                        DBGrid1__ces:[{"d0":'0',"d1":'钟一鸣407153503125466314690623903134',"d2":'女',"d2":'汉族'},
-                        {"d0":'1',"d1":'马亮757887285315655697163134',"d2":'男',"d2":'苗族'},
-                        {"d0":'2',"d1":'西风2518915081288118',"d2":'男',"d2":'苗族'},
-                        {"d0":'3',"d1":'何泉965693686840259',"d2":'女',"d2":'苗族'},
-                        {"d0":'4',"d1":'陆小方909692121373',"d2":'女',"d2":'维族'},
-                        {"d0":'5',"d1":'黄小剑1290934631653',"d2":'女',"d2":'汉族'},
-                        {"d0":'6',"d1":'马云122865',"d2":'男',"d2":'汉族'},
-                        {"d0":'7',"d1":'胡妮8462',"d2":'女',"d2":'回族'},
-                        {"d0":'8',"d1":'李小琳390',"d2":'女',"d2":'回族'},
-                        {"d0":'9',"d1":'张明歌84',"d2":'女',"d2":'回族'},
-                        {"d0":'10',"d1":'张玉71',"d2":'女',"d2":'回族'},
-                        {"d0":'11',"d1":'刘制65',"d2":'女',"d2":'回族'},
-                        {"d0":'12',"d1":'刘西风',"d2":'男',"d2":'苗族'},
-                        {"d0":'13',"d1":'何小泉',"d2":'女',"d2":'苗族'},
-                        {"d0":'14',"d1":'张茹',"d2":'女',"d2":'汉族'},
-                        {"d0":'15',"d1":'肖大雅84',"d2":'女',"d2":'汉族'},
-                        {"d0":'16',"d1":'黄小剑',"d2":'女',"d2":'汉族'},
-                        {"d0":'17',"d1":'刘大制',"d2":'女',"d2":'回族'},
-                        {"d0":'18',"d1":'钟二鸣',"d2":'女',"d2":'汉族'},
-                        {"d0":'19',"d1":'马三亮',"d2":'男',"d2":'苗族'},
-                        {"d0":'20',"d1":'西二风',"d2":'男',"d2":'苗族'},
-                        {"d0":'21',"d1":'何五泉',"d2":'女',"d2":'苗族'},
-                        {"d0":'22',"d1":'张六茹',"d2":'女',"d2":'汉族'},
-                        {"d0":'23',"d1":'肖七雅',"d2":'女',"d2":'汉族'},
-                        {"d0":'24',"d1":'黄小剑',"d2":'女',"d2":'汉族'},
-                        {"d0":'25',"d1":'刘小琳',"d2":'女',"d2":'回族'},
-                        {"d0":'26',"d1":'刘光树',"d2":'男',"d2":'壮族'},
-                        {"d0":'27',"d1":'蒋飞',"d2":'女',"d2":'回族'}],
+                        StaticText1__lef:"20px",
+                        StaticText1__top:"130px",
+                        StaticText1__wid:"86px",
+                        StaticText1__hei:"24px",
+                        StaticText1__vis:true,
+                        StaticText1__dis:false,
+                        StaticText1__cap:"StaticText1",
+                        StaticText1__hrf:"/www.163.com",
 					    input_query_visible:false,
 					    input_query_caption:"Input Query",
 					    input_query_inputname:"new",
