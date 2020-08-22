@@ -12,11 +12,8 @@ uses
 
 type
   TDefault = class(TForm)
-    Timer1: TTimer;
-    Button1: TButton;
+    Label1: TLabel;
     procedure FormCreate(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
-    procedure Timer1Timer(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,23 +27,9 @@ implementation
 
 {$R *.dfm}
 
-procedure TDefault.Button1Click(Sender: TObject);
-begin
-     if Timer1.DesignInfo = 1 then begin
-          Timer1.DesignInfo   := 0;
-     end else begin
-          Timer1.DesignInfo   := 1;
-     end;
-end;
-
 procedure TDefault.FormCreate(Sender: TObject);
 begin
      Top  := 0;
-end;
-
-procedure TDefault.Timer1Timer(Sender: TObject);
-begin
-     Button1.caption     := IntToStr(GetTickCount mod 10000);
 end;
 
 end.

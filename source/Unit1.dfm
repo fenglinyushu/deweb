@@ -320,18 +320,19 @@ object Default: TDefault
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 20
-  object Button1: TButton
-    Left = 40
-    Top = 100
-    Width = 81
-    Height = 31
-    Caption = 'Button1'
-    TabOrder = 0
-    OnClick = Button1Click
-  end
-  object Timer1: TTimer
-    OnTimer = Timer1Timer
+  object Label1: TLabel
     Left = 55
-    Top = 40
+    Top = 50
+    Width = 681
+    Height = 66
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Hello, DeWeb! '
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -32
+    Font.Name = 'Verdana'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
 end
