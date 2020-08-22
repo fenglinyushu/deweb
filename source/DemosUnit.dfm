@@ -357,7 +357,7 @@ object Demos: TDemos
     Top = 100
     Width = 1100
     Height = 1025
-    ActivePage = TabSheet5
+    ActivePage = TabSheet7
     BiDiMode = bdLeftToRight
     MultiLine = True
     ParentBiDiMode = False
@@ -9441,7 +9441,7 @@ object Demos: TDemos
       end
       object Button38: TButton
         Left = 390
-        Top = 325
+        Top = 323
         Width = 120
         Height = 35
         Caption = 'Change'

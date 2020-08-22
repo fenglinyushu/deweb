@@ -12,20 +12,11 @@ uses
 
 type
   TDefault = class(TForm)
-    MainMenu1: TMainMenu;
-    N1: TMenuItem;
-    N2: TMenuItem;
-    N3: TMenuItem;
-    N4: TMenuItem;
-    N5: TMenuItem;
-    N6: TMenuItem;
-    N7: TMenuItem;
-    N8: TMenuItem;
-    N9: TMenuItem;
-    N10: TMenuItem;
-    Panel1: TPanel;
-    Label_deweb: TLabel;
+    Timer1: TTimer;
+    Button1: TButton;
     procedure FormCreate(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,11 +30,23 @@ implementation
 
 {$R *.dfm}
 
+procedure TDefault.Button1Click(Sender: TObject);
+begin
+     if Timer1.DesignInfo = 1 then begin
+          Timer1.DesignInfo   := 0;
+     end else begin
+          Timer1.DesignInfo   := 1;
+     end;
+end;
+
 procedure TDefault.FormCreate(Sender: TObject);
 begin
-     //…Ë÷√≤Àµ•µƒLeft/Top/Width/Height
-     dwSetCompLTWH(MainMenu1,0,50,200,550);
      Top  := 0;
+end;
+
+procedure TDefault.Timer1Timer(Sender: TObject);
+begin
+     Button1.caption     := IntToStr(GetTickCount mod 10000);
 end;
 
 end.

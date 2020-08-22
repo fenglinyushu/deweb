@@ -21232,7 +21232,7 @@
 	position: relative;
 	display: inline-block;
 	width: 180px;
-	line-height: 33px
+	line-height: 25px
 }
 
 .el-input-number .el-input {
@@ -21249,9 +21249,9 @@
 .el-input-number__decrease,.el-input-number__increase {
 	position: absolute;
 	z-index: 1;
-	top: 1px;
+	top: 2px;
 	width: 40px;
-	height: auto;
+	height: 90%;
 	text-align: center;
 	background: #F5F7FA;
 	color: #606266;

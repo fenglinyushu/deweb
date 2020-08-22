@@ -56,8 +56,8 @@ begin
      Result    := (joRes);
 end;
 
-//取得Data消息, ASeparator为分隔符, 一般为:或=
-function dwGetData(ACtrl:TComponent;ASeparator:String):String;StdCall;
+//取得Data
+function dwGetData(ACtrl:TComponent):String;StdCall;
 var
      joRes     : Variant;
      sCode     : String;
@@ -75,6 +75,32 @@ begin
           end else begin                     //清除定时器
                sCOde     := 'clearInterval('+Name+'__tmr);';
           end;
+          joRes.Add(sCode);
+     end;
+
+     //
+     Result    := (joRes);
+end;
+
+function dwGetMethod(ACtrl:TComponent):String;StdCall;
+var
+     joRes     : Variant;
+     sCode     : String;
+begin
+     //生成返回值数组
+     joRes    := _Json('[]');
+
+     with TTimer(ACtrl) do begin
+          if DesignInfo = 1 then begin   //创建定时器
+               sCode     := 'me=this;'+Name+'__tmr = window.setInterval(function() {'
+                    +'axios.get(''{"mode":"event","cid":'+IntToStr(TForm(Owner).Handle)+',"component":"'+Name+'"}'')'
+                    +'.then(resp =>{me.procResp(resp.data);  })'
+                    +'},'+IntToStr(Interval)+');';
+
+          end else begin                     //清除定时器
+               sCode     := 'clearInterval('+Name+'__tmr);';
+          end;
+          joRes.Add(sCode);
      end;
 
      //
@@ -87,6 +113,7 @@ exports
      dwGetEvent,
      dwGetHead,
      dwGetTail,
+     dwGetMethod,
      dwGetData;
      
 begin

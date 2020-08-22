@@ -13,22 +13,8 @@
         		<el-button type="primary" @click="processinputquery">{{input_query_okcaption}}</el-button>
         	</div>
         </el-dialog>
-        <el-main v-if="Panel1__vis" :disabled="Panel1__dis" :style="{backgroundColor:Panel1__col,left:Panel1__lef,top:Panel1__top,width:Panel1__wid,height:Panel1__hei}" style="position:absolute;overflow:hidden;">
-        <div  v-html="Label_deweb__cap" v-if="Label_deweb__vis" :disabled="Label_deweb__dis" :style="{left:Label_deweb__lef,top:Label_deweb__top,width:Label_deweb__wid,height:Label_deweb__hei}" style="position:absolute;color:#C8C8C8;font-family:'微软雅黑';font-size:18pt;font-weight:bold;font-style:italic;text-decoration:none;text-align:center;line-height:50px;">{{Label_deweb__cap}}
-        </div>
-        <el-image :src="Image_Lo__src" fit="none" v-if="Image_Lo__vis" :disabled="Image_Lo__dis" :style="{left:Image_Lo__lef,top:Image_Lo__top,width:Image_Lo__wid,height:Image_Lo__hei}" style="position:absolute;">
-        </el-Image>
-        </el-main>
-        <el-menu class="el-menu-demo" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" :style="{left:MainMenu1__lef,top:MainMenu1__top,width:MainMenu1__wid,height:MainMenu1__hei}" style="position:absolute;line-height:30px;">
-        <el-submenu index="0"><template slot="title">
-        <i class="el-icon-eleme"></i>
-        <span>系统文件</span></template>
-        <el-menu-item index="1-0"><i class="el-icon-delete-solid"></i><span slot="title">数据维护</span></el-menu-item><el-menu-item index="1-1"><i class="el-icon-delete"></i><span slot="title">资料录入</span></el-menu-item><el-menu-item index="1-2"><i class="el-icon-s-home"></i><span slot="title">登录</span></el-menu-item><el-submenu index="1-3"><template slot="title"><i class="el-icon-user-solid"></i><span>计算机</span></template><el-menu-item index="1-3-0"><i class="el-icon-folder-add"></i><span slot="title">经济管理</span></el-menu-item><el-menu-item index="1-3-1"><i class="el-icon-more-outline"></i><span slot="title">国际政治</span></el-menu-item>    </template></el-submenu><el-menu-item index="1-4"><i class="el-icon-user"></i><span slot="title">退出</span></el-menu-item>
-        </el-submenu>
-        <el-menu-item index="1"><i class="el-icon-video-camera-solid"></i><span slot="title">项目管理</span></el-menu-item>
-        <el-menu-item index="2"><i class="el-icon-help"></i><span slot="title">帮助</span></el-menu-item>
-        
-        </el-menu>
+        <el-button v-if="Button1__vis" :disabled="Button1__dis" type="default" :style="{left:Button1__lef,top:Button1__top,width:Button1__wid,height:Button1__hei}" style="position:absolute;" @click="dwevent($event,'Button1','0','onclick','')">{{Button1__cap}}
+        </el-button>
 	 </div>
     <script>
 	    Vue.prototype.procResp = function (data){
@@ -47,31 +33,13 @@
 					    Default__top:"0px",
 					    Default__wid:"800px",
 					    Default__hei:"600px",
-                        Label_deweb__lef:"51px",
-                        Label_deweb__top:"0px",
-                        Label_deweb__wid:"291px",
-                        Label_deweb__hei:"50px",
-                        Label_deweb__vis:true,
-                        Label_deweb__dis:false,
-                        Label_deweb__cap:"CRM客户关系管理系统",
-                        Image_Lo__lef:"0px",
-                        Image_Lo__top:"0px",
-                        Image_Lo__wid:"51px",
-                        Image_Lo__hei:"50px",
-                        Image_Lo__vis:true,
-                        Image_Lo__dis:false,
-                        Image_Lo__src:"dist/webimages/Image_Lo.jpg",
-                        Panel1__lef:"0px",
-                        Panel1__top:"0px",
-                        Panel1__wid:"800px",
-                        Panel1__hei:"50px",
-                        Panel1__vis:true,
-                        Panel1__dis:false,
-                        Panel1__col:"#545C64",
-                        MainMenu1__lef:"0px",
-                        MainMenu1__top:"50px",
-                        MainMenu1__wid:"200px",
-                        MainMenu1__hei:"550px",
+                        Button1__lef:"40px",
+                        Button1__top:"100px",
+                        Button1__wid:"81px",
+                        Button1__hei:"31px",
+                        Button1__vis:true,
+                        Button1__dis:false,
+                        Button1__cap:"Button1",
 					    input_query_visible:false,
 					    input_query_caption:"Input Query",
 					    input_query_inputname:"new",
@@ -86,6 +54,7 @@
                 },
                 mounted() {
                     let me=this;
+Timer1__tmr = window.setInterval(function() {axios.get('{"mode":"event","cid":[!clientid!],"component":"Timer1"}').then(resp =>{me.procResp(resp.data);  })}, 1000);
                     window.addEventListener(
                         "onorientationchange" in window ? "orientationchange" : "resize",
                         function() {

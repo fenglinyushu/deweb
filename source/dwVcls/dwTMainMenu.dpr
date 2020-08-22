@@ -14,6 +14,34 @@ uses
      Controls, Forms, Dialogs, ComCtrls, ExtCtrls, Menus,
      StdCtrls, Windows;
 
+//======辅助函数================================================================
+//取得MenuItem
+function dwGetMenuItem(AMenu:TMainMenu;AValue:string):TMenuItem;
+var
+     iIDs      : array of Integer;
+     I         : Integer;
+begin
+     //将AValue 转换为int数组
+     SetLength(iIDs,0);
+     while Pos('-',AValue)>0 do begin
+          SetLength(iIDs,Length(iIDs)+1);
+          iIDs[High(iIDs)]    := StrToIntDef(Copy(AValue,1,Pos('-',AValue)-1),0);
+          //
+          Delete(AValue,1,Pos('-',AValue));
+     end;
+     SetLength(iIDs,Length(iIDs)+1);
+     iIDs[High(iIDs)]    := StrToIntDef(AValue,0);
+
+     //
+     Result    := AMenu.Items[iIDs[0]];
+
+     //
+     for i := 1 to High(iIDs) do begin
+          Result    := Result.Items[iIDs[i]];
+     end;
+end;
+//==============================================================================
+
 //当前控件需要引入的第三方JS/CSS
 function dwGetExtra(ACtrl:TComponent):string;stdCall;
 begin
@@ -22,11 +50,25 @@ end;
 
 //根据JSON对象AData执行当前控件的事件, 并返回结果字符串
 function dwGetEvent(ACtrl:TComponent;AData:String):string;StdCall;
+var
+     joData    : Variant;
+     oMenuItem : TMenuItem;
+
 begin
+     joData    := _json(AData);
+
+     //先找到对应的菜单项
+     oMenuItem := dwGetMenuItem(TMainMenu(ACtrl),joData.value);
+
      //
-     //if Assigned(TMainMenu(ACtrl).OnClick) then begin
-     //     TMainMenu(ACtrl).OnClick(TMainMenu(ACtrl));
-     //end;
+     if oMenuItem = nil then begin
+          Exit;
+     end;
+
+     //执行事件
+     if Assigned(oMenuItem.OnClick) then begin
+          oMenuItem.OnClick(oMenuItem);
+     end;
 end;
 
 function _CreateItems (AItem:TMenuItem;APath:String; var ACode:String):Integer;
@@ -41,12 +83,6 @@ begin
           miItem   := AItem.items[ii];
           //
           if miItem.Count = 0 then begin
-{
-<el-menu-item index="3" disabled>
-        <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
-      </el-menu-item>
-}
                if (miItem.ImageIndex>0)and(miItem.ImageIndex<=High(dwIcons)) then begin
                     ACode     := ACode + '<el-menu-item index="'+APath+'-'+IntToStr(ii)+'">'
                     +'<i class="'+dwIcons[miItem.ImageIndex]+'"></i>'
@@ -71,7 +107,7 @@ begin
 
 
                //
-               ACode     := ACode + '    </template>'#13;
+               //ACode     := ACode + '    </template>'#13;
                ACode     := ACode + '</el-submenu>'#13;
           end;
      end;
@@ -104,7 +140,7 @@ begin
                     +dwLTWHComp(ACtrl)
                     +dwIIF(ownerDraw,'line-height:30px;','line-height:'+IntToStr((Tag mod 10000)-22)+'px;')
                     +'"' //style 封闭
-                    //+Format(_DWEVENT,['click',Name,'0','onclick',''])
+                    +Format(_DWEVENT,['select',Name,'val','onclick',''])
                     +'>';
           //添加数据
           joRes.Add(sCode);
@@ -131,7 +167,7 @@ begin
                     end;
                     joRes.Add('<span>'+oItem.Caption+'</span></template>');
                     //
-                    _CreateItems(oItem,IntToStr(iItem+1),sCode);
+                    _CreateItems(oItem,IntToStr(iItem),sCode);
                     joRes.Add(sCode);
                     sCode     := '';
                     //
