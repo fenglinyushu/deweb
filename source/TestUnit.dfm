@@ -58,10 +58,10 @@ object Test: TTest
     TabOrder = 1
   end
   object DBGrid1: TDBGrid
-    Left = 20
-    Top = 65
+    Left = 8
+    Top = 105
     Width = 736
-    Height = 191
+    Height = 506
     DataSource = DataSource1
     TabOrder = 2
     TitleFont.Charset = ANSI_CHARSET
@@ -73,112 +73,49 @@ object Test: TTest
       item
         Expanded = False
         FieldName = #22995#21517
-        Width = 100
+        Width = 110
         Visible = True
       end
       item
         Expanded = False
         FieldName = #24615#21035
-        Width = 100
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = #27665#26063
-        Width = 100
+        Width = 83
         Visible = True
       end
       item
         Expanded = False
         FieldName = #31821#36143
-        Width = 100
+        Width = 110
         Visible = True
       end
       item
         Expanded = False
         FieldName = #20986#29983#26085#26399
-        Width = 100
+        Width = 110
         Visible = True
       end
       item
         Expanded = False
         FieldName = #29233#22909
-        Width = 100
+        Width = 110
         Visible = True
       end
       item
         Expanded = False
         FieldName = #37038#31665
-        Width = 120
+        Width = 110
         Visible = True
       end>
   end
-  object Button76: TButton
-    Left = 23
-    Top = 271
-    Width = 90
-    Height = 35
-    Hint = '{"type":"primary"}'
-    Caption = 'Visible'
+  object DBCheckBox1: TDBCheckBox
+    Left = 150
+    Top = 60
+    Width = 156
+    Height = 17
+    Caption = #30007
+    DataField = #24615#21035
+    DataSource = DataSource1
     TabOrder = 3
-    OnClick = Button76Click
-  end
-  object Button77: TButton
-    Left = 119
-    Top = 271
-    Width = 90
-    Height = 35
-    Hint = '{"type":"primary"}'
-    Caption = 'Enabled'
-    TabOrder = 4
-    OnClick = Button77Click
-  end
-  object Button78: TButton
-    Left = 311
-    Top = 271
-    Width = 90
-    Height = 35
-    Hint = '{"type":"primary"}'
-    Caption = 'Size'
-    TabOrder = 5
-    OnClick = Button78Click
-  end
-  object Button80: TButton
-    Left = 407
-    Top = 271
-    Width = 91
-    Height = 35
-    Caption = 'Get'
-    TabOrder = 6
-    OnClick = Button80Click
-  end
-  object Button81: TButton
-    Left = 503
-    Top = 271
-    Width = 90
-    Height = 35
-    Caption = 'Set'
-    TabOrder = 7
-    OnClick = Button81Click
-  end
-  object CheckBox12: TCheckBox
-    Left = 20
-    Top = 319
-    Width = 344
-    Height = 22
-    Caption = 'ShowMessage OnChange'
-    TabOrder = 8
-  end
-  object SpinEdit1: TSpinEdit
-    Left = 20
-    Top = 370
-    Width = 121
-    Height = 30
-    MaxValue = 5
-    MinValue = -5
-    TabOrder = 9
-    Value = 0
-    OnChange = SpinEdit1Change
   end
   object ADOConnection1: TADOConnection
     Connected = True

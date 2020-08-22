@@ -26,21 +26,9 @@ type
     DBText1: TDBText;
     Label1: TLabel;
     Label2: TLabel;
-    Button76: TButton;
-    Button77: TButton;
-    Button78: TButton;
-    Button80: TButton;
-    Button81: TButton;
-    CheckBox12: TCheckBox;
-    SpinEdit1: TSpinEdit;
+    DBCheckBox1: TDBCheckBox;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
-    procedure Button78Click(Sender: TObject);
-    procedure Button76Click(Sender: TObject);
-    procedure Button77Click(Sender: TObject);
-    procedure Button81Click(Sender: TObject);
-    procedure Button80Click(Sender: TObject);
-    procedure SpinEdit1Change(Sender: TObject);
   private
      ZQuery: TZReadOnlyQuery;
   public
@@ -77,41 +65,6 @@ begin
      dwShowMessage('Hello, DeWeb!',self);
 }end;
 
-procedure TTest.Button76Click(Sender: TObject);
-begin
-     SpinEdit1.Visible   := not SpinEdit1.Visible;
-
-end;
-
-procedure TTest.Button77Click(Sender: TObject);
-begin
-     SpinEdit1.Enabled   := not SpinEdit1.Enabled;
-
-end;
-
-procedure TTest.Button78Click(Sender: TObject);
-begin
-     with SpinEdit1 do begin
-          Left      := Left + 20;
-          Top       := Top + 20;
-          Width     := Width + 20;
-          Height    := Height + 20;
-     end;
-
-
-end;
-
-procedure TTest.Button80Click(Sender: TObject);
-begin
-     dwShowMessage(IntToStr(SpinEdit1.Value),self);
-end;
-
-procedure TTest.Button81Click(Sender: TObject);
-begin
-     SpinEdit1.Value     := SpinEdit1.Value+1;
-
-end;
-
 procedure TTest.FormCreate(Sender: TObject);
 begin
      Top  := 0;
@@ -136,14 +89,6 @@ begin
 
 end;
 
-
-procedure TTest.SpinEdit1Change(Sender: TObject);
-begin
-     if CheckBox12.Checked then begin
-          dwShowMessage('cur val = '+IntToStr(SpinEdit1.Value),self);
-     end;
-
-end;
 
 end.
 
