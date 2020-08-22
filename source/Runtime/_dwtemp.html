@@ -1,7 +1,7 @@
-<!DOCTYPE html>                                                                    <html lang="en">                                                                                                                                                    <head>                                                                                <meta charset="utf-8">                                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">            <meta http-equiv="X-UA-Compatible" content="ie=edge">                             <title>DeWeb : Delphi -Web</title>                                                          </head>                                                                           
+<!DOCTYPE html>                                                                    <html lang="en">                                                                                                                                                    <head>                                                                                <meta charset="utf-8">                                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">            <meta http-equiv="X-UA-Compatible" content="ie=edge">                             <title>Driver</title>                                                          </head>                                                                           
 <body style="background-color:#F0F0F0">
     <script src="dist/vue.js" type="text/javascript"></script>              <script src="dist/index.js" type="text/javascript"></script>            <script src="dist/axios.min.js" type="text/javascript"></script>        <link rel="icon" href="dist/webimages/[###].ico" type="image/x-icon">           <link rel="stylesheet" type="text/css" href="dist/theme-chalk/index.css" /> 
-    <div id="app" style="position:absolute;overflow:hidden;left:0;right:0;bottom:0;margin: 0 auto;background-color:#FFFFFF" :style="{top:Default__top,width:Default__wid,height:Default__hei}" >
+    <div id="app" style="position:absolute;overflow:hidden;left:0;top:0;right:0;bottom:0;margin: 0 auto;background-color:#F0F0F0" :style="{width:Driver__wid,height:Driver__hei}" >
         <el-dialog :title="input_query_caption" :visible.sync="input_query_visible" >
         	<el-form style="width:90%;padding-left:5%;">
         		<el-form-item :label="input_query_inputname" >
@@ -13,8 +13,318 @@
         		<el-button type="primary" @click="processinputquery">{{input_query_okcaption}}</el-button>
         	</div>
         </el-dialog>
-        <el-button v-if="Button1__vis" :disabled="Button1__dis" type="default" :style="{left:Button1__lef,top:Button1__top,width:Button1__wid,height:Button1__hei}" style="position:absolute;" @click="dwevent($event,'Button1','0','onclick','')">{{Button1__cap}}
+        <el-main v-if="Panel_Content__vis" :disabled="Panel_Content__dis" :style="{backgroundColor:Panel_Content__col,left:Panel_Content__lef,top:Panel_Content__top,width:Panel_Content__wid,height:Panel_Content__hei}" style="position:absolute;overflow:hidden;">
+        <el-main v-if="Panel_00_Logo__vis" :disabled="Panel_00_Logo__dis" :style="{backgroundColor:Panel_00_Logo__col,left:Panel_00_Logo__lef,top:Panel_00_Logo__top,width:Panel_00_Logo__wid,height:Panel_00_Logo__hei}" style="position:absolute;overflow:hidden;">
+        <el-main v-if="Panel1__vis" :disabled="Panel1__dis" :style="{backgroundColor:Panel1__col,left:Panel1__lef,top:Panel1__top,width:Panel1__wid,height:Panel1__hei}" style="position:absolute;overflow:hidden;">
+        <el-image :src="Img__src" fit="none" v-if="Img__vis" :disabled="Img__dis" :style="{left:Img__lef,top:Img__top,width:Img__wid,height:Img__hei}" style="position:absolute;">
+        </el-Image>
+        <div  v-html="Label_Title__cap" v-if="Label_Title__vis" :disabled="Label_Title__dis" :style="{left:Label_Title__lef,top:Label_Title__top,width:Label_Title__wid,height:Label_Title__hei}" style="position:absolute;color:#800000;font-family:'微软雅黑';font-size:16pt;font-weight:normal;font-style:normal;text-decoration:none;line-height:28px;">{{Label_Title__cap}}
+        </div>
+        </el-main>
+        <el-main v-if="Panel_Space1__vis" :disabled="Panel_Space1__dis" :style="{backgroundColor:Panel_Space1__col,left:Panel_Space1__lef,top:Panel_Space1__top,width:Panel_Space1__wid,height:Panel_Space1__hei}" style="position:absolute;overflow:hidden;">
+        </el-main>
+        <el-main v-if="Panel2__vis" :disabled="Panel2__dis" :style="{backgroundColor:Panel2__col,left:Panel2__lef,top:Panel2__top,width:Panel2__wid,height:Panel2__hei}" style="position:absolute;overflow:hidden;">
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_99_Buttons__vis" :disabled="Panel_99_Buttons__dis" :style="{backgroundColor:Panel_99_Buttons__col,left:Panel_99_Buttons__lef,top:Panel_99_Buttons__top,width:Panel_99_Buttons__wid,height:Panel_99_Buttons__hei}" style="position:absolute;overflow:hidden;">
+        <el-button v-if="Button_OK__vis" :disabled="Button_OK__dis" type="success" icon="el-icon-circle-check" :style="{left:Button_OK__lef,top:Button_OK__top,width:Button_OK__wid,height:Button_OK__hei}" style="position:absolute;" @click="dwevent($event,'Button_OK','0','onclick','')">{{Button_OK__cap}}
         </el-button>
+        </el-main>
+        <el-main v-if="Panel_01_Select__vis" :disabled="Panel_01_Select__dis" :style="{backgroundColor:Panel_01_Select__col,left:Panel_01_Select__lef,top:Panel_01_Select__top,width:Panel_01_Select__wid,height:Panel_01_Select__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item__cap" v-if="Label_Item__vis" :disabled="Label_Item__dis" :style="{left:Label_Item__lef,top:Label_Item__top,width:Label_Item__wid,height:Label_Item__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item__cap}}
+        </div>
+        <el-main v-if="Panel8__vis" :disabled="Panel8__dis" :style="{backgroundColor:Panel8__col,left:Panel8__lef,top:Panel8__top,width:Panel8__wid,height:Panel8__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton17__vis" :disabled="RadioButton17__dis" v-model="RadioButton17__chk" :style="{left:RadioButton17__lef,top:RadioButton17__top,width:RadioButton17__wid,height:RadioButton17__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton17','(this.RadioButton17__chk)','onclick','')">{{RadioButton17__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton18__vis" :disabled="RadioButton18__dis" v-model="RadioButton18__chk" :style="{left:RadioButton18__lef,top:RadioButton18__top,width:RadioButton18__wid,height:RadioButton18__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton18','(this.RadioButton18__chk)','onclick','')">{{RadioButton18__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton15__vis" :disabled="RadioButton15__dis" v-model="RadioButton15__chk" :style="{left:RadioButton15__lef,top:RadioButton15__top,width:RadioButton15__wid,height:RadioButton15__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton15','(this.RadioButton15__chk)','onclick','')">{{RadioButton15__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton16__vis" :disabled="RadioButton16__dis" v-model="RadioButton16__chk" :style="{left:RadioButton16__lef,top:RadioButton16__top,width:RadioButton16__wid,height:RadioButton16__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton16','(this.RadioButton16__chk)','onclick','')">{{RadioButton16__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select1__vis" :disabled="Panel_01_Select1__dis" :style="{backgroundColor:Panel_01_Select1__col,left:Panel_01_Select1__lef,top:Panel_01_Select1__top,width:Panel_01_Select1__wid,height:Panel_01_Select1__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item1__cap" v-if="Label_Item1__vis" :disabled="Label_Item1__dis" :style="{left:Label_Item1__lef,top:Label_Item1__top,width:Label_Item1__wid,height:Label_Item1__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item1__cap}}
+        </div>
+        <el-main v-if="Panel81__vis" :disabled="Panel81__dis" :style="{backgroundColor:Panel81__col,left:Panel81__lef,top:Panel81__top,width:Panel81__wid,height:Panel81__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton171__vis" :disabled="RadioButton171__dis" v-model="RadioButton171__chk" :style="{left:RadioButton171__lef,top:RadioButton171__top,width:RadioButton171__wid,height:RadioButton171__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton171','(this.RadioButton171__chk)','onclick','')">{{RadioButton171__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton181__vis" :disabled="RadioButton181__dis" v-model="RadioButton181__chk" :style="{left:RadioButton181__lef,top:RadioButton181__top,width:RadioButton181__wid,height:RadioButton181__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton181','(this.RadioButton181__chk)','onclick','')">{{RadioButton181__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton151__vis" :disabled="RadioButton151__dis" v-model="RadioButton151__chk" :style="{left:RadioButton151__lef,top:RadioButton151__top,width:RadioButton151__wid,height:RadioButton151__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton151','(this.RadioButton151__chk)','onclick','')">{{RadioButton151__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton161__vis" :disabled="RadioButton161__dis" v-model="RadioButton161__chk" :style="{left:RadioButton161__lef,top:RadioButton161__top,width:RadioButton161__wid,height:RadioButton161__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton161','(this.RadioButton161__chk)','onclick','')">{{RadioButton161__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select2__vis" :disabled="Panel_01_Select2__dis" :style="{backgroundColor:Panel_01_Select2__col,left:Panel_01_Select2__lef,top:Panel_01_Select2__top,width:Panel_01_Select2__wid,height:Panel_01_Select2__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item2__cap" v-if="Label_Item2__vis" :disabled="Label_Item2__dis" :style="{left:Label_Item2__lef,top:Label_Item2__top,width:Label_Item2__wid,height:Label_Item2__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item2__cap}}
+        </div>
+        <el-main v-if="Panel82__vis" :disabled="Panel82__dis" :style="{backgroundColor:Panel82__col,left:Panel82__lef,top:Panel82__top,width:Panel82__wid,height:Panel82__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton172__vis" :disabled="RadioButton172__dis" v-model="RadioButton172__chk" :style="{left:RadioButton172__lef,top:RadioButton172__top,width:RadioButton172__wid,height:RadioButton172__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton172','(this.RadioButton172__chk)','onclick','')">{{RadioButton172__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton182__vis" :disabled="RadioButton182__dis" v-model="RadioButton182__chk" :style="{left:RadioButton182__lef,top:RadioButton182__top,width:RadioButton182__wid,height:RadioButton182__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton182','(this.RadioButton182__chk)','onclick','')">{{RadioButton182__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton152__vis" :disabled="RadioButton152__dis" v-model="RadioButton152__chk" :style="{left:RadioButton152__lef,top:RadioButton152__top,width:RadioButton152__wid,height:RadioButton152__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton152','(this.RadioButton152__chk)','onclick','')">{{RadioButton152__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton162__vis" :disabled="RadioButton162__dis" v-model="RadioButton162__chk" :style="{left:RadioButton162__lef,top:RadioButton162__top,width:RadioButton162__wid,height:RadioButton162__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton162','(this.RadioButton162__chk)','onclick','')">{{RadioButton162__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select3__vis" :disabled="Panel_01_Select3__dis" :style="{backgroundColor:Panel_01_Select3__col,left:Panel_01_Select3__lef,top:Panel_01_Select3__top,width:Panel_01_Select3__wid,height:Panel_01_Select3__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item3__cap" v-if="Label_Item3__vis" :disabled="Label_Item3__dis" :style="{left:Label_Item3__lef,top:Label_Item3__top,width:Label_Item3__wid,height:Label_Item3__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item3__cap}}
+        </div>
+        <el-main v-if="Panel83__vis" :disabled="Panel83__dis" :style="{backgroundColor:Panel83__col,left:Panel83__lef,top:Panel83__top,width:Panel83__wid,height:Panel83__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton173__vis" :disabled="RadioButton173__dis" v-model="RadioButton173__chk" :style="{left:RadioButton173__lef,top:RadioButton173__top,width:RadioButton173__wid,height:RadioButton173__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton173','(this.RadioButton173__chk)','onclick','')">{{RadioButton173__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton183__vis" :disabled="RadioButton183__dis" v-model="RadioButton183__chk" :style="{left:RadioButton183__lef,top:RadioButton183__top,width:RadioButton183__wid,height:RadioButton183__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton183','(this.RadioButton183__chk)','onclick','')">{{RadioButton183__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton153__vis" :disabled="RadioButton153__dis" v-model="RadioButton153__chk" :style="{left:RadioButton153__lef,top:RadioButton153__top,width:RadioButton153__wid,height:RadioButton153__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton153','(this.RadioButton153__chk)','onclick','')">{{RadioButton153__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton163__vis" :disabled="RadioButton163__dis" v-model="RadioButton163__chk" :style="{left:RadioButton163__lef,top:RadioButton163__top,width:RadioButton163__wid,height:RadioButton163__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton163','(this.RadioButton163__chk)','onclick','')">{{RadioButton163__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select4__vis" :disabled="Panel_01_Select4__dis" :style="{backgroundColor:Panel_01_Select4__col,left:Panel_01_Select4__lef,top:Panel_01_Select4__top,width:Panel_01_Select4__wid,height:Panel_01_Select4__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item4__cap" v-if="Label_Item4__vis" :disabled="Label_Item4__dis" :style="{left:Label_Item4__lef,top:Label_Item4__top,width:Label_Item4__wid,height:Label_Item4__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item4__cap}}
+        </div>
+        <el-main v-if="Panel84__vis" :disabled="Panel84__dis" :style="{backgroundColor:Panel84__col,left:Panel84__lef,top:Panel84__top,width:Panel84__wid,height:Panel84__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton174__vis" :disabled="RadioButton174__dis" v-model="RadioButton174__chk" :style="{left:RadioButton174__lef,top:RadioButton174__top,width:RadioButton174__wid,height:RadioButton174__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton174','(this.RadioButton174__chk)','onclick','')">{{RadioButton174__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton184__vis" :disabled="RadioButton184__dis" v-model="RadioButton184__chk" :style="{left:RadioButton184__lef,top:RadioButton184__top,width:RadioButton184__wid,height:RadioButton184__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton184','(this.RadioButton184__chk)','onclick','')">{{RadioButton184__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton154__vis" :disabled="RadioButton154__dis" v-model="RadioButton154__chk" :style="{left:RadioButton154__lef,top:RadioButton154__top,width:RadioButton154__wid,height:RadioButton154__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton154','(this.RadioButton154__chk)','onclick','')">{{RadioButton154__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton164__vis" :disabled="RadioButton164__dis" v-model="RadioButton164__chk" :style="{left:RadioButton164__lef,top:RadioButton164__top,width:RadioButton164__wid,height:RadioButton164__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton164','(this.RadioButton164__chk)','onclick','')">{{RadioButton164__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select5__vis" :disabled="Panel_01_Select5__dis" :style="{backgroundColor:Panel_01_Select5__col,left:Panel_01_Select5__lef,top:Panel_01_Select5__top,width:Panel_01_Select5__wid,height:Panel_01_Select5__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item5__cap" v-if="Label_Item5__vis" :disabled="Label_Item5__dis" :style="{left:Label_Item5__lef,top:Label_Item5__top,width:Label_Item5__wid,height:Label_Item5__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item5__cap}}
+        </div>
+        <el-main v-if="Panel85__vis" :disabled="Panel85__dis" :style="{backgroundColor:Panel85__col,left:Panel85__lef,top:Panel85__top,width:Panel85__wid,height:Panel85__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton175__vis" :disabled="RadioButton175__dis" v-model="RadioButton175__chk" :style="{left:RadioButton175__lef,top:RadioButton175__top,width:RadioButton175__wid,height:RadioButton175__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton175','(this.RadioButton175__chk)','onclick','')">{{RadioButton175__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton185__vis" :disabled="RadioButton185__dis" v-model="RadioButton185__chk" :style="{left:RadioButton185__lef,top:RadioButton185__top,width:RadioButton185__wid,height:RadioButton185__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton185','(this.RadioButton185__chk)','onclick','')">{{RadioButton185__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton155__vis" :disabled="RadioButton155__dis" v-model="RadioButton155__chk" :style="{left:RadioButton155__lef,top:RadioButton155__top,width:RadioButton155__wid,height:RadioButton155__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton155','(this.RadioButton155__chk)','onclick','')">{{RadioButton155__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton165__vis" :disabled="RadioButton165__dis" v-model="RadioButton165__chk" :style="{left:RadioButton165__lef,top:RadioButton165__top,width:RadioButton165__wid,height:RadioButton165__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton165','(this.RadioButton165__chk)','onclick','')">{{RadioButton165__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select6__vis" :disabled="Panel_01_Select6__dis" :style="{backgroundColor:Panel_01_Select6__col,left:Panel_01_Select6__lef,top:Panel_01_Select6__top,width:Panel_01_Select6__wid,height:Panel_01_Select6__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item6__cap" v-if="Label_Item6__vis" :disabled="Label_Item6__dis" :style="{left:Label_Item6__lef,top:Label_Item6__top,width:Label_Item6__wid,height:Label_Item6__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item6__cap}}
+        </div>
+        <el-main v-if="Panel86__vis" :disabled="Panel86__dis" :style="{backgroundColor:Panel86__col,left:Panel86__lef,top:Panel86__top,width:Panel86__wid,height:Panel86__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton176__vis" :disabled="RadioButton176__dis" v-model="RadioButton176__chk" :style="{left:RadioButton176__lef,top:RadioButton176__top,width:RadioButton176__wid,height:RadioButton176__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton176','(this.RadioButton176__chk)','onclick','')">{{RadioButton176__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton186__vis" :disabled="RadioButton186__dis" v-model="RadioButton186__chk" :style="{left:RadioButton186__lef,top:RadioButton186__top,width:RadioButton186__wid,height:RadioButton186__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton186','(this.RadioButton186__chk)','onclick','')">{{RadioButton186__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton156__vis" :disabled="RadioButton156__dis" v-model="RadioButton156__chk" :style="{left:RadioButton156__lef,top:RadioButton156__top,width:RadioButton156__wid,height:RadioButton156__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton156','(this.RadioButton156__chk)','onclick','')">{{RadioButton156__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton166__vis" :disabled="RadioButton166__dis" v-model="RadioButton166__chk" :style="{left:RadioButton166__lef,top:RadioButton166__top,width:RadioButton166__wid,height:RadioButton166__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton166','(this.RadioButton166__chk)','onclick','')">{{RadioButton166__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select7__vis" :disabled="Panel_01_Select7__dis" :style="{backgroundColor:Panel_01_Select7__col,left:Panel_01_Select7__lef,top:Panel_01_Select7__top,width:Panel_01_Select7__wid,height:Panel_01_Select7__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item7__cap" v-if="Label_Item7__vis" :disabled="Label_Item7__dis" :style="{left:Label_Item7__lef,top:Label_Item7__top,width:Label_Item7__wid,height:Label_Item7__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item7__cap}}
+        </div>
+        <el-main v-if="Panel87__vis" :disabled="Panel87__dis" :style="{backgroundColor:Panel87__col,left:Panel87__lef,top:Panel87__top,width:Panel87__wid,height:Panel87__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton177__vis" :disabled="RadioButton177__dis" v-model="RadioButton177__chk" :style="{left:RadioButton177__lef,top:RadioButton177__top,width:RadioButton177__wid,height:RadioButton177__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton177','(this.RadioButton177__chk)','onclick','')">{{RadioButton177__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton187__vis" :disabled="RadioButton187__dis" v-model="RadioButton187__chk" :style="{left:RadioButton187__lef,top:RadioButton187__top,width:RadioButton187__wid,height:RadioButton187__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton187','(this.RadioButton187__chk)','onclick','')">{{RadioButton187__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton157__vis" :disabled="RadioButton157__dis" v-model="RadioButton157__chk" :style="{left:RadioButton157__lef,top:RadioButton157__top,width:RadioButton157__wid,height:RadioButton157__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton157','(this.RadioButton157__chk)','onclick','')">{{RadioButton157__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton167__vis" :disabled="RadioButton167__dis" v-model="RadioButton167__chk" :style="{left:RadioButton167__lef,top:RadioButton167__top,width:RadioButton167__wid,height:RadioButton167__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton167','(this.RadioButton167__chk)','onclick','')">{{RadioButton167__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select8__vis" :disabled="Panel_01_Select8__dis" :style="{backgroundColor:Panel_01_Select8__col,left:Panel_01_Select8__lef,top:Panel_01_Select8__top,width:Panel_01_Select8__wid,height:Panel_01_Select8__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item8__cap" v-if="Label_Item8__vis" :disabled="Label_Item8__dis" :style="{left:Label_Item8__lef,top:Label_Item8__top,width:Label_Item8__wid,height:Label_Item8__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item8__cap}}
+        </div>
+        <el-main v-if="Panel88__vis" :disabled="Panel88__dis" :style="{backgroundColor:Panel88__col,left:Panel88__lef,top:Panel88__top,width:Panel88__wid,height:Panel88__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton178__vis" :disabled="RadioButton178__dis" v-model="RadioButton178__chk" :style="{left:RadioButton178__lef,top:RadioButton178__top,width:RadioButton178__wid,height:RadioButton178__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton178','(this.RadioButton178__chk)','onclick','')">{{RadioButton178__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton188__vis" :disabled="RadioButton188__dis" v-model="RadioButton188__chk" :style="{left:RadioButton188__lef,top:RadioButton188__top,width:RadioButton188__wid,height:RadioButton188__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton188','(this.RadioButton188__chk)','onclick','')">{{RadioButton188__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton158__vis" :disabled="RadioButton158__dis" v-model="RadioButton158__chk" :style="{left:RadioButton158__lef,top:RadioButton158__top,width:RadioButton158__wid,height:RadioButton158__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton158','(this.RadioButton158__chk)','onclick','')">{{RadioButton158__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton168__vis" :disabled="RadioButton168__dis" v-model="RadioButton168__chk" :style="{left:RadioButton168__lef,top:RadioButton168__top,width:RadioButton168__wid,height:RadioButton168__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton168','(this.RadioButton168__chk)','onclick','')">{{RadioButton168__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select9__vis" :disabled="Panel_01_Select9__dis" :style="{backgroundColor:Panel_01_Select9__col,left:Panel_01_Select9__lef,top:Panel_01_Select9__top,width:Panel_01_Select9__wid,height:Panel_01_Select9__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item9__cap" v-if="Label_Item9__vis" :disabled="Label_Item9__dis" :style="{left:Label_Item9__lef,top:Label_Item9__top,width:Label_Item9__wid,height:Label_Item9__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item9__cap}}
+        </div>
+        <el-main v-if="Panel89__vis" :disabled="Panel89__dis" :style="{backgroundColor:Panel89__col,left:Panel89__lef,top:Panel89__top,width:Panel89__wid,height:Panel89__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton179__vis" :disabled="RadioButton179__dis" v-model="RadioButton179__chk" :style="{left:RadioButton179__lef,top:RadioButton179__top,width:RadioButton179__wid,height:RadioButton179__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton179','(this.RadioButton179__chk)','onclick','')">{{RadioButton179__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton189__vis" :disabled="RadioButton189__dis" v-model="RadioButton189__chk" :style="{left:RadioButton189__lef,top:RadioButton189__top,width:RadioButton189__wid,height:RadioButton189__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton189','(this.RadioButton189__chk)','onclick','')">{{RadioButton189__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton159__vis" :disabled="RadioButton159__dis" v-model="RadioButton159__chk" :style="{left:RadioButton159__lef,top:RadioButton159__top,width:RadioButton159__wid,height:RadioButton159__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton159','(this.RadioButton159__chk)','onclick','')">{{RadioButton159__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton169__vis" :disabled="RadioButton169__dis" v-model="RadioButton169__chk" :style="{left:RadioButton169__lef,top:RadioButton169__top,width:RadioButton169__wid,height:RadioButton169__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton169','(this.RadioButton169__chk)','onclick','')">{{RadioButton169__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select10__vis" :disabled="Panel_01_Select10__dis" :style="{backgroundColor:Panel_01_Select10__col,left:Panel_01_Select10__lef,top:Panel_01_Select10__top,width:Panel_01_Select10__wid,height:Panel_01_Select10__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item10__cap" v-if="Label_Item10__vis" :disabled="Label_Item10__dis" :style="{left:Label_Item10__lef,top:Label_Item10__top,width:Label_Item10__wid,height:Label_Item10__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item10__cap}}
+        </div>
+        <el-main v-if="Panel810__vis" :disabled="Panel810__dis" :style="{backgroundColor:Panel810__col,left:Panel810__lef,top:Panel810__top,width:Panel810__wid,height:Panel810__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton1710__vis" :disabled="RadioButton1710__dis" v-model="RadioButton1710__chk" :style="{left:RadioButton1710__lef,top:RadioButton1710__top,width:RadioButton1710__wid,height:RadioButton1710__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1710','(this.RadioButton1710__chk)','onclick','')">{{RadioButton1710__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1810__vis" :disabled="RadioButton1810__dis" v-model="RadioButton1810__chk" :style="{left:RadioButton1810__lef,top:RadioButton1810__top,width:RadioButton1810__wid,height:RadioButton1810__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1810','(this.RadioButton1810__chk)','onclick','')">{{RadioButton1810__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1510__vis" :disabled="RadioButton1510__dis" v-model="RadioButton1510__chk" :style="{left:RadioButton1510__lef,top:RadioButton1510__top,width:RadioButton1510__wid,height:RadioButton1510__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1510','(this.RadioButton1510__chk)','onclick','')">{{RadioButton1510__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1610__vis" :disabled="RadioButton1610__dis" v-model="RadioButton1610__chk" :style="{left:RadioButton1610__lef,top:RadioButton1610__top,width:RadioButton1610__wid,height:RadioButton1610__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1610','(this.RadioButton1610__chk)','onclick','')">{{RadioButton1610__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select11__vis" :disabled="Panel_01_Select11__dis" :style="{backgroundColor:Panel_01_Select11__col,left:Panel_01_Select11__lef,top:Panel_01_Select11__top,width:Panel_01_Select11__wid,height:Panel_01_Select11__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item11__cap" v-if="Label_Item11__vis" :disabled="Label_Item11__dis" :style="{left:Label_Item11__lef,top:Label_Item11__top,width:Label_Item11__wid,height:Label_Item11__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item11__cap}}
+        </div>
+        <el-main v-if="Panel811__vis" :disabled="Panel811__dis" :style="{backgroundColor:Panel811__col,left:Panel811__lef,top:Panel811__top,width:Panel811__wid,height:Panel811__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton1711__vis" :disabled="RadioButton1711__dis" v-model="RadioButton1711__chk" :style="{left:RadioButton1711__lef,top:RadioButton1711__top,width:RadioButton1711__wid,height:RadioButton1711__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1711','(this.RadioButton1711__chk)','onclick','')">{{RadioButton1711__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1811__vis" :disabled="RadioButton1811__dis" v-model="RadioButton1811__chk" :style="{left:RadioButton1811__lef,top:RadioButton1811__top,width:RadioButton1811__wid,height:RadioButton1811__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1811','(this.RadioButton1811__chk)','onclick','')">{{RadioButton1811__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1511__vis" :disabled="RadioButton1511__dis" v-model="RadioButton1511__chk" :style="{left:RadioButton1511__lef,top:RadioButton1511__top,width:RadioButton1511__wid,height:RadioButton1511__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1511','(this.RadioButton1511__chk)','onclick','')">{{RadioButton1511__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1611__vis" :disabled="RadioButton1611__dis" v-model="RadioButton1611__chk" :style="{left:RadioButton1611__lef,top:RadioButton1611__top,width:RadioButton1611__wid,height:RadioButton1611__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1611','(this.RadioButton1611__chk)','onclick','')">{{RadioButton1611__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select12__vis" :disabled="Panel_01_Select12__dis" :style="{backgroundColor:Panel_01_Select12__col,left:Panel_01_Select12__lef,top:Panel_01_Select12__top,width:Panel_01_Select12__wid,height:Panel_01_Select12__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item12__cap" v-if="Label_Item12__vis" :disabled="Label_Item12__dis" :style="{left:Label_Item12__lef,top:Label_Item12__top,width:Label_Item12__wid,height:Label_Item12__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item12__cap}}
+        </div>
+        <el-main v-if="Panel812__vis" :disabled="Panel812__dis" :style="{backgroundColor:Panel812__col,left:Panel812__lef,top:Panel812__top,width:Panel812__wid,height:Panel812__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton1712__vis" :disabled="RadioButton1712__dis" v-model="RadioButton1712__chk" :style="{left:RadioButton1712__lef,top:RadioButton1712__top,width:RadioButton1712__wid,height:RadioButton1712__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1712','(this.RadioButton1712__chk)','onclick','')">{{RadioButton1712__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1812__vis" :disabled="RadioButton1812__dis" v-model="RadioButton1812__chk" :style="{left:RadioButton1812__lef,top:RadioButton1812__top,width:RadioButton1812__wid,height:RadioButton1812__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1812','(this.RadioButton1812__chk)','onclick','')">{{RadioButton1812__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1512__vis" :disabled="RadioButton1512__dis" v-model="RadioButton1512__chk" :style="{left:RadioButton1512__lef,top:RadioButton1512__top,width:RadioButton1512__wid,height:RadioButton1512__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1512','(this.RadioButton1512__chk)','onclick','')">{{RadioButton1512__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1612__vis" :disabled="RadioButton1612__dis" v-model="RadioButton1612__chk" :style="{left:RadioButton1612__lef,top:RadioButton1612__top,width:RadioButton1612__wid,height:RadioButton1612__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1612','(this.RadioButton1612__chk)','onclick','')">{{RadioButton1612__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select13__vis" :disabled="Panel_01_Select13__dis" :style="{backgroundColor:Panel_01_Select13__col,left:Panel_01_Select13__lef,top:Panel_01_Select13__top,width:Panel_01_Select13__wid,height:Panel_01_Select13__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item13__cap" v-if="Label_Item13__vis" :disabled="Label_Item13__dis" :style="{left:Label_Item13__lef,top:Label_Item13__top,width:Label_Item13__wid,height:Label_Item13__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item13__cap}}
+        </div>
+        <el-main v-if="Panel813__vis" :disabled="Panel813__dis" :style="{backgroundColor:Panel813__col,left:Panel813__lef,top:Panel813__top,width:Panel813__wid,height:Panel813__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton1713__vis" :disabled="RadioButton1713__dis" v-model="RadioButton1713__chk" :style="{left:RadioButton1713__lef,top:RadioButton1713__top,width:RadioButton1713__wid,height:RadioButton1713__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1713','(this.RadioButton1713__chk)','onclick','')">{{RadioButton1713__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1813__vis" :disabled="RadioButton1813__dis" v-model="RadioButton1813__chk" :style="{left:RadioButton1813__lef,top:RadioButton1813__top,width:RadioButton1813__wid,height:RadioButton1813__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1813','(this.RadioButton1813__chk)','onclick','')">{{RadioButton1813__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1513__vis" :disabled="RadioButton1513__dis" v-model="RadioButton1513__chk" :style="{left:RadioButton1513__lef,top:RadioButton1513__top,width:RadioButton1513__wid,height:RadioButton1513__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1513','(this.RadioButton1513__chk)','onclick','')">{{RadioButton1513__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1613__vis" :disabled="RadioButton1613__dis" v-model="RadioButton1613__chk" :style="{left:RadioButton1613__lef,top:RadioButton1613__top,width:RadioButton1613__wid,height:RadioButton1613__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1613','(this.RadioButton1613__chk)','onclick','')">{{RadioButton1613__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select14__vis" :disabled="Panel_01_Select14__dis" :style="{backgroundColor:Panel_01_Select14__col,left:Panel_01_Select14__lef,top:Panel_01_Select14__top,width:Panel_01_Select14__wid,height:Panel_01_Select14__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item14__cap" v-if="Label_Item14__vis" :disabled="Label_Item14__dis" :style="{left:Label_Item14__lef,top:Label_Item14__top,width:Label_Item14__wid,height:Label_Item14__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item14__cap}}
+        </div>
+        <el-main v-if="Panel814__vis" :disabled="Panel814__dis" :style="{backgroundColor:Panel814__col,left:Panel814__lef,top:Panel814__top,width:Panel814__wid,height:Panel814__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton1714__vis" :disabled="RadioButton1714__dis" v-model="RadioButton1714__chk" :style="{left:RadioButton1714__lef,top:RadioButton1714__top,width:RadioButton1714__wid,height:RadioButton1714__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1714','(this.RadioButton1714__chk)','onclick','')">{{RadioButton1714__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1814__vis" :disabled="RadioButton1814__dis" v-model="RadioButton1814__chk" :style="{left:RadioButton1814__lef,top:RadioButton1814__top,width:RadioButton1814__wid,height:RadioButton1814__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1814','(this.RadioButton1814__chk)','onclick','')">{{RadioButton1814__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1514__vis" :disabled="RadioButton1514__dis" v-model="RadioButton1514__chk" :style="{left:RadioButton1514__lef,top:RadioButton1514__top,width:RadioButton1514__wid,height:RadioButton1514__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1514','(this.RadioButton1514__chk)','onclick','')">{{RadioButton1514__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1614__vis" :disabled="RadioButton1614__dis" v-model="RadioButton1614__chk" :style="{left:RadioButton1614__lef,top:RadioButton1614__top,width:RadioButton1614__wid,height:RadioButton1614__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1614','(this.RadioButton1614__chk)','onclick','')">{{RadioButton1614__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select15__vis" :disabled="Panel_01_Select15__dis" :style="{backgroundColor:Panel_01_Select15__col,left:Panel_01_Select15__lef,top:Panel_01_Select15__top,width:Panel_01_Select15__wid,height:Panel_01_Select15__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item15__cap" v-if="Label_Item15__vis" :disabled="Label_Item15__dis" :style="{left:Label_Item15__lef,top:Label_Item15__top,width:Label_Item15__wid,height:Label_Item15__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item15__cap}}
+        </div>
+        <el-main v-if="Panel815__vis" :disabled="Panel815__dis" :style="{backgroundColor:Panel815__col,left:Panel815__lef,top:Panel815__top,width:Panel815__wid,height:Panel815__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton1715__vis" :disabled="RadioButton1715__dis" v-model="RadioButton1715__chk" :style="{left:RadioButton1715__lef,top:RadioButton1715__top,width:RadioButton1715__wid,height:RadioButton1715__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1715','(this.RadioButton1715__chk)','onclick','')">{{RadioButton1715__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1815__vis" :disabled="RadioButton1815__dis" v-model="RadioButton1815__chk" :style="{left:RadioButton1815__lef,top:RadioButton1815__top,width:RadioButton1815__wid,height:RadioButton1815__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1815','(this.RadioButton1815__chk)','onclick','')">{{RadioButton1815__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1515__vis" :disabled="RadioButton1515__dis" v-model="RadioButton1515__chk" :style="{left:RadioButton1515__lef,top:RadioButton1515__top,width:RadioButton1515__wid,height:RadioButton1515__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1515','(this.RadioButton1515__chk)','onclick','')">{{RadioButton1515__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1615__vis" :disabled="RadioButton1615__dis" v-model="RadioButton1615__chk" :style="{left:RadioButton1615__lef,top:RadioButton1615__top,width:RadioButton1615__wid,height:RadioButton1615__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1615','(this.RadioButton1615__chk)','onclick','')">{{RadioButton1615__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select16__vis" :disabled="Panel_01_Select16__dis" :style="{backgroundColor:Panel_01_Select16__col,left:Panel_01_Select16__lef,top:Panel_01_Select16__top,width:Panel_01_Select16__wid,height:Panel_01_Select16__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item16__cap" v-if="Label_Item16__vis" :disabled="Label_Item16__dis" :style="{left:Label_Item16__lef,top:Label_Item16__top,width:Label_Item16__wid,height:Label_Item16__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item16__cap}}
+        </div>
+        <el-main v-if="Panel816__vis" :disabled="Panel816__dis" :style="{backgroundColor:Panel816__col,left:Panel816__lef,top:Panel816__top,width:Panel816__wid,height:Panel816__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton1716__vis" :disabled="RadioButton1716__dis" v-model="RadioButton1716__chk" :style="{left:RadioButton1716__lef,top:RadioButton1716__top,width:RadioButton1716__wid,height:RadioButton1716__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1716','(this.RadioButton1716__chk)','onclick','')">{{RadioButton1716__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1816__vis" :disabled="RadioButton1816__dis" v-model="RadioButton1816__chk" :style="{left:RadioButton1816__lef,top:RadioButton1816__top,width:RadioButton1816__wid,height:RadioButton1816__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1816','(this.RadioButton1816__chk)','onclick','')">{{RadioButton1816__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1516__vis" :disabled="RadioButton1516__dis" v-model="RadioButton1516__chk" :style="{left:RadioButton1516__lef,top:RadioButton1516__top,width:RadioButton1516__wid,height:RadioButton1516__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1516','(this.RadioButton1516__chk)','onclick','')">{{RadioButton1516__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1616__vis" :disabled="RadioButton1616__dis" v-model="RadioButton1616__chk" :style="{left:RadioButton1616__lef,top:RadioButton1616__top,width:RadioButton1616__wid,height:RadioButton1616__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1616','(this.RadioButton1616__chk)','onclick','')">{{RadioButton1616__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select17__vis" :disabled="Panel_01_Select17__dis" :style="{backgroundColor:Panel_01_Select17__col,left:Panel_01_Select17__lef,top:Panel_01_Select17__top,width:Panel_01_Select17__wid,height:Panel_01_Select17__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item17__cap" v-if="Label_Item17__vis" :disabled="Label_Item17__dis" :style="{left:Label_Item17__lef,top:Label_Item17__top,width:Label_Item17__wid,height:Label_Item17__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item17__cap}}
+        </div>
+        <el-main v-if="Panel817__vis" :disabled="Panel817__dis" :style="{backgroundColor:Panel817__col,left:Panel817__lef,top:Panel817__top,width:Panel817__wid,height:Panel817__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton1717__vis" :disabled="RadioButton1717__dis" v-model="RadioButton1717__chk" :style="{left:RadioButton1717__lef,top:RadioButton1717__top,width:RadioButton1717__wid,height:RadioButton1717__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1717','(this.RadioButton1717__chk)','onclick','')">{{RadioButton1717__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1817__vis" :disabled="RadioButton1817__dis" v-model="RadioButton1817__chk" :style="{left:RadioButton1817__lef,top:RadioButton1817__top,width:RadioButton1817__wid,height:RadioButton1817__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1817','(this.RadioButton1817__chk)','onclick','')">{{RadioButton1817__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1517__vis" :disabled="RadioButton1517__dis" v-model="RadioButton1517__chk" :style="{left:RadioButton1517__lef,top:RadioButton1517__top,width:RadioButton1517__wid,height:RadioButton1517__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1517','(this.RadioButton1517__chk)','onclick','')">{{RadioButton1517__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1617__vis" :disabled="RadioButton1617__dis" v-model="RadioButton1617__chk" :style="{left:RadioButton1617__lef,top:RadioButton1617__top,width:RadioButton1617__wid,height:RadioButton1617__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1617','(this.RadioButton1617__chk)','onclick','')">{{RadioButton1617__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select18__vis" :disabled="Panel_01_Select18__dis" :style="{backgroundColor:Panel_01_Select18__col,left:Panel_01_Select18__lef,top:Panel_01_Select18__top,width:Panel_01_Select18__wid,height:Panel_01_Select18__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item18__cap" v-if="Label_Item18__vis" :disabled="Label_Item18__dis" :style="{left:Label_Item18__lef,top:Label_Item18__top,width:Label_Item18__wid,height:Label_Item18__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item18__cap}}
+        </div>
+        <el-main v-if="Panel818__vis" :disabled="Panel818__dis" :style="{backgroundColor:Panel818__col,left:Panel818__lef,top:Panel818__top,width:Panel818__wid,height:Panel818__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton1718__vis" :disabled="RadioButton1718__dis" v-model="RadioButton1718__chk" :style="{left:RadioButton1718__lef,top:RadioButton1718__top,width:RadioButton1718__wid,height:RadioButton1718__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1718','(this.RadioButton1718__chk)','onclick','')">{{RadioButton1718__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1818__vis" :disabled="RadioButton1818__dis" v-model="RadioButton1818__chk" :style="{left:RadioButton1818__lef,top:RadioButton1818__top,width:RadioButton1818__wid,height:RadioButton1818__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1818','(this.RadioButton1818__chk)','onclick','')">{{RadioButton1818__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1518__vis" :disabled="RadioButton1518__dis" v-model="RadioButton1518__chk" :style="{left:RadioButton1518__lef,top:RadioButton1518__top,width:RadioButton1518__wid,height:RadioButton1518__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1518','(this.RadioButton1518__chk)','onclick','')">{{RadioButton1518__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1618__vis" :disabled="RadioButton1618__dis" v-model="RadioButton1618__chk" :style="{left:RadioButton1618__lef,top:RadioButton1618__top,width:RadioButton1618__wid,height:RadioButton1618__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1618','(this.RadioButton1618__chk)','onclick','')">{{RadioButton1618__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select19__vis" :disabled="Panel_01_Select19__dis" :style="{backgroundColor:Panel_01_Select19__col,left:Panel_01_Select19__lef,top:Panel_01_Select19__top,width:Panel_01_Select19__wid,height:Panel_01_Select19__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item19__cap" v-if="Label_Item19__vis" :disabled="Label_Item19__dis" :style="{left:Label_Item19__lef,top:Label_Item19__top,width:Label_Item19__wid,height:Label_Item19__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item19__cap}}
+        </div>
+        <el-main v-if="Panel819__vis" :disabled="Panel819__dis" :style="{backgroundColor:Panel819__col,left:Panel819__lef,top:Panel819__top,width:Panel819__wid,height:Panel819__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton1719__vis" :disabled="RadioButton1719__dis" v-model="RadioButton1719__chk" :style="{left:RadioButton1719__lef,top:RadioButton1719__top,width:RadioButton1719__wid,height:RadioButton1719__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1719','(this.RadioButton1719__chk)','onclick','')">{{RadioButton1719__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1819__vis" :disabled="RadioButton1819__dis" v-model="RadioButton1819__chk" :style="{left:RadioButton1819__lef,top:RadioButton1819__top,width:RadioButton1819__wid,height:RadioButton1819__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1819','(this.RadioButton1819__chk)','onclick','')">{{RadioButton1819__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1519__vis" :disabled="RadioButton1519__dis" v-model="RadioButton1519__chk" :style="{left:RadioButton1519__lef,top:RadioButton1519__top,width:RadioButton1519__wid,height:RadioButton1519__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1519','(this.RadioButton1519__chk)','onclick','')">{{RadioButton1519__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1619__vis" :disabled="RadioButton1619__dis" v-model="RadioButton1619__chk" :style="{left:RadioButton1619__lef,top:RadioButton1619__top,width:RadioButton1619__wid,height:RadioButton1619__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1619','(this.RadioButton1619__chk)','onclick','')">{{RadioButton1619__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        <el-main v-if="Panel_01_Select20__vis" :disabled="Panel_01_Select20__dis" :style="{backgroundColor:Panel_01_Select20__col,left:Panel_01_Select20__lef,top:Panel_01_Select20__top,width:Panel_01_Select20__wid,height:Panel_01_Select20__hei}" style="position:absolute;overflow:hidden;">
+        <div  v-html="Label_Item20__cap" v-if="Label_Item20__vis" :disabled="Label_Item20__dis" :style="{left:Label_Item20__lef,top:Label_Item20__top,width:Label_Item20__wid,height:Label_Item20__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Item20__cap}}
+        </div>
+        <el-main v-if="Panel820__vis" :disabled="Panel820__dis" :style="{backgroundColor:Panel820__col,left:Panel820__lef,top:Panel820__top,width:Panel820__wid,height:Panel820__hei}" style="position:absolute;overflow:hidden;">
+        <el-radio label="1" v-if="RadioButton1720__vis" :disabled="RadioButton1720__dis" v-model="RadioButton1720__chk" :style="{left:RadioButton1720__lef,top:RadioButton1720__top,width:RadioButton1720__wid,height:RadioButton1720__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1720','(this.RadioButton1720__chk)','onclick','')">{{RadioButton1720__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1820__vis" :disabled="RadioButton1820__dis" v-model="RadioButton1820__chk" :style="{left:RadioButton1820__lef,top:RadioButton1820__top,width:RadioButton1820__wid,height:RadioButton1820__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1820','(this.RadioButton1820__chk)','onclick','')">{{RadioButton1820__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1520__vis" :disabled="RadioButton1520__dis" v-model="RadioButton1520__chk" :style="{left:RadioButton1520__lef,top:RadioButton1520__top,width:RadioButton1520__wid,height:RadioButton1520__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1520','(this.RadioButton1520__chk)','onclick','')">{{RadioButton1520__cap}}
+        </el-radio>
+        <el-radio label="1" v-if="RadioButton1620__vis" :disabled="RadioButton1620__dis" v-model="RadioButton1620__chk" :style="{left:RadioButton1620__lef,top:RadioButton1620__top,width:RadioButton1620__wid,height:RadioButton1620__hei}" style="position:absolute;" @change="dwevent($event,'RadioButton1620','(this.RadioButton1620__chk)','onclick','')">{{RadioButton1620__cap}}
+        </el-radio>
+        </el-main>
+        </el-main>
+        </el-main>
 	 </div>
     <script>
 	    Vue.prototype.procResp = function (data){
@@ -30,16 +340,1185 @@
 				el: '#app',
 				data: function () {
 					return {
-					    Default__top:"0px",
-					    Default__wid:"800px",
-					    Default__hei:"600px",
-                        Button1__lef:"40px",
-                        Button1__top:"100px",
-                        Button1__wid:"81px",
-                        Button1__hei:"31px",
-                        Button1__vis:true,
-                        Button1__dis:false,
-                        Button1__cap:"Button1",
+					    Driver__top:"156px",
+					    Driver__wid:"1424px",
+					    Driver__hei:"1853px",
+                        Img__lef:"0px",
+                        Img__top:"0px",
+                        Img__wid:"60px",
+                        Img__hei:"50px",
+                        Img__vis:true,
+                        Img__dis:false,
+                        Img__src:"dist/webimages/Img.jpg",
+                        Label_Title__lef:"67px",
+                        Label_Title__top:"7px",
+                        Label_Title__wid:"334px",
+                        Label_Title__hei:"28px",
+                        Label_Title__vis:true,
+                        Label_Title__dis:false,
+                        Label_Title__cap:"驾考科目一测试系统",
+                        Panel1__lef:"0px",
+                        Panel1__top:"0px",
+                        Panel1__wid:"1404px",
+                        Panel1__hei:"50px",
+                        Panel1__vis:true,
+                        Panel1__dis:false,
+                        Panel1__col:"#FFFFFF",
+                        Panel_Space1__lef:"0px",
+                        Panel_Space1__top:"50px",
+                        Panel_Space1__wid:"1404px",
+                        Panel_Space1__hei:"12px",
+                        Panel_Space1__vis:true,
+                        Panel_Space1__dis:false,
+                        Panel_Space1__col:"#FFFFFF",
+                        Panel2__lef:"0px",
+                        Panel2__top:"62px",
+                        Panel2__wid:"1404px",
+                        Panel2__hei:"1px",
+                        Panel2__vis:true,
+                        Panel2__dis:false,
+                        Panel2__col:"#F0F0F0",
+                        Panel_00_Logo__lef:"10px",
+                        Panel_00_Logo__top:"10px",
+                        Panel_00_Logo__wid:"1404px",
+                        Panel_00_Logo__hei:"63px",
+                        Panel_00_Logo__vis:true,
+                        Panel_00_Logo__dis:false,
+                        Panel_00_Logo__col:"#FFFFFF",
+                        Button_OK__lef:"5px",
+                        Button_OK__top:"5px",
+                        Button_OK__wid:"120px",
+                        Button_OK__hei:"40px",
+                        Button_OK__vis:true,
+                        Button_OK__dis:false,
+                        Button_OK__cap:"交卷",
+                        Panel_99_Buttons__lef:"10px",
+                        Panel_99_Buttons__top:"1793px",
+                        Panel_99_Buttons__wid:"1404px",
+                        Panel_99_Buttons__hei:"50px",
+                        Panel_99_Buttons__vis:true,
+                        Panel_99_Buttons__dis:false,
+                        Panel_99_Buttons__col:"#FFFFFF",
+                        Label_Item__lef:"10px",
+                        Label_Item__top:"10px",
+                        Label_Item__wid:"757px",
+                        Label_Item__hei:"68px",
+                        Label_Item__vis:true,
+                        Label_Item__dis:false,
+                        Label_Item__cap:"大富翁论坛是由孙以义博士创办的以Delphi为主的编程技术论坛。自1998年建立以来，广大程序员和编程爱好者在这里讨论技术、交流经验，一时间高手辈出，精品贴层出不穷。后来，经过soul大侠的改版，使论坛界面更靓、速度更快，这里俨然成了程序员的“天堂”。",
+                        RadioButton17__lef:"99999px",
+                        RadioButton17__top:"0px",
+                        RadioButton17__wid:"188px",
+                        RadioButton17__hei:"25px",
+                        RadioButton17__vis:true,
+                        RadioButton17__dis:false,
+                        RadioButton17__cap:"C/C++",
+                        RadioButton17__chk:"0",
+                        RadioButton18__lef:"99999px",
+                        RadioButton18__top:"0px",
+                        RadioButton18__wid:"188px",
+                        RadioButton18__hei:"25px",
+                        RadioButton18__vis:true,
+                        RadioButton18__dis:false,
+                        RadioButton18__cap:"Java",
+                        RadioButton18__chk:"0",
+                        RadioButton15__lef:"99999px",
+                        RadioButton15__top:"0px",
+                        RadioButton15__wid:"188px",
+                        RadioButton15__hei:"25px",
+                        RadioButton15__vis:true,
+                        RadioButton15__dis:false,
+                        RadioButton15__cap:"Delphi",
+                        RadioButton15__chk:"0",
+                        RadioButton16__lef:"400px",
+                        RadioButton16__top:"10px",
+                        RadioButton16__wid:"113px",
+                        RadioButton16__hei:"25px",
+                        RadioButton16__vis:true,
+                        RadioButton16__dis:false,
+                        RadioButton16__cap:"PHP",
+                        RadioButton16__chk:"0",
+                        Panel8__lef:"10px",
+                        Panel8__top:"73px",
+                        Panel8__wid:"761px",
+                        Panel8__hei:"40px",
+                        Panel8__vis:true,
+                        Panel8__dis:false,
+                        Panel8__col:"#FFFFFF",
+                        Panel_01_Select__lef:"10px",
+                        Panel_01_Select__top:"73px",
+                        Panel_01_Select__wid:"781px",
+                        Panel_01_Select__hei:"312px",
+                        Panel_01_Select__vis:false,
+                        Panel_01_Select__dis:false,
+                        Panel_01_Select__col:"#FFFFFF",
+                        Label_Item1__lef:"10px",
+                        Label_Item1__top:"10px",
+                        Label_Item1__wid:"1384px",
+                        Label_Item1__hei:"26px",
+                        Label_Item1__vis:true,
+                        Label_Item1__dis:false,
+                        Label_Item1__cap:"1、 汽车驶出非机动车道，最高时速不准超过______。",
+                        RadioButton171__lef:"10px",
+                        RadioButton171__top:"10px",
+                        RadioButton171__wid:"344px",
+                        RadioButton171__hei:"20px",
+                        RadioButton171__vis:true,
+                        RadioButton171__dis:false,
+                        RadioButton171__cap:"A、60公里",
+                        RadioButton171__chk:"0",
+                        RadioButton181__lef:"354px",
+                        RadioButton181__top:"10px",
+                        RadioButton181__wid:"344px",
+                        RadioButton181__hei:"20px",
+                        RadioButton181__vis:true,
+                        RadioButton181__dis:false,
+                        RadioButton181__cap:"B、50公里",
+                        RadioButton181__chk:"0",
+                        RadioButton151__lef:"698px",
+                        RadioButton151__top:"10px",
+                        RadioButton151__wid:"344px",
+                        RadioButton151__hei:"20px",
+                        RadioButton151__vis:true,
+                        RadioButton151__dis:false,
+                        RadioButton151__cap:"C、40公里",
+                        RadioButton151__chk:"0",
+                        RadioButton161__lef:"1042px",
+                        RadioButton161__top:"10px",
+                        RadioButton161__wid:"332px",
+                        RadioButton161__hei:"20px",
+                        RadioButton161__vis:true,
+                        RadioButton161__dis:false,
+                        RadioButton161__cap:"D、30公",
+                        RadioButton161__chk:"0",
+                        Panel81__lef:"10px",
+                        Panel81__top:"36px",
+                        Panel81__wid:"1384px",
+                        Panel81__hei:"40px",
+                        Panel81__vis:true,
+                        Panel81__dis:false,
+                        Panel81__col:"#FFFFFF",
+                        Panel_01_Select1__lef:"10px",
+                        Panel_01_Select1__top:"73px",
+                        Panel_01_Select1__wid:"1404px",
+                        Panel_01_Select1__hei:"86px",
+                        Panel_01_Select1__vis:true,
+                        Panel_01_Select1__dis:false,
+                        Panel_01_Select1__col:"#FFFFFF",
+                        Label_Item2__lef:"10px",
+                        Label_Item2__top:"10px",
+                        Label_Item2__wid:"1384px",
+                        Label_Item2__hei:"26px",
+                        Label_Item2__vis:true,
+                        Label_Item2__dis:false,
+                        Label_Item2__cap:"2、 汽车在掉头时，最高时速不准超过______。",
+                        RadioButton172__lef:"10px",
+                        RadioButton172__top:"10px",
+                        RadioButton172__wid:"344px",
+                        RadioButton172__hei:"20px",
+                        RadioButton172__vis:true,
+                        RadioButton172__dis:false,
+                        RadioButton172__cap:"A、50公里",
+                        RadioButton172__chk:"0",
+                        RadioButton182__lef:"354px",
+                        RadioButton182__top:"10px",
+                        RadioButton182__wid:"344px",
+                        RadioButton182__hei:"20px",
+                        RadioButton182__vis:true,
+                        RadioButton182__dis:false,
+                        RadioButton182__cap:"B、40公里",
+                        RadioButton182__chk:"0",
+                        RadioButton152__lef:"698px",
+                        RadioButton152__top:"10px",
+                        RadioButton152__wid:"344px",
+                        RadioButton152__hei:"20px",
+                        RadioButton152__vis:true,
+                        RadioButton152__dis:false,
+                        RadioButton152__cap:"C、30公里",
+                        RadioButton152__chk:"0",
+                        RadioButton162__lef:"1042px",
+                        RadioButton162__top:"10px",
+                        RadioButton162__wid:"332px",
+                        RadioButton162__hei:"20px",
+                        RadioButton162__vis:true,
+                        RadioButton162__dis:false,
+                        RadioButton162__cap:"D、60公",
+                        RadioButton162__chk:"0",
+                        Panel82__lef:"10px",
+                        Panel82__top:"36px",
+                        Panel82__wid:"1384px",
+                        Panel82__hei:"40px",
+                        Panel82__vis:true,
+                        Panel82__dis:false,
+                        Panel82__col:"#FFFFFF",
+                        Panel_01_Select2__lef:"10px",
+                        Panel_01_Select2__top:"159px",
+                        Panel_01_Select2__wid:"1404px",
+                        Panel_01_Select2__hei:"86px",
+                        Panel_01_Select2__vis:true,
+                        Panel_01_Select2__dis:false,
+                        Panel_01_Select2__col:"#FFFFFF",
+                        Label_Item3__lef:"10px",
+                        Label_Item3__top:"10px",
+                        Label_Item3__wid:"1384px",
+                        Label_Item3__hei:"26px",
+                        Label_Item3__vis:true,
+                        Label_Item3__dis:false,
+                        Label_Item3__cap:"3、 在没有道路中心线的道路上，前车遇后车发出超车信号时，应当______。",
+                        RadioButton173__lef:"10px",
+                        RadioButton173__top:"10px",
+                        RadioButton173__wid:"344px",
+                        RadioButton173__hei:"20px",
+                        RadioButton173__vis:true,
+                        RadioButton173__dis:false,
+                        RadioButton173__cap:"A、保持原有状态行驶",
+                        RadioButton173__chk:"0",
+                        RadioButton183__lef:"354px",
+                        RadioButton183__top:"10px",
+                        RadioButton183__wid:"344px",
+                        RadioButton183__hei:"20px",
+                        RadioButton183__vis:true,
+                        RadioButton183__dis:false,
+                        RadioButton183__cap:"B、加速行驶",
+                        RadioButton183__chk:"0",
+                        RadioButton153__lef:"698px",
+                        RadioButton153__top:"10px",
+                        RadioButton153__wid:"344px",
+                        RadioButton153__hei:"20px",
+                        RadioButton153__vis:true,
+                        RadioButton153__dis:false,
+                        RadioButton153__cap:"C、迅速停车让行",
+                        RadioButton153__chk:"0",
+                        RadioButton163__lef:"1042px",
+                        RadioButton163__top:"10px",
+                        RadioButton163__wid:"332px",
+                        RadioButton163__hei:"20px",
+                        RadioButton163__vis:true,
+                        RadioButton163__dis:false,
+                        RadioButton163__cap:"D、在条件许可的情况下，降低速度、靠右让路",
+                        RadioButton163__chk:"0",
+                        Panel83__lef:"10px",
+                        Panel83__top:"36px",
+                        Panel83__wid:"1384px",
+                        Panel83__hei:"40px",
+                        Panel83__vis:true,
+                        Panel83__dis:false,
+                        Panel83__col:"#FFFFFF",
+                        Panel_01_Select3__lef:"10px",
+                        Panel_01_Select3__top:"245px",
+                        Panel_01_Select3__wid:"1404px",
+                        Panel_01_Select3__hei:"86px",
+                        Panel_01_Select3__vis:true,
+                        Panel_01_Select3__dis:false,
+                        Panel_01_Select3__col:"#FFFFFF",
+                        Label_Item4__lef:"10px",
+                        Label_Item4__top:"10px",
+                        Label_Item4__wid:"1384px",
+                        Label_Item4__hei:"26px",
+                        Label_Item4__vis:true,
+                        Label_Item4__dis:false,
+                        Label_Item4__cap:"4、 准许机动车掉头的地方是______。",
+                        RadioButton174__lef:"10px",
+                        RadioButton174__top:"10px",
+                        RadioButton174__wid:"344px",
+                        RadioButton174__hei:"20px",
+                        RadioButton174__vis:true,
+                        RadioButton174__dis:false,
+                        RadioButton174__cap:"A、铁路道口",
+                        RadioButton174__chk:"0",
+                        RadioButton184__lef:"354px",
+                        RadioButton184__top:"10px",
+                        RadioButton184__wid:"344px",
+                        RadioButton184__hei:"20px",
+                        RadioButton184__vis:true,
+                        RadioButton184__dis:false,
+                        RadioButton184__cap:"B、人行横道",
+                        RadioButton184__chk:"0",
+                        RadioButton154__lef:"698px",
+                        RadioButton154__top:"10px",
+                        RadioButton154__wid:"344px",
+                        RadioButton154__hei:"20px",
+                        RadioButton154__vis:true,
+                        RadioButton154__dis:false,
+                        RadioButton154__cap:"C、隧道",
+                        RadioButton154__chk:"0",
+                        RadioButton164__lef:"1042px",
+                        RadioButton164__top:"10px",
+                        RadioButton164__wid:"332px",
+                        RadioButton164__hei:"20px",
+                        RadioButton164__vis:true,
+                        RadioButton164__dis:false,
+                        RadioButton164__cap:"D、环岛",
+                        RadioButton164__chk:"0",
+                        Panel84__lef:"10px",
+                        Panel84__top:"36px",
+                        Panel84__wid:"1384px",
+                        Panel84__hei:"40px",
+                        Panel84__vis:true,
+                        Panel84__dis:false,
+                        Panel84__col:"#FFFFFF",
+                        Panel_01_Select4__lef:"10px",
+                        Panel_01_Select4__top:"331px",
+                        Panel_01_Select4__wid:"1404px",
+                        Panel_01_Select4__hei:"86px",
+                        Panel_01_Select4__vis:true,
+                        Panel_01_Select4__dis:false,
+                        Panel_01_Select4__col:"#FFFFFF",
+                        Label_Item5__lef:"10px",
+                        Label_Item5__top:"10px",
+                        Label_Item5__wid:"1384px",
+                        Label_Item5__hei:"26px",
+                        Label_Item5__vis:true,
+                        Label_Item5__dis:false,
+                        Label_Item5__cap:"5、 《中华人民共和国道路交通安全法》是为了维护道路交通秩序，______，提高通行效率。",
+                        RadioButton175__lef:"10px",
+                        RadioButton175__top:"10px",
+                        RadioButton175__wid:"344px",
+                        RadioButton175__hei:"20px",
+                        RadioButton175__vis:true,
+                        RadioButton175__dis:false,
+                        RadioButton175__cap:"A、保证车辆高速行驶",
+                        RadioButton175__chk:"0",
+                        RadioButton185__lef:"354px",
+                        RadioButton185__top:"10px",
+                        RadioButton185__wid:"344px",
+                        RadioButton185__hei:"20px",
+                        RadioButton185__vis:true,
+                        RadioButton185__dis:false,
+                        RadioButton185__cap:"B、圆满完成运输任务",
+                        RadioButton185__chk:"0",
+                        RadioButton155__lef:"698px",
+                        RadioButton155__top:"10px",
+                        RadioButton155__wid:"344px",
+                        RadioButton155__hei:"20px",
+                        RadioButton155__vis:true,
+                        RadioButton155__dis:false,
+                        RadioButton155__cap:"C、保护公民合法权益",
+                        RadioButton155__chk:"0",
+                        RadioButton165__lef:"1042px",
+                        RadioButton165__top:"10px",
+                        RadioButton165__wid:"332px",
+                        RadioButton165__hei:"20px",
+                        RadioButton165__vis:true,
+                        RadioButton165__dis:false,
+                        RadioButton165__cap:"D、减少交通事",
+                        RadioButton165__chk:"0",
+                        Panel85__lef:"10px",
+                        Panel85__top:"36px",
+                        Panel85__wid:"1384px",
+                        Panel85__hei:"40px",
+                        Panel85__vis:true,
+                        Panel85__dis:false,
+                        Panel85__col:"#FFFFFF",
+                        Panel_01_Select5__lef:"10px",
+                        Panel_01_Select5__top:"417px",
+                        Panel_01_Select5__wid:"1404px",
+                        Panel_01_Select5__hei:"86px",
+                        Panel_01_Select5__vis:true,
+                        Panel_01_Select5__dis:false,
+                        Panel_01_Select5__col:"#FFFFFF",
+                        Label_Item6__lef:"10px",
+                        Label_Item6__top:"10px",
+                        Label_Item6__wid:"1384px",
+                        Label_Item6__hei:"26px",
+                        Label_Item6__vis:true,
+                        Label_Item6__dis:false,
+                        Label_Item6__cap:"6、 已达到报废标准的机动车______上道路行驶。",
+                        RadioButton176__lef:"10px",
+                        RadioButton176__top:"10px",
+                        RadioButton176__wid:"344px",
+                        RadioButton176__hei:"20px",
+                        RadioButton176__vis:true,
+                        RadioButton176__dis:false,
+                        RadioButton176__cap:"A、允许临时",
+                        RadioButton176__chk:"0",
+                        RadioButton186__lef:"354px",
+                        RadioButton186__top:"10px",
+                        RadioButton186__wid:"344px",
+                        RadioButton186__hei:"20px",
+                        RadioButton186__vis:true,
+                        RadioButton186__dis:false,
+                        RadioButton186__cap:"B、不得",
+                        RadioButton186__chk:"0",
+                        RadioButton156__lef:"698px",
+                        RadioButton156__top:"10px",
+                        RadioButton156__wid:"344px",
+                        RadioButton156__hei:"20px",
+                        RadioButton156__vis:true,
+                        RadioButton156__dis:false,
+                        RadioButton156__cap:"C、经维修后可以",
+                        RadioButton156__chk:"0",
+                        RadioButton166__lef:"1042px",
+                        RadioButton166__top:"10px",
+                        RadioButton166__wid:"332px",
+                        RadioButton166__hei:"20px",
+                        RadioButton166__vis:true,
+                        RadioButton166__dis:false,
+                        RadioButton166__cap:"D、缴管理费后可",
+                        RadioButton166__chk:"0",
+                        Panel86__lef:"10px",
+                        Panel86__top:"36px",
+                        Panel86__wid:"1384px",
+                        Panel86__hei:"40px",
+                        Panel86__vis:true,
+                        Panel86__dis:false,
+                        Panel86__col:"#FFFFFF",
+                        Panel_01_Select6__lef:"10px",
+                        Panel_01_Select6__top:"503px",
+                        Panel_01_Select6__wid:"1404px",
+                        Panel_01_Select6__hei:"86px",
+                        Panel_01_Select6__vis:true,
+                        Panel_01_Select6__dis:false,
+                        Panel_01_Select6__col:"#FFFFFF",
+                        Label_Item7__lef:"10px",
+                        Label_Item7__top:"10px",
+                        Label_Item7__wid:"1384px",
+                        Label_Item7__hei:"26px",
+                        Label_Item7__vis:true,
+                        Label_Item7__dis:false,
+                        Label_Item7__cap:"7、 驾驶人在______可以驾驶机动车。",
+                        RadioButton177__lef:"10px",
+                        RadioButton177__top:"10px",
+                        RadioButton177__wid:"344px",
+                        RadioButton177__hei:"20px",
+                        RadioButton177__vis:true,
+                        RadioButton177__dis:false,
+                        RadioButton177__cap:"A、饮酒后",
+                        RadioButton177__chk:"0",
+                        RadioButton187__lef:"354px",
+                        RadioButton187__top:"10px",
+                        RadioButton187__wid:"344px",
+                        RadioButton187__hei:"20px",
+                        RadioButton187__vis:true,
+                        RadioButton187__dis:false,
+                        RadioButton187__cap:"B、患有妨碍安全驾驶的疾病",
+                        RadioButton187__chk:"0",
+                        RadioButton157__lef:"698px",
+                        RadioButton157__top:"10px",
+                        RadioButton157__wid:"344px",
+                        RadioButton157__hei:"20px",
+                        RadioButton157__vis:true,
+                        RadioButton157__dis:false,
+                        RadioButton157__cap:"C、过度疲劳时",
+                        RadioButton157__chk:"0",
+                        RadioButton167__lef:"1042px",
+                        RadioButton167__top:"10px",
+                        RadioButton167__wid:"332px",
+                        RadioButton167__hei:"20px",
+                        RadioButton167__vis:true,
+                        RadioButton167__dis:false,
+                        RadioButton167__cap:"D、饮茶",
+                        RadioButton167__chk:"0",
+                        Panel87__lef:"10px",
+                        Panel87__top:"36px",
+                        Panel87__wid:"1384px",
+                        Panel87__hei:"40px",
+                        Panel87__vis:true,
+                        Panel87__dis:false,
+                        Panel87__col:"#FFFFFF",
+                        Panel_01_Select7__lef:"10px",
+                        Panel_01_Select7__top:"589px",
+                        Panel_01_Select7__wid:"1404px",
+                        Panel_01_Select7__hei:"86px",
+                        Panel_01_Select7__vis:true,
+                        Panel_01_Select7__dis:false,
+                        Panel_01_Select7__col:"#FFFFFF",
+                        Label_Item8__lef:"10px",
+                        Label_Item8__top:"10px",
+                        Label_Item8__wid:"1384px",
+                        Label_Item8__hei:"26px",
+                        Label_Item8__vis:true,
+                        Label_Item8__dis:false,
+                        Label_Item8__cap:"8、 下列不属于道路交通信号的是______。",
+                        RadioButton178__lef:"10px",
+                        RadioButton178__top:"10px",
+                        RadioButton178__wid:"344px",
+                        RadioButton178__hei:"20px",
+                        RadioButton178__vis:true,
+                        RadioButton178__dis:false,
+                        RadioButton178__cap:"A、交通信号灯",
+                        RadioButton178__chk:"0",
+                        RadioButton188__lef:"354px",
+                        RadioButton188__top:"10px",
+                        RadioButton188__wid:"344px",
+                        RadioButton188__hei:"20px",
+                        RadioButton188__vis:true,
+                        RadioButton188__dis:false,
+                        RadioButton188__cap:"B、交通信息板",
+                        RadioButton188__chk:"0",
+                        RadioButton158__lef:"698px",
+                        RadioButton158__top:"10px",
+                        RadioButton158__wid:"344px",
+                        RadioButton158__hei:"20px",
+                        RadioButton158__vis:true,
+                        RadioButton158__dis:false,
+                        RadioButton158__cap:"C、交通警察的指挥",
+                        RadioButton158__chk:"0",
+                        RadioButton168__lef:"1042px",
+                        RadioButton168__top:"10px",
+                        RadioButton168__wid:"332px",
+                        RadioButton168__hei:"20px",
+                        RadioButton168__vis:true,
+                        RadioButton168__dis:false,
+                        RadioButton168__cap:"D、交通标志",
+                        RadioButton168__chk:"0",
+                        Panel88__lef:"10px",
+                        Panel88__top:"36px",
+                        Panel88__wid:"1384px",
+                        Panel88__hei:"40px",
+                        Panel88__vis:true,
+                        Panel88__dis:false,
+                        Panel88__col:"#FFFFFF",
+                        Panel_01_Select8__lef:"10px",
+                        Panel_01_Select8__top:"675px",
+                        Panel_01_Select8__wid:"1404px",
+                        Panel_01_Select8__hei:"86px",
+                        Panel_01_Select8__vis:true,
+                        Panel_01_Select8__dis:false,
+                        Panel_01_Select8__col:"#FFFFFF",
+                        Label_Item9__lef:"10px",
+                        Label_Item9__top:"10px",
+                        Label_Item9__wid:"1384px",
+                        Label_Item9__hei:"26px",
+                        Label_Item9__vis:true,
+                        Label_Item9__dis:false,
+                        Label_Item9__cap:"9、 机动车遇行人正在通过人行横道时，应当______。　",
+                        RadioButton179__lef:"10px",
+                        RadioButton179__top:"10px",
+                        RadioButton179__wid:"344px",
+                        RadioButton179__hei:"20px",
+                        RadioButton179__vis:true,
+                        RadioButton179__dis:false,
+                        RadioButton179__cap:"A、停车让行",
+                        RadioButton179__chk:"0",
+                        RadioButton189__lef:"354px",
+                        RadioButton189__top:"10px",
+                        RadioButton189__wid:"344px",
+                        RadioButton189__hei:"20px",
+                        RadioButton189__vis:true,
+                        RadioButton189__dis:false,
+                        RadioButton189__cap:"B、绕行通过",
+                        RadioButton189__chk:"0",
+                        RadioButton159__lef:"698px",
+                        RadioButton159__top:"10px",
+                        RadioButton159__wid:"344px",
+                        RadioButton159__hei:"20px",
+                        RadioButton159__vis:true,
+                        RadioButton159__dis:false,
+                        RadioButton159__cap:"C、持续鸣喇叭通过",
+                        RadioButton159__chk:"0",
+                        RadioButton169__lef:"1042px",
+                        RadioButton169__top:"10px",
+                        RadioButton169__wid:"332px",
+                        RadioButton169__hei:"20px",
+                        RadioButton169__vis:true,
+                        RadioButton169__dis:false,
+                        RadioButton169__cap:"D、提前加速通过",
+                        RadioButton169__chk:"0",
+                        Panel89__lef:"10px",
+                        Panel89__top:"36px",
+                        Panel89__wid:"1384px",
+                        Panel89__hei:"40px",
+                        Panel89__vis:true,
+                        Panel89__dis:false,
+                        Panel89__col:"#FFFFFF",
+                        Panel_01_Select9__lef:"10px",
+                        Panel_01_Select9__top:"761px",
+                        Panel_01_Select9__wid:"1404px",
+                        Panel_01_Select9__hei:"86px",
+                        Panel_01_Select9__vis:true,
+                        Panel_01_Select9__dis:false,
+                        Panel_01_Select9__col:"#FFFFFF",
+                        Label_Item10__lef:"10px",
+                        Label_Item10__top:"10px",
+                        Label_Item10__wid:"1384px",
+                        Label_Item10__hei:"26px",
+                        Label_Item10__vis:true,
+                        Label_Item10__dis:false,
+                        Label_Item10__cap:"10、 当事人逾期不履行行政处罚决定的，作出行政处罚决定的行政机关可以______。",
+                        RadioButton1710__lef:"10px",
+                        RadioButton1710__top:"10px",
+                        RadioButton1710__wid:"344px",
+                        RadioButton1710__hei:"20px",
+                        RadioButton1710__vis:true,
+                        RadioButton1710__dis:false,
+                        RadioButton1710__cap:"A、申请人民法院强制执行",
+                        RadioButton1710__chk:"0",
+                        RadioButton1810__lef:"354px",
+                        RadioButton1810__top:"10px",
+                        RadioButton1810__wid:"344px",
+                        RadioButton1810__hei:"20px",
+                        RadioButton1810__vis:true,
+                        RadioButton1810__dis:false,
+                        RadioButton1810__cap:"B、申请人民检察院强制执行",
+                        RadioButton1810__chk:"0",
+                        RadioButton1510__lef:"698px",
+                        RadioButton1510__top:"10px",
+                        RadioButton1510__wid:"344px",
+                        RadioButton1510__hei:"20px",
+                        RadioButton1510__vis:true,
+                        RadioButton1510__dis:false,
+                        RadioButton1510__cap:"C、吊销其机动车驾驶证",
+                        RadioButton1510__chk:"0",
+                        RadioButton1610__lef:"1042px",
+                        RadioButton1610__top:"10px",
+                        RadioButton1610__wid:"332px",
+                        RadioButton1610__hei:"20px",
+                        RadioButton1610__vis:true,
+                        RadioButton1610__dis:false,
+                        RadioButton1610__cap:"D、处15日以下拘留",
+                        RadioButton1610__chk:"0",
+                        Panel810__lef:"10px",
+                        Panel810__top:"36px",
+                        Panel810__wid:"1384px",
+                        Panel810__hei:"40px",
+                        Panel810__vis:true,
+                        Panel810__dis:false,
+                        Panel810__col:"#FFFFFF",
+                        Panel_01_Select10__lef:"10px",
+                        Panel_01_Select10__top:"847px",
+                        Panel_01_Select10__wid:"1404px",
+                        Panel_01_Select10__hei:"86px",
+                        Panel_01_Select10__vis:true,
+                        Panel_01_Select10__dis:false,
+                        Panel_01_Select10__col:"#FFFFFF",
+                        Label_Item11__lef:"10px",
+                        Label_Item11__top:"10px",
+                        Label_Item11__wid:"1384px",
+                        Label_Item11__hei:"26px",
+                        Label_Item11__vis:true,
+                        Label_Item11__dis:false,
+                        Label_Item11__cap:"11、 道路交通违法行为人应当在15日内到______接受处理。",
+                        RadioButton1711__lef:"10px",
+                        RadioButton1711__top:"10px",
+                        RadioButton1711__wid:"344px",
+                        RadioButton1711__hei:"20px",
+                        RadioButton1711__vis:true,
+                        RadioButton1711__dis:false,
+                        RadioButton1711__cap:"A、人民检察院",
+                        RadioButton1711__chk:"0",
+                        RadioButton1811__lef:"354px",
+                        RadioButton1811__top:"10px",
+                        RadioButton1811__wid:"344px",
+                        RadioButton1811__hei:"20px",
+                        RadioButton1811__vis:true,
+                        RadioButton1811__dis:false,
+                        RadioButton1811__cap:"B、人民法院",
+                        RadioButton1811__chk:"0",
+                        RadioButton1511__lef:"698px",
+                        RadioButton1511__top:"10px",
+                        RadioButton1511__wid:"344px",
+                        RadioButton1511__hei:"20px",
+                        RadioButton1511__vis:true,
+                        RadioButton1511__dis:false,
+                        RadioButton1511__cap:"C、公安交通管理部门",
+                        RadioButton1511__chk:"0",
+                        RadioButton1611__lef:"1042px",
+                        RadioButton1611__top:"10px",
+                        RadioButton1611__wid:"332px",
+                        RadioButton1611__hei:"20px",
+                        RadioButton1611__vis:true,
+                        RadioButton1611__dis:false,
+                        RadioButton1611__cap:"D、道路运输管理部门",
+                        RadioButton1611__chk:"0",
+                        Panel811__lef:"10px",
+                        Panel811__top:"36px",
+                        Panel811__wid:"1384px",
+                        Panel811__hei:"40px",
+                        Panel811__vis:true,
+                        Panel811__dis:false,
+                        Panel811__col:"#FFFFFF",
+                        Panel_01_Select11__lef:"10px",
+                        Panel_01_Select11__top:"933px",
+                        Panel_01_Select11__wid:"1404px",
+                        Panel_01_Select11__hei:"86px",
+                        Panel_01_Select11__vis:true,
+                        Panel_01_Select11__dis:false,
+                        Panel_01_Select11__col:"#FFFFFF",
+                        Label_Item12__lef:"10px",
+                        Label_Item12__top:"10px",
+                        Label_Item12__wid:"1384px",
+                        Label_Item12__hei:"26px",
+                        Label_Item12__vis:true,
+                        Label_Item12__dis:false,
+                        Label_Item12__cap:"12、 驾驶机动车下陡坡时，______滑行。",
+                        RadioButton1712__lef:"10px",
+                        RadioButton1712__top:"10px",
+                        RadioButton1712__wid:"344px",
+                        RadioButton1712__hei:"20px",
+                        RadioButton1712__vis:true,
+                        RadioButton1712__dis:false,
+                        RadioButton1712__cap:"A、可以熄火",
+                        RadioButton1712__chk:"0",
+                        RadioButton1812__lef:"354px",
+                        RadioButton1812__top:"10px",
+                        RadioButton1812__wid:"344px",
+                        RadioButton1812__hei:"20px",
+                        RadioButton1812__vis:true,
+                        RadioButton1812__dis:false,
+                        RadioButton1812__cap:"B、可以空挡但不准熄火",
+                        RadioButton1812__chk:"0",
+                        RadioButton1512__lef:"698px",
+                        RadioButton1512__top:"10px",
+                        RadioButton1512__wid:"344px",
+                        RadioButton1512__hei:"20px",
+                        RadioButton1512__vis:true,
+                        RadioButton1512__dis:false,
+                        RadioButton1512__cap:"C、可以空挡",
+                        RadioButton1512__chk:"0",
+                        RadioButton1612__lef:"1042px",
+                        RadioButton1612__top:"10px",
+                        RadioButton1612__wid:"332px",
+                        RadioButton1612__hei:"20px",
+                        RadioButton1612__vis:true,
+                        RadioButton1612__dis:false,
+                        RadioButton1612__cap:"D、不准空挡或熄火",
+                        RadioButton1612__chk:"0",
+                        Panel812__lef:"10px",
+                        Panel812__top:"36px",
+                        Panel812__wid:"1384px",
+                        Panel812__hei:"40px",
+                        Panel812__vis:true,
+                        Panel812__dis:false,
+                        Panel812__col:"#FFFFFF",
+                        Panel_01_Select12__lef:"10px",
+                        Panel_01_Select12__top:"1019px",
+                        Panel_01_Select12__wid:"1404px",
+                        Panel_01_Select12__hei:"86px",
+                        Panel_01_Select12__vis:true,
+                        Panel_01_Select12__dis:false,
+                        Panel_01_Select12__col:"#FFFFFF",
+                        Label_Item13__lef:"10px",
+                        Label_Item13__top:"10px",
+                        Label_Item13__wid:"1384px",
+                        Label_Item13__hei:"26px",
+                        Label_Item13__vis:true,
+                        Label_Item13__dis:false,
+                        Label_Item13__cap:"13、 机动车距离交叉路口______以内不准停车。",
+                        RadioButton1713__lef:"10px",
+                        RadioButton1713__top:"10px",
+                        RadioButton1713__wid:"344px",
+                        RadioButton1713__hei:"20px",
+                        RadioButton1713__vis:true,
+                        RadioButton1713__dis:false,
+                        RadioButton1713__cap:"A、20米",
+                        RadioButton1713__chk:"0",
+                        RadioButton1813__lef:"354px",
+                        RadioButton1813__top:"10px",
+                        RadioButton1813__wid:"344px",
+                        RadioButton1813__hei:"20px",
+                        RadioButton1813__vis:true,
+                        RadioButton1813__dis:false,
+                        RadioButton1813__cap:"B、30米",
+                        RadioButton1813__chk:"0",
+                        RadioButton1513__lef:"698px",
+                        RadioButton1513__top:"10px",
+                        RadioButton1513__wid:"344px",
+                        RadioButton1513__hei:"20px",
+                        RadioButton1513__vis:true,
+                        RadioButton1513__dis:false,
+                        RadioButton1513__cap:"C、40米",
+                        RadioButton1513__chk:"0",
+                        RadioButton1613__lef:"1042px",
+                        RadioButton1613__top:"10px",
+                        RadioButton1613__wid:"332px",
+                        RadioButton1613__hei:"20px",
+                        RadioButton1613__vis:true,
+                        RadioButton1613__dis:false,
+                        RadioButton1613__cap:"D、50米",
+                        RadioButton1613__chk:"0",
+                        Panel813__lef:"10px",
+                        Panel813__top:"36px",
+                        Panel813__wid:"1384px",
+                        Panel813__hei:"40px",
+                        Panel813__vis:true,
+                        Panel813__dis:false,
+                        Panel813__col:"#FFFFFF",
+                        Panel_01_Select13__lef:"10px",
+                        Panel_01_Select13__top:"1105px",
+                        Panel_01_Select13__wid:"1404px",
+                        Panel_01_Select13__hei:"86px",
+                        Panel_01_Select13__vis:true,
+                        Panel_01_Select13__dis:false,
+                        Panel_01_Select13__col:"#FFFFFF",
+                        Label_Item14__lef:"10px",
+                        Label_Item14__top:"10px",
+                        Label_Item14__wid:"1384px",
+                        Label_Item14__hei:"26px",
+                        Label_Item14__vis:true,
+                        Label_Item14__dis:false,
+                        Label_Item14__cap:"14、 非施工机动车在施工路段______。",
+                        RadioButton1714__lef:"10px",
+                        RadioButton1714__top:"10px",
+                        RadioButton1714__wid:"344px",
+                        RadioButton1714__hei:"20px",
+                        RadioButton1714__vis:true,
+                        RadioButton1714__dis:false,
+                        RadioButton1714__cap:"A、不得停车",
+                        RadioButton1714__chk:"0",
+                        RadioButton1814__lef:"354px",
+                        RadioButton1814__top:"10px",
+                        RadioButton1814__wid:"344px",
+                        RadioButton1814__hei:"20px",
+                        RadioButton1814__vis:true,
+                        RadioButton1814__dis:false,
+                        RadioButton1814__cap:"B、可以随意停车",
+                        RadioButton1814__chk:"0",
+                        RadioButton1514__lef:"698px",
+                        RadioButton1514__top:"10px",
+                        RadioButton1514__wid:"344px",
+                        RadioButton1514__hei:"20px",
+                        RadioButton1514__vis:true,
+                        RadioButton1514__dis:false,
+                        RadioButton1514__cap:"C、可以长时间停车",
+                        RadioButton1514__chk:"0",
+                        RadioButton1614__lef:"1042px",
+                        RadioButton1614__top:"10px",
+                        RadioButton1614__wid:"332px",
+                        RadioButton1614__hei:"20px",
+                        RadioButton1614__vis:true,
+                        RadioButton1614__dis:false,
+                        RadioButton1614__cap:"D、可以临时停",
+                        RadioButton1614__chk:"0",
+                        Panel814__lef:"10px",
+                        Panel814__top:"36px",
+                        Panel814__wid:"1384px",
+                        Panel814__hei:"40px",
+                        Panel814__vis:true,
+                        Panel814__dis:false,
+                        Panel814__col:"#FFFFFF",
+                        Panel_01_Select14__lef:"10px",
+                        Panel_01_Select14__top:"1191px",
+                        Panel_01_Select14__wid:"1404px",
+                        Panel_01_Select14__hei:"86px",
+                        Panel_01_Select14__vis:true,
+                        Panel_01_Select14__dis:false,
+                        Panel_01_Select14__col:"#FFFFFF",
+                        Label_Item15__lef:"10px",
+                        Label_Item15__top:"10px",
+                        Label_Item15__wid:"1384px",
+                        Label_Item15__hei:"26px",
+                        Label_Item15__vis:true,
+                        Label_Item15__dis:false,
+                        Label_Item15__cap:"15、 机动车在高速公路上行驶，遇雾天等气象，能见度小于50米时，车速不得超过每小时______。",
+                        RadioButton1715__lef:"10px",
+                        RadioButton1715__top:"10px",
+                        RadioButton1715__wid:"344px",
+                        RadioButton1715__hei:"20px",
+                        RadioButton1715__vis:true,
+                        RadioButton1715__dis:false,
+                        RadioButton1715__cap:"A、60公里",
+                        RadioButton1715__chk:"0",
+                        RadioButton1815__lef:"354px",
+                        RadioButton1815__top:"10px",
+                        RadioButton1815__wid:"344px",
+                        RadioButton1815__hei:"20px",
+                        RadioButton1815__vis:true,
+                        RadioButton1815__dis:false,
+                        RadioButton1815__cap:"B、40公里",
+                        RadioButton1815__chk:"0",
+                        RadioButton1515__lef:"698px",
+                        RadioButton1515__top:"10px",
+                        RadioButton1515__wid:"344px",
+                        RadioButton1515__hei:"20px",
+                        RadioButton1515__vis:true,
+                        RadioButton1515__dis:false,
+                        RadioButton1515__cap:"C、20公里",
+                        RadioButton1515__chk:"0",
+                        RadioButton1615__lef:"1042px",
+                        RadioButton1615__top:"10px",
+                        RadioButton1615__wid:"332px",
+                        RadioButton1615__hei:"20px",
+                        RadioButton1615__vis:true,
+                        RadioButton1615__dis:false,
+                        RadioButton1615__cap:"D、50公里",
+                        RadioButton1615__chk:"0",
+                        Panel815__lef:"10px",
+                        Panel815__top:"36px",
+                        Panel815__wid:"1384px",
+                        Panel815__hei:"40px",
+                        Panel815__vis:true,
+                        Panel815__dis:false,
+                        Panel815__col:"#FFFFFF",
+                        Panel_01_Select15__lef:"10px",
+                        Panel_01_Select15__top:"1277px",
+                        Panel_01_Select15__wid:"1404px",
+                        Panel_01_Select15__hei:"86px",
+                        Panel_01_Select15__vis:true,
+                        Panel_01_Select15__dis:false,
+                        Panel_01_Select15__col:"#FFFFFF",
+                        Label_Item16__lef:"10px",
+                        Label_Item16__top:"10px",
+                        Label_Item16__wid:"1384px",
+                        Label_Item16__hei:"26px",
+                        Label_Item16__vis:true,
+                        Label_Item16__dis:false,
+                        Label_Item16__cap:"16、 机动车在高速公路上行驶，遇沙尘天等气象，能见度小于200米时，车速不得超过每小时______。",
+                        RadioButton1716__lef:"10px",
+                        RadioButton1716__top:"10px",
+                        RadioButton1716__wid:"344px",
+                        RadioButton1716__hei:"20px",
+                        RadioButton1716__vis:true,
+                        RadioButton1716__dis:false,
+                        RadioButton1716__cap:"A、60公里",
+                        RadioButton1716__chk:"0",
+                        RadioButton1816__lef:"354px",
+                        RadioButton1816__top:"10px",
+                        RadioButton1816__wid:"344px",
+                        RadioButton1816__hei:"20px",
+                        RadioButton1816__vis:true,
+                        RadioButton1816__dis:false,
+                        RadioButton1816__cap:"B、80公里",
+                        RadioButton1816__chk:"0",
+                        RadioButton1516__lef:"698px",
+                        RadioButton1516__top:"10px",
+                        RadioButton1516__wid:"344px",
+                        RadioButton1516__hei:"20px",
+                        RadioButton1516__vis:true,
+                        RadioButton1516__dis:false,
+                        RadioButton1516__cap:"C、90公里",
+                        RadioButton1516__chk:"0",
+                        RadioButton1616__lef:"1042px",
+                        RadioButton1616__top:"10px",
+                        RadioButton1616__wid:"332px",
+                        RadioButton1616__hei:"20px",
+                        RadioButton1616__vis:true,
+                        RadioButton1616__dis:false,
+                        RadioButton1616__cap:"D、100公",
+                        RadioButton1616__chk:"0",
+                        Panel816__lef:"10px",
+                        Panel816__top:"36px",
+                        Panel816__wid:"1384px",
+                        Panel816__hei:"40px",
+                        Panel816__vis:true,
+                        Panel816__dis:false,
+                        Panel816__col:"#FFFFFF",
+                        Panel_01_Select16__lef:"10px",
+                        Panel_01_Select16__top:"1363px",
+                        Panel_01_Select16__wid:"1404px",
+                        Panel_01_Select16__hei:"86px",
+                        Panel_01_Select16__vis:true,
+                        Panel_01_Select16__dis:false,
+                        Panel_01_Select16__col:"#FFFFFF",
+                        Label_Item17__lef:"10px",
+                        Label_Item17__top:"10px",
+                        Label_Item17__wid:"1384px",
+                        Label_Item17__hei:"26px",
+                        Label_Item17__vis:true,
+                        Label_Item17__dis:false,
+                        Label_Item17__cap:"17、 机动车与非机动车在道路上发生未造成人身伤亡的交通事故，当事人对事实及成因无争议的，当事人应当______。",
+                        RadioButton1717__lef:"10px",
+                        RadioButton1717__top:"10px",
+                        RadioButton1717__wid:"344px",
+                        RadioButton1717__hei:"20px",
+                        RadioButton1717__vis:true,
+                        RadioButton1717__dis:false,
+                        RadioButton1717__cap:"A、现场协商损害赔偿事宜",
+                        RadioButton1717__chk:"0",
+                        RadioButton1817__lef:"354px",
+                        RadioButton1817__top:"10px",
+                        RadioButton1817__wid:"344px",
+                        RadioButton1817__hei:"20px",
+                        RadioButton1817__vis:true,
+                        RadioButton1817__dis:false,
+                        RadioButton1817__cap:"B、报警等候处理，不得驶离",
+                        RadioButton1817__chk:"0",
+                        RadioButton1517__lef:"698px",
+                        RadioButton1517__top:"10px",
+                        RadioButton1517__wid:"344px",
+                        RadioButton1517__hei:"20px",
+                        RadioButton1517__vis:true,
+                        RadioButton1517__dis:false,
+                        RadioButton1517__cap:"C、撤离现场，自行协商损害赔偿事宜",
+                        RadioButton1517__chk:"0",
+                        RadioButton1617__lef:"1042px",
+                        RadioButton1617__top:"10px",
+                        RadioButton1617__wid:"332px",
+                        RadioButton1617__hei:"20px",
+                        RadioButton1617__vis:true,
+                        RadioButton1617__dis:false,
+                        RadioButton1617__cap:"D、保护现场",
+                        RadioButton1617__chk:"0",
+                        Panel817__lef:"10px",
+                        Panel817__top:"36px",
+                        Panel817__wid:"1384px",
+                        Panel817__hei:"40px",
+                        Panel817__vis:true,
+                        Panel817__dis:false,
+                        Panel817__col:"#FFFFFF",
+                        Panel_01_Select17__lef:"10px",
+                        Panel_01_Select17__top:"1449px",
+                        Panel_01_Select17__wid:"1404px",
+                        Panel_01_Select17__hei:"86px",
+                        Panel_01_Select17__vis:true,
+                        Panel_01_Select17__dis:false,
+                        Panel_01_Select17__col:"#FFFFFF",
+                        Label_Item18__lef:"10px",
+                        Label_Item18__top:"10px",
+                        Label_Item18__wid:"1384px",
+                        Label_Item18__hei:"26px",
+                        Label_Item18__vis:true,
+                        Label_Item18__dis:false,
+                        Label_Item18__cap:"18、 当事人未在交通事故现场报警，事后请求公安机关交通管理部门处理又未提供交通事故证据，公安机关交通管理部门无法查证交通事故事实的，应当______。",
+                        RadioButton1718__lef:"10px",
+                        RadioButton1718__top:"10px",
+                        RadioButton1718__wid:"344px",
+                        RadioButton1718__hei:"20px",
+                        RadioButton1718__vis:true,
+                        RadioButton1718__dis:false,
+                        RadioButton1718__cap:"A、不予受理",
+                        RadioButton1718__chk:"0",
+                        RadioButton1818__lef:"354px",
+                        RadioButton1818__top:"10px",
+                        RadioButton1818__wid:"344px",
+                        RadioButton1818__hei:"20px",
+                        RadioButton1818__vis:true,
+                        RadioButton1818__dis:false,
+                        RadioButton1818__cap:"B、电话通知当事人向人民法院提起民事诉讼",
+                        RadioButton1818__chk:"0",
+                        RadioButton1518__lef:"698px",
+                        RadioButton1518__top:"10px",
+                        RadioButton1518__wid:"344px",
+                        RadioButton1518__hei:"20px",
+                        RadioButton1518__vis:true,
+                        RadioButton1518__dis:false,
+                        RadioButton1518__cap:"C、书面通知当事人向人民法院提起民事诉讼",
+                        RadioButton1518__chk:"0",
+                        RadioButton1618__lef:"1042px",
+                        RadioButton1618__top:"10px",
+                        RadioButton1618__wid:"332px",
+                        RadioButton1618__hei:"20px",
+                        RadioButton1618__vis:true,
+                        RadioButton1618__dis:false,
+                        RadioButton1618__cap:"D、报请上一级公安机关交通管理部门处",
+                        RadioButton1618__chk:"0",
+                        Panel818__lef:"10px",
+                        Panel818__top:"36px",
+                        Panel818__wid:"1384px",
+                        Panel818__hei:"40px",
+                        Panel818__vis:true,
+                        Panel818__dis:false,
+                        Panel818__col:"#FFFFFF",
+                        Panel_01_Select18__lef:"10px",
+                        Panel_01_Select18__top:"1535px",
+                        Panel_01_Select18__wid:"1404px",
+                        Panel_01_Select18__hei:"86px",
+                        Panel_01_Select18__vis:true,
+                        Panel_01_Select18__dis:false,
+                        Panel_01_Select18__col:"#FFFFFF",
+                        Label_Item19__lef:"10px",
+                        Label_Item19__top:"10px",
+                        Label_Item19__wid:"1384px",
+                        Label_Item19__hei:"26px",
+                        Label_Item19__vis:true,
+                        Label_Item19__dis:false,
+                        Label_Item19__cap:"19、 投保机动车交通事故责任强制保险后，保险公司应承担赔偿责任的情形是______。",
+                        RadioButton1719__lef:"10px",
+                        RadioButton1719__top:"10px",
+                        RadioButton1719__wid:"344px",
+                        RadioButton1719__hei:"20px",
+                        RadioButton1719__vis:true,
+                        RadioButton1719__dis:false,
+                        RadioButton1719__cap:"A、驾驶人未取得驾驶证或醉酒的",
+                        RadioButton1719__chk:"0",
+                        RadioButton1819__lef:"354px",
+                        RadioButton1819__top:"10px",
+                        RadioButton1819__wid:"344px",
+                        RadioButton1819__hei:"20px",
+                        RadioButton1819__vis:true,
+                        RadioButton1819__dis:false,
+                        RadioButton1819__cap:"B、被其他车辆追尾受损的",
+                        RadioButton1819__chk:"0",
+                        RadioButton1519__lef:"698px",
+                        RadioButton1519__top:"10px",
+                        RadioButton1519__wid:"344px",
+                        RadioButton1519__hei:"20px",
+                        RadioButton1519__vis:true,
+                        RadioButton1519__dis:false,
+                        RadioButton1519__cap:"C、被保险人故意制造交通事故的",
+                        RadioButton1519__chk:"0",
+                        RadioButton1619__lef:"1042px",
+                        RadioButton1619__top:"10px",
+                        RadioButton1619__wid:"332px",
+                        RadioButton1619__hei:"20px",
+                        RadioButton1619__vis:true,
+                        RadioButton1619__dis:false,
+                        RadioButton1619__cap:"D、被保险机动车被扣期间的",
+                        RadioButton1619__chk:"0",
+                        Panel819__lef:"10px",
+                        Panel819__top:"36px",
+                        Panel819__wid:"1384px",
+                        Panel819__hei:"40px",
+                        Panel819__vis:true,
+                        Panel819__dis:false,
+                        Panel819__col:"#FFFFFF",
+                        Panel_01_Select19__lef:"10px",
+                        Panel_01_Select19__top:"1621px",
+                        Panel_01_Select19__wid:"1404px",
+                        Panel_01_Select19__hei:"86px",
+                        Panel_01_Select19__vis:true,
+                        Panel_01_Select19__dis:false,
+                        Panel_01_Select19__col:"#FFFFFF",
+                        Label_Item20__lef:"10px",
+                        Label_Item20__top:"10px",
+                        Label_Item20__wid:"1384px",
+                        Label_Item20__hei:"26px",
+                        Label_Item20__vis:true,
+                        Label_Item20__dis:false,
+                        Label_Item20__cap:"20、 机动车交通事故责任强制保险的保险期间为______。",
+                        RadioButton1720__lef:"10px",
+                        RadioButton1720__top:"10px",
+                        RadioButton1720__wid:"344px",
+                        RadioButton1720__hei:"20px",
+                        RadioButton1720__vis:true,
+                        RadioButton1720__dis:false,
+                        RadioButton1720__cap:"A、4年",
+                        RadioButton1720__chk:"0",
+                        RadioButton1820__lef:"354px",
+                        RadioButton1820__top:"10px",
+                        RadioButton1820__wid:"344px",
+                        RadioButton1820__hei:"20px",
+                        RadioButton1820__vis:true,
+                        RadioButton1820__dis:false,
+                        RadioButton1820__cap:"B、3年",
+                        RadioButton1820__chk:"0",
+                        RadioButton1520__lef:"698px",
+                        RadioButton1520__top:"10px",
+                        RadioButton1520__wid:"344px",
+                        RadioButton1520__hei:"20px",
+                        RadioButton1520__vis:true,
+                        RadioButton1520__dis:false,
+                        RadioButton1520__cap:"C、2年",
+                        RadioButton1520__chk:"0",
+                        RadioButton1620__lef:"1042px",
+                        RadioButton1620__top:"10px",
+                        RadioButton1620__wid:"332px",
+                        RadioButton1620__hei:"20px",
+                        RadioButton1620__vis:true,
+                        RadioButton1620__dis:false,
+                        RadioButton1620__cap:"D、1年",
+                        RadioButton1620__chk:"0",
+                        Panel820__lef:"10px",
+                        Panel820__top:"36px",
+                        Panel820__wid:"1384px",
+                        Panel820__hei:"40px",
+                        Panel820__vis:true,
+                        Panel820__dis:false,
+                        Panel820__col:"#FFFFFF",
+                        Panel_01_Select20__lef:"10px",
+                        Panel_01_Select20__top:"1707px",
+                        Panel_01_Select20__wid:"1404px",
+                        Panel_01_Select20__hei:"86px",
+                        Panel_01_Select20__vis:true,
+                        Panel_01_Select20__dis:false,
+                        Panel_01_Select20__col:"#FFFFFF",
+                        Panel_Content__lef:"0px",
+                        Panel_Content__top:"0px",
+                        Panel_Content__wid:"1424px",
+                        Panel_Content__hei:"1853px",
+                        Panel_Content__vis:true,
+                        Panel_Content__dis:false,
+                        Panel_Content__col:"#FFFFFF",
 					    input_query_visible:false,
 					    input_query_caption:"Input Query",
 					    input_query_inputname:"new",
@@ -54,7 +1533,6 @@
                 },
                 mounted() {
                     let me=this;
-Timer1__tmr = window.setInterval(function() {axios.get('{"mode":"event","cid":[!clientid!],"component":"Timer1"}').then(resp =>{me.procResp(resp.data);  })}, 1000);
                     window.addEventListener(
                         "onorientationchange" in window ? "orientationchange" : "resize",
                         function() {
@@ -63,10 +1541,10 @@ Timer1__tmr = window.setInterval(function() {axios.get('{"mode":"event","cid":[
                         },
                         false
                     );
-                    let Defaulthearttimer = window.setInterval(function() {
+                    let Driverhearttimer = window.setInterval(function() {
                         axios.get('{"mode":"heart","cid":[!clientid!]}')
                         .then(resp =>{me.procResp(resp.data)})
-                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(Defaulthearttimer);});
+                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(Driverhearttimer);});
                     }, 30000);
                 },
 				methods: {

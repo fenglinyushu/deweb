@@ -12,6 +12,7 @@ object Form_Base: TForm_Base
   Font.Style = []
   OldCreateOrder = False
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 13
   object Panel_Forms: TPanel
@@ -22,6 +23,15 @@ object Form_Base: TForm_Base
     Align = alBottom
     BevelInner = bvLowered
     TabOrder = 0
+  end
+  object FileListBox_Vcls: TFileListBox
+    Left = 380
+    Top = 50
+    Width = 145
+    Height = 97
+    ItemHeight = 13
+    Mask = '*.dll'
+    TabOrder = 1
   end
   object Timer_Manager: TTimer
     Enabled = False
