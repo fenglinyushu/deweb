@@ -1,7 +1,7 @@
-<!DOCTYPE html>                                                                    <html lang="en">                                                                                                                                                    <head>                                                                                <meta charset="utf-8">                                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">            <meta http-equiv="X-UA-Compatible" content="ie=edge">                             <title>DeWeb测试网页</title>                                                          </head>                                                                           
+<!DOCTYPE html>                                                                    <html lang="en">                                                                                                                                                    <head>                                                                                <meta charset="utf-8">                                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">            <meta http-equiv="X-UA-Compatible" content="ie=edge">                             <title>DeWeb : Delphi -Web</title>                                                          </head>                                                                           
 <body style="background-color:#F0F0F0">
     <script src="dist/vue.js" type="text/javascript"></script>              <script src="dist/index.js" type="text/javascript"></script>            <script src="dist/axios.min.js" type="text/javascript"></script>        <link rel="icon" href="dist/webimages/[###].ico" type="image/x-icon">           <link rel="stylesheet" type="text/css" href="dist/theme-chalk/index.css" /> 
-    <div id="app" style="position:absolute;overflow:hidden;left:0;right:0;bottom:0;margin: 0 auto;background-color:#FFFFFF" :style="{top:Test__top,width:Test__wid,height:Test__hei}" >
+    <div id="app" style="position:absolute;overflow:hidden;left:0;right:0;bottom:0;margin: 0 auto;background-color:#FFFFFF" :style="{top:Default__top,width:Default__wid,height:Default__hei}" >
         <el-dialog :title="input_query_caption" :visible.sync="input_query_visible" >
         	<el-form style="width:90%;padding-left:5%;">
         		<el-form-item :label="input_query_inputname" >
@@ -13,29 +13,34 @@
         		<el-button type="primary" @click="processinputquery">{{input_query_okcaption}}</el-button>
         	</div>
         </el-dialog>
-        <div  v-html="DBText1__cap" v-if="DBText1__vis" :disabled="DBText1__dis" :style="{left:DBText1__lef,top:DBText1__top,width:DBText1__wid,height:DBText1__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{DBText1__cap}}
-        </div>
-        <div  v-html="Label1__cap" v-if="Label1__vis" :disabled="Label1__dis" :style="{left:Label1__lef,top:Label1__top,width:Label1__wid,height:Label1__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label1__cap}}
-        </div>
+        <el-main v-if="Panel1__vis" :disabled="Panel1__dis" :style="{backgroundColor:Panel1__col,left:Panel1__lef,top:Panel1__top,width:Panel1__wid,height:Panel1__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
         <div  v-html="Label2__cap" v-if="Label2__vis" :disabled="Label2__dis" :style="{left:Label2__lef,top:Label2__top,width:Label2__wid,height:Label2__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label2__cap}}
         </div>
-        <el-button v-if="Button1__vis" :disabled="Button1__dis" type="primary" :style="{left:Button1__lef,top:Button1__top,width:Button1__wid,height:Button1__hei}" style="position:absolute;" @click="dwevent($event,'Button1','0','onclick','')">{{Button1__cap}}
-        </el-button>
-        <el-input v-if="DBEdit1__vis" :disabled="DBEdit1__dis" v-model="DBEdit1__txt" :style="{left:DBEdit1__lef,top:DBEdit1__top,width:DBEdit1__wid,height:DBEdit1__hei}" style="position:absolute;" @input="dwevent($event,'DBEdit1','(this.DBEdit1__txt)','onchange','')" @focus="dwevent($event,'DBEdit1','(this.DBEdit1__txt)','onenter','')">
-        </el-input>
-        <div :style="{left:DBGrid1__lef,top:DBGrid1__top,width:DBGrid1__wid,height:DBGrid1__hei}" style="position:absolute;">
-            <el-table :data="DBGrid1__ces" highlight-current-row ref="DBGrid1" border v-if="DBGrid1__vis" :disabled="DBGrid1__dis" height="506" style="width:100%" @row-click="dwevent($event,'DBGrid1','val.d0','onchange','')">
-                <el-table-column  show-overflow-tooltip fixed v-if=false prop="d0" label="rowno" width="80"></el-table-column>
-                <el-table-column show-overflow-tooltip prop="d1" label="姓名" width="110"></el-table-column>
-                <el-table-column show-overflow-tooltip prop="d2" label="性别" width="83"></el-table-column>
-                <el-table-column show-overflow-tooltip prop="d3" label="籍贯" width="110"></el-table-column>
-                <el-table-column show-overflow-tooltip prop="d4" label="出生日期" width="110"></el-table-column>
-                <el-table-column show-overflow-tooltip prop="d5" label="爱好" width="110"></el-table-column>
-                <el-table-column show-overflow-tooltip prop="d6" label="邮箱" width="110"></el-table-column>
-            </el-table>
+        <div  v-html="Label3__cap" v-if="Label3__vis" :disabled="Label3__dis" :style="{left:Label3__lef,top:Label3__top,width:Label3__wid,height:Label3__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label3__cap}}
         </div>
-        <el-checkbox v-if="DBCheckBox1__vis" :disabled="DBCheckBox1__dis" v-model="DBCheckBox1__chk" :style="{left:DBCheckBox1__lef,top:DBCheckBox1__top,width:DBCheckBox1__wid,height:DBCheckBox1__hei}" style="position:absolute;" @input="dwevent($event,'DBCheckBox1','(this.DBCheckBox1__chk)','onclick','')">{{DBCheckBox1__cap}}
-        </el-checkbox>
+        <div  v-html="Label4__cap" v-if="Label4__vis" :disabled="Label4__dis" :style="{left:Label4__lef,top:Label4__top,width:Label4__wid,height:Label4__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label4__cap}}
+        </div>
+        <div  v-html="Label5__cap" v-if="Label5__vis" :disabled="Label5__dis" :style="{left:Label5__lef,top:Label5__top,width:Label5__wid,height:Label5__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label5__cap}}
+        </div>
+        <div  v-html="Label6__cap" v-if="Label6__vis" :disabled="Label6__dis" :style="{left:Label6__lef,top:Label6__top,width:Label6__wid,height:Label6__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;line-height:40px;">{{Label6__cap}}
+        </div>
+        <el-link :underline="false" v-if="StaticText1__vis" :disabled="StaticText1__dis" icon="el-icon-house" type="primary" :href="StaticText1__hrf" target="_blank" :style="{left:StaticText1__lef,top:StaticText1__top,width:StaticText1__wid,height:StaticText1__hei}" style="position:absolute;">{{StaticText1__cap}}
+        </el-link>
+        <el-link :underline="false" v-if="StaticText2__vis" :disabled="StaticText2__dis" icon="el-icon-medal-1" type="primary" :href="StaticText2__hrf" target="_blank" :style="{left:StaticText2__lef,top:StaticText2__top,width:StaticText2__wid,height:StaticText2__hei}" style="position:absolute;">{{StaticText2__cap}}
+        </el-link>
+        <el-link :underline="false" v-if="StaticText3__vis" :disabled="StaticText3__dis" icon="el-icon-place" type="primary" :href="StaticText3__hrf" target="_blank" :style="{left:StaticText3__lef,top:StaticText3__top,width:StaticText3__wid,height:StaticText3__hei}" style="position:absolute;">{{StaticText3__cap}}
+        </el-link>
+        <el-link :underline="false" v-if="StaticText4__vis" :disabled="StaticText4__dis" icon="el-icon-potato-strips" type="primary" :href="StaticText4__hrf" target="_blank" :style="{left:StaticText4__lef,top:StaticText4__top,width:StaticText4__wid,height:StaticText4__hei}" style="position:absolute;">{{StaticText4__cap}}
+        </el-link>
+        <el-main v-if="Panel2__vis" :disabled="Panel2__dis" :style="{backgroundColor:Panel2__col,left:Panel2__lef,top:Panel2__top,width:Panel2__wid,height:Panel2__hei}" style="position:absolute;overflow:hidden;">
+        <el-image :src="Img__src" fit="none" v-if="Img__vis" :disabled="Img__dis" :style="{left:Img__lef,top:Img__top,width:Img__wid,height:Img__hei}" style="position:absolute;">
+        </el-Image>
+        <div  v-html="Label_Title__cap" v-if="Label_Title__vis" :disabled="Label_Title__dis" :style="{left:Label_Title__lef,top:Label_Title__top,width:Label_Title__wid,height:Label_Title__hei}" style="position:absolute;color:#800000;font-family:'Dubai Light';font-size:24pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Title__cap}}
+        </div>
+        <el-main v-if="Panel_Line__vis" :disabled="Panel_Line__dis" :style="{backgroundColor:Panel_Line__col,left:Panel_Line__lef,top:Panel_Line__top,width:Panel_Line__wid,height:Panel_Line__hei}" style="position:absolute;overflow:hidden;">
+        </el-main>
+        </el-main>
+        </el-main>
 	 </div>
     <script>
 	    Vue.prototype.procResp = function (data){
@@ -51,86 +56,111 @@
 				el: '#app',
 				data: function () {
 					return {
-					    Test__top:"0px",
-					    Test__wid:"784px",
-					    Test__hei:"881px",
-                        DBText1__lef:"425px",
-                        DBText1__top:"13px",
-                        DBText1__wid:"65px",
-                        DBText1__hei:"17px",
-                        DBText1__vis:true,
-                        DBText1__dis:false,
-                        DBText1__cap:"True",
-                        Label1__lef:"150px",
-                        Label1__top:"16px",
-                        Label1__wid:"38px",
-                        Label1__hei:"20px",
-                        Label1__vis:true,
-                        Label1__dis:false,
-                        Label1__cap:"姓名 :",
-                        Label2__lef:"360px",
-                        Label2__top:"13px",
-                        Label2__wid:"38px",
-                        Label2__hei:"20px",
+					    Default__top:"0px",
+					    Default__wid:"800px",
+					    Default__hei:"600px",
+                        Label2__lef:"21px",
+                        Label2__top:"131px",
+                        Label2__wid:"754px",
+                        Label2__hei:"40px",
                         Label2__vis:true,
                         Label2__dis:false,
-                        Label2__cap:"性别 :",
-                        Button1__lef:"20px",
-                        Button1__top:"8px",
-                        Button1__wid:"104px",
-                        Button1__hei:"38px",
-                        Button1__vis:true,
-                        Button1__dis:false,
-                        Button1__cap:"Button1",
-                        DBEdit1__lef:"215px",
-                        DBEdit1__top:"13px",
-                        DBEdit1__wid:"121px",
-                        DBEdit1__hei:"28px",
-                        DBEdit1__vis:true,
-                        DBEdit1__dis:false,
-                        DBEdit1__txt:"钟一鸣",
-                        DBGrid1__lef:"8px",
-                        DBGrid1__top:"105px",
-                        DBGrid1__wid:"736px",
-                        DBGrid1__hei:"506px",
-                        DBGrid1__vis:true,
-                        DBGrid1__dis:false,
-                        DBGrid1__ces:[{"d0":'0',"d1":'钟一鸣',"d2":'True',"d3":'广东',"d4":'1963-10-21',"d5":'体育',"d5":''},
-                        {"d0":'1',"d1":'马亮',"d2":'True',"d3":'海南',"d4":'1983-10-21',"d5":'旅游',"d5":''},
-                        {"d0":'2',"d1":'西风',"d2":'True',"d3":'海南',"d4":'1983-10-21',"d5":'旅游',"d5":''},
-                        {"d0":'3',"d1":'何泉',"d2":'False',"d3":'海南',"d4":'1983-10-21',"d5":'旅游',"d5":''},
-                        {"d0":'4',"d1":'陆小方',"d2":'True',"d3":'四川',"d4":'1983-10-25',"d5":'跑男',"d5":'feesdinp@sina.com'},
-                        {"d0":'5',"d1":'黄小剑',"d2":'False',"d3":'广东',"d4":'1963-10-21',"d5":'体育',"d5":''},
-                        {"d0":'6',"d1":'马云',"d2":'False',"d3":'浙江',"d4":'1960-01-01',"d5":'商业',"d5":'webmaster@alibaba.com'},
-                        {"d0":'7',"d1":'胡妮',"d2":'True',"d3":'湖北',"d4":'1973-10-21',"d5":'娱乐',"d5":'34234@QQ.com'},
-                        {"d0":'8',"d1":'李小琳',"d2":'True',"d3":'湖北',"d4":'1973-10-21',"d5":'娱乐',"d5":'Mydssdfe@163.com'},
-                        {"d0":'9',"d1":'张明歌',"d2":'False',"d3":'湖北',"d4":'1973-10-21',"d5":'音乐',"d5":'ddddLove@163.com'},
-                        {"d0":'10',"d1":'张玉',"d2":'True',"d3":'湖北',"d4":'1973-10-21',"d5":'娱乐',"d5":'My123e@163.com'},
-                        {"d0":'11',"d1":'刘制',"d2":'True',"d3":'湖北',"d4":'1973-10-21',"d5":'娱乐',"d5":'MyLove@163.com'},
-                        {"d0":'12',"d1":'刘西风',"d2":'False',"d3":'海南',"d4":'1983-10-21',"d5":'旅游',"d5":''},
-                        {"d0":'13',"d1":'何小泉',"d2":'True',"d3":'海南',"d4":'1983-10-21',"d5":'旅游',"d5":''},
-                        {"d0":'14',"d1":'张茹',"d2":'True',"d3":'广东',"d4":'1963-10-21',"d5":'体育',"d5":''},
-                        {"d0":'15',"d1":'肖大雅',"d2":'False',"d3":'广东',"d4":'1963-10-21',"d5":'体育',"d5":''},
-                        {"d0":'16',"d1":'黄小剑',"d2":'True',"d3":'广东',"d4":'1963-10-21',"d5":'体育',"d5":''},
-                        {"d0":'17',"d1":'刘大制',"d2":'True',"d3":'湖北',"d4":'1973-10-21',"d5":'娱乐',"d5":'MyDddve@163.com'},
-                        {"d0":'18',"d1":'钟二鸣',"d2":'True',"d3":'广东',"d4":'1963-10-21',"d5":'体育',"d5":''},
-                        {"d0":'19',"d1":'马三亮',"d2":'False',"d3":'海南',"d4":'1983-10-21',"d5":'旅游',"d5":''},
-                        {"d0":'20',"d1":'西二风',"d2":'True',"d3":'海南',"d4":'1983-10-21',"d5":'旅游',"d5":''},
-                        {"d0":'21',"d1":'何五泉',"d2":'False',"d3":'海南',"d4":'1983-10-21',"d5":'旅游',"d5":''},
-                        {"d0":'22',"d1":'张六茹',"d2":'True',"d3":'广东',"d4":'1963-10-21',"d5":'体育',"d5":''},
-                        {"d0":'23',"d1":'肖七雅',"d2":'True',"d3":'广东',"d4":'1963-10-21',"d5":'体育',"d5":''},
-                        {"d0":'24',"d1":'黄小剑',"d2":'False',"d3":'广东',"d4":'1963-10-21',"d5":'体育',"d5":''},
-                        {"d0":'25',"d1":'刘小琳',"d2":'False',"d3":'湖北',"d4":'1973-10-21',"d5":'娱乐',"d5":'MyTo34@163.com'},
-                        {"d0":'26',"d1":'刘光树',"d2":'True',"d3":'甘肃',"d4":'1981-02-01',"d5":'播音',"d5":'zengxiaoxian@wp.com'},
-                        {"d0":'27',"d1":'蒋飞',"d2":'False',"d3":'甘肃',"d4":'2000-01-14',"d5":'',"d5":''}],
-                        DBCheckBox1__lef:"150px",
-                        DBCheckBox1__top:"60px",
-                        DBCheckBox1__wid:"156px",
-                        DBCheckBox1__hei:"17px",
-                        DBCheckBox1__vis:true,
-                        DBCheckBox1__dis:false,
-                        DBCheckBox1__chk:true,
-                        DBCheckBox1__cap:"男",
+                        Label2__cap:"DeWeb是一个可以直接将Delphi程序快速转换为网页应用的工具！",
+                        Label3__lef:"21px",
+                        Label3__top:"171px",
+                        Label3__wid:"754px",
+                        Label3__hei:"40px",
+                        Label3__vis:true,
+                        Label3__dis:false,
+                        Label3__cap:"使用DeWeb, 开发者不需要学习HTML、JavaScript、Java、PHP、ASP、C#等新知识，用Delphi搞定一切。",
+                        Label4__lef:"21px",
+                        Label4__top:"211px",
+                        Label4__wid:"754px",
+                        Label4__hei:"40px",
+                        Label4__vis:true,
+                        Label4__dis:false,
+                        Label4__cap:"DeWeb开发的网页支持所有客户端，包括手机、平板等。",
+                        Label5__lef:"21px",
+                        Label5__top:"251px",
+                        Label5__wid:"754px",
+                        Label5__hei:"40px",
+                        Label5__vis:true,
+                        Label5__dis:false,
+                        Label5__cap:"欢迎关注! 欢迎Star!",
+                        Label6__lef:"21px",
+                        Label6__top:"331px",
+                        Label6__wid:"754px",
+                        Label6__hei:"40px",
+                        Label6__vis:true,
+                        Label6__dis:false,
+                        Label6__cap:"Demos :",
+                        StaticText1__lef:"21px",
+                        StaticText1__top:"291px",
+                        StaticText1__wid:"754px",
+                        StaticText1__hei:"40px",
+                        StaticText1__vis:true,
+                        StaticText1__dis:false,
+                        StaticText1__cap:"https://gitee.com/fenglinyushu/dewebsdk",
+                        StaticText1__hrf:"https://gitee.com/fenglinyushu/dewebsdk",
+                        StaticText2__lef:"21px",
+                        StaticText2__top:"411px",
+                        StaticText2__wid:"754px",
+                        StaticText2__hei:"40px",
+                        StaticText2__vis:true,
+                        StaticText2__dis:false,
+                        StaticText2__cap:"驾校科目一理论考试系统",
+                        StaticText2__hrf:"driver.dw",
+                        StaticText3__lef:"21px",
+                        StaticText3__top:"371px",
+                        StaticText3__wid:"754px",
+                        StaticText3__hei:"40px",
+                        StaticText3__vis:true,
+                        StaticText3__dis:false,
+                        StaticText3__cap:"论坛系统(仿DelphiBBS大富翁论坛)",
+                        StaticText3__hrf:"dfw.dw",
+                        StaticText4__lef:"21px",
+                        StaticText4__top:"451px",
+                        StaticText4__wid:"754px",
+                        StaticText4__hei:"40px",
+                        StaticText4__vis:true,
+                        StaticText4__dis:false,
+                        StaticText4__cap:"控件使用",
+                        StaticText4__hrf:"demos.dw",
+                        Img__lef:"24px",
+                        Img__top:"6px",
+                        Img__wid:"48px",
+                        Img__hei:"48px",
+                        Img__vis:true,
+                        Img__dis:false,
+                        Img__src:"dist/webimages/Img.jpg",
+                        Label_Title__lef:"92px",
+                        Label_Title__top:"6px",
+                        Label_Title__wid:"592px",
+                        Label_Title__hei:"48px",
+                        Label_Title__vis:true,
+                        Label_Title__dis:false,
+                        Label_Title__cap:"DeWeb : Delphi-Web",
+                        Panel_Line__lef:"10px",
+                        Panel_Line__top:"80px",
+                        Panel_Line__wid:"738px",
+                        Panel_Line__hei:"2px",
+                        Panel_Line__vis:true,
+                        Panel_Line__dis:false,
+                        Panel_Line__col:"#F0F0F0",
+                        Panel2__lef:"21px",
+                        Panel2__top:"21px",
+                        Panel2__wid:"754px",
+                        Panel2__hei:"110px",
+                        Panel2__vis:true,
+                        Panel2__dis:false,
+                        Panel2__col:"#FFFFFF",
+                        Panel1__lef:"0px",
+                        Panel1__top:"0px",
+                        Panel1__wid:"800px",
+                        Panel1__hei:"600px",
+                        Panel1__vis:true,
+                        Panel1__dis:false,
+                        Panel1__col:"#FFFFFF",
 					    input_query_visible:false,
 					    input_query_caption:"Input Query",
 					    input_query_inputname:"new",
@@ -153,10 +183,10 @@
                         },
                         false
                     );
-                    let Testhearttimer = window.setInterval(function() {
+                    let Defaulthearttimer = window.setInterval(function() {
                         axios.get('{"mode":"heart","cid":[!clientid!]}')
                         .then(resp =>{me.procResp(resp.data)})
-                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(Testhearttimer);});
+                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(Defaulthearttimer);});
                     }, 30000);
                 },
 				methods: {

@@ -8,7 +8,7 @@ object DFW: TDFW
   ClientWidth = 1000
   Color = clWhite
   TransparentColor = True
-  TransparentColorValue = clBtnFace
+  TransparentColorValue = 15790320
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
   Font.Height = -15

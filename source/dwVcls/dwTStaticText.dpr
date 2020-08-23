@@ -99,7 +99,8 @@ begin
                     +' :underline="false"'
                     +dwVisible(TControl(ACtrl))
                     +dwDisable(TControl(ACtrl))
-                    +dwGetHintValue(joHint,'type','type',' type="primary"')         
+                    +dwGetHintValue(joHint,'icon','icon','')         //ButtonIcon
+                    +dwGetHintValue(joHint,'type','type',' type="primary"')
                     +dwIIF(dwGetProp(TControl(ACtrl),'href')='','',' :href="'+Name+'__hrf"')
                     +dwGetHintValue(joHint,'target','target','')
                     +dwLTWH(TControl(ACtrl))

@@ -7,7 +7,7 @@ object Demos: TDemos
   ClientWidth = 1096
   Color = clWhite
   TransparentColor = True
-  TransparentColorValue = clBtnFace
+  TransparentColorValue = 15790320
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
   Font.Height = -15
@@ -366,6 +366,10 @@ object Demos: TDemos
     OnChange = PageControlChange
     object TabSheet1: TTabSheet
       Caption = 'Button'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label1: TLabel
         Left = 30
         Top = 36
@@ -555,6 +559,10 @@ object Demos: TDemos
     object TabSheet4: TTabSheet
       Caption = 'CheckBox'
       ImageIndex = 3
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label14: TLabel
         Left = 47
         Top = 41
@@ -733,6 +741,10 @@ object Demos: TDemos
     object TabSheet8: TTabSheet
       Caption = 'ComboBox'
       ImageIndex = 7
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label50: TLabel
         Left = 47
         Top = 49
@@ -912,6 +924,10 @@ object Demos: TDemos
     object TabSheet10: TTabSheet
       Caption = 'DateTimePicker'
       ImageIndex = 9
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label51: TLabel
         Left = 71
         Top = 58
@@ -1089,6 +1105,10 @@ object Demos: TDemos
     object TabSheet2: TTabSheet
       Caption = 'Edit'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label7: TLabel
         Left = 39
         Top = 33
@@ -1276,6 +1296,10 @@ object Demos: TDemos
     object TabSheet13: TTabSheet
       Caption = 'Image'
       ImageIndex = 12
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Image1: TImage
         Left = 30
         Top = 36
@@ -8550,6 +8574,10 @@ object Demos: TDemos
     object TabSheet3: TTabSheet
       Caption = 'Label'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label21: TLabel
         Left = 38
         Top = 44
@@ -8690,6 +8718,10 @@ object Demos: TDemos
     object TabSheet15: TTabSheet
       Caption = 'ListBox'
       ImageIndex = 14
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Button52: TButton
         Left = 16
         Top = 16
@@ -8790,6 +8822,10 @@ object Demos: TDemos
     object TabSheet9: TTabSheet
       Caption = 'Memo'
       ImageIndex = 8
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Button58: TButton
         Left = 16
         Top = 16
@@ -8874,6 +8910,10 @@ object Demos: TDemos
     object TabSheet16: TTabSheet
       Caption = 'MonthCalendar'
       ImageIndex = 15
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object MonthCalendar1: TMonthCalendar
         Left = 32
         Top = 18
@@ -8955,6 +8995,10 @@ object Demos: TDemos
     object TabSheet11: TTabSheet
       Caption = 'PageControl'
       ImageIndex = 10
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object PageControl1: TPageControl
         Left = 45
         Top = 20
@@ -8965,14 +9009,26 @@ object Demos: TDemos
         OnChange = PageControl1Change
         object TabSheet17: TTabSheet
           Caption = 'Tab'#19968
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
         end
         object TabSheet18: TTabSheet
           Caption = 'Tab'#20108
           ImageIndex = 1
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
         end
         object TabSheet19: TTabSheet
           Caption = 'Tab'#19977
           ImageIndex = 2
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
         end
       end
       object PageControl3: TPageControl
@@ -8988,10 +9044,18 @@ object Demos: TDemos
         TabPosition = tpLeft
         object TabSheet22: TTabSheet
           Caption = 'Tab'#19968
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
         end
         object TabSheet23: TTabSheet
           Caption = 'Tab'#20108
           ImageIndex = 1
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
         end
       end
       object Button70: TButton
@@ -9065,6 +9129,10 @@ object Demos: TDemos
     object TabSheet5: TTabSheet
       Caption = 'Panel'
       ImageIndex = 4
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label22: TLabel
         Left = 158
         Top = 129
@@ -9172,6 +9240,10 @@ object Demos: TDemos
     object TabSheet6: TTabSheet
       Caption = 'RadioButton'
       ImageIndex = 5
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label33: TLabel
         Left = 55
         Top = 49
@@ -9532,6 +9604,10 @@ object Demos: TDemos
     object TabSheet12: TTabSheet
       Caption = 'StringGrid'
       ImageIndex = 11
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object CheckBox12: TCheckBox
         Left = 13
         Top = 64
@@ -9612,6 +9688,10 @@ object Demos: TDemos
     object TabSheet14: TTabSheet
       Caption = 'TreeView'
       ImageIndex = 13
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object CheckBox13: TCheckBox
         Left = 355
         Top = 28

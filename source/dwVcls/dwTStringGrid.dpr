@@ -45,17 +45,25 @@ begin
      //
      joData    := _Json(AData);
 
-     //
+     if joData.event = 'onclick' then begin
+          //保存事件
+          TStringGrid(ACtrl).OnExit    := TStringGrid(ACtrl).OnClick;
+          //清空事件,以防止自动执行
+          TStringGrid(ACtrl).OnClick  := nil;
+          //更新值
+          TStringGrid(ACtrl).Row   := joData.value;
+          //恢复事件
+          TStringGrid(ACtrl).OnClick  := TStringGrid(ACtrl).OnExit;
 
-
-     //
-     TStringGrid(ACtrl).Row   := joData.value+1;
-
-     //执行事件
-     if Assigned(TStringGrid(ACtrl).OnCellClick) then begin
-          TStringGrid(ACtrl).OnCellClick(TStringGrid(ACtrl).Columns[0]);
+          //执行事件
+          if Assigned(TStringGrid(ACtrl).OnClick) then begin
+               TStringGrid(ACtrl).OnClick(TStringGrid(ACtrl));
+          end;
+     end else if joData.event = 'onenter' then begin
      end;
 
+     //清空OnExit事件
+     TStringGrid(ACtrl).OnExit  := nil;
 end;
 
 
@@ -92,17 +100,18 @@ begin
                     +dwDisable(TControl(ACtrl))
                     +' height="'+IntToStr(TControl(ACtrl).Height)+'"'
                     +' style="width:100%"'
-                    +Format(_DWEVENT,['row-click',Name,'val.d0','onchange',''])
+                    +Format(_DWEVENT,['row-click',Name,'val.d0','onclick',''])
                     +'>');
+
           //添加另外加的行号列, 用于表示行号
           joRes.Add('        <el-table-column  show-overflow-tooltip fixed v-if=false prop="d0" label="rowno" width="80"></el-table-column>');
           //添加各列
-          for iItem := 0 to Columns.Count-1 do begin
+          for iItem := 0 to ColCount-1 do begin
                joRes.Add('        <el-table-column'
                          +' show-overflow-tooltip'
                          +' prop="d'+IntToStr(iItem+1)+'"'
-                         +' label="'+Columns[iItem].Title.Caption+'"'
-                         +' width="'+IntToStr(Columns[iItem].Width)+'"></el-table-column>');
+                         +' :label="'+Name+'__col'+IntToStr(iItem)+'"'
+                         +' width="'+IntToStr(ColWidths[iItem])+'"></el-table-column>');
           end;
      end;
 
@@ -126,25 +135,6 @@ begin
      Result    := (joRes);
 end;
 
-function _GetValue(AField:TField):String;
-begin
-     try
-          if AField.DataType in [ftString, ftSmallint, ftInteger, ftWord, ftBoolean, ftFloat, ftCurrency,
-               ftBCD,ftBytes, ftVarBytes, ftAutoInc, ftFmtMemo,ftFixedChar, ftWideString, ftLargeint, ftMemo] then
-          begin
-               Result    := dwProcessCaption(AField.AsString);
-          end else if AField.DataType in [ftDate] then begin
-               Result    := FormatDateTime('yyyy-mm-dd',AField.AsDateTime);
-          end else if AField.DataType in [ftTime] then begin
-               Result    := FormatDateTime('HH:MM:SS',AField.AsDateTime);
-          end else if AField.DataType in [ftDateTime] then begin
-               Result    := FormatDateTime('yyyy-mm-dd HH:MM:SS',AField.AsDateTime);
-          end else begin
-               Result    := '';
-          end;
-     except
-     end;
-end;
 
 
 //取得Data
@@ -154,16 +144,11 @@ var
      //
      iRow,iCol : Integer;
      sCode     : String;
-     //
-     oDataSet  : TDataSet;
-     oBookMark : TBookMark;
 begin
      //生成返回值数组
      joRes    := _Json('[]');
      //
      with TStringGrid(ACtrl) do begin
-          //
-          oDataSet  := DataSource.DataSet;
 
           //
           joRes.Add(Name+'__lef:"'+IntToStr(Left)+'px",');
@@ -173,48 +158,24 @@ begin
           //
           joRes.Add(Name+'__vis:'+dwIIF(Visible,'true,','false,'));
           joRes.Add(Name+'__dis:'+dwIIF(Enabled,'false,','true,'));
-          //
-          if oDataSet <> nil then begin
-               if not oDataSet.Active then begin
-                    sCode     := Name+'__ces:[],';
-                    joRes.Add(sCode);
-               end else begin
-                    //保存当前位置
-                    oBookMark := oDataSet.GetBookmark;
+          //列标题
+          for iCol := 0 to ColCount-1 do begin
+               joRes.Add(Name+'__col'+IntToStr(iCol)+':"'+Cells[iCol,0]+'",');
+          end;
 
-                    //
-                    oDataSet.DisableControls;
 
-                    //
-                    sCode     := '';
-                    oDataSet.First;
-                    iRow := 0;
-                    while not oDataSet.Eof do begin
-                         if sCode = '' then begin
-                              sCode     := Name+'__ces:[{"d0":'''+IntToStr(iRow)+''',';
-                         end else begin
-                              sCode     := '{"d0":'''+IntToStr(iRow)+''',';
-                         end;
-                         for iCol := 0 to Columns.Count-2 do begin
-                              sCode     := sCode +'"d'+IntToStr(iCol+1)+'":'''+_GetValue(Columns[iCol].Field)+''',';
-                         end;
-                         sCode     := sCode +'"d'+IntToStr(Columns.Count-1)+'":'''+_GetValue(Columns[Columns.Count-1].Field)+'''}';
-                         //
-                         oDataSet.Next;
-                         Inc(iRow);
-                         if oDataSet.Eof then begin
-                              joRes.Add(sCode+'],');
-                         end else begin
-                              joRes.Add(sCode+',');
-                         end;
-                    end;
-                    //
-                    oDataSet.GotoBookmark(oBookMark); //重新定位记录指针回到原来的位置
-                    oDataSet.EnableControls;
-                    //
-                    oDataSet.FreeBookmark(oBookMark); //删除书签BookMark标志
+          //内容
+          sCode     := Name+'__ces:[';
+          for iRow := 1 to RowCount-1 do begin
+               sCode     := sCode + '{"d0":'''+IntToStr(iRow)+''',';
+               for iCol := 0 to ColCount-1 do begin
+                    sCode     := sCode + '"d'+IntToStr(iCol+1)+'":'''+Cells[iCol,iRow]+''',';
                end;
-          end
+               sCode     := sCode + '},';
+          end;
+          sCode     := sCode + '],';
+          joRes.Add(sCode);
+          //joRes.Add('currentRow: 1,');
      end;
      //
      Result    := (joRes);
@@ -229,19 +190,12 @@ var
      //
      iRow,iCol : Integer;
      sCode     : String;
-     //
-     oDataSet  : TDataSet;
-     oBookMark : TBookMark;
 begin
      //生成返回值数组
      joRes    := _Json('[]');
 
      //
-     with TStringGrid(ACtrl) do
-      begin
-          //
-          oDataSet  := DataSource.DataSet;
-
+     with TStringGrid(ACtrl) do begin
           //
           joRes.Add(Name+'__lef="'+IntToStr(Left)+'px"');
           joRes.Add(Name+'__top="'+IntToStr(Top)+'px"');
@@ -251,39 +205,25 @@ begin
           joRes.Add(Name+'__vis='+dwIIF(Visible,'true','false'));
           joRes.Add(Name+'__dis='+dwIIF(Enabled,'false','true'));
 
-          //
-          if oDataSet <> nil then begin
-               if not oDataSet.Active then begin
-                    sCode     := Name+'__ces:[],';
-                    joRes.Add(sCode);
-               end else begin
-                    //保存当前位置
-                    oBookMark := oDataSet.GetBookmark;
-                    oDataSet.DisableControls;
-                    oDataSet.First;
-                    iRow := 0;
-                    while not oDataSet.Eof do begin
-                         sCode     := 'this.$set(this.'+TStringGrid(ACtrl).Name+'__ces,'+IntToStr(iRow)+',{d0:"'+IntToStr(iRow)+'",';
-                         for iCol := 0 to Columns.Count-2 do begin
-                              sCode     := sCode +'d'+IntToStr(iCol+1)+':"'+_GetValue(Columns[iCol].Field)+'",';
-                         end;
-                         sCode     := sCode +'d'+IntToStr(Columns.Count-1)+':"'+_GetValue(Columns[Columns.Count-1].Field)+'"});';
-                         joRes.Add(sCode);
-                         //
-                         oDataSet.Next;
-                         Inc(iRow);
-                    end;
-                    //
-                    oDataSet.GotoBookmark(oBookMark); //重新定位记录指针回到原来的位置
-                    oDataSet.EnableControls;
-                    oDataSet.FreeBookmark(oBookMark); //删除书签BookMark标志
+          //列标题
+          for iCol := 0 to ColCount-1 do begin
+               joRes.Add('this.'+Name+'__col'+IntToStr(iCol)+'="'+Cells[iCol,0]+'";');
+          end;
+
+          //内容
+          for iRow := 1 to RowCount-1 do begin
+               sCode     := 'this.$set(this.'+TStringGrid(ACtrl).Name+'__ces,'+IntToStr(iRow-1)+',{d0:"'+IntToStr(iRow)+'",';
+               for iCol := 0 to ColCount-2 do begin
+                    sCode     := sCode +'d'+IntToStr(iCol+1)+':"'+Cells[iCol,iRow]+'",';
                end;
+               sCode     := sCode +'d'+IntToStr(ColCount)+':"'+Cells[ColCount-1,iRow]+'"});';
+               joRes.Add(sCode);
           end;
 
      end;
      //行号        this.$refs.multiplePlan.data[0]
      joRes.Add('this.$refs.'+TStringGrid(ACtrl).Name+'.setCurrentRow('
-          +'this.$refs.'+TStringGrid(ACtrl).Name+'.data['+IntToStr(TStringGrid(ACtrl).DataSource.DataSet.RecNo-1)+']'
+          +'this.$refs.'+TStringGrid(ACtrl).Name+'.data['+IntToStr(TStringGrid(ACtrl).Row-1)+']'
           +');');
      //
      Result    := (joRes);

@@ -1365,8 +1365,12 @@ end;
 
 function dwGetHintValue(AHint:Variant;AJsonName,AHtmlName,ADefault:String):String;
 begin
-     if AHint.Exists(AJsonName) then begin
-          Result    := AnsiString(' '+AHtmlName+'="'+AHint._(AJsonName)+'"');
+     if AHint<>null then begin
+          if AHint.Exists(AJsonName) then begin
+               Result    := AnsiString(' '+AHtmlName+'="'+AHint._(AJsonName)+'"');
+          end else begin
+               Result    := ADefault;
+          end;
      end else begin
           Result    := ADefault;
      end;

@@ -6,7 +6,7 @@ object dfw_thread: Tdfw_thread
   ClientWidth = 1017
   Color = clWhite
   TransparentColor = True
-  TransparentColorValue = clWhite
+  TransparentColorValue = 15790320
   Font.Charset = DEFAULT_CHARSET
   Font.Color = 6579300
   Font.Height = -15

@@ -12,7 +12,20 @@ uses
 
 type
   TDefault = class(TForm)
-    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    StaticText1: TStaticText;
+    StaticText2: TStaticText;
+    StaticText3: TStaticText;
+    StaticText4: TStaticText;
+    Panel1: TPanel;
+    Label6: TLabel;
+    Panel2: TPanel;
+    Panel_Line: TPanel;
+    Img: TImage;
+    Label_Title: TLabel;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }

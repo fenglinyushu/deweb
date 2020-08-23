@@ -61,7 +61,7 @@ object Test: TTest
     Left = 8
     Top = 105
     Width = 736
-    Height = 506
+    Height = 176
     DataSource = DataSource1
     TabOrder = 2
     TitleFont.Charset = ANSI_CHARSET
@@ -116,6 +116,32 @@ object Test: TTest
     DataField = #24615#21035
     DataSource = DataSource1
     TabOrder = 3
+  end
+  object StringGrid1: TStringGrid
+    Left = 8
+    Top = 300
+    Width = 736
+    Height = 250
+    DefaultColWidth = 100
+    TabOrder = 4
+  end
+  object Button2: TButton
+    Left = 375
+    Top = 55
+    Width = 85
+    Height = 40
+    Caption = 'Button2'
+    TabOrder = 5
+    OnClick = Button2Click
+  end
+  object StaticText1: TStaticText
+    Left = 540
+    Top = 65
+    Width = 86
+    Height = 24
+    Hint = '{"icon":"el-icon-edit","href":"http://www.163.com"}'
+    Caption = 'StaticText1'
+    TabOrder = 6
   end
   object ADOConnection1: TADOConnection
     Connected = True

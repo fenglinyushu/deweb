@@ -27,8 +27,12 @@ type
     Label1: TLabel;
     Label2: TLabel;
     DBCheckBox1: TDBCheckBox;
+    StringGrid1: TStringGrid;
+    Button2: TButton;
+    StaticText1: TStaticText;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
      ZQuery: TZReadOnlyQuery;
   public
@@ -65,9 +69,30 @@ begin
      dwShowMessage('Hello, DeWeb!',self);
 }end;
 
+procedure TTest.Button2Click(Sender: TObject);
+begin
+     //
+     StringGrid1.Cells[StringGrid1.Row,0]    := IntToStr(GetTickCount mod 100);
+     StringGrid1.Cells[2,StringGrid1.Row]    := IntToStr(GetTickCount mod 10000);
+     StringGrid1.Row     := StringGrid1.Row+1;
+end;
+
 procedure TTest.FormCreate(Sender: TObject);
+var
+     iR,iC     : Integer;
 begin
      Top  := 0;
+
+     //
+     with StringGrid1 do begin
+          for iR := 0 to RowCount-1 do begin
+               for iC := 0 to ColCount-1 do begin
+                    Cells[iC,iR]   := Format('บบ%d,%d',[iR,iC]);
+               end;
+          end;
+     end;
+
+
 
 {
 
