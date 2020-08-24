@@ -1,7 +1,7 @@
-<!DOCTYPE html>                                                                    <html lang="en">                                                                                                                                                    <head>                                                                                <meta charset="utf-8">                                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">            <meta http-equiv="X-UA-Compatible" content="ie=edge">                             <title>DeWeb : Delphi -Web</title>                                                          </head>                                                                           
-<body style="background-color:#F0F0F0">
+<!DOCTYPE html>                                                                    <html lang="en">                                                                                                                                                    <head>                                                                                <meta charset="utf-8">                                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">            <meta http-equiv="X-UA-Compatible" content="ie=edge">                             <title>DeWeb</title>                                                          </head>                                                                           
+<body style="background-color:#FFFFFF">
     <script src="dist/vue.js" type="text/javascript"></script>              <script src="dist/index.js" type="text/javascript"></script>            <script src="dist/axios.min.js" type="text/javascript"></script>        <link rel="icon" href="dist/webimages/[###].ico" type="image/x-icon">           <link rel="stylesheet" type="text/css" href="dist/theme-chalk/index.css" /> 
-    <div id="app" style="position:absolute;overflow:hidden;left:0;right:0;bottom:0;margin: 0 auto;background-color:#FFFFFF" :style="{top:Default__top,width:Default__wid,height:Default__hei}" >
+    <div id="app" style="position:absolute;overflow:hidden;left:0;right:0;bottom:0;margin: 0 auto;background-color:#FFFFFF" :style="{top:dwsdk_1__top,width:dwsdk_1__wid,height:dwsdk_1__hei}" >
         <el-dialog :title="input_query_caption" :visible.sync="input_query_visible" >
         	<el-form style="width:90%;padding-left:5%;">
         		<el-form-item :label="input_query_inputname" >
@@ -13,34 +13,11 @@
         		<el-button type="primary" @click="processinputquery">{{input_query_okcaption}}</el-button>
         	</div>
         </el-dialog>
-        <el-main v-if="Panel1__vis" :disabled="Panel1__dis" :style="{backgroundColor:Panel1__col,left:Panel1__lef,top:Panel1__top,width:Panel1__wid,height:Panel1__hei}" style="position:absolute;overflow:hidden;border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);">
-        <div  v-html="Label2__cap" v-if="Label2__vis" :disabled="Label2__dis" :style="{left:Label2__lef,top:Label2__top,width:Label2__wid,height:Label2__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label2__cap}}
-        </div>
-        <div  v-html="Label3__cap" v-if="Label3__vis" :disabled="Label3__dis" :style="{left:Label3__lef,top:Label3__top,width:Label3__wid,height:Label3__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label3__cap}}
-        </div>
-        <div  v-html="Label4__cap" v-if="Label4__vis" :disabled="Label4__dis" :style="{left:Label4__lef,top:Label4__top,width:Label4__wid,height:Label4__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label4__cap}}
-        </div>
-        <div  v-html="Label5__cap" v-if="Label5__vis" :disabled="Label5__dis" :style="{left:Label5__lef,top:Label5__top,width:Label5__wid,height:Label5__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label5__cap}}
-        </div>
-        <div  v-html="Label6__cap" v-if="Label6__vis" :disabled="Label6__dis" :style="{left:Label6__lef,top:Label6__top,width:Label6__wid,height:Label6__hei}" style="position:absolute;color:#000000;font-family:'微软雅黑';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;line-height:40px;">{{Label6__cap}}
-        </div>
-        <el-link :underline="false" v-if="StaticText1__vis" :disabled="StaticText1__dis" icon="el-icon-house" type="primary" :href="StaticText1__hrf" target="_blank" :style="{left:StaticText1__lef,top:StaticText1__top,width:StaticText1__wid,height:StaticText1__hei}" style="position:absolute;">{{StaticText1__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText2__vis" :disabled="StaticText2__dis" icon="el-icon-medal-1" type="primary" :href="StaticText2__hrf" target="_blank" :style="{left:StaticText2__lef,top:StaticText2__top,width:StaticText2__wid,height:StaticText2__hei}" style="position:absolute;">{{StaticText2__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText3__vis" :disabled="StaticText3__dis" icon="el-icon-place" type="primary" :href="StaticText3__hrf" target="_blank" :style="{left:StaticText3__lef,top:StaticText3__top,width:StaticText3__wid,height:StaticText3__hei}" style="position:absolute;">{{StaticText3__cap}}
-        </el-link>
-        <el-link :underline="false" v-if="StaticText4__vis" :disabled="StaticText4__dis" icon="el-icon-potato-strips" type="primary" :href="StaticText4__hrf" target="_blank" :style="{left:StaticText4__lef,top:StaticText4__top,width:StaticText4__wid,height:StaticText4__hei}" style="position:absolute;">{{StaticText4__cap}}
-        </el-link>
-        <el-main v-if="Panel2__vis" :disabled="Panel2__dis" :style="{backgroundColor:Panel2__col,left:Panel2__lef,top:Panel2__top,width:Panel2__wid,height:Panel2__hei}" style="position:absolute;overflow:hidden;">
-        <el-image :src="Img__src" fit="none" v-if="Img__vis" :disabled="Img__dis" :style="{left:Img__lef,top:Img__top,width:Img__wid,height:Img__hei}" style="position:absolute;">
-        </el-Image>
-        <div  v-html="Label_Title__cap" v-if="Label_Title__vis" :disabled="Label_Title__dis" :style="{left:Label_Title__lef,top:Label_Title__top,width:Label_Title__wid,height:Label_Title__hei}" style="position:absolute;color:#800000;font-family:'Dubai Light';font-size:24pt;font-weight:normal;font-style:normal;text-decoration:none;">{{Label_Title__cap}}
-        </div>
-        <el-main v-if="Panel_Line__vis" :disabled="Panel_Line__dis" :style="{backgroundColor:Panel_Line__col,left:Panel_Line__lef,top:Panel_Line__top,width:Panel_Line__wid,height:Panel_Line__hei}" style="position:absolute;overflow:hidden;">
-        </el-main>
-        </el-main>
-        </el-main>
+        <el-select v-model="ComboBox1__txt" v-if="ComboBox1__vis" :disabled="ComboBox1__dis" :style="{left:ComboBox1__lef,top:ComboBox1__top,width:ComboBox1__wid,height:ComboBox1__hei}" style="position:absolute;" @change="dwevent($event,'ComboBox1','this.ComboBox1__txt','onchange','')">
+            <el-option v-for="item in ComboBox1__its" :key="item.value" :label="item.value" :value="item.value"/>
+        </el-select>
+        <el-button v-if="Button1__vis" :disabled="Button1__dis" type="default" :style="{left:Button1__lef,top:Button1__top,width:Button1__wid,height:Button1__hei}" style="position:absolute;" @click="dwevent($event,'Button1','0','onclick','')">{{Button1__cap}}
+        </el-button>
 	 </div>
     <script>
 	    Vue.prototype.procResp = function (data){
@@ -56,111 +33,24 @@
 				el: '#app',
 				data: function () {
 					return {
-					    Default__top:"0px",
-					    Default__wid:"800px",
-					    Default__hei:"600px",
-                        Label2__lef:"21px",
-                        Label2__top:"131px",
-                        Label2__wid:"754px",
-                        Label2__hei:"40px",
-                        Label2__vis:true,
-                        Label2__dis:false,
-                        Label2__cap:"DeWeb是一个可以直接将Delphi程序快速转换为网页应用的工具！",
-                        Label3__lef:"21px",
-                        Label3__top:"171px",
-                        Label3__wid:"754px",
-                        Label3__hei:"40px",
-                        Label3__vis:true,
-                        Label3__dis:false,
-                        Label3__cap:"使用DeWeb, 开发者不需要学习HTML、JavaScript、Java、PHP、ASP、C#等新知识，用Delphi搞定一切。",
-                        Label4__lef:"21px",
-                        Label4__top:"211px",
-                        Label4__wid:"754px",
-                        Label4__hei:"40px",
-                        Label4__vis:true,
-                        Label4__dis:false,
-                        Label4__cap:"DeWeb开发的网页支持所有客户端，包括手机、平板等。",
-                        Label5__lef:"21px",
-                        Label5__top:"251px",
-                        Label5__wid:"754px",
-                        Label5__hei:"40px",
-                        Label5__vis:true,
-                        Label5__dis:false,
-                        Label5__cap:"欢迎关注! 欢迎Star!",
-                        Label6__lef:"21px",
-                        Label6__top:"331px",
-                        Label6__wid:"754px",
-                        Label6__hei:"40px",
-                        Label6__vis:true,
-                        Label6__dis:false,
-                        Label6__cap:"Demos :",
-                        StaticText1__lef:"21px",
-                        StaticText1__top:"291px",
-                        StaticText1__wid:"754px",
-                        StaticText1__hei:"40px",
-                        StaticText1__vis:true,
-                        StaticText1__dis:false,
-                        StaticText1__cap:"https://gitee.com/fenglinyushu/dewebsdk",
-                        StaticText1__hrf:"https://gitee.com/fenglinyushu/dewebsdk",
-                        StaticText2__lef:"21px",
-                        StaticText2__top:"411px",
-                        StaticText2__wid:"754px",
-                        StaticText2__hei:"40px",
-                        StaticText2__vis:true,
-                        StaticText2__dis:false,
-                        StaticText2__cap:"驾校科目一理论考试系统",
-                        StaticText2__hrf:"driver.dw",
-                        StaticText3__lef:"21px",
-                        StaticText3__top:"371px",
-                        StaticText3__wid:"754px",
-                        StaticText3__hei:"40px",
-                        StaticText3__vis:true,
-                        StaticText3__dis:false,
-                        StaticText3__cap:"论坛系统(仿DelphiBBS大富翁论坛)",
-                        StaticText3__hrf:"dfw.dw",
-                        StaticText4__lef:"21px",
-                        StaticText4__top:"451px",
-                        StaticText4__wid:"754px",
-                        StaticText4__hei:"40px",
-                        StaticText4__vis:true,
-                        StaticText4__dis:false,
-                        StaticText4__cap:"控件使用",
-                        StaticText4__hrf:"demos.dw",
-                        Img__lef:"24px",
-                        Img__top:"6px",
-                        Img__wid:"48px",
-                        Img__hei:"48px",
-                        Img__vis:true,
-                        Img__dis:false,
-                        Img__src:"dist/webimages/Img.jpg",
-                        Label_Title__lef:"92px",
-                        Label_Title__top:"6px",
-                        Label_Title__wid:"592px",
-                        Label_Title__hei:"48px",
-                        Label_Title__vis:true,
-                        Label_Title__dis:false,
-                        Label_Title__cap:"DeWeb : Delphi-Web",
-                        Panel_Line__lef:"10px",
-                        Panel_Line__top:"80px",
-                        Panel_Line__wid:"738px",
-                        Panel_Line__hei:"2px",
-                        Panel_Line__vis:true,
-                        Panel_Line__dis:false,
-                        Panel_Line__col:"#F0F0F0",
-                        Panel2__lef:"21px",
-                        Panel2__top:"21px",
-                        Panel2__wid:"754px",
-                        Panel2__hei:"110px",
-                        Panel2__vis:true,
-                        Panel2__dis:false,
-                        Panel2__col:"#FFFFFF",
-                        Panel1__lef:"0px",
-                        Panel1__top:"0px",
-                        Panel1__wid:"800px",
-                        Panel1__hei:"600px",
-                        Panel1__vis:true,
-                        Panel1__dis:false,
-                        Panel1__col:"#FFFFFF",
+					    dwsdk_1__top:"0px",
+					    dwsdk_1__wid:"360px",
+					    dwsdk_1__hei:"720px",
+                        ComboBox1__its:[],
+                        ComboBox1__lef:"20px",
+                        ComboBox1__top:"60px",
+                        ComboBox1__wid:"145px",
+                        ComboBox1__hei:"28px",
+                        ComboBox1__vis:true,
+                        ComboBox1__dis:false,
+                        ComboBox1__txt:"ComboBox1",
+                        Button1__lef:"20px",
+                        Button1__top:"8px",
+                        Button1__wid:"91px",
+                        Button1__hei:"36px",
+                        Button1__vis:true,
+                        Button1__dis:false,
+                        Button1__cap:"Button1",
 					    input_query_visible:false,
 					    input_query_caption:"Input Query",
 					    input_query_inputname:"new",
@@ -183,10 +73,10 @@
                         },
                         false
                     );
-                    let Defaulthearttimer = window.setInterval(function() {
+                    let dwsdk_1hearttimer = window.setInterval(function() {
                         axios.get('{"mode":"heart","cid":[!clientid!]}')
                         .then(resp =>{me.procResp(resp.data)})
-                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(Defaulthearttimer);});
+                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(dwsdk_1hearttimer);});
                     }, 30000);
                 },
 				methods: {

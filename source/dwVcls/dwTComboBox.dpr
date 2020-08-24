@@ -76,7 +76,7 @@ begin
                     +'"' //style 封闭
                     +Format(_DWEVENT,['change',Name,'this.'+Name+'__txt','onchange',''])
                     +'>');
-          joRes.Add('    <el-option v-for="item in '+Name+'__options" :key="item.value" :label="item.value" :value="item.value"/>');
+          joRes.Add('    <el-option v-for="item in '+Name+'__its" :key="item.value" :label="item.value" :value="item.value"/>');
 
      end;
 
@@ -109,7 +109,7 @@ begin
      //
      with TComboBox(ACtrl) do begin
           //添加选项
-          sCode     := Name+'__options:[';
+          sCode     := Name+'__its:[';
           for iItem := 0 to Items.Count-1 do begin
                sCode     := sCode + '{value:'''+Items[iItem]+'''},';
           end;
@@ -150,9 +150,9 @@ begin
      //
      with TComboBox(ACtrl) do begin
           //添加选项
-          sCode     := 'this.'+Name+'__options=[';
+          sCode     := 'this.'+Name+'__its=[';
           for iItem := 0 to Items.Count-1 do begin
-               sCode     := sCode + '{value='''+Items[iItem]+'''},';
+               sCode     := sCode + '{value:'''+Items[iItem]+'''},';
           end;
           Delete(sCode,Length(sCode),1);
           sCode     := sCode + '];';
