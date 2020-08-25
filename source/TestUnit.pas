@@ -29,7 +29,6 @@ type
     DBCheckBox1: TDBCheckBox;
     Button2: TButton;
     StaticText1: TStaticText;
-    TreeView1: TTreeView;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
   private

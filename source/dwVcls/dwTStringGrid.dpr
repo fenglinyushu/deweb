@@ -91,20 +91,30 @@ begin
                     +'>');
           //添加主体
           joRes.Add('    <el-table'
-                    +' :data="'+Name+'__ces"'
-                    +' highlight-current-row'
-                    +' ref="'+Name+'"'
-                    //+' stripe'
-                    +dwIIF(Borderstyle<>bsNone,' border','')
-                    +dwVisible(TControl(ACtrl))
-                    +dwDisable(TControl(ACtrl))
-                    +' height="'+IntToStr(TControl(ACtrl).Height)+'"'
-                    +' style="width:100%"'
+                    +' :data="'+Name+'__ces"'     //行内数据
+                    +' highlight-current-row'     //当前行高亮
+                    +' ref="'+Name+'"'            //参考名?
+                    //+' stripe'                  //斑马纹
+                    +dwIIF(Borderstyle<>bsNone,' border','')     //是否边框
+                    +dwVisible(TControl(ACtrl))                  //是否可见
+                    +dwDisable(TControl(ACtrl))                  //是否可用
+                    +' height="'+IntToStr(TControl(ACtrl).Height)+'"' //高度, 有此值则显示滚动条
+                    +' style="width:100%"'                            //宽度
                     +Format(_DWEVENT,['row-click',Name,'val.d0','onclick',''])
                     +'>');
 
           //添加另外加的行号列, 用于表示行号
-          joRes.Add('        <el-table-column  show-overflow-tooltip fixed v-if=false prop="d0" label="rowno" width="80"></el-table-column>');
+          joRes.Add('<el-table-column'
+               +' show-overflow-tooltip'
+               +' fixed'
+               +' v-if=false'
+               +' prop="d0"'
+               +' label="rowno"'
+               +' width="10"'
+               +'></el-table-column>');
+
+
+
           //添加各列
           for iItem := 0 to ColCount-1 do begin
                joRes.Add('        <el-table-column'

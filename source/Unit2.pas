@@ -8,13 +8,14 @@ uses
 
      //
      Forms, SysUtils,Windows,
-     Math, StdCtrls, Graphics, ExtCtrls, Controls, Classes;
+     Math, StdCtrls, Graphics, ExtCtrls, Controls, Classes, Vcl.ComCtrls;
 
 type
   Tdwsdk = class(TForm)
-    ComboBox1: TComboBox;
     Button1: TButton;
+    TreeView1: TTreeView;
     procedure Button1Click(Sender: TObject);
+    procedure TreeView1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,15 +30,22 @@ implementation
 {$R *.dfm}
 
 procedure Tdwsdk.Button1Click(Sender: TObject);
-var
-     I    : Integer;
 begin
-     ComboBox1.Items.Clear;
-     for I := 0 to 1 do begin
-          ComboBox1.Items.Add(IntToStr(GetTickCount));
-          Sleep(10);
+     with TreeView1.Items[0] do begin
+          Text           := IntToStr(GetTickCount);
+          ImageIndex     := ImageIndex + 1;
+     end;
+     TreeView1.Items[TreeView1.Items.Count-1].Destroy;
+end;
+
+procedure Tdwsdk.TreeView1Click(Sender: TObject);
+begin
+     if TreeView1.Selected = nil then begin
+          Exit;
      end;
 
+     //
+     Button1.Caption     := TreeView1.Selected.Text;
 end;
 
 end.

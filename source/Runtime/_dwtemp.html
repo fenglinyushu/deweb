@@ -1,7 +1,7 @@
 <!DOCTYPE html>                                                                    <html lang="en">                                                                                                                                                    <head>                                                                                <meta charset="utf-8">                                                            <meta name="viewport" content="width=device-width, initial-scale=1.0">            <meta http-equiv="X-UA-Compatible" content="ie=edge">                             <title>DeWeb</title>                                                          </head>                                                                           
 <body style="background-color:#FFFFFF">
     <script src="dist/vue.js" type="text/javascript"></script>              <script src="dist/index.js" type="text/javascript"></script>            <script src="dist/axios.min.js" type="text/javascript"></script>        <link rel="icon" href="dist/webimages/[###].ico" type="image/x-icon">           <link rel="stylesheet" type="text/css" href="dist/theme-chalk/index.css" /> 
-    <div id="app" style="position:absolute;overflow:hidden;left:0;right:0;bottom:0;margin: 0 auto;background-color:#FFFFFF" :style="{top:dwsdk_1__top,width:dwsdk_1__wid,height:dwsdk_1__hei}" >
+    <div id="app" style="position:absolute;overflow:hidden;left:0;right:0;bottom:0;margin: 0 auto;background-color:#FFFFFF" :style="{top:dwsdk__top,width:dwsdk__wid,height:dwsdk__hei}" >
         <el-dialog :title="input_query_caption" :visible.sync="input_query_visible" >
         	<el-form style="width:90%;padding-left:5%;">
         		<el-form-item :label="input_query_inputname" >
@@ -13,11 +13,12 @@
         		<el-button type="primary" @click="processinputquery">{{input_query_okcaption}}</el-button>
         	</div>
         </el-dialog>
-        <el-select v-model="ComboBox1__txt" v-if="ComboBox1__vis" :disabled="ComboBox1__dis" :style="{left:ComboBox1__lef,top:ComboBox1__top,width:ComboBox1__wid,height:ComboBox1__hei}" style="position:absolute;" @change="dwevent($event,'ComboBox1','this.ComboBox1__txt','onchange','')">
-            <el-option v-for="item in ComboBox1__its" :key="item.value" :label="item.value" :value="item.value"/>
-        </el-select>
         <el-button v-if="Button1__vis" :disabled="Button1__dis" type="default" :style="{left:Button1__lef,top:Button1__top,width:Button1__wid,height:Button1__hei}" style="position:absolute;" @click="dwevent($event,'Button1','0','onclick','')">{{Button1__cap}}
         </el-button>
+        <el-tree v-if="TreeView1__vis" :disabled="TreeView1__dis" :data="TreeView1__dat" node-key="id" :default-expanded-keys="[]" :props="TreeView1__dps" :style="{left:TreeView1__lef,top:TreeView1__top,width:TreeView1__wid,height:TreeView1__hei}" style="position:absolute;background-color:#FFFFFF;overflow:auto;" @node-click="dwevent($event,'TreeView1','val.$treeNodeId','onclick','')">
+        <span class="custom-tree-node" slot-scope="{ node, data }"><span><i :class="data.icon"></i><span>&nbsp;</span>{{node.label}}</span></span>
+        
+        </el-tree>
 	 </div>
     <script>
 	    Vue.prototype.procResp = function (data){
@@ -33,17 +34,9 @@
 				el: '#app',
 				data: function () {
 					return {
-					    dwsdk_1__top:"0px",
-					    dwsdk_1__wid:"360px",
-					    dwsdk_1__hei:"720px",
-                        ComboBox1__its:[],
-                        ComboBox1__lef:"20px",
-                        ComboBox1__top:"60px",
-                        ComboBox1__wid:"145px",
-                        ComboBox1__hei:"28px",
-                        ComboBox1__vis:true,
-                        ComboBox1__dis:false,
-                        ComboBox1__txt:"ComboBox1",
+					    dwsdk__top:"0px",
+					    dwsdk__wid:"360px",
+					    dwsdk__hei:"720px",
                         Button1__lef:"20px",
                         Button1__top:"8px",
                         Button1__wid:"91px",
@@ -51,6 +44,14 @@
                         Button1__vis:true,
                         Button1__dis:false,
                         Button1__cap:"Button1",
+                        TreeView1__dat:[{id:0,label:'A',icon:'el-icon-platform-eleme',children:[{id:1,label:'AA',icon:'el-icon-more'},{id:2,label:'AB',icon:'el-icon-more-outline'},{id:3,label:'AC',icon:'el-icon-star-on'}]},{id:4,label:'B¼Æ»®',icon:'el-icon-eleme',children:[{id:5,label:'BA',icon:'el-icon-remove'},{id:6,label:'BB',icon:'el-icon-circle-plus',children:[{id:7,label:'BBA',icon:'el-icon-watch'},{id:8,label:'BBB',icon:'el-icon-lock'},{id:9,label:'BBC',icon:'el-icon-unlock'}]},{id:10,label:'BC',icon:'el-icon-success'}]},{id:11,label:'C',icon:'el-icon-delete-solid'}],
+                        TreeView1__dps: {children: 'children',label: 'label'},
+                        TreeView1__lef:"20px",
+                        TreeView1__top:"57px",
+                        TreeView1__wid:"253px",
+                        TreeView1__hei:"349px",
+                        TreeView1__vis:true,
+                        TreeView1__dis:false,
 					    input_query_visible:false,
 					    input_query_caption:"Input Query",
 					    input_query_inputname:"new",
@@ -73,10 +74,10 @@
                         },
                         false
                     );
-                    let dwsdk_1hearttimer = window.setInterval(function() {
+                    let dwsdkhearttimer = window.setInterval(function() {
                         axios.get('{"mode":"heart","cid":[!clientid!]}')
                         .then(resp =>{me.procResp(resp.data)})
-                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(dwsdk_1hearttimer);});
+                        .catch((error) =>{me.dwnotify("Info","Network is disconnected!");clearInterval(dwsdkhearttimer);});
                     }, 30000);
                 },
 				methods: {
