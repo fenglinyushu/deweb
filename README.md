@@ -6,29 +6,29 @@ With DeWeb, developers do not need to learn HTML, JavaScript, Java, PHP, ASP, C#
 Website: http://www.delphibbs.com
 
 Support VCLss
-	Suppot connection components (ADOConnection/FDConnection/UniConnection)；
-	Support all data table components（Query/Table）;
-	Support for all middleware；
-	Support Button
-    Support BitBtn(for upload)
-	Support Label
-	Support Edit
-	Support CheckBox
-	Support Panel
-	Support RadioButton
-	Support SpinEdit
-	Support ComboBox
-	Support Memo
-	Support DateTimePicker
-	Support PageControl
-	Support Shape(For scanning QR code)
-	Support StringGrid
-    Support SpeedButton
-	Support Image
-	Support TreeView
-	Support ListBox
-	Support MainMenu
-	Support Timer
+Suppot connection components (ADOConnection/FDConnection/UniConnection)
+Support all data table components（Query/Table）
+Support for all middleware；
+Support Button
+Support BitBtn(for upload)
+Support Label
+Support Edit
+Support CheckBox
+Support Panel
+Support RadioButton
+Support SpinEdit
+Support ComboBox
+Support Memo
+Support DateTimePicker
+Support PageControl
+Support Shape(For scanning QR code)
+Support StringGrid
+Support SpeedButton
+Support Image
+Support TreeView
+Support ListBox
+Support MainMenu
+Support Timer
 
 #### Demos
 <br/>
