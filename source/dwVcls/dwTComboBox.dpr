@@ -154,7 +154,9 @@ begin
           for iItem := 0 to Items.Count-1 do begin
                sCode     := sCode + '{value:'''+Items[iItem]+'''},';
           end;
-          Delete(sCode,Length(sCode),1);
+          if Items.Count>0 then begin
+               Delete(sCode,Length(sCode),1);
+          end;
           sCode     := sCode + '];';
           joRes.Add(sCode);
           //

@@ -51,6 +51,15 @@ begin
                TImage(ACtrl).OnClick(TImage(ACtrl));
           end;
      end else if joData.event = 'onenter' then begin
+          //
+          if Assigned(TImage(ACtrl).OnMouseEnter) then begin
+               TImage(ACtrl).OnMouseEnter(TImage(ACtrl));
+          end;
+     end else if joData.event = 'onexit' then begin
+          //
+          if Assigned(TImage(ACtrl).OnMouseLeave) then begin
+               TImage(ACtrl).OnMouseLeave(TImage(ACtrl));
+          end;
      end;
 
 end;
@@ -73,10 +82,13 @@ begin
      //取得HINT对象JSON
      joHint    := dwGetHintJson(TControl(ACtrl));
 
-     //
+     //得到圆角半径信息
      sRadius   := dwGetHintValue(joHint,'radius','border-radius','');
      sRadius   := StringReplace(sRadius,'=',':',[]);
      sRadius   := Trim(StringReplace(sRadius,'"','',[rfReplaceAll]));
+     if sRadius<>'' then begin
+          sRadius   := sRadius + ';';
+     end;
 
      with TImage(ACtrl) do begin
           //如果没有手动设置图片源，则自动保存当前图片，并设置为图片源
@@ -94,8 +106,11 @@ begin
                          +dwDisable(TControl(ACtrl))
                          +dwLTWH(TControl(ACtrl))
                          +sRadius
+                         +dwIIF(Assigned(OnClick),'cursor: pointer;','')
                          +'"'
                          +dwIIF(Assigned(OnClick),Format(_DWEVENT,['click',Name,'0','onclick','']),'')
+                         +dwIIF(Assigned(OnMouseEnter),Format(_DWEVENT,['mouseenter.native',Name,'0','onenter','']),'')
+                         +dwIIF(Assigned(OnMOuseLeave),Format(_DWEVENT,['mouseleave.native',Name,'0','onexit','']),'')
                          +'>');
           end else begin
                if Stretch then begin
@@ -104,8 +119,11 @@ begin
                               +dwDisable(TControl(ACtrl))
                               +dwLTWH(TControl(ACtrl))
                               +sRadius
+                              +dwIIF(Assigned(OnClick),'cursor: pointer;','')
                               +'"'
                               +dwIIF(Assigned(OnClick),Format(_DWEVENT,['click',Name,'0','onclick','']),'')
+                              +dwIIF(Assigned(OnMouseEnter),Format(_DWEVENT,['mouseenter.native',Name,'0','onenter','']),'')
+                              +dwIIF(Assigned(OnMOuseLeave),Format(_DWEVENT,['mouseleave.native',Name,'0','onexit','']),'')
                          +'>');
                end else begin
                     joRes.Add('<el-image :src="'+Name+'__src" fit="none"'
@@ -113,8 +131,11 @@ begin
                               +dwDisable(TControl(ACtrl))
                               +dwLTWH(TControl(ACtrl))
                               +sRadius
+                              +dwIIF(Assigned(OnClick),'cursor: pointer;','')
                               +'"'
                               +dwIIF(Assigned(OnClick),Format(_DWEVENT,['click',Name,'0','onclick','']),'')
+                              +dwIIF(Assigned(OnMouseEnter),Format(_DWEVENT,['mouseenter.native',Name,'0','onenter','']),'')
+                              +dwIIF(Assigned(OnMOuseLeave),Format(_DWEVENT,['mouseleave.native',Name,'0','onexit','']),'')
                          +'>');
                end;
           end;

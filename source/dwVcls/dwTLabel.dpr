@@ -73,10 +73,24 @@ end;
 
 //根据JSON对象AData执行当前控件的事件, 并返回结果字符串
 function dwGetEvent(ACtrl:TComponent;AData:String):string;StdCall;
+var
+     joData    : Variant;
 begin
      //
-     if Assigned(TLabel(ACtrl).OnClick) then begin
-          TLabel(ACtrl).OnClick(TLabel(ACtrl));
+     joData    := _Json(AData);
+
+     if joData.event = 'onclick' then begin
+          if Assigned(TLabel(ACtrl).OnClick) then begin
+               TLabel(ACtrl).OnClick(TLabel(ACtrl));
+          end;
+     end else if joData.event = 'onenter' then begin
+          if Assigned(TLabel(ACtrl).OnMouseEnter) then begin
+               TLabel(ACtrl).OnMouseEnter(TLabel(ACtrl));
+          end;
+     end else if joData.event = 'onexit' then begin
+          if Assigned(TLabel(ACtrl).OnMouseLeave) then begin
+               TLabel(ACtrl).OnMouseLeave(TLabel(ACtrl));
+          end;
      end;
 end;
 
@@ -88,6 +102,19 @@ var
      joHint    : Variant;
      joRes     : Variant;
 begin
+     //<处理PageControl做时间线的问题
+     if TLabel(ACtrl).Parent.ClassName = 'TTabSheet' then begin
+          if TTabSheet(TLabel(ACtrl).Parent).PageControl.HelpKeyword = 'timeline' then begin
+               joRes    := _Json('[]');
+               //
+               Result    := joRes;
+               //
+               Exit;
+          end;
+     end;
+     //>
+
+
      //生成返回值数组
      joRes    := _Json('[]');
 
@@ -108,6 +135,8 @@ begin
                     //style 封闭
 
                     +dwIIF(Assigned(OnClick),Format(_DWEVENT,['click',Name,'0','onclick','']),'')
+                    +dwIIF(Assigned(OnMouseEnter),Format(_DWEVENT,['mouseenter.native',Name,'0','onenter','']),'')
+                    +dwIIF(Assigned(OnMouseLeave),Format(_DWEVENT,['mouseleave.native',Name,'0','onexit','']),'')
                     +'>{{'+Name+'__cap}}';
           //添加到返回值数据
           joRes.Add(sCode);
@@ -121,6 +150,18 @@ function dwGetTail(ACtrl:TComponent):string;StdCall;
 var
      joRes     : Variant;
 begin
+     //<处理PageControl做时间线的问题
+     if TLabel(ACtrl).Parent.ClassName = 'TTabSheet' then begin
+          if TTabSheet(TLabel(ACtrl).Parent).PageControl.HelpKeyword = 'timeline' then begin
+               joRes    := _Json('[]');
+               //
+               Result    := joRes;
+               //
+               Exit;
+          end;
+     end;
+     //>
+
      //生成返回值数组
      joRes    := _Json('[]');
      //生成返回值数组
@@ -134,6 +175,18 @@ function dwGetData(ACtrl:TComponent):string;StdCall;
 var
      joRes     : Variant;
 begin
+     //<处理PageControl做时间线的问题
+     if TLabel(ACtrl).Parent.ClassName = 'TTabSheet' then begin
+          if TTabSheet(TLabel(ACtrl).Parent).PageControl.HelpKeyword = 'timeline' then begin
+               joRes    := _Json('[]');
+               //
+               Result    := joRes;
+               //
+               Exit;
+          end;
+     end;
+     //>
+
      //生成返回值数组
      joRes    := _Json('[]');
      //
@@ -156,6 +209,18 @@ function dwGetMethod(ACtrl:TComponent):string;StdCall;
 var
      joRes     : Variant;
 begin
+     //<处理PageControl做时间线的问题
+     if TLabel(ACtrl).Parent.ClassName = 'TTabSheet' then begin
+          if TTabSheet(TLabel(ACtrl).Parent).PageControl.HelpKeyword = 'timeline' then begin
+               joRes    := _Json('[]');
+               //
+               Result    := joRes;
+               //
+               Exit;
+          end;
+     end;
+     //>
+
      //生成返回值数组
      joRes    := _Json('[]');
      //

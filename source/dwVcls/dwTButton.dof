@@ -90,7 +90,7 @@ MaxStackSize=1048576
 ImageBase=4194304
 ExeDescription=
 [Directories]
-OutputDir=..\Runtime\dwVcls\
+OutputDir=..\Runtime\Vcls\
 UnitOutputDir=
 PackageDLLOutputDir=
 PackageDCPOutputDir=
@@ -141,7 +141,7 @@ Item2=.\dbc\;.\core\
 Item3=.\dbc\
 [HistoryLists\hlUnitOutputDirectory]
 Count=2
-Item0=..\Runtime\dwVcls\
+Item0=..\Runtime\Vcls\
 Item1=..\Source\Runtime\dwVcls\
 [HistoryLists\hlOutputDirectorry]
 Count=2

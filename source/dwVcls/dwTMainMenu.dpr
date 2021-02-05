@@ -78,6 +78,8 @@ var
      miItem    : TMenuItem;
      ssPath    : String;
 begin
+     //注释： index 从0开始，每一层用-隔开，如1-3-2
+
      //
      for ii := 0 to AItem.Count-1 do begin
           miItem   := AItem.items[ii];
@@ -115,7 +117,6 @@ begin
 end;
 
 
-
 //取得HTML头部消息
 function dwGetHead(ACtrl:TComponent):string;StdCall;
 var
@@ -124,17 +125,34 @@ var
      joRes     : Variant;
      iItem     : Integer;
      oItem     : TMenuItem;
+     sHint     : String;
 begin
      //生成返回值数组
      joRes    := _Json('[]');
 
+     //取得HINT对象JSON
+     sHint     := '{}';
+     if TMainMenu(ACtrl).Items.Count>0 then begin
+          sHint     := TMainMenu(ACtrl).Items[0].Hint;
+     end;
+     TDocVariant.New(joHint);
+     if (sHint<>'') then begin
+          if (Copy(sHint,1,1) = '{') and (Copy(sHint,Length(sHint),1) = '}') then begin
+               joHint    := _json(sHint);
+          end;
+     end;
+
      with TMainMenu(ACtrl) do begin
           sCode     := '<el-menu'
+                    +' :default-active="'+Name+'__act"'     //默认选中状态
                     +' class="el-menu-demo"'
                     +dwIIF(ownerDraw,'',' mode="horizontal"')
-                    +' background-color="#545c64"'
-                    +' text-color="#fff"'
-                    +' active-text-color="#ffd04b"'
+                    //+' background-color="#545c64"'
+                    +dwGetHintValue(joHint,'background-color','background-color',' background-color="#545c64"')
+                    //+' text-color="#fff"'
+                    +dwGetHintValue(joHint,'text-color','text-color',' text-color="#fff"')
+                    //+' active-text-color="#ffd04b"'
+                    +dwGetHintValue(joHint,'active-text-color','active-text-color',' active-text-color="#ffd04b"')
                     //+dwVisible(ACtrl)
                     //+dwDisable(ACtrl)
                     +dwLTWHComp(ACtrl)
@@ -142,7 +160,7 @@ begin
                     +'"' //style 封闭
                     +Format(_DWEVENT,['select',Name,'val','onclick',''])
                     +'>';
-          //添加数据
+          //添加
           joRes.Add(sCode);
 
           //
@@ -174,7 +192,7 @@ begin
                     joRes.Add('</el-submenu>');
                end;
           end;
-          //添加数据
+          //添加
           joRes.Add(sCode);
      end;
 
@@ -199,15 +217,36 @@ end;
 function dwGetData(ACtrl:TComponent):string;StdCall;
 var
      joRes     : Variant;
+     sAction   : String;
 begin
      //生成返回值数组
      joRes    := _Json('[]');
      //
      with TMainMenu(ACtrl) do begin
-          joRes.Add(Name+'__lef:"'+IntToStr(DesignInfo div 10000)+'px",');
-          joRes.Add(Name+'__top:"'+IntToStr(DesignInfo mod 10000)+'px",');
-          joRes.Add(Name+'__wid:"'+IntToStr(Tag div 10000)+'px",');
-          joRes.Add(Name+'__hei:"'+IntToStr(Tag mod 10000)+'px",');
+          if Tag < 10000 then begin
+               //如果没有设置当前菜单的LTWH,则为默认值
+               joRes.Add(Name+'__lef:"0px",');
+               joRes.Add(Name+'__top:"0px",');
+               joRes.Add(Name+'__wid:"600px",');
+               joRes.Add(Name+'__hei:"38px",');
+          end else begin
+               joRes.Add(Name+'__lef:"'+IntToStr(DesignInfo div 10000)+'px",');
+               joRes.Add(Name+'__top:"'+IntToStr(DesignInfo mod 10000)+'px",');
+               joRes.Add(Name+'__wid:"'+IntToStr(Tag div 10000)+'px",');
+               joRes.Add(Name+'__hei:"'+IntToStr(Tag mod 10000)+'px",');
+          end;
+
+          //当前菜单位置(保存在Items[0].Hint)
+          if Items.Count>0 then begin
+               sAction   := Items[1].Hint;// dwGetProp(TControl(Items[0]),'actionindex');
+               if sAction<>'' then begin
+                    joRes.Add(Name+'__act:"'+sAction+'",');
+               end else begin
+                    joRes.Add(Name+'__act:"0",');
+               end;
+          end else begin
+               joRes.Add(Name+'__act:"0",');
+          end;
      end;
      //
      Result    := (joRes);

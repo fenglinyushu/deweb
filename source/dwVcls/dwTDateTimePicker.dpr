@@ -52,9 +52,9 @@ begin
           TDateTimePicker(ACtrl).OnChange  := nil;
           //更新值
           if TDateTimePicker(ACtrl).Kind = dtkDate then begin
-               TDateTimePicker(ACtrl).Date    := StrToDate(joData.value);
+               TDateTimePicker(ACtrl).Date    := StrToDateDef(joData.value,Now);
           end else begin
-               TDateTimePicker(ACtrl).Time    := StrToTime(StringReplace(joData.value,'%3A',':',[rfReplaceAll])+':00');
+               TDateTimePicker(ACtrl).Time    := StrToTimeDef(StringReplace(joData.value,'%3A',':',[rfReplaceAll])+':00',Now);
           end;
           //恢复事件
           TDateTimePicker(ACtrl).OnChange  := TDateTimePicker(ACtrl).OnExit;

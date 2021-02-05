@@ -23,28 +23,44 @@ end;
 //根据JSON对象AData执行当前控件的事件, 并返回结果字符串
 function dwGetEvent(ACtrl:TComponent;AData:String):string;StdCall;
 var
-     sValue    : String;
-     iItem     : Integer;
      joData    : Variant;
+     oChange   : Procedure(Sender:TObject) of Object;
 begin
-     joData    := _json(AData);
+     //
+     joData    := _Json(AData);
 
-     //保存事件
-     TMemo(ACtrl).OnExit    := TMemo(ACtrl).OnChange;
-     //清空事件,以防止自动执行
-     TMemo(ACtrl).OnChange  := nil;
-     //更新值
-     TMemo(ACtrl).Text    := dwUnescape(joData.value);
-     //恢复事件
-     TMemo(ACtrl).OnChange  := TMemo(ACtrl).OnExit;
 
-     //执行事件
-     if Assigned(TMemo(ACtrl).OnChange) then begin
-          TMemo(ACtrl).OnChange(TMemo(ACtrl));
+     if joData.event = 'onenter' then begin
+          if Assigned(TMemo(ACtrl).OnEnter) then begin
+               TMemo(ACtrl).OnEnter(TMemo(ACtrl));
+          end;
+     end else if joData.event = 'onchange' then begin
+          //保存事件
+          oChange   := TMemo(ACtrl).OnChange;
+          //清空事件,以防止自动执行
+          TMemo(ACtrl).OnChange  := nil;
+          //更新值
+          TMemo(ACtrl).Text    := dwUnescape(joData.value);
+          //恢复事件
+          TMemo(ACtrl).OnChange  := oChange;
+
+          //执行事件
+          if Assigned(TMemo(ACtrl).OnChange) then begin
+               TMemo(ACtrl).OnChange(TMemo(ACtrl));
+          end;
+     end else if joData.event = 'onexit' then begin
+          if Assigned(TMemo(ACtrl).OnExit) then begin
+               TMemo(ACtrl).OnExit(TMemo(ACtrl));
+          end;
+     end else if joData.event = 'onmouseenter' then begin
+          if Assigned(TMemo(ACtrl).OnMouseEnter) then begin
+               TMemo(ACtrl).OnMouseEnter(TMemo(ACtrl));
+          end;
+     end else if joData.event = 'onmouseexit' then begin
+          if Assigned(TMemo(ACtrl).OnMouseLeave) then begin
+               TMemo(ACtrl).OnMouseLeave(TMemo(ACtrl));
+          end;
      end;
-
-     //清空OnExit事件
-     TMemo(ACtrl).OnExit  := nil;
 end;
 
 
@@ -69,6 +85,11 @@ begin
                     +dwLTWH(TControl(ACtrl))
                     +'"' //style 封闭
                     +Format(_DWEVENT,['input',Name,'(this.'+Name+'__txt)','onchange',''])
+                    //+dwIIF(Assigned(OnChange),    Format(_DWEVENT,['input',Name,'(this.'+Name+'__txt)','onchange','']),'')
+                    +dwIIF(Assigned(OnMouseEnter),Format(_DWEVENT,['mouseenter.native',Name,'0','onmouseenter','']),'')
+                    +dwIIF(Assigned(OnMouseLeave),Format(_DWEVENT,['mouseleave.native',Name,'0','onmouseexit','']),'')
+                    +dwIIF(Assigned(OnEnter),     Format(_DWEVENT,['focus',Name,'0','onenter','']),'')
+                    +dwIIF(Assigned(OnExit),      Format(_DWEVENT,['blur',Name,'0','onexit','']),'')
                     +'>';
           //添加到返回值数据
           joRes.Add(sCode);

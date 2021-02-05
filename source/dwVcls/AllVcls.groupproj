@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{5C9038B1-8C21-42EB-8D43-EF7FB00F258C}</ProjectGuid>
+        <ProjectGuid>{90819BC6-4F26-4540-8879-ECAD0601897C}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
         <Projects Include="dwTButton.dproj">
@@ -15,7 +15,16 @@
         <Projects Include="dwTDateTimePicker.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="dwTDBCheckBox.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dwTDBEdit.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="dwTDBGrid.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dwTDBText.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="dwTEdit.dproj">
@@ -27,6 +36,18 @@
         <Projects Include="dwTLabel.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="dwTListBox.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dwTMainMenu.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dwTMediaPlayer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dwTMemo.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="dwTPageControl.dproj">
             <Dependencies/>
         </Projects>
@@ -36,10 +57,22 @@
         <Projects Include="dwTRadioButton.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="dwTSpinEdit.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="dwTStaticText.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="dwTStringGrid.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="dwTTabSheet.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dwTTimer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dwTTreeView.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -86,6 +119,24 @@
     <Target Name="dwTDateTimePicker:Make">
         <MSBuild Projects="dwTDateTimePicker.dproj" Targets="Make"/>
     </Target>
+    <Target Name="dwTDBCheckBox">
+        <MSBuild Projects="dwTDBCheckBox.dproj"/>
+    </Target>
+    <Target Name="dwTDBCheckBox:Clean">
+        <MSBuild Projects="dwTDBCheckBox.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTDBCheckBox:Make">
+        <MSBuild Projects="dwTDBCheckBox.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dwTDBEdit">
+        <MSBuild Projects="dwTDBEdit.dproj"/>
+    </Target>
+    <Target Name="dwTDBEdit:Clean">
+        <MSBuild Projects="dwTDBEdit.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTDBEdit:Make">
+        <MSBuild Projects="dwTDBEdit.dproj" Targets="Make"/>
+    </Target>
     <Target Name="dwTDBGrid">
         <MSBuild Projects="dwTDBGrid.dproj"/>
     </Target>
@@ -94,6 +145,15 @@
     </Target>
     <Target Name="dwTDBGrid:Make">
         <MSBuild Projects="dwTDBGrid.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dwTDBText">
+        <MSBuild Projects="dwTDBText.dproj"/>
+    </Target>
+    <Target Name="dwTDBText:Clean">
+        <MSBuild Projects="dwTDBText.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTDBText:Make">
+        <MSBuild Projects="dwTDBText.dproj" Targets="Make"/>
     </Target>
     <Target Name="dwTEdit">
         <MSBuild Projects="dwTEdit.dproj"/>
@@ -122,6 +182,42 @@
     <Target Name="dwTLabel:Make">
         <MSBuild Projects="dwTLabel.dproj" Targets="Make"/>
     </Target>
+    <Target Name="dwTListBox">
+        <MSBuild Projects="dwTListBox.dproj"/>
+    </Target>
+    <Target Name="dwTListBox:Clean">
+        <MSBuild Projects="dwTListBox.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTListBox:Make">
+        <MSBuild Projects="dwTListBox.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dwTMainMenu">
+        <MSBuild Projects="dwTMainMenu.dproj"/>
+    </Target>
+    <Target Name="dwTMainMenu:Clean">
+        <MSBuild Projects="dwTMainMenu.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTMainMenu:Make">
+        <MSBuild Projects="dwTMainMenu.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dwTMediaPlayer">
+        <MSBuild Projects="dwTMediaPlayer.dproj"/>
+    </Target>
+    <Target Name="dwTMediaPlayer:Clean">
+        <MSBuild Projects="dwTMediaPlayer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTMediaPlayer:Make">
+        <MSBuild Projects="dwTMediaPlayer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dwTMemo">
+        <MSBuild Projects="dwTMemo.dproj"/>
+    </Target>
+    <Target Name="dwTMemo:Clean">
+        <MSBuild Projects="dwTMemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTMemo:Make">
+        <MSBuild Projects="dwTMemo.dproj" Targets="Make"/>
+    </Target>
     <Target Name="dwTPageControl">
         <MSBuild Projects="dwTPageControl.dproj"/>
     </Target>
@@ -149,6 +245,15 @@
     <Target Name="dwTRadioButton:Make">
         <MSBuild Projects="dwTRadioButton.dproj" Targets="Make"/>
     </Target>
+    <Target Name="dwTSpinEdit">
+        <MSBuild Projects="dwTSpinEdit.dproj"/>
+    </Target>
+    <Target Name="dwTSpinEdit:Clean">
+        <MSBuild Projects="dwTSpinEdit.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTSpinEdit:Make">
+        <MSBuild Projects="dwTSpinEdit.dproj" Targets="Make"/>
+    </Target>
     <Target Name="dwTStaticText">
         <MSBuild Projects="dwTStaticText.dproj"/>
     </Target>
@@ -157,6 +262,15 @@
     </Target>
     <Target Name="dwTStaticText:Make">
         <MSBuild Projects="dwTStaticText.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dwTStringGrid">
+        <MSBuild Projects="dwTStringGrid.dproj"/>
+    </Target>
+    <Target Name="dwTStringGrid:Clean">
+        <MSBuild Projects="dwTStringGrid.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTStringGrid:Make">
+        <MSBuild Projects="dwTStringGrid.dproj" Targets="Make"/>
     </Target>
     <Target Name="dwTTabSheet">
         <MSBuild Projects="dwTTabSheet.dproj"/>
@@ -167,14 +281,32 @@
     <Target Name="dwTTabSheet:Make">
         <MSBuild Projects="dwTTabSheet.dproj" Targets="Make"/>
     </Target>
+    <Target Name="dwTTimer">
+        <MSBuild Projects="dwTTimer.dproj"/>
+    </Target>
+    <Target Name="dwTTimer:Clean">
+        <MSBuild Projects="dwTTimer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTTimer:Make">
+        <MSBuild Projects="dwTTimer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dwTTreeView">
+        <MSBuild Projects="dwTTreeView.dproj"/>
+    </Target>
+    <Target Name="dwTTreeView:Clean">
+        <MSBuild Projects="dwTTreeView.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dwTTreeView:Make">
+        <MSBuild Projects="dwTTreeView.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="dwTButton;dwTCheckBox;dwTComboBox;dwTDateTimePicker;dwTDBGrid;dwTEdit;dwTImage;dwTLabel;dwTPageControl;dwTPanel;dwTRadioButton;dwTStaticText;dwTTabSheet"/>
+        <CallTarget Targets="dwTButton;dwTCheckBox;dwTComboBox;dwTDateTimePicker;dwTDBCheckBox;dwTDBEdit;dwTDBGrid;dwTDBText;dwTEdit;dwTImage;dwTLabel;dwTListBox;dwTMainMenu;dwTMediaPlayer;dwTMemo;dwTPageControl;dwTPanel;dwTRadioButton;dwTSpinEdit;dwTStaticText;dwTStringGrid;dwTTabSheet;dwTTimer;dwTTreeView"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="dwTButton:Clean;dwTCheckBox:Clean;dwTComboBox:Clean;dwTDateTimePicker:Clean;dwTDBGrid:Clean;dwTEdit:Clean;dwTImage:Clean;dwTLabel:Clean;dwTPageControl:Clean;dwTPanel:Clean;dwTRadioButton:Clean;dwTStaticText:Clean;dwTTabSheet:Clean"/>
+        <CallTarget Targets="dwTButton:Clean;dwTCheckBox:Clean;dwTComboBox:Clean;dwTDateTimePicker:Clean;dwTDBCheckBox:Clean;dwTDBEdit:Clean;dwTDBGrid:Clean;dwTDBText:Clean;dwTEdit:Clean;dwTImage:Clean;dwTLabel:Clean;dwTListBox:Clean;dwTMainMenu:Clean;dwTMediaPlayer:Clean;dwTMemo:Clean;dwTPageControl:Clean;dwTPanel:Clean;dwTRadioButton:Clean;dwTSpinEdit:Clean;dwTStaticText:Clean;dwTStringGrid:Clean;dwTTabSheet:Clean;dwTTimer:Clean;dwTTreeView:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="dwTButton:Make;dwTCheckBox:Make;dwTComboBox:Make;dwTDateTimePicker:Make;dwTDBGrid:Make;dwTEdit:Make;dwTImage:Make;dwTLabel:Make;dwTPageControl:Make;dwTPanel:Make;dwTRadioButton:Make;dwTStaticText:Make;dwTTabSheet:Make"/>
+        <CallTarget Targets="dwTButton:Make;dwTCheckBox:Make;dwTComboBox:Make;dwTDateTimePicker:Make;dwTDBCheckBox:Make;dwTDBEdit:Make;dwTDBGrid:Make;dwTDBText:Make;dwTEdit:Make;dwTImage:Make;dwTLabel:Make;dwTListBox:Make;dwTMainMenu:Make;dwTMediaPlayer:Make;dwTMemo:Make;dwTPageControl:Make;dwTPanel:Make;dwTRadioButton:Make;dwTSpinEdit:Make;dwTStaticText:Make;dwTStringGrid:Make;dwTTabSheet:Make;dwTTimer:Make;dwTTreeView:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

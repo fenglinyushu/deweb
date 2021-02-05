@@ -60,6 +60,7 @@ begin
           if ( maxvalue =  0 ) and  ( maxvalue =  0 ) then begin
                joRes.Add('<el-input-number'
                          +' v-model="'+Name+'__val"'
+                         +dwIIF(Ctl3D,'',' controls-position="right"')
                          +dwVisible(TControl(ACtrl))
                          +dwDisable(TControl(ACtrl))
                          +dwLTWH(TControl(ACtrl))
@@ -70,6 +71,7 @@ begin
                joRes.Add('<el-input-number'
                          +' v-model="'+Name+'__val"'
                          +' :min="'+Name+'__min" :max="'+Name+'__max"'
+                         +dwIIF(Ctl3D,'',' controls-position="right"')
                          +dwVisible(TControl(ACtrl))
                          +dwDisable(TControl(ACtrl))
                          +dwLTWH(TControl(ACtrl))

@@ -8,6 +8,7 @@ uses
      //求MD5
      IdHashMessageDigest,IdGlobal, IdHash,
      //
+     Vcl.GraphUtil,
      Messages, SysUtils, Variants, Classes, Graphics,
      Controls, Forms, Dialogs, ComCtrls, ExtCtrls,
      Spin, Grids,
@@ -29,10 +30,15 @@ function dwLTWH(ACtrl:TControl):String;      //可以更新位置的用法
 function dwLTWHComp(ACtrl:TComponent):String;  //可以更新位置的用法
 
 //检查HINT的JOSN对象中如果存在在某属性,则返回字符串
-//如果存在 AJsonName 则 返回 AHtmlName = AJson.AJsonName;
+//如果存在 AJsonName 则 返回 AHtmlName = "AJson.AJsonName";
 //                 否则 返回 ADefault
 function dwGetHintValue(AHint:Variant;AJsonName,AHtmlName,ADefault:String):String;
 
+function dwGetHintStyle(AHint:Variant;AJsonName,AHtmlName,ADefault:String):String;
+
+//检查HINT的JOSN对象中如果存在在某属性,则返回字符串
+//如果存在 AJsonName 则 返回 AHtmlName:AJson.AJsonName;
+//                 否则 返回 ADefault
 function dwIIF(ABool:Boolean;AYes,ANo:string):string;
 
 const
@@ -727,7 +733,33 @@ function dwGetText(AText:string;ALen:integer):string;
 
 function dwGetMD5(AStr:String):string;
 
+
+//取得DLL名称
+function dwGetDllName: string;
+
 implementation      //==============================================================================
+
+//取得DLL名称
+function dwGetDllName: string;
+var
+     sModule   : string;
+begin
+     SetLength(sModule, 255);
+     //取得Dll自身路径
+     GetModuleFileName(HInstance, PChar(sModule), Length(sModule));
+     //去除路径
+     while Pos('\',sModule)>0 do begin
+          Delete(sModule,1,Pos('\',sModule));
+     end;
+     //去除.dll
+     if Pos('.',sModule)>0 then begin
+          sModule     := Copy(sModule,1,Pos('.',sModule)-1);
+     end;
+
+     //
+     Result := PChar(sModule);
+end;
+
 
 
 function dwGetMD5(AStr:String):string;
@@ -784,7 +816,7 @@ var
      f1970     : TDateTime;
 begin
      //PHP时间是格林威治时间1970-1-1 00:00:00到当前流逝的秒数
-     f1970     := StrToDateTime('1970-01-01 00:00:00');
+     f1970     := EncodeDateTime(1970, 1, 1, 8, 0, 0, 0);//StrToDateTime('1970-01-01 00:00:00');
      Result    := IncSecond(f1970,ADate);
      //Result    := ((ADate+28800)/86400+25569);
 end;
@@ -1258,7 +1290,8 @@ end;
 
 function dwColor(AColor:Integer):string;
 begin
-     Result := Format('#%.2x%.2x%.2x',[GetRValue(ColorToRGB(AColor)),GetGValue(ColorToRGB(AColor)),GetBValue(ColorToRGB(AColor))]);
+     Result    := ColorToWebColorStr(AColor);
+     //Result := Format('#%.2x%.2x%.2x',[GetRValue(ColorToRGB(AColor)),GetGValue(ColorToRGB(AColor)),GetBValue(ColorToRGB(AColor))]);
 end;
 
 
@@ -1367,7 +1400,27 @@ function dwGetHintValue(AHint:Variant;AJsonName,AHtmlName,ADefault:String):Strin
 begin
      if AHint<>null then begin
           if AHint.Exists(AJsonName) then begin
-               Result    := AnsiString(' '+AHtmlName+'="'+AHint._(AJsonName)+'"');
+               if AHtmlName <> '' then begin
+                    Result    := AnsiString(' '+AHtmlName+'="'+AHint._(AJsonName)+'"');
+               end else begin
+                    Result    := AnsiString(' '+AHint._(AJsonName));
+               end;
+          end else begin
+               Result    := ADefault;
+          end;
+     end else begin
+          Result    := ADefault;
+     end;
+end;
+function dwGetHintStyle(AHint:Variant;AJsonName,AHtmlName,ADefault:String):String;
+begin
+     if AHint<>null then begin
+          if AHint.Exists(AJsonName) then begin
+               if AHtmlName <> '' then begin
+                    Result    := AnsiString(AHtmlName+':'+AHint._(AJsonName)+';');
+               end else begin
+                    Result    := AnsiString(AHint._(AJsonName));
+               end;
           end else begin
                Result    := ADefault;
           end;

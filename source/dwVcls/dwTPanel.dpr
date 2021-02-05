@@ -22,10 +22,18 @@ end;
 
 //根据JSON对象AData执行当前控件的事件, 并返回结果字符串
 function dwGetEvent(ACtrl:TComponent;AData:String):string;StdCall;
+var
+     joData    : Variant;
 begin
      //
-     if Assigned(TPanel(ACtrl).OnClick) then begin
+     joData    := _Json(AData);
+
+     if joData.event = 'onclick' then begin
           TPanel(ACtrl).OnClick(TPanel(ACtrl));
+     end else if joData.event = 'onenter' then begin
+          TPanel(ACtrl).OnEnter(TPanel(ACtrl));
+     end else if joData.event = 'onexit' then begin
+          TPanel(ACtrl).OnExit(TPanel(ACtrl));
      end;
 end;
 
@@ -50,10 +58,13 @@ begin
                     //+dwGetHintValue(joHint,'type','type',' type="default"')
                     //+dwGetHintValue(joHint,'icon','icon','')         
                     +' :style="{backgroundColor:'+Name+'__col,left:'+Name+'__lef,top:'+Name+'__top,width:'+Name+'__wid,height:'+Name+'__hei}"'
-                    +' style="position:absolute;overflow:hidden;'
+                    +' style="position:'+dwIIF(Parent.ControlCount=1,'relative','absolute')+';overflow:hidden;'
                     +dwIIF(BorderStyle=bsSingle,'border-radius: 2px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);','')
+                    +dwGetHintStyle(joHint,'borderradius','border-radius','')   //border-radius
                     +'"' //style 封闭
                     +dwIIF(Assigned(OnClick),Format(_DWEVENT,['click',Name,'0','onclick','']),'')
+                    +dwIIF(Assigned(OnEnter),Format(_DWEVENT,['mouseenter.native',Name,'0','onenter','']),'')
+                    +dwIIF(Assigned(OnExit),Format(_DWEVENT,['mouseleave.native',Name,'0','onexit','']),'')
                     +'>';
           //添加到返回值数据
           joRes.Add(sCode);

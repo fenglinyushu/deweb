@@ -41,10 +41,44 @@ end;
 function dwGetEvent(ACtrl:TComponent;AData:String):string;StdCall;
 var
      joData    : Variant;
+     oChange   : Procedure(Sender:TObject) of Object;
 begin
      //
      joData    := _Json(AData);
 
+
+     if joData.event = 'onenter' then begin
+          if Assigned(TEdit(ACtrl).OnEnter) then begin
+               TEdit(ACtrl).OnEnter(TEdit(ACtrl));
+          end;
+     end else if joData.event = 'onchange' then begin
+          //保存事件
+          oChange   := TEdit(ACtrl).OnChange;
+          //清空事件,以防止自动执行
+          TEdit(ACtrl).OnChange  := nil;
+          //更新值
+          TEdit(ACtrl).Text    := dwUnescape(joData.value);
+          //恢复事件
+          TEdit(ACtrl).OnChange  := oChange;
+
+          //执行事件
+          if Assigned(TEdit(ACtrl).OnChange) then begin
+               TEdit(ACtrl).OnChange(TEdit(ACtrl));
+          end;
+     end else if joData.event = 'onexit' then begin
+          if Assigned(TEdit(ACtrl).OnExit) then begin
+               TEdit(ACtrl).OnExit(TEdit(ACtrl));
+          end;
+     end else if joData.event = 'onmouseenter' then begin
+          if Assigned(TEdit(ACtrl).OnMouseEnter) then begin
+               TEdit(ACtrl).OnMouseEnter(TEdit(ACtrl));
+          end;
+     end else if joData.event = 'onmouseexit' then begin
+          if Assigned(TEdit(ACtrl).OnMouseLeave) then begin
+               TEdit(ACtrl).OnMouseLeave(TEdit(ACtrl));
+          end;
+     end;
+{
      if joData.event = 'onchange' then begin
           //保存事件
           TEdit(ACtrl).OnExit    := TEdit(ACtrl).OnChange;
@@ -74,9 +108,9 @@ begin
                TEdit(ACtrl).OnEnter(TEdit(ACtrl));
           end;
      end;
-
      //清空OnExit事件
      TEdit(ACtrl).OnExit  := nil;
+}
 end;
 
 
@@ -102,9 +136,14 @@ begin
                     +dwGetHintValue(joHint,'prefix-icon','prefix-icon','') //前置Icon
                     +dwGetHintValue(joHint,'suffix-icon','suffix-icon','') //后置Icon
                     +dwLTWH(TControl(ACtrl))                               //Left/Top/Width/Height
+                    +dwGetHintStyle(joHint,'borderradius','border-radius','')   //border-radius
                     +'"' // 封闭style
-                    +Format(_DWEVENT,['input',Name,'(this.'+Name+'__txt)','onchange','']) //绑定OnChange事件
-                    +Format(_DWEVENT,['focus',Name,'(this.'+Name+'__txt)','onenter',''])  //绑定OnEnter事件
+                    +Format(_DWEVENT,['input',Name,'(this.'+Name+'__txt)','onchange','']) //绑定事件
+                    //+dwIIF(Assigned(OnChange),    Format(_DWEVENT,['input',Name,'(this.'+Name+'__txt)','onchange','']),'')
+                    +dwIIF(Assigned(OnMouseEnter),Format(_DWEVENT,['mouseenter.native',Name,'0','onmouseenter','']),'')
+                    +dwIIF(Assigned(OnMouseLeave),Format(_DWEVENT,['mouseleave.native',Name,'0','onmouseexit','']),'')
+                    +dwIIF(Assigned(OnEnter),     Format(_DWEVENT,['focus',Name,'0','onenter','']),'')
+                    +dwIIF(Assigned(OnExit),      Format(_DWEVENT,['blur',Name,'0','onexit','']),'')
                     +'>';
           //添加到返回值数据
           joRes.Add(sCode);
